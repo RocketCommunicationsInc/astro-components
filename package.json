@@ -17,6 +17,6 @@
   "scripts": {
     "dev": "polymer serve & npm run watch",
     "test": "polymer test",
-    "watch": "browser-sync start --proxy http://127.0.0.1:8081 --files 'src/*.html, src/*.js, images/*' "
+    "watch": "browser-sync start --proxy http://127.0.0.1:8081 --files 'src/*.html, src/*.js, img/*, public/css/**/*.css, public/js/**/*.js' "
   }
 }
