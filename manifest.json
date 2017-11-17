@@ -1,0 +1,7 @@
+{
+  "name": "Astr Component Library",
+  "short_name": "Astr Component Library",
+  "description": "Astro Components",
+  "start_url": "/",
+  "display": "standalone"
+}

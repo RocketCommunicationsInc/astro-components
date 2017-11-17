@@ -1,0 +1,22 @@
+{
+  "name": "astro-components",
+  "version": "1.0.0",
+  "description": "Astro Components",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "polymer test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13"
+  },
+  "scripts": {
+    "dev": "polymer serve & npm run watch",
+    "test": "polymer test",
+    "watch": "browser-sync start --proxy http://127.0.0.1:8081 --files 'src/*.html, src/*.js, images/*' "
+  }
+}

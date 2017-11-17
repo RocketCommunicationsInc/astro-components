@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="astro-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class AstroApp extends Polymer.Element {
+      static get is() { return 'astro-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'astro-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(AstroApp.is, AstroApp);
+  </script>
+</dom-module>
