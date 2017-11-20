@@ -1,57 +1,31 @@
-var gulp        = require('gulp');
-// var exec = require('child_process').exec;
-var spawn = require('child_process').spawn;
-var browserSync = require('browser-sync').create();
+const gulp      	= require('gulp');
+const spawn 			= require('child_process').spawn;
+const browserSync = require('browser-sync').create();
 
 
-// cb = function(err) {
-// 	if (err) {
-// 		console.log(err);
-// 	} else {
-// 		browserSync.init({
-// 			// server: "./index.html"
-// 			proxy: "http://127.0.0.1:8081"
-
-// 		});
-
-// 		gulp.watch("public/css/**/*.css", ['styles']);
-// 		gulp.watch("public/*.html").on('change', browserSync.reload);
-// 		gulp.watch("index*.html").on('change', browserSync.reload);
-// 	}
-// }
-
-// cb = function(err) {
-// 	console.log('asdf');
-// 	browserSync.init({
-// 		// server: "./index.html"
-// 		proxy: "http://127.0.0.1:8081"
-
-// 	});
-// 	gulp.watch("public/css/**/*.css", ['styles']);
-// 	gulp.watch("public/*.html").on('change', browserSync.reload);
-// 	gulp.watch("index*.html").on('change', browserSync.reload);
-// }
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['styles'], function(cb) {
+gulp.task('serve', ['styles'], (cb) => {
 	var process = spawn('polymer serve', [], { shell: true });
-			process.stdout.on('data', (data) => {
-				console.log('data',data);
-				if(data) {
-					browserSync.init({
-						proxy: "http://127.0.0.1:8081"
-					});
 
-					gulp.watch("public/css/**/*.css", ['styles']);
-					gulp.watch("public/*.html").on('change', browserSync.reload);
-					gulp.watch("index*.html").on('change', browserSync.reload);
-				}
-			})
-	
-})
+	// should maybe put this in a callback, but whatever 
+	process.stdout.on('data', (data) => {
+		if (data.toString().includes('info')) {
+			browserSync.init({
+				proxy: "http://127.0.0.1:8000"
+			});
+
+			gulp.watch("public/css/**/*.css", ['styles']);
+			gulp.watch("public/*.html").on('change', browserSync.reload);
+			gulp.watch("index*.html").on('change', browserSync.reload);
+		}
+	});
+});
 
 
-// Compile sass into CSS & auto-inject into browsers
+
+// Force CSS to trigger browser injection typically 
+// ignored when using CSS @import directives
 gulp.task('styles', function() {
     return gulp.src("public/css/**/*.css")
         .pipe(browserSync.stream());
