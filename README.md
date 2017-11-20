@@ -1,10 +1,13 @@
-# \<Astr Component Library\>
+# Astro Component Library
 
 Astro Components
 
 ## Install the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
+
+## Front End Dev
+Install bower, install gulp, install browsersync
 
 ## Viewing Your Application
 
