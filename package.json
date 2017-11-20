@@ -7,16 +7,14 @@
     "test": "test"
   },
   "scripts": {
-    "test": "polymer test"
+    "dev": "polymer serve & npm run watch",
+    "test": "polymer test",
+    "watch": "browser-sync start --proxy http://127.0.0.1:8081 --files 'index.html, src/*.html, src/*.js, img/*, public/css/**/*.css, public/js/**/*.js'"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.18.13"
-  },
-  "scripts": {
-    "dev": "polymer serve & npm run watch",
-    "test": "polymer test",
-    "watch": "browser-sync start --proxy http://127.0.0.1:8081 --files 'src/*.html, src/*.js, img/*, public/css/**/*.css, public/js/**/*.js' --directories 'public/css' "
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1"
   }
 }

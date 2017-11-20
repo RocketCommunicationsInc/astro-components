@@ -1,5 +1,5 @@
 {
-  "name": "Astr Component Library",
+  "name": "astro-component-library",
   "description": "Astro Components",
   "main": "index.html",
   "dependencies": {
