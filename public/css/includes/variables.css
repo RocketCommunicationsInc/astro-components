@@ -42,5 +42,8 @@
   
 	--font-family: 'Open Sans', sans-serif;
 	--font-size: 1em;
-	--font-color: var(--dark-font-color);
+  --font-color: var(--dark-font-color);
+  
+
+  --debug: 1px solid red;
 }

@@ -1,8 +1,33 @@
-@import url("variables.css");
+@import url("includes/variables.css");
+@import url("includes/typography.css");
+
+/* 
+**	This is as close as we get to a CSS reset in Astro, moving everything to 
+**	the old IE border-box model of including padding in the overall size.
+*/
+html {
+		box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	  box-sizing: inherit;
+}
 
 
 
+
+
+/*
+**
+**
+**
+*/
 body {
+	margin: 0;
+	padding: 0;
+
 	font-family: var(--font-family);
 	color: var(--font-color);
 
