@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <title>Astro Component Library</title>
-    <meta name="description" content="Astro Components">
+    
 
     <!-- See https://goo.gl/OOhYW5 -->
-    <link rel="manifest" href="/manifest.json">
+    <!-- <link rel="manifest" href="/manifest.json"> -->
 
     <!-- Load the core Astro Style Sheet //-->
     <link rel="stylesheet" href="public/css/astro.css">
@@ -17,17 +17,20 @@
 
     
     <!-- <script src="/components/webcomponentsjs/webcomponents-loader.js"></script> -->
+    <!-- <link rel="import" href="/src/astro-app/astro-app.html"> -->
 
-    <link rel="import" href="/src/astro-app/astro-app.html">
+    <script rel="module" src="public/astro/astro-button.js"></script>
+    
 
   </head>
   <body>
     <h1>Test</h1>
-    <astro-app>
+    <astro-button>Test</astro-button>
+    <!-- <astro-app>
+      
       
       
 
-
-    </astro-app>
+    </astro-app> -->
   </body>
 </html>

@@ -23,23 +23,26 @@
   --light-background-start: rgb(227, 227, 227);
   --light-background-end: rgb(237, 236, 235);
   --light-background: linear-gradient(to bottom, var(--light-background-start) 0%, var(--light-background-end) 100%);
-	
-	
-	/* Initial Settings */
-  --background: var(--dark-background);
-  --button-bg: var(--dark-button);
-  --button-top: var(--dark-button-border-top);
-  --button-bottom: var(--dark-button-border-bottom);
   
-  --sample-color: var(--dark-sample);
+  
+  /* Status Colors */
   --status-emergency: rgba(244, 18, 46, 1);
   --status-error: rgba(190, 88, 73, 1);
   --status-caution: rgba(247, 229, 59, 1);
   --status-ok: rgba(129, 209, 53, 1);
   --status-standby: rgba(163, 220, 249, 1);
   --status-off: rgba(198, 204, 209, 1);
-  
-  
+
+
+
+
+	
+	/* Initial Settings */
+  --background: var(--dark-background);
+  --button-bg: var(--dark-button);
+  --button-top: var(--dark-button-border-top);
+  --button-bottom: var(--dark-button-border-bottom);
+
 	--font-family: 'Open Sans', sans-serif;
 	--font-size: 1em;
   --font-color: var(--dark-font-color);
