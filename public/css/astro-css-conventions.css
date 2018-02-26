@@ -1,0 +1,65 @@
+ASTRO CSS Property Guidelines
+
+.selector {
+	/* Display Flex */
+	display: flex;
+	flex-direction: row;
+	
+
+	/* Box Model */
+	overflow: show;
+	box-sizing: border-box;
+
+
+	/* Dimensions */
+	height: 10px;
+	width: 10px;
+	max-width: 10px;
+
+
+	/* Margin & Padding */
+	margin: 1em;
+	padding: 1em;
+
+
+	/* Border */
+	border: 1px solid red;
+	border-radius: 10px;
+
+	
+	/* Background & Color */
+	color: #fff;
+	background-color: #000;
+	background-image: url("data");
+  background-repeat: no-repeat;
+	background-position: 0.85em 0.425em;
+	
+	
+<<<<<<< HEAD
+	/* Text */
+=======
+	/* Text & List */
+>>>>>>> status
+	font-family: sans-serif;
+	text-align: left;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+
+	
+	/* Opacity, Box Shadows, Filters & Effects */
+	opacity: 1;
+	filter: blur(10px);
+	
+	
+	/* Cursor & User Selection */
+	cursor: pointer;
+	user-select: none;
+
+	
+	/* Transitions & Animations */
+	transition: opacity 1s ease-in;
+
+	/* Browser Specifics */
+	-webkit-font-smoothing: antialiased;
+
+}

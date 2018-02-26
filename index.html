@@ -1,16 +1,26 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0;url=demo/" />
-    <title>rux-button</title>
-  </head>
-  <body>
-    <!--
-        ELEMENT API DOCUMENTATION SUPPORT COMING SOON
-        Visit demo/index.html to see live examples of your element running.
-        This page will automatically redirect you there when run in the browser
-        with `polymer serve`.
-      -->
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>Astro Demo App</title>
+  <meta name="description" content="Sample application using the Astro Design System">
+
+  <!-- Global Styles //-->
+  <link rel="stylesheet" href="/public/css/astro.css">
+
+  <!-- Load WebComponent Polyfill //-->
+  <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+  <!-- Load Astro App //-->
+  <script type="module" src="src/astro-app/astro-app.js"></script>
+
+</head>
+
+<body class="dark-theme">
+  <astro-app></astro-app>
+</body>
+
 </html>

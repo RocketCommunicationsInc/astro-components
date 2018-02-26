@@ -1,0 +1,57 @@
+@import url("_variables.css");
+@import url("_typography.css");
+@import url("_app.css");
+
+/* 
+**	This is as close as we get to a CSS reset in Astro, moving everything to 
+**	the old IE border-box model of including padding in the overall size.
+*/
+html {
+		box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	  box-sizing: inherit;
+}
+
+
+
+
+
+/*
+**
+**
+**
+*/
+body {
+	margin: 0;
+	padding: 0;
+
+	font-family: var(--font-family);
+	color: var(--font-color);
+
+	background: var(--background);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+
+
+
+
+/*
+** Disable user selection of input labels and navigation elements
+*/
+button {
+	--disable-selection: none !important;
+}
+
+
+
+/* Fallback support for non-browsers*/
+@supports ( -css: variables) {
+
+}

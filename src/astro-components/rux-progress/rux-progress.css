@@ -1,0 +1,121 @@
+.rux-progress {
+  display: flex;
+  position: relative;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rux-progress progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background: #21384f;
+  border: 2px solid #0e5996;
+  border-radius: 9px;
+  height: 20px;
+  width: 100%;
+}
+
+.rux-progress__value {
+  margin-left: 1rem;
+}
+
+.rux-progress__value::after {
+  content: "%";
+}
+
+.rux-progress progress[value]::-webkit-progress-bar {
+  background-color: transparent;
+  border-radius: 10px;
+  height: 16px;
+}
+
+.rux-progress progress[value]::-webkit-progress-value {
+  border-radius: 10px;
+  height: 14px;
+  margin: 1px 0 0 1px;
+
+  max-width: calc(100% - 1px);
+
+  background: #5cb3ff;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 1));
+}
+
+.rux-progress progress[value]::-moz-progress-bar {
+  border-radius: 9px;
+  margin: 1px 0 0 1px;
+  height: 14px;
+
+  max-width: 90%;
+
+  background: #5cb3ff;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 1));
+}
+
+/* Indeterminate */
+.rux-progress progress:indeterminate {
+  -webkit-appearance: none;
+
+  position: relative;
+
+  height: 4rem;
+  width: 4rem;
+
+  outline: 1px solid red !important;
+}
+
+.rux-progress progress[value]:indeterminate::-webkit-progress-value,
+.rux-progress progress[value]:indeterminate::-webkit-progress-bar {
+  display: none;
+}
+
+.rux-progress progress:indeterminate::before {
+  position: absolute;
+
+  height: 2rem;
+  width: 2rem;
+
+  top: 4rem;
+  left: 4rem;
+
+  outline: 1px solid green;
+
+  z-index: 1;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E %3Cdefs%3E %3Cfilter id='a' width='200%25' height='200%25' x='-50%25' y='-50%25' filterUnits='objectBoundingBox'%3E %3CfeOffset dy='1' in='SourceAlpha' result='shadowOffsetInner1'/%3E %3CfeGaussianBlur stdDeviation='1.5' in='shadowOffsetInner1' result='shadowBlurInner1'/%3E %3CfeComposite in='shadowBlurInner1' in2='SourceAlpha' operator='arithmetic' k2='-1' k3='1' result='shadowInnerInner1'/%3E %3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0' in='shadowInnerInner1' result='shadowMatrixInner1'/%3E %3CfeMerge%3E %3CfeMergeNode in='SourceGraphic'/%3E %3CfeMergeNode in='shadowMatrixInner1'/%3E %3C/feMerge%3E %3C/filter%3E %3C/defs%3E %3Cpath fill='%23303234' fill-rule='evenodd' d='M32 865c17.673112 0 32-14.326888 32-32s-14.326888-32-32-32-32 14.326888-32 32 14.326888 32 32 32zm0-6c14.3594035 0 26-11.640597 26-26s-11.6405965-26-26-26-26 11.640597-26 26 11.6405965 26 26 26z' transform='translate(0 -801)' filter='url(%23a)'/%3E %3C/svg%3E");
+}
+
+.rux-progress--indeterminate__value {
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  top: 0;
+  left: 0;
+
+  z-index: 2;
+
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 62'%3E %3Cdefs%3E %3ClinearGradient id='a' x1='50%25' x2='50%25' y1='6.90258226%25' y2='100%25'%3E %3Cstop stop-color='%235CB3FF' offset='0%25'/%3E %3Cstop stop-color='%23010F1B' stop-opacity='0' offset='100%25'/%3E %3C/linearGradient%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='url(%23a)' d='M38.7691304 61.0184341C36.2863172 61.6591659 33.6829616 62 31 62 13.8791728 62 0 48.1208272 0 31S13.8791728 0 31 0c7.5788139 0 14.5224144 2.71967232 19.9080815 7.23629722l-2.3577234 3.24512798C43.8306358 6.44065127 37.7003402 4 31 4 16.0883118 4 4 16.0883118 4 31s12.0883118 27 27 27c1.1288804 0 2.2415796-.06928 3.3340778-.2038202l4.4350526 3.2222543z'/%3E %3Cpath fill='%23008FFF' d='M49.6833973 10.8364537c.9075301 0 1.680582-.3066453 1.9251151-1.13492777.0530921-.17983344.170486-.3214357.170486-.51847506C51.7789984 8.07848137 51.1045695 7 50 7c-1.1045695 0-2 .8954305-2 2s.5788278 1.8364537 1.6833973 1.8364537z'/%3E %3C/g%3E %3C/svg%3E"); */
+
+  animation-name: spin;
+  animation-duration: 1.367s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
