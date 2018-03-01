@@ -28,7 +28,7 @@ import { RuxButton } from "@astro-components/rux-button/rux-button.js";
 
 ###Basic HTML Usage
 
-```html
+```xml
 <rux-button>Button Label</rux-button
 ```
 
