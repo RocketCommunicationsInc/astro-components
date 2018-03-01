@@ -40,15 +40,19 @@ import { RuxButton } from "@astro-components/rux-button/rux-button.js";
 | `disabled` | `attribute` | Disables the button. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored |
 
 ###Customizing the Button
-Buttons have a variety of types for use in different situations and can be set viat the `type` attribute.
+Buttons have a variety of types for use in different situations and can be set viat the `type` attribute. 
 `<rux-button type="small">Small Button</rux-button>`
-###Button Types
+
+####Supported Types
 | Type | Description |
 | -----| ------------|
-| `small` | A small variant. Useful for small spaces |
-| `large` | A large variant. Useful for calls to action |
-| `icon` | An icon without background or borders that behaves like a button |
+| `small` | A small variant. Useful for small spaces. |
+| `large` | A large variant. Useful for calls to action. Master Off |
+| `icon` | An icon without background or borders that behaves like a button. |
 | `icon-contained` | Standard button and behavior but uses only an icon. E.g., A Play/Pause button would use `icon-contained` |
+
+###Button Groups
+Use a `<div class="rux-button-group"></div>` as a wrapper element.
 
 
 ###Events

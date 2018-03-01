@@ -70,8 +70,9 @@ export class AstroApp extends PolymerElement {
           size="small"
           color="red"></rux-icon>
         
-        <rux-icon 
-          icon="status:settings"></rux-icon>
+        <rux-icon
+          color="rgba(155,255,0,0.5)"
+          icon="default:caution"></rux-icon>
 
         <rux-icon 
           icon="default:apple">a</rux-icon>

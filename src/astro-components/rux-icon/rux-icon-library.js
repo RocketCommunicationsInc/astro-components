@@ -49,15 +49,15 @@ export class RuxIconLibrary extends PolymerElement {
         }
       }
 
-      console.log("_icon", _icon.library);
-      console.log(this);
-
+      // set the icon
       let sourceSvg = this.querySelectorAll(`#${_icon.icon}`)[0];
+
+      // if no icon exists then put
       if (!sourceSvg) {
         sourceSvg = this.querySelectorAll("#fpo")[0];
+        console.error(`No icon for "${_icon.icon}" exists in the SVG library`);
       }
 
-      // if (sourceSvg) {
       if (!this.size) this.size = "114";
       let content = sourceSvg.cloneNode(true);
       if (_icon.color) {
@@ -69,7 +69,6 @@ export class RuxIconLibrary extends PolymerElement {
       svg.setAttribute("focusable", "false");
       svg.appendChild(content);
       e.detail.el.root.insertBefore(svg, null);
-      // } else {}
     }
   }
   _nameChanged() {
