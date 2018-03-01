@@ -47,6 +47,7 @@ export class AstroApp extends PolymerElement {
     <rux-global-status-bar
       appname="RUX">
       <rux-tabs slot="tabs">
+        <rux-tab id="tab-icons">Icons</rux-tab> 
         <rux-tab id="tab-buttons">Buttons</rux-tab>
         <rux-tab id="tab-clock">Clock</rux-tab>
         <rux-tab id="tab-data-visualization">Data</rux-tab>
@@ -62,6 +63,28 @@ export class AstroApp extends PolymerElement {
     </rux-global-status-bar>
 
     <rux-tab-panels>
+      <rux-tab-panel aria-labeledby="tab-icons">
+        
+        <rux-icon 
+          icon="default:settings" 
+          size="small"
+          color="red"></rux-icon>
+        
+        <rux-icon 
+          icon="status:settings"></rux-icon>
+
+        <rux-icon 
+          icon="default:apple">a</rux-icon>
+
+        <rux-icon 
+          icon="default:settings" 
+          size="large"
+          color="red"></rux-icon>
+        
+        <rux-icon 
+          icon="advanced-status:settings"></rux-icon>
+
+      </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-buttons">
         <section>
         <h1>Standard Buttons</h1>
