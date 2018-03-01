@@ -26,12 +26,28 @@ export class AstroApp extends PolymerElement {
         display: block;
         /* box-sizing: border-box; */
       }
+
+
+      rux-button.demo-button--hover button {
+        background-color: red !important;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+      }
+
+      ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     </style>
     
     <rux-global-status-bar
-      appname="Astro App"
-      version="v1.90">
+      appname="RUX">
       <rux-tabs slot="tabs">
+        <rux-tab id="tab-buttons">Buttons</rux-tab>
         <rux-tab id="tab-clock">Clock</rux-tab>
         <rux-tab id="tab-data-visualization">Data</rux-tab>
         <rux-tab id="tab-dialog">Dialog</rux-tab>
@@ -46,6 +62,96 @@ export class AstroApp extends PolymerElement {
     </rux-global-status-bar>
 
     <rux-tab-panels>
+      <rux-tab-panel aria-labeledby="tab-buttons">
+        <section>
+        <h1>Standard Buttons</h1>
+        <ul>
+          <li>
+            <figure>
+              <rux-button>Button</rux-button>
+              <figcaption>Standard</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <rux-button disabled>Button</rux-button>
+              <figcaption>Disabled</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <rux-button type="default">Button</rux-button>
+              <figcaption>Default</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <rux-button default disabled>Button</rux-button>
+              <figcaption>Default Disabled</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Large Buttons</h1>
+        <rux-button type="large">Large Button</rux-button>
+        <rux-button type="large" disabled>Large Button</rux-button>
+        <rux-button type="large" default>Large Button</rux-button>
+        <rux-button type="large" default disabled>Large Button</rux-button>
+      </section>
+      <section>
+        <h1>Small Buttons</h1>
+        <rux-button type="small">Small Button</rux-button>
+        <rux-button type="small" disabled>Small Button</rux-button>
+        <rux-button type="small" default>Small Button</rux-button>
+        <rux-button type="small" default disabled>Small Button</rux-button>
+      </section>
+      <section>
+        <h1>Buttons with Icons</h1>
+        <rux-button
+          icon="default:caution">Icon Button</rux-button>
+        <rux-button
+          icon="default:caution" default>Icon Button</rux-button>
+        <rux-button
+          icon="default:caution" disabled>Icon Button</rux-button>
+        <rux-button
+          icon="default:caution" default disabled>Icon Button</rux-button>
+      </section>
+
+      <section>
+        <h1>Buttons with Icons; Large</h1>
+        <rux-button
+          type="large"
+          icon="default:caution">Icon Button</rux-button>
+        <rux-button
+          type="large"
+          icon="default:caution" default>Icon Button</rux-button>
+        <rux-button
+          type="large"
+          icon="default:caution" disabled>Icon Button</rux-button>
+        <rux-button
+          type="large"
+          icon="default:caution" default disabled>Icon Button</rux-button>
+      </section>
+
+      <section>
+        <h1>Icon Buttons</h1>
+        <rux-button
+          type="icon"
+          icon="default:settings">Icon</rux-button>
+        <rux-button
+          type="icon"
+          icon="default:settings" disabled>Icon</rux-button>
+      </section>
+
+      <section>
+        <h1>Icon Buttons; Contained (WIP)</h1>
+        <rux-button
+          type="icon-contained"
+          icon="default:notifications"></rux-button>
+      </section>
+
+      </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-clock">
        <section>
           <h1>Clock</h1>
@@ -113,7 +219,17 @@ export class AstroApp extends PolymerElement {
     super();
     this.name = "3.0 preview";
     this.timeSelector = {
-      buttons: [{ label: "Hour" }, { label: "Day" }, { label: "Week" }]
+      buttons: [
+        {
+          label: "Hour"
+        },
+        {
+          label: "Day"
+        },
+        {
+          label: "Week"
+        }
+      ]
     };
   }
   static get properties() {

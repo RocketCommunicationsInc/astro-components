@@ -1,32 +1,38 @@
 /* rux tab */
-
 :host,
 .rux-tabs__tab {
   flex-grow: 1;
   flex-shrink: 1;
+
   position: relative;
   height: 100%;
   max-width: 12rem;
   display: block;
-  padding: 1rem 1rem;
+  padding: 1.5rem 1.5rem;
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 1.75rem;
   font-weight: 100;
   text-decoration: none;
   text-align: center;
   color: #5cb3ff;
+
   /* background: #23384e; */
+
   border-left: 1px solid rgba(0, 0, 0, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
   cursor: pointer;
+
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+
   transition: color var(--standard-transition-speed);
 }
 
@@ -40,6 +46,7 @@
   top: 0;
   left: 0;
   background-color: transparent;
+
   transition: background-color var(--slow-transition-speed);
 }
 
