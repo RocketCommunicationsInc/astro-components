@@ -2,46 +2,24 @@ import {
   html,
   Element as PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
-import {
-  RuxGlobalStatusBar
-} from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
-import {
-  RuxSegmentedButton
-} from "../astro-components/rux-segmented-button/rux-segmented-button.js";
-import {
-  RuxComponent
-} from "../astro-components/rux-component/rux-component.js";
-import {
-  RuxProgress
-} from "../astro-components/rux-progress/rux-progress.js";
-import {
-  RuxButton
-} from "../astro-components/rux-button/rux-button.js";
-import {
-  RuxStatus
-} from "../astro-components/rux-status/rux-status.js";
-import {
-  RuxIcon
-} from "../astro-components/rux-icon/rux-icon.js";
-import {
-  RuxTabs
-} from "../astro-components/rux-tabs/rux-tabs.js";
-import {
-  RuxPopUpMenu
-} from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
-import {
-  RuxClock
-} from "../astro-components/rux-clock/rux-clock.js";
-import {
-  RuxDialog
-} from "../astro-components/rux-dialog/rux-dialog.js";
+import { RuxGlobalStatusBar } from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
+import { RuxSegmentedButton } from "../astro-components/rux-segmented-button/rux-segmented-button.js";
+import { RuxComponent } from "../astro-components/rux-component/rux-component.js";
+import { RuxProgress } from "../astro-components/rux-progress/rux-progress.js";
+import { RuxButton } from "../astro-components/rux-button/rux-button.js";
+import { RuxStatus } from "../astro-components/rux-status/rux-status.js";
+import { RuxIcon } from "../astro-components/rux-icon/rux-icon.js";
+import { RuxTabs } from "../astro-components/rux-tabs/rux-tabs.js";
+import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
+import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
+import { RuxDialog } from "../astro-components/rux-dialog/rux-dialog.js";
 /**
  * @polymer
  * @extends HTMLElement
  */
 export class AstroApp extends PolymerElement {
   static get template() {
-    return html `
+    return html`
 
     <style>
       :host {
@@ -98,6 +76,10 @@ export class AstroApp extends PolymerElement {
 
       code {
         font-family: monospace;
+        font-size: 1.1rem;
+        padding: 0.2rem 0.5rem;
+        margin: 0 0.5rem;
+        background: rgba(0,0,0,0.3);
       }
 
 
@@ -128,6 +110,7 @@ export class AstroApp extends PolymerElement {
         <section>
           <h1>Default Icon Set</h1>
           <p>Standard Astro Icons that can be used across all types of Astro based applications.</p>
+          <p>To use a defaul icon use the <code>default</code> namespace. E.g., <code>&lt;rux-icon icon="default:settings"&gt;&lt/rux-icon&gt;</code></p>
           <ul class="icon-library">
             <li><figure><rux-icon icon="default:settings"></rux-icon><figcaption>settings</figcaption></figure></li>
             <li><figure><rux-icon icon="default:notifications"></rux-icon><figcaption>notifications</figcaption></figure></li>
@@ -138,6 +121,7 @@ export class AstroApp extends PolymerElement {
         <section>
           <h1>Advanced Status Icons</h1>
           <p>Advanced Status Icons for SATCOM based applications.</p>
+          <p>To use a defaul icon use the <code>advanced-status</code> namespace. E.g., <code>&lt;rux-icon icon="advanced-status:processor"&gt;&lt/rux-icon&gt;</code></p>
           <ul class="icon-library">
             <li><figure><rux-icon icon="advanced-status:mission"></rux-icon><figcaption>mission</figcaption></figure></li>
             <li><figure><rux-icon icon="advanced-status:equipment"></rux-icon><figcaption>equipment</figcaption></figure></li>
@@ -154,6 +138,7 @@ export class AstroApp extends PolymerElement {
         <section>
           <h1>EGS Advanced Status Icons</h1>
           <p>Advanced Status Icons for EGS based applications.</p>
+          <p>To use a defaul icon use the <code>advanced-status-egs</code> namespace. E.g., <code>&lt;rux-icon icon="advanced-status-egs:netcom"&gt;&lt/rux-icon&gt;</code></p>
           <ul class="icon-library">
             <li><figure><rux-icon icon="advanced-status-egs:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
             <li><figure><rux-icon icon="advanced-status-egs:payload"></rux-icon><figcaption>payload</figcaption></figure></li>
@@ -185,93 +170,7 @@ export class AstroApp extends PolymerElement {
 
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-buttons">
-        <section>
-        <h1>Standard Buttons</h1>
-        <ul>
-          <li>
-            <figure>
-              <rux-button>Button</rux-button>
-              <figcaption>Standard</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <rux-button disabled>Button</rux-button>
-              <figcaption>Disabled</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <rux-button type="default">Button</rux-button>
-              <figcaption>Default</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <rux-button default disabled>Button</rux-button>
-              <figcaption>Default Disabled</figcaption>
-            </figure>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h1>Large Buttons</h1>
-        <rux-button type="large">Large Button</rux-button>
-        <rux-button type="large" disabled>Large Button</rux-button>
-        <rux-button type="large" default>Large Button</rux-button>
-        <rux-button type="large" default disabled>Large Button</rux-button>
-      </section>
-      <section>
-        <h1>Small Buttons</h1>
-        <rux-button type="small">Small Button</rux-button>
-        <rux-button type="small" disabled>Small Button</rux-button>
-        <rux-button type="small" default>Small Button</rux-button>
-        <rux-button type="small" default disabled>Small Button</rux-button>
-      </section>
-      <section>
-        <h1>Buttons with Icons</h1>
-        <rux-button
-          icon="default:caution">Icon Button</rux-button>
-        <rux-button
-          icon="default:caution" default>Icon Button</rux-button>
-        <rux-button
-          icon="default:caution" disabled>Icon Button</rux-button>
-        <rux-button
-          icon="default:caution" default disabled>Icon Button</rux-button>
-      </section>
-
-      <section>
-        <h1>Buttons with Icons; Large</h1>
-        <rux-button
-          type="large"
-          icon="default:caution">Icon Button</rux-button>
-        <rux-button
-          type="large"
-          icon="default:caution" default>Icon Button</rux-button>
-        <rux-button
-          type="large"
-          icon="default:caution" disabled>Icon Button</rux-button>
-        <rux-button
-          type="large"
-          icon="default:caution" default disabled>Icon Button</rux-button>
-      </section>
-
-      <section>
-        <h1>Icon Buttons</h1>
-        <rux-button
-          type="icon"
-          icon="default:settings">Icon</rux-button>
-        <rux-button
-          type="icon"
-          icon="default:settings" disabled>Icon</rux-button>
-      </section>
-
-      <section>
-        <h1>Icon Buttons; Contained (WIP)</h1>
-        <rux-button
-          type="icon-contained"
-          icon="default:notifications"></rux-button>
-      </section>
+        
 
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-clock">
@@ -304,25 +203,25 @@ export class AstroApp extends PolymerElement {
       <rux-tab-panel aria-labeledby="tab-icon">
         <rux-button type="icon" icon="default:notifications">Notifications</rux-button>
         <rux-button type="icon" icon="default:settings">Settings</rux-button>
-        <rux-button icon="advanced-status:netcom">Master Off</rux-button>
+        <rux-button icon="advanced-status-egs:netcom">Master Off</rux-button>
           <rux-status
             status="emergency"
             label="Netcom"
             sublabel="Ok"
             notifications="10"
-            icon="advanced-status:netcom"></rux-status>
+            icon="advanced-status-egs:netcom"></rux-status>
           <rux-status
             status="emergency"
             label="Advanced Status"
             notifications="1"
             sublabel="Error"
-            icon="advanced-status:thermal"></rux-status>
+            icon="advanced-status-egs:thermal"></rux-status>
           <rux-status
             status="standby"
             label="Standby"
             sublabel="Standby"
             notifications="100000"
-            icon="advanced-status:propulsion-power"></rux-status>
+            icon="advanced-status-egs:propulsion-power"></rux-status>
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-log">
       </rux-tab-panel>
@@ -341,7 +240,8 @@ export class AstroApp extends PolymerElement {
     super();
     this.name = "3.0 preview";
     this.timeSelector = {
-      buttons: [{
+      buttons: [
+        {
           label: "Hour"
         },
         {
