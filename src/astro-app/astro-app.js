@@ -42,6 +42,22 @@ export class AstroApp extends PolymerElement {
         flex-direction: column;
         align-items: center;
       }
+
+      .icon-library li {
+        border: 1px solid rgba(255,255,255,0.2);
+        
+        font-family: monospace;
+        text-align: center;
+
+        max-width: 100px;
+        padding: 1em;
+      }
+
+      .icon-library figcaption {
+        margin-top: 0.5rem;
+      }
+
+
     </style>
     
     <rux-global-status-bar
@@ -64,26 +80,68 @@ export class AstroApp extends PolymerElement {
 
     <rux-tab-panels>
       <rux-tab-panel aria-labeledby="tab-icons">
+        <section>
+          <h1>Icon Options</h1>
+          <ul>
+            <li>
+              <figure>
+                <rux-icon 
+                  icon="default:settings"></rux-icon>
+                <figcaption>Default Size & Color</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <rux-icon 
+                  color="red"
+                  icon="default:settings"></rux-icon>
+                <figcaption>Override Color</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <rux-icon 
+                  size="small"
+                  icon="default:settings"></rux-icon>
+                <figcaption>Default Size & Color</figcaption>
+              </figure>
+            </li>
+          </ul>
         
-        <rux-icon 
-          icon="default:settings" 
-          size="small"
-          color="red"></rux-icon>
-        
-        <rux-icon
-          color="rgba(155,255,0,0.5)"
-          icon="default:caution"></rux-icon>
+          <section>
+          <h1>Default Icon Set</h1>
+          <ul class="icon-library">
+            <li><figure><rux-icon icon="default:settings"></rux-icon><figcaption>settings</figcaption></figure></li>
+            <li><figure><rux-icon icon="default:notifications"></rux-icon><figcaption>notifications</figcaption></figure></li>
+            <li><figure><rux-icon icon="default:caution"></rux-icon><figcaption>caution</figcaption></figure></li>
+          </ul>
+        </section>
 
-        <rux-icon 
-          icon="default:apple">a</rux-icon>
+        <section>
+          <h1>Default Icon Set</h1>
+          <ul class="icon-library">
+            <li><figure><rux-icon icon="advanced-status:propulsion-power"></rux-icon><figcaption>propulsion-power</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:netcom"></rux-icon><figcaption>netcom</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:thermal"></rux-icon><figcaption>thermal</figcaption></figure></li>
+          </ul>
+        </section>
 
-        <rux-icon 
-          icon="default:settings" 
-          size="large"
-          color="red"></rux-icon>
+        <section>
+          <h1>Default Icon Set</h1>
+          <p>Note: It is recommended you use <code><rux-status></rux-status></code> instead of the raw status symbol icons. <rux-status> provides additional functionality beyond simple graphic represenations</p>
+          <ul class="icon-library">
+            <li><figure><rux-icon icon="status:emergency"></rux-icon><figcaption>emergency</figcaption></figure></li>
+            <li><figure><rux-icon icon="status:caution"></rux-icon><figcaption>caution</figcaption></figure></li>
+            <li><figure><rux-icon icon="status:error"></rux-icon><figcaption>error</figcaption></figure></li>
+            <li><figure><rux-icon icon="status:ok"></rux-icon><figcaption>ok</figcaption></figure></li>
+            <li><figure><rux-icon icon="status:standby"></rux-icon><figcaption>standby</figcaption></figure></li>
+            <li><figure><rux-icon icon="status:off"></rux-icon><figcaption>off</figcaption></figure></li>
+          </ul>
+        </section>
         
-        <rux-icon 
-          icon="advanced-status:settings"></rux-icon>
+        
+        
+      
 
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-buttons">
