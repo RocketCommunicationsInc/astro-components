@@ -2,24 +2,46 @@ import {
   html,
   Element as PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
-import { RuxGlobalStatusBar } from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
-import { RuxSegmentedButton } from "../astro-components/rux-segmented-button/rux-segmented-button.js";
-import { RuxComponent } from "../astro-components/rux-component/rux-component.js";
-import { RuxProgress } from "../astro-components/rux-progress/rux-progress.js";
-import { RuxButton } from "../astro-components/rux-button/rux-button.js";
-import { RuxStatus } from "../astro-components/rux-status/rux-status.js";
-import { RuxIcon } from "../astro-components/rux-icon/rux-icon.js";
-import { RuxTabs } from "../astro-components/rux-tabs/rux-tabs.js";
-import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
-import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
-import { RuxDialog } from "../astro-components/rux-dialog/rux-dialog.js";
+import {
+  RuxGlobalStatusBar
+} from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
+import {
+  RuxSegmentedButton
+} from "../astro-components/rux-segmented-button/rux-segmented-button.js";
+import {
+  RuxComponent
+} from "../astro-components/rux-component/rux-component.js";
+import {
+  RuxProgress
+} from "../astro-components/rux-progress/rux-progress.js";
+import {
+  RuxButton
+} from "../astro-components/rux-button/rux-button.js";
+import {
+  RuxStatus
+} from "../astro-components/rux-status/rux-status.js";
+import {
+  RuxIcon
+} from "../astro-components/rux-icon/rux-icon.js";
+import {
+  RuxTabs
+} from "../astro-components/rux-tabs/rux-tabs.js";
+import {
+  RuxPopUpMenu
+} from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
+import {
+  RuxClock
+} from "../astro-components/rux-clock/rux-clock.js";
+import {
+  RuxDialog
+} from "../astro-components/rux-dialog/rux-dialog.js";
 /**
  * @polymer
  * @extends HTMLElement
  */
 export class AstroApp extends PolymerElement {
   static get template() {
-    return html`
+    return html `
 
     <style>
       :host {
@@ -82,12 +104,17 @@ export class AstroApp extends PolymerElement {
         background: rgba(0,0,0,0.3);
       }
 
+      p code {
+        color: #329FFF;
+      }
+
 
     </style>
     
     <rux-global-status-bar
       appname="RUX">
       <rux-tabs slot="tabs">
+        <rux-tab id="tab-pop-ups">Pop Ups</rux-tab>
         <rux-tab id="tab-icons">Icons</rux-tab> 
         <rux-tab id="tab-buttons">Buttons</rux-tab>
         <rux-tab id="tab-clock">Clock</rux-tab>
@@ -104,6 +131,23 @@ export class AstroApp extends PolymerElement {
     </rux-global-status-bar>
 
     <rux-tab-panels>
+      <rux-tab-panel aria-labeledby="tab-pop-ups">
+        <section>
+          <h1>Pop Ups</h1>
+          <ul>
+            <li><rux-button on-click="_showStatus">Pop-up Below</rux-button></li>
+            <li><rux-button on-click="_showStatus">Pop-up Above</rux-button></li>
+            <li><rux-button on-click="_showStatus">Pop-up Left</rux-button></li>
+            <li><rux-button on-click="_showStatus">Pop-up Right</rux-button></li>
+          </ul>
+        </section>
+
+        <rux-pop-up-menu 
+          id="status-pop-up"></rux-pop-up-menu>
+        
+
+
+      </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-icons">
        
         
@@ -240,8 +284,7 @@ export class AstroApp extends PolymerElement {
     super();
     this.name = "3.0 preview";
     this.timeSelector = {
-      buttons: [
-        {
+      buttons: [{
           label: "Hour"
         },
         {
@@ -265,12 +308,21 @@ export class AstroApp extends PolymerElement {
     return JSON.stringify(obj);
   }
   _showStatus(e) {
-    console.log("showing status", e.target.getAttribute("id"));
+    e.target.setAttribute("data-pop-up-target", true);
+
+    let _target = {
+      "x": e.clientX,
+      "y": e.clientY,
+      "target": e.target
+    };
+    console.log("typeof", typeof _target);
+
     // this.root.getElementById('pop-menu').attribute('target',e.target)
     // console.log('pop-up-menu', this.root.getElementById('pop-menu'));
-    this.root
-      .getElementById("pop-menu")
-      .setAttribute("target", e.target.getAttribute("id"));
+
+    this.root.getElementById("status-pop-up").setAttribute("target", {
+      "x": "test"
+    });
   }
   connectedCallback() {
     super.connectedCallback();

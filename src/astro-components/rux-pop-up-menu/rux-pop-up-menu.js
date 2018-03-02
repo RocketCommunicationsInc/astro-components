@@ -11,12 +11,13 @@ import "/node_modules/@polymer/polymer/lib/elements/dom-repeat.js";
 export class RuxPopUpMenu extends PolymerElement {
   static get properties() {
     return {
-      orientation: {
-        type: String
-      },
       target: {
         type: Object,
+        notify: true,
         observer: "_targetChanged"
+      },
+      orientation: {
+        type: String
       },
       menu: {
         type: Object
@@ -57,7 +58,7 @@ export class RuxPopUpMenu extends PolymerElement {
   }
 
   _targetChanged(e) {
-    console.log(e);
+    console.log("typeof", typeof e);
     const _target =
       typeof e === "string" ? this.getRootNode().getElementById(e) : e;
     console.log(_target);
