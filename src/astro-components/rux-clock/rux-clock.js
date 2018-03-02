@@ -64,14 +64,19 @@ export class RuxClock extends PolymerElement {
           align-items: center;
           font-family: monospace;
           height: 44px;
-          padding: 0 0.75em;
+          padding: 0 0.75rem;
           border: 1px solid rgba(255, 255, 255, 0.2);
           margin-bottom: 0.25rem;
         }
 
         .rux-clock__segment__label {
           font-size: 0.875rem;
-          border: 1px solid rgb(36, 56, 77);
+          margin-right: auto;
+          margin-left: 0.85rem;
+        }
+
+        .rux-clock__day-of-the-year .rux-clock__segment__value {
+          border-right: none;
         }
 
         .rux-clock__aos {

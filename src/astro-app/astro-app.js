@@ -90,10 +90,10 @@ export class AstroApp extends PolymerElement {
     <rux-global-status-bar
       appname="RUX">
       <rux-tabs slot="tabs">
+        <rux-tab id="tab-clock">Clock</rux-tab>
         <rux-tab id="tab-status-indicator">Status</rux-tab>
         <rux-tab id="tab-icons">Icons</rux-tab> 
         <rux-tab id="tab-buttons">Buttons</rux-tab>
-        <rux-tab id="tab-clock">Clock</rux-tab>
         <rux-tab id="tab-data-visualization">Data</rux-tab>
         <rux-tab id="tab-dialog">Dialog</rux-tab>
         <rux-tab id="tab-form">Form</rux-tab>
@@ -182,17 +182,24 @@ export class AstroApp extends PolymerElement {
 
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-clock">
-       <section>
+        <section>
           <h1>Clock</h1>
-          <h2>Rux Clock, no properties set (defaults to UTC)</h2>
+          <p>The default setting for <code>rux-clock</code> without any attributes is to present a 24-hour clock set to UTC time and the current day of the year.</p>
           <rux-clock></rux-clock>
-          <h2>Clock with LOS/AOS set, custom timezone, hidden date</h2>
+        </section>
+        <section>
+          <h1>Clock with LOS/AOS Options</h1>
+          <p><code>rux-clock</code> can be customized to include an Acquisition of Signal (AOS) and Loss of Signal (LOS) via the <code>aos</code> and <code>los</code> attributes. Expectec values are a JavaScript Date Object. AOS/LOS will not display is the respective attribute is not present or if the value is not a date.</p>
           <rux-clock
             aos="00:10:11"
             los="00:11:11"
-            timezone="America/Los_Angeles"></rux-clock>
-          <h2>Clock with hidden timezone</h2>
+            hide-date="true"></rux-clock>
+        </section>
+        <section>
+          <h1>Clock with Hidden Timezone and Date</h1>
+          <p>Both the date and timezone fields can be hidden via the <code>hide-date</code> and <code>hide-timezone</code> attributes.</p>
           <rux-clock
+            hide-date="true"
             hide-timezone="true"></rux-clock>
         </section>
       </rux-tab-panel>
