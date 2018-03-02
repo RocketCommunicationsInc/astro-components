@@ -310,95 +310,87 @@ export class AstroApp extends PolymerElement {
             </rux-status>
             <figcaption></figcaption></figure>
           </li>
+          <li>
+          <figure>
+          <rux-status
+            icon="advanced-status-egs:antenna"
+            status="off"
+            label="Label"
+            sublabel="Sub-label">
+          </rux-status>
+          <figcaption></figcaption></figure>
+        </li>
+        <li>
+          <figure>
+          <rux-status
+            icon="advanced-status-egs:payload"
+            status="standby"
+            label="Label"
+            sublabel="Sub-label"
+            notifications=10>
+          </rux-status>
+          <figcaption></figcaption></figure>
+        </li>
+        <li>
+          <figure>
+          <rux-status
+            icon="advanced-status-egs:altitude"
+            status="ok"
+            label="Label"
+            sublabel="Sub-label"
+            notifications=100>
+          </rux-status>
+          <figcaption></figcaption></figure>
+        </li>
+        <li>
+          <figure>
+          <rux-status
+            icon="advanced-status-egs:propulsion-power"
+            status="error"
+            label="Label"
+            sublabel="Sub-label"
+            notifications=1000>
+          </rux-status>
+          <figcaption></figcaption></figure>
+        </li>
+        <li>
+          <figure>
+          <rux-status
+            icon="advanced-status-egs:netcom"
+            status="caution"
+            label="Label"
+            sublabel="Sub-label"
+            notifications=10000>
+          </rux-status>
+          <figcaption></figcaption></figure>
+        </li>
+        <li>
+          <figure>
+          <rux-status
+            icon="advanced-status-egs:thermal"
+            status="emergency"
+            label="Label"
+            sublabel="Sub-label"
+            notifications=100000>
+          </rux-status>
+          <figcaption></figcaption></figure>
+        </li>
           
           
-          <li><figure><rux-icon icon="advanced-status:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status:antenna-transmit"></rux-icon><figcaption>antenna-transmit</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status:antenna-receive"></rux-icon><figcaption>antenna-receive</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status:satellite"></rux-icon><figcaption>satellite</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status:satellite-transmit"></rux-icon><figcaption>satellite-transmit</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status:satellite-receive"></rux-icon><figcaption>satellite-receive</figcaption></figure></li>
+          
         </ul>
       </section>
 
       <section>
-        <h1>EGS Advanced Status Icons</h1>
-        <p>Advanced Status Icons for EGS based applications.</p>
-        <p>To use a defaul icon use the <code>advanced-status-egs</code> namespace. E.g., <code>&lt;rux-icon icon="advanced-status-egs:netcom"&gt;&lt/rux-icon&gt;</code></p>
+        <h1>Status Indicator</h1>
+        <p>Standard status indicator symbols.</p>
         <ul class="icon-library">
-          <li>
-            <figure>
-            <rux-status
-              icon="advanced-status-egs:antenna"
-              status="off"
-              label="Label"
-              sublabel="Sub-label">
-            </rux-status>
-            <figcaption></figcaption></figure>
-          </li>
-          <li>
-            <figure>
-            <rux-status
-              icon="advanced-status-egs:payload"
-              status="standby"
-              label="Label"
-              sublabel="Sub-label"
-              notifications=10>
-            </rux-status>
-            <figcaption></figcaption></figure>
-          </li>
-          <li>
-            <figure>
-            <rux-status
-              icon="advanced-status-egs:altitude"
-              status="ok"
-              label="Label"
-              sublabel="Sub-label"
-              notifications=100>
-            </rux-status>
-            <figcaption></figcaption></figure>
-          </li>
-          <li>
-            <figure>
-            <rux-status
-              icon="advanced-status-egs:propulsion-power"
-              status="error"
-              label="Label"
-              sublabel="Sub-label"
-              notifications=1000>
-            </rux-status>
-            <figcaption></figcaption></figure>
-          </li>
-          <li>
-            <figure>
-            <rux-status
-              icon="advanced-status-egs:netcom"
-              status="caution"
-              label="Label"
-              sublabel="Sub-label"
-              notifications=10000>
-            </rux-status>
-            <figcaption></figcaption></figure>
-          </li>
-          <li>
-            <figure>
-            <rux-status
-              icon="advanced-status-egs:thermal"
-              status="emergency"
-              label="Label"
-              sublabel="Sub-label"
-              notifications=100000>
-            </rux-status>
-            <figcaption></figcaption></figure>
-          </li>
-         </ul>
-        <ul class="icon-library">
-          <li><figure><rux-icon icon="advanced-status-egs:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status-egs:payload"></rux-icon><figcaption>payload</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status-egs:altitude"></rux-icon><figcaption>altitude</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status-egs:propulsion-power"></rux-icon><figcaption>propulsion-power</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status-egs:netcom"></rux-icon><figcaption>netcom</figcaption></figure></li>
-          <li><figure><rux-icon icon="advanced-status-egs:thermal"></rux-icon><figcaption>thermal</figcaption></figure></li>
+          <li><figure><rux-status status="off"></rux-status><figcaption>off</figcaption></figure></li>
+          <li><figure><rux-status status="standby"></rux-status><figcaption>standby</figcaption></figure></li>
+          <li><figure><rux-status status="ok"></rux-status><figcaption>ok</figcaption></figure></li>
+          <li><figure><rux-status status="error"></rux-status><figcaption>error</figcaption></figure></li>
+          <li><figure><rux-status status="caution"></rux-status><figcaption>caution</figcaption></figure></li>
+          <li><figure><rux-status status="emergency"></rux-status><figcaption>emergency</figcaption></figure></li>
         </ul>
       </section>
 
