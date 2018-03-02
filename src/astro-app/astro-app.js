@@ -54,9 +54,21 @@ export class AstroApp extends PolymerElement {
         background-color: red !important;
       }
 
+      section {
+        /* outline: 1px solid red; */
+        margin: 1em;
+        padding: 1em;
+        background-color: rgba(0,0,0,0.2);
+      }
+
       ul {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        
       }
 
       ul li {
@@ -68,12 +80,17 @@ export class AstroApp extends PolymerElement {
       .icon-library li {
         border: 1px solid rgba(255,255,255,0.2);
         
+        margin-top: -1px;
+        margin-left: -1px;
+        
         font-family: monospace;
         text-align: center;
 
         max-width: 100px;
         padding: 1em;
       }
+
+      
 
       .icon-library figcaption {
         margin-top: 0.5rem;
@@ -106,36 +123,11 @@ export class AstroApp extends PolymerElement {
 
     <rux-tab-panels>
       <rux-tab-panel aria-labeledby="tab-icons">
-        <section>
-          <h1>Icon Options</h1>
-          <ul>
-            <li>
-              <figure>
-                <rux-icon 
-                  icon="default:settings"></rux-icon>
-                <figcaption>Default Size & Color</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <rux-icon 
-                  color="red"
-                  icon="default:settings"></rux-icon>
-                <figcaption>Override Color</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <rux-icon 
-                  size="small"
-                  icon="default:settings"></rux-icon>
-                <figcaption>Default Size & Color</figcaption>
-              </figure>
-            </li>
-          </ul>
+       
         
-          <section>
+        <section>
           <h1>Default Icon Set</h1>
+          <p>Standard Astro Icons that can be used across all types of Astro based applications.</p>
           <ul class="icon-library">
             <li><figure><rux-icon icon="default:settings"></rux-icon><figcaption>settings</figcaption></figure></li>
             <li><figure><rux-icon icon="default:notifications"></rux-icon><figcaption>notifications</figcaption></figure></li>
@@ -145,6 +137,7 @@ export class AstroApp extends PolymerElement {
 
         <section>
           <h1>Advanced Status Icons</h1>
+          <p>Advanced Status Icons for SATCOM based applications.</p>
           <ul class="icon-library">
             <li><figure><rux-icon icon="advanced-status:mission"></rux-icon><figcaption>mission</figcaption></figure></li>
             <li><figure><rux-icon icon="advanced-status:equipment"></rux-icon><figcaption>equipment</figcaption></figure></li>
@@ -160,6 +153,7 @@ export class AstroApp extends PolymerElement {
 
         <section>
           <h1>EGS Advanced Status Icons</h1>
+          <p>Advanced Status Icons for EGS based applications.</p>
           <ul class="icon-library">
             <li><figure><rux-icon icon="advanced-status-egs:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
             <li><figure><rux-icon icon="advanced-status-egs:payload"></rux-icon><figcaption>payload</figcaption></figure></li>
@@ -173,7 +167,8 @@ export class AstroApp extends PolymerElement {
 
         <section>
           <h1>Default Status Symbols</h1>
-          <p>Note: It is recommended you use <code>&lt;rux-status status="ok"&gt;&lt/rux-status&gt;</code> instead of the raw status symbol icons. <code>&lt;rux-status&gt;</code> provides additional functionality beyond simple graphic represenations</p>
+          <p>Note: It is recommended you use <code>&lt;rux-status status="ok"&gt;&lt/rux-status&gt;</code> instead of the raw status symbol icons. <code>&lt;rux-status&gt;</code> provides additional functionality beyond simple graphic represenations.</p>
+          <p>Status icons have embedded fill colors as defined in the Astro UXDS Guideline. These colors cannot be overriden with the color property like other icons. <em><strong>Only standard status colors are supported.</strong></em>.</p>
           <ul class="icon-library">
             <li><figure><rux-icon icon="status:emergency"></rux-icon><figcaption>emergency</figcaption></figure></li>
             <li><figure><rux-icon icon="status:caution"></rux-icon><figcaption>caution</figcaption></figure></li>
