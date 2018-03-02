@@ -61,16 +61,18 @@ export class AstroApp extends PolymerElement {
         margin-top: -1px;
         margin-left: -1px;
         
-        font-family: monospace;
+        
         text-align: center;
 
         max-width: 100px;
         padding: 1em;
+        
       }
 
       
 
       .icon-library figcaption {
+        font-family: monospace;
         margin-top: 0.5rem;
       }
 
@@ -88,6 +90,7 @@ export class AstroApp extends PolymerElement {
     <rux-global-status-bar
       appname="RUX">
       <rux-tabs slot="tabs">
+        <rux-tab id="tab-status-indicator">Status</rux-tab>
         <rux-tab id="tab-icons">Icons</rux-tab> 
         <rux-tab id="tab-buttons">Buttons</rux-tab>
         <rux-tab id="tab-clock">Clock</rux-tab>
@@ -97,7 +100,6 @@ export class AstroApp extends PolymerElement {
         <rux-tab id="tab-icon">Icon</rux-tab>
         <rux-tab id="tab-log">Log</rux-tab>
         <rux-tab id="tab-progress">Progress</rux-tab>
-        <rux-tab id="tab-status-indicator">Status</rux-tab>
         <rux-tab id="tab-text-formatting">Text</rux-tab>
         <rux-tab id="tab-timeline">Timeline</rux-tab>
       </rux-tabs>
@@ -147,7 +149,6 @@ export class AstroApp extends PolymerElement {
             <li><figure><rux-icon icon="advanced-status-egs:netcom"></rux-icon><figcaption>netcom</figcaption></figure></li>
             <li><figure><rux-icon icon="advanced-status-egs:thermal"></rux-icon><figcaption>thermal</figcaption></figure></li>
           </ul>
-          
         </section>
 
         <section>
@@ -200,34 +201,208 @@ export class AstroApp extends PolymerElement {
           <h2>Input Fields</h2>
           <h2>Radio Button</h2>
       </rux-tab-panel>
-      <rux-tab-panel aria-labeledby="tab-icon">
-        <rux-button type="icon" icon="default:notifications">Notifications</rux-button>
-        <rux-button type="icon" icon="default:settings">Settings</rux-button>
-        <rux-button icon="advanced-status-egs:netcom">Master Off</rux-button>
-          <rux-status
-            status="emergency"
-            label="Netcom"
-            sublabel="Ok"
-            notifications="10"
-            icon="advanced-status-egs:netcom"></rux-status>
-          <rux-status
-            status="emergency"
-            label="Advanced Status"
-            notifications="1"
-            sublabel="Error"
-            icon="advanced-status-egs:thermal"></rux-status>
-          <rux-status
-            status="standby"
-            label="Standby"
-            sublabel="Standby"
-            notifications="100000"
-            icon="advanced-status-egs:propulsion-power"></rux-status>
-      </rux-tab-panel>
+     
       <rux-tab-panel aria-labeledby="tab-log">
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-progress">
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-status-indicator">
+        <section>
+        <h1>Advanced Status Icons</h1>
+        <p>Advanced Status Icons for SATCOM based applications.</p>
+        <p>To use a defaul icon use the <code>advanced-status</code> namespace. E.g., <code>&lt;rux-icon icon="advanced-status:processor"&gt;&lt/rux-icon&gt;</code></p>
+        <ul class="icon-library">
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status:mission"
+              status="off"
+              label="Label"
+              sublabel="Sub-label">
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status:equipment"
+              status="standby"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=10>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status:processor"
+              status="ok"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=100>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status:antenna"
+              status="error"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=1000>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status:antenna-transmit"
+              status="caution"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=10000>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status:antenna-receive"
+              status="emergency"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=100000>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status:satellite"
+              status="off"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=1000000>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status:satellite-transmit"
+              status="standby"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=1000000000>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status:satellite-receive"
+              status="ok"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=1000000000000>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          
+          
+          <li><figure><rux-icon icon="advanced-status:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status:antenna-transmit"></rux-icon><figcaption>antenna-transmit</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status:antenna-receive"></rux-icon><figcaption>antenna-receive</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status:satellite"></rux-icon><figcaption>satellite</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status:satellite-transmit"></rux-icon><figcaption>satellite-transmit</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status:satellite-receive"></rux-icon><figcaption>satellite-receive</figcaption></figure></li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>EGS Advanced Status Icons</h1>
+        <p>Advanced Status Icons for EGS based applications.</p>
+        <p>To use a defaul icon use the <code>advanced-status-egs</code> namespace. E.g., <code>&lt;rux-icon icon="advanced-status-egs:netcom"&gt;&lt/rux-icon&gt;</code></p>
+        <ul class="icon-library">
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status-egs:antenna"
+              status="off"
+              label="Label"
+              sublabel="Sub-label">
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status-egs:payload"
+              status="standby"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=10>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status-egs:altitude"
+              status="ok"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=100>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status-egs:propulsion-power"
+              status="error"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=1000>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status-egs:netcom"
+              status="caution"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=10000>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+          <li>
+            <figure>
+            <rux-status
+              icon="advanced-status-egs:thermal"
+              status="emergency"
+              label="Label"
+              sublabel="Sub-label"
+              notifications=100000>
+            </rux-status>
+            <figcaption></figcaption></figure>
+          </li>
+         </ul>
+        <ul class="icon-library">
+          <li><figure><rux-icon icon="advanced-status-egs:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status-egs:payload"></rux-icon><figcaption>payload</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status-egs:altitude"></rux-icon><figcaption>altitude</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status-egs:propulsion-power"></rux-icon><figcaption>propulsion-power</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status-egs:netcom"></rux-icon><figcaption>netcom</figcaption></figure></li>
+          <li><figure><rux-icon icon="advanced-status-egs:thermal"></rux-icon><figcaption>thermal</figcaption></figure></li>
+        </ul>
+      </section>
+
+
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-text-formatting">
       </rux-tab-panel>

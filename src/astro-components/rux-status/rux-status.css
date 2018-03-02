@@ -1,130 +1,133 @@
 :host {
-	display: inline-block;
-	line-height: 0; 
+  display: inline-block;
+  line-height: 0;
 
-	max-width: 64px;
-	margin: 0 0.75rem;
+  max-width: 64px;
+  margin: 0 0.75rem;
 
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-
 *[hidden] {
-	display: none !important;
+  display: none !important;
 }
 
 *,
 *:before,
 *:after {
-	box-sizing: border-box;
-}	
-
-.rux-advanced-status {
-	position: relative;
-	z-index: 0;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	overflow: hidden;
-	
-	
+  box-sizing: border-box;
 }
 
+.rux-advanced-status {
+  position: relative;
+  z-index: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+}
 
 .rux-advanced-status__icon {
-	position: relative;
-	display: flex;
-	justify-content: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
 
-	border: 1px solid red;
-	background-image: linear-gradient(to right, rgba(255,0,0,0) 0, rgba(255,0,0,0) 49%, rgba(0,255,0,1) 50%,rgba(0,255,0,1) 51%,rgba(0,255,0,0) 52%, rgba(0,255,0,0) 100%)
+  /* border: 1px solid red; */
+  /* Debug vertical 50% */
+  /* background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0) 0,
+    rgba(255, 0, 0, 0) 49%,
+    rgba(0, 255, 0, 1) 50%,
+    rgba(0, 255, 0, 1) 51%,
+    rgba(0, 255, 0, 0) 52%,
+    rgba(0, 255, 0, 0) 100%
+  ); */
 }
 
 .rux-advanced-status__status-icon {
-	position: absolute;
-	z-index: 1;
+  position: absolute;
+  margin-left: -0.5rem;
+  z-index: 1;
 }
 
-
 .rux-advanced-status__label {
-	
-	text-align: center;
-	color: var(--font-color);
-	font-size: 0.875rem;
-	font-stretch: condensed;
-	line-height: 1.2;
-	margin-top: 0.75rem;
+  text-align: center;
+  color: var(--font-color);
+  font-size: 0.875rem;
+  font-stretch: condensed;
+  line-height: 1.2;
+  margin-top: 1rem;
 
-	overflow: hidden;
-	text-overflow: ellipsis;
-	width: 100%;
-	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .rux-advanced-status__label__sub-label {
-	font-size: 0.65em;
-	color: rgba(255,255,255,.6);
-	display: block;
+  font-size: 0.65em;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
 }
 
 .rux-advanced-status__badge:empty {
-	display: none;
+  display: none;
 }
 
 .rux-advanced-status__badge {
-	display: block;
-	position: absolute;
-	z-index: 2;
+  display: block;
+  position: absolute;
+  z-index: 2;
 
-	bottom: -0.3125rem;
-	right: -0.625rem;
+  /* bottom: -0.3125rem;
+	right: -0.625rem; */
 
-	border: 1px solid rgba(255, 255, 255, 0.6);
-	border-radius: 3px;
+  bottom: -1em;
+  right: -1em;
 
-	padding: 0.65rem 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
 
-	font-size: 0.775rem;
-	text-align: center;
-	color: #fff;
-	
+  padding: 0.65rem 0.25rem;
 
-	background-color: #000;
+  font-size: 0.775rem;
+  text-align: center;
+  color: #fff;
 
-	overflow: hidden;
-	text-overflow: ellipsis;
-	/* max-width: 72%; */
-	white-space: nowrap;
+  background-color: #000;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* max-width: 72%; */
+  white-space: nowrap;
 }
 
-
-
-
 .rux-status--off {
-	fill: var(--status-off);
+  fill: var(--status-off);
 }
 
 .rux-status--standby {
-	fill: var(--status-standby);
+  fill: var(--status-standby);
 }
 
 .rux-status--ok {
-	fill: var(--status-ok);
+  fill: var(--status-ok);
 }
 
 .rux-status--caution {
-	fill: var(--status-caution);
+  fill: var(--status-caution);
 }
 
 .rux-status--error {
-	fill: var(--status-error);
+  fill: var(--status-error);
 }
 
 .rux-status--emergency {
-	fill: var(--status-emergency);
+  fill: var(--status-emergency);
 }
