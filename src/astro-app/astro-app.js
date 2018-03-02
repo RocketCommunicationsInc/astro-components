@@ -178,7 +178,8 @@ export class AstroApp extends PolymerElement {
 
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-buttons">
-        
+        <section>
+          <h1>Standard Buttons</h1>
 
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-clock">
