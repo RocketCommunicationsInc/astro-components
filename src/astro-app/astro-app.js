@@ -108,7 +108,14 @@ export class AstroApp extends PolymerElement {
     <rux-tab-panels>
       <rux-tab-panel aria-labeledby="tab-icons">
        
-        
+        <section>
+          <h1>Test Icon from Sketch Library</h1>
+          <ul class="icon-library">
+            <li><figure><rux-icon icon="test:mission"></rux-icon><figcaption>mission</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:mission"></rux-icon><figcaption>mission</figcaption></figure></li>
+          </ul>
+        </section>  
+
         <section>
           <h1>Default Icon Set</h1>
           <p>Standard Astro Icons that can be used across all types of Astro based applications.</p>

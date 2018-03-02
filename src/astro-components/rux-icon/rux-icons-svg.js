@@ -4,6 +4,15 @@ const $_documentContainer = document.createElement("div");
 $_documentContainer.setAttribute("style", "display: none;");
 
 $_documentContainer.innerHTML = `
+<rux-icon-library name="test" size="40">
+	<svg>
+		<defs>
+			<g id="mission">
+				<path d="M20 40C8.954 40 0 31.046 0 20S8.954 0 20 0s20 8.954 20 20-8.954 20-20 20zm0-3.158c9.302 0 16.842-7.54 16.842-16.842S29.302 3.158 20 3.158 3.158 10.698 3.158 20 10.698 36.842 20 36.842zm0-4.21c-6.976 0-12.632-5.656-12.632-12.632S13.024 7.368 20 7.368 32.632 13.024 32.632 20 26.976 32.632 20 32.632zm0-3.158a9.474 9.474 0 1 0 0-18.948 9.474 9.474 0 0 0 0 18.948zm0-4.21a5.263 5.263 0 1 1 0-10.527 5.263 5.263 0 0 1 0 10.526z" />
+			</g>
+		</defs>
+	</svg>
+</rux-icon-library>
 <rux-icon-library name="default" size="114">
 	<svg>
 		<defs>
