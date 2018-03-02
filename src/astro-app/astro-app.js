@@ -2,24 +2,46 @@ import {
   html,
   Element as PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
-import { RuxGlobalStatusBar } from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
-import { RuxSegmentedButton } from "../astro-components/rux-segmented-button/rux-segmented-button.js";
-import { RuxComponent } from "../astro-components/rux-component/rux-component.js";
-import { RuxProgress } from "../astro-components/rux-progress/rux-progress.js";
-import { RuxButton } from "../astro-components/rux-button/rux-button.js";
-import { RuxStatus } from "../astro-components/rux-status/rux-status.js";
-import { RuxIcon } from "../astro-components/rux-icon/rux-icon.js";
-import { RuxTabs } from "../astro-components/rux-tabs/rux-tabs.js";
-import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
-import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
-import { RuxDialog } from "../astro-components/rux-dialog/rux-dialog.js";
+import {
+  RuxGlobalStatusBar
+} from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
+import {
+  RuxSegmentedButton
+} from "../astro-components/rux-segmented-button/rux-segmented-button.js";
+import {
+  RuxComponent
+} from "../astro-components/rux-component/rux-component.js";
+import {
+  RuxProgress
+} from "../astro-components/rux-progress/rux-progress.js";
+import {
+  RuxButton
+} from "../astro-components/rux-button/rux-button.js";
+import {
+  RuxStatus
+} from "../astro-components/rux-status/rux-status.js";
+import {
+  RuxIcon
+} from "../astro-components/rux-icon/rux-icon.js";
+import {
+  RuxTabs
+} from "../astro-components/rux-tabs/rux-tabs.js";
+import {
+  RuxPopUpMenu
+} from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
+import {
+  RuxClock
+} from "../astro-components/rux-clock/rux-clock.js";
+import {
+  RuxDialog
+} from "../astro-components/rux-dialog/rux-dialog.js";
 /**
  * @polymer
  * @extends HTMLElement
  */
 export class AstroApp extends PolymerElement {
   static get template() {
-    return html`
+    return html `
 
     <style>
       :host {
@@ -55,6 +77,10 @@ export class AstroApp extends PolymerElement {
 
       .icon-library figcaption {
         margin-top: 0.5rem;
+      }
+
+      code {
+        font-family: monospace;
       }
 
 
@@ -118,17 +144,36 @@ export class AstroApp extends PolymerElement {
         </section>
 
         <section>
-          <h1>Default Icon Set</h1>
+          <h1>Advanced Status Icons</h1>
           <ul class="icon-library">
-            <li><figure><rux-icon icon="advanced-status:propulsion-power"></rux-icon><figcaption>propulsion-power</figcaption></figure></li>
-            <li><figure><rux-icon icon="advanced-status:netcom"></rux-icon><figcaption>netcom</figcaption></figure></li>
-            <li><figure><rux-icon icon="advanced-status:thermal"></rux-icon><figcaption>thermal</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:mission"></rux-icon><figcaption>mission</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:equipment"></rux-icon><figcaption>equipment</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:processor"></rux-icon><figcaption>processor</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:antenna-transmit"></rux-icon><figcaption>antenna-transmit</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:antenna-receive"></rux-icon><figcaption>antenna-receive</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:satellite"></rux-icon><figcaption>satellite</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:satellite-transmit"></rux-icon><figcaption>satellite-transmit</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status:satellite-receive"></rux-icon><figcaption>satellite-receive</figcaption></figure></li>
           </ul>
         </section>
 
         <section>
-          <h1>Default Icon Set</h1>
-          <p>Note: It is recommended you use <code><rux-status></rux-status></code> instead of the raw status symbol icons. <rux-status> provides additional functionality beyond simple graphic represenations</p>
+          <h1>EGS Advanced Status Icons</h1>
+          <ul class="icon-library">
+            <li><figure><rux-icon icon="advanced-status-egs:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status-egs:payload"></rux-icon><figcaption>payload</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status-egs:altitude"></rux-icon><figcaption>altitude</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status-egs:propulsion-power"></rux-icon><figcaption>propulsion-power</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status-egs:netcom"></rux-icon><figcaption>netcom</figcaption></figure></li>
+            <li><figure><rux-icon icon="advanced-status-egs:thermal"></rux-icon><figcaption>thermal</figcaption></figure></li>
+          </ul>
+          
+        </section>
+
+        <section>
+          <h1>Default Status Symbols</h1>
+          <p>Note: It is recommended you use <code>&lt;rux-status status="ok"&gt;&lt/rux-status&gt;</code> instead of the raw status symbol icons. <code>&lt;rux-status&gt;</code> provides additional functionality beyond simple graphic represenations</p>
           <ul class="icon-library">
             <li><figure><rux-icon icon="status:emergency"></rux-icon><figcaption>emergency</figcaption></figure></li>
             <li><figure><rux-icon icon="status:caution"></rux-icon><figcaption>caution</figcaption></figure></li>
@@ -301,8 +346,7 @@ export class AstroApp extends PolymerElement {
     super();
     this.name = "3.0 preview";
     this.timeSelector = {
-      buttons: [
-        {
+      buttons: [{
           label: "Hour"
         },
         {
