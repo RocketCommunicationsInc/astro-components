@@ -23,13 +23,15 @@
 
 .rux-advanced-status {
   position: relative;
-  z-index: 0;
+  display: none;
+  /* z-index: 0;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
 
-  overflow: hidden;
+  /* overflow: hidden; */
+  border: 2px solid green !important;
 }
 
 .rux-advanced-status__icon {
@@ -37,9 +39,9 @@
   display: flex;
   justify-content: center;
 
-  /* border: 1px solid red; */
-  /* Debug vertical 50% */
-  /* background-image: linear-gradient(
+  /* border: 1px solid red;
+
+  background-image: linear-gradient(
     to right,
     rgba(255, 0, 0, 0) 0,
     rgba(255, 0, 0, 0) 49%,
@@ -52,8 +54,7 @@
 
 .rux-advanced-status__status-icon {
   position: absolute;
-  margin-left: -0.5rem;
-  z-index: 1;
+  left: -40%;
 }
 
 .rux-advanced-status__label {

@@ -208,9 +208,20 @@ export class AstroApp extends PolymerElement {
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-status-indicator">
         <section>
+          <h1>Status Indicator</h1>
+          <p>Standard status indicator symbols.</p>
+          <ul class="icon-library">
+            <li><figure><rux-status status="off"></rux-status><figcaption>off</figcaption></figure></li>
+            <li><figure><rux-status status="standby"></rux-status><figcaption>standby</figcaption></figure></li>
+            <li><figure><rux-status status="ok"></rux-status><figcaption>ok</figcaption></figure></li>
+            <li><figure><rux-status status="error"></rux-status><figcaption>error</figcaption></figure></li>
+            <li><figure><rux-status status="caution"></rux-status><figcaption>caution</figcaption></figure></li>
+            <li><figure><rux-status status="emergency"></rux-status><figcaption>emergency</figcaption></figure></li>
+          </ul>
+        </section>
+        <section>
         <h1>Advanced Status Icons</h1>
-        <p>Advanced Status Icons for SATCOM based applications.</p>
-        <p>To use a defaul icon use the <code>advanced-status</code> namespace. E.g., <code>&lt;rux-icon icon="advanced-status:processor"&gt;&lt/rux-icon&gt;</code></p>
+        <p>Advanced Status Icons extend beyond simple status to provide additional information and interactivity.</p>
         <ul class="icon-library">
           <li>
             <figure>
@@ -381,18 +392,7 @@ export class AstroApp extends PolymerElement {
         </ul>
       </section>
 
-      <section>
-        <h1>Status Indicator</h1>
-        <p>Standard status indicator symbols.</p>
-        <ul class="icon-library">
-          <li><figure><rux-status status="off"></rux-status><figcaption>off</figcaption></figure></li>
-          <li><figure><rux-status status="standby"></rux-status><figcaption>standby</figcaption></figure></li>
-          <li><figure><rux-status status="ok"></rux-status><figcaption>ok</figcaption></figure></li>
-          <li><figure><rux-status status="error"></rux-status><figcaption>error</figcaption></figure></li>
-          <li><figure><rux-status status="caution"></rux-status><figcaption>caution</figcaption></figure></li>
-          <li><figure><rux-status status="emergency"></rux-status><figcaption>emergency</figcaption></figure></li>
-        </ul>
-      </section>
+      
 
 
       </rux-tab-panel>
