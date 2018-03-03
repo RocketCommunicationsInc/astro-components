@@ -159,7 +159,7 @@ export class RuxClock extends PolymerElement {
       _year = new Date(_now.getUTCFullYear(), 0, 0);
       _day = Math.floor((_now - _year) / this._oneDay);
     }
-    // May need to polyfill or find an alternate option for .padStart IE11 doesn’t support
+    // May need to polyfill or find an alternate option for .padStart IE11 doesnâ€™t support
     return _day.toString().padStart(3, "000");
   }
   _getUTCDateFrom(date) {

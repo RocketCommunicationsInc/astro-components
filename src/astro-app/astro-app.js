@@ -180,8 +180,10 @@ export class AstroApp extends PolymerElement {
       <rux-tab-panel aria-labeledby="tab-buttons">
         <section>
           <h1>Standard Buttons</h1>
-
+        </section>
       </rux-tab-panel>
+
+
       <rux-tab-panel aria-labeledby="tab-clock">
         <section>
           <h1>Clock</h1>
@@ -204,6 +206,21 @@ export class AstroApp extends PolymerElement {
             hide-timezone="true"></rux-clock>
         </section>
       </rux-tab-panel>
+
+
+      <rux-tab-panel aria-labeledby="tab-data-visualization">
+        <rux-spectrum-analyzer></rux-spectrum-analyzer>
+      </rux-tab-panel>
+      <rux-tab-panel aria-labeledby="tab-dialog">
+        <rux-dialog></rux-dialog>
+      </rux-tab-panel>
+      <rux-tab-panel aria-labeledby="tab-form">
+          <h2>Buttons</h2>
+          <h2>Checkbox</h2>
+          <h2>Input Fields</h2>
+          <h2>Radio Button</h2>
+      </rux-tab-panel>
+
       <rux-tab-panel aria-labeledby="tab-data-visualization">
         <rux-spectrum-analyzer></rux-spectrum-analyzer>
       </rux-tab-panel>
@@ -218,6 +235,8 @@ export class AstroApp extends PolymerElement {
       </rux-tab-panel>
      
       <rux-tab-panel aria-labeledby="tab-log">
+
+      
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-progress">
       </rux-tab-panel>
