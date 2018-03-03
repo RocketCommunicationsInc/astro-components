@@ -80,8 +80,8 @@ export class AstroApp extends PolymerElement {
         font-family: monospace;
         font-size: 1.1rem;
         padding: 0.2rem 0.5rem;
-        margin: 0 0.5rem;
-        background: rgba(0,0,0,0.3);
+        
+        background-color: rgba(50,159,255,0.5);
       }
 
 
@@ -185,26 +185,34 @@ export class AstroApp extends PolymerElement {
 
 
       <rux-tab-panel aria-labeledby="tab-clock">
-        <section>
-          <h1>Clock</h1>
-          <p>The default setting for <code>rux-clock</code> without any attributes is to present a 24-hour clock set to UTC time and the current day of the year.</p>
-          <rux-clock></rux-clock>
-        </section>
-        <section>
-          <h1>Clock with LOS/AOS Options</h1>
-          <p><code>rux-clock</code> can be customized to include an Acquisition of Signal (AOS) and Loss of Signal (LOS) via the <code>aos</code> and <code>los</code> attributes. Expectec values are a JavaScript Date Object. AOS/LOS will not display is the respective attribute is not present or if the value is not a date.</p>
-          <rux-clock
-            aos="00:10:11"
-            los="00:11:11"
-            hide-date="true"></rux-clock>
-        </section>
-        <section>
-          <h1>Clock with Hidden Timezone and Date</h1>
-          <p>Both the date and timezone fields can be hidden via the <code>hide-date</code> and <code>hide-timezone</code> attributes.</p>
-          <rux-clock
-            hide-date="true"
-            hide-timezone="true"></rux-clock>
-        </section>
+        
+      <section>
+      <h1>Clock</h1>
+      <p>The default setting for <code>rux-clock</code> without any attributes is to present a 24-hour clock set to UTC time and the current day of the year.</p>
+      <rux-clock></rux-clock>
+    </section>
+    <section>
+      <h1>Clock with LOS/AOS Options</h1>
+      <p><code>rux-clock</code> can be customized to include an Acquisition of Signal (AOS) and Loss of Signal (LOS) via the <code>aos</code> and <code>los</code> attributes. Expectec values are a JavaScript Date Object. AOS/LOS will not display is the respective attribute is not present or if the value is not a date.</p>
+      <rux-clock
+        aos=[[fakeAOS]]
+        los=[[fakeLOS]]></rux-clock>
+    </section>
+    <section>
+      <h1>Clock with Custom Time Zone</h1>
+      <p><code>rux-clock</code> can use custom timezones. Timezones must be formatted in "Country/City".</p>
+      <rux-clock
+        timezone="America/Los_Angeles"></rux-clock>
+    </section>
+    <section>
+      <h1>Clock with Hidden Timezone and Date</h1>
+      <p>Both the date and timezone fields can be hidden via the <code>hide-date</code> and <code>hide-timezone</code> attributes.</p>
+      <rux-clock
+        aos="bad data"
+        hide-date="true"
+        hide-timezone="true"></rux-clock>
+    </section>
+        
       </rux-tab-panel>
 
 
@@ -440,6 +448,9 @@ export class AstroApp extends PolymerElement {
   constructor() {
     super();
     this.name = "3.0 preview";
+
+    this.fakeAOS = Date.now() - 1000000;
+    this.fakeLOS = new Date();
     this.timeSelector = {
       buttons: [
         {
