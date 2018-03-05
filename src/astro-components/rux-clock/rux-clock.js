@@ -115,13 +115,10 @@ export class RuxClock extends PolymerElement {
   constructor() {
     super();
 
-    // set value of one day in ms
-    this._oneDay = 1000 * 60 * 60 * 24;
-    // this._date = new Date();
-    // if (this.timezone.toLowerCase() === "utc") {
-    //   this._date = this._getUTCDateFrom(this._date);
-    // }
+    // set value of one day in milliseconds
+    this._oneDay = 86400000;
   }
+
   connectedCallback() {
     super.connectedCallback();
 
@@ -133,10 +130,11 @@ export class RuxClock extends PolymerElement {
     // show time immediately instead of waiting for setInterval to call
     this._updateTime();
   }
+
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    _timee = null;
+    _timer = null;
   }
 
   /*
@@ -174,13 +172,14 @@ export class RuxClock extends PolymerElement {
 
   /*
   **
-  ** Calculat the number of days since January
+  ** Calculate the ordinal day of the year
   **
   */
   _getDayOfYear() {
     let _now = new Date();
     let _year = new Date(_now.getFullYear(), 0, 0);
 
+    // reframe _year and _now to UTC
     if (this.timezone.toLowerCase() === "utc") {
       _year = new Date(_now.getUTCFullYear(), 0, 0);
       _now = this._getUTCDateFrom(_now);
@@ -203,7 +202,6 @@ export class RuxClock extends PolymerElement {
     );
 
     // update the date
-    // Note: More efficient way to update?
     this._getDayOfYear();
   }
 }
