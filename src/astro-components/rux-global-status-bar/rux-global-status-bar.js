@@ -24,7 +24,7 @@ export class RuxGlobalStatusBar extends PolymerElement {
         </div>
 
         <!-- optional for tabbed based UIs //-->
-        <slot name="tabs"></slot>    
+        <slot></slot>
       </header>`;
   }
   constructor() {
