@@ -39,11 +39,11 @@ export class RuxStatus extends PolymerElement {
   }
 
   static get template() {
-    return html`
+    return html `
       <link rel="stylesheet" href="src/astro-components/rux-status/rux-status.css">
 
       <!-- Use Advanced Status Template is any property is set //-->
-      <div class="rux-advanced-status rux-status--[[status]]" title="[[notifications]] [[label]] [[sublabel]]" aria-labelledby="rux-advanced-status-aria-label" hidden=[[!advanced]]>
+      <div class$="rux-advanced-status rux-status--[[status]]" title="[[notifications]] [[label]] [[sublabel]]" aria-labelledby="rux-advanced-status-aria-label" hidden=[[!advanced]]>
         
         
         
