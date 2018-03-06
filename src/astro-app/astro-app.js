@@ -69,6 +69,22 @@ export class AstroApp extends PolymerElement {
         
       }
 
+      .button-library li {
+        border: 1px solid rgba(255,255,255,0.2);
+        
+        margin-top: -1px;
+        margin-left: -1px;
+      
+        text-align: center;
+        padding: 1em;
+        
+      }
+
+      .button-library figcaption {
+        margin-top: 0.5rem;
+      }
+
+
       
 
       .icon-library figcaption {
@@ -89,7 +105,7 @@ export class AstroApp extends PolymerElement {
     
     <rux-global-status-bar
       appname="RUX">
-      <rux-tabs slot="tabs">
+      <rux-tabs>
         <rux-tab id="tab-clock">Clock</rux-tab>
         <rux-tab id="tab-status-indicator">Status</rux-tab>
         <rux-tab id="tab-icons">Icons</rux-tab> 
@@ -180,7 +196,70 @@ export class AstroApp extends PolymerElement {
       <rux-tab-panel aria-labeledby="tab-buttons">
         <section>
           <h1>Standard Buttons</h1>
+          <ul class="button-library">
+            <li><figure><rux-button>Standard Button</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button default>Standard Button</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button disabled>Standard Button</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
         </section>
+
+        <section>
+          <h1>Large Buttons</h1>
+          <ul class="button-library">
+            <li><figure><rux-button type="large">Large Button</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button type="large" default>Large Button</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button type="large" disabled>Large Button</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section> 
+        
+        
+        <section>
+          <h1>Small Buttons</h1>
+          <ul class="button-library">
+            <li><figure><rux-button type="small">Small Btn</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button type="small" default>Small Btn</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button type="small" disabled>Small Btn</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section> 
+
+        <section>
+          <h1>Button with Icon</h1>
+          <ul class="button-library">
+            <li><figure><rux-button icon="default:caution">Icon Button</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button icon="default:caution" default>Icon Button</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button icon="default:caution" disabled>Icon Button</rux-button><figcaption>Disabled</figcaption></figure></li>
+            <li><figure><rux-button type="large" icon="default:caution">Large Icon Button</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section>
+        
+        
+        <section>
+          <h1>Icon Button</h1>
+          <ul class="button-library">
+            <li><figure><rux-button type="icon" icon="default:settings">Settings</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button type="icon" icon="default:settings" default>Settings</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button type="icon" icon="default:settings" disabled>Settings</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section>
+
+
+        <section>
+          <h1>Button as Icon (WIP)</h1>
+          <ul class="button-library">
+            <li><figure><rux-button icon="media-controls:play"></rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button icon="media-controls:play" default></rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button icon="media-controls:play" disabled></rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section>
+
+        <section>
+          <h1>Button Group (WIP)</h1>
+          <ul class="button-group">
+            <li><rux-button icon="media-controls:pause"></rux-button></li>
+            <li><rux-button icon="media-controls:play"></rux-button></li>
+          </ul>    
+        </section>
+
       </rux-tab-panel>
 
 

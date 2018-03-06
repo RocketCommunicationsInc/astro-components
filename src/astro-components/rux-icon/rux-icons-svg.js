@@ -4,6 +4,14 @@ const $_documentContainer = document.createElement("div");
 $_documentContainer.setAttribute("style", "display: none;");
 
 $_documentContainer.innerHTML = `
+<rux-icon-library name="media-controls" size="114">
+	<svg>
+		<defs>
+			<path id="play" d="M104.827 58.25l-85.96 58.141a1.54 1.54 0 0 1-2.404-1.276V-1.169a1.54 1.54 0 0 1 2.403-1.276l85.96 58.142a1.54 1.54 0 0 1 0 2.552z" fill="#FFF" fill-rule="evenodd"/>
+			<path id="pause" d="M17 0h30.571a1 1 0 0 1 1 1v112a1 1 0 0 1-1 1H17a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1zm48.857 0H96.43a1 1 0 0 1 1 1v112a1 1 0 0 1-1 1H65.857a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1z" fill="#FFF" fill-rule="evenodd"/>
+		</defs>
+	</svg>
+</rux>
 <rux-icon-library name="test" size="40">
 	<svg>
 		<defs>
