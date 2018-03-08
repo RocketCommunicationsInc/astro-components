@@ -1,13 +1,14 @@
 #Icons
-The RUX Icon component is … RUX Icon is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding. 
+The RUX Icon component is … RUX Icon is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
 RUX Icon is supplied as-is and …
 
 For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
 ##Guidelines
-* [Astro UXDS: Buttons](https://cms.astrouxds.com/library/icons)
-* [RUX Icon Demo](https://cms.astrouxds.com/library/icons)
+
+* [Astro UXDS: Buttons](https://www.astrouxds.com/library/icons)
+* [RUX Icon Demo](https://www.astrouxds.com/library/icons)
 
 ##Installation
 Install the Astro Component Library
@@ -15,8 +16,8 @@ Install the Astro Component Library
 Or Install just the icon
 `npm install --save @astro-components/rux-icon`
 ###Dependancies
-* [Polymer 3](https://www.polymer-project.com)
 
+* [Polymer 3](https://www.polymer-project.com)
 
 ##Usage
 ###Import the RUX Button
@@ -34,10 +35,9 @@ import { RuxIcon } from "@astro-components/rux-icon/rux-icon.js";
 ###Properties
 | Property | Type | Description |
 | -------- | ---- | ------------|
-| `icon` | `string` | Defines the icon to be used. RUX Icon uses the convention of `namespace:icon-name` to avoid potential namespace collision. RUX ships with the following icon sets: `default`,`advanced-status` and `status`. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines]((https://cms.astrouxds.com/library/buttons))
+| `icon` | `string` | Defines the icon to be used. RUX Icon uses the convention of `namespace:icon-name` to avoid potential namespace collision. RUX ships with the following icon sets: `default`,`advanced-status` and `status`. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](<(https://cms.astrouxds.com/library/buttons)>)
 | `color` | `string` | Changes the icon color. Accepted values can be entered as hex, rgba, hsl and HTML string. **Caution: the `status` icon set cannot and should not be overidden** |
-| `size` | `string` | Allows for large icon variants  |
-
+| `size` | `string` | Allows for large icon variants |
 
 ###Events
 RUX Icons do not support events. If you need an Icon button use the RUX Button Icon type
