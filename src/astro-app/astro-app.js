@@ -97,7 +97,7 @@ export class AstroApp extends PolymerElement {
         font-size: 1.1rem;
         padding: 0.2rem 0.5rem;
         
-        background-color: rgba(50,159,255,0.5);
+        background-color: rgba(50,159,255,0.25);
       }
 
 
@@ -128,8 +128,15 @@ export class AstroApp extends PolymerElement {
 
       <rux-tab-panel aria-labeledby="tab-segmented-button">
         <section>
-          <h1>Segmented Button</h1>
-          <rux-segmented-button></rux-segmented-button>
+          <h1>Segmented Button (WIP)</h1>
+          <code>&lt;rux-segmented-button&gt;</code> is highly stylized version of a radio button group offering a distinct user choice. Buttons are defined via a standard JavaScript Array of Objects. Each object must have a button label and supports additional key/value pairs.  e.g., <code>segmentedButtons = [{ "label" : "Hour" }, { "label" : "Day" }, { "label" : "Week" } }]</code> will produce the follwing segmented button</p>
+          <rux-segmented-button
+            data={{segmentOne}}></rux-segmented-button>
+          <div class="output">Output = [[segmentOne.selected.label]]</div>
+
+          <rux-segmented-button
+            data={{segmentTwo}}></rux-segmented-button>
+            <div class="output">Output = [[segmentTwo.selected.value.result]]</div>
         </section>
       </rux-tab-panel>
 
@@ -570,36 +577,32 @@ export class AstroApp extends PolymerElement {
 
     this.fakeAOS = Date.now() - 1000000;
     this.fakeLOS = new Date();
-    this.segmentOne = {
-      buttons: [
-        {
-          label: "Hour"
-        },
-        {
-          label: "Day"
-        },
-        {
-          label: "Week"
-        }
-      ]
-    };
+    this.segmentOne = [
+      {
+        label: "Hour"
+      },
+      {
+        label: "Day"
+      },
+      {
+        label: "Week"
+      }
+    ];
 
-    this.segmentTwo = {
-      buttons: [
-        {
-          label: "Good",
-          value: { result: "Can’t be fast." }
-        },
-        {
-          label: "Fast",
-          value: { result: "Can’t be good." }
-        },
-        {
-          label: "Cheap",
-          value: { result: "Can’t be fast." }
-        }
-      ]
-    };
+    this.segmentTwo = [
+      {
+        label: "Good",
+        value: { result: "Can’t be fast." }
+      },
+      {
+        label: "Fast",
+        value: { result: "Can’t be good." }
+      },
+      {
+        label: "Cheap",
+        value: { result: "Can’t be fast." }
+      }
+    ];
   }
   static get properties() {
     return {

@@ -15,10 +15,6 @@ export class RuxSegmentedButton extends PolymerElement {
       selected: {
         type: Object
       },
-      buttons: {
-        type: Object,
-        notify: true
-      },
       data: {
         type: Object,
         notify: true
@@ -31,7 +27,7 @@ export class RuxSegmentedButton extends PolymerElement {
       <link rel="stylesheet" href="src/astro-components/rux-segmented-button/rux-segmented-button.css">
 
       <ul class="rux-segmented-buttons">
-        <dom-repeat id="buttonSegments" items="{{data.buttons}}">
+        <dom-repeat id="buttonSegments" items="{{data}}">
           <template>
             <li class="rux-segmented-button">
               <input type="radio" name="rux-group" id="[[item.label]]" on-click="_selectSegment" />
@@ -41,13 +37,12 @@ export class RuxSegmentedButton extends PolymerElement {
         </dom-repeat>
       </ul>
 
-      <array-selector id="selector" items="{{data.buttons}}" selected="{{selected}}"></array-selector>
+      <array-selector id="selector" items="{{data}}" selected="{{selected}}"></array-selector>
       `;
   }
 
   constructor() {
     super();
-    console.log("segmented button");
   }
 
   connectedCallback() {
@@ -56,10 +51,6 @@ export class RuxSegmentedButton extends PolymerElement {
 
   disconnectedCallback() {
     super.disconnectedCallback();
-  }
-
-  ready() {
-    super.ready();
   }
 
   _selectSegment(e) {
