@@ -106,6 +106,8 @@ export class AstroApp extends PolymerElement {
     <rux-global-status-bar
       appname="RUX">
       <rux-tabs>
+        <rux-tab id="tab-progress">Progress</rux-tab>
+        <rux-tab id="tab-segmented-button">Progress</rux-tab>
         <rux-tab id="tab-clock">Clock</rux-tab>
         <rux-tab id="tab-status-indicator">Status</rux-tab>
         <rux-tab id="tab-icons">Icons</rux-tab> 
@@ -113,9 +115,7 @@ export class AstroApp extends PolymerElement {
         <rux-tab id="tab-data-visualization">Data</rux-tab>
         <rux-tab id="tab-dialog">Dialog</rux-tab>
         <rux-tab id="tab-form">Form</rux-tab>
-        <rux-tab id="tab-icon">Icon</rux-tab>
         <rux-tab id="tab-log">Log</rux-tab>
-        <rux-tab id="tab-progress">Progress</rux-tab>
         <rux-tab id="tab-text-formatting">Text</rux-tab>
         <rux-tab id="tab-timeline">Timeline</rux-tab>
       </rux-tabs>
@@ -325,8 +325,26 @@ export class AstroApp extends PolymerElement {
 
       
       </rux-tab-panel>
+
       <rux-tab-panel aria-labeledby="tab-progress">
+        <section>
+          <h1>Progress Indeterminate</h1>
+          <p>If no value paramater is passed (i.e., the current status of progress) it is assumed the progress of the event is indeterminate and the indeterminate spinning progress bar will be used. The default state of <code>&lt;rux-progress&gt;</code> is indeterminate.</p>
+          <rux-progress></rux-progress>
+        </section>
+        <section>
+          <h1>Progress</h1>
+          <p>To display a progress indicator with relative
+          <rux-progress
+            
+            value=50
+            step=1></rux-progress>
+        </section>
+       
+
       </rux-tab-panel>
+
+
       <rux-tab-panel aria-labeledby="tab-status-indicator">
         <section>
           <h1>Status Indicator</h1>
