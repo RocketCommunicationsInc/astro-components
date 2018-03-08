@@ -106,8 +106,8 @@ export class AstroApp extends PolymerElement {
     <rux-global-status-bar
       appname="RUX">
       <rux-tabs>
+        <rux-tab id="tab-segmented-button">Segmented Button</rux-tab>
         <rux-tab id="tab-progress">Progress</rux-tab>
-        <rux-tab id="tab-segmented-button">Progress</rux-tab>
         <rux-tab id="tab-clock">Clock</rux-tab>
         <rux-tab id="tab-status-indicator">Status</rux-tab>
         <rux-tab id="tab-icons">Icons</rux-tab> 
@@ -121,7 +121,18 @@ export class AstroApp extends PolymerElement {
       </rux-tabs>
     </rux-global-status-bar>
 
+
+
+
     <rux-tab-panels>
+
+      <rux-tab-panel aria-labeledby="tab-segmented-button">
+        <section>
+          <h1>Segmented Button</h1>
+          <rux-segmented-button></rux-segmented-button>
+        </section>
+      </rux-tab-panel>
+
       <rux-tab-panel aria-labeledby="tab-icons">
        
         <section>
@@ -559,7 +570,7 @@ export class AstroApp extends PolymerElement {
 
     this.fakeAOS = Date.now() - 1000000;
     this.fakeLOS = new Date();
-    this.timeSelector = {
+    this.segmentOne = {
       buttons: [
         {
           label: "Hour"
@@ -569,6 +580,23 @@ export class AstroApp extends PolymerElement {
         },
         {
           label: "Week"
+        }
+      ]
+    };
+
+    this.segmentTwo = {
+      buttons: [
+        {
+          label: "Good",
+          value: { result: "Can’t be fast." }
+        },
+        {
+          label: "Fast",
+          value: { result: "Can’t be good." }
+        },
+        {
+          label: "Cheap",
+          value: { result: "Can’t be fast." }
         }
       ]
     };
