@@ -328,17 +328,28 @@ export class AstroApp extends PolymerElement {
 
       <rux-tab-panel aria-labeledby="tab-progress">
         <section>
-          <h1>Progress Indeterminate</h1>
+          <h1>Indeterminate Progress</h1>
           <p>If no value paramater is passed (i.e., the current status of progress) it is assumed the progress of the event is indeterminate and the indeterminate spinning progress bar will be used. The default state of <code>&lt;rux-progress&gt;</code> is indeterminate.</p>
           <rux-progress></rux-progress>
         </section>
         <section>
-          <h1>Progress</h1>
-          <p>To display a progress indicator with relative
-          <rux-progress
-            
+          <h1>Determinate Progress</h1>
+          <p>To display a progress indicator with relative indication of progress add a <code>value</code> param; the value param accepts a valid Number and uses a default range of 0-100.</p>
+          <rux-progress value=50></rux-progress>
+        </section>
+        <section>
+          <h1>Determinate Progress with Label</h1>
+          <p>A numeric output can also be displayed to the right of the progress bar by passing in <code>label=true</code>.</p>
+          <rux-progress 
             value=50
-            step=1></rux-progress>
+            label=true></rux-progress>
+        </section>
+        <section>
+          <h1>Determinate Progress (Custom Max Range)</h1>
+          <p>Determinate Progress also accepts custom max value for progress values that don’t reflect percentages. The following sample shows a progress bar with a max value of 50,000 and a value of 13,500.</p>
+          <rux-progress
+            max=50000
+            value=13500></rux-progress>
         </section>
        
 
