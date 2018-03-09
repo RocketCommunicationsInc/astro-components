@@ -2,24 +2,49 @@ import {
   html,
   Element as PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
-import { RuxGlobalStatusBar } from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
-import { RuxSegmentedButton } from "../astro-components/rux-segmented-button/rux-segmented-button.js";
-import { RuxComponent } from "../astro-components/rux-component/rux-component.js";
-import { RuxProgress } from "../astro-components/rux-progress/rux-progress.js";
-import { RuxButton } from "../astro-components/rux-button/rux-button.js";
-import { RuxStatus } from "../astro-components/rux-status/rux-status.js";
-import { RuxIcon } from "../astro-components/rux-icon/rux-icon.js";
-import { RuxTabs } from "../astro-components/rux-tabs/rux-tabs.js";
-import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
-import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
-import { RuxDialog } from "../astro-components/rux-dialog/rux-dialog.js";
+import {
+  RuxGlobalStatusBar
+} from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
+import {
+  RuxSegmentedButton
+} from "../astro-components/rux-segmented-button/rux-segmented-button.js";
+import {
+  RuxComponent
+} from "../astro-components/rux-component/rux-component.js";
+import {
+  RuxProgress
+} from "../astro-components/rux-progress/rux-progress.js";
+import {
+  RuxButton
+} from "../astro-components/rux-button/rux-button.js";
+import {
+  RuxStatus
+} from "../astro-components/rux-status/rux-status.js";
+import {
+  RuxIcon
+} from "../astro-components/rux-icon/rux-icon.js";
+import {
+  RuxTabs
+} from "../astro-components/rux-tabs/rux-tabs.js";
+import {
+  RuxPopUpMenu
+} from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
+import {
+  RuxClock
+} from "../astro-components/rux-clock/rux-clock.js";
+import {
+  RuxDialog
+} from "../astro-components/rux-dialog/rux-dialog.js";
+import {
+  RuxSlider
+} from "../astro-components/rux-slider/rux-slider.js";
 /**
  * @polymer
  * @extends HTMLElement
  */
 export class AstroApp extends PolymerElement {
   static get template() {
-    return html`
+    return html `
 
     <style>
       :host {
@@ -101,17 +126,66 @@ export class AstroApp extends PolymerElement {
       }
 
 
+      .rux-slider-container {
+        max-width: 25rem;
+      }
+
+      .color-palette {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .color-palette li {
+        display: block;
+        height: 5rem;
+        width: 7rem;
+        
+      }
+
+      
+
+      .default-icon {
+        background-color: hsl(212.4, 72.4%, 58.8%);
+      }
+      .default-icon----4 {
+        background-color: hsl(212.4, 72.4%, 18.8%);
+      }
+      .default-icon----3 {
+        background-color: hsl(212.4, 72.4%, 28.8%);
+      }
+      .default-icon----2 {
+        background-color: hsl(212.4, 72.4%, 38.8%);
+      }
+      .default-icon----1 {
+        background-color: hsl(212.4, 72.4%, 48.8%);
+      }
+      .default-icon--1 {
+        background-color: hsl(212.4, 72.4%, 68.8%);
+      }
+      .default-icon--2 {
+        background-color: hsl(212.4, 72.4%, 78.8%);
+      }
+      .default-icon--3 {
+        background-color: hsl(212.4, 72.4%, 88.8%);
+      }
+      .default-icon--4 {
+        background-color: hsl(212.4, 72.4%, 98.8%);
+      }
+
+
     </style>
     
     <rux-global-status-bar
       appname="RUX">
       <rux-tabs>
-        <rux-tab id="tab-segmented-button">Segmented Button</rux-tab>
+        <rux-tab id="tab-colors">Colors</rux-tab>
+        <rux-tab id="tab-slider">Slider</rux-tab>
         <rux-tab id="tab-progress">Progress</rux-tab>
         <rux-tab id="tab-clock">Clock</rux-tab>
         <rux-tab id="tab-status-indicator">Status</rux-tab>
         <rux-tab id="tab-icons">Icons</rux-tab> 
         <rux-tab id="tab-buttons">Buttons</rux-tab>
+        <rux-tab id="tab-segmented-button">Segmented Button</rux-tab>
         <rux-tab id="tab-data-visualization">Data</rux-tab>
         <rux-tab id="tab-dialog">Dialog</rux-tab>
         <rux-tab id="tab-form">Form</rux-tab>
@@ -125,6 +199,59 @@ export class AstroApp extends PolymerElement {
 
 
     <rux-tab-panels>
+
+      <rux-tab-panel aria-labeledby="tab-colors">
+        <section>
+          <h1>Default Icon Color</h1>
+          <ul class="color-palette">
+            <li class="default-icon----4"></li>
+            <li class="default-icon----3"></li>
+            <li class="default-icon----2"></li>
+            <li class="default-icon----1"></li>
+            <li class="default-icon"></li>
+            <li class="default-icon--1"></li>
+            <li class="default-icon--2"></li>
+            <li class="default-icon--3"></li>
+            <li class="default-icon--4"></li>
+          </ul>
+        </section>
+      </rux-tab-panel>
+
+      <rux-tab-panel aria-labeledby="tab-slider">
+        <section>
+          <h1>Slider (WIP)</h1>
+          <code>&lt;rux-slider&gt;</code> </p>
+          <div class="rux-slider-container">
+          <rux-slider
+            label="Label"
+            val={{sliderObj.value}}></rux-slider>
+          </div>
+          <div class="output">Slider Value is = [[sliderObj.value]]</div>
+        </section>
+        <section>
+          <h1>Slider Custom Range and Step(WIP)</h1>
+          <code>&lt;rux-slider&gt;</code> </p>
+          <div class="rux-slider-container">
+          <rux-slider
+            min={{sliderObjTwo.min}}
+            max={{sliderObjTwo.max}}
+            step={{sliderObjTwo.step}}
+            axis-labels=[[sliderObjTwo.labels]]
+            val={{sliderObjTwo.value}}></rux-slider>
+          </div>
+          <div class="output">Slider Value is = [[sliderObjTwo.value]]</div>
+        </section>
+        <section>
+          <h1>Slider with Labels</h1>
+          <code>&lt;rux-slider&gt;</code> </p>
+          <div class="rux-slider-container">
+          <rux-slider
+            axis-labels=[[sliderObjThree.labels]]
+            val={{sliderObjThree.value}}></rux-slider>
+          </div>
+          <div class="output">Slider Value is = [[sliderObjThree.value]]</div>
+        </section>
+      </rux-tab-panel>
 
       <rux-tab-panel aria-labeledby="tab-segmented-button">
         <section>
@@ -575,10 +702,24 @@ export class AstroApp extends PolymerElement {
     super();
     this.name = "3.0 preview";
 
+    this.sliderObj = {
+      value: 10
+    };
+    this.sliderObjTwo = {
+      value: 0,
+      min: -10,
+      max: 10,
+      step: 0.1,
+      labels: "min,mid,max"
+    };
+    this.sliderObjThree = {
+      value: 10,
+      labels: "min,mid,max"
+    };
+
     this.fakeAOS = Date.now() - 1000000;
     this.fakeLOS = new Date();
-    this.segmentOne = [
-      {
+    this.segmentOne = [{
         label: "Hour"
       },
       {
@@ -589,18 +730,23 @@ export class AstroApp extends PolymerElement {
       }
     ];
 
-    this.segmentTwo = [
-      {
+    this.segmentTwo = [{
         label: "Good",
-        value: { result: "Can’t be fast." }
+        value: {
+          result: "Can’t be fast."
+        }
       },
       {
         label: "Fast",
-        value: { result: "Can’t be good." }
+        value: {
+          result: "Can’t be good."
+        }
       },
       {
         label: "Cheap",
-        value: { result: "Can’t be fast." }
+        value: {
+          result: "Can’t be fast."
+        }
       }
     ];
   }
