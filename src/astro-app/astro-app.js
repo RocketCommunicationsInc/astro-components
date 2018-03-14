@@ -2,49 +2,25 @@ import {
   html,
   Element as PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
-import {
-  RuxGlobalStatusBar
-} from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
-import {
-  RuxSegmentedButton
-} from "../astro-components/rux-segmented-button/rux-segmented-button.js";
-import {
-  RuxComponent
-} from "../astro-components/rux-component/rux-component.js";
-import {
-  RuxProgress
-} from "../astro-components/rux-progress/rux-progress.js";
-import {
-  RuxButton
-} from "../astro-components/rux-button/rux-button.js";
-import {
-  RuxStatus
-} from "../astro-components/rux-status/rux-status.js";
-import {
-  RuxIcon
-} from "../astro-components/rux-icon/rux-icon.js";
-import {
-  RuxTabs
-} from "../astro-components/rux-tabs/rux-tabs.js";
-import {
-  RuxPopUpMenu
-} from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
-import {
-  RuxClock
-} from "../astro-components/rux-clock/rux-clock.js";
-import {
-  RuxDialog
-} from "../astro-components/rux-dialog/rux-dialog.js";
-import {
-  RuxSlider
-} from "../astro-components/rux-slider/rux-slider.js";
+import { RuxGlobalStatusBar } from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
+import { RuxSegmentedButton } from "../astro-components/rux-segmented-button/rux-segmented-button.js";
+import { RuxComponent } from "../astro-components/rux-component/rux-component.js";
+import { RuxProgress } from "../astro-components/rux-progress/rux-progress.js";
+import { RuxButton } from "../astro-components/rux-button/rux-button.js";
+import { RuxStatus } from "../astro-components/rux-status/rux-status.js";
+import { RuxIcon } from "../astro-components/rux-icon/rux-icon.js";
+import { RuxTabs } from "../astro-components/rux-tabs/rux-tabs.js";
+import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
+import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
+import { RuxDialog } from "../astro-components/rux-dialog/rux-dialog.js";
+import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
 /**
  * @polymer
  * @extends HTMLElement
  */
 export class AstroApp extends PolymerElement {
   static get template() {
-    return html `
+    return html`
 
     <style>
       :host {
@@ -178,9 +154,9 @@ export class AstroApp extends PolymerElement {
     <rux-global-status-bar
       appname="RUX">
       <rux-tabs>
+      <rux-tab id="tab-progress">Progress</rux-tab>
         <rux-tab id="tab-colors">Colors</rux-tab>
         <rux-tab id="tab-slider">Slider</rux-tab>
-        <rux-tab id="tab-progress">Progress</rux-tab>
         <rux-tab id="tab-clock">Clock</rux-tab>
         <rux-tab id="tab-status-indicator">Status</rux-tab>
         <rux-tab id="tab-icons">Icons</rux-tab> 
@@ -719,7 +695,8 @@ export class AstroApp extends PolymerElement {
 
     this.fakeAOS = Date.now() - 1000000;
     this.fakeLOS = new Date();
-    this.segmentOne = [{
+    this.segmentOne = [
+      {
         label: "Hour"
       },
       {
@@ -730,7 +707,8 @@ export class AstroApp extends PolymerElement {
       }
     ];
 
-    this.segmentTwo = [{
+    this.segmentTwo = [
+      {
         label: "Good",
         value: {
           result: "Can’t be fast."
