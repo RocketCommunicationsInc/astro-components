@@ -12,7 +12,7 @@ import { RuxIcon } from "../astro-components/rux-icon/rux-icon.js";
 import { RuxTabs } from "../astro-components/rux-tabs/rux-tabs.js";
 import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
 import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
-import { RuxDialog } from "../astro-components/rux-dialog/rux-dialog.js";
+import { RuxModal } from "../astro-components/rux-modal/rux-modal.js";
 import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
 /**
  * @polymer
@@ -647,7 +647,7 @@ export class AstroApp extends PolymerElement {
           confirm-text="Ok"
           deny-text="Cancel"></rux-dialog>
         <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
-        <div>I’m just sitting here listening for a modal window event: [[modalEventOutcome]]
+        <div>I’m just sitting here listening for a modal window event: [[modalMessage.message]]
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-form">
           <h2>Buttons</h2>
@@ -687,10 +687,14 @@ export class AstroApp extends PolymerElement {
     this.name = "3.0 preview";
 
     // this.modalWindowEvent = "nonthing";
-    this.modalEventOutcome = "None yet";
+    // this.modalMessage = { message: "None yet" };
+    console.log("this", this);
 
     window.addEventListener("modal-event", this._modalEventAction);
 
+    this.modalMessage = {
+      message: "test"
+    };
     this.sliderObj = {
       value: 10
     };
@@ -746,6 +750,10 @@ export class AstroApp extends PolymerElement {
       prop1: {
         type: String,
         value: "astro-app"
+      },
+      modalMessage: {
+        type: String,
+        value: "nothing"
       }
     };
   }
@@ -753,12 +761,12 @@ export class AstroApp extends PolymerElement {
   _modalEventAction(e) {
     console.log("modal evvent", e);
     console.log("confirm", e.detail.confirm);
-    console.log("message", this.modalEventOutcome);
+    console.log("message", this.modalMessage);
     console.log(this);
     if (e.detail.confirm) {
-      this.modalEventOutcome = "You agreed!";
+      this.modalMessage = "You agreed!";
     } else {
-      this.modalEventOutcome = "You didn’t agree";
+      this.modalMessage = "You didn’t agree";
     }
   }
   _launchModal() {

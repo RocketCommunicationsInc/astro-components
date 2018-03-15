@@ -6,7 +6,7 @@ import { RuxButton } from "../rux-button/rux-button.js";
  * @polymer
  * @extends HTMLElement
  */
-export class RuxDialog extends PolymerElement {
+export class RuxModal extends PolymerElement {
   static get properties() {
     return {
       open: {
@@ -175,4 +175,4 @@ export class RuxDialog extends PolymerElement {
     this.open = false;
   }
 }
-customElements.define("rux-dialog", RuxDialog);
+customElements.define("rux-modal", RuxModal);
