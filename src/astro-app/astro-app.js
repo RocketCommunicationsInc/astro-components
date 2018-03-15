@@ -154,7 +154,8 @@ export class AstroApp extends PolymerElement {
     <rux-global-status-bar
       appname="RUX">
       <rux-tabs>
-      <rux-tab id="tab-progress">Progress</rux-tab>
+        <rux-tab id="tab-dialog">Dialog</rux-tab>
+        <rux-tab id="tab-progress">Progress</rux-tab>
         <rux-tab id="tab-colors">Colors</rux-tab>
         <rux-tab id="tab-slider">Slider</rux-tab>
         <rux-tab id="tab-clock">Clock</rux-tab>
@@ -163,7 +164,6 @@ export class AstroApp extends PolymerElement {
         <rux-tab id="tab-buttons">Buttons</rux-tab>
         <rux-tab id="tab-segmented-button">Segmented Button</rux-tab>
         <rux-tab id="tab-data-visualization">Data</rux-tab>
-        <rux-tab id="tab-dialog">Dialog</rux-tab>
         <rux-tab id="tab-form">Form</rux-tab>
         <rux-tab id="tab-log">Log</rux-tab>
         <rux-tab id="tab-text-formatting">Text</rux-tab>
@@ -420,7 +420,11 @@ export class AstroApp extends PolymerElement {
         <rux-spectrum-analyzer></rux-spectrum-analyzer>
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-dialog">
-        <rux-dialog></rux-dialog>
+        <rux-dialog
+          message="This is a dialog box with a very long message to see what happens when it wraps to a second line."
+          confirm-text="Punch It"
+          cancel-text="Never Tell Me the Odds"></rux-dialog>
+        <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-form">
           <h2>Buttons</h2>
