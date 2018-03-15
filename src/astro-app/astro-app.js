@@ -118,6 +118,33 @@ export class AstroApp extends PolymerElement {
         
       }
 
+      .modal {
+
+      }
+      .modal ol {
+        list-style: none;
+        padding: 1em;
+        margin; 0;
+        width: 25%;
+        outline: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .modal li {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+      }
+
+      .modal li label {
+        
+        margin: 0 0 0.5rem 0;
+      }
+
+      .modal input {
+        padding: 0.25rem;
+        
+      }
+
       
 
       .default-icon {
@@ -148,6 +175,11 @@ export class AstroApp extends PolymerElement {
         background-color: hsl(212.4, 72.4%, 98.8%);
       }
 
+
+      /* .look {
+        background: #6CE800;
+        padding: 0.25rem;
+      } */
 
     </style>
     
@@ -862,26 +894,27 @@ export class AstroApp extends PolymerElement {
     <section>
       <h1>Modal Dialog</h1>
       <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
-      <div>I’m just sitting here listening for a modal window event: [[modalMessage]]
+      <p>I’m just sitting here listening for a modal window event: <span class="look">[[modalMessage]]</span></p>
     </section>
 
     <section>
-      <h1>Modal Dialog</h1>
-      <rux-button class="rux-launch-button" on-click="_launchDynamicModal">Launch Modal</rux-button>
-      <form>
+      <h1>Modal Dialog (Customized via Object)</h1>
+      <p>For more complicated notifications systems consider using a object to define the modal dialog box. This allows you to have a single modal dialog that can have its message, button text labels and listening event updated dynamically.</p>
+      <rux-button class="rux-launch-button" on-click="_launchDynamicModal">Launch Custom Modal</rux-button>
+      <form class='modal'>
         <ol>
           <li>
-            <label>Message:<input type="text" value="{{dynamicModal.message::input}}" /></label>
+            <label>Message:</label><input type="text" value="{{dynamicModal.message::input}}" />
           </li>
           <li>
-            <label>Confirm Button Text:<input type="text" value="{{dynamicModal.confirmText::change}}" /></label>
+            <label>Confirm Button Text:</label><input type="text" value="{{dynamicModal.confirmText::change}}" />
           </li>
           <li>
-            <label>Deny Button Text:<input type="text" value="{{dynamicModal.denyText::change}}" /></label>
+            <label>Deny Button Text:</label><input type="text" value="{{dynamicModal.denyText::change}}" />
           </li>
         </ol>
       </form>
-      <p>Message: {{dynamicModal.message}}</p>
+      <p>I’m just sitting here listening for a modal window event: <span class="look">{{customModalMessage}}</span></p>
     </section>
 
     <rux-modal message="This is a dialog box with a very long message to see what happens when it wraps to a second line." 
@@ -890,9 +923,11 @@ export class AstroApp extends PolymerElement {
 
     <rux-modal
       id="dynamic-modal"
-      message$="{{dynamicModal.message}}"
-      confirm-text$="{{dynamicModal.confirmText}}"
-      deny-text$="{{dynamicModal.denyText}}"
+      message=[[dynamicModal.message]]
+      confirm-text=[[dynamicModal.confirmText]]
+      deny-text=[[dynamicModal.denyText]]
+      icon=[[dynamicModal.icon]]
+      custom-event=[[dynamicModal.customEvent]]
     </rux-modal>
       
     
@@ -958,6 +993,15 @@ export class AstroApp extends PolymerElement {
       }
     });
 
+    window.addEventListener("custom-modal-event", e => {
+      if (e.detail.confirm) {
+        this.customModalMessage = "You’re damn right";
+      } else {
+        this.customModalMessage =
+          "I pity the fool who doesn’t think components are cool";
+      }
+    });
+
     // this.modalMessage = "test";
     this.sliderObj = {
       value: 10
@@ -989,9 +1033,12 @@ export class AstroApp extends PolymerElement {
     ];
 
     this.dynamicModal = {
-      message: "This message can be set dynamically",
-      confirmText: "Yo",
-      denyText: "Nah"
+      message:
+        "Oh what? Custom icons in the modal window? Yeah, because components are dope.",
+      confirmText: "Yup",
+      icon: "default:settings",
+      denyText: "Nah",
+      customEvent: "custom-modal-event"
     };
 
     this.segmentTwo = [
@@ -1016,18 +1063,11 @@ export class AstroApp extends PolymerElement {
     ];
   }
 
-  _updateModel(e) {
-    console.log(this.dynamicModalMessage);
-  }
-
   _launchDynamicModal() {
     const _modal = this.shadowRoot.getElementById("dynamic-modal");
-    console.log("dm", this.dynamicModal);
     _modal.setAttribute("open", "");
   }
   _launchModal() {
-    console.log("launch modal");
-
     const _modal = this.shadowRoot.querySelectorAll("rux-modal")[0];
     _modal.setAttribute("open", "");
   }
@@ -1035,7 +1075,6 @@ export class AstroApp extends PolymerElement {
     return JSON.stringify(obj);
   }
   _showStatus(e) {
-    console.log("showing status", e.target.getAttribute("id"));
     // this.root.getElementById('pop-menu').attribute('target',e.target)
     // console.log('pop-up-menu', this.root.getElementById('pop-menu'));
     this.root

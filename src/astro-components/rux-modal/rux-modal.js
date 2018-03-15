@@ -26,9 +26,16 @@ export class RuxModal extends PolymerElement {
         type: String,
         value: false
       },
+      customEvent: {
+        type: String
+      },
       icon: {
         type: String,
         value: "default:caution"
+      },
+      _choice: {
+        type: Boolean,
+        observer: "_handleModalChoice"
       }
     };
   }
@@ -130,8 +137,8 @@ export class RuxModal extends PolymerElement {
         <dialog class="rux-modal" {{open}}>
           <div class="rux-modal__message"><rux-icon icon=[[icon]] size="22" color="#fff"></rux-icon>[[message]]</div>
           <div class="rux-button-group">
-            <span hidden="[[!denyText]]"><rux-button on-click="_handleModalDeny" default>[[denyText]]</rux-button></span>
-            <span hidden="[[!confirmText]]"><rux-button on-click="_handleModalConfirm">[[confirmText]]</rux-button></span>
+            <span hidden="[[!denyText]]"><rux-button on-click="_handleModalChoice" data-value="false">[[denyText]]</rux-button></span>
+            <span hidden="[[!confirmText]]"><rux-button on-click="_handleModalChoice" data-value="true">[[confirmText]]</rux-button></span>
           </div>
         </dialog>
       </div>
@@ -143,6 +150,10 @@ export class RuxModal extends PolymerElement {
   connectedCallback() {
     super.connectedCallback();
 
+    // if no custom listener event is passed in then emit a standard
+    // modal-event event
+    this._event = !this.customEvent ? "modal-event" : this.customEvent;
+
     // in the event neither Confirm/Deny text is supplied provide
     // a default cancel button to get out of the
     if (!this.denyText && !this.confirmText) {
@@ -152,30 +163,30 @@ export class RuxModal extends PolymerElement {
       );
     }
 
-    // get the total button set
+    // get the total button set and set the last button as default
+    // and add focus … but it doesn’t work (no focus on Web Components?)
     const buttonSet = this.shadowRoot.querySelectorAll("rux-button");
     const defaultButton = buttonSet[buttonSet.length - 1];
     defaultButton.setAttribute("default", "");
     defaultButton.focus();
   }
+
   disconnectedCallback() {
     super.disconnectedCallback();
   }
 
-  _handleModalConfirm() {
+  _handleModalChoice(e) {
+    // convert string value to boolean
+    const choice = e.currentTarget.dataset.value === "true";
+
+    // dispatch event
     window.dispatchEvent(
-      new CustomEvent("modal-event", {
-        detail: { confirm: true, target: this }
+      new CustomEvent(this._event, {
+        detail: { confirm: choice }
       })
     );
-    this.open = false;
-  }
-  _handleModalDeny() {
-    window.dispatchEvent(
-      new CustomEvent("modal-event", {
-        detail: { confirm: false, target: this }
-      })
-    );
+
+    // close dialog
     this.open = false;
   }
 }
