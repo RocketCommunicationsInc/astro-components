@@ -4,6 +4,10 @@
   /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
 }
 
+*[hidden] {
+  display: none !important;
+}
+
 .rux-button {
   display: inline-block;
   position: relative;

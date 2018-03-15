@@ -314,169 +314,6 @@ export class AstroApp extends PolymerElement {
       
 
       </rux-tab-panel>
-      <rux-tab-panel aria-labeledby="tab-buttons">
-        <section>
-          <h1>Standard Buttons</h1>
-          <ul class="button-library">
-            <li><figure><rux-button>Standard Button</rux-button><figcaption>Button</figcaption></figure></li>
-            <li><figure><rux-button default>Standard Button</rux-button><figcaption>Default</figcaption></figure></li>
-            <li><figure><rux-button disabled>Standard Button</rux-button><figcaption>Disabled</figcaption></figure></li>
-          </ul>    
-        </section>
-
-        <section>
-          <h1>Large Buttons</h1>
-          <ul class="button-library">
-            <li><figure><rux-button type="large">Large Button</rux-button><figcaption>Button</figcaption></figure></li>
-            <li><figure><rux-button type="large" default>Large Button</rux-button><figcaption>Default</figcaption></figure></li>
-            <li><figure><rux-button type="large" disabled>Large Button</rux-button><figcaption>Disabled</figcaption></figure></li>
-          </ul>    
-        </section> 
-        
-        
-        <section>
-          <h1>Small Buttons</h1>
-          <ul class="button-library">
-            <li><figure><rux-button type="small">Small Btn</rux-button><figcaption>Button</figcaption></figure></li>
-            <li><figure><rux-button type="small" default>Small Btn</rux-button><figcaption>Default</figcaption></figure></li>
-            <li><figure><rux-button type="small" disabled>Small Btn</rux-button><figcaption>Disabled</figcaption></figure></li>
-          </ul>    
-        </section> 
-
-        <section>
-          <h1>Button with Icon</h1>
-          <ul class="button-library">
-            <li><figure><rux-button icon="default:caution">Icon Button</rux-button><figcaption>Button</figcaption></figure></li>
-            <li><figure><rux-button icon="default:caution" default>Icon Button</rux-button><figcaption>Default</figcaption></figure></li>
-            <li><figure><rux-button icon="default:caution" disabled>Icon Button</rux-button><figcaption>Disabled</figcaption></figure></li>
-            <li><figure><rux-button type="large" icon="default:caution">Large Icon Button</rux-button><figcaption>Disabled</figcaption></figure></li>
-          </ul>    
-        </section>
-        
-        
-        <section>
-          <h1>Icon Button</h1>
-          <ul class="button-library">
-            <li><figure><rux-button type="icon" icon="default:settings">Settings</rux-button><figcaption>Button</figcaption></figure></li>
-            <li><figure><rux-button type="icon" icon="default:settings" default>Settings</rux-button><figcaption>Default</figcaption></figure></li>
-            <li><figure><rux-button type="icon" icon="default:settings" disabled>Settings</rux-button><figcaption>Disabled</figcaption></figure></li>
-          </ul>    
-        </section>
-
-
-        <section>
-          <h1>Button as Icon (WIP)</h1>
-          <ul class="button-library">
-            <li><figure><rux-button icon="media-controls:play"></rux-button><figcaption>Button</figcaption></figure></li>
-            <li><figure><rux-button icon="media-controls:play" default></rux-button><figcaption>Default</figcaption></figure></li>
-            <li><figure><rux-button icon="media-controls:play" disabled></rux-button><figcaption>Disabled</figcaption></figure></li>
-          </ul>    
-        </section>
-
-        <section>
-          <h1>Button Group (WIP)</h1>
-          <ul class="button-group">
-            <li><rux-button icon="media-controls:pause"></rux-button></li>
-            <li><rux-button icon="media-controls:play"></rux-button></li>
-          </ul>    
-        </section>
-
-      </rux-tab-panel>
-
-
-      <rux-tab-panel aria-labeledby="tab-clock">
-        
-      <section>
-      <h1>Clock</h1>
-      <p>The default setting for <code>rux-clock</code> without any attributes is to present a 24-hour clock set to UTC time and the current day of the year.</p>
-      <rux-clock></rux-clock>
-    </section>
-    <section>
-      <h1>Clock with LOS/AOS Options</h1>
-      <p><code>rux-clock</code> can be customized to include an Acquisition of Signal (AOS) and Loss of Signal (LOS) via the <code>aos</code> and <code>los</code> attributes. Expectec values are a JavaScript Date Object. AOS/LOS will not display is the respective attribute is not present or if the value is not a date.</p>
-      <rux-clock
-        aos=[[fakeAOS]]
-        los=[[fakeLOS]]></rux-clock>
-    </section>
-    <section>
-      <h1>Clock with Custom Time Zone</h1>
-      <p><code>rux-clock</code> can use custom timezones. Timezones must be formatted in "Country/City".</p>
-      <rux-clock
-        timezone="America/Los_Angeles"></rux-clock>
-    </section>
-    <section>
-      <h1>Clock with Hidden Timezone and Date</h1>
-      <p>Both the date and timezone fields can be hidden via the <code>hide-date</code> and <code>hide-timezone</code> attributes.</p>
-      <rux-clock
-        aos="bad data"
-        hide-date="true"
-        hide-timezone="true"></rux-clock>
-    </section>
-        
-      </rux-tab-panel>
-
-
-      <rux-tab-panel aria-labeledby="tab-data-visualization">
-        <rux-spectrum-analyzer></rux-spectrum-analyzer>
-      </rux-tab-panel>
-      <rux-tab-panel aria-labeledby="tab-dialog">
-        <rux-dialog
-          message="This is a dialog box with a very long message to see what happens when it wraps to a second line."
-          confirm-text="Punch It"
-          deny-text="Never Tell Me the Odds"></rux-dialog>
-        <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
-      </rux-tab-panel>
-      <rux-tab-panel aria-labeledby="tab-form">
-          <h2>Buttons</h2>
-          <h2>Checkbox</h2>
-          <h2>Input Fields</h2>
-          <h2>Radio Button</h2>
-      </rux-tab-panel>
-
-      <rux-tab-panel aria-labeledby="tab-data-visualization">
-        <rux-spectrum-analyzer></rux-spectrum-analyzer>
-      </rux-tab-panel>
-      <rux-tab-panel aria-labeledby="tab-form">
-          <h2>Buttons</h2>
-          <h2>Checkbox</h2>
-          <h2>Input Fields</h2>
-          <h2>Radio Button</h2>
-      </rux-tab-panel>
-     
-      <rux-tab-panel aria-labeledby="tab-log">
-
-      
-      </rux-tab-panel>
-
-      <rux-tab-panel aria-labeledby="tab-progress">
-        <section>
-          <h1>Indeterminate Progress</h1>
-          <p>If no value paramater is passed (i.e., the current status of progress) it is assumed the progress of the event is indeterminate and the indeterminate spinning progress bar will be used. The default state of <code>&lt;rux-progress&gt;</code> is indeterminate.</p>
-          <rux-progress></rux-progress>
-        </section>
-        <section>
-          <h1>Determinate Progress</h1>
-          <p>To display a progress indicator with relative indication of progress add a <code>value</code> param; the value param accepts a valid Number and uses a default range of 0-100.</p>
-          <rux-progress value=50></rux-progress>
-        </section>
-        <section>
-          <h1>Determinate Progress with Label</h1>
-          <p>A numeric output can also be displayed to the right of the progress bar by passing in <code>label=true</code>.</p>
-          <rux-progress 
-            value=50
-            label=true></rux-progress>
-        </section>
-        <section>
-          <h1>Determinate Progress (Custom Max Range)</h1>
-          <p>Determinate Progress also accepts custom max value for progress values that don’t reflect percentages. The following sample shows a progress bar with a max value of 50,000 and a value of 13,500.</p>
-          <rux-progress
-            max=50000
-            value=13500></rux-progress>
-        </section>
-       
-
-      </rux-tab-panel>
-
 
       <rux-tab-panel aria-labeledby="tab-status-indicator">
         <section>
@@ -668,6 +505,176 @@ export class AstroApp extends PolymerElement {
 
 
       </rux-tab-panel>
+
+      <rux-tab-panel aria-labeledby="tab-progress">
+      <section>
+        <h1>Indeterminate Progress</h1>
+        <p>If no value paramater is passed (i.e., the current status of progress) it is assumed the progress of the event is indeterminate and the indeterminate spinning progress bar will be used. The default state of <code>&lt;rux-progress&gt;</code> is indeterminate.</p>
+        <rux-progress></rux-progress>
+      </section>
+      <section>
+        <h1>Determinate Progress</h1>
+        <p>To display a progress indicator with relative indication of progress add a <code>value</code> param; the value param accepts a valid Number and uses a default range of 0-100.</p>
+        <rux-progress value=50></rux-progress>
+      </section>
+      <section>
+        <h1>Determinate Progress with Label</h1>
+        <p>A numeric output can also be displayed to the right of the progress bar by passing in <code>label=true</code>.</p>
+        <rux-progress 
+          value=50
+          label=true></rux-progress>
+      </section>
+      <section>
+        <h1>Determinate Progress (Custom Max Range)</h1>
+        <p>Determinate Progress also accepts custom max value for progress values that don’t reflect percentages. The following sample shows a progress bar with a max value of 50,000 and a value of 13,500.</p>
+        <rux-progress
+          max=50000
+          value=13500></rux-progress>
+      </section>
+     
+
+    </rux-tab-panel>
+
+
+      <rux-tab-panel aria-labeledby="tab-buttons">
+        <section>
+          <h1>Standard Buttons</h1>
+          <ul class="button-library">
+            <li><figure><rux-button>Standard Button</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button default>Standard Button</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button disabled>Standard Button</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section>
+
+        <section>
+          <h1>Large Buttons</h1>
+          <ul class="button-library">
+            <li><figure><rux-button type="large">Large Button</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button type="large" default>Large Button</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button type="large" disabled>Large Button</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section> 
+        
+        
+        <section>
+          <h1>Small Buttons</h1>
+          <ul class="button-library">
+            <li><figure><rux-button type="small">Small Btn</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button type="small" default>Small Btn</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button type="small" disabled>Small Btn</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section> 
+
+        <section>
+          <h1>Button with Icon</h1>
+          <ul class="button-library">
+            <li><figure><rux-button icon="default:caution">Icon Button</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button icon="default:caution" default>Icon Button</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button icon="default:caution" disabled>Icon Button</rux-button><figcaption>Disabled</figcaption></figure></li>
+            <li><figure><rux-button type="large" icon="default:caution">Large Icon Button</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section>
+        
+        
+        <section>
+          <h1>Icon Button</h1>
+          <ul class="button-library">
+            <li><figure><rux-button type="icon" icon="default:settings">Settings</rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button type="icon" icon="default:settings" default>Settings</rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button type="icon" icon="default:settings" disabled>Settings</rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section>
+
+
+        <section>
+          <h1>Button as Icon (WIP)</h1>
+          <ul class="button-library">
+            <li><figure><rux-button icon="media-controls:play"></rux-button><figcaption>Button</figcaption></figure></li>
+            <li><figure><rux-button icon="media-controls:play" default></rux-button><figcaption>Default</figcaption></figure></li>
+            <li><figure><rux-button icon="media-controls:play" disabled></rux-button><figcaption>Disabled</figcaption></figure></li>
+          </ul>    
+        </section>
+
+        <section>
+          <h1>Button Group (WIP)</h1>
+          <ul class="button-group">
+            <li><rux-button icon="media-controls:pause"></rux-button></li>
+            <li><rux-button icon="media-controls:play"></rux-button></li>
+          </ul>    
+        </section>
+
+      </rux-tab-panel>
+
+
+      <rux-tab-panel aria-labeledby="tab-clock">
+        
+      <section>
+      <h1>Clock</h1>
+      <p>The default setting for <code>rux-clock</code> without any attributes is to present a 24-hour clock set to UTC time and the current day of the year.</p>
+      <rux-clock></rux-clock>
+    </section>
+    <section>
+      <h1>Clock with LOS/AOS Options</h1>
+      <p><code>rux-clock</code> can be customized to include an Acquisition of Signal (AOS) and Loss of Signal (LOS) via the <code>aos</code> and <code>los</code> attributes. Expectec values are a JavaScript Date Object. AOS/LOS will not display is the respective attribute is not present or if the value is not a date.</p>
+      <rux-clock
+        aos=[[fakeAOS]]
+        los=[[fakeLOS]]></rux-clock>
+    </section>
+    <section>
+      <h1>Clock with Custom Time Zone</h1>
+      <p><code>rux-clock</code> can use custom timezones. Timezones must be formatted in "Country/City".</p>
+      <rux-clock
+        timezone="America/Los_Angeles"></rux-clock>
+    </section>
+    <section>
+      <h1>Clock with Hidden Timezone and Date</h1>
+      <p>Both the date and timezone fields can be hidden via the <code>hide-date</code> and <code>hide-timezone</code> attributes.</p>
+      <rux-clock
+        aos="bad data"
+        hide-date="true"
+        hide-timezone="true"></rux-clock>
+    </section>
+        
+      </rux-tab-panel>
+
+
+      <rux-tab-panel aria-labeledby="tab-data-visualization">
+        <rux-spectrum-analyzer></rux-spectrum-analyzer>
+      </rux-tab-panel>
+      <rux-tab-panel aria-labeledby="tab-dialog">
+        <rux-dialog
+          message="This is a dialog box with a very long message to see what happens when it wraps to a second line."
+          confirm-text="Ok"
+          deny-text="Cancel"></rux-dialog>
+        <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
+        <div>I’m just sitting here listening for a modal window event: [[modalEventOutcome]]
+      </rux-tab-panel>
+      <rux-tab-panel aria-labeledby="tab-form">
+          <h2>Buttons</h2>
+          <h2>Checkbox</h2>
+          <h2>Input Fields</h2>
+          <h2>Radio Button</h2>
+      </rux-tab-panel>
+
+      <rux-tab-panel aria-labeledby="tab-data-visualization">
+        <rux-spectrum-analyzer></rux-spectrum-analyzer>
+      </rux-tab-panel>
+      <rux-tab-panel aria-labeledby="tab-form">
+          <h2>Buttons</h2>
+          <h2>Checkbox</h2>
+          <h2>Input Fields</h2>
+          <h2>Radio Button</h2>
+      </rux-tab-panel>
+     
+      <rux-tab-panel aria-labeledby="tab-log">
+
+      
+      </rux-tab-panel>
+
+     
+
+
+      
       <rux-tab-panel aria-labeledby="tab-text-formatting">
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-timeline">
@@ -678,6 +685,11 @@ export class AstroApp extends PolymerElement {
   constructor() {
     super();
     this.name = "3.0 preview";
+
+    // this.modalWindowEvent = "nonthing";
+    this.modalEventOutcome = "None yet";
+
+    window.addEventListener("modal-event", this._modalEventAction);
 
     this.sliderObj = {
       value: 10
@@ -736,6 +748,18 @@ export class AstroApp extends PolymerElement {
         value: "astro-app"
       }
     };
+  }
+
+  _modalEventAction(e) {
+    console.log("modal evvent", e);
+    console.log("confirm", e.detail.confirm);
+    console.log("message", this.modalEventOutcome);
+    console.log(this);
+    if (e.detail.confirm) {
+      this.modalEventOutcome = "You agreed!";
+    } else {
+      this.modalEventOutcome = "You didn’t agree";
+    }
   }
   _launchModal() {
     console.log("launch modal");

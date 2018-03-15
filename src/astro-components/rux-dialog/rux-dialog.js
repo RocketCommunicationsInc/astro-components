@@ -53,6 +53,10 @@ export class RuxDialog extends PolymerElement {
           box-sizing: inherit;
       }
 
+      *[hidden] {
+        display: none !important;
+      }
+
 
       .rux-modal-container {
         position: fixed;
@@ -126,8 +130,8 @@ export class RuxDialog extends PolymerElement {
         <dialog class="rux-modal" {{open}}>
           <div class="rux-modal__message"><rux-icon icon=[[icon]] size="22" color="#fff"></rux-icon>[[message]]</div>
           <div class="rux-button-group">
-            <rux-button on-clicl="_handleModalConfirm">[[confirmText]]</rux-button>
-            <rux-button on-click="_handleModalDeny" default>[[denyText]]</rux-button>
+            <span hidden="[[!denyText]]"><rux-button on-click="_handleModalDeny" default>[[denyText]]</rux-button></span>
+            <span hidden="[[!confirmText]]"><rux-button on-click="_handleModalConfirm">[[confirmText]]</rux-button></span>
           </div>
         </dialog>
       </div>
@@ -138,15 +142,36 @@ export class RuxDialog extends PolymerElement {
   }
   connectedCallback() {
     super.connectedCallback();
+
+    // in the event neither Confirm/Deny text is supplied provide
+    // a default cancel button to get out of the
+    if (!this.denyText && !this.confirmText) {
+      this.denyText = "Cancel";
+      console.warn(
+        "No confirm or deny actions have been passed to the modal dialog box. User has been presented with a Cancel button"
+      );
+    }
+
+    // get the total button set
+    const buttonSet = this.shadowRoot.querySelectorAll("rux-button");
+    const defaultButton = buttonSet[buttonSet.length - 1];
+    defaultButton.setAttribute("default", "");
+    defaultButton.focus();
   }
   disconnectedCallback() {
     super.disconnectedCallback();
   }
 
   _handleModalConfirm() {
+    window.dispatchEvent(
+      new CustomEvent("modal-event", { detail: { confirm: true } })
+    );
     this.open = false;
   }
   _handleModalDeny() {
+    window.dispatchEvent(
+      new CustomEvent("modal-event", { detail: { confirm: false } })
+    );
     this.open = false;
   }
 }
