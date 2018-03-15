@@ -9,6 +9,12 @@ import { RuxButton } from "../rux-button/rux-button.js";
 export class RuxDialog extends PolymerElement {
   static get properties() {
     return {
+      open: {
+        type: Boolean,
+        value: false,
+        reflectToAttribute: true,
+        notify: true
+      },
       message: {
         type: String
       },
@@ -16,9 +22,13 @@ export class RuxDialog extends PolymerElement {
         type: String,
         value: false
       },
-      cancelText: {
+      denyText: {
         type: String,
         value: false
+      },
+      icon: {
+        type: String,
+        value: "default:caution"
       }
     };
   }
@@ -26,11 +36,18 @@ export class RuxDialog extends PolymerElement {
     return html`
       <style>
     
+
+
       :host {
+        display: none;
         box-sizing: border-box;
       }
 
-            *,
+      :host([open]) {
+        display: block;
+      }
+
+      *,
       *:before,
       *:after {
           box-sizing: inherit;
@@ -68,6 +85,7 @@ export class RuxDialog extends PolymerElement {
         border-radius: 4px;
         margin: auto;
         padding: 1rem;
+
       }
 
 
@@ -82,10 +100,6 @@ export class RuxDialog extends PolymerElement {
       rux-icon {
         margin-right: 0.75rem;
       }
-
-
-
-
 
 
       .rux-button-group {
@@ -109,13 +123,13 @@ export class RuxDialog extends PolymerElement {
       </style>
       
       <div class="rux-modal-container">
-        <div class="rux-modal" open>
-          <div class="rux-modal__message"><rux-icon icon="default:caution" size="22" color="#fff"></rux-icon>[[message]]</div>
+        <dialog class="rux-modal" {{open}}>
+          <div class="rux-modal__message"><rux-icon icon=[[icon]] size="22" color="#fff"></rux-icon>[[message]]</div>
           <div class="rux-button-group">
             <rux-button on-clicl="_handleModalConfirm">[[confirmText]]</rux-button>
-            <rux-button on-click="_handleModalDeny" default>[[cancelText]]</rux-button>
+            <rux-button on-click="_handleModalDeny" default>[[denyText]]</rux-button>
           </div>
-        </div>
+        </dialog>
       </div>
     `;
   }
@@ -129,15 +143,11 @@ export class RuxDialog extends PolymerElement {
     super.disconnectedCallback();
   }
 
-  _launchModal() {
-    console.log("Launch Modal");
-  }
   _handleModalConfirm() {
-    console.log("Close modal");
-    console.log("do stuff"); //this is a problem because the "stuff" is going to vary from implementation to implementation
+    this.open = false;
   }
   _handleModalDeny() {
-    console.log("Close modal");
+    this.open = false;
   }
 }
 customElements.define("rux-dialog", RuxDialog);

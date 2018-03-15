@@ -423,7 +423,7 @@ export class AstroApp extends PolymerElement {
         <rux-dialog
           message="This is a dialog box with a very long message to see what happens when it wraps to a second line."
           confirm-text="Punch It"
-          cancel-text="Never Tell Me the Odds"></rux-dialog>
+          deny-text="Never Tell Me the Odds"></rux-dialog>
         <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-form">
@@ -435,9 +435,6 @@ export class AstroApp extends PolymerElement {
 
       <rux-tab-panel aria-labeledby="tab-data-visualization">
         <rux-spectrum-analyzer></rux-spectrum-analyzer>
-      </rux-tab-panel>
-      <rux-tab-panel aria-labeledby="tab-dialog">
-        <rux-dialog></rux-dialog>
       </rux-tab-panel>
       <rux-tab-panel aria-labeledby="tab-form">
           <h2>Buttons</h2>
@@ -739,6 +736,11 @@ export class AstroApp extends PolymerElement {
         value: "astro-app"
       }
     };
+  }
+  _launchModal() {
+    console.log("launch modal");
+    const _modal = this.shadowRoot.querySelectorAll("rux-dialog")[0];
+    _modal.setAttribute("open", "");
   }
   _stringIt(obj) {
     return JSON.stringify(obj);
