@@ -865,9 +865,37 @@ export class AstroApp extends PolymerElement {
       <div>I’m just sitting here listening for a modal window event: [[modalMessage]]
     </section>
 
+    <section>
+      <h1>Modal Dialog</h1>
+      <rux-button class="rux-launch-button" on-click="_launchDynamicModal">Launch Modal</rux-button>
+      <form>
+        <ol>
+          <li>
+            <label>Message:<input type="text" value="{{dynamicModal.message::input}}" /></label>
+          </li>
+          <li>
+            <label>Confirm Button Text:<input type="text" value="{{dynamicModal.confirmText::change}}" /></label>
+          </li>
+          <li>
+            <label>Deny Button Text:<input type="text" value="{{dynamicModal.denyText::change}}" /></label>
+          </li>
+        </ol>
+      </form>
+      <p>Message: {{dynamicModal.message}}</p>
+    </section>
 
-    <rux-modal message="This is a dialog box with a very long message to see what happens when it wraps to a second line." confirm-text="Ok"
+    <rux-modal message="This is a dialog box with a very long message to see what happens when it wraps to a second line." 
+      confirm-text="Ok"
       deny-text="Cancel"></rux-modal>
+
+    <rux-modal
+      id="dynamic-modal"
+      message$="{{dynamicModal.message}}"
+      confirm-text$="{{dynamicModal.confirmText}}"
+      deny-text$="{{dynamicModal.denyText}}"
+    </rux-modal>
+      
+    
   </rux-tab-panel>
 
 
@@ -899,6 +927,25 @@ export class AstroApp extends PolymerElement {
 
     `;
   }
+
+  static get properties() {
+    return {
+      prop1: {
+        type: String,
+        value: "astro-app"
+      },
+      dynamicModalMessage: {
+        type: String,
+        notify: true,
+        value: "From Property"
+      },
+      dynamicModal: {
+        type: Object,
+        notify: true
+      }
+    };
+  }
+
   constructor() {
     super();
     this.name = "3.0 preview";
@@ -911,11 +958,7 @@ export class AstroApp extends PolymerElement {
       }
     });
 
-    this.test = {
-      message: "hello"
-    };
-
-    this.modalMessage = "test";
+    // this.modalMessage = "test";
     this.sliderObj = {
       value: 10
     };
@@ -945,6 +988,12 @@ export class AstroApp extends PolymerElement {
       }
     ];
 
+    this.dynamicModal = {
+      message: "This message can be set dynamically",
+      confirmText: "Yo",
+      denyText: "Nah"
+    };
+
     this.segmentTwo = [
       {
         label: "Good",
@@ -966,33 +1015,19 @@ export class AstroApp extends PolymerElement {
       }
     ];
   }
-  static get properties() {
-    return {
-      prop1: {
-        type: String,
-        value: "astro-app"
-      }
-    };
+
+  _updateModel(e) {
+    console.log(this.dynamicModalMessage);
   }
 
-  _test() {
-    console.log(this);
-  }
-  _modalEventAction(e) {
-    console.log("modal evvent", e);
-
-    console.log("confirm", e.detail.confirm);
-    console.log("target", e.detail.target);
-    _test();
-    console.log(this);
-    if (e.detail.confirm) {
-      e.detail.target.modalMessage = "You agreed!";
-    } else {
-      e.detail.target.modalMessage = "You didn’t agree";
-    }
+  _launchDynamicModal() {
+    const _modal = this.shadowRoot.getElementById("dynamic-modal");
+    console.log("dm", this.dynamicModal);
+    _modal.setAttribute("open", "");
   }
   _launchModal() {
     console.log("launch modal");
+
     const _modal = this.shadowRoot.querySelectorAll("rux-modal")[0];
     _modal.setAttribute("open", "");
   }
