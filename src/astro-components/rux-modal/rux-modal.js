@@ -164,13 +164,17 @@ export class RuxModal extends PolymerElement {
 
   _handleModalConfirm() {
     window.dispatchEvent(
-      new CustomEvent("modal-event", { detail: { confirm: true } })
+      new CustomEvent("modal-event", {
+        detail: { confirm: true, target: this }
+      })
     );
     this.open = false;
   }
   _handleModalDeny() {
     window.dispatchEvent(
-      new CustomEvent("modal-event", { detail: { confirm: false } })
+      new CustomEvent("modal-event", {
+        detail: { confirm: false, target: this }
+      })
     );
     this.open = false;
   }
