@@ -23,10 +23,12 @@ export class RuxPushButton extends PolymerElement {
         value: false
       },
       checkedLabel: {
-        type: String
+        type: String,
+        value: "Enabled"
       },
       uncheckedLabel: {
-        type: String
+        type: String,
+        value: "Disabled"
       },
       checked: {
         type: Boolean,
@@ -56,8 +58,8 @@ export class RuxPushButton extends PolymerElement {
   connectedCallback() {
     super.connectedCallback();
 
-    console.log(this.checkedLabel);
-    // this._label = this.checked ? this.checkedLabel : this.uncheckedLabel;
+    // set a default width
+    this._getWidth(this.checkedLabel, this.uncheckedLabel);
   }
 
   disconnectedCallback() {
@@ -68,8 +70,37 @@ export class RuxPushButton extends PolymerElement {
     super.ready();
   }
 
+  /*
+  **
+  ** To avoid the “jittery” nature of a push button when the checked/unchecked
+  ** lables aren’t of equal length this sets the width of the pushbutton to the
+  ** longest of those two
+  **
+  */
+  _getWidth(_checkedLabel, _uncheckedLabel) {
+    if (!_checkedLabel || !_uncheckedLabel) return;
+
+    // get the longest label
+    const _longest =
+      _checkedLabel.length > _uncheckedLabel.length
+        ? _checkedLabel
+        : _uncheckedLabel;
+
+    // temporarily set the label of the push button
+    // to the longest string
+    this._label = _longest;
+
+    // get the width of the push button
+    const _label = this.root.querySelector("label");
+
+    // set the css width of the push button
+    _label.style.width = _label.offsetWidth + "px";
+
+    // reset the label
+    this._setLabel();
+  }
+
   _setLabel() {
-    console.log("updating");
     this._label = this.checked ? this.checkedLabel : this.uncheckedLabel;
   }
 }

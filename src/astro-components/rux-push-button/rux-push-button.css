@@ -11,12 +11,6 @@
   user-select: none;
 }
 
-:host::before,
-:host::after,
-:host .rux-push-button__button::after {
-  display: none !important;
-}
-
 :host input {
   display: none !important;
 }
@@ -29,7 +23,7 @@
   height: 100%;
 
   color: #fff;
-  padding: 0 0.5rem;
+  /* padding: 0 0.5rem; */
   cursor: pointer;
 
   background-color: #005a8f;
