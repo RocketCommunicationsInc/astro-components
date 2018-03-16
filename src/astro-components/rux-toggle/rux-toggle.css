@@ -1,13 +1,17 @@
 :host {
-  margin: 10px;
+  box-sizing: border-box;
+
+  margin: 0 2px;
   font-weight: 600;
+  font-size: 12px;
 
   outline: 0;
-  display: block;
+  display: inline-block;
 
   border: 1px solid #101923;
   height: 1.375rem;
   width: 4.375rem;
+
   position: relative;
 
   background: linear-gradient(
@@ -18,16 +22,22 @@
     #000 100%
   );
   box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-:host([pushbutton]) {
-  background: red;
+*,
+*::after *::before {
+  box-sizing: inherit;
 }
 
 :host::before,
 :host::after {
   display: inline-block;
-  font-size: 12px;
+
   top: 0;
   position: absolute;
   color: #fff;
@@ -49,9 +59,13 @@
   right: 0;
 }
 
-.rux-toggle__input {
-  display: none;
+:host input {
+  display: none !important;
 }
+
+/* .rux-toggle__input {
+  display: none;
+} */
 
 .rux-toggle__button {
   display: block;
@@ -93,37 +107,4 @@
 }
 .rux-toggle__input:disabled + .rux-toggle__button {
   cursor: not-allowed;
-}
-
-:host([pushbutton]) {
-  color: #fff;
-}
-
-:host([pushbutton])::before,
-:host([pushbutton])::after,
-:host([pushbutton]) .rux-toggle__button::after {
-  display: none !important;
-}
-
-:host([pushbutton]) .rux-toggle__button {
-  display: inline-block;
-  width: auto;
-  height: 22px;
-  min-width: 60px;
-  color: #fff;
-
-  /* line-height: 1; */
-  cursor: pointer;
-
-  background-color: #005a8f;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  outline: 1px solid #0e1822;
-  padding: 1px 20px 0;
-  margin: 0;
-}
-
-:host([pushbutton]) .rux-toggle__input:checked + .rux-toggle__button {
-  background-color: #000;
-  color: #3ae304;
 }

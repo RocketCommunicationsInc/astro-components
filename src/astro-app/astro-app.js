@@ -15,6 +15,7 @@ import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
 import { RuxModal } from "../astro-components/rux-modal/rux-modal.js";
 import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
 import { RuxToggle } from "../astro-components/rux-toggle/rux-toggle.js";
+import { RuxPushButton } from "../astro-components/rux-push-button/rux-push-button.js";
 /**
  * @polymer
  * @extends HTMLElement
@@ -243,35 +244,31 @@ export class AstroApp extends PolymerElement {
     </section>
 
     <section>
-      <h1>Toggle Buttons</h1>
+      <h1>Toggle Push Buttons</h1>
       <ul>
         <li>
-          <rux-toggle
-            checked-label="active"
-            unchecked-label="inactive"
-            pushbutton></rux-toggle>
+          <rux-push-button
+            checked-label="Active"
+            unchecked-label="Inactive Button"></rux-push-button>
         </li>
         <li>
-          <rux-toggle
-            checked-label="active"
-            unchecked-label="inactive"
-            pushbutton
-            checked><rux-toggle>
+          <rux-push-button
+            checked-label="Active"
+            unchecked-label="Inactive Button"
+            checked><rux-push-button>
         </li>
         <li>
-          <rux-toggle
-            checked-label="active"
-            unchecked-label="inactive"
-            pushbutton
-            disabled></rux-toggle>
+          <rux-push-button
+            checked-label="Active"
+            unchecked-label="Inactive Button"
+            disabled></rux-push-button>
         </li>
         <li>
-          <rux-toggle
-            checked-label="active"
-            unchecked-label="inactive"
-            pushbutton
+          <rux-push-button
+            checked-label="Active"
+            unchecked-label="Inactive Button"
             checked
-            disabled></rux-toggle>
+            disabled></rux-push-button>
         </li>
       <ul>
     </section>
