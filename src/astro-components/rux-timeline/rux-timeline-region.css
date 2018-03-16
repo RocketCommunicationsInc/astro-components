@@ -1,0 +1,52 @@
+:host {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  top: 0;
+  height: 100%;
+  background-color: black;
+
+  overflow: hidden;
+}
+
+:host > div {
+  padding: 0 1em;
+  margin: 0;
+}
+
+.rux-timeline__region__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 50%;
+}
+
+.rux-timeline__region__header div {
+  white-space: nowrap;
+  width: calc(100px - 5%);
+  text-overflow: ellipsis;
+}
+
+.rux-timeline__region__header rux-status {
+  margin-right: 0.5rem;
+}
+
+.rux-timeline__region__time {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: 50%;
+  color: #bdc3c9;
+}
+
+.rux-timeline__region__time__end-time {
+  margin-left: 0.25rem;
+}
+
+.rux-timeline__region__time__end-time::before {
+  content: "-";
+  margin-right: 0.25rem;
+}
