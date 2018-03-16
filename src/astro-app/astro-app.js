@@ -14,6 +14,7 @@ import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-men
 import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
 import { RuxModal } from "../astro-components/rux-modal/rux-modal.js";
 import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
+import { RuxToggle } from "../astro-components/rux-toggle/rux-toggle.js";
 /**
  * @polymer
  * @extends HTMLElement
@@ -185,6 +186,7 @@ export class AstroApp extends PolymerElement {
     
     <rux-global-status-bar appname="RUX">
   <rux-tabs>
+    <rux-tab id="tab-toggle">Toggle</rux-tab>
     <rux-tab id="tab-dialog">Dialog</rux-tab>
     <rux-tab id="tab-progress">Progress</rux-tab>
     <rux-tab id="tab-colors">Colors</rux-tab>
@@ -206,6 +208,51 @@ export class AstroApp extends PolymerElement {
 
 
 <rux-tab-panels>
+
+  <rux-tab-panel aria-labeledby="tab-toggle">
+    <section style="background-color: #263f57">
+      <h1>Push Buttons</h1>
+      <ul>
+        <li>
+          <rux-toggle
+            type="pushbutton"></rux-toggle>
+        </li>
+        <li>
+          <rux-toggle
+            type="pushbutton"
+              checked><rux-toggle>
+        </li>
+        <li>
+          <rux-toggle
+            type="pushbutton"
+            disabled></rux-toggle>
+        </li>
+        <li>
+          <rux-toggle
+            type="pushbutton"
+            checked
+            disabled></rux-toggle>
+        </li>
+      <ul>
+    </section>
+
+    <section>
+      <h1>Toggle Buttons</h1>
+      <ul>
+        <li>
+          <rux-toggle></rux-toggle>
+        </li>
+        <li>
+          <rux-toggle
+            checked><rux-toggle>
+        </li>
+        <li>
+          <rux-toggle
+            disabled></rux-toggle>
+        </li>
+      <ul>
+    </section>
+  </rux-tab-panel>
 
   <rux-tab-panel aria-labeledby="tab-colors">
     <section>
