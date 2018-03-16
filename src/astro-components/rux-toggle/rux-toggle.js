@@ -14,15 +14,28 @@ export class RuxToggle extends PolymerElement {
           return `toggle-${Math.floor(Math.random() * 1000)}`;
         }
       },
+      pushbutton: {
+        type: Boolean,
+        readOnly: true
+      },
       disabled: {
         type: Boolean,
         value: false
+      },
+      checkedLabel: {
+        type: String
+      },
+      uncheckedLabel: {
+        type: String
       },
       checked: {
         type: Boolean,
         value: false,
         reflectToAttribute: true,
-        notify: true
+        observer: "_setLabel"
+      },
+      _label: {
+        type: String
       }
     };
   }
@@ -32,8 +45,7 @@ export class RuxToggle extends PolymerElement {
       <link rel="stylesheet" href="/src/astro-components/rux-toggle/rux-toggle.css">
       
       <input class="rux-toggle__input" type="checkbox" id="[[_id]]" disabled$=[[disabled]] checked={{checked}}></input>
-      <label for$="[[_id]]" class="rux-toggle__button"></label> 
-      
+      <label for$="[[_id]]" class="rux-toggle__button">[[_label]]</label> 
       `;
   }
 
@@ -43,6 +55,9 @@ export class RuxToggle extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback();
+
+    console.log(this.checkedLabel);
+    // this._label = this.checked ? this.checkedLabel : this.uncheckedLabel;
   }
 
   disconnectedCallback() {
@@ -51,6 +66,11 @@ export class RuxToggle extends PolymerElement {
 
   ready() {
     super.ready();
+  }
+
+  _setLabel() {
+    console.log("updating");
+    this._label = this.checked ? this.checkedLabel : this.uncheckedLabel;
   }
 }
 

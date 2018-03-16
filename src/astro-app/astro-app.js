@@ -148,6 +148,9 @@ export class AstroApp extends PolymerElement {
 
       
 
+      
+      
+
       .default-icon {
         background-color: hsl(212.4, 72.4%, 58.8%);
       }
@@ -211,27 +214,30 @@ export class AstroApp extends PolymerElement {
 
   <rux-tab-panel aria-labeledby="tab-toggle">
     <section style="background-color: #263f57">
-      <h1>Push Buttons</h1>
-      <ul>
+      <h1>Toggle Buttons</h1>
+      <ul class="toggle-buttons">
         <li>
-          <rux-toggle
-            type="pushbutton"></rux-toggle>
+          <span id="toggle1">Toggle 1:</span>
+          <rux-toggle aria-labeledby="toggle1"></rux-toggle>
         </li>
         <li>
+          <span id="toggle2">Toggle 2:</span>
           <rux-toggle
-            type="pushbutton"
-              checked><rux-toggle>
+              checked
+              aria-labeledby="toggle1"><rux-toggle>
         </li>
         <li>
+          <span id="toggle3">Toggle 3:</span>
           <rux-toggle
-            type="pushbutton"
-            disabled></rux-toggle>
+            disabled
+            aria-labeledby="toggle1"></rux-toggle>
         </li>
         <li>
+          <span id="toggle4">Toggle 4:</span>
           <rux-toggle
-            type="pushbutton"
             checked
-            disabled></rux-toggle>
+            disabled
+            aria-labeledby="toggle1"></rux-toggle>
         </li>
       <ul>
     </section>
@@ -240,14 +246,31 @@ export class AstroApp extends PolymerElement {
       <h1>Toggle Buttons</h1>
       <ul>
         <li>
-          <rux-toggle></rux-toggle>
+          <rux-toggle
+            checked-label="active"
+            unchecked-label="inactive"
+            pushbutton></rux-toggle>
         </li>
         <li>
           <rux-toggle
+            checked-label="active"
+            unchecked-label="inactive"
+            pushbutton
             checked><rux-toggle>
         </li>
         <li>
           <rux-toggle
+            checked-label="active"
+            unchecked-label="inactive"
+            pushbutton
+            disabled></rux-toggle>
+        </li>
+        <li>
+          <rux-toggle
+            checked-label="active"
+            unchecked-label="inactive"
+            pushbutton
+            checked
             disabled></rux-toggle>
         </li>
       <ul>
