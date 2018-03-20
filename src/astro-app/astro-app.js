@@ -195,6 +195,7 @@ export class AstroApp extends PolymerElement {
     
     <rux-global-status-bar appname="RUX">
   <rux-tabs>
+    <rux-tab id="tab-pop-up-menus">Pop Ups</rux-tab>
     <rux-tab id="tab-timeline">Timeline</rux-tab>
     <rux-tab id="tab-toggle">Toggle</rux-tab>
     <rux-tab id="tab-dialog">Dialog</rux-tab>
@@ -219,8 +220,18 @@ export class AstroApp extends PolymerElement {
 
 <rux-tab-panels>
 
+  <rux-tab-panel aria-labeledby="tab-pop-up-menus">
+      <section>
+        <h1>Pop Up Menu</h1>
+        <p><a on-click="_showPopUp">Click here to see a standard popup menu.</a> This uses a single <code>rux-pop-up-menu</code> instance</p>
+        <rux-pop-up-menu
+          menu-items=[[_popMenuItems]]
+          target={{_popMenuTarget}}></rux-pop-up-menu>
+      </section>
+  </rux-tab-panel>
+
   <rux-tab-panel aria-labeledby="tab-toggle">
-    <section style="background-color: #263f57">
+    <section>
       <h1>Toggle Buttons</h1>
       <ul class="toggle-buttons">
         <li>
@@ -1066,9 +1077,28 @@ export class AstroApp extends PolymerElement {
     };
   }
 
+  _showPopUp(e) {
+    this._popMenuTarget = e.currentTarget;
+  }
+
   constructor() {
     super();
     this.name = "3.0 preview";
+
+    this._popMenuItems = [
+      {
+        label: "Menu Item 1",
+        action: "doSomething"
+      },
+      {
+        label: "Menu Item 2",
+        action: "doSomethingElse"
+      }
+    ];
+
+    window.addEventListener("pop-up-menu-event", e => {
+      console.log("pop up menu event");
+    });
 
     window.addEventListener("modal-event", e => {
       if (e.detail.confirm) {
