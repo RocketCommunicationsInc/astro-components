@@ -7,9 +7,11 @@ import { html } from "/node_modules/@polymer/polymer/polymer-element.js";
 export class RuxProgress extends PolymerElement {
   static get properties() {
     return {
-      min: String,
-      max: String,
-      value: String,
+      max: {
+        type: Number,
+        value: 100
+      },
+      value: Number,
       label: {
         type: Boolean,
         value: false
@@ -21,7 +23,7 @@ export class RuxProgress extends PolymerElement {
       <link rel="stylesheet" href="src/astro-components/rux-progress/rux-progress.css">
 
       <div class="rux-progress">
-        <progress value="[[value]]" min=[[min]] max=[[max]]></progress>
+        <progress value="[[value]]" max=[[max]]></progress>
         <div class="rux-progress__value" hidden="[[!label]]">[[value]]</div>
       </div>`;
   }

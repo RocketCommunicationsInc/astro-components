@@ -1,0 +1,50 @@
+:host {
+  font-size: 12px;
+  height: 1.375rem;
+  line-height: 1.7;
+
+  margin: 0 2px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:host input {
+  display: none !important;
+}
+
+:host .rux-push-button__button {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  height: 100%;
+
+  color: #fff;
+  /* padding: 0 0.5rem; */
+  cursor: pointer;
+
+  background-color: #005a8f;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  outline: 1px solid #0e1822;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+:host .rux-push-button__input:checked + .rux-push-button__button {
+  background-color: #000;
+  color: #3ae304;
+}
+
+:host([disabled]) {
+  opacity: 0.4;
+}
+
+.rux-push-button__input:disabled + .rux-push-button__button {
+  cursor: not-allowed;
+}

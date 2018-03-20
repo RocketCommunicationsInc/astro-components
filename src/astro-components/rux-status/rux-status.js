@@ -20,42 +20,45 @@ export class RuxStatus extends PolymerElement {
         type: String
       },
       notifications: {
-        type: String
+        type: Number
       },
       icon: {
         type: String
       },
       _notifications: {
         type: String,
+        value: null,
         computed: "_filterNotifications(notifications)"
       },
       advanced: {
         type: Boolean,
-        default: false
+        value: false,
+        computed: "_isAdvanced()"
       }
     };
   }
 
   static get template() {
     return html`
-            <link rel="stylesheet" href="src/astro-components/rux-status/rux-status.css">
+      <link rel="stylesheet" href="src/astro-components/rux-status/rux-status.css">
 
-            <!-- Use Advanced Status Template is any property is set //-->
-            <div class="rux-advanced-status rux-status--[[status]]" title="[[notifications]] [[label]] [[sublabel]]" aria-labelledby="rux-advanced-status-aria-label" hidden=[[!advanced]]>
-                
-                <rux-icon icon="status:{{status}}" class$="rux-advanced-status__status-icon rux-icon--status [[status]]"></rux-icon>
-                
-                <div class="rux-advanced-status__icon">
-                    <rux-icon icon="[[icon]]" class$="rux-status--[[status]]"></rux-icon>
-                    <div class="rux-advanced-status__badge">[[_notifications]]</div>
-                </div>
-                
-                <div id="rux-advanced-status-aria-label" class="rux-advanced-status__label">[[label]]<span class="rux-advanced-status__label__sub-label">[[sublabel]]</span></div>
-            </div>
+      <!-- Use Advanced Status Template is any property is set //-->
+      <div class$="rux-advanced-status rux-status--[[status]]" title="[[notifications]] [[label]] [[sublabel]]" aria-labelledby="rux-advanced-status-aria-label" hidden=[[!advanced]]>
+        
+        
+        
+        <div class="rux-advanced-status__icon">
+          <rux-icon icon="status:{{status}}" class$="rux-advanced-status__status-icon rux-icon--status [[status]]"></rux-icon>
+          <div class="rux-advanced-status__badge" hidden=[[!_notifications]]>[[_notifications]]</div>
+          <rux-icon icon="[[icon]]" class$="rux-status--[[status]]"></rux-icon>  
+        </div>  
 
-            <!-- Use simple status if no other properties are set //-->
-            <rux-icon icon="status:[[status]]" class="rux-icon--status" hidden=[[advanced]]></rux-icon>	
-        `;
+        <div id="rux-advanced-status-aria-label" class="rux-advanced-status__label">[[label]]<span class="rux-advanced-status__label__sub-label">[[sublabel]]</span></div>
+      </div>
+
+      <!-- Use simple status if no other properties are set //-->
+      <rux-icon icon="status:[[status]]" class="rux-icon--status" hidden=[[advanced]]></rux-icon>	
+    `;
   }
 
   constructor() {
@@ -72,15 +75,20 @@ export class RuxStatus extends PolymerElement {
 
   ready() {
     super.ready();
+  }
 
-    if (this.label || this.icon || this.notifications) {
-      this.advanced = true;
-    }
+  _isAdvanced() {
+    if (this.label || this.icon || this.notifications) return true;
   }
 
   _filterNotifications(n) {
-    // remove commas if they exist and convert to an integer
-    let _n = parseInt(n.replace(/\,/g, ""));
+    if (isNaN(n))
+      console.error(`${this.label}â€™s notification count is not a number`);
+
+    let _n = Math.floor(n);
+
+    // don't show any values less than 0
+    if (_n <= 0) return null;
 
     // get the place value
     const _thousand = Math.floor((_n / 1000) % 1000); // only return a whole number
@@ -89,9 +97,8 @@ export class RuxStatus extends PolymerElement {
     const _trillion = (_n / 1000000000000) % 1000000000000; // trillion is just to offer an overflow instance
 
     // set the display to its original state
-    let _message = n;
+    let _message = _n;
 
-    //
     if (_trillion >= 1) {
       _message = "∞";
     } else if (_billion >= 1) {
