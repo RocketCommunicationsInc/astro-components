@@ -1,0 +1,38 @@
+:host {
+  position: relative;
+  display: block;
+  height: 48px;
+  width: 100%;
+
+  /* background-color: red; */
+}
+
+.rux-timeline__track {
+  position: relative;
+
+  height: 100%;
+}
+
+.rux-timeline__track__label {
+  position: -webkit-sticky;
+  position: sticky;
+
+  top: 0;
+  left: 0;
+  padding-left: 1rem;
+  width: 7.875rem;
+  height: 100%;
+  background-color: #0e202e;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 200;
+}
+
+ol {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

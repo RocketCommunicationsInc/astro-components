@@ -16,6 +16,7 @@ import { RuxModal } from "../astro-components/rux-modal/rux-modal.js";
 import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
 import { RuxToggle } from "../astro-components/rux-toggle/rux-toggle.js";
 import { RuxPushButton } from "../astro-components/rux-push-button/rux-push-button.js";
+import { RuxTimeline } from "../astro-components/rux-timeline/rux-timeline.js";
 /**
  * @polymer
  * @extends HTMLElement
@@ -194,6 +195,7 @@ export class AstroApp extends PolymerElement {
     
     <rux-global-status-bar appname="RUX">
   <rux-tabs>
+    <rux-tab id="tab-timeline">Timeline</rux-tab>
     <rux-tab id="tab-toggle">Toggle</rux-tab>
     <rux-tab id="tab-dialog">Dialog</rux-tab>
     <rux-tab id="tab-progress">Progress</rux-tab>
@@ -208,7 +210,7 @@ export class AstroApp extends PolymerElement {
     <rux-tab id="tab-form">Form</rux-tab>
     <rux-tab id="tab-log">Log</rux-tab>
     <rux-tab id="tab-text-formatting">Text</rux-tab>
-    <rux-tab id="tab-timeline">Timeline</rux-tab>
+    
   </rux-tabs>
 </rux-global-status-bar>
 
@@ -1028,6 +1030,19 @@ export class AstroApp extends PolymerElement {
 
 
   <rux-tab-panel aria-labeledby="tab-timeline">
+    <section>
+      <h1>Timeline</h1>
+        <rux-timeline
+          label="Timeline"
+          type="realtime"
+          data=[[timeline]]
+          playback-controls="footer"
+          zoom-control=true
+          catch-playhead-control=false>
+        </rux-timeline>
+        <!--<rux-button on-click="_addTrack">Add Track</rux-button>
+        <rux-button on-click="_addRegion">Add Region to Track</rux-button>//-->
+      </section>
   </rux-tab-panel>
 </rux-tab-panels>
 
@@ -1102,6 +1117,189 @@ export class AstroApp extends PolymerElement {
       }
     ];
 
+    const today = new Date();
+
+    this.timeline = {
+      duration: 86400000,
+      tracks: [
+        {
+          label: "Huey",
+          regions: [
+            {
+              label: "Satellite 1",
+              status: "ok",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                9,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                11,
+                0,
+                0
+              )
+            },
+            {
+              label: "Satellite 2",
+              status: "ok",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                13,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                13,
+                30,
+                0
+              )
+            },
+            {
+              label: "Satellite 3",
+              status: "error",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                15,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                17,
+                0,
+                0
+              )
+            }
+          ]
+        },
+        {
+          label: "Dewey",
+          regions: [
+            {
+              label: "Satellite 4",
+              status: "ok",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                7,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                10,
+                0,
+                0
+              )
+            },
+            {
+              label: "Satellite 5",
+              status: "error",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                13,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                14,
+                30,
+                0
+              )
+            },
+            {
+              label: "Satellite 6",
+              status: "off",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                19,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                10,
+                0,
+                0
+              )
+            }
+          ]
+        },
+        {
+          label: "Louie",
+          regions: [
+            {
+              label: "Satellite 7",
+              status: "ok",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                4,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                4,
+                15,
+                0
+              )
+            },
+            {
+              label: "Satellite 8",
+              status: "caution",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                16,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                17,
+                0,
+                0
+              )
+            }
+          ]
+        }
+      ]
+    };
+
     this.dynamicModal = {
       message:
         "Oh what? Custom icons in the modal window? Yeah, because components are dope.",
@@ -1131,6 +1329,44 @@ export class AstroApp extends PolymerElement {
         }
       }
     ];
+  }
+
+  _addTrack() {
+    console.log("add track");
+    const today = new Date();
+    const _track = {
+      label: "Donald",
+      regions: [
+        {
+          label: "Satellite 1",
+          status: "ok",
+          startTime: new Date(
+            today.getFullYear(),
+            today.getMonth(),
+            today.getDate(),
+            13,
+            0,
+            0
+          ),
+          endTime: new Date(
+            today.getFullYear(),
+            today.getMonth(),
+            today.getDate(),
+            14,
+            0,
+            0
+          )
+        }
+      ]
+    };
+
+    this.timeline.tracks.push(_track);
+
+    console.log(this.timeline.tracks);
+  }
+
+  _addRegion() {
+    console.log("add region");
   }
 
   _launchDynamicModal() {
