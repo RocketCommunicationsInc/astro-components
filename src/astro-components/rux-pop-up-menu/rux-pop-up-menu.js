@@ -79,7 +79,7 @@ export class RuxPopUpMenu extends PolymerElement {
 
     window.dispatchEvent(
       new CustomEvent("pop-up-menu-event", {
-        detail: { action: menuAction }
+        detail: menuAction
       })
     );
 
@@ -87,7 +87,6 @@ export class RuxPopUpMenu extends PolymerElement {
   }
 
   _targetChanged(target) {
-    console.log(target);
     if (target == null) return;
 
     /* 
