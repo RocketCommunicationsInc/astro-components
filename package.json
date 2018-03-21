@@ -1,5 +1,5 @@
 {
-  "name": "astro-components",
+  "name": "astro-app",
   "flat": true,
   "version": "1.0.0",
   "author": "Rocket Communications",
@@ -8,15 +8,13 @@
   "main": "index.html",
   "dependencies": {
     "@polymer/polymer": "^3.0.0-pre.9",
-    "@webcomponents/webcomponentsjs": "^1.1.0",
-    "d3": "^4.13.0"
+    "@webcomponents/webcomponentsjs": "^1.1.0"
   },
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
     "gulp-exec": "^3.0.1",
-    "gulp-shell": "^0.6.5",
-    "gulp-watch": "^5.0.0"
+    "gulp-shell": "^0.6.5"
   },
   "repository": "git@bitbucket.org:rocketcom/astro-app.git",
   "license": "MIT",
@@ -83,14 +81,8 @@
     "async": "2.6.0"
   },
   "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true,
-        "modules": true
-      }
-    },
+    "esversion": 6,
+    "sourceType": "module",
     "env": {
       "browser": true,
       "node": true
