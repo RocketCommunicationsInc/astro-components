@@ -17,6 +17,7 @@ import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
 import { RuxToggle } from "../astro-components/rux-toggle/rux-toggle.js";
 import { RuxPushButton } from "../astro-components/rux-push-button/rux-push-button.js";
 import { RuxTimeline } from "../astro-components/rux-timeline/rux-timeline.js";
+import { RuxNotification } from "../astro-components/rux-notification/rux-notification.js";
 
 import { AstroSamples } from "./astro-sample/astro-samples.js";
 /**
@@ -255,6 +256,8 @@ export class AstroApp extends PolymerElement {
 				margin: 0;
 			}
 
+			
+
     </style>
     
 <rux-global-status-bar appname="Astro Components"></rux-global-status-bar>
@@ -264,6 +267,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
@@ -287,6 +291,40 @@ export class AstroApp extends PolymerElement {
 
 
 <astro-sample-panels class="detail">
+
+<astro-sample-panel aria-labeledby="sample-notification-banner">
+<h1>Notification Banner</h1>
+<p>This is the second stage of notifications</p>
+<section style="position: releative;">
+	<h2>Global Notification Banner</h2>
+	<p>This is a notification banner that will sit at the top of a given window. It’s kind of predicated on how the app is constructed though which is, sub-optimal. If the containing element(s) the <code>rux-notification</code> is attached to have no explicit position, the notifiation becomes a global notification.</p>
+	<rux-button on-click="_showGlobalNotification">Toggle Notification Banner</rux-button>
+	<rux-notification
+		target="global"
+		message="This is a global notification banner.">
+	</rux-notification>
+</section>
+
+<section style="position: releative;">
+	<h2>Localized Notification Banner</h2>
+	<p>This is a notification banner display localized to its containing element, in this case the <code>section</code> element.</p>
+	<rux-button on-click="_showLocalNotification">Toggle Notification Banner</rux-button>
+	<rux-notification
+			message="This is a local notification banner.">
+	</rux-notification>
+</section>
+
+<section style="position: releative;">
+	<h2>Localized Notification Banner with Push Down</h2>
+	<p>This is a notification banner display localized to its containing element. Instead of overlaying content, it pushes the content down.</p>
+	<rux-button on-click="_showLocalPushNotification">Toggle Notification Banner</rux-button>
+	<rux-notification
+			push="true"
+			message="This is a local notification that pushes content down.">
+	</rux-notification>
+</section>
+
+</astro-sample-panel>
 
 	<astro-sample-panel aria-labeledby="sample-pop-up-menus">
 		<h1>Pop Up Menu</h1>
@@ -1183,7 +1221,6 @@ export class AstroApp extends PolymerElement {
     ];
 
     window.addEventListener("pop-up-menu-event", e => {
-      console.log("pop up menu event", e.detail.action);
       this._popMenuStatus = e.detail.action;
     });
 
@@ -1449,7 +1486,6 @@ export class AstroApp extends PolymerElement {
   }
 
   _addTrack() {
-    console.log("add track");
     const today = new Date();
     const _track = {
       label: "Donald",
@@ -1480,6 +1516,42 @@ export class AstroApp extends PolymerElement {
     this.timeline.tracks.push(_track);
 
     console.log(this.timeline.tracks);
+  }
+
+  _showGlobalNotification() {
+    const _notification = this.shadowRoot.querySelectorAll(
+      "rux-notification"
+    )[0];
+
+    if (_notification.hasAttribute("opened")) {
+      _notification.removeAttribute("opened");
+    } else {
+      _notification.setAttribute("opened", "");
+    }
+  }
+
+  _showLocalNotification() {
+    const _notification = this.shadowRoot.querySelectorAll(
+      "rux-notification"
+    )[1];
+
+    if (_notification.hasAttribute("opened")) {
+      _notification.removeAttribute("opened");
+    } else {
+      _notification.setAttribute("opened", "");
+    }
+  }
+
+  _showLocalPushNotification() {
+    const _notification = this.shadowRoot.querySelectorAll(
+      "rux-notification"
+    )[2];
+
+    if (_notification.hasAttribute("opened")) {
+      _notification.removeAttribute("opened");
+    } else {
+      _notification.setAttribute("opened", "");
+    }
   }
 
   _addRegion() {

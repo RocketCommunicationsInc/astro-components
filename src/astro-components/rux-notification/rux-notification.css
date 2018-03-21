@@ -1,0 +1,77 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  align-items: center;
+  align-content: center;
+
+  top: -4.125rem;
+  left: 0;
+
+  height: 4.125rem;
+  width: 100%;
+
+  padding: 0.7rem 1rem;
+  background-color: #1a6600;
+  transition: all 0.5s ease;
+
+  box-sizing: border-box;
+}
+
+:host([opened]) {
+  top: 0;
+}
+
+:host([target="local"]) {
+  position: absolute;
+}
+
+:host([target="global"]) {
+  position: fixed;
+}
+
+.rux-notification::after {
+  position: relative;
+  display: block;
+  content: "";
+  height: 60px;
+}
+
+.visible {
+  margin-top: 0;
+}
+
+.notification-container {
+  display: block;
+  height: 60px;
+  width: 100%;
+  background-color: orange;
+  position: absolute;
+  /* display: block;
+  background-color: orange !important;
+  outline: 1px solid red;
+  position: absolute;
+  top: -60px; 
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%; */
+
+  transition: top 1s ease-in-out;
+}
+
+.notification-buffer {
+  /* height: 60px;
+  margin-top: -1.25rem;
+  position: relative;
+  outline: 1px solid green;
+  transition: height 1s ease-in-out;
+  overflow: hidden; */
+}
+.show .rux-notification-container {
+  top: 0;
+}
+.show .rux-notification-buffer {
+  height: 60px;
+}
