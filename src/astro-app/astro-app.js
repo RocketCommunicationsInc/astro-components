@@ -17,6 +17,8 @@ import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
 import { RuxToggle } from "../astro-components/rux-toggle/rux-toggle.js";
 import { RuxPushButton } from "../astro-components/rux-push-button/rux-push-button.js";
 import { RuxTimeline } from "../astro-components/rux-timeline/rux-timeline.js";
+
+import { AstroSamples } from "./astro-sample/astro-samples.js";
 /**
  * @polymer
  * @extends HTMLElement
@@ -38,8 +40,8 @@ export class AstroApp extends PolymerElement {
 
       section {
         /* outline: 1px solid red; */
-        margin: 1em;
-        padding: 1em;
+        margin: 1em 1em 1em 0;
+        padding: 1em 2rem;
         background-color: rgba(0,0,0,0.2);
       }
 
@@ -152,6 +154,9 @@ export class AstroApp extends PolymerElement {
         
       }
 
+			.look {
+				background-color: green;
+			}
       
 
       
@@ -213,40 +218,81 @@ export class AstroApp extends PolymerElement {
         margin-right: 1em;
       }
 
+
+			.master-detail {
+				display: flex;
+			}
+
+			.master {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				flex-shrink: 0;
+				
+				width: 200px;
+				margin: 0 1rem 0 0;
+			}
+
+			.master li {
+				font-size: 0.9rem;
+				height: auto;
+				flex-grow: 0;
+				width: 100%;
+				text-align: left;
+				align-self: flex-start;
+				
+			}
+
+			.detail {
+				flex-grow: 1;
+			}
+
+			h1, h2 {
+				font-weight: 300;
+			}
+
+			h2 {
+				margin: 0;
+			}
+
     </style>
     
-    <rux-global-status-bar appname="RUX">
-	<rux-tabs>
-		<rux-tab id="tab-toggle">Toggle</rux-tab>
-		<rux-tab id="tab-timeline">Timeline</rux-tab>
-		<rux-tab id="tab-pop-up-menus">Pop Ups</rux-tab>
-
-
-		<rux-tab id="tab-dialog">Dialog</rux-tab>
-		<rux-tab id="tab-progress">Progress</rux-tab>
-		<rux-tab id="tab-colors">Colors</rux-tab>
-		<rux-tab id="tab-slider">Slider</rux-tab>
-		<rux-tab id="tab-clock">Clock</rux-tab>
-		<rux-tab id="tab-status-indicator">Status</rux-tab>
-		<rux-tab id="tab-icons">Icons</rux-tab>
-		<rux-tab id="tab-buttons">Buttons</rux-tab>
-		<rux-tab id="tab-segmented-button">Segmented Button</rux-tab>
-		<rux-tab id="tab-data-visualization">Data</rux-tab>
-		<rux-tab id="tab-form">Form</rux-tab>
-		<rux-tab id="tab-log">Log</rux-tab>
-		<rux-tab id="tab-text-formatting">Text</rux-tab>
-
-	</rux-tabs>
-</rux-global-status-bar>
+<rux-global-status-bar appname="Astro Components"></rux-global-status-bar>
 
 
 
+<div class="master-detail">
+<astro-samples class="master">
+<ul>
+<li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
+<li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
+<li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
+<li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
+<li><astro-sample id="sample-progress">Progress</astro-sample></li>
+<li><astro-sample id="sample-colors">Colors</astro-sample></li>
+<li><astro-sample id="sample-slider">Slider</astro-sample></li>
+<li><astro-sample id="sample-clock">Clock</astro-sample></li>
+<li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
+<li><astro-sample id="sample-icons">Icons</astro-sample></li>
+<li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
+<li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
+<li><astro-sample id="sample-data-visualization">Data</astro-sample></li>
+<li><astro-sample id="sample-form">Form</astro-sample></li>
+<li><astro-sample id="sample-log">Log</astro-sample></li>
+<li><astro-sample id="sample-text-formatting">Text</astro-sample></li>
+</ul>
+</astro-samples>
+	
 
-<rux-tab-panels>
 
-	<rux-tab-panel aria-labeledby="tab-pop-up-menus">
+
+<astro-sample-panels class="detail">
+
+	<astro-sample-panel aria-labeledby="sample-pop-up-menus">
+		<h1>Pop Up Menu</h1>
+		<p>Pop Up Menu does neat stuff …</p>
 		<section>
-			<h1>Pop Up Menu</h1>
+			<h2>Pop Up Menu</h2>
 			<p>
 				<a>Click here to see a standard popup menu.</a> This uses a single
 				<code>rux-pop-up-menu</code> instance</p>
@@ -258,11 +304,13 @@ export class AstroApp extends PolymerElement {
 		<section>
 			<rux-status icon="advanced-status:mission" status=[[_popMenuStatus]] label="Label" sublabel="Sub-label" on-click="_showPopUp">
 		</section>
-	</rux-tab-panel>
+	</astro-sample-panel>
 
-	<rux-tab-panel aria-labeledby="tab-toggle">
+	<astro-sample-panel aria-labeledby="sample-toggle">
+		<h1>Toggle & Push Buttons</h1>
+		<p>Toggle and Push Buttons instances are fancy checkboxes</p>
 		<section>
-      <h1>Toggle Buttons</h1>
+      <h2>Toggle Buttons</h2>
       <p>Toggle Buttons are effectively stylized checboxes and support the <code>checked</code> Boolean value</p>
 			<ul class="toggle-buttons">
 				<li>
@@ -286,7 +334,8 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Toggle Push Buttons</h1>
+			<h2>Toggle Push Buttons</h2>
+			<p>A push button does some other neat stuff …</p>
 			<ul class="toggle-buttons">
 				<li>
 					<rux-push-button checked-label="Active" unchecked-label="Inactive Button"></rux-push-button>
@@ -296,18 +345,21 @@ export class AstroApp extends PolymerElement {
 						<rux-push-button>
 				</li>
 				<li>
-					<rux-push-button checked-label="Active" unchecked-label="Inactive Button" disabled></rux-push-button>
+					<rux-push-button checked-label="Disabled Active" unchecked-label="Disabled Inactive Button" disabled></rux-push-button>
 				</li>
 				<li>
-					<rux-push-button checked-label="Active" unchecked-label="Inactive Button" checked disabled></rux-push-button>
+					<rux-push-button checked-label="Disabled Active" unchecked-label="Disabled Inactive Button" checked disabled></rux-push-button>
 				</li>
 			</ul>
 		</section>
-	</rux-tab-panel>
+	</astro-sample-panel>
 
-	<rux-tab-panel aria-labeledby="tab-colors">
+	<astro-sample-panel aria-labeledby="sample-colors">
+		<h1>Colors</h1>
+		<p>This is a quick experiment in color palettes using the HSL color model which enables for a rich/complex color system, easily modified for other themes and uses without major restructuing of code. Aaron can speak to the specifics of the theory on color palettes.</p>
 		<section>
-			<h1>Default Icon Color</h1>
+			<h2>Default Icon Color</h2>
+			<p>This is just a sample of the default icon color with its base hue with its tint/shade increased/decreased in 10% increments.</p>
 			<ul class="color-palette">
 				<li class="default-icon----4"></li>
 				<li class="default-icon----3"></li>
@@ -320,11 +372,13 @@ export class AstroApp extends PolymerElement {
 				<li class="default-icon--4"></li>
 			</ul>
 		</section>
-	</rux-tab-panel>
+	</astro-sample-panel>
 
-	<rux-tab-panel aria-labeledby="tab-slider">
+	<astro-sample-panel aria-labeledby="sample-slider">
+		<h1>Slider</h1>
+		<p>The slider does cool stuff … </p>
 		<section>
-			<h1>Slider (WIP)</h1>
+			<h2>Slider (WIP)</h2>
 			<code>&lt;rux-slider&gt;</code>
 			</p>
 			<div class="rux-slider-container">
@@ -333,7 +387,7 @@ export class AstroApp extends PolymerElement {
 			<div class="output">Slider Value is = [[sliderObj.value]]</div>
 		</section>
 		<section>
-			<h1>Slider Custom Range and Step(WIP)</h1>
+			<h2>Slider Custom Range and Step(WIP)</h2>
 			<code>&lt;rux-slider&gt;</code>
 			</p>
 			<div class="rux-slider-container">
@@ -342,7 +396,7 @@ export class AstroApp extends PolymerElement {
 			<div class="output">Slider Value is = [[sliderObjTwo.value]]</div>
 		</section>
 		<section>
-			<h1>Slider with Labels</h1>
+			<h2>Slider with Labels</h2>
 			<code>&lt;rux-slider&gt;</code>
 			</p>
 			<div class="rux-slider-container">
@@ -350,11 +404,13 @@ export class AstroApp extends PolymerElement {
 			</div>
 			<div class="output">Slider Value is = [[sliderObjThree.value]]</div>
 		</section>
-	</rux-tab-panel>
+	</astro-sample-panel>
 
-	<rux-tab-panel aria-labeledby="tab-segmented-button">
+	<astro-sample-panel aria-labeledby="sample-segmented-button">
+		<h1>Segmented Button</h1>
+		<p>Segmented Buttons are just radio-buttons gussied up for the ball.</p>
 		<section>
-			<h1>Segmented Button (WIP)</h1>
+			<h2>Segmented Button (WIP)</h2>
 			<code>&lt;rux-segmented-button&gt;</code> is highly stylized version of a radio button group offering a distinct user choice.
 			Buttons are defined via a standard JavaScript Array of Objects. Each object must have a button label and supports additional
 			key/value pairs. e.g.,
@@ -366,12 +422,14 @@ export class AstroApp extends PolymerElement {
 			<rux-segmented-button data={{segmentTwo}}></rux-segmented-button>
 			<div class="output">Output = [[segmentTwo.selected.value.result]]</div>
 		</section>
-	</rux-tab-panel>
+	</astro-sample-panel>
 
-	<rux-tab-panel aria-labeledby="tab-icons">
-
+	<astro-sample-panel aria-labeledby="sample-icons">
+		<h1>Icons</h1>
+		<p>Icons can be used by themselves, but also form the basis of status and can be used in a variety of other components, like buttons.</p>
 		<section>
-			<h1>Test Icon from Sketch Library</h1>
+			<h2>Test Icon from Sketch Library</h2>
+			<p>This is an icon exported from the new Sketch document icon library (left) compared to the older icon (right). They appear to be visually indistinguishable.</p>
 			<ul class="icon-library">
 				<li>
 					<figure>
@@ -389,7 +447,7 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Default Icon Set</h1>
+			<h2>Default Icon Set</h2>
 			<p>Standard Astro Icons that can be used across all types of Astro based applications.</p>
 			<p>To use a defaul icon use the
 				<code>default</code> namespace. E.g.,
@@ -418,7 +476,7 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Advanced Status Icons</h1>
+			<h2>Advanced Status Icons</h2>
 			<p>Advanced Status Icons for SATCOM based applications.</p>
 			<p>To use a defaul icon use the
 				<code>advanced-status</code> namespace. E.g.,
@@ -483,7 +541,7 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>EGS Advanced Status Icons</h1>
+			<h2>EGS Advanced Status Icons</h2>
 			<p>Advanced Status Icons for EGS based applications.</p>
 			<p>To use a defaul icon use the
 				<code>advanced-status-egs</code> namespace. E.g.,
@@ -530,7 +588,7 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Default Status Symbols</h1>
+			<h2>Default Status Symbols</h2>
 			<p>Note: It is recommended you use
 				<code>&lt;rux-status status="ok"&gt;&lt/rux-status&gt;</code> instead of the raw status symbol icons.
 				<code>&lt;rux-status&gt;</code> provides additional functionality beyond simple graphic represenations.</p>
@@ -578,11 +636,11 @@ export class AstroApp extends PolymerElement {
 				</li>
 			</ul>
 		</section>
-	</rux-tab-panel>
+	</astro-sample-panel>
 
-	<rux-tab-panel aria-labeledby="tab-status-indicator">
+	<astro-sample-panel aria-labeledby="sample-status-indicator">
 		<section>
-			<h1>Status Indicator</h1>
+			<h2>Status Indicator</h2>
 			<p>Standard status indicator symbols.</p>
 			<ul class="icon-library">
 				<li>
@@ -624,7 +682,7 @@ export class AstroApp extends PolymerElement {
 			</ul>
 		</section>
 		<section>
-			<h1>Advanced Status Icons</h1>
+			<h2>Advanced Status Icons</h2>
 			<p>Advanced Status Icons extend beyond simple status to provide additional information and interactivity.</p>
 			<ul class="icon-library">
 				<li>
@@ -741,41 +799,45 @@ export class AstroApp extends PolymerElement {
 
 
 
-	</rux-tab-panel>
+	</astro-sample-panel>
 
-	<rux-tab-panel aria-labeledby="tab-progress">
+	<astro-sample-panel aria-labeledby="sample-progress">
+			<h1>Progress</h1>
+			<p>Astro two types of progress bars …</p>
 		<section>
-			<h1>Indeterminate Progress</h1>
+			<h2>Indeterminate Progress</h2>
 			<p>If no value paramater is passed (i.e., the current status of progress) it is assumed the progress of the event is indeterminate
 				and the indeterminate spinning progress bar will be used. The default state of
 				<code>&lt;rux-progress&gt;</code> is indeterminate.</p>
 			<rux-progress></rux-progress>
 		</section>
 		<section>
-			<h1>Determinate Progress</h1>
+			<h2>Determinate Progress</h2>
 			<p>To display a progress indicator with relative indication of progress add a
 				<code>value</code> param; the value param accepts a valid Number and uses a default range of 0-100.</p>
 			<rux-progress value=50></rux-progress>
 		</section>
 		<section>
-			<h1>Determinate Progress with Label</h1>
+			<h2>Determinate Progress with Label</h2>
 			<p>A numeric output can also be displayed to the right of the progress bar by passing in
 				<code>label=true</code>.</p>
 			<rux-progress value=50 label=true></rux-progress>
 		</section>
 		<section>
-			<h1>Determinate Progress (Custom Max Range)</h1>
+			<h2>Determinate Progress (Custom Max Range)</h2>
 			<p>Determinate Progress also accepts custom max value for progress values that don’t reflect percentages. The following sample
 				shows a progress bar with a max value of 50,000 and a value of 13,500.</p>
 			<rux-progress max=50000 value=13500></rux-progress>
 		</section>
 
 
-	</rux-tab-panel>
+	</astro-sample-panel>
 
-	<rux-tab-panel aria-labeledby="tab-buttons">
+	<astro-sample-panel aria-labeledby="sample-buttons">
+			<h1>Buttons</h1>
+			<p>There’s a lot to say about buttons.</p>
 		<section>
-			<h1>Standard Buttons</h1>
+			<h2>Standard Buttons</h2>
 			<ul class="button-library">
 				<li>
 					<figure>
@@ -799,7 +861,7 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Large Buttons</h1>
+			<h2>Large Buttons</h2>
 			<ul class="button-library">
 				<li>
 					<figure>
@@ -824,7 +886,7 @@ export class AstroApp extends PolymerElement {
 
 
 		<section>
-			<h1>Small Buttons</h1>
+			<h2>Small Buttons</h2>
 			<ul class="button-library">
 				<li>
 					<figure>
@@ -848,7 +910,7 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Button with Icon</h1>
+			<h2>Button with Icon</h2>
 			<ul class="button-library">
 				<li>
 					<figure>
@@ -879,7 +941,7 @@ export class AstroApp extends PolymerElement {
 
 
 		<section>
-			<h1>Icon Button</h1>
+			<h2>Icon Button</h2>
 			<ul class="button-library">
 				<li>
 					<figure>
@@ -904,7 +966,7 @@ export class AstroApp extends PolymerElement {
 
 
 		<section>
-			<h1>Button as Icon (WIP)</h1>
+			<h2>Button as Icon (WIP)</h2>
 			<ul class="button-library">
 				<li>
 					<figure>
@@ -928,7 +990,7 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Button Group (WIP)</h1>
+			<h2>Button Group (WIP)</h2>
 			<ul class="button-group">
 				<li>
 					<rux-button icon="media-controls:pause"></rux-button>
@@ -939,13 +1001,14 @@ export class AstroApp extends PolymerElement {
 			</ul>
 		</section>
 
-	</rux-tab-panel>
+	</astro-sample-panel>
 
 
-	<rux-tab-panel aria-labeledby="tab-clock">
-
+	<astro-sample-panel aria-labeledby="sample-clock">
+		<h1>Clock</h1>
+		<p>The clock tells time.</p>
 		<section>
-			<h1>Clock</h1>
+			<h2>Default Clock</h2>
 			<p>The default setting for
 				<code>rux-clock</code> without any attributes is to present a 24-hour clock set to UTC time and the current day of the year.
 			</p>
@@ -953,7 +1016,7 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Clock with LOS/AOS Options</h1>
+			<h2>Clock with LOS/AOS Options</h2>
 			<p>
 				<code>rux-clock</code> can be customized to include an Acquisition of Signal (AOS) and Loss of Signal (LOS) via the
 				<code>aos</code> and
@@ -963,26 +1026,29 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Clock with Custom Time Zone</h1>
+			<h2>Clock with Custom Time Zone</h2>
 			<p>
 				<code>rux-clock</code> can use custom timezones. Timezones must be formatted in "Country/City".</p>
 			<rux-clock timezone="America/Los_Angeles"></rux-clock>
 		</section>
 
 		<section>
-			<h1>Clock with Hidden Timezone and Date</h1>
+			<h2>Clock with Hidden Timezone and Date</h2>
 			<p>Both the date and timezone fields can be hidden via the
 				<code>hide-date</code> and
 				<code>hide-timezone</code> attributes.</p>
 			<rux-clock aos="bad data" hide-date="true" hide-timezone="true"></rux-clock>
 		</section>
 
-	</rux-tab-panel>
+	</astro-sample-panel>
 
 
-	<rux-tab-panel aria-labeledby="tab-dialog">
+	<astro-sample-panel aria-labeledby="sample-dialog">
+		<h1>Modal Dialog</h1>
+		<p>Modal Dialogs are the final and most invasive notification element in the notification chain.</p>
 		<section>
-			<h1>Modal Dialog</h1>
+			<h2>Static Modal Dialog</h2>
+			<p>A static modal dialog box has a single declarative message, standard accept/decline buttons and the default caution icon.</p>
 			<rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
 			<p>I’m just sitting here listening for a modal window event:
 				<span class="look">[[modalMessage]]</span>
@@ -990,7 +1056,7 @@ export class AstroApp extends PolymerElement {
 		</section>
 
 		<section>
-			<h1>Modal Dialog (Customized via Object)</h1>
+			<h2>Modal Dialog (Customized via Object)</h2>
 			<p>For more complicated notifications systems consider using a object to define the modal dialog box. This allows you to
 				have a single modal dialog that can have its message, button text labels and listening event updated dynamically.</p>
 			<rux-button class="rux-launch-button" on-click="_launchDynamicModal">Launch Custom Modal</rux-button>
@@ -1022,41 +1088,44 @@ export class AstroApp extends PolymerElement {
 		  icon=[[dynamicModal.icon]] custom-event=[[dynamicModal.customEvent]] </rux-modal>
 
 
-	</rux-tab-panel>
+	</astro-sample-panel>
 
 
 
-	<rux-tab-panel aria-labeledby="tab-data-visualization">
+	<astro-sample-panel aria-labeledby="sample-data-visualization">
 		<rux-spectrum-analyzer></rux-spectrum-analyzer>
-	</rux-tab-panel>
+	</astro-sample-panel>
 
 
-	<rux-tab-panel aria-labeledby="tab-form">
+	<astro-sample-panel aria-labeledby="sample-form">
 		<h2>Buttons</h2>
 		<h2>Checkbox</h2>
 		<h2>Input Fields</h2>
 		<h2>Radio Button</h2>
-	</rux-tab-panel>
+	</astro-sample-panel>
 
 
-	<rux-tab-panel aria-labeledby="tab-log">
-	</rux-tab-panel>
+	<astro-sample-panel aria-labeledby="sample-log">
+	</astro-sample-panel>
 
 
-	<rux-tab-panel aria-labeledby="tab-text-formatting">
-	</rux-tab-panel>
+	<astro-sample-panel aria-labeledby="sample-text-formatting">
+	</astro-sample-panel>
 
 
-	<rux-tab-panel aria-labeledby="tab-timeline">
+	<astro-sample-panel aria-labeledby="sample-timeline">
+		<h1>Timeline</h1>
+		<p>The timeline does some cool stuff …</p>
 		<section>
-			<h1>Timeline</h1>
+			<h2>Timeline</h2>
 			<rux-timeline label="Timeline" type="realtime" data=[[timeline]] playback-controls="footer" zoom-control=true catch-playhead-control=false>
 			</rux-timeline>
 			<!--<rux-button on-click="_addTrack">Add Track</rux-button>
         <rux-button on-click="_addRegion">Add Region to Track</rux-button>//-->
 		</section>
-	</rux-tab-panel>
-</rux-tab-panels>
+	</astro-sample-panel>
+</astro-sample-panels>
+</div>
 
     `;
   }
