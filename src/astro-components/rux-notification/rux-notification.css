@@ -42,13 +42,16 @@
   margin-top: 0;
 }
 
+/* 
 .notification-container {
   display: block;
   height: 60px;
   width: 100%;
   background-color: orange;
   position: absolute;
-  /* display: block;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
   background-color: orange !important;
   outline: 1px solid red;
   position: absolute;
@@ -56,22 +59,33 @@
   top: 0;
   left: 0;
   height: 0;
-  width: 100%; */
+  width: 100%; 
 
-  transition: top 1s ease-in-out;
+  
 }
-
+*/
+/*
 .notification-buffer {
-  /* height: 60px;
-  margin-top: -1.25rem;
+  height: 60px;
+   margin-top: -1.25rem; 
   position: relative;
   outline: 1px solid green;
-  transition: height 1s ease-in-out;
-  overflow: hidden; */
+  transition: all 0.667s ease-in-out;
+  overflow: hidden;
 }
+*/
+
+.notification-buffer.show {
+  margin-top: 0;
+}
+
 .show .rux-notification-container {
   top: 0;
 }
 .show .rux-notification-buffer {
   height: 60px;
+}
+
+a {
+  line-height: 0;
 }

@@ -41,7 +41,8 @@ export class RuxNotification extends PolymerElement {
       <link rel="stylesheet" href="src/astro-components/rux-notification/rux-notification.css">
       
       <div class="rux-notification__message">[[message]]</div>
-      <rux-button on-click="_onClick">Close</rux-button>
+      <!-- <rux-button type="icon" icon="default:close" on-click="_onClick"></rux-button> //-->
+      <a on-click="_onClick"><rux-icon icon="default:close" color="#fff" size="small"></rux-icon></a>
       `;
   }
   constructor() {
@@ -95,39 +96,14 @@ export class RuxNotification extends PolymerElement {
 
       this.container = document.createElement("div");
       this.container.classList.add("notification-container");
-      this.container.style.position = "absolute";
-      this.container.style.backgroundColor = "red";
-      this.container.style.height = "0";
-      this.container.style.width = "100%";
-      this.container.style.top = "0";
-      this.container.style.left = "0";
-      this.container.style.width = "100%";
-      this.container.style.display = "block";
-      this.container.style.padding = "0";
-      this.container.style.boxSizing = "border-box";
+      this.buffer = document.createElement("div");
+      this.buffer.classList.add("notification-buffer");
 
       this.parentNode.insertBefore(this.container, this.parentNode.firstChild);
 
-      this.buffer = document.createElement("div");
-      this.buffer.classList.add("notification-buffer");
-      this.buffer.style.webkitTransition = "margin 1s ease-in-out;";
-      this.buffer.style.mozTransition = "margin 1s ease-in-out;";
-      this.buffer.style.transition = "margin 1s ease-in-out;";
-      this.buffer.style.position = "relative";
-      this.buffer.style.height = "60px";
-      this.buffer.style.width = "100%";
-      this.buffer.style.marginLeft = `-${_parentOffsetLeft}`;
-      // this.buffer.style.marginTop = `-${_parentOffsetTop}`;
-      this.buffer.style.marginTop = "-66px";
-      this.buffer.style.marginBottom = "1rem";
-      this.buffer.style.display = "block";
-      this.buffer.style.zIndex = 10;
-
-      this.buffer.style.boxSizing = "border-box";
-
       this.parentNode.insertBefore(this.buffer, this.parentNode.firstChild);
 
-      console.log("fc", window.getComputedStyle(this.parentNode).padding);
+      // console.log("fc", window.getComputedStyle(this.parentNode).padding);
     }
   }
   disconnectedCallback() {
@@ -137,9 +113,16 @@ export class RuxNotification extends PolymerElement {
   _buffer() {
     if (!this.buffer) return;
     if (this.opened) {
-      this.buffer.style.marginTop = "0";
+      this.buffer.classList.add("show");
+      // this.container.style.display = "block";
+      // this.buffer.style.display = "block";
+      // this.buffer.style.marginTop = "0";
     } else {
-      this.buffer.style.marginTop = "-66px";
+      this.buffer.classList.remove("show");
+
+      // this.container.style.display = "none";
+      // this.buffer.style.display = "none";
+      // this.buffer.style.marginTop = "-66px";
     }
   }
 
