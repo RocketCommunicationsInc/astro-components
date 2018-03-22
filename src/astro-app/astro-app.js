@@ -257,34 +257,7 @@ export class AstroApp extends PolymerElement {
 			}
 
 
-			.notification-container {
-				display: block;
-				height: 60px;
-				width: 100%;
-				background-color: red;
-				position: absolute;
-				padding: 0;
-				box-sizing: border-box;
-				top: 0;
-				left: 0;
-				
-			}
-			
-			.notification-buffer {
-				height: 60px;
-				margin-top: -60px;
-				position: relative;
-				outline: 1px solid green;
-				transition: all 0.5s ease;
-				width: 0;
-				z-index: 10;
-				overflow: hidden;
-			}
-
-
-			.notification-buffer.show {
-				margin-top: 0;
-			}
+		
 			
 
     </style>

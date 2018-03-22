@@ -79,28 +79,58 @@ export class RuxNotification extends PolymerElement {
     console.log(this.push);
     // if the
     if (this.push) {
-      console.log("no overlay");
-      console.log(this);
-      console.log(this.style);
+      // console.log("no overlay");
+      // console.log(this);
+      // console.log(this.style);
 
       const _parent = this.parentNode;
       const _parentStyles = window.getComputedStyle(_parent);
       const _parentOffsetLeft = _parentStyles.padding.split(" ")[1];
       const _parentOffsetTop = _parentStyles.padding.split(" ")[0];
 
-      console.log("_parent", _parent);
-      console.log("_parentStyles", typeof _parentStyles.padding);
-      console.log("_parentStyles", _parentStyles.padding);
-      console.log("_parentOffsetLeft", "-" + _parentOffsetLeft);
-      console.log("_parentOffsetTop", "-" + _parentOffsetTop);
-
       this.container = document.createElement("div");
-      this.container.classList.add("notification-container");
       this.buffer = document.createElement("div");
+      this.styleSheet = document.createElement("style");
+      this.styleSheet.innerHTML = `
+      .notification-container {
+				display: block;
+				height: 60px;
+				width: 100%;
+				background-color: transparent;
+				position: absolute;
+				padding: 0;
+				box-sizing: border-box;
+				top: 0;
+				left: 0;
+				
+			}
+			
+			.notification-buffer {
+				height: 60px;
+				margin-top: -60px;
+				position: relative;
+				transition: all 0.5s ease;
+				width: 0;
+				z-index: 10;
+				overflow: hidden;
+			}
+
+
+			.notification-buffer.show {
+				margin-top: 0;
+			}
+      `;
+
+      // console.log("_parent", _parent);
+      // console.log("_parentStyles", typeof _parentStyles.padding);
+      // console.log("_parentStyles", _parentStyles.padding);
+      // console.log("_parentOffsetLeft", "-" + _parentOffsetLeft);
+      // console.log("_parentOffsetTop", "-" + _parentOffsetTop);
+
+      this.container.classList.add("notification-container");
       this.buffer.classList.add("notification-buffer");
-
+      this.parentNode.appendChild(this.styleSheet);
       this.parentNode.insertBefore(this.container, this.parentNode.firstChild);
-
       this.parentNode.insertBefore(this.buffer, this.parentNode.firstChild);
 
       // console.log("fc", window.getComputedStyle(this.parentNode).padding);
