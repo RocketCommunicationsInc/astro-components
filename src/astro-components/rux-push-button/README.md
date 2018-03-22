@@ -35,9 +35,6 @@ RUX Push Button …
 <rux-push-button></rux-push-button>
 ```
 
-```xml
-<rux-push-button></rux-push-button>
-```
 
 ###Event Listener
 RUX Push Button …
