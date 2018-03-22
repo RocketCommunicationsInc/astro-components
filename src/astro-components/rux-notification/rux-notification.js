@@ -15,7 +15,7 @@ export class RuxNotification extends PolymerElement {
         type: Object,
         value: null
       },
-      type: {
+      status: {
         type: String,
         value: "default"
       },
@@ -27,6 +27,10 @@ export class RuxNotification extends PolymerElement {
         type: String,
         value: "local",
         reflectToAttribute: true
+      },
+      closeAfter: {
+        type: Number,
+        value: false
       },
       opened: {
         type: Boolean,
@@ -48,61 +52,47 @@ export class RuxNotification extends PolymerElement {
   constructor() {
     super();
 
-    this.originalPosition;
-    this.originalOverflow;
-
     this.buffer;
     this.container;
+    this._closeAfter;
   }
   connectedCallback() {
     super.connectedCallback();
+
+    // make sure close after is a reasonable time frame.
+    if (this.closeAfter && this.closeAfter < 10) {
+      this.closeAfter *= 1000;
+    } else if (this.closeAfter > 10 && this.closeAfter < 2000) {
+      this.closeAfter = 3000;
+    }
+
+    const _parent = this.parentNode;
 
     // if the notification is attached to a local object then make sure it has a position set
     // so the notifcation gets associated correctly. Also ensure the overflow is set to hidden
     // NOTE: this is a very temporary solution. Messing with another developers position/overflow
     // undoubtedly will have unintended consequences
     if (this.target === "local") {
-      // set a property so we can return to it when closing the notification
-      this.originalPosition = this.parentNode.style.position;
-      this.originalOverflow = this.parentNode.style.overflow;
-
       // if the parent element has a position of static or has no position set, then set it
-      if (
-        !this.parentNode.style.position ||
-        this.parentNode.style.position === "static"
-      ) {
-        this.parentNode.style.position = "relative";
+      if (!_parent.style.position || _parent.style.position === "static") {
+        _parent.style.position = "relative";
       }
-      this.parentNode.style.overflow = "hidden";
+      _parent.style.overflow = "hidden";
     }
 
-    console.log(this.push);
-    // if the
+    // if the notification has the push param set, then insert some stuff
     if (this.push) {
-      // console.log("no overlay");
-      // console.log(this);
-      // console.log(this.style);
-
-      const _parent = this.parentNode;
-      const _parentStyles = window.getComputedStyle(_parent);
-      const _parentOffsetLeft = _parentStyles.padding.split(" ")[1];
-      const _parentOffsetTop = _parentStyles.padding.split(" ")[0];
-
       this.container = document.createElement("div");
       this.buffer = document.createElement("div");
       this.styleSheet = document.createElement("style");
       this.styleSheet.innerHTML = `
       .notification-container {
-				display: block;
+				display: none;
 				height: 60px;
-				width: 100%;
 				background-color: transparent;
 				position: absolute;
-				padding: 0;
-				box-sizing: border-box;
 				top: 0;
-				left: 0;
-				
+				left: 0;	
 			}
 			
 			.notification-buffer {
@@ -111,29 +101,18 @@ export class RuxNotification extends PolymerElement {
 				position: relative;
 				transition: all 0.5s ease;
 				width: 0;
-				z-index: 10;
-				overflow: hidden;
 			}
-
 
 			.notification-buffer.show {
 				margin-top: 0;
 			}
       `;
 
-      // console.log("_parent", _parent);
-      // console.log("_parentStyles", typeof _parentStyles.padding);
-      // console.log("_parentStyles", _parentStyles.padding);
-      // console.log("_parentOffsetLeft", "-" + _parentOffsetLeft);
-      // console.log("_parentOffsetTop", "-" + _parentOffsetTop);
-
       this.container.classList.add("notification-container");
       this.buffer.classList.add("notification-buffer");
-      this.parentNode.appendChild(this.styleSheet);
-      this.parentNode.insertBefore(this.container, this.parentNode.firstChild);
-      this.parentNode.insertBefore(this.buffer, this.parentNode.firstChild);
-
-      // console.log("fc", window.getComputedStyle(this.parentNode).padding);
+      _parent.appendChild(this.styleSheet);
+      _parent.insertBefore(this.container, _parent.firstChild);
+      _parent.insertBefore(this.buffer, _parent.firstChild);
     }
   }
   disconnectedCallback() {
@@ -141,22 +120,21 @@ export class RuxNotification extends PolymerElement {
   }
 
   _buffer() {
-    if (!this.buffer) return;
-    if (this.opened) {
-      this.buffer.classList.add("show");
-      // this.container.style.display = "block";
-      // this.buffer.style.display = "block";
-      // this.buffer.style.marginTop = "0";
-    } else {
-      this.buffer.classList.remove("show");
+    // if the notification has a closeAfter value start a timeout
+    if (this.closeAfter && this.opened) {
+      this._closeAfter = setTimeout(() => {
+        this.opened = false;
+      }, this.closeAfter);
+    }
 
-      // this.container.style.display = "none";
-      // this.buffer.style.display = "none";
-      // this.buffer.style.marginTop = "-66px";
+    // if this is a push down notification toggle the buffer element
+    if (this.buffer) {
+      this.buffer.classList.toggle("show");
     }
   }
 
   _onClick(e) {
+    clearTimeout(this._closeAfter);
     this.opened = false;
   }
 }

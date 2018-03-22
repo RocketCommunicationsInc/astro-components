@@ -14,6 +14,7 @@
 
   padding: 0.7rem 1rem;
   background-color: #1a6600;
+  /* background-color: var(--status-emergency); */
   transition: all 0.5s ease;
 
   box-sizing: border-box;
@@ -29,6 +30,25 @@
 
 :host([target="global"]) {
   position: fixed;
+}
+
+:host([status="emergency"]) {
+  background-color: var(--status-emergency);
+}
+:host([status="error"]) {
+  background-color: var(--status-error);
+}
+:host([status="caution"]) {
+  background-color: var(--status-caution);
+}
+:host([status="ok"]) {
+  background-color: var(--status-ok);
+}
+:host([status="standby"]) {
+  background-color: var(--status-standby);
+}
+:host([status="off"]) {
+  background-color: var(--status-off);
 }
 
 .rux-notification::after {

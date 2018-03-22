@@ -300,7 +300,7 @@ export class AstroApp extends PolymerElement {
 <section style="position: releative;">
 	<h2>Global Notification Banner</h2>
 	<p>This is a notification banner that will sit at the top of a given window. It’s kind of predicated on how the app is constructed though which is, sub-optimal. If the containing element(s) the <code>rux-notification</code> is attached to have no explicit position, the notifiation becomes a global notification.</p>
-	<rux-button on-click="_showGlobalNotification">Toggle Notification Banner</rux-button>
+	<rux-button on-click="_showNotification" data-notification="0">Toggle Notification Banner</rux-button>
 	<rux-notification
 		target="global"
 		message="This is a global notification banner.">
@@ -310,8 +310,18 @@ export class AstroApp extends PolymerElement {
 <section style="position: releative;">
 	<h2>Localized Notification Banner</h2>
 	<p>This is a notification banner display localized to its containing element, in this case the <code>section</code> element.</p>
-	<rux-button on-click="_showLocalNotification">Toggle Notification Banner</rux-button>
+	<rux-button on-click="_showNotification" data-notification="1">Toggle Notification Banner</rux-button>
 	<rux-notification
+			message="This is a local notification banner.">
+	</rux-notification>
+</section>
+
+<section>
+	<h2>Localized Notification Banner with Auto Close</h2>
+	<p>Same as above, but will automatically close after 2 seconds. Timeout to close can be set within reason. Nothing shorter than 2 seconds or longer than 10 seconds currently.</p>
+	<rux-button on-click="_showNotification" data-notification="2">Toggle Notification Banner</rux-button>
+	<rux-notification
+			close-after=2
 			message="This is a local notification banner.">
 	</rux-notification>
 </section>
@@ -319,10 +329,21 @@ export class AstroApp extends PolymerElement {
 <section style="position: releative;">
 	<h2>Localized Notification Banner with Push Down</h2>
 	<p>This is a notification banner display localized to its containing element. Instead of overlaying content, it pushes the content down.</p>
-	<rux-button on-click="_showLocalPushNotification">Toggle Notification Banner</rux-button>
+	<rux-button on-click="_showNotification" data-notification="3">Toggle Notification Banner</rux-button>
 	<rux-notification
-			push="true"
+			push=true
 			message="This is a local notification that pushes content down.">
+	</rux-notification>
+</section>
+
+
+<section>
+	<h2>Localized Notification Banner with Status Color</h2>
+	<p>This is a notification banner display that accepts a <code>status</code> paramater to match the six status color states.</p>
+	<rux-button on-click="_showNotification" data-notification="4">Toggle Notification Banner</rux-button>
+	<rux-notification
+			status="emergency"
+			message="This is a local notification banner.">
 	</rux-notification>
 </section>
 
@@ -1518,6 +1539,20 @@ export class AstroApp extends PolymerElement {
     this.timeline.tracks.push(_track);
 
     console.log(this.timeline.tracks);
+  }
+
+  _showNotification(e) {
+    console.log(e.currentTarget.dataset.notification);
+
+    const _notification = this.shadowRoot.querySelectorAll("rux-notification")[
+      e.currentTarget.dataset.notification
+    ];
+
+    if (_notification.hasAttribute("opened")) {
+      _notification.removeAttribute("opened");
+    } else {
+      _notification.setAttribute("opened", "");
+    }
   }
 
   _showGlobalNotification() {
