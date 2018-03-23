@@ -77,6 +77,9 @@ export class RuxTimelineTrack extends MutableData(PolymerElement) {
       0
     );
 
+    console.log(this.parentNode.offsetWidth);
+    console.log(this._base.offsetWidth);
+
     this.regions.forEach((region, i) => {
       const _regionDuration =
         region.endTime.getTime() - region.startTime.getTime();

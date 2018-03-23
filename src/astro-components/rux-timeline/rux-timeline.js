@@ -221,8 +221,6 @@ export class RuxTimeline extends PolymerElement {
   _updateTics() {
     if (!this._tics) return;
 
-    // this._scale = Number(this._scale);
-
     this._tracks.style.width = Number(this._scale) + "%";
 
     this._tics.forEach((tic, i) => {
@@ -266,7 +264,7 @@ export class RuxTimeline extends PolymerElement {
         _delta = this._maxScale;
       }
 
-      this._scale = _delta;
+      this._scale = Math.floor(_delta);
     } else {
       e.currentTarget.scrollLeft += Math.floor(e.deltaY);
     }
