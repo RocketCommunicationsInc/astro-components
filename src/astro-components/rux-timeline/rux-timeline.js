@@ -206,10 +206,10 @@ export class RuxTimeline extends PolymerElement {
     const dif = now.getTime() - then.getTime();
 
     const place = dif / this._duration;
-    const loc = this._track.offsetWidth * place;
+    const loc = this._ruler.offsetWidth * place;
 
     this._playhead.style.left =
-      dif * this._track.offsetWidth / this._duration + "px";
+      dif * this._ruler.offsetWidth / this._duration + "px";
   }
 
   _updateTimelineScale() {
@@ -220,12 +220,9 @@ export class RuxTimeline extends PolymerElement {
   _updateTics() {
     if (!this._tics) return;
 
-    this._scale = Number(this._scale);
-    console.log(this._scale);
-    // this._track.style.width = this._scale + "%";
-    // this._ruler.style.width = this._scale + "%";
+    // this._scale = Number(this._scale);
 
-    this._foo.style.width = this._scale + "%";
+    this._foo.style.width = Number(this._scale) + "%";
 
     this._tics.forEach((tic, i) => {
       tic.style.left =
