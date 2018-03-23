@@ -28,49 +28,6 @@
   margin-right: 0;
 }
 
-.rux-timeline__viewport {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  /* background-color: green; */
-
-  width: 100%;
-  z-index: 100;
-  /* padding: 2em 0; */
-  /* height: 200px; */
-}
-
-.rux-timeline__track__label {
-  padding-left: 1rem;
-  width: 7.875rem;
-  background-color: #0e202e;
-  font-size: 0.875rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  z-index: 200;
-  height: 48px;
-}
-
-.rux-timeline__viewport__track-container {
-  position: relative;
-  /* height: 100px; */
-  /* height: 0; */
-  overflow-y: scroll;
-  width: 100%;
-  /* margin-right: 2em;
-  background-image: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.07) 50%,
-      transparent 50%
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.13) 50%, transparent 50%),
-    linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.17) 50%),
-    linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.19) 50%);
-  background-size: 13px, 29px, 37px, 53px; */
-}
-
 .track {
   height: 33px;
   width: auto;

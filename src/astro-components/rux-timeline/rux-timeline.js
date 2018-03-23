@@ -46,6 +46,42 @@ export class RuxTimeline extends PolymerElement {
   static get template() {
     return html`
       <link rel="stylesheet" href="src/astro-components/rux-timeline/rux-timeline.css">
+      <style>
+
+        .rux-timeline__viewport {
+          position: relative;
+          display: flex;
+          
+          justify-content: flex-start;
+          width: 100%;
+          z-index: 100;
+        }
+
+        .rux-timeline__track__label {
+          
+          width: 100%;
+          background-color: #0e202e;
+          font-size: 0.875rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          height: 48px;
+        }
+
+        .rux-timeline__viewport__labels {
+          position: relative;
+          width: 7.875rem;
+          z-index: 200;
+        }
+
+        .rux-timeline__viewport__tracks {
+          outline: 1px solid red;
+          position: relative;
+          overflow-y: scroll;
+          z-index: 0;
+          width: 100%;
+        }
+        </style>
       
         <header class="rux-timeline__header">
           <rux-status status="ok"></rux-status>
@@ -61,14 +97,15 @@ export class RuxTimeline extends PolymerElement {
         
         <section class="rux-timeline__viewport">
 
-          <div class="rux-timeline__viewport__track-label-container">
+          <div class="rux-timeline__viewport__labels">
             <template is="dom-repeat" id="rux-timeline-tracks" items=[[tracks]]>
               <div class="rux-timeline__track__label">[[item.label]]</div>
             </template>
           </div>
 
 
-          <div id="x" class="rux-timeline__viewport__track-container" on-wheel="_scroll">
+          <div id="x" class="rux-timeline__viewport__tracks" on-wheel="_scroll">
+            <div id="z" class="rux-timeline__viewport__track_foo">
             <template is="dom-repeat" id="rux-timeline-tracks" items=[[tracks]]>
               
               <rux-timeline-track 
@@ -80,6 +117,7 @@ export class RuxTimeline extends PolymerElement {
             
             <div id="rux-timeline__playhead"></div>
             <div id="rux-timeline__ruler" class="rux-timeline__ruler"></div>
+            </div>
           </div>  
           
         </section>
@@ -97,6 +135,8 @@ export class RuxTimeline extends PolymerElement {
     this._playhead = this.shadowRoot.getElementById("rux-timeline__playhead");
     this._track = this.shadowRoot.getElementById("x");
 
+    console.log(this._track.offsetWidth);
+
     this._duration = this.data.duration;
     this._minScale = 100;
     this._maxScale = 500;
@@ -108,6 +148,7 @@ export class RuxTimeline extends PolymerElement {
     }, 10);
 
     this._ruler = this.shadowRoot.getElementById("rux-timeline__ruler");
+    this._foo = this.shadowRoot.getElementById("z");
     this._tics = new Array();
     this._setTics();
   }
@@ -180,12 +221,15 @@ export class RuxTimeline extends PolymerElement {
     if (!this._tics) return;
 
     this._scale = Number(this._scale);
-    this._track.style.width = this._scale + "%";
-    this._ruler.style.width = this._scale + "%";
+    console.log(this._scale);
+    // this._track.style.width = this._scale + "%";
+    // this._ruler.style.width = this._scale + "%";
+
+    this._foo.style.width = this._scale + "%";
 
     this._tics.forEach((tic, i) => {
       tic.style.left =
-        3600000 * i * this._track.offsetWidth / this._duration + "px";
+        3600000 * i * this._ruler.offsetWidth / this._duration + "px";
     });
   }
 
