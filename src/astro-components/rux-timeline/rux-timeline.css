@@ -31,20 +31,33 @@
 .rux-timeline__viewport {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: flex-start;
   /* background-color: green; */
-  overflow-y: scroll;
+
   width: 100%;
   z-index: 100;
   /* padding: 2em 0; */
   /* height: 200px; */
 }
 
+.rux-timeline__track__label {
+  padding-left: 1rem;
+  width: 7.875rem;
+  background-color: #0e202e;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 200;
+  height: 48px;
+}
+
 .rux-timeline__viewport__track-container {
   position: relative;
   /* height: 100px; */
   /* height: 0; */
+  overflow-y: scroll;
   width: 100%;
   /* margin-right: 2em;
   background-image: linear-gradient(

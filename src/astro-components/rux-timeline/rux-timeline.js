@@ -59,28 +59,32 @@ export class RuxTimeline extends PolymerElement {
 
         
         
-        <section class="rux-timeline__viewport" on-wheel="_scroll">
-          
-        
-          <div id="x" class="rux-timeline__viewport__track-container">
-            <dom-repeat id="rux-timeline-tracks" items=[[tracks]]>
-              <template>
+        <section class="rux-timeline__viewport">
+
+          <div class="rux-timeline__viewport__track-label-container">
+            <template is="dom-repeat" id="rux-timeline-tracks" items=[[tracks]]>
+              <div class="rux-timeline__track__label">[[item.label]]</div>
+            </template>
+          </div>
+
+
+          <div id="x" class="rux-timeline__viewport__track-container" on-wheel="_scroll">
+            <template is="dom-repeat" id="rux-timeline-tracks" items=[[tracks]]>
+              
               <rux-timeline-track 
-                label=[[item.label]]
                 regions=[[item.regions]]
                 scale=[[_scale]]
                 duration=[[_duration]]></rux-timeline-track>
               </template>
-            </dom-repeat>
             
             
             <div id="rux-timeline__playhead"></div>
-          
+            <div id="rux-timeline__ruler" class="rux-timeline__ruler"></div>
           </div>  
-          <footer id="rux-timeline__ruler" class="rux-timeline__ruler"></footer>
+          
         </section>
 
-        <!--<footer class="rux-timeline__footer">Footer FPO</footer>//-->
+        <footer class="rux-timeline__footer">Footer FPO</footer>
       `;
   }
   constructor() {

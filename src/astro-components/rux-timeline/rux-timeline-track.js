@@ -31,7 +31,6 @@ export class RuxTimelineTrack extends MutableData(PolymerElement) {
     return html`
       <link rel="stylesheet" href="src/astro-components/rux-timeline/rux-timeline-track.css">
       <div class="rux-timeline__track">
-        <div class="rux-timeline__track__label">[[label]]</div>
         <ol>
           <template is="dom-repeat" id="regionsElements" items={{regions}} mutable-data>
             <li>
