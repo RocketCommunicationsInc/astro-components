@@ -1363,116 +1363,6 @@ export class AstroApp extends PolymerElement {
               )
             }
           ]
-        },
-        {
-          label: "Dewey",
-          regions: [
-            {
-              label: "Satellite 4",
-              status: "ok",
-              startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                7,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                10,
-                0,
-                0
-              )
-            },
-            {
-              label: "Satellite 5",
-              status: "error",
-              startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                13,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                14,
-                30,
-                0
-              )
-            },
-            {
-              label: "Satellite 6",
-              status: "off",
-              startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                19,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                10,
-                0,
-                0
-              )
-            }
-          ]
-        },
-        {
-          label: "Louie",
-          regions: [
-            {
-              label: "Satellite 7",
-              status: "ok",
-              startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                4,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                4,
-                15,
-                0
-              )
-            },
-            {
-              label: "Satellite 8",
-              status: "caution",
-              startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                16,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                17,
-                0,
-                0
-              )
-            }
-          ]
         }
       ]
     };
@@ -1511,7 +1401,7 @@ export class AstroApp extends PolymerElement {
   _addTrack() {
     const today = new Date();
     const _track = {
-      label: "Donald",
+      label: "Louie",
       regions: [
         {
           label: "Satellite 1",

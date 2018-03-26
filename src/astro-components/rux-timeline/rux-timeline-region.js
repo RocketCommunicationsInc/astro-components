@@ -53,6 +53,50 @@ export class RuxTimelineRegion extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback();
+
+    this._base = {
+      width: this._getRegionWidth(),
+      left: this._getRegionLeft()
+    };
+
+    var now = new Date();
+    var today = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      0,
+      0,
+      0
+    );
+
+    console.group("get coordinates");
+    console.log("start time", this.startTime.getTime());
+    console.log("today", today.getTime());
+    console.log("track width", this.track.offsetWidth);
+    console.log("duration", this.duration);
+    console.log("\n\ntime dif", this.startTime.getTime() - today.getTime());
+    console.log(
+      "start hour",
+      (this.startTime.getTime() - today.getTime()) / 1000 / 60 / 60
+    );
+    console.log(
+      "region duration",
+      (this.endTime.getTime() - this.startTime.getTime()) / 1000 / 60 / 60
+    );
+    console.log(
+      "width",
+      (this.endTime.getTime() - this.startTime.getTime()) *
+        this.track.offsetWidth /
+        this.duration
+    );
+    console.log(
+      "left",
+      (this.startTime.getTime() - today.getTime()) *
+        this.track.offsetWidth /
+        this.duration
+    );
+    console.groupEnd();
+    this._updateRegion();
   }
 
   disconnectedCallback() {
@@ -68,10 +112,15 @@ export class RuxTimelineRegion extends PolymerElement {
     });
   }
 
-  _updateRegion() {
-    // console.log("updated region");
-    // if (!this.track) return;
+  _getRegionWidth() {
+    return (
+      (this.endTime.getTime() - this.startTime.getTime()) *
+      this.track.offsetWidth /
+      this.duration
+    );
+  }
 
+  _getRegionLeft() {
     var now = new Date();
     var today = new Date(
       now.getFullYear(),
@@ -81,15 +130,36 @@ export class RuxTimelineRegion extends PolymerElement {
       0,
       0
     );
-    // console.log("end time", this.endTime.getTime());
-    const _regionDuration = this.startTime.getTime() - this.endTime.getTime();
-
-    const width = _regionDuration * this.track.offsetWidth / this.duration;
-
-    const left =
+    return (
       (this.startTime.getTime() - today.getTime()) *
       this.track.offsetWidth /
-      this.duration;
+      this.duration
+    );
+  }
+
+  _updateRegion() {
+    console.log("updated region");
+    if (!this._base) return;
+    console.log(this._base.width);
+
+    // var now = new Date();
+    // var today = new Date(
+    //   now.getFullYear(),
+    //   now.getMonth(),
+    //   now.getDate(),
+    //   0,
+    //   0,
+    //   0
+    // );
+    // console.log("end time", this.endTime.getTime());
+    // const _regionDuration = this.startTime.getTime() - this.endTime.getTime();
+
+    let width = this._base.width * (this.scale / 100);
+
+    let left = this._base.left * (this.scale / 100);
+    // (this.startTime.getTime() - today.getTime()) *
+    // this.track.offsetWidth /
+    // this.duration;
 
     /* console.group("get coordinates");
     console.log("start time", this.startTime.getTime());
@@ -105,6 +175,7 @@ export class RuxTimelineRegion extends PolymerElement {
         this.duration
     );
     console.groupEnd(); */
+    console.log(left);
 
     this.style.left = left + "px";
     this.style.width = width + "px";
