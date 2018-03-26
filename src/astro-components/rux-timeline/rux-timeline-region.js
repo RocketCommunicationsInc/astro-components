@@ -14,19 +14,21 @@ export class RuxTimelineRegion extends PolymerElement {
         type: String,
         value: "off"
       },
+      scale: {
+        type: Number,
+        observer: "_updateRegion"
+      },
+      track: {
+        type: Object
+      },
+      duration: {
+        type: Number
+      },
       startTime: {
         type: Date
       },
       endTime: {
         type: Date
-      },
-      left: {
-        type: Number,
-        observer: "_updateRegion"
-      },
-      width: {
-        type: Number,
-        observer: "_updateRegion"
       }
     };
   }
@@ -67,8 +69,45 @@ export class RuxTimelineRegion extends PolymerElement {
   }
 
   _updateRegion() {
-    this.style.left = this.left + "px";
-    this.style.width = this.width + "px";
+    // console.log("updated region");
+    // if (!this.track) return;
+
+    var now = new Date();
+    var today = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      0,
+      0,
+      0
+    );
+    // console.log("end time", this.endTime.getTime());
+    const _regionDuration = this.startTime.getTime() - this.endTime.getTime();
+
+    const width = _regionDuration * this.track.offsetWidth / this.duration;
+
+    const left =
+      (this.startTime.getTime() - today.getTime()) *
+      this.track.offsetWidth /
+      this.duration;
+
+    /* console.group("get coordinates");
+    console.log("start time", this.startTime.getTime());
+    console.log("today", today.getTime());
+    console.log("track width", this.track.offsetWidth);
+    console.log("duration", this.duration);
+    console.log("\n\ntime dif", this.startTime.getTime() - today.getTime());
+    console.log("width", this.track.offsetWidth / this.duration);
+    console.log(
+      "left",
+      (this.startTime.getTime() - today.getTime()) *
+        this.track.offsetWidth /
+        this.duration
+    );
+    console.groupEnd(); */
+
+    this.style.left = left + "px";
+    this.style.width = width + "px";
   }
 }
 customElements.define("rux-timeline-region", RuxTimelineRegion);

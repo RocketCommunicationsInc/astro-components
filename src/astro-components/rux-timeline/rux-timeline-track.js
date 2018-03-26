@@ -18,8 +18,7 @@ export class RuxTimelineTrack extends MutableData(PolymerElement) {
         type: Object
       },
       scale: {
-        type: Number,
-        observer: "_setRegions"
+        type: Number
       },
       duration: {
         type: Number
@@ -39,8 +38,9 @@ export class RuxTimelineTrack extends MutableData(PolymerElement) {
                 status=[[item.status]]
                 start-time=[[item.startTime]]
                 end-time=[[item.endTime]]
-                left=[[item.left]]
-                width=[[item.width]]>
+                scale=[[scale]]
+                track=[[track]]
+                duration=[[duration]]>
               </rux-timeline-region>
             </li>
           </template>
@@ -56,8 +56,12 @@ export class RuxTimelineTrack extends MutableData(PolymerElement) {
     super.connectedCallback();
 
     this._base = this.shadowRoot.querySelectorAll(".rux-timeline__track")[0];
+    this.track = this.shadowRoot.querySelectorAll(".rux-timeline__track")[0];
 
-    this._setRegions();
+    console.log("track", this.track);
+    if (this.track) {
+      this._setRegions();
+    }
   }
 
   disconnectedCallback() {
@@ -65,33 +69,32 @@ export class RuxTimelineTrack extends MutableData(PolymerElement) {
   }
 
   _setRegions() {
+    console.log("set regions");
+    this.notifyPath("regions");
     if (!this._base) return;
 
-    var now = new Date();
-    var today = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate(),
-      0,
-      0,
-      0
-    );
+    // var now = new Date();
+    // var today = new Date(
+    //   now.getFullYear(),
+    //   now.getMonth(),
+    //   now.getDate(),
+    //   0,
+    //   0,
+    //   0
+    // );
 
-    console.log(this.parentNode.offsetWidth);
-    console.log(this._base.offsetWidth);
+    // this.regions.forEach((region, i) => {
+    //   const _regionDuration =
+    //     region.endTime.getTime() - region.startTime.getTime();
+    //   region.width = _regionDuration * this._base.offsetWidth / this.duration;
 
-    this.regions.forEach((region, i) => {
-      const _regionDuration =
-        region.endTime.getTime() - region.startTime.getTime();
-      region.width = _regionDuration * this._base.offsetWidth / this.duration;
+    //   region.left =
+    //     (region.startTime.getTime() - today.getTime()) *
+    //     this._base.offsetWidth /
+    //     this.duration;
 
-      region.left =
-        (region.startTime.getTime() - today.getTime()) *
-        this._base.offsetWidth /
-        this.duration;
-
-      this.notifyPath("regions");
-    });
+    //   this.notifyPath("regions");
+    // });
   }
 }
 customElements.define("rux-timeline-track", RuxTimelineTrack);
