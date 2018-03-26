@@ -47,8 +47,101 @@ export class RuxTimeline extends PolymerElement {
 
   static get template() {
     return html`
-      <link rel="stylesheet" href="src/astro-components/rux-timeline/rux-timeline.css">
+      
       <style>
+
+      :host {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      
+        width: 100%;
+        padding: 0;
+      }
+      
+      .rux-timeline__header,
+      .rux-timeline__footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        padding: 0 1em;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .rux-timeline__header h1 {
+        font-size: 1.25rem;
+        font-weight: 300;
+        margin-left: 0.5em;
+      }
+      
+      .rux-timeline__header rux-slider {
+        margin-left: auto;
+        margin-right: 0;
+      }
+      
+      .track {
+        height: 33px;
+        width: auto;
+      }
+      
+      rux-timeline-track:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.01);
+      }
+      rux-timeline-track:nth-child(odd) {
+        background-color: rgba(255, 255, 255, 0.04);
+      }
+      
+      #rux-timeline__ruler {
+        display: block;
+        position: relative;
+        margin-top: auto;
+        color: #bdc3c9;
+        background-color: rgba(0, 0, 0, 0.15);
+        height: 2em;
+      }
+      
+      #rux-timeline__ruler div {
+        font-size: 0.675rem;
+        top: 0;
+        height: 20px;
+        position: absolute;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.35rem 0 0 0.35rem;
+      }
+      
+      #rux-timeline__playhead {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 1px;
+        background-color: #5cb3ff;
+        z-index: 100;
+      }
+      #rux-timeline__playhead::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -6px;
+        height: 5px;
+        width: 13px;
+        background-color: #5cb3ff;
+      }
+      #rux-timeline__playhead::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: -6px;
+        height: 0;
+        width: 3px;
+        border-color: #5cb3ff;
+      
+        border-top: 6px solid #5cb3ff;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+      
 
         .rux-timeline__viewport {
           position: relative;
