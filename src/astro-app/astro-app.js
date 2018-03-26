@@ -1179,7 +1179,14 @@ export class AstroApp extends PolymerElement {
 		<p>The timeline does some cool stuff …</p>
 		<section>
 			<h2>Timeline</h2>
-			<rux-timeline label="Timeline" type="realtime" data=[[timeline]] playback-controls="footer" zoom-control=true catch-playhead-control=false>
+			<rux-timeline 
+				label="Timeline" 
+				type="realtime" 
+				initial-scale=200
+				data=[[timeline]] 
+				playback-controls="footer" 
+				zoom-control=true 
+				catch-playhead-control=false>
 			</rux-timeline>
 			<!--<rux-button on-click="_addTrack">Add Track</rux-button>
         <rux-button on-click="_addRegion">Add Region to Track</rux-button>//-->
@@ -1363,6 +1370,116 @@ export class AstroApp extends PolymerElement {
               )
             }
           ]
+        },
+        {
+          label: "Dewey",
+          regions: [
+            {
+              label: "Satellite 4",
+              status: "ok",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                7,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                10,
+                0,
+                0
+              )
+            },
+            {
+              label: "Satellite 5",
+              status: "error",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                13,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                14,
+                30,
+                0
+              )
+            },
+            {
+              label: "Satellite 6",
+              status: "off",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                19,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                10,
+                0,
+                0
+              )
+            }
+          ]
+        },
+        {
+          label: "Louie",
+          regions: [
+            {
+              label: "Satellite 7",
+              status: "ok",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                4,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                4,
+                15,
+                0
+              )
+            },
+            {
+              label: "Satellite 8",
+              status: "caution",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                16,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                17,
+                0,
+                0
+              )
+            }
+          ]
         }
       ]
     };
@@ -1401,7 +1518,7 @@ export class AstroApp extends PolymerElement {
   _addTrack() {
     const today = new Date();
     const _track = {
-      label: "Louie",
+      label: "Donald",
       regions: [
         {
           label: "Satellite 1",

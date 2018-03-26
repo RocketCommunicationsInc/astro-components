@@ -54,48 +54,14 @@ export class RuxTimelineRegion extends PolymerElement {
   connectedCallback() {
     super.connectedCallback();
 
+    // set the initial values for each region
+    //
     this._base = {
       width: this._getRegionWidth(),
-      left: this._getRegionLeft()
+      left: this._getRegionLeft(),
+      scale: this.scale
     };
 
-    var now = new Date();
-    var today = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate(),
-      0,
-      0,
-      0
-    );
-
-    console.group("get coordinates");
-    console.log("start time", this.startTime.getTime());
-    console.log("today", today.getTime());
-    console.log("track width", this.track.offsetWidth);
-    console.log("duration", this.duration);
-    console.log("\n\ntime dif", this.startTime.getTime() - today.getTime());
-    console.log(
-      "start hour",
-      (this.startTime.getTime() - today.getTime()) / 1000 / 60 / 60
-    );
-    console.log(
-      "region duration",
-      (this.endTime.getTime() - this.startTime.getTime()) / 1000 / 60 / 60
-    );
-    console.log(
-      "width",
-      (this.endTime.getTime() - this.startTime.getTime()) *
-        this.track.offsetWidth /
-        this.duration
-    );
-    console.log(
-      "left",
-      (this.startTime.getTime() - today.getTime()) *
-        this.track.offsetWidth /
-        this.duration
-    );
-    console.groupEnd();
     this._updateRegion();
   }
 
@@ -121,8 +87,8 @@ export class RuxTimelineRegion extends PolymerElement {
   }
 
   _getRegionLeft() {
-    var now = new Date();
-    var today = new Date(
+    const now = new Date();
+    const today = new Date(
       now.getFullYear(),
       now.getMonth(),
       now.getDate(),
@@ -138,47 +104,11 @@ export class RuxTimelineRegion extends PolymerElement {
   }
 
   _updateRegion() {
-    console.log("updated region");
     if (!this._base) return;
-    console.log(this._base.width);
 
-    // var now = new Date();
-    // var today = new Date(
-    //   now.getFullYear(),
-    //   now.getMonth(),
-    //   now.getDate(),
-    //   0,
-    //   0,
-    //   0
-    // );
-    // console.log("end time", this.endTime.getTime());
-    // const _regionDuration = this.startTime.getTime() - this.endTime.getTime();
-
-    let width = this._base.width * (this.scale / 100);
-
-    let left = this._base.left * (this.scale / 100);
-    // (this.startTime.getTime() - today.getTime()) *
-    // this.track.offsetWidth /
-    // this.duration;
-
-    /* console.group("get coordinates");
-    console.log("start time", this.startTime.getTime());
-    console.log("today", today.getTime());
-    console.log("track width", this.track.offsetWidth);
-    console.log("duration", this.duration);
-    console.log("\n\ntime dif", this.startTime.getTime() - today.getTime());
-    console.log("width", this.track.offsetWidth / this.duration);
-    console.log(
-      "left",
-      (this.startTime.getTime() - today.getTime()) *
-        this.track.offsetWidth /
-        this.duration
-    );
-    console.groupEnd(); */
-    console.log(left);
-
-    this.style.left = left + "px";
-    this.style.width = width + "px";
+    this.style.left = this._base.left * (this.scale / this._base.scale) + "px";
+    this.style.width =
+      this._base.width * (this.scale / this._base.scale) + "px";
   }
 }
 customElements.define("rux-timeline-region", RuxTimelineRegion);

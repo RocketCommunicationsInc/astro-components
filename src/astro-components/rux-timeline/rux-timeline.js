@@ -35,6 +35,9 @@ export class RuxTimeline extends PolymerElement {
         type: Boolean,
         value: false
       },
+      initialScale: {
+        type: Number
+      },
       _scale: {
         type: Number,
         value: 100,
@@ -126,6 +129,8 @@ export class RuxTimeline extends PolymerElement {
   }
   constructor() {
     super();
+
+    if (!this.initialScale) this.initialScale = 100;
   }
 
   connectedCallback() {
@@ -139,6 +144,7 @@ export class RuxTimeline extends PolymerElement {
     this._duration = this.data.duration;
     this._minScale = 100;
     this._maxScale = 500;
+    this._scale = this.initialScale;
 
     this.tracks = this.data.tracks;
 
@@ -152,6 +158,7 @@ export class RuxTimeline extends PolymerElement {
     );
     this._tics = new Array();
     this._setTics();
+    this._updateTimelineScale();
   }
 
   disconnectedCallback() {
