@@ -16,10 +16,11 @@ export class RuxTimelineRegion extends PolymerElement {
       },
       scale: {
         type: Number,
-        observer: "_updateRegion"
+        observer: "_updateRegion",
+        value: false
       },
-      track: {
-        type: Object
+      trackWidth: {
+        type: Number
       },
       duration: {
         type: Number
@@ -29,6 +30,10 @@ export class RuxTimelineRegion extends PolymerElement {
       },
       endTime: {
         type: Date
+      },
+      _initialState: {
+        type: Object,
+        value: false
       }
     };
   }
@@ -56,7 +61,7 @@ export class RuxTimelineRegion extends PolymerElement {
 
     // set the initial values for each region
     //
-    this._base = {
+    this._initialState = {
       width: this._getRegionWidth(),
       left: this._getRegionLeft(),
       scale: this.scale
@@ -81,7 +86,7 @@ export class RuxTimelineRegion extends PolymerElement {
   _getRegionWidth() {
     return (
       (this.endTime.getTime() - this.startTime.getTime()) *
-      this.track.offsetWidth /
+      this.trackWidth /
       this.duration
     );
   }
@@ -98,17 +103,16 @@ export class RuxTimelineRegion extends PolymerElement {
     );
     return (
       (this.startTime.getTime() - today.getTime()) *
-      this.track.offsetWidth /
+      this.trackWidth /
       this.duration
     );
   }
 
   _updateRegion() {
-    if (!this._base) return;
-
-    this.style.left = this._base.left * (this.scale / this._base.scale) + "px";
+    this.style.left =
+      this._initialState.left * (this.scale / this._initialState.scale) + "px";
     this.style.width =
-      this._base.width * (this.scale / this._base.scale) + "px";
+      this._initialState.width * (this.scale / this._initialState.scale) + "px";
   }
 }
 customElements.define("rux-timeline-region", RuxTimelineRegion);

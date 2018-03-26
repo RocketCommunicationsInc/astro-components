@@ -40,7 +40,6 @@ export class RuxTimeline extends PolymerElement {
       },
       _scale: {
         type: Number,
-        value: 100,
         observer: "_updateTimelineScale"
       }
     };
@@ -100,7 +99,7 @@ export class RuxTimeline extends PolymerElement {
         <section class="rux-timeline__viewport">
 
           <div class="rux-timeline__viewport__labels">
-            <template is="dom-repeat" id="rux-timeline-tracks" items=[[tracks]]>
+            <template is="dom-repeat" id="rux-timeline-tracks" items=[[data.tracks]]>
               <div class="rux-timeline__track__label">[[item.label]]</div>
             </template>
           </div>
@@ -108,7 +107,7 @@ export class RuxTimeline extends PolymerElement {
 
           <div id="rux-timeline__viewport__track-container" on-wheel="_scroll">
             <div id="rux-timeline__viewport__tracks">
-            <template is="dom-repeat" id="rux-timeline-track-template" items=[[tracks]]>
+            <template is="dom-repeat" id="rux-timeline-track-template" items=[[data.tracks]]>
               
               <rux-timeline-track 
                 regions=[[item.regions]]
@@ -130,45 +129,66 @@ export class RuxTimeline extends PolymerElement {
   constructor() {
     super();
 
+    // set a default scale if one doesn’t exist
     if (!this.initialScale) this.initialScale = 100;
+
+    //
+    // this._boundWindowResize = this._updateTimelineScale.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
 
+    // hard coded min/max scale (for now)
+    this._minScale = 100;
+    this._maxScale = 500;
+
+    // get the playhead
     this._playhead = this.shadowRoot.getElementById("rux-timeline__playhead");
+
+    // get the track container; this is the larger container for
+    // tracks, ruler, playhead and current time indicator
     this._track = this.shadowRoot.getElementById(
       "rux-timeline__viewport__track-container"
     );
 
-    this._duration = this.data.duration;
-    this._minScale = 100;
-    this._maxScale = 500;
-    this._scale = this.initialScale;
+    // get the timeline ruler
+    this._ruler = this.shadowRoot.getElementById("rux-timeline__ruler");
 
-    this.tracks = this.data.tracks;
+    // get the tracks container; this differs from the track_container
+    // in that it only contains the tracks.
+    this._tracks = this.shadowRoot.getElementById(
+      "rux-timeline__viewport__tracks"
+    );
+
+    this._duration = this.data.duration;
+
+    this._scale = this.initialScale;
 
     const _timer = setInterval(() => {
       this._updatePlayhead();
     }, 10);
 
-    this._ruler = this.shadowRoot.getElementById("rux-timeline__ruler");
-    this._tracks = this.shadowRoot.getElementById(
-      "rux-timeline__viewport__tracks"
-    );
     this._tics = new Array();
     this._setTics();
-    this._updateTimelineScale();
+
+    // window.addEventListener("resize", this._boundWindowResize);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
+
+    // window.removeEventListener("resize", this._boundWindowResize);
   }
 
   _catchPlayhead() {
     // if(this._playhead.offsetLeft > 1000) {
     //   this.
     // }
+  }
+
+  _onWindowResize() {
+    console.log("resizing window");
   }
 
   _getLabels() {
@@ -221,15 +241,10 @@ export class RuxTimeline extends PolymerElement {
   }
 
   _updateTimelineScale() {
-    this._updateTics();
-    // this._updateRegionScale();
-  }
-
-  _updateTics() {
-    if (!this._tics) return;
-
+    // scale tracks container
     this._tracks.style.width = Number(this._scale) + "%";
 
+    if (!this._tics) return;
     this._tics.forEach((tic, i) => {
       tic.style.left =
         3600000 * i * this._ruler.offsetWidth / this._duration + "px";
@@ -251,16 +266,11 @@ export class RuxTimeline extends PolymerElement {
     });
   }
 
-  _isScaling() {
-    // this._updateTics();
-  }
-
   /*
   **
   ** Mostly a dev feature, but maybe useful to end users. Scroll the timeline with the mouse wheel
   **
   */
-
   _scroll(e) {
     if (e.altKey) {
       let _delta = (this._scale += e.deltaY / 10);
