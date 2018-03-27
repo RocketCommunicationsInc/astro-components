@@ -1356,7 +1356,7 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                7,
+                10,
                 0,
                 0
               ),
@@ -1364,8 +1364,8 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                10,
-                0,
+                13,
+                30,
                 0
               )
             }
@@ -1466,7 +1466,7 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                16,
+                11,
                 0,
                 0
               ),
@@ -1474,7 +1474,7 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                17,
+                14,
                 0,
                 0
               )

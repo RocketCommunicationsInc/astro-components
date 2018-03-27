@@ -4,7 +4,15 @@
   height: 48px;
   width: 100%;
 
+  box-sizing: border-box;
+
   /* background-color: red; */
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
 }
 
 .rux-timeline__track {

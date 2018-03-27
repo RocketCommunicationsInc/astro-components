@@ -118,6 +118,7 @@ export class RuxTimeline extends PolymerElement {
         width: 1px;
         background-color: #5cb3ff;
         z-index: 100;
+        
       }
       #rux-timeline__playhead::before {
         content: "";

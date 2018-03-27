@@ -13,6 +13,15 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  box-sizing: border-box;
+
+  /* background-color: red; */
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
 }
 
 :host(.large) {
@@ -28,7 +37,7 @@
 }
 
 :host(.current) {
-  outline: 1px solid #4dacff;
+  border: 1px solid #4dacff;
 }
 .rux-region__segment {
   padding: 0 1em;
