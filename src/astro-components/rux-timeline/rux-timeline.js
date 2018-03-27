@@ -330,11 +330,13 @@ export class RuxTimeline extends PolymerElement {
     // time of today, like right now
     const dif = now.getTime() - then.getTime();
 
-    const place = dif / this._duration;
-    const loc = this._ruler.offsetWidth * place;
+    // const place = dif / this._duration;
+    // const loc = this._ruler.offsetWidth * place;
 
-    this._playhead.style.left =
-      dif * this._ruler.offsetWidth / this._duration + "px";
+    const loc = dif * this._ruler.offsetWidth / this._duration;
+
+    this._playhead.style.left = loc + "px";
+    window.dispatchEvent(new CustomEvent("playhead", { detail: { loc: loc } }));
   }
 
   _updateTimelineScale() {

@@ -55,6 +55,8 @@ export class RuxTimelineRegion extends PolymerElement {
   }
   constructor() {
     super();
+
+    this._collisionListener = this._playheadCollision.bind(this);
   }
 
   connectedCallback() {
@@ -69,10 +71,27 @@ export class RuxTimelineRegion extends PolymerElement {
     };
 
     this._updateRegion();
+
+    window.addEventListener("playhead", this._collisionListener);
+    // this._scrollListener = this._scroll.bind(this);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
+
+    window.removeEventListener("playhead", this._collisionListener);
+  }
+
+  _playheadCollision(e) {
+    if (
+      e.detail.loc > this._getRegionLeft() &&
+      e.detail.loc < this._getRegionLeft() + this._getRegionWidth()
+    ) {
+      this.classList.add("current");
+      window.dispatchEvent(
+        new CustomEvent("collidedRegion", { detail: { region: this } })
+      );
+    }
   }
 
   _formatTime(time) {

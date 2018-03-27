@@ -26,6 +26,10 @@
 
 :host(.compact) {
 }
+
+:host(.current) {
+  outline: 1px solid #4dacff;
+}
 .rux-region__segment {
   padding: 0 1em;
   margin: 0;
