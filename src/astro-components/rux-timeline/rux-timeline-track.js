@@ -1,5 +1,4 @@
 import { Element as PolymerElement } from "/node_modules/@polymer/polymer/polymer-element.js";
-import { MutableData } from "/node_modules/@polymer/polymer/lib/mixins/mutable-data.js";
 import { html } from "/node_modules/@polymer/polymer/polymer-element.js";
 import { RuxTimelineRegion } from "./rux-timeline-region.js";
 import "/node_modules/@polymer/polymer/lib/elements/dom-repeat.js";
@@ -8,7 +7,7 @@ import "/node_modules/@polymer/polymer/lib/elements/dom-repeat.js";
  * @polymer
  * @extends HTMLElement
  */
-export class RuxTimelineTrack extends MutableData(PolymerElement) {
+export class RuxTimelineTrack extends PolymerElement {
   static get properties() {
     return {
       label: {
@@ -31,7 +30,7 @@ export class RuxTimelineTrack extends MutableData(PolymerElement) {
       <link rel="stylesheet" href="src/astro-components/rux-timeline/rux-timeline-track.css">
       <div class="rux-timeline__track">
         <ol>
-          <template is="dom-repeat" id="regionsElements" items={{regions}} mutable-data>
+          <template is="dom-repeat" id="regionsElements" items={{regions}}>
             <li>
               <rux-timeline-region class="rux-timeline-region"
                 title=[[item.label]]
