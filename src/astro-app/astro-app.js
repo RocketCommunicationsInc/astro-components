@@ -1242,7 +1242,7 @@ export class AstroApp extends PolymerElement {
       },
       {
         label: "Caution",
-        action: "cuation"
+        action: "caution"
       },
       {
         label: "Emergency",
