@@ -8,14 +8,30 @@
   background-color: black;
 
   overflow: hidden;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-:host > div {
+:host(.large) {
+}
+
+:host(.medium) {
+}
+
+:host(.small) {
+}
+
+:host(.compact) {
+}
+.rux-region__segment {
   padding: 0 1em;
   margin: 0;
 }
 
-.rux-timeline__region__header {
+.rux-region__header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,30 +39,64 @@
   height: 50%;
 }
 
-.rux-timeline__region__header div {
+:host .rux-region__title {
   white-space: nowrap;
-  width: calc(100px - 5%);
+  overflow-y: hidden;
   text-overflow: ellipsis;
 }
 
-.rux-timeline__region__header rux-status {
+:host(.standard) .rux-region__title {
+}
+
+:host(.medium) .rux-region__title {
+}
+
+:host(.small) .rux-region__title {
+  width: 45px;
+}
+
+:host(.compact) .rux-region__title {
+  display: none;
+}
+
+.rux-region__header rux-status {
   margin-right: 0.5rem;
 }
 
-.rux-timeline__region__time {
+.rux-region__time {
+}
+
+:host .rux-region__time {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
   height: 50%;
   color: #bdc3c9;
+
+  /* outline: 1px solid white; */
 }
 
-.rux-timeline__region__time__end-time {
+:host(.standard) .rux-region__time {
+}
+
+:host(.medium) .rux-region__time {
+  /* display: none; */
+}
+
+:host(.small) .rux-region__time {
+  display: none;
+}
+
+:host(.compact) .rux-region__time {
+  display: none;
+}
+
+.rux-region__time__end-time {
   margin-left: 0.25rem;
 }
 
-.rux-timeline__region__time__end-time::before {
+.rux-region__time__end-time::before {
   content: "-";
   margin-right: 0.25rem;
 }

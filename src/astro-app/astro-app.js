@@ -1182,7 +1182,7 @@ export class AstroApp extends PolymerElement {
 			<rux-timeline 
 				label="Timeline" 
 				type="realtime" 
-				initial-scale=200
+				initial-scale=100
 				data=[[timeline]] 
 				playback-controls="footer" 
 				zoom-control=true 
@@ -1316,7 +1316,7 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                9,
+                1,
                 0,
                 0
               ),
@@ -1324,7 +1324,7 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                11,
+                2,
                 0,
                 0
               )
@@ -1336,7 +1336,7 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                13,
+                3,
                 0,
                 0
               ),
@@ -1344,7 +1344,7 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                13,
+                5,
                 30,
                 0
               )
@@ -1352,31 +1352,6 @@ export class AstroApp extends PolymerElement {
             {
               label: "Satellite 3",
               status: "error",
-              startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                15,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                17,
-                0,
-                0
-              )
-            }
-          ]
-        },
-        {
-          label: "Dewey",
-          regions: [
-            {
-              label: "Satellite 4",
-              status: "ok",
               startTime: new Date(
                 today.getFullYear(),
                 today.getMonth(),
@@ -1393,10 +1368,55 @@ export class AstroApp extends PolymerElement {
                 0,
                 0
               )
+            }
+          ]
+        },
+        {
+          label: "Dewey",
+          regions: [
+            {
+              label: "Satellite 4",
+              status: "ok",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                1,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                5,
+                0,
+                0
+              )
             },
             {
               label: "Satellite 5",
               status: "error",
+              startTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                7,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate(),
+                12,
+                30,
+                0
+              )
+            },
+            {
+              label: "Satellite 6",
+              status: "ok",
               startTime: new Date(
                 today.getFullYear(),
                 today.getMonth(),
@@ -1409,27 +1429,7 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                14,
-                30,
-                0
-              )
-            },
-            {
-              label: "Satellite 6",
-              status: "off",
-              startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
                 19,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
-                10,
                 0,
                 0
               )
@@ -1446,7 +1446,7 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                4,
+                1,
                 0,
                 0
               ),
@@ -1454,8 +1454,8 @@ export class AstroApp extends PolymerElement {
                 today.getFullYear(),
                 today.getMonth(),
                 today.getDate(),
-                4,
-                15,
+                6,
+                0,
                 0
               )
             },
