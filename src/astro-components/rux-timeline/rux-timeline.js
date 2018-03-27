@@ -198,7 +198,8 @@ export class RuxTimeline extends PolymerElement {
           </div>
 
 
-          <div id="rux-timeline__viewport__track-container" on-wheel="_scroll">
+          <!-- <div id="rux-timeline__viewport__track-container" on-wheel="_scroll"> //-->
+          <div id="rux-timeline__viewport__track-container">
             <div id="rux-timeline__viewport__tracks">
             <template is="dom-repeat" id="rux-timeline-track-template" items=[[data.tracks]]>
               
@@ -226,7 +227,7 @@ export class RuxTimeline extends PolymerElement {
     if (!this.initialScale) this.initialScale = 100;
 
     //
-    // this._boundWindowResize = this._updateTimelineScale.bind(this);
+    this._scrollListener = this._scroll.bind(this);
   }
 
   connectedCallback() {
@@ -244,6 +245,9 @@ export class RuxTimeline extends PolymerElement {
     this._track = this.shadowRoot.getElementById(
       "rux-timeline__viewport__track-container"
     );
+    this._track.addEventListener("wheel", this._scrollListener, {
+      passive: true
+    });
 
     // get the timeline ruler
     this._ruler = this.shadowRoot.getElementById("rux-timeline__ruler");
@@ -271,7 +275,7 @@ export class RuxTimeline extends PolymerElement {
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    // window.removeEventListener("resize", this._boundWindowResize);
+    this._track.removeEventListener("wheel", this._scrollListener);
   }
 
   _catchPlayhead() {
