@@ -18,7 +18,8 @@ export class RuxTimeline extends PolymerElement {
         value: "Timeline"
       },
       data: {
-        type: Object
+        type: Object,
+        observer: "_tracksUpdate"
       },
       tracks: {
         type: Array
@@ -226,16 +227,16 @@ export class RuxTimeline extends PolymerElement {
         <section class="rux-timeline__viewport">
 
           <div class="rux-timeline__viewport__labels">
-            <template is="dom-repeat" id="rux-timeline-tracks" items=[[data.tracks]]>
+            <template is="dom-repeat" id="rux-timeline-tracks" items=[[tracks]]>
               <div class="rux-timeline__track__label">[[item.label]]</div>
             </template>
           </div>
 
 
-          <!-- <div id="rux-timeline__viewport__track-container" on-wheel="_scroll"> //-->
+          
           <div id="rux-timeline__viewport__track-container">
             <div id="rux-timeline__viewport__tracks">
-            <template is="dom-repeat" id="rux-timeline-track-template" items=[[data.tracks]]>
+            <template is="dom-repeat" id="rux-timeline-track-template" items=[[tracks]]>
               
               <rux-timeline-track 
                 regions=[[item.regions]]
@@ -323,6 +324,10 @@ export class RuxTimeline extends PolymerElement {
     // if(this._playhead.offsetLeft > 1000) {
     //   this.
     // }
+  }
+
+  _tracksUpdate() {
+    console.log("tracks update");
   }
 
   _onWindowResize() {
