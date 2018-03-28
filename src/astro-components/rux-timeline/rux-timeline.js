@@ -78,7 +78,9 @@ export class RuxTimeline extends PolymerElement {
         display: flex;
         align-items: center;
         padding: 0 1em;
-        background-color: rgba(255, 255, 255, 0.1);
+        /* background-color: rgba(255, 255, 255, 0.1); */
+        background-color: hsl(204,53%,12%);
+        z-index: 10;
       }
       
       .rux-timeline__header h1 {
@@ -123,6 +125,18 @@ export class RuxTimeline extends PolymerElement {
         padding: 0.35rem 0 0 0.35rem;
       }
       
+
+      #rux-timeline__current-time {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: rgba(255,255,255,0.4);
+        z-index: 100;
+      }
+
+
       #rux-timeline__playhead {
         position: absolute;
         top: 0;
@@ -142,13 +156,14 @@ export class RuxTimeline extends PolymerElement {
         width: 13px;
         background-color: #5cb3ff;
       }
+
       #rux-timeline__playhead::after {
         content: "";
         position: absolute;
         top: 5px;
         left: -6px;
-        height: 0;
-        width: 3px;
+        height: 5px;
+        width: 13px;
         border-color: #5cb3ff;
       
         border-top: 6px solid #5cb3ff;
@@ -163,13 +178,14 @@ export class RuxTimeline extends PolymerElement {
           
           justify-content: flex-start;
           width: 100%;
-          z-index: 100;
+          z-index: 5;
         }
 
         .rux-timeline__track__label {
           padding: 0 1em;
           width: 100%;
-          background-color: #0e202e;
+          /* background-color: #0e202e; */
+          background-color: hsl(204, 53%, 14%);
           font-size: 0.875rem;
           display: flex;
           justify-content: flex-start;
@@ -181,6 +197,10 @@ export class RuxTimeline extends PolymerElement {
           position: relative;
           width: 7.875rem;
           z-index: 200;
+
+          /* background-color: rgba(0, 0, 0, 0.15); */
+          background-color: hsl(204, 53%, 14%);
+          box-shadow: 5px 0 2.5px rgba(0,0,0,0.13);
         }
 
         #rux-timeline__viewport__track-container {
@@ -223,7 +243,7 @@ export class RuxTimeline extends PolymerElement {
                 duration=[[_duration]]></rux-timeline-track>
               </template>
             
-            
+            <div id="rux-timeline__current-time"></div>
             <div id="rux-timeline__playhead"></div>
             <div id="rux-timeline__ruler"></div>
             </div>
@@ -254,6 +274,11 @@ export class RuxTimeline extends PolymerElement {
     // get the playhead
     this._playhead = this.shadowRoot.getElementById("rux-timeline__playhead");
 
+    // get the current time indicator
+    this._currentTime = this.shadowRoot.getElementById(
+      "rux-timeline__current-time"
+    );
+
     // get the track container; this is the larger container for
     // tracks, ruler, playhead and current time indicator
     this._track = this.shadowRoot.getElementById(
@@ -280,21 +305,12 @@ export class RuxTimeline extends PolymerElement {
       this._updatePlayhead();
     }, 10);
 
+    const _currentTime = setInterval(() => {
+      this._updateCurrentTime();
+    }, 500);
+
     this._tics = new Array();
     this._setTics();
-
-    const a = new Date();
-    console.log(a);
-    const b = new Date(
-      a.getUTCFullYear(),
-      a.getUTCMonth(),
-      a.getUTCDate(),
-      a.getUTCHours(),
-      a.getUTCMinutes(),
-      a.getUTCSeconds()
-    );
-    console.log(b);
-    // window.addEventListener("resize", this._boundWindowResize);
   }
 
   disconnectedCallback() {
@@ -342,7 +358,7 @@ export class RuxTimeline extends PolymerElement {
     ];
   }
 
-  _updatePlayhead(timestamp) {
+  _updateCurrentTime(timestamp) {
     const now = new Date();
     const utc = new Date(
       now.getUTCFullYear(),
@@ -369,8 +385,22 @@ export class RuxTimeline extends PolymerElement {
 
     const loc = dif * this._ruler.offsetWidth / this._duration;
 
-    this._playhead.style.left = loc + "px";
-    window.dispatchEvent(new CustomEvent("playhead", { detail: { loc: loc } }));
+    this._currentTime.style.left = loc + "px";
+    window.dispatchEvent(
+      new CustomEvent("currentTime", { detail: { loc: loc } })
+    );
+  }
+
+  _updatePlayhead(timestamp) {
+    let _left = this._playhead.offsetLeft;
+
+    _left += 1;
+    if (_left >= this._tracks.offsetWidth) {
+      _left = 0;
+    }
+    // }
+
+    this._playhead.style.left = _left + "px";
   }
 
   _updateTimelineScale() {

@@ -136,7 +136,6 @@ export class RuxTimelineRegion extends PolymerElement {
 
   _formatTime(time) {
     if (isNaN(time)) return false;
-    console.log(time);
 
     return new Date(time).toLocaleTimeString(this.locale, {
       hour12: false

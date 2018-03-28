@@ -1179,7 +1179,7 @@ export class AstroApp extends PolymerElement {
 		<p>The timeline does some cool stuff …</p>
 		<rux-clock></rux-clock>
 		<section>
-			<h2>Timeline</h2>
+			
 			<rux-timeline 
 				label="Timeline" 
 				type="realtime" 
