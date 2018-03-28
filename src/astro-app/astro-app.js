@@ -1183,13 +1183,14 @@ export class AstroApp extends PolymerElement {
 				label="Timeline" 
 				type="realtime" 
 				initial-scale=100
-				data=[[timeline]] 
+				data={{timeline}}
 				playback-controls="footer" 
 				zoom-control=true 
 				catch-playhead-control=false>
 			</rux-timeline>
-			<!--<rux-button on-click="_addTrack">Add Track</rux-button>
-        <rux-button on-click="_addRegion">Add Region to Track</rux-button>//-->
+			<br>
+				<rux-button on-click="_addTrack">Add Track</rux-button>
+      	<rux-button on-click="_addRegion">Add Region to Track</rux-button>
 		</section>
 	</astro-sample-panel>
 </astro-sample-panels>
@@ -1209,6 +1210,10 @@ export class AstroApp extends PolymerElement {
         value: "From Property"
       },
       dynamicModal: {
+        type: Object,
+        notify: true
+      },
+      timeline: {
         type: Object,
         notify: true
       }
@@ -1544,8 +1549,6 @@ export class AstroApp extends PolymerElement {
     };
 
     this.timeline.tracks.push(_track);
-
-    console.log(this.timeline.tracks);
   }
 
   _showNotification(e) {

@@ -62,11 +62,30 @@ export class RuxTimelineRegion extends PolymerElement {
   connectedCallback() {
     super.connectedCallback();
 
+    const now = new Date();
+    const today = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      0,
+      0,
+      0
+    );
+    const left =
+      (this.startTime.getTime() - today.getTime()) *
+      this.trackWidth /
+      this.duration;
+
+    const width =
+      (this.endTime.getTime() - this.startTime.getTime()) *
+      this.trackWidth /
+      this.duration;
+
     // set the initial values for each region
     //
     this._initialState = {
-      width: this._getRegionWidth(),
-      left: this._getRegionLeft(),
+      width: width,
+      left: left,
       scale: this.scale
     };
 
@@ -88,6 +107,9 @@ export class RuxTimelineRegion extends PolymerElement {
       e.detail.loc < this._getRegionLeft() + this._getRegionWidth()
     ) {
       this.classList.add("current");
+      console.log(this._getRegionLeft());
+
+      // this doesn’t do anything right now.
       window.dispatchEvent(
         new CustomEvent("collidedRegion", { detail: { region: this } })
       );
@@ -104,28 +126,11 @@ export class RuxTimelineRegion extends PolymerElement {
   }
 
   _getRegionWidth() {
-    return (
-      (this.endTime.getTime() - this.startTime.getTime()) *
-      this.trackWidth /
-      this.duration
-    );
+    return this._initialState.width * (this.scale / this._initialState.scale);
   }
 
   _getRegionLeft() {
-    const now = new Date();
-    const today = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate(),
-      0,
-      0,
-      0
-    );
-    return (
-      (this.startTime.getTime() - today.getTime()) *
-      this.trackWidth /
-      this.duration
-    );
+    return this._initialState.left * (this.scale / this._initialState.scale);
   }
 
   _resetSize() {
@@ -133,10 +138,10 @@ export class RuxTimelineRegion extends PolymerElement {
   }
 
   _updateRegion() {
-    const _width =
-      this._initialState.width * (this.scale / this._initialState.scale);
-    const _left =
-      this._initialState.left * (this.scale / this._initialState.scale);
+    const _width = this._getRegionWidth();
+
+    const _left = this._getRegionLeft();
+
     this.style.left = _left + "px";
     this.style.width = _width + "px";
 
