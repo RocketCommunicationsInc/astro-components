@@ -127,9 +127,16 @@ export class RuxTimelineRegion extends PolymerElement {
     ) {
       this.classList.add("current");
 
-      // this doesn’t do anything right now.
+      // this doesn’t do anything right now and maybe should only fire once
+      // like have the listening object fire back a response saying "i got this"
       window.dispatchEvent(
         new CustomEvent("collidedRegion", { detail: { region: this } })
+      );
+    } else if (this.classList.contains("current")) {
+      this.classList.remove("current");
+
+      window.dispatchEvent(
+        new CustomEvent("collidedRegionExited", { detail: { region: this } })
       );
     }
   }

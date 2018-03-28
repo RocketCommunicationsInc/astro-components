@@ -398,9 +398,10 @@ export class RuxTimeline extends PolymerElement {
     if (_left >= this._tracks.offsetWidth) {
       _left = 0;
     }
-    // }
-
     this._playhead.style.left = _left + "px";
+    window.dispatchEvent(
+      new CustomEvent("playhead", { detail: { loc: _left } })
+    );
   }
 
   _updateTimelineScale() {
