@@ -303,7 +303,7 @@ export class RuxTimeline extends PolymerElement {
 
     const _timer = setInterval(() => {
       this._updatePlayhead();
-    }, 100);
+    }, 50);
 
     const _currentTime = setInterval(() => {
       this._updateCurrentTime();

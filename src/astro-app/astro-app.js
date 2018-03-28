@@ -256,7 +256,19 @@ export class AstroApp extends PolymerElement {
 				margin: 0;
 			}
 
+			.pass-plan__satellites {
+				display: flex;
+				flex-direction: column;
+			}
 
+			.pass-plan__satellites li {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.pass-plan__satellites rux-status {
+				margin-right: 0.5em;
+			}
 		
 			
 
@@ -1192,9 +1204,9 @@ export class AstroApp extends PolymerElement {
 			<br>
 			<br>
 			<p>The following satellites are in the pass plan</p>
-			<ul>
+			<ul class="pass-plan__satellites">
 				<template is="dom-repeat" id="pass-plan-sats" items=[[passPlanSatellites]]>
-					<li><rux-status status=[[item.status]]></rux-status>[[item.name]]</li>
+					<li><rux-status status=[[item.status]]></rux-status>[[item.title]]</li>
 				</template>
 			</ul>
 
