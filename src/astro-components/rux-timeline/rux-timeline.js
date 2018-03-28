@@ -18,8 +18,11 @@ export class RuxTimeline extends PolymerElement {
         value: "Timeline"
       },
       data: {
-        type: Object,
-        observer: "_tracksUpdate"
+        type: Object
+      },
+      duration: {
+        type: Number,
+        value: 86400000
       },
       startTime: {
         type: Date,
@@ -36,7 +39,7 @@ export class RuxTimeline extends PolymerElement {
         type: Boolean,
         value: false
       },
-      catchPlayheadControl: {
+      playheadControl: {
         type: Boolean,
         value: false
       },
@@ -151,7 +154,7 @@ export class RuxTimeline extends PolymerElement {
         width: 1px;
         background-color: #5cb3ff;
         z-index: 100;
-        
+        display: none;
       }
       #rux-timeline__playhead::before {
         content: "";
@@ -304,14 +307,26 @@ export class RuxTimeline extends PolymerElement {
       "rux-timeline__viewport__tracks"
     );
 
-    this._duration = this.data.duration;
+    // if duration is less than 1000 then assume the
+    // data was in hours.
+    // NOTE: Refactor the underscore _duration is redundant
+    // at this point
+    // NOTE: a future enhancement would be to allow for
+    // some form of passing time in e.g. 12h for 12 hours
+    if (this.duration < 1000) {
+      this.duration = this.duration * 60 * 60 * 1000;
+    }
+    this._duration = this.duration;
     this._durationHours = this._duration / 1000 / 60 / 60;
 
     this._scale = this.initialScale;
 
-    const _playheadTimer = setInterval(() => {
-      this._updatePlayhead();
-    }, 10);
+    if (this.playheadControl) {
+      this._playhead.style.display = "block";
+      const _playheadTimer = setInterval(() => {
+        this._updatePlayhead();
+      }, 10);
+    }
 
     const _currentTimeTimer = setInterval(() => {
       this._updateCurrentTime();
