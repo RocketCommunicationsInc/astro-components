@@ -304,7 +304,7 @@ export class RuxTimeline extends PolymerElement {
 
     const _timer = setInterval(() => {
       this._updatePlayhead();
-    }, 50);
+    }, 10);
 
     const _currentTime = setInterval(() => {
       this._updateCurrentTime();
@@ -399,7 +399,7 @@ export class RuxTimeline extends PolymerElement {
   _updatePlayhead(timestamp) {
     let _left = this._playhead.offsetLeft;
 
-    _left += 1;
+    _left += 1 * (this._scale / 100);
     if (_left >= this._tracks.offsetWidth) {
       _left = 0;
     }
