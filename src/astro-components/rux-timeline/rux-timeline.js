@@ -21,6 +21,10 @@ export class RuxTimeline extends PolymerElement {
         type: Object,
         observer: "_tracksUpdate"
       },
+      startTime: {
+        type: Date,
+        value: false
+      },
       tracks: {
         type: Array
       },
@@ -135,6 +139,7 @@ export class RuxTimeline extends PolymerElement {
         width: 3px;
         background-color: rgba(255,255,255,0.4);
         z-index: 100;
+        display: none;
       }
 
 
@@ -199,7 +204,6 @@ export class RuxTimeline extends PolymerElement {
           width: 7.875rem;
           z-index: 200;
 
-          /* background-color: rgba(0, 0, 0, 0.15); */
           background-color: hsl(204, 53%, 14%);
           box-shadow: 5px 0 2.5px rgba(0,0,0,0.13);
         }
@@ -261,8 +265,10 @@ export class RuxTimeline extends PolymerElement {
     // set a default scale if one doesn’t exist
     if (!this.initialScale) this.initialScale = 100;
 
-    //
+    // bind scroll listener to scroll event
     this._scrollListener = this._scroll.bind(this);
+
+    console.log;
   }
 
   connectedCallback() {
@@ -299,14 +305,15 @@ export class RuxTimeline extends PolymerElement {
     );
 
     this._duration = this.data.duration;
+    this._durationHours = this._duration / 1000 / 60 / 60;
 
     this._scale = this.initialScale;
 
-    const _timer = setInterval(() => {
+    const _playheadTimer = setInterval(() => {
       this._updatePlayhead();
     }, 10);
 
-    const _currentTime = setInterval(() => {
+    const _currentTimeTimer = setInterval(() => {
       this._updateCurrentTime();
     }, 500);
 
@@ -324,10 +331,6 @@ export class RuxTimeline extends PolymerElement {
     // if(this._playhead.offsetLeft > 1000) {
     //   this.
     // }
-  }
-
-  _tracksUpdate() {
-    console.log("tracks update");
   }
 
   _onWindowResize() {
@@ -384,19 +387,21 @@ export class RuxTimeline extends PolymerElement {
 
     // time of today, like right now
     const dif = utc.getTime() - then.getTime();
-
-    // const place = dif / this._duration;
-    // const loc = this._ruler.offsetWidth * place;
-
     const loc = dif * this._ruler.offsetWidth / this._duration;
 
-    this._currentTime.style.left = loc + "px";
+    if (loc >= this._ruler.offsetWidth) {
+      this._currentTime.style.display = "none";
+    } else {
+      this._currentTime.style.display = "block";
+      this._currentTime.style.left = loc + "px";
+    }
+
     window.dispatchEvent(
       new CustomEvent("currentTime", { detail: { loc: loc } })
     );
   }
 
-  _updatePlayhead(timestamp) {
+  _updatePlayhead() {
     let _left = this._playhead.offsetLeft;
 
     _left += 1 * (this._scale / 100);
@@ -423,6 +428,14 @@ export class RuxTimeline extends PolymerElement {
   _setTics() {
     if (!this._track) return;
     let y = this._getLabels();
+
+    // trim the tic marks to match a duration of less than 24 hours
+    // NOTE: this is all good and well for the demo, but makes loads
+    // of assumptions, in fact the whole notion of making the timeline
+    // duration based does.
+    if (this._durationHours < 24) {
+      y.splice(this._durationHours, y.length - 1);
+    }
 
     y.forEach((tic, i) => {
       let z = document.createElement("div");

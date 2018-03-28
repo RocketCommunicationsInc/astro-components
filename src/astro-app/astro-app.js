@@ -1373,7 +1373,8 @@ export class AstroApp extends PolymerElement {
     const today = new Date();
 
     this.timeline = {
-      duration: 86400000,
+      // duration: 86400000,
+      duration: 43200000,
       tracks: [
         {
           label: "Huey",
