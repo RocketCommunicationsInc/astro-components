@@ -270,6 +270,17 @@ export class RuxTimeline extends PolymerElement {
     this._tics = new Array();
     this._setTics();
 
+    const a = new Date();
+    console.log(a);
+    const b = new Date(
+      a.getUTCFullYear(),
+      a.getUTCMonth(),
+      a.getUTCDate(),
+      a.getUTCHours(),
+      a.getUTCMinutes(),
+      a.getUTCSeconds()
+    );
+    console.log(b);
     // window.addEventListener("resize", this._boundWindowResize);
   }
 
@@ -320,16 +331,25 @@ export class RuxTimeline extends PolymerElement {
 
   _updatePlayhead(timestamp) {
     const now = new Date();
+    const utc = new Date(
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate(),
+      now.getUTCHours(),
+      now.getUTCMinutes(),
+      now.getUTCSeconds()
+    );
     const then = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate(),
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate(),
       0,
       0,
       0
     );
+
     // time of today, like right now
-    const dif = now.getTime() - then.getTime();
+    const dif = utc.getTime() - then.getTime();
 
     // const place = dif / this._duration;
     // const loc = this._ruler.offsetWidth * place;

@@ -1177,6 +1177,7 @@ export class AstroApp extends PolymerElement {
 	<astro-sample-panel aria-labeledby="sample-timeline">
 		<h1>Timeline</h1>
 		<p>The timeline does some cool stuff …</p>
+		<rux-clock></rux-clock>
 		<section>
 			<h2>Timeline</h2>
 			<rux-timeline 
@@ -1318,17 +1319,17 @@ export class AstroApp extends PolymerElement {
               label: "Satellite 1",
               status: "ok",
               startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 1,
                 0,
                 0
               ),
               endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 2,
                 0,
                 0
@@ -1338,17 +1339,17 @@ export class AstroApp extends PolymerElement {
               label: "Satellite 2",
               status: "ok",
               startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 3,
                 0,
                 0
               ),
               endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 5,
                 30,
                 0
@@ -1358,17 +1359,17 @@ export class AstroApp extends PolymerElement {
               label: "Satellite 3",
               status: "error",
               startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 10,
                 0,
                 0
               ),
               endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 13,
                 30,
                 0
@@ -1383,17 +1384,17 @@ export class AstroApp extends PolymerElement {
               label: "Satellite 4",
               status: "ok",
               startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 1,
                 0,
                 0
               ),
               endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 5,
                 0,
                 0
@@ -1403,17 +1404,17 @@ export class AstroApp extends PolymerElement {
               label: "Satellite 5",
               status: "error",
               startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 7,
                 0,
                 0
               ),
               endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 12,
                 30,
                 0
@@ -1423,17 +1424,17 @@ export class AstroApp extends PolymerElement {
               label: "Satellite 6",
               status: "ok",
               startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 13,
                 0,
                 0
               ),
               endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 19,
                 0,
                 0
@@ -1448,17 +1449,17 @@ export class AstroApp extends PolymerElement {
               label: "Satellite 7",
               status: "ok",
               startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 1,
                 0,
                 0
               ),
               endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 6,
                 0,
                 0
@@ -1468,17 +1469,17 @@ export class AstroApp extends PolymerElement {
               label: "Satellite 8",
               status: "caution",
               startTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 11,
                 0,
                 0
               ),
               endTime: new Date(
-                today.getFullYear(),
-                today.getMonth(),
-                today.getDate(),
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
                 14,
                 0,
                 0

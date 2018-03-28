@@ -64,9 +64,9 @@ export class RuxTimelineRegion extends PolymerElement {
 
     const now = new Date();
     const today = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate(),
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate(),
       0,
       0,
       0
@@ -107,7 +107,6 @@ export class RuxTimelineRegion extends PolymerElement {
       e.detail.loc < this._getRegionLeft() + this._getRegionWidth()
     ) {
       this.classList.add("current");
-      console.log(this._getRegionLeft());
 
       // this doesn’t do anything right now.
       window.dispatchEvent(
