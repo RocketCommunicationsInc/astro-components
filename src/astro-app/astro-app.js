@@ -1435,7 +1435,7 @@ export class AstroApp extends PolymerElement {
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
-                19,
+                25,
                 0,
                 0
               )

@@ -61,8 +61,16 @@ export class RuxTimeline extends PolymerElement {
       
         width: 100%;
         padding: 0;
+
+        box-sizing: border-box;
       }
       
+      *,
+      *:after,
+      *:before {
+        box-sizing: border-box;
+      }
+
       .rux-timeline__header,
       .rux-timeline__footer {
         position: relative;
@@ -87,6 +95,7 @@ export class RuxTimeline extends PolymerElement {
       .track {
         height: 33px;
         width: auto;
+        overflow: hidden;
       }
       
       rux-timeline-track:nth-child(even) {
@@ -158,7 +167,7 @@ export class RuxTimeline extends PolymerElement {
         }
 
         .rux-timeline__track__label {
-          
+          padding: 0 1em;
           width: 100%;
           background-color: #0e202e;
           font-size: 0.875rem;
