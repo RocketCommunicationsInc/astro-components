@@ -41,6 +41,10 @@ export class RuxTimeline extends PolymerElement {
       _scale: {
         type: Number,
         observer: "_updateTimelineScale"
+      },
+      timezone: {
+        type: String,
+        value: "utc"
       }
     };
   }

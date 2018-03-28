@@ -31,6 +31,14 @@ export class RuxTimelineRegion extends PolymerElement {
       endTime: {
         type: Date
       },
+      _startTime: {
+        type: Date,
+        computed: "_getTime(startTime)"
+      },
+      _endTime: {
+        type: Date,
+        computed: "_getTime(endTime)"
+      },
       _initialState: {
         type: Object,
         value: false
@@ -41,14 +49,14 @@ export class RuxTimelineRegion extends PolymerElement {
   static get template() {
     return html`
       <link rel="stylesheet" href="src/astro-components/rux-timeline/rux-timeline-region.css">
-      <div title="[[title]]: [[_formatTime(startTime)]]-[[_formatTime(endTime)]]">
+      <div title="[[title]]: [[_formatTime(_startTime)]]-[[_formatTime(_endTime)]]">
         <div class="rux-region__segment rux-region__header rux-region__segment rux-region__header">
           <rux-status status=[[status]]></rux-status>
           <div class="rux-region__title">[[title]]</div>
         </div>
         <div class="rux-region__segment rux-region__time">
-          <span class="rux-region__time__start-time">[[_formatTime(startTime)]]</span>
-          <span class="rux-region__time__end-time">[[_formatTime(endTime)]]</span>
+          <span class="rux-region__time__start-time">[[_formatTime(_startTime)]]</span>
+          <span class="rux-region__time__end-time">[[_formatTime(_endTime)]]</span>
         </div>
       </div>
       `;
@@ -72,12 +80,12 @@ export class RuxTimelineRegion extends PolymerElement {
       0
     );
     const left =
-      (this.startTime.getTime() - today.getTime()) *
+      (this._startTime.getTime() - today.getTime()) *
       this.trackWidth /
       this.duration;
 
     const width =
-      (this.endTime.getTime() - this.startTime.getTime()) *
+      (this._endTime.getTime() - this._startTime.getTime()) *
       this.trackWidth /
       this.duration;
 
@@ -92,13 +100,24 @@ export class RuxTimelineRegion extends PolymerElement {
     this._updateRegion();
 
     window.addEventListener("playhead", this._collisionListener);
-    // this._scrollListener = this._scroll.bind(this);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
 
     window.removeEventListener("playhead", this._collisionListener);
+  }
+
+  _getTime(time) {
+    return time;
+    /* return new Date(
+      time.getUTCFullYear(),
+      time.getUTCMonth(),
+      time.getUTCDate(),
+      time.getUTCHours(),
+      time.getUTCMinutes(),
+      time.getUTCSeconds()
+    ); */
   }
 
   _playheadCollision(e) {
@@ -117,10 +136,10 @@ export class RuxTimelineRegion extends PolymerElement {
 
   _formatTime(time) {
     if (isNaN(time)) return false;
+    console.log(time);
 
     return new Date(time).toLocaleTimeString(this.locale, {
-      hour12: false,
-      timeZone: "UTC"
+      hour12: false
     });
   }
 
