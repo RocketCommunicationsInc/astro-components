@@ -1190,6 +1190,16 @@ export class AstroApp extends PolymerElement {
 				catch-playhead-control=false>
 			</rux-timeline>
 			<br>
+			<br>
+			<p>The following satellites are in the pass plan</p>
+			<ul>
+				<template is="dom-repeat" id="pass-plan-sats" items=[[passPlanSatellites]]>
+					<li><rux-status status=[[item.status]]></rux-status>[[item.name]]</li>
+				</template>
+			</ul>
+
+			
+			<br>
 				<rux-button on-click="_addTrack">Add Track</rux-button>
       	<rux-button on-click="_addRegion">Add Region to Track</rux-button>
 		</section>
@@ -1216,6 +1226,10 @@ export class AstroApp extends PolymerElement {
       },
       timeline: {
         type: Object,
+        notify: true
+      },
+      passPlanSatellites: {
+        type: Array,
         notify: true
       }
     };
@@ -1256,8 +1270,40 @@ export class AstroApp extends PolymerElement {
       }
     ];
 
+    this.passPlanSatellites = new Array();
+    this._pass = new Array();
+
+    // this.passPlanSatellites.push({ name: "test", status: "ok" });
+
     window.addEventListener("pop-up-menu-event", e => {
       this._popMenuStatus = e.detail.action;
+    });
+
+    window.addEventListener("collidedRegion", e => {
+      // check to see if the event
+      let _region = this.passPlanSatellites.find(sat => {
+        return sat.title == e.detail.title;
+      });
+
+      // if it doesn’t then add it to the array
+      if (!_region) {
+        this.passPlanSatellites.push(e.detail);
+        this.notifyPath("passPlanSatellites.*", this.passPlanSatellites);
+        console.log("added one", this.passPlanSatellites);
+      }
+    });
+
+    window.addEventListener("collidedRegionExited", e => {
+      console.log("exiting collided");
+      let _index = this.passPlanSatellites.findIndex(sat => {
+        return sat.title === e.detail.title;
+      });
+
+      if (!isNaN(_index)) {
+        this.passPlanSatellites.splice(_index, 1);
+        this.notifyPath("passPlanSatellites.*", this.passPlanSatellites);
+        console.log("removed one", this.passPlanSatellites);
+      }
     });
 
     window.addEventListener("modal-event", e => {
@@ -1317,13 +1363,13 @@ export class AstroApp extends PolymerElement {
           regions: [
             {
               label: "Satellite 1",
-              status: "ok",
+              status: "caution",
               startTime: new Date(
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
-                1,
                 0,
+                30,
                 0
               ),
               endTime: new Date(
@@ -1331,7 +1377,7 @@ export class AstroApp extends PolymerElement {
                 today.getUTCMonth(),
                 today.getUTCDate(),
                 2,
-                0,
+                30,
                 0
               )
             },
@@ -1342,7 +1388,7 @@ export class AstroApp extends PolymerElement {
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
-                3,
+                4,
                 0,
                 0
               ),
@@ -1350,7 +1396,7 @@ export class AstroApp extends PolymerElement {
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
-                5,
+                6,
                 30,
                 0
               )
@@ -1388,7 +1434,7 @@ export class AstroApp extends PolymerElement {
                 today.getUTCMonth(),
                 today.getUTCDate(),
                 1,
-                0,
+                30,
                 0
               ),
               endTime: new Date(
@@ -1453,7 +1499,7 @@ export class AstroApp extends PolymerElement {
                 today.getUTCMonth(),
                 today.getUTCDate(),
                 1,
-                0,
+                30,
                 0
               ),
               endTime: new Date(

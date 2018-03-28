@@ -28,6 +28,9 @@ export class RuxTimelineRegion extends PolymerElement {
       startTime: {
         type: Date
       },
+      status: {
+        type: String
+      },
       endTime: {
         type: Date
       },
@@ -130,13 +133,17 @@ export class RuxTimelineRegion extends PolymerElement {
       // this doesn’t do anything right now and maybe should only fire once
       // like have the listening object fire back a response saying "i got this"
       window.dispatchEvent(
-        new CustomEvent("collidedRegion", { detail: { region: this } })
+        new CustomEvent("collidedRegion", {
+          detail: { title: this.title, status: this.status }
+        })
       );
     } else if (this.classList.contains("current")) {
       this.classList.remove("current");
 
       window.dispatchEvent(
-        new CustomEvent("collidedRegionExited", { detail: { region: this } })
+        new CustomEvent("collidedRegionExited", {
+          detail: { title: this.title }
+        })
       );
     }
   }
