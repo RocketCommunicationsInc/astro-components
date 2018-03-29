@@ -45,6 +45,12 @@ export class RuxTimelineRegion extends PolymerElement {
       _initialState: {
         type: Object,
         value: false
+      },
+      _id: {
+        type: String,
+        value: () => {
+          return "RTR-" + Math.floor(Math.random() * 1000);
+        }
       }
     };
   }
@@ -102,13 +108,13 @@ export class RuxTimelineRegion extends PolymerElement {
 
     this._updateRegion();
 
-    window.addEventListener("playhead", this._collisionListener);
+    this.addEventListener("playhead", this._collisionListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    window.removeEventListener("playhead", this._collisionListener);
+    this.removeEventListener("playhead", this._collisionListener);
   }
 
   _getTime(time) {
@@ -134,7 +140,7 @@ export class RuxTimelineRegion extends PolymerElement {
       // like have the listening object fire back a response saying "i got this"
       window.dispatchEvent(
         new CustomEvent("collidedRegion", {
-          detail: { title: this.title, status: this.status }
+          detail: { id: this._id, title: this.title, status: this.status }
         })
       );
     } else if (this.classList.contains("current")) {
@@ -142,7 +148,7 @@ export class RuxTimelineRegion extends PolymerElement {
 
       window.dispatchEvent(
         new CustomEvent("collidedRegionExited", {
-          detail: { title: this.title }
+          detail: { id: this._id }
         })
       );
     }

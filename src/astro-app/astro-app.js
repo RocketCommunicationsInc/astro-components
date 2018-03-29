@@ -1337,7 +1337,7 @@ export class AstroApp extends PolymerElement {
     window.addEventListener("collidedRegion", e => {
       // check to see if the event
       let _region = this.passPlanSatellites.find(sat => {
-        return sat.title == e.detail.title;
+        return sat.id == e.detail.id;
       });
 
       // if it doesn’t then add it to the array
@@ -1350,7 +1350,7 @@ export class AstroApp extends PolymerElement {
 
     window.addEventListener("collidedRegionExited", e => {
       let _index = this.passPlanSatellites.findIndex(sat => {
-        return sat.title === e.detail.title;
+        return sat.id === e.detail.id;
       });
 
       if (!isNaN(_index)) {

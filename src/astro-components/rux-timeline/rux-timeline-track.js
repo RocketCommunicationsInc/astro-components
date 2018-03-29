@@ -58,8 +58,13 @@ export class RuxTimelineTrack extends PolymerElement {
     this.trackWidth = this.shadowRoot.querySelectorAll(
       ".rux-timeline__track"
     )[0].offsetWidth;
+
+    this.parentElement.addEventListener("playhead", this._test);
   }
 
+  _test() {
+    console.log("asdf");
+  }
   disconnectedCallback() {
     super.disconnectedCallback();
   }

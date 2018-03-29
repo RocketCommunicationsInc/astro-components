@@ -424,9 +424,22 @@ export class RuxTimeline extends PolymerElement {
       _left = 0;
     }
     this._playhead.style.left = _left + "px";
-    window.dispatchEvent(
-      new CustomEvent("playhead", { detail: { loc: _left } })
-    );
+
+    const _t = this.shadowRoot.querySelectorAll("rux-timeline-track");
+    // console.log(_t[0]);
+
+    // console.log("track", this._track);
+    _t.forEach(track => {
+      var _r = track.shadowRoot.querySelectorAll("rux-timeline-region");
+
+      _r.forEach(region => {
+        region.dispatchEvent(
+          new CustomEvent("playhead", {
+            detail: { loc: _left }
+          })
+        );
+      });
+    });
   }
 
   _updateTimelineScale() {
