@@ -259,6 +259,7 @@ export class AstroApp extends PolymerElement {
 			.pass-plan__satellites {
 				display: flex;
 				flex-direction: column;
+				height: 200px;
 			}
 
 			.pass-plan__satellites li {
@@ -1224,6 +1225,7 @@ export class AstroApp extends PolymerElement {
 			<h2>Timeline with Custom Duration</h2>
 			<p>A developer could also define a timeline with a custom duration. An example here with 12 hour time frame. Note Satellite 3 and Satellite 5 have timespans that expand beyond the duration set by the deveoper, the default and only behavior is to cut those time segments off.</p>
 			<rux-timeline
+				id="listenerTimeline"
 				duration=12
 				label="Timeline" 
 				type="realtime" 
@@ -1332,32 +1334,6 @@ export class AstroApp extends PolymerElement {
 
     window.addEventListener("pop-up-menu-event", e => {
       this._popMenuStatus = e.detail.action;
-    });
-
-    window.addEventListener("collidedRegion", e => {
-      // check to see if the event
-      let _region = this.passPlanSatellites.find(sat => {
-        return sat.id == e.detail.id;
-      });
-
-      // if it doesn’t then add it to the array
-      if (!_region) {
-        this.passPlanSatellites.push(e.detail);
-        this.notifyPath("passPlanSatellites.*", this.passPlanSatellites);
-        // console.log("added one", this.passPlanSatellites);
-      }
-    });
-
-    window.addEventListener("collidedRegionExited", e => {
-      let _index = this.passPlanSatellites.findIndex(sat => {
-        return sat.id === e.detail.id;
-      });
-
-      if (!isNaN(_index)) {
-        this.passPlanSatellites.splice(_index, 1);
-        this.notifyPath("passPlanSatellites.*", this.passPlanSatellites);
-        // console.log("removed one", this.passPlanSatellites);
-      }
     });
 
     window.addEventListener("modal-event", e => {
@@ -1823,6 +1799,36 @@ export class AstroApp extends PolymerElement {
   }
   connectedCallback() {
     super.connectedCallback();
+
+    const _listenerTimeline = this.shadowRoot.getElementById(
+      "listenerTimeline"
+    );
+
+    _listenerTimeline.addEventListener("collidedRegion", e => {
+      // check to see if the event
+      let _region = this.passPlanSatellites.find(sat => {
+        return sat.id == e.detail.id;
+      });
+
+      // if it doesn’t then add it to the array
+      if (!_region) {
+        this.passPlanSatellites.push(e.detail);
+        this.notifyPath("passPlanSatellites.*", this.passPlanSatellites);
+        // console.log("added one", this.passPlanSatellites);
+      }
+    });
+
+    _listenerTimeline.addEventListener("collidedRegionExited", e => {
+      let _index = this.passPlanSatellites.findIndex(sat => {
+        return sat.id === e.detail.id;
+      });
+
+      if (!isNaN(_index)) {
+        this.passPlanSatellites.splice(_index, 1);
+        this.notifyPath("passPlanSatellites.*", this.passPlanSatellites);
+        // console.log("removed one", this.passPlanSatellites);
+      }
+    });
   }
   disconnectedCallback() {
     suer.disconnectedCallback();

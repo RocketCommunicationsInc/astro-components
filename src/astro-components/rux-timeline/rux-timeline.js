@@ -425,10 +425,9 @@ export class RuxTimeline extends PolymerElement {
     }
     this._playhead.style.left = _left + "px";
 
+    // This is a very ugly way of targeting grandchildren form a parent
+    // but for demo it’ll have to do.
     const _t = this.shadowRoot.querySelectorAll("rux-timeline-track");
-    // console.log(_t[0]);
-
-    // console.log("track", this._track);
     _t.forEach(track => {
       var _r = track.shadowRoot.querySelectorAll("rux-timeline-region");
 
