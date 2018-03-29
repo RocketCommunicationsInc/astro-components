@@ -355,8 +355,6 @@ export class RuxTimeline extends PolymerElement {
   }
 
   _onWindowResize() {
-    console.log("resizing window");
-    console.log(this._ruler.offsetWidth);
     this._updateTimelineScale();
   }
 

@@ -80,11 +80,34 @@ export class RuxTimelineRegion extends PolymerElement {
     super();
 
     this._collisionListener = this._playheadCollision.bind(this);
+    this._windowListener = this._onWindowResize.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
 
+    this._setDefaultSize();
+
+    this.addEventListener("playhead", this._collisionListener);
+    this.addEventListener("click", this._handleClick);
+
+    window.addEventListener("resize", this._windowListener);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    this.removeEventListener("playhead", this._collisionListener);
+
+    window.removeEventListener("resize");
+  }
+
+  _handleClick(e) {
+    this.selected = true;
+  }
+
+  _setDefaultSize() {
+    console.log("set default size");
     const now = new Date();
     const today = new Date(
       now.getUTCFullYear(),
@@ -111,21 +134,12 @@ export class RuxTimelineRegion extends PolymerElement {
       left: left,
       scale: this.scale
     };
-
     this._updateRegion();
-
-    this.addEventListener("playhead", this._collisionListener);
-    this.addEventListener("click", this._handleClick);
   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-
-    this.removeEventListener("playhead", this._collisionListener);
-  }
-
-  _handleClick(e) {
-    this.selected = true;
+  _onWindowResize() {
+    console.log("window resize");
+    this._setDefaultSize();
   }
 
   _getTime(time) {

@@ -54,6 +54,8 @@ export class RuxTimelineTrack extends PolymerElement {
   }
   constructor() {
     super();
+
+    this._windowListener = this._onWindowResize.bind(this);
   }
 
   connectedCallback() {
@@ -65,10 +67,20 @@ export class RuxTimelineTrack extends PolymerElement {
     )[0].offsetWidth;
 
     this.parentElement.addEventListener("playhead", this._test);
+
+    window.addEventListener("resize", this._windowListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
+
+    window.removeEventListener("resize");
+  }
+
+  _onWindowResize() {
+    this.trackWidth = this.shadowRoot.querySelectorAll(
+      ".rux-timeline__track"
+    )[0].offsetWidth;
   }
 }
 customElements.define("rux-timeline-track", RuxTimelineTrack);
