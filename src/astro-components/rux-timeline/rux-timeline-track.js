@@ -21,6 +21,11 @@ export class RuxTimelineTrack extends PolymerElement {
       },
       duration: {
         type: Number
+      },
+      selectedRegion: {
+        type: Object,
+        value: null,
+        notify: true
       }
     };
   }
@@ -62,9 +67,6 @@ export class RuxTimelineTrack extends PolymerElement {
     this.parentElement.addEventListener("playhead", this._test);
   }
 
-  _test() {
-    console.log("asdf");
-  }
   disconnectedCallback() {
     super.disconnectedCallback();
   }

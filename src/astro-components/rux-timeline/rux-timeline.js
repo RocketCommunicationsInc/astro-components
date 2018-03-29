@@ -271,6 +271,8 @@ export class RuxTimeline extends PolymerElement {
     // bind scroll listener to scroll event
     this._scrollListener = this._scroll.bind(this);
 
+    this._windowListener = this._onWindowResize.bind(this);
+
     console.log;
   }
 
@@ -334,12 +336,16 @@ export class RuxTimeline extends PolymerElement {
 
     this._tics = new Array();
     this._setTics();
+
+    window.addEventListener("resize", this._windowListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
 
     this._track.removeEventListener("wheel", this._scrollListener);
+
+    window.removeEventListener("resize");
   }
 
   _catchPlayhead() {
@@ -350,6 +356,8 @@ export class RuxTimeline extends PolymerElement {
 
   _onWindowResize() {
     console.log("resizing window");
+    console.log(this._ruler.offsetWidth);
+    this._updateTimelineScale();
   }
 
   _getLabels() {

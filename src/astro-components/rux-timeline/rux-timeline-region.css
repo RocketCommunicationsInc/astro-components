@@ -18,6 +18,7 @@
   border: 1px solid #000;
   transition: border 0.667s ease-in-out;
 
+  box-sizing: border-box;
   /* background-color: red; */
 }
 
@@ -41,9 +42,13 @@
 
 :host(.current) {
   border: 1px solid #4dacff;
-
   transition: border 0.267s ease-in-out;
 }
+
+:host([selected]) {
+  border: 1px solid red !important;
+}
+
 .rux-region__segment {
   padding: 0 1em;
   margin: 0;

@@ -34,6 +34,12 @@ export class RuxTimelineRegion extends PolymerElement {
       endTime: {
         type: Date
       },
+      selected: {
+        type: Boolean,
+        value: false,
+        reflectToAttribute: true,
+        notify: true
+      },
       _startTime: {
         type: Date,
         computed: "_getTime(startTime)"
@@ -58,7 +64,7 @@ export class RuxTimelineRegion extends PolymerElement {
   static get template() {
     return html`
       <link rel="stylesheet" href="src/astro-components/rux-timeline/rux-timeline-region.css">
-      <div title="[[title]]: [[_formatTime(_startTime)]]-[[_formatTime(_endTime)]]">
+      <div class="container" title="[[title]]: [[_formatTime(_startTime)]]-[[_formatTime(_endTime)]]">
         <div class="rux-region__segment rux-region__header rux-region__segment rux-region__header">
           <rux-status status=[[status]]></rux-status>
           <div class="rux-region__title">[[title]]</div>
@@ -109,12 +115,17 @@ export class RuxTimelineRegion extends PolymerElement {
     this._updateRegion();
 
     this.addEventListener("playhead", this._collisionListener);
+    this.addEventListener("click", this._handleClick);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
 
     this.removeEventListener("playhead", this._collisionListener);
+  }
+
+  _handleClick(e) {
+    this.selected = true;
   }
 
   _getTime(time) {

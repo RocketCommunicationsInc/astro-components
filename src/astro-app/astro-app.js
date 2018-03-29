@@ -1192,7 +1192,7 @@ export class AstroApp extends PolymerElement {
 		<p>The timeline does some cool stuff …</p>
 		<rux-clock></rux-clock>
 
-		<section>
+		<!--<section>
 		<h2>Timeline</h2>
 		<p>The standard timeline will default to a 24 hour time period</p>
 		<rux-timeline
@@ -1220,13 +1220,12 @@ export class AstroApp extends PolymerElement {
 				zoom-control=true 
 				playhead-control=true>
 			</rux-timeline>
-		</section>
+		</section>//-->
 		<section>
 			<h2>Timeline with Custom Duration</h2>
 			<p>A developer could also define a timeline with a custom duration. An example here with 12 hour time frame. Note Satellite 3 and Satellite 5 have timespans that expand beyond the duration set by the deveoper, the default and only behavior is to cut those time segments off.</p>
 			<rux-timeline
 				id="listenerTimeline"
-				duration=12
 				label="Timeline" 
 				type="realtime" 
 				initial-scale=100
@@ -1237,8 +1236,8 @@ export class AstroApp extends PolymerElement {
 				playhead-control=true>
 			</rux-timeline>
 			<br>
-				<rux-button on-click="_addTrack">Add Track</rux-button>
-				<rux-button on-click="_removeTrack">Remove Track</rux-button>
+				<!-- <rux-button on-click="_addTrack">Add Track</rux-button> //-->
+				<!-- <rux-button on-click="_removeTrack">Remove Track</rux-button> //-->
       	<!-- <rux-button on-click="_addRegion">Add Region to Track</rux-button> //-->
 			
 			<p>The following satellites are in the pass plan</p>
