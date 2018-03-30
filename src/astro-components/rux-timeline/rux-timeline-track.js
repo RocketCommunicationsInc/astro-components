@@ -69,7 +69,6 @@ export class RuxTimelineTrack extends PolymerElement {
     this.parentElement.addEventListener("playhead", this._test);
 
     window.addEventListener("resize", this._windowListener);
-    // this.addEventListener("click", this._onClick);
   }
 
   disconnectedCallback() {
@@ -79,17 +78,15 @@ export class RuxTimelineTrack extends PolymerElement {
   }
 
   _onClick(e) {
-    const regions = this.shadowRoot.querySelectorAll("rux-timeline-region");
-    regions.forEach(region => {
+    // reset any region that may be selected
+    this.shadowRoot.querySelectorAll("rux-timeline-region").forEach(region => {
       region.removeAttribute("selected");
     });
-    e.currentTarget.setAttribute("selected", "");
-    /* console.log(e.currentTarget.title);
-    console.log(e.currentTarget._id);
-    console.log(e.currentTarget.status);
-    console.log(e.currentTarget.startTime);
-    console.log(e.currentTarget.endTime); */
 
+    // set selected
+    e.currentTarget.setAttribute("selected", "");
+
+    // set selected object for parent
     this.selectedRegion = {
       _id: e.currentTarget._id,
       title: e.currentTarget.title,

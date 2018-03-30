@@ -60,7 +60,7 @@ export class RuxTimeline extends PolymerElement {
       },
       selectedRegion: {
         type: Object,
-        observer: "_selectedRegionChanged"
+        notify: true
       }
     };
   }
@@ -340,7 +340,7 @@ export class RuxTimeline extends PolymerElement {
     this._scale = this.initialScale;
 
     /* 
-    disabling playhead control for now
+    Disabling playhead control for now. 
     if (this.playheadControl) {
       this._playhead.style.display = "block";
       const _playheadTimer = setInterval(() => {
@@ -355,7 +355,7 @@ export class RuxTimeline extends PolymerElement {
     this._tics = new Array();
     this._setTics();
 
-    this.selectedRegion = { title: "Bob" };
+    // this.selectedRegion = { title: "Bob" };
 
     window.addEventListener("resize", this._windowListener);
   }
@@ -405,11 +405,6 @@ export class RuxTimeline extends PolymerElement {
       "22:00",
       "23:00"
     ];
-  }
-
-  _selectedRegionChanged(e) {
-    console.log("selected region changed");
-    console.log(e);
   }
 
   _updateCurrentTime(timestamp) {

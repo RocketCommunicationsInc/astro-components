@@ -1200,8 +1200,10 @@ export class AstroApp extends PolymerElement {
 				initial-scale=100
 				tracks=[[tracks]]
 				zoom-control=true
-				selected-region={{selectedRegion}}>
+				selected-region={{timelineSelectedRegion}}>
 			</rux-timeline>
+
+			<div>Selected Region:{{timelineSelectedRegion.title}}</div>
 		</section>
 		<!--<section>
 		<h2>Timeline with Playback Head and Custom Duration</h2>
@@ -1322,6 +1324,8 @@ export class AstroApp extends PolymerElement {
         action: "emergency"
       }
     ];
+
+    this.timelineSelectedRegion = { title: "Batman" };
 
     this.passPlanSatellites = new Array();
     this._pass = new Array();
