@@ -273,7 +273,6 @@ export class RuxTimeline extends PolymerElement {
         </section>
 
         <footer class="rux-timeline__footer">Footer FPO</footer>
-        <div>Selected Region:{{selectedRegion.title}}</div>
       `;
   }
   constructor() {
@@ -296,8 +295,6 @@ export class RuxTimeline extends PolymerElement {
     // hard coded min/max scale (for now)
     this._minScale = 100;
     this._maxScale = 500;
-
-    console.log("sr", this.selectedRegion);
 
     // get the playhead
     this._playhead = this.shadowRoot.getElementById("rux-timeline__playhead");
@@ -354,8 +351,6 @@ export class RuxTimeline extends PolymerElement {
 
     this._tics = new Array();
     this._setTics();
-
-    // this.selectedRegion = { title: "Bob" };
 
     window.addEventListener("resize", this._windowListener);
   }

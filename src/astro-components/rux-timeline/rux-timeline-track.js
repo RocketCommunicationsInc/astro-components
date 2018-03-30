@@ -41,6 +41,7 @@ export class RuxTimelineTrack extends PolymerElement {
                 status=[[item.status]]
                 start-time=[[item.startTime]]
                 end-time=[[item.endTime]]
+                detail=[[item.detail]]
                 scale=[[scale]]
                 track-width=[[trackWidth]]
                 duration=[[duration]]
@@ -61,7 +62,6 @@ export class RuxTimelineTrack extends PolymerElement {
   connectedCallback() {
     super.connectedCallback();
 
-    // this._base = this.shadowRoot.querySelectorAll(".rux-timeline__track")[0];
     this.trackWidth = this.shadowRoot.querySelectorAll(
       ".rux-timeline__track"
     )[0].offsetWidth;
@@ -92,7 +92,8 @@ export class RuxTimelineTrack extends PolymerElement {
       title: e.currentTarget.title,
       status: e.currentTarget.status,
       startTime: e.currentTarget.startTime,
-      endTime: e.currentTarget.endTime
+      endTime: e.currentTarget.endTime,
+      detail: e.currentTarget.detail
     };
   }
 

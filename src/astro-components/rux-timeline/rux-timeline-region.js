@@ -34,6 +34,9 @@ export class RuxTimelineRegion extends PolymerElement {
       endTime: {
         type: Date
       },
+      detail: {
+        type: Object
+      },
       selected: {
         type: Boolean,
         value: false,
@@ -166,7 +169,12 @@ export class RuxTimelineRegion extends PolymerElement {
         new CustomEvent("collidedRegion", {
           bubbles: true,
           composed: true,
-          detail: { id: this._id, title: this.title, status: this.status }
+          detail: {
+            id: this._id,
+            title: this.title,
+            status: this.status,
+            data: this.data
+          }
         })
       );
     } else if (this.classList.contains("current")) {
