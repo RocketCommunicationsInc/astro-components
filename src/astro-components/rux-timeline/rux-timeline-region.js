@@ -107,7 +107,7 @@ export class RuxTimelineRegion extends PolymerElement {
   }
 
   _setDefaultSize() {
-    console.log("set default size");
+    // console.log("set default size");
     const now = new Date();
     const today = new Date(
       now.getUTCFullYear(),
@@ -138,7 +138,7 @@ export class RuxTimelineRegion extends PolymerElement {
   }
 
   _onWindowResize() {
-    console.log("window resize");
+    // console.log("window resize");
     this._setDefaultSize();
   }
 

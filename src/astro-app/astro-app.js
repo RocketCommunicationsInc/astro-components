@@ -1192,7 +1192,7 @@ export class AstroApp extends PolymerElement {
 		<p>The timeline does some cool stuff …</p>
 		<rux-clock></rux-clock>
 
-		<!--<section>
+		<section>
 		<h2>Timeline</h2>
 		<p>The standard timeline will default to a 24 hour time period</p>
 		<rux-timeline
@@ -1207,10 +1207,10 @@ export class AstroApp extends PolymerElement {
 			</rux-timeline>
 		</section>
 		<section>
-		<h2>Timeline with Playback Head</h2>
+		<h2>Timeline with Playback Head and Custom Duration</h2>
 		<p>Adds a playback head</p>
 		<rux-timeline
-				duration=24
+				duration=8
 				label="Timeline" 
 				type="realtime" 
 				initial-scale=100
@@ -1220,7 +1220,7 @@ export class AstroApp extends PolymerElement {
 				zoom-control=true 
 				playhead-control=true>
 			</rux-timeline>
-		</section>//-->
+		</section>
 		<section>
 			<h2>Timeline with Custom Duration</h2>
 			<p>A developer could also define a timeline with a custom duration. An example here with 12 hour time frame. Note Satellite 3 and Satellite 5 have timespans that expand beyond the duration set by the deveoper, the default and only behavior is to cut those time segments off.</p>
@@ -1519,7 +1519,7 @@ export class AstroApp extends PolymerElement {
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
-                2,
+                1,
                 30,
                 0
               )
@@ -1630,9 +1630,55 @@ export class AstroApp extends PolymerElement {
               )
             }
           ]
+        },
+        {
+          label: "Louie",
+          regions: [
+            {
+              label: "Satellite 7",
+              status: "ok",
+              startTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                1,
+                30,
+                0
+              ),
+              endTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                6,
+                0,
+                0
+              )
+            },
+            {
+              label: "Satellite 8",
+              status: "caution",
+              startTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                11,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                14,
+                0,
+                0
+              )
+            }
+          ]
         }
       ]
     };
+
     this.tracks = this.timeline.tracks;
 
     this.dynamicModal = {
