@@ -24,7 +24,6 @@ export class RuxTimelineTrack extends PolymerElement {
       },
       selectedRegion: {
         type: Object,
-        value: null,
         notify: true
       }
     };
@@ -85,6 +84,19 @@ export class RuxTimelineTrack extends PolymerElement {
       region.removeAttribute("selected");
     });
     e.currentTarget.setAttribute("selected", "");
+    /* console.log(e.currentTarget.title);
+    console.log(e.currentTarget._id);
+    console.log(e.currentTarget.status);
+    console.log(e.currentTarget.startTime);
+    console.log(e.currentTarget.endTime); */
+
+    this.selectedRegion = {
+      _id: e.currentTarget._id,
+      title: e.currentTarget.title,
+      status: e.currentTarget.status,
+      startTime: e.currentTarget.startTime,
+      endTime: e.currentTarget.endTime
+    };
   }
 
   _onWindowResize() {

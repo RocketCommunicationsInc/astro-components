@@ -46,7 +46,7 @@
 }
 
 :host([selected]) {
-  border: 1px solid red !important;
+  background-color: red;
 }
 
 .rux-region__segment {

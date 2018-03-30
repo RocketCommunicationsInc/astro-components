@@ -1199,7 +1199,8 @@ export class AstroApp extends PolymerElement {
 				label="Timeline" 
 				initial-scale=100
 				tracks=[[tracks]]
-				zoom-control=true>
+				zoom-control=true
+				selected-region={{selectedRegion}}>
 			</rux-timeline>
 		</section>
 		<!--<section>
