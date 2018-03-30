@@ -1196,17 +1196,13 @@ export class AstroApp extends PolymerElement {
 		<h2>Timeline</h2>
 		<p>The standard timeline will default to a 24 hour time period</p>
 		<rux-timeline
-				duration=24
 				label="Timeline" 
-				type="realtime" 
 				initial-scale=100
-				data={{timelineSimple}}
 				tracks=[[tracks]]
-				playback-controls="footer" 
 				zoom-control=true>
 			</rux-timeline>
 		</section>
-		<section>
+		<!--<section>
 		<h2>Timeline with Playback Head and Custom Duration</h2>
 		<p>Adds a playback head</p>
 		<rux-timeline
@@ -1254,7 +1250,7 @@ export class AstroApp extends PolymerElement {
 			<br>
 			
 			
-		</section>
+		</section>//-->
 	</astro-sample-panel>
 </astro-sample-panels>
 </div>
@@ -1384,284 +1380,59 @@ export class AstroApp extends PolymerElement {
 
     const today = new Date();
 
-    this.timelineSimple = {
-      tracks: [
-        {
-          label: "Batman",
-          regions: [
-            {
-              label: "Satellite 1",
-              status: "caution",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                4,
-                30,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                5,
-                30,
-                0
-              )
-            },
-            {
-              label: "Satellite 2",
-              status: "ok",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                6,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                8,
-                30,
-                0
-              )
-            },
-            {
-              label: "Satellite 3",
-              status: "error",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                10,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                13,
-                30,
-                0
-              )
-            }
-          ]
-        },
-        {
-          label: "Robin",
-          regions: [
-            {
-              label: "Satellite 4",
-              status: "ok",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                1,
-                30,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                5,
-                0,
-                0
-              )
-            },
-            {
-              label: "Satellite 5",
-              status: "error",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                8,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                12,
-                0,
-                0
-              )
-            }
-          ]
-        }
-      ]
-    };
-
     this.timeline = {
       tracks: [
         {
-          label: "Huey",
+          label: "LEO",
           regions: [
             {
               label: "Satellite 1",
               status: "caution",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                0,
-                30,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                1,
-                30,
-                0
-              )
-            },
-            {
-              label: "Satellite 2",
-              status: "ok",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                4,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                6,
-                30,
-                0
-              )
-            },
-            {
-              label: "Satellite 3",
-              status: "error",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                10,
-                0,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                13,
-                30,
-                0
-              )
-            }
-          ]
-        },
-        {
-          label: "Dewey",
-          regions: [
-            {
-              label: "Satellite 4",
-              status: "ok",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                1,
-                30,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                5,
-                0,
-                0
-              )
-            },
-            {
-              label: "Satellite 5",
-              status: "error",
               startTime: new Date(
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
                 7,
-                0,
+                30,
                 0
               ),
               endTime: new Date(
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
-                12,
+                8,
                 30,
                 0
               )
             },
             {
-              label: "Satellite 6",
+              label: "Satellite 2",
               status: "ok",
               startTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                10,
+                0,
+                0
+              ),
+              endTime: new Date(
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
                 13,
                 0,
                 0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                22,
-                0,
-                0
-              )
-            }
-          ]
-        },
-        {
-          label: "Louie",
-          regions: [
-            {
-              label: "Satellite 7",
-              status: "ok",
-              startTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                1,
-                30,
-                0
-              ),
-              endTime: new Date(
-                today.getUTCFullYear(),
-                today.getUTCMonth(),
-                today.getUTCDate(),
-                6,
-                0,
-                0
               )
             },
             {
-              label: "Satellite 8",
-              status: "caution",
+              label: "Satellite 3",
+              status: "error",
               startTime: new Date(
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
-                11,
+                15,
                 0,
                 0
               ),
@@ -1669,8 +1440,8 @@ export class AstroApp extends PolymerElement {
                 today.getUTCFullYear(),
                 today.getUTCMonth(),
                 today.getUTCDate(),
-                14,
-                0,
+                20,
+                30,
                 0
               )
             }
@@ -1710,67 +1481,6 @@ export class AstroApp extends PolymerElement {
         }
       }
     ];
-  }
-
-  _addTrack() {
-    const today = new Date();
-    const _track = {
-      label: "Louie",
-      regions: [
-        {
-          label: "Satellite 7",
-          status: "ok",
-          startTime: new Date(
-            today.getUTCFullYear(),
-            today.getUTCMonth(),
-            today.getUTCDate(),
-            1,
-            30,
-            0
-          ),
-          endTime: new Date(
-            today.getUTCFullYear(),
-            today.getUTCMonth(),
-            today.getUTCDate(),
-            6,
-            0,
-            0
-          )
-        },
-        {
-          label: "Satellite 8",
-          status: "caution",
-          startTime: new Date(
-            today.getUTCFullYear(),
-            today.getUTCMonth(),
-            today.getUTCDate(),
-            11,
-            0,
-            0
-          ),
-          endTime: new Date(
-            today.getUTCFullYear(),
-            today.getUTCMonth(),
-            today.getUTCDate(),
-            14,
-            0,
-            0
-          )
-        }
-      ]
-    };
-
-    console.log("add track");
-    this.tracks.push(_track);
-    this.set("tracks.*", this.tracks);
-  }
-
-  _removeTrack() {
-    console.log(this.tracks.length);
-
-    // this.tracks.slice(2, 1);
-    this.set("tracks.*", this.tracks.pop());
-    console.log(this.tracks);
   }
 
   _showNotification(e) {
@@ -1849,7 +1559,7 @@ export class AstroApp extends PolymerElement {
       "listenerTimeline"
     );
 
-    _listenerTimeline.addEventListener("collidedRegion", e => {
+    /* _listenerTimeline.addEventListener("collidedRegion", e => {
       // check to see if the event
       let _region = this.passPlanSatellites.find(sat => {
         return sat.id == e.detail.id;
@@ -1873,7 +1583,7 @@ export class AstroApp extends PolymerElement {
         this.notifyPath("passPlanSatellites.*", this.passPlanSatellites);
         // console.log("removed one", this.passPlanSatellites);
       }
-    });
+    }); */
   }
   disconnectedCallback() {
     suer.disconnectedCallback();

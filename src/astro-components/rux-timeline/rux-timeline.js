@@ -33,7 +33,7 @@ export class RuxTimeline extends PolymerElement {
       },
       playbackControls: {
         type: String,
-        value: null
+        value: false
       },
       zoomControl: {
         type: Boolean,
@@ -42,6 +42,10 @@ export class RuxTimeline extends PolymerElement {
       playheadControl: {
         type: Boolean,
         value: false
+      },
+      selected: {
+        type: Object,
+        notify: true
       },
       initialScale: {
         type: Number
@@ -101,6 +105,10 @@ export class RuxTimeline extends PolymerElement {
         margin-left: auto;
         margin-right: 0;
       }
+
+      .rux-timeline__footer {
+        display: none;
+      }
       
       .track {
         height: 33px;
@@ -134,7 +142,7 @@ export class RuxTimeline extends PolymerElement {
       }
       
 
-      #rux-timeline__current-time {
+      #rux-timeline__playhead {
         position: absolute;
         top: 0;
         left: 0;
@@ -146,7 +154,7 @@ export class RuxTimeline extends PolymerElement {
       }
 
 
-      #rux-timeline__playhead {
+      #rux-timeline__current-time {
         position: absolute;
         top: 0;
         left: 0;
@@ -156,7 +164,7 @@ export class RuxTimeline extends PolymerElement {
         z-index: 100;
         display: none;
       }
-      #rux-timeline__playhead::before {
+      #rux-timeline__current-time::before {
         content: "";
         position: absolute;
         top: 0;
@@ -166,7 +174,7 @@ export class RuxTimeline extends PolymerElement {
         background-color: #5cb3ff;
       }
 
-      #rux-timeline__playhead::after {
+      #rux-timeline__current-time::after {
         content: "";
         position: absolute;
         top: 5px;
@@ -225,8 +233,8 @@ export class RuxTimeline extends PolymerElement {
           <rux-slider
             min=[[_minScale]]
             max=[[_maxScale]]
+            hide-input=true
             val={{_scale}}></rux-slider>
-          <!-- <rux-button on-click="_catchPlayhead">P</rux-button> //-->
         </header>
 
         
@@ -323,12 +331,14 @@ export class RuxTimeline extends PolymerElement {
 
     this._scale = this.initialScale;
 
+    /* 
+    disabling playhead control for now
     if (this.playheadControl) {
       this._playhead.style.display = "block";
       const _playheadTimer = setInterval(() => {
         this._updatePlayhead();
       }, 10);
-    }
+    } */
 
     const _currentTimeTimer = setInterval(() => {
       this._updateCurrentTime();
@@ -417,20 +427,6 @@ export class RuxTimeline extends PolymerElement {
       this._currentTime.style.left = loc + "px";
     }
 
-    window.dispatchEvent(
-      new CustomEvent("currentTime", { detail: { loc: loc } })
-    );
-  }
-
-  _updatePlayhead() {
-    let _left = this._playhead.offsetLeft;
-
-    _left += 1 * (this._scale / 100);
-    if (_left >= this._tracks.offsetWidth) {
-      _left = 0;
-    }
-    this._playhead.style.left = _left + "px";
-
     // This is a very ugly way of targeting grandchildren form a parent
     // but for demo it’ll have to do.
     const _t = this.shadowRoot.querySelectorAll("rux-timeline-track");
@@ -440,11 +436,21 @@ export class RuxTimeline extends PolymerElement {
       _r.forEach(region => {
         region.dispatchEvent(
           new CustomEvent("playhead", {
-            detail: { loc: _left }
+            detail: { loc: loc }
           })
         );
       });
     });
+  }
+
+  _updatePlayhead() {
+    let loc = this._playhead.offsetLeft;
+
+    loc += 1 * (this._scale / 100);
+    if (loc >= this._tracks.offsetWidth) {
+      loc = 0;
+    }
+    this._playhead.style.left = loc + "px";
   }
 
   _updateTimelineScale() {

@@ -89,7 +89,6 @@ export class RuxTimelineRegion extends PolymerElement {
     this._setDefaultSize();
 
     this.addEventListener("playhead", this._collisionListener);
-    this.addEventListener("click", this._handleClick);
 
     window.addEventListener("resize", this._windowListener);
   }

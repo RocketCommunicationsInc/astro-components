@@ -44,7 +44,8 @@ export class RuxTimelineTrack extends PolymerElement {
                 end-time=[[item.endTime]]
                 scale=[[scale]]
                 track-width=[[trackWidth]]
-                duration=[[duration]]>
+                duration=[[duration]]
+                on-click="_onClick">
               </rux-timeline-region>
             </li>
           </template>
@@ -69,12 +70,21 @@ export class RuxTimelineTrack extends PolymerElement {
     this.parentElement.addEventListener("playhead", this._test);
 
     window.addEventListener("resize", this._windowListener);
+    // this.addEventListener("click", this._onClick);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
 
     window.removeEventListener("resize");
+  }
+
+  _onClick(e) {
+    const regions = this.shadowRoot.querySelectorAll("rux-timeline-region");
+    regions.forEach(region => {
+      region.removeAttribute("selected");
+    });
+    e.currentTarget.setAttribute("selected", "");
   }
 
   _onWindowResize() {
