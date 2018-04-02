@@ -72,6 +72,10 @@ export class RuxClock extends PolymerElement {
           padding: 0 0.75rem;
           border: 1px solid rgba(255, 255, 255, 0.2);
           margin-bottom: 0.25rem;
+
+          white-space: nowrap;
+          overflow-y: hidden;
+          text-overflow: ellipsis;
         }
 
         .rux-clock__segment__label {
@@ -117,6 +121,8 @@ export class RuxClock extends PolymerElement {
 
     // set value of one day in milliseconds
     this._oneDay = 86400000;
+
+    this._windowListener = this._onWindowResize.bind(this);
   }
 
   connectedCallback() {
@@ -129,12 +135,16 @@ export class RuxClock extends PolymerElement {
 
     // show time immediately instead of waiting for setInterval to call
     this._updateTime();
+
+    window.addEventListener("resize", this._windowListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
 
     _timer = null;
+
+    window.removeEventListener("resize");
   }
 
   /*
@@ -203,6 +213,10 @@ export class RuxClock extends PolymerElement {
 
     // update the date
     this._getDayOfYear();
+  }
+
+  _onWindowResize() {
+    console.log("resizing");
   }
 }
 customElements.define("rux-clock", RuxClock);
