@@ -28,6 +28,10 @@ export class RuxTimeline extends PolymerElement {
         type: Date,
         value: false
       },
+      status: {
+        type: String,
+        value: "null"
+      },
       tracks: {
         type: Array
       },
@@ -170,10 +174,10 @@ export class RuxTimeline extends PolymerElement {
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
+        height: calc(100% - 32px);
         width: 1px;
         background-color: #5cb3ff;
-        z-index: 100;
+        z-index: 200;
         display: none;
       }
       #rux-timeline__current-time::before {
@@ -241,7 +245,7 @@ export class RuxTimeline extends PolymerElement {
         </style>
       
         <header class="rux-timeline__header">
-          <rux-status status="ok"></rux-status>
+          <rux-status status="[[status]]"></rux-status>
           <h1>[[label]]</h1>
           <rux-slider
             min=[[_minScale]]
@@ -294,8 +298,6 @@ export class RuxTimeline extends PolymerElement {
     this._scrollListener = this._scroll.bind(this);
 
     this._windowListener = this._onWindowResize.bind(this);
-
-    console.log;
   }
 
   connectedCallback() {

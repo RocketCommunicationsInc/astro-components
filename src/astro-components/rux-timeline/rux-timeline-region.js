@@ -82,7 +82,8 @@ export class RuxTimelineRegion extends PolymerElement {
   constructor() {
     super();
 
-    this._collisionListener = this._playheadCollision.bind(this);
+    this._playheadListener = this._playheadCollision.bind(this);
+    this._currentTimeListener = this._currentTimeCollision.bind(this);
     this._windowListener = this._onWindowResize.bind(this);
   }
 
@@ -91,7 +92,8 @@ export class RuxTimelineRegion extends PolymerElement {
 
     this._setDefaultSize();
 
-    this.addEventListener("playhead", this._collisionListener);
+    this.addEventListener("playhead", this._playheadListener);
+    this.addEventListener("currenTime", this._currentTimeListener);
 
     window.addEventListener("resize", this._windowListener);
   }
@@ -99,6 +101,7 @@ export class RuxTimelineRegion extends PolymerElement {
   disconnectedCallback() {
     super.disconnectedCallback();
 
+    this.removeEventListener("playhead", this._collisionListener);
     this.removeEventListener("playhead", this._collisionListener);
 
     window.removeEventListener("resize");
@@ -155,6 +158,8 @@ export class RuxTimelineRegion extends PolymerElement {
       time.getUTCSeconds()
     ); */
   }
+
+  _currentTimeCollision(e) {}
 
   _playheadCollision(e) {
     if (
