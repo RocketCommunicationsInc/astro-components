@@ -77,24 +77,30 @@ export class RuxTimelineTrack extends PolymerElement {
     window.removeEventListener("resize");
   }
 
-  _onClick(e) {
+  _resetSelected() {
     // reset any region that may be selected
     this.shadowRoot.querySelectorAll("rux-timeline-region").forEach(region => {
       region.removeAttribute("selected");
     });
+  }
 
-    // set selected
-    e.currentTarget.setAttribute("selected", "");
-
-    // set selected object for parent
-    this.selectedRegion = {
-      _id: e.currentTarget._id,
-      title: e.currentTarget.title,
-      status: e.currentTarget.status,
-      startTime: e.currentTarget.startTime,
-      endTime: e.currentTarget.endTime,
-      detail: e.currentTarget.detail
-    };
+  _onClick(e) {
+    if (e.currentTarget.hasAttribute("selected")) {
+      this._resetSelected();
+      this.selectedRegion = {};
+    } else {
+      this._resetSelected();
+      e.currentTarget.setAttribute("selected", "");
+      // set selected object for parent
+      this.selectedRegion = {
+        _id: e.currentTarget._id,
+        title: e.currentTarget.title,
+        status: e.currentTarget.status,
+        startTime: e.currentTarget.startTime,
+        endTime: e.currentTarget.endTime,
+        detail: e.currentTarget.detail
+      };
+    }
   }
 
   _onWindowResize() {
