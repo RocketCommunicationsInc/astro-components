@@ -95,7 +95,8 @@ export class RuxTimeline extends PolymerElement {
         align-items: center;
         padding: 0 1em;
         /* background-color: rgba(255, 255, 255, 0.1); */
-        background-color: hsl(204,53%,12%);
+        /* background-color: hsl(204,53%,12%); */
+        background-color: #24384d;
         z-index: 10;
       }
       
@@ -114,17 +115,18 @@ export class RuxTimeline extends PolymerElement {
         display: none;
       }
       
-      .track {
-        height: 33px;
-        width: auto;
-        overflow: hidden;
-      }
       
+      rux-timeline-track {
+        height: 60px;
+        margin: 1px 0;
+      }
+
       rux-timeline-track:nth-child(even) {
         background-color: rgba(255, 255, 255, 0.01);
       }
       rux-timeline-track:nth-child(odd) {
-        background-color: rgba(255, 255, 255, 0.04);
+        /* background-color: rgba(255, 255, 255, 0.04); */
+        background-color: #1e2f41;
       }
       
       #rux-timeline__ruler {
@@ -132,7 +134,8 @@ export class RuxTimeline extends PolymerElement {
         position: relative;
         margin-top: auto;
         color: #bdc3c9;
-        background-color: rgba(0, 0, 0, 0.15);
+        /* background-color: rgba(0, 0, 0, 0.15); */
+        background-color: #24384d;
         height: 2em;
       }
       
@@ -211,7 +214,8 @@ export class RuxTimeline extends PolymerElement {
           display: flex;
           justify-content: flex-start;
           align-items: center;
-          height: 48px;
+          height: 62px;
+          
         }
 
         .rux-timeline__viewport__labels {

@@ -5,7 +5,7 @@
   font-size: 0.875rem;
   top: 0;
   height: 100%;
-  background-color: black;
+  background-color: #324e69;
 
   overflow: hidden;
 
@@ -15,8 +15,8 @@
   user-select: none;
   box-sizing: border-box;
 
-  border: 1px solid #000;
-  transition: border 0.667s ease-in-out;
+  border: 1px solid #324e69;
+  /* transition: border 0.667s ease-in-out; */
 
   box-sizing: border-box;
   /* background-color: red; */
@@ -46,7 +46,8 @@
 }
 
 :host([selected]) {
-  background-color: red;
+  border: 1px solid #4dacff;
+  background-color: black;
 }
 
 .rux-region__segment {

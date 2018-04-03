@@ -1205,8 +1205,8 @@ export class AstroApp extends PolymerElement {
 
 			<div>Selected Region:{{timelineSelectedRegion.title}}</div>
 		</section>
-		<!--<section>
-		<h2>Timeline with Playback Head and Custom Duration</h2>
+		<section>
+		<h2>Timeline with Custom Duration</h2>
 		<p>Adds a playback head</p>
 		<rux-timeline
 				duration=8
@@ -1221,7 +1221,7 @@ export class AstroApp extends PolymerElement {
 			</rux-timeline>
 		</section>
 		<section>
-			<h2>Timeline with Custom Duration</h2>
+			<h2>Timeline with Multitrack</h2>
 			<p>A developer could also define a timeline with a custom duration. An example here with 12 hour time frame. Note Satellite 3 and Satellite 5 have timespans that expand beyond the duration set by the deveoper, the default and only behavior is to cut those time segments off.</p>
 			<rux-timeline
 				id="listenerTimeline"
@@ -1229,7 +1229,7 @@ export class AstroApp extends PolymerElement {
 				type="realtime" 
 				initial-scale=100
 				data={{timeline}}
-				tracks=[[tracks]]
+				tracks=[[multiTrack]]
 				playback-controls="footer" 
 				zoom-control=true 
 				playhead-control=true>
@@ -1253,7 +1253,7 @@ export class AstroApp extends PolymerElement {
 			<br>
 			
 			
-		</section>//-->
+		</section>
 	</astro-sample-panel>
 </astro-sample-panels>
 </div>
@@ -1279,11 +1279,19 @@ export class AstroApp extends PolymerElement {
         type: Object,
         notify: true
       },
+      timelineSimple: {
+        type: Object,
+        notify: true
+      },
       passPlanSatellites: {
         type: Array,
         notify: true
       },
       tracks: {
+        type: Array,
+        notify: true
+      },
+      multiTrack: {
         type: Array,
         notify: true
       }
@@ -1391,7 +1399,27 @@ export class AstroApp extends PolymerElement {
           label: "LEO",
           regions: [
             {
-              label: "Satellite 1",
+              label: "DSP-1 F17",
+              status: "caution",
+              startTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                2,
+                30,
+                0
+              ),
+              endTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                4,
+                30,
+                0
+              )
+            },
+            {
+              label: "GPS-IIA-17",
               status: "caution",
               startTime: new Date(
                 today.getUTCFullYear(),
@@ -1411,7 +1439,7 @@ export class AstroApp extends PolymerElement {
               )
             },
             {
-              label: "Satellite 2",
+              label: "GPS-IIR-2",
               status: "ok",
               startTime: new Date(
                 today.getUTCFullYear(),
@@ -1431,7 +1459,7 @@ export class AstroApp extends PolymerElement {
               )
             },
             {
-              label: "Satellite 3",
+              label: "DSP-1-18 F20",
               status: "error",
               startTime: new Date(
                 today.getUTCFullYear(),
@@ -1456,6 +1484,203 @@ export class AstroApp extends PolymerElement {
     };
 
     this.tracks = this.timeline.tracks;
+    this.multiTrack = [
+      {
+        label: "LEO",
+        regions: [
+          {
+            label: "NROL-11",
+            status: "caution",
+            startTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              7,
+              30,
+              0
+            ),
+            endTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              8,
+              30,
+              0
+            )
+          },
+          {
+            label: "DSP-1-18 F21",
+            status: "ok",
+            startTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              10,
+              0,
+              0
+            ),
+            endTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              13,
+              0,
+              0
+            )
+          },
+          {
+            label: "NROL-14 (KH-11)",
+            status: "error",
+            startTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              15,
+              0,
+              0
+            ),
+            endTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              20,
+              30,
+              0
+            )
+          }
+        ]
+      },
+      {
+        label: "HEO",
+        regions: [
+          {
+            label: "GPS-IIR-15",
+            status: "caution",
+            startTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              1,
+              0,
+              0
+            ),
+            endTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              4,
+              30,
+              0
+            )
+          },
+          {
+            label: "GPS-IIR-16",
+            status: "ok",
+            startTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              8,
+              0,
+              0
+            ),
+            endTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              12,
+              0,
+              0
+            )
+          },
+          {
+            label: "GPS-IIR-16",
+            status: "error",
+            startTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              17,
+              0,
+              0
+            ),
+            endTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              20,
+              30,
+              0
+            )
+          }
+        ]
+      },
+      {
+        label: "GEO",
+        regions: [
+          {
+            label: "STSS-Demo",
+            status: "caution",
+            startTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              7,
+              30,
+              0
+            ),
+            endTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              8,
+              30,
+              0
+            )
+          },
+          {
+            label: "WGS-3",
+            status: "ok",
+            startTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              10,
+              0,
+              0
+            ),
+            endTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              13,
+              0,
+              0
+            )
+          },
+          {
+            label: "GPS IIF-1",
+            status: "error",
+            startTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              15,
+              0,
+              0
+            ),
+            endTime: new Date(
+              today.getUTCFullYear(),
+              today.getUTCMonth(),
+              today.getUTCDate(),
+              20,
+              30,
+              0
+            )
+          }
+        ]
+      }
+    ];
 
     this.dynamicModal = {
       message:
