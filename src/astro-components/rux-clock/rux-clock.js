@@ -80,8 +80,8 @@ export class RuxClock extends PolymerElement {
 
         .rux-clock__segment__label {
           font-size: 0.875rem;
-          margin-right: auto;
-          margin-left: 0.85rem;
+          /* margin-right: auto;
+          margin-left: 0.85rem; */
         }
 
         .rux-clock__day-of-the-year .rux-clock__segment__value {
