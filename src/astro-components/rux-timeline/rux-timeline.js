@@ -99,6 +99,10 @@ export class RuxTimeline extends PolymerElement {
         background-color: #24384d;
         z-index: 10;
       }
+
+      .rux-timeline__header {
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      }
       
       .rux-timeline__header h1 {
         font-size: 1.25rem;
@@ -137,6 +141,7 @@ export class RuxTimeline extends PolymerElement {
         /* background-color: rgba(0, 0, 0, 0.15); */
         background-color: #24384d;
         height: 2em;
+        box-shadow: 0 -2px 6px rgba(0,0,0,0.2)
       }
       
       #rux-timeline__ruler div {
@@ -144,7 +149,7 @@ export class RuxTimeline extends PolymerElement {
         top: 0;
         height: 20px;
         position: absolute;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        /* border-left: 1px solid rgba(255, 255, 255, 0.1); */
         padding: 0.35rem 0 0 0.35rem;
       }
       

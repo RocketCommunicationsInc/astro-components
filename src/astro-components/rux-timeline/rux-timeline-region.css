@@ -2,6 +2,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
+
   font-size: 0.875rem;
   top: 0;
   height: 100%;
@@ -19,6 +20,7 @@
   /* transition: border 0.667s ease-in-out; */
 
   box-sizing: border-box;
+  height: 60px;
   /* background-color: red; */
 }
 
@@ -51,8 +53,12 @@
 }
 
 .rux-region__segment {
+  display: flex;
+  align-items: center;
   padding: 0 1em;
   margin: 0;
+  height: 30px !important;
+  line-height: 1;
 }
 
 .rux-region__header {
