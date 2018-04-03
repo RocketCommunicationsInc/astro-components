@@ -1203,20 +1203,30 @@ export class AstroApp extends PolymerElement {
 				selected-region={{timelineSelectedRegion}}>
 			</rux-timeline>
 
-			<div>Selected Region:{{timelineSelectedRegion.title}}</div>
+			
 		</section>
 		<section>
 		<h2>Timeline with Custom Duration</h2>
 		<p>Adds a playback head</p>
 		<rux-timeline
 				duration=8
-				label="Timeline" 
-				type="realtime" 
+				label="8 Hour Timeline" 
 				initial-scale=100
 				data={{timelineSimple}}
 				tracks=[[tracks]]
 				playback-controls="footer" 
-				zoom-control=true 
+				zoom-control=true>
+			</rux-timeline>
+		</section>
+		<section>
+		<h2>Timeline with Playback Head</h2>
+		<p>Adds a playback head</p>
+		<rux-timeline
+				label="Timeline" 
+				initial-scale=100
+				data={{timelineSimple}}
+				tracks=[[tracks]]
+				playback-controls="footer"  
 				playhead-control=true>
 			</rux-timeline>
 		</section>
@@ -1231,13 +1241,8 @@ export class AstroApp extends PolymerElement {
 				data={{timeline}}
 				tracks=[[multiTrack]]
 				playback-controls="footer" 
-				zoom-control=true 
-				playhead-control=true>
+				zoom-control=true>
 			</rux-timeline>
-			<br>
-				<!-- <rux-button on-click="_addTrack">Add Track</rux-button> //-->
-				<!-- <rux-button on-click="_removeTrack">Remove Track</rux-button> //-->
-      	<!-- <rux-button on-click="_addRegion">Add Region to Track</rux-button> //-->
 			
 			<p>The following satellites are in the pass plan</p>
 			<ul class="pass-plan__satellites">
@@ -1245,10 +1250,6 @@ export class AstroApp extends PolymerElement {
 					<li><rux-status status=[[item.status]]></rux-status>[[item.title]]</li>
 				</template>
 			</ul>
-			<br>
-			<br>
-			<br>
-			<br>
 			<br>
 			<br>
 			
@@ -1789,7 +1790,7 @@ export class AstroApp extends PolymerElement {
       "listenerTimeline"
     );
 
-    /* _listenerTimeline.addEventListener("collidedRegion", e => {
+    _listenerTimeline.addEventListener("collidedRegion", e => {
       // check to see if the event
       let _region = this.passPlanSatellites.find(sat => {
         return sat.id == e.detail.id;
@@ -1813,7 +1814,7 @@ export class AstroApp extends PolymerElement {
         this.notifyPath("passPlanSatellites.*", this.passPlanSatellites);
         // console.log("removed one", this.passPlanSatellites);
       }
-    }); */
+    });
   }
   disconnectedCallback() {
     suer.disconnectedCallback();

@@ -345,14 +345,12 @@ export class RuxTimeline extends PolymerElement {
 
     this._scale = this.initialScale;
 
-    /* 
-    Disabling playhead control for now. 
     if (this.playheadControl) {
       this._playhead.style.display = "block";
       const _playheadTimer = setInterval(() => {
         this._updatePlayhead();
       }, 10);
-    } */
+    }
 
     const _currentTimeTimer = setInterval(() => {
       this._updateCurrentTime();
