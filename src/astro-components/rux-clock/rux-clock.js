@@ -55,7 +55,7 @@ export class RuxClock extends PolymerElement {
         .rux-clock {
           display: flex;
           color: rgb(205, 210, 212);
-          font-size: 1.5rem;
+          font-size: 1.15rem;
         }
 
         .rux-clock__segment {
@@ -67,7 +67,7 @@ export class RuxClock extends PolymerElement {
         .rux-clock__segment__value {
           display: flex;
           align-items: center;
-          font-family: monospace;
+          font-family: var(--font-family-mono);
           height: 44px;
           padding: 0 0.75rem;
           border: 1px solid rgba(255, 255, 255, 0.2);
