@@ -1,28 +1,24 @@
 @import url("_dark-theme.css");
 @import url("_light-theme.css");
 
-
-
 :root {
-	
-	/* Initial Settings */
+  /* Initial Settings */
   --background: var(--background);
-  
-  
-  
+
   /* Typography */
-  --font-family: 'Open Sans', sans-serif;
-	--font-size: 1em;
+  --font-family: "Open Sans", sans-serif;
+  --font-size: 1em;
   --font-color: var(font-color);
 
-  --font-family-condensed: 'Open Sans Condensed', sans-serif;
-  --font-family-light: 'Open Sans Light', sans-serif;
-  
+  --font-family-condensed: "Open Sans Condensed", sans-serif;
+  --font-family-light: "Open Sans Light", sans-serif;
+  --font-family-mono: "Roboto Mono", monospace;
+
   --standard-transition-speed: 0.167s ease-in-out;
   /* --standard-transisiton-effect: ; */
 
   --slow-transition-speed: 0.367s ease-in-out;
-  
+
   --icon-size--default: 44px;
   --icon-size--large: 68px;
   --icon-size--small: 28px;
@@ -34,7 +30,6 @@
   --icon-color--button: #fff;
 
   --selected-color: #5cb3ff;
-
 
   /* Status Colors */
   --status-emergency: #f72501;

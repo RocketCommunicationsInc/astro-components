@@ -33,3 +33,10 @@
   font-stretch: condensed;
   font-weight: 300;
 }
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/public/fonts/roboto-mono-regular.woff2") format("woff2"),
+    url("/public/fonts/roboto-mono-regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+}
