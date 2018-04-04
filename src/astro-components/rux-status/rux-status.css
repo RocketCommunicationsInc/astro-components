@@ -1,6 +1,6 @@
 :host {
   display: inline-block;
-  max-width: 64px;
+  /* max-width: 64px; */
 }
 
 *[hidden] {
@@ -17,17 +17,18 @@
   position: relative;
   margin: 0 0.75rem;
   line-height: 0;
-  max-width: 40px;
+  width: 6.25rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.rux-advanced-status__icon {
+.rux-advanced-status__icon-group {
   position: relative;
   display: flex;
   justify-content: center;
+
   /* border: 1px solid red;
 
   background-image: linear-gradient(
@@ -42,15 +43,23 @@
 }
 
 .rux-advanced-status__status-icon {
+  /* position: absolute; */
+  /* left: -12.75rem; */
+  /* margin-left: -2rem; */
   position: absolute;
-  left: -40%;
+  order: 1;
+
+  left: 0.75rem;
+}
+
+.rux-advanced-status__icon {
+  order: 2;
 }
 
 .rux-advanced-status__label {
   text-align: center;
   color: var(--font-color);
   font-size: 0.875rem;
-  font-stretch: condensed;
   line-height: 1.2;
   margin-top: 1rem;
   overflow: hidden;
@@ -71,10 +80,15 @@
 
 .rux-advanced-status__badge {
   display: block;
-  position: absolute;
   z-index: 2;
+  order: 3;
+  position: absolute;
+  bottom: -0.75rem;
+  right: 0.75rem;
+  /* position: absolute;
+  
   bottom: -1em;
-  right: -1em;
+  right: -1em; */
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   padding: 0.65rem 0.25rem;
