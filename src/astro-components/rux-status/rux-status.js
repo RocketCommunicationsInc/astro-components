@@ -48,9 +48,10 @@ export class RuxStatus extends PolymerElement {
         
         
         <div class="rux-advanced-status__icon-group">
-          <rux-icon icon="status:{{status}}" class$="rux-advanced-status__status-icon rux-icon--status [[status]]"></rux-icon>
+          <!-- <rux-icon icon="status:{{status}}" class$="rux-advanced-status__status-icon rux-icon--status [[status]]"></rux-icon> //-->
+          <rux-icon icon="[[icon]]" class$="rux-advanced-status__icon rux-status--[[status]]"></rux-icon>
           <div class="rux-advanced-status__badge" hidden=[[!_notifications]]>[[_notifications]]</div>
-          <rux-icon icon="[[icon]]" class$="rux-advanced-status__icon rux-status--[[status]]"></rux-icon>  
+          
         </div>  
 
         <div id="rux-advanced-status-aria-label" class="rux-advanced-status__label">[[label]]<span class="rux-advanced-status__label__sub-label">[[sublabel]]</span></div>

@@ -762,7 +762,7 @@ export class AstroApp extends PolymerElement {
 			<ul class="icon-library">
 				<li>
 					<figure>
-						<rux-status icon="advanced-status:mission" status="off" label="Label" sublabel="Sub-label">
+						<rux-status icon="advanced-status:mission" status="off" label="A Longer Label for Testing" sublabel="Sub-label">
 						</rux-status>
 						<figcaption></figcaption>
 					</figure>

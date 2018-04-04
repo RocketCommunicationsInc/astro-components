@@ -1,6 +1,7 @@
 :host {
-  display: inline-block;
-  /* max-width: 64px; */
+  display: flex;
+  justify-content: center;
+  max-width: 6.25rem;
 }
 
 *[hidden] {
@@ -17,7 +18,7 @@
   position: relative;
   margin: 0 0.75rem;
   line-height: 0;
-  width: 6.25rem;
+  /* width: 6.25rem; */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -28,8 +29,12 @@
   position: relative;
   display: flex;
   justify-content: center;
+  max-width: 6.25rem;
+  min-width: 4rem;
 
-  /* border: 1px solid red;
+  /* 
+  Faux icon grid. Usefull for gross alignment
+  border: 1px solid red;
 
   background-image: linear-gradient(
     to right,
@@ -46,32 +51,45 @@
   /* position: absolute; */
   /* left: -12.75rem; */
   /* margin-left: -2rem; */
-  position: absolute;
+
+  margin: 0 2px 0 auto;
   order: 1;
 
-  left: 0.75rem;
+  /* left: 0; */
 }
 
 .rux-advanced-status__icon {
   order: 2;
+  margin: 0 auto;
 }
 
-.rux-advanced-status__label {
-  text-align: center;
-  color: var(--font-color);
-  font-size: 0.875rem;
-  line-height: 1.2;
-  margin-top: 1rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
-  white-space: nowrap;
-}
-
-.rux-advanced-status__label__sub-label {
-  font-size: 0.65em;
-  color: rgba(255, 255, 255, 0.6);
+:host .rux-advanced-status__icon::before {
+  content: "";
   display: block;
+  position: relative;
+  margin-bottom: -12px;
+  margin-left: -18px !important;
+  height: 12px;
+  width: 12px;
+}
+
+:host([status="off"]) .rux-advanced-status__icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23C6CCD1%22%20d%3D%22M3%203h6v6H3z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E");
+}
+:host([status="standby"]) .rux-advanced-status__icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23A1DCFB%22%20d%3D%22M6%2012A6%206%200%201%201%206%200a6%206%200%200%201%200%2012zm0-2a4%204%200%201%200%200-8%204%204%200%200%200%200%208z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E");
+}
+:host([status="ok"]) .rux-advanced-status__icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%237ED321%22%20d%3D%22M1%203h10v5H1z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E");
+}
+:host([status="caution"]) .rux-advanced-status__icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23F8E81C%22%20d%3D%22M1%201h10v10H1z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A");
+}
+:host([status="error"]) .rux-advanced-status__icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23C05846%22%20cx%3D%226%22%20cy%3D%226%22%20r%3D%226%22%3E%3C%2Fcircle%3E%0A%3C%2Fsvg%3E%0A");
+}
+:host([status="emergency"]) .rux-advanced-status__icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23F72501%22%20d%3D%22M12%2012H0L6%200z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A");
 }
 
 .rux-advanced-status__badge:empty {
@@ -82,9 +100,13 @@
   display: block;
   z-index: 2;
   order: 3;
+
   position: absolute;
-  bottom: -0.75rem;
-  right: 0.75rem;
+  bottom: -1rem;
+  right: -0.5rem;
+
+  /* bottom: -0.75rem;
+  right: 0; */
   /* position: absolute;
   
   bottom: -1em;
@@ -100,6 +122,25 @@
   text-overflow: ellipsis;
   /* max-width: 72%; */
   white-space: nowrap;
+}
+
+.rux-advanced-status__label {
+  text-align: center;
+  color: var(--font-color);
+  font-size: 0.875rem;
+  line-height: 1.2;
+  margin-top: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 6.25rem;
+  white-space: nowrap;
+}
+
+.rux-advanced-status__label__sub-label {
+  font-size: 0.65em;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
 }
 
 .rux-status--off {
