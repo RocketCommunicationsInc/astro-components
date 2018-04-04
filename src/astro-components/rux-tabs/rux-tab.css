@@ -1,6 +1,5 @@
 /* rux tab */
-:host,
-.rux-tabs__tab {
+:host {
   flex-grow: 1;
   flex-shrink: 1;
 
@@ -8,10 +7,11 @@
   height: 5rem;
   max-width: 12rem;
   display: block;
-  padding: 1.5rem 1.5rem;
+  padding: 2rem 1.5rem 1rem;
   margin: 0;
-  font-size: 1.75rem;
-  font-weight: 100;
+  font-family: var(--font-family);
+  font-size: 1.875em;
+  font-weight: 300;
   text-decoration: none;
   text-align: center;
   color: #5cb3ff;
