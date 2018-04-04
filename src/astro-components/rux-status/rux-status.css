@@ -1,7 +1,5 @@
 :host {
-  display: flex;
-  justify-content: center;
-  max-width: 6.25rem;
+  display: inline-block;
 }
 
 *[hidden] {
@@ -48,14 +46,8 @@
 }
 
 .rux-advanced-status__status-icon {
-  /* position: absolute; */
-  /* left: -12.75rem; */
-  /* margin-left: -2rem; */
-
   margin: 0 2px 0 auto;
   order: 1;
-
-  /* left: 0; */
 }
 
 .rux-advanced-status__icon {
@@ -102,15 +94,9 @@
   order: 3;
 
   position: absolute;
-  bottom: -1rem;
+  bottom: -0.75rem;
   right: -0.5rem;
 
-  /* bottom: -0.75rem;
-  right: 0; */
-  /* position: absolute;
-  
-  bottom: -1em;
-  right: -1em; */
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   padding: 0.65rem 0.25rem;
@@ -120,7 +106,6 @@
   background-color: #000;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* max-width: 72%; */
   white-space: nowrap;
 }
 
