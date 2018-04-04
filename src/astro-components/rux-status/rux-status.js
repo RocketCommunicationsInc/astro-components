@@ -15,7 +15,8 @@ export class RuxStatus extends PolymerElement {
         reflectToAttribute: true
       },
       label: {
-        type: String
+        type: String,
+        value: false
       },
       sublabel: {
         type: String
@@ -55,7 +56,7 @@ export class RuxStatus extends PolymerElement {
           
         </div>  
 
-        <div id="rux-advanced-status-aria-label" class="rux-advanced-status__label">[[label]]<span class="rux-advanced-status__label__sub-label">[[sublabel]]</span></div>
+        <div id="rux-advanced-status-aria-label" class="rux-advanced-status__label" hidden=[[!label]]>[[label]]<span class="rux-advanced-status__label__sub-label">[[sublabel]]</span></div>
       </div>
 
       <!-- Use simple status if no other properties are set //-->
