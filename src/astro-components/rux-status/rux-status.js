@@ -11,7 +11,8 @@ export class RuxStatus extends PolymerElement {
   static get properties() {
     return {
       status: {
-        type: String
+        type: String,
+        reflectToAttribute: true
       },
       label: {
         type: String
