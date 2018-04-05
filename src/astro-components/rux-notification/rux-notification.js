@@ -60,7 +60,7 @@ export class RuxNotification extends PolymerElement {
     super.connectedCallback();
 
     // make sure close after is a reasonable time frame.
-    if (this.closeAfter && this.closeAfter < 10) {
+    if (this.closeAfter && this.closeAfter <= 10) {
       this.closeAfter *= 1000;
     } else if (this.closeAfter > 10 && this.closeAfter < 2000) {
       this.closeAfter = 3000;
