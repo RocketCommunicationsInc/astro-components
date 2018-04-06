@@ -282,14 +282,10 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
-<<<<<<< HEAD
+
 <li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
-=======
-
->>>>>>> timeline
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
-<li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
 <li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
@@ -297,7 +293,6 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-slider">Slider</astro-sample></li>
 <li><astro-sample id="sample-progress">Progress</astro-sample></li>
 <li><astro-sample id="sample-clock">Clock</astro-sample></li>
-
 <li><astro-sample id="sample-icons">Icons</astro-sample></li>
 <li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
 <li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
