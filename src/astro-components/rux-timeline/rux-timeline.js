@@ -175,7 +175,6 @@ export class RuxTimeline extends PolymerElement {
         top: 0;
         left: 0;
         height: 100%;
-        /* height: calc(100% - 32px); */
         width: 1px;
         background-color: #5cb3ff;
         z-index: 200;
@@ -236,9 +235,19 @@ export class RuxTimeline extends PolymerElement {
           background-color: hsl(204, 53%, 14%);
           box-shadow: 5px 0 2.5px rgba(0,0,0,0.13);
         }
+
         #rux-timeline__viewport__tracks {
+          
+          height: auto;
           position: relative;
+          /* padding-top: 10px; */
         }
+
+        #rux-timeline__tracks {
+          position: relative;
+          
+        }
+
         #rux-timeline__viewport__track-container {
           position: relative;
           overflow-y: scroll;
@@ -271,19 +280,21 @@ export class RuxTimeline extends PolymerElement {
           
           <div id="rux-timeline__viewport__track-container">
             <div id="rux-timeline__viewport__tracks">
-              <template is="dom-repeat" id="rux-timeline-track-template" items=[[tracks]]>
-                <rux-timeline-track 
-                  regions=[[item.regions]]
-                  scale=[[_scale]]
-                  duration=[[_duration]]
-                  selected-region={{selectedRegion}}></rux-timeline-track>
-              </template>
-            
-            <div id="rux-timeline__current-time"></div>
-            <div id="rux-timeline__playhead"></div>
-            
+            <div id="rux-timeline__tracks">
+                <template is="dom-repeat" id="rux-timeline-track-template" items=[[tracks]]>
+                  <rux-timeline-track 
+                    regions=[[item.regions]]
+                    scale=[[_scale]]
+                    duration=[[_duration]]
+                    selected-region={{selectedRegion}}></rux-timeline-track>
+                </template>
+              
+                <div id="rux-timeline__current-time"></div>
+                <div id="rux-timeline__playhead"></div>
+              </div>
+              <div id="rux-timeline__ruler"></div>  
             </div>
-            <div id="rux-timeline__ruler"></div>
+            
           </div>  
           
         </section>
