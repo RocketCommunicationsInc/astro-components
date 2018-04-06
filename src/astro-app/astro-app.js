@@ -1202,6 +1202,7 @@ export class AstroApp extends PolymerElement {
 		<h2>Timeline</h2>
 		<p>The standard timeline will default to a 24 hour time period</p>
 		<rux-timeline
+				status="standby"
 				label="Timeline" 
 				initial-scale=100
 				tracks=[[tracks]]
@@ -1215,6 +1216,7 @@ export class AstroApp extends PolymerElement {
 		<h2>Timeline with Custom Duration</h2>
 		<p>Adds a playback head</p>
 		<rux-timeline
+				status="ok"
 				duration=8
 				label="8 Hour Timeline" 
 				initial-scale=100
@@ -1228,6 +1230,7 @@ export class AstroApp extends PolymerElement {
 		<h2>Timeline with Playback Head</h2>
 		<p>Adds a playback head</p>
 		<rux-timeline
+				status="error"
 				label="Timeline" 
 				initial-scale=100
 				data={{timelineSimple}}
@@ -1240,6 +1243,7 @@ export class AstroApp extends PolymerElement {
 			<h2>Timeline with Multitrack</h2>
 			<p>A developer could also define a timeline with a custom duration. An example here with 12 hour time frame. Note Satellite 3 and Satellite 5 have timespans that expand beyond the duration set by the deveoper, the default and only behavior is to cut those time segments off.</p>
 			<rux-timeline
+				status="caution"
 				id="listenerTimeline"
 				label="Timeline" 
 				type="realtime" 
