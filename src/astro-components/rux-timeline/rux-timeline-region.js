@@ -93,7 +93,8 @@ export class RuxTimelineRegion extends PolymerElement {
     this._setDefaultSize();
 
     this.addEventListener("playhead", this._playheadListener);
-    this.addEventListener("currenTime", this._currentTimeListener);
+    this.addEventListener("currentTime", this._currentTimeListener);
+    this.addEventListener("update", this._windowListener);
 
     window.addEventListener("resize", this._windowListener);
   }
@@ -101,8 +102,9 @@ export class RuxTimelineRegion extends PolymerElement {
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    this.removeEventListener("playhead", this._collisionListener);
-    this.removeEventListener("playhead", this._collisionListener);
+    this.removeEventListener("playhead", this._playheadListener);
+    this.removeEventListener("currentTime", this._currentTimeListener);
+    this.removeEventListener("update", this._windowListener);
 
     window.removeEventListener("resize");
   }
@@ -139,6 +141,8 @@ export class RuxTimelineRegion extends PolymerElement {
       left: left,
       scale: this.scale
     };
+
+    console.log("track width", this.trackWidth);
     this._updateRegion();
   }
 

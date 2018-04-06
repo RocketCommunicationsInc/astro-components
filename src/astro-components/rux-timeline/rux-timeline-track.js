@@ -67,6 +67,7 @@ export class RuxTimelineTrack extends PolymerElement {
     )[0].offsetWidth;
 
     this.parentElement.addEventListener("playhead", this._test);
+    this.addEventListener("update", this._windowListener);
 
     window.addEventListener("resize", this._windowListener);
   }
@@ -74,6 +75,7 @@ export class RuxTimelineTrack extends PolymerElement {
   disconnectedCallback() {
     super.disconnectedCallback();
 
+    this.removeEventListener("update", this._windowListener);
     window.removeEventListener("resize");
   }
 

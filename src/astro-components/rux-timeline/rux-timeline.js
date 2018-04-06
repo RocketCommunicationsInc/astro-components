@@ -228,6 +228,7 @@ export class RuxTimeline extends PolymerElement {
         }
 
         .rux-timeline__viewport__labels {
+          flex-shrink: 0;
           position: relative;
           width: 7.875rem;
           z-index: 200;
@@ -256,7 +257,7 @@ export class RuxTimeline extends PolymerElement {
         }
         </style>
       
-        <header class="rux-timeline__header">
+        <header class="rux-timeline__header" on-click="_setParams">
           <rux-status status="[[status]]"></rux-status>
           <h1>[[label]]</h1>
           <rux-slider
@@ -316,6 +317,8 @@ export class RuxTimeline extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback();
+
+    console.log("offsetParent", this.offsetParent);
 
     // hard coded min/max scale (for now)
     this._minScale = 100;
@@ -483,12 +486,30 @@ export class RuxTimeline extends PolymerElement {
 
   _updateTimelineScale() {
     // scale tracks container
+    console.log("tracks", this._tracks);
     this._tracks.style.width = Number(this._scale) + "%";
+    this._track.style.width = Number(this._scale) + "%";
 
     if (!this._tics) return;
     this._tics.forEach((tic, i) => {
       tic.style.left =
         3600000 * i * this._ruler.offsetWidth / this._duration + "px";
+    });
+  }
+
+  _setParams() {
+    console.log("set params");
+    this._updateTimelineScale();
+    // This is a very ugly way of targeting grandchildren form a parent
+    // but for demo it’ll have to do.
+    const _t = this.shadowRoot.querySelectorAll("rux-timeline-track");
+    _t.forEach(track => {
+      track.dispatchEvent(new CustomEvent("update"));
+      var _r = track.shadowRoot.querySelectorAll("rux-timeline-region");
+
+      _r.forEach(region => {
+        region.dispatchEvent(new CustomEvent("update"));
+      });
     });
   }
 

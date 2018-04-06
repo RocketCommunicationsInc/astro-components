@@ -282,9 +282,14 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<<<<<<< HEAD
 <li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
+=======
+
+>>>>>>> timeline
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
+<li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
 <li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
