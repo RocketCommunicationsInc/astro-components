@@ -378,6 +378,37 @@ export class RuxTimeline extends PolymerElement {
     this._tics = new Array();
     this._setTics();
 
+    /*
+    if the timeline isn't visible, likely because it’s in a tab
+     or similar interface we’ll need to init the timeline physical
+     properties.
+     
+     This is very much a work in progress and quite possibly not
+     the ideal way to handle this, but the demo is coming
+    */
+    if (!this.offsetParent) {
+      // crate a new mutation obvserver
+      this._parentObserver = new MutationObserver(mutations => {
+        mutations.forEach(mutant => {
+          // the target’s offsetParent is not null then the timeline
+          // is visible
+          if (mutant.target.offsetParent) {
+            // effectively do the same thing as a window resize
+            this._setParams();
+
+            // disconnect the observer
+            this._parentObserver.disconnect();
+          }
+        });
+      });
+
+      // observe
+      this._parentObserver.observe(this._track, {
+        subtree: true,
+        attributeOldValue: true
+      });
+    }
+
     window.addEventListener("resize", this._windowListener);
   }
 
@@ -497,6 +528,13 @@ export class RuxTimeline extends PolymerElement {
     });
   }
 
+  /*
+    This is a quick and dirty hack for hidden timelines on load (e.g., in a tab)
+    It’s duplicating a bunch of stuff from the window resize event and could
+    likely be coupled with that and/or since it’s duplicating a dispatch event
+    that’s getting dispatched for the playhead anyway just do it there -- except
+    of course in instances where no playhead exists 
+  */
   _setParams() {
     console.log("set params");
     this._updateTimelineScale();
