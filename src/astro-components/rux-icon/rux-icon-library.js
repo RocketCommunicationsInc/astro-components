@@ -32,8 +32,13 @@ export class RuxIconLibrary extends PolymerElement {
   ready() {
     super.ready();
   }
+
+  /*
+   Needs a rewrite
+   */
   _setIcon(e) {
     let _icon = e.detail;
+    if (_icon.icon == "") return;
 
     if (this.name && _icon.library && this.name === _icon.library) {
       if (_icon.size) {
@@ -50,6 +55,7 @@ export class RuxIconLibrary extends PolymerElement {
       }
 
       // set the icon
+
       let sourceSvg = this.querySelectorAll(`#${_icon.icon}`)[0];
 
       // if no icon exists then put
