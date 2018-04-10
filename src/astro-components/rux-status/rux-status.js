@@ -2,6 +2,7 @@ import {
   html,
   Element as PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
+import { RuxIcon } from "/src/astro-components/rux-icon/rux-icon.js";
 // import "./rux-icons-svg.js";
 /**
  * @polymer

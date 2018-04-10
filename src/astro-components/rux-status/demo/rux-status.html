@@ -9,20 +9,18 @@
   <meta name="description" content="Sample application using the Astro Design System">
 
   <!-- Global Styles //-->
-  <link rel="stylesheet" href="/public/css/astro.css">
   <link rel="stylesheet" href="/public/css/demo.css">
 
   <!-- Load WebComponent Polyfill //-->
   <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
   <!-- Load Astro App //-->
-  <script type="module" src="/src/astro-components/rux-status/rux-status.js"></script>
+  <script type="module" src="/src/astro-components/rux-status/demo/rux-status-sample.js"></script>
 
 </head>
 
 <body class="dark-theme">
-  <rux-status status="caution"></rux-status>
-  <rux-status status="error" icon="advanced-status:mission" label="Test"></rux-status>
+  <rux-status-sample></rux-status-sample>
 </body>
 
 </html>
