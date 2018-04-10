@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>Astro Demo App</title>
+  <meta name="description" content="Sample application using the Astro Design System">
+
+  <!-- Global Styles //-->
+  <link rel="stylesheet" href="/public/css/astro.css">
+  <link rel="stylesheet" href="/public/css/demo.css">
+  <!-- Load WebComponent Polyfill //-->
+  <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+  <!-- Load Astro App //-->
+  <script type="module" src="/src/astro-components/rux-tabs/rux-tabs.js"></script>
+  <script type="module" src="/src/astro-components/rux-tabs/rux-tab-panels.js"></script>
+  <script type="module" src="/src/astro-components/rux-tabs/rux-tab-panel.js"></script>
+
+</head>
+
+<body class="dark-theme">
+  <rux-tabs>
+    <rux-tab id="tab-1">Modems</rux-tab>
+    <rux-tab id="tab-2">Pass Plans</rux-tab>
+    <rux-tab id="tab-3">Satellites</rux-tab>
+  </rux-tabs>
+  <rux-tab-panels>
+    <rux-tab-panel aria-labeledby="tab-1">
+      <div>Tab One Content</div>
+    </rux-tab-panel>
+    <rux-tab-panel aria-labeledby="tab-2">
+      <div>Tab Two Content</div>
+    </rux-tab-panel>
+    <rux-tab-panel aria-labeledby="tab-3">
+      <div>Tab Three Content</div>
+    </rux-tab-panel>
+  </rux-tab-panels>
+</body>
+
+</html>
