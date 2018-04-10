@@ -56,7 +56,7 @@ node_modules/
 
 # ignore build directories
 /_site
-/build
+/build 
 
 
 # ignore OS generated files

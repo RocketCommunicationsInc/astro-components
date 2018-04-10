@@ -28,7 +28,32 @@ export class RuxTabs extends PolymerElement {
 
   static get template() {
     return html`
-      <link rel="stylesheet" href="/src/astro-components/rux-tabs/rux-tabs.css">
+      <style>
+      :host,
+      .rux-tabs {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        /* flex-grow: 1; */
+        align-self: flex-start;
+        align-content: stretch;
+        justify-content: flex-start;
+      
+        font-weight: 300;
+        font-family: var(--font-family-light);
+      
+        contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+      }
+      
+      /* rux-panes */
+      .rux-tabs__panels {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-self: flex-start;
+        contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+      }
+      </style>      
       <slot></slot>
     `;
   }

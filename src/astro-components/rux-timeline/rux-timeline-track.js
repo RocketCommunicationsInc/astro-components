@@ -31,7 +31,38 @@ export class RuxTimelineTrack extends PolymerElement {
 
   static get template() {
     return html`
-      <link rel="stylesheet" href="src/astro-components/rux-timeline/rux-timeline-track.css">
+      <style>
+      :host {
+        position: relative;
+        display: block;
+        height: 48px;
+        width: 100%;
+      
+        box-sizing: border-box;
+        overflow: hidden;
+      
+        /* background-color: red; */
+      }
+      
+      *,
+      *:after,
+      *:before {
+        box-sizing: inherit;
+      }
+      
+      .rux-timeline__track {
+        position: relative;
+      
+        height: 100%;
+      }
+      
+      ol {
+        display: block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      </style>      
       <div class="rux-timeline__track">
         <ol>
           <template is="dom-repeat" id="regionsElements" items={{regions}}>
