@@ -54,8 +54,10 @@ node_modules/
 # ignore components loaded via Bower
 /bower_components
 
-# ignore jekyll build directory
+# ignore build directories
 /_site
+/build
+
 
 # ignore OS generated files
 ehthumbs.db
