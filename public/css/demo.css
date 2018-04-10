@@ -28,7 +28,7 @@ body {
   font-family: var(--font-family);
   color: var(--font-color);
 
-  background: transparent;
+  background-color: transparent !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
