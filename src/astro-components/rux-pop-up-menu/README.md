@@ -8,13 +8,10 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 ##Guidelines
 
 * [Astro UXDS: Pop Up Menu](https://www.astrouxds.com/library/pop-up-menu)
-* [RUX Status Indicator Demo](https://www.astrouxds.com/library/pop-up-menu)
 
 ##Installation
-Install the Astro Component Library
-`npm install --save @astro-components`
-Or Install just the pop-up-menu indicator
-`npm install --save @astro-components/rux-pop-up-menu`
+Install the Astro Component Library.
+`git clone git@bitbucket.org:rocketcom/astro-components.git`
 ###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)

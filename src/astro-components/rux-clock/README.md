@@ -3,20 +3,17 @@ The RUX Clock component is a custom clock instance relavant to SATCOM/SATOPS ope
 
 RUX Clock is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
-RUX Clock is supplied as-is and …
+RUX Clock is available as a preview release and should not be used in production code.
 
 For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
 ##Guidelines
 
 * [Astro UXDS: Clock](https://www.astrouxds.com/library/clock)
-* [RUX Clock Demo](https://www.astrouxds.com/library/clock)
 
 ##Installation
-Install the Astro Component Library
-`npm install --save @astro-components`
-Or Install just the clock
-`npm install --save @astro-components/rux-clock`
+Install the Astro Component Library.
+`git clone git@bitbucket.org:rocketcom/astro-components.git`
 ###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)

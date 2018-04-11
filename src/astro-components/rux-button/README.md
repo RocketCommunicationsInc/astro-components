@@ -1,24 +1,22 @@
 #Buttons
 The RUX Button component is based on the buttons concepts in Astro UXDS. There are several variants to be used. RUX Button is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
-RUX Button is supplied as-is and …
+RUX Button is available as a preview release and should not be used in production code.
 
 For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
 ##Guidelines
 
 * [Astro UXDS: Buttons](https://www.astrouxds.com/library/buttons)
-* [RUX Button Demo](https://www.astrouxds.com/library/buttons)
 
 ##Installation
-Install the Astro Component Library
-`npm install --save @astro-components`
-Or Install just the butto
-`npm install --save @astro-components/rux-button`
+Install the Astro Component Library.
+`git clone git@bitbucket.org:rocketcom/astro-components.git`
+
 ###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
-* [RUX Button](https://bitbucket.org/rocketcom/astro-components/src/32401d605b383b2df5f0a0bd540a2b38814f452b/src/astro-components/rux-icon/?at=master)
+* [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-icon/)
 
 ##Usage
 ###Import the RUX Button

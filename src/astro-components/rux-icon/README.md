@@ -1,20 +1,18 @@
 #Icons
 The RUX Icon component is … RUX Icon is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
-RUX Icon is supplied as-is and …
+RUX Icon is available as a preview release and should not be used in production code.
 
 For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
 ##Guidelines
 
 * [Astro UXDS: Buttons](https://www.astrouxds.com/library/icons)
-* [RUX Icon Demo](https://www.astrouxds.com/library/icons)
 
 ##Installation
-Install the Astro Component Library
-`npm install --save @astro-components`
-Or Install just the icon
-`npm install --save @astro-components/rux-icon`
+Install the Astro Component Library.
+`git clone git@bitbucket.org:rocketcom/astro-components.git`
+
 ###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)

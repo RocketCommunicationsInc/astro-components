@@ -18,6 +18,9 @@ Install the Astro Component Library.
 ###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-icon/)
+* [Rux Status](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-status/)
+* [Rux Slider](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-slider/)
 
 ##Usage
 ###Import the RUX Timeline
@@ -33,26 +36,25 @@ RUX Timeline will display a horizontal timeline with multiple tracks and multipl
 <rux-timeline
 	status="ok"
 	duration=8
-	label="8 Hour Timeline" 
+	label="8 Hour Timeline"
 	initial-scale=100
 	tracks=[[tracks]]
 	zoom-control=true
 	selected-region={{selectedRegion}}>
-</rux-timeline>	
+</rux-timeline>
 ```
-
 
 ###Properties
 
-| Property | Type | Description |
-| -------- | ---- | ------------|
-| `status` | `string` | The overall status of the timeline. See Astro UXDS for a detailed explanation on status bubbling. This could also be represented as a Polymer property in a comprehensive status service
-| `duration` | `number` | Defines a time period. Default is 24 hours if no duration is supplied
-| `label` | `string` | Title that appears in the timeline header
-| `initial-scale` | `number` | Defines the initial scale of the timeline. Default is 100 and extends the visible width of the timeline’s containing element
-| `tracks` | `array` | An array of track data. Timeline supports multiple tracks and multiple regions per track. See object detail below
-| `zoom-control` | `boolean` | Shows a slider that scales the zoom level of the timeline. Minimum is 100, maximum is 500
-| `selected-region` | `object` | A selected region will bubble that object back to the containing element. A Polymer observer to check change value with two-way data binding could be used to act on the selected region. See the [Astro App Demo](https://astro-app.rocketcom.com) for an example
+| Property          | Type      | Description                                                                                                                                                                                                                                                        |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `status`          | `string`  | The overall status of the timeline. See Astro UXDS for a detailed explanation on status bubbling. This could also be represented as a Polymer property in a comprehensive status service                                                                           |
+| `duration`        | `number`  | Defines a time period. Default is 24 hours if no duration is supplied                                                                                                                                                                                              |
+| `label`           | `string`  | Title that appears in the timeline header                                                                                                                                                                                                                          |
+| `initial-scale`   | `number`  | Defines the initial scale of the timeline. Default is 100 and extends the visible width of the timeline’s containing element                                                                                                                                       |
+| `tracks`          | `array`   | An array of track data. Timeline supports multiple tracks and multiple regions per track. See object detail below                                                                                                                                                  |
+| `zoom-control`    | `boolean` | Shows a slider that scales the zoom level of the timeline. Minimum is 100, maximum is 500                                                                                                                                                                          |
+| `selected-region` | `object`  | A selected region will bubble that object back to the containing element. A Polymer observer to check change value with two-way data binding could be used to act on the selected region. See the [Astro App Demo](https://astro-app.rocketcom.com) for an example |
 
 ###Track Array
 The `tracks` is the primary data source in defining the number of tracks and the number of regions on each track. The array can be manually populated or updated via a web service. The following is an example of the expected format for a single track timeline with one region.
@@ -86,16 +88,16 @@ tracks = [{
 
 ####Tracks Properties
 
-| Property | Type | Description |
-| -------- | ---- | ------------|
-| `label` | `string` | Track label
-| `regions` | `array` | An array of objects representing regions to appear on the timeline
+| Property  | Type     | Description                                                        |
+| --------- | -------- | ------------------------------------------------------------------ |
+| `label`   | `string` | Track label                                                        |
+| `regions` | `array`  | An array of objects representing regions to appear on the timeline |
 
 ####Regions Properties
 
-| Property | Type | Description |
-| -------- | ---- | ------------|
-| `label` | `string` | Label for the region element
-| `status` | `string` | Status for the region. Valid options include `off`,`standby`,`ok`,`caution`,`error` and `alert`
-| `startTime` | `date` | A valid JavaScript UTC date
-| `endTime` | `date` | A valid JavaScript UTC date
+| Property    | Type     | Description                                                                                     |
+| ----------- | -------- | ----------------------------------------------------------------------------------------------- |
+| `label`     | `string` | Label for the region element                                                                    |
+| `status`    | `string` | Status for the region. Valid options include `off`,`standby`,`ok`,`caution`,`error` and `alert` |
+| `startTime` | `date`   | A valid JavaScript UTC date                                                                     |
+| `endTime`   | `date`   | A valid JavaScript UTC date                                                                     |

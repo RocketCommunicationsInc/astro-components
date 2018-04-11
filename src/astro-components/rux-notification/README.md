@@ -1,23 +1,22 @@
 #Notification
 The RUX Notification component is … RUX Notification is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
-RUX Notification is in **BETA** and supplied as-is and …
+RUX Notification is available as a preview release and should not be used in production code.
 
 For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
 ##Guidelines
 
 * [Astro UXDS: Notification](https://www.astrouxds.com/library/notification)
-* [RUX Status Indicator Demo](https://www.astrouxds.com/library/notification)
 
 ##Installation
-Install the Astro Component Library
-`npm install --save @astro-components`
-Or Install just the notification indicator
-`npm install --save @astro-components/rux-notification`
+Install the Astro Component Library.
+`git clone git@bitbucket.org:rocketcom/astro-components.git`
 ###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-icon/)
+* [Rux Button](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-button/)
 
 ##Usage
 ###Import RUX Status Indicator

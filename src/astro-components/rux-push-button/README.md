@@ -3,20 +3,18 @@
 
 RUX Push Button is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
-RUX Push Button is supplied as-is and …
+RUX Push Button is available as a preview release and should not be used in production code.
 
 For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
 ##Guidelines
 
 * [Astro UXDS: Push Button](https://www.astrouxds.com/library/push-button)
-* [RUX Push Button Demo](https://www.astrouxds.com/library/push-button)
 
 ##Installation
-Install the Astro Component Library
-`npm install --save @astro-components`
-Or Install just the push-button
-`npm install --save @astro-components/rux-push-button`
+Install the Astro Component Library.
+`git clone git@bitbucket.org:rocketcom/astro-components.git`
+
 ###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
@@ -34,7 +32,6 @@ RUX Push Button …
 ```xml
 <rux-push-button></rux-push-button>
 ```
-
 
 ###Event Listener
 RUX Push Button …
