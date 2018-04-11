@@ -7,7 +7,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Status Indicator](https://www.astrouxds.com/library/status-symbols)
+* [Astro UXDS: Status Symbol](https://www.astrouxds.com/library/status-symbols)
 
 ##Installation
 Install the Astro Component Library.
