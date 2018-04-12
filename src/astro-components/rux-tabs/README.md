@@ -9,12 +9,12 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Tabs](https://www.astrouxds.com/library/tabs)
+* [Astro UXDS: Tabs](http://www.astrouxds.com/library/tabs)
 
 ##Installation
 Install the Astro Component Library.
 `git clone git@bitbucket.org:rocketcom/astro-components.git`
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 

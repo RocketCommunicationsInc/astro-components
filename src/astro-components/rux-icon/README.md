@@ -7,13 +7,13 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Buttons](https://www.astrouxds.com/library/icons)
+* [Astro UXDS: Buttons](http://www.astrouxds.com/library/icons)
 
 ##Installation
 Install the Astro Component Library.
 `git clone git@bitbucket.org:rocketcom/astro-components.git`
 
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 

@@ -15,7 +15,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 Install the Astro Component Library.
 `git clone git@bitbucket.org:rocketcom/astro-components.git`
 
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 

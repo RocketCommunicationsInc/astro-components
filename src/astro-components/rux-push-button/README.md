@@ -9,13 +9,13 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Push Button](https://www.astrouxds.com/library/push-button)
+* [Astro UXDS: Push Button](http://www.astrouxds.com/library/push-button)
 
 ##Installation
 Install the Astro Component Library.
 `git clone git@bitbucket.org:rocketcom/astro-components.git`
 
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 
