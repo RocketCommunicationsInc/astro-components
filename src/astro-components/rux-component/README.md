@@ -9,7 +9,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: [COMPONENT]](https://www.astrouxds.com/library/[component])
+* [Astro UXDS: [COMPONENT]](http://www.astrouxds.com/library/[component])
 
 ##Installation
 Install the Astro Component Library.
