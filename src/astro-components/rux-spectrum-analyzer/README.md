@@ -1,6 +1,6 @@
 # Spectrum Analyzer (aka "Spec A")
 
-RUX Spectrum Analyzer 
+RUX Spectrum Analyzer leverages both Web Components and the D3 data visualization library to create classic, animated "Spec A" instances.
 
 ##Guidelines
 
