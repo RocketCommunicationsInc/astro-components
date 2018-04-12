@@ -7,7 +7,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Buttons](https://www.astrouxds.com/library/buttons)
+* [Astro UXDS: Buttons](http://www.astrouxds.com/library/buttons)
 
 ##Installation
 Install the Astro Component Library.
