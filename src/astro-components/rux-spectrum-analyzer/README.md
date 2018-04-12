@@ -4,7 +4,7 @@ RUX Spectrum Analyzer
 
 ##Guidelines
 
-* [Astro UXDS: Push Button](http://www.astrouxds.com/library/spectrum-analyzer)
+* [Astro UXDS: Spectrum Analyzer](http://www.astrouxds.com/library/spectrum-analyzer)
 
 ##Installation
 Install the Astro Component Library.
