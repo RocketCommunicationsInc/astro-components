@@ -9,7 +9,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Clock](https://www.astrouxds.com/library/clock)
+* [Astro UXDS: Clock](http://www.astrouxds.com/library/clock)
 
 ##Installation
 Install the Astro Component Library.

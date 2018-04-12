@@ -9,13 +9,13 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Global Status Bar](https://www.astrouxds.com/library/global-status-bar)
+* [Astro UXDS: Global Status Bar](http://www.astrouxds.com/library/global-status-bar)
 
 ##Installation
 Install the Astro Component Library.
 `git clone git@bitbucket.org:rocketcom/astro-components.git`
 
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 

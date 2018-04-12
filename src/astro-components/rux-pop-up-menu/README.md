@@ -7,7 +7,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Pop Up Menu](https://www.astrouxds.com/library/pop-up-menu)
+* [Astro UXDS: Pop Up Menu](http://www.astrouxds.com/library/pop-up-menu)
 
 ##Installation
 Install the Astro Component Library.

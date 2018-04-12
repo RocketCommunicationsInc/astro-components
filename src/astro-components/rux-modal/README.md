@@ -9,12 +9,12 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Modal](https://www.astrouxds.com/library/dialog-box)
+* [Astro UXDS: Modal](http://www.astrouxds.com/library/dialog-box)
 
 ##Installation
 Install the Astro Component Library.
 `git clone git@bitbucket.org:rocketcom/astro-components.git`
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 * [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-icon/)

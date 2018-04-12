@@ -7,8 +7,8 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Segmented Button](https://www.astrouxds.com/library/segmented-button)
-* [RUX Segmented Button Demo](https://www.astrouxds.com/library/segmented-button)
+* [Astro UXDS: Segmented Button](http://www.astrouxds.com/library/segmented-button)
+* [RUX Segmented Button Demo](http://www.astrouxds.com/library/segmented-button)
 
 ##Installation
 Install the Astro Component Library

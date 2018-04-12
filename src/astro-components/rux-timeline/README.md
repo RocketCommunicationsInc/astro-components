@@ -9,13 +9,13 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Timeline](https://cms.astrouxds.com/library/timeline)
+* [Astro UXDS: Timeline](http://cms.astrouxds.com/library/timeline)
 
 ##Installation
 Install the Astro Component Library.
 `git clone git@bitbucket.org:rocketcom/astro-components.git`
 
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 * [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-icon/)

@@ -9,13 +9,13 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Toggle](https://www.astrouxds.com/library/toggle)
+* [Astro UXDS: Toggle](http://www.astrouxds.com/library/toggle)
 
 ##Installation
 Install the Astro Component Library.
 `git clone git@bitbucket.org:rocketcom/astro-components.git`
 
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 
