@@ -16,7 +16,7 @@ Install the Astro Component Library.
 * [D3](https://d3js.org/)
 
 ##Usage
-###Import the RUX Push Spectrum Analyzer
+###Import the RUX Spectrum Analyzer
 
 ```javascript
 import { RuxSpectrumAnalyzer } from "../astro-components/rux-spectrum-analyzer/rux-spectrum-analyzer.js";
