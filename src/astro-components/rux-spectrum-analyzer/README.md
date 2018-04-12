@@ -13,7 +13,7 @@ Install the Astro Component Library.
 ###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
-* [D3] (https://d3js.org/)
+* [D3](https://d3js.org/)
 
 ##Usage
 ###Import the RUX Push Spectrum Analyzer
@@ -28,9 +28,6 @@ RUX Spectrum Analyzer
 ```xml
 <rux-spectrum-analyzer chart-legend-x="freq" chart-legend-y="pwr" chart-title="signals" height="384" width="900" x-scale-min="900" x-scale-max="2301" x-scale-step="175" y-scale-min="-30" y-scale-max="0"></rux-spectrum-analyzer>
 ```
-
-###Event Listener
-RUX Push Button …
 
 ###Properties
 
