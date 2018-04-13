@@ -140,7 +140,8 @@ export class RuxTimelineRegion extends PolymerElement {
       
       :host .rux-region__title {
         white-space: nowrap;
-        overflow-y: hidden;
+        overflow: hidden;
+
         text-overflow: ellipsis;
       }
       
