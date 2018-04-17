@@ -13,7 +13,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Installation
 Install the Astro Component Library.
-`git clone git@bitbucket.org:rocketcom/astro-components.git`
+`git clone https://bitbucket.org/rocketcom/astro-components.git`
 
 ###Dependencies
 

@@ -1,5 +1,5 @@
 #Tabs
-The RUX Tabs component allows for tabbed interfaces. __Note__: the current Tabs are only for use in the [Global Status Bar](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/global-status-bar/) as a main navigation interaction. In-page tabs are a forthcoming feature.
+The RUX Tabs component allows for tabbed interfaces. **Note**: the current Tabs are only for use in the [Global Status Bar](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/global-status-bar/) as a main navigation interaction. In-page tabs are a forthcoming feature.
 
 RUX Tabs are based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
@@ -13,11 +13,10 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Installation
 Install the Astro Component Library.
-`git clone git@bitbucket.org:rocketcom/astro-components.git`
+`git clone https://bitbucket.org/rocketcom/astro-components.git`
 ###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
-
 
 ##Usage
 Tabs make use of four interelated components:

@@ -8,7 +8,7 @@ RUX Spectrum Analyzer leverages both Web Components and the D3 data visualizatio
 
 ##Installation
 Install the Astro Component Library.
-`git clone git@bitbucket.org:rocketcom/astro-components.git`
+`git clone https://bitbucket.org/rocketcom/astro-components.git`
 
 ###Dependencies
 
@@ -31,15 +31,15 @@ RUX Spectrum Analyzer
 
 ###Properties
 
-| Property          | Type      | Default | Required | Description                                                  |
-| ----------------- | --------- | ------- | -------- | ------------------------------------------------------------ |
-| `chart-legend-x`  | `String`  | N/A     | true     | Text value for labeling x axis                               |
-| `checked-legend-y`| `String`  | N/A     | true     | Text value for labeling y axis                               |
-| `chart-title`     | `String`  | N/A     | true     | Text value for graph label                                   |
-| `height`          | `Integer` | N/A     | true     | Height of graph in pixels                                    |
-| `width`           | `Integer` | N/A     | true     | Width of graph in pixels                                     |
-| `x-scale-min`     | `Integer` | N/A     | true     | Starting point for x scale                                   |
-| `x-scale-max`     | `Integer` | N/A     | true     | Ending point for x scale                                     |
-| `x-scale-step`    | `Integer` | N/A     | true     | Interval between labels on x-axis                            |
-| `y-scale-min`     | `Integer` | N/A     | true     | Starting point for y scale                                   |
-| `y-scale-max`     | `Integer` | N/A     | true     | Ending point for y scale                                     |
+| Property           | Type      | Default | Required | Description                       |
+| ------------------ | --------- | ------- | -------- | --------------------------------- |
+| `chart-legend-x`   | `String`  | N/A     | true     | Text value for labeling x axis    |
+| `checked-legend-y` | `String`  | N/A     | true     | Text value for labeling y axis    |
+| `chart-title`      | `String`  | N/A     | true     | Text value for graph label        |
+| `height`           | `Integer` | N/A     | true     | Height of graph in pixels         |
+| `width`            | `Integer` | N/A     | true     | Width of graph in pixels          |
+| `x-scale-min`      | `Integer` | N/A     | true     | Starting point for x scale        |
+| `x-scale-max`      | `Integer` | N/A     | true     | Ending point for x scale          |
+| `x-scale-step`     | `Integer` | N/A     | true     | Interval between labels on x-axis |
+| `y-scale-min`      | `Integer` | N/A     | true     | Starting point for y scale        |
+| `y-scale-max`      | `Integer` | N/A     | true     | Ending point for y scale          |

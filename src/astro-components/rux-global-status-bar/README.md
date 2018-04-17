@@ -13,7 +13,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Installation
 Install the Astro Component Library.
-`git clone git@bitbucket.org:rocketcom/astro-components.git`
+`git clone https://bitbucket.org/rocketcom/astro-components.git`
 
 ###Dependencies
 
@@ -37,8 +37,7 @@ Global Status has minimal properties, just an optional app name and version. Sta
 
 ###Properties
 
-| Property          | Type      | Description                                                                                                                                                                                                                                                        |
-| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `appname`          | `string`  | An optional name for the app|
-| `version`        | `string`  | An optional version number for the app                                                                                                                                                                                      |
-
+| Property  | Type     | Description                            |
+| --------- | -------- | -------------------------------------- |
+| `appname` | `string` | An optional name for the app           |
+| `version` | `string` | An optional version number for the app |
