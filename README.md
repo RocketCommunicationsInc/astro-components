@@ -33,7 +33,7 @@ npm install -g polymer-cli@3.0.0-pre.9
 
 Clone this repository
 ```
-git clone git@bitbucket.org:rocketcom/astro-components.git
+git clone https://bitbucket.org/rocketcom/astro-components.git
 ```
 
 Run Yarn install to update npm modules
