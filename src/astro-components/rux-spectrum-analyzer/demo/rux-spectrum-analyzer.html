@@ -4,64 +4,63 @@
 <head>
 
   <style>
+  svg {
+    background-color: #1b3044 !important;
+    margin: 0px 0px 0px 10px;
+  }
 
-svg {
-  background-color: #1b3044;
-  margin: 0px 0px 0px 10px;
-}
+  .rux-spectrum-analyzer__bar {
+    fill: #4586be;
+  }
 
-.rux-spectrum-analyzer__bar {
-  fill: #4586be;
-}
+  .rux-spectrum-analyzer__bar-tip {
+    fill: #b2bac0;
+  }
 
-.rux-spectrum-analyzer__bar-tip {
-  fill: #b2bac0;
-}
+  text,
+  .rux-spectrum-analyzer__main-chart-label {
+    fill: #bdc3c9;
+  }
 
-text,
-.rux-spectrum-analyzer__main-chart-label {
-  fill: #bdc3c9;
-}
+  .rux-spectrum-analyzer__main-chart-label {
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+  }
 
-.rux-spectrum-analyzer__main-chart-label {
-  font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 14px;
-  text-transform: capitalize;
-  margin-bottom: 5px;
-}
-
-.rux-spectrum-analyzer__chart-legend {
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-  fill: #fff;
-}
+  .rux-spectrum-analyzer__chart-legend {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    fill: #fff;
+  }
 
 
-g.rux-spectrum-analyzer__axis-label line {
-  stroke: none;
-}
+  g.rux-spectrum-analyzer__axis-label line {
+    stroke: none;
+  }
 
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 2px;
-}
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+  }
 
-.grid line {
-  stroke: #455d6e;
-  stroke-opacity: 0.3;
-  shape-rendering: crispEdges;
-}
+  .grid line {
+    stroke: #455d6e;
+    stroke-opacity: 0.3;
+    shape-rendering: crispEdges;
+  }
 
-.tick text {
-  font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 10px;
-  color: #bdc3c9;
-  font-weight: 300;
-}
+  .tick text {
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size: 10px;
+    color: #bdc3c9;
+    font-weight: 300;
+  }
   </style>
 
   <meta charset="utf-8">
@@ -82,20 +81,7 @@ g.rux-spectrum-analyzer__axis-label line {
 </head>
 
 <body class="dark-theme">
-  <rux-spectrum-analyzer 
-    chart-legend-x="freq" 
-    chart-legend-y="pwr" 
-    chart-title="signals" 
-    height="200" 
-    width="500" 
-    x-scale-min="900" 
-    x-scale-max="2301" 
-    x-scale-step="175" 
-    y-scale-min="-30" 
-    y-scale-max="0"
-    data-source="wss://satellite-1.astrouxds.com"
-    data-source-type="web-socket"
-    > 
+  <rux-spectrum-analyzer chart-legend-x="freq" chart-legend-y="pwr" chart-title="signals" height="200" width="500" x-scale-min="900" x-scale-max="2301" x-scale-step="175" y-scale-min="-30" y-scale-max="0" data-source="wss://satellite-1.astrouxds.com" data-source-type="web-socket">
   </rux-spectrum-analyzer>
 </body>
 
