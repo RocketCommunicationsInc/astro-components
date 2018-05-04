@@ -46,7 +46,7 @@ export class RuxClock extends PolymerElement {
   }
 
   static get template() {
-    return html`
+    return html `
       <style>
         *[hidden] {
           display: none !important;
@@ -148,10 +148,10 @@ export class RuxClock extends PolymerElement {
   }
 
   /*
-  **
-  ** Format AOS/LOS in the appropriate time
-  **
-  */
+   **
+   ** Format AOS/LOS in the appropriate time
+   **
+   */
   formatTime(time) {
     if (isNaN(time)) return false;
 
@@ -181,10 +181,10 @@ export class RuxClock extends PolymerElement {
   }
 
   /*
-  **
-  ** Calculate the ordinal day of the year
-  **
-  */
+   **
+   ** Calculate the ordinal day of the year
+   **
+   */
   _getDayOfYear() {
     let _now = new Date();
     let _year = new Date(_now.getFullYear(), 0, 0);
