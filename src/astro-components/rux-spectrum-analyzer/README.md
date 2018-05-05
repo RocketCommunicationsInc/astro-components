@@ -40,9 +40,9 @@ RUX Spectrum Analyzer
 | `width`            | `Integer` | N/A     | true     | Width of graph in pixels                                 |
 | `x-scale-min`      | `Integer` | N/A     | true     | Starting point for x scale                               |
 | `x-scale-max`      | `Integer` | N/A     | true     | Ending point for x scale                                 |
-| `x-scale-step`     | `Integer` | N/A     | true     | Interval between labels on x-axis                        |
+| `x-scale-step`     | `Integer` | N/A     | true     | Interval between labels on x axis                        |
 | `y-scale-min`      | `Integer` | N/A     | true     | Starting point for y scale                               |
 | `y-scale-max`      | `Integer` | N/A     | true     | Ending point for y scale                                 |
-| `y-scale-min`      | `Integer` | N/A     | true     | Starting point for y scale                               |
+| `y-scale-step`     | `Integer` | N/A     | false    | Interval between labels on y axis                        |
 | `data-source`      | `String`  | N/A     | true     | URL of data source (currently only supports Web Sockets) |
 | `data-source-type` | `String`  | N/A     | false    | For future use                                           |
