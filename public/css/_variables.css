@@ -1,41 +1,41 @@
 @import url("_dark-theme.css");
 @import url("_light-theme.css");
-
 :root {
   /* Initial Settings */
   --background: var(--background);
-
   /* Typography */
   --font-family: "Open Sans", sans-serif;
   --font-size: 1em;
   --font-color: var(font-color);
-
   --font-family-condensed: "Open Sans Condensed", sans-serif;
   --font-family-light: "Open Sans Light", sans-serif;
   --font-family-mono: "Roboto Mono", monospace;
-
   --standard-transition-speed: 0.167s ease-in-out;
   /* --standard-transisiton-effect: ; */
-
   --slow-transition-speed: 0.367s ease-in-out;
-
   --icon-size--default: 44px;
   --icon-size--large: 68px;
   --icon-size--small: 28px;
   --icon-size--status: 12px;
-  --icon-size--button: 19px; /* was 24px */
-  --icon-size--button-large: 24px; /* was 28px */
-
+  --icon-size--button: 19px;
+  /* was 24px */
+  --icon-size--button-large: 24px;
+  /* was 28px */
   --icon-color: var(--default-icon-color);
   --icon-color--button: #fff;
-
   --selected-color: #5cb3ff;
-
   /* Status Colors */
-  --status-emergency: #f72501;
-  --status-error: #c05846;
-  --status-caution: #f8e71c;
-  --status-ok: #7ed321;
-  --status-standby: #a1dcfb;
-  --status-off: #c6ccd1;
+  --status-emergency: var(--color-critical);
+  --status-error: var(--color-error);
+  --status-caution: var(--color-caution);
+  --status-ok: var(--color-ok);
+  --status-standby: var(--color-standby);
+  --status-off: var(--color-off);
+  --color-primary: hsla(0, 0, 54, 1);
+  --color-secondary: hsla(211, 38, 25, 1);
+  --color-tertiary: hsla(207, 100, 47, 1);
+  /* --color-primary-h: 0;
+  --color-primary-s: 0;
+  --color-primary-l: 54;
+  --color-primary: hsla( var(--color-primary-h), var(--color-primary-s), var(--color-primary-1), 1); */
 }

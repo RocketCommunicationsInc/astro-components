@@ -1,9 +1,14 @@
 ASTRO CSS Property Guidelines
 
 .selector {
-	/* Display Flex */
+	/* Detructuring */
+	-webkit-appearance: none;
+
+	/* Display, Position & Alignmnet */
+	position: relative;
 	display: flex;
 	flex-direction: row;
+	vertical-align: center;
 	
 
 	/* Box Model */
@@ -35,11 +40,7 @@ ASTRO CSS Property Guidelines
 	background-position: 0.85em 0.425em;
 	
 	
-<<<<<<< HEAD
-	/* Text */
-=======
 	/* Text & List */
->>>>>>> status
 	font-family: sans-serif;
 	text-align: left;
 	vertical-align: middle;
