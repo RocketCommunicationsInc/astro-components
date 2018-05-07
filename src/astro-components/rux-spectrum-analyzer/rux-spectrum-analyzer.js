@@ -1,25 +1,21 @@
 import "/node_modules/@polymer/polymer/polymer.js";
-import {
-  html,
-  Element as PolymerElement
-} from "/node_modules/@polymer/polymer/polymer-element.js";
-// import "./d3.js";
+import { html, Element as PolymerElement } from "/node_modules/@polymer/polymer/polymer-element.js";
 /**
  * @polymer
  * @extends HTMLElement
  */
 export class RuxSpectrumAnalyzer extends PolymerElement {
-  static get template() {
-    return `
-      <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
-      <link rel="stylesheet" href="src/astro-components/rux-spectrum-analyzer/rux-spectrum-analyzer.css">
-    `;
-  }
+  static get template() {}
+
+
   static get properties() {
     return {
       chartData: {
         type: Object,
         observer: "_update"
+      },
+      chartTitle: {
+        type: String
       },
       chartLegendX: {
         type: String
@@ -47,139 +43,154 @@ export class RuxSpectrumAnalyzer extends PolymerElement {
       },
       width: {
         type: Number
+      },
+      dataSource: {
+        type: String
+      },
+      dataSourceType: {
+        type: String
       }
     };
   }
+
   constructor() {
     super();
   }
+
   connectedCallback() {
     super.connectedCallback();
-    // let ws = new WebSocket('ws://dev-dv.rocketcom.com:40510');
-    let margin = { top: 20, right: 30, bottom: 50, left: 90 };
-    let width = this.width - margin.left - margin.right;
-    let height = this.height - margin.top - margin.bottom;
-    var xScale = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
-    var yScale = d3.scale.linear().range([height, 0]);
-    var xAxis = d3.svg
-      .axis()
-      .scale(xScale)
-      .orient("bottom");
-    var yAxis = d3.svg
-      .axis()
-      .scale(yScale)
-      .orient("left")
-      .ticks(10);
-    var xScaleDomain = this._buildXDomain(
-      this.xScaleMin,
-      this.xScaleMax,
-      this.xScaleStep
-    );
-    xScale.domain(xScaleDomain);
-    yScale.domain([this.yScaleMin, this.yScaleMax]);
-    const svg = d3
-      .select(this.root)
-      .append("svg")
+    var margin = { top: 40, right: 20, bottom: 30, left: 40 };
+    var width = this.width - margin.left - margin.right;
+    var height = this.height - margin.top - margin.bottom;
+
+    var xDomain = [];
+    for (var c = this.xScaleMin; c < this.xScaleMax; c += this.xScaleStep) {
+      xDomain.push(c);
+    }
+
+    // set the ranges
+    var x = d3.scaleBand()
+      .range([0, width])
+      .domain(xDomain)
+      .padding(0);
+    var y = d3.scaleLinear()
+      .domain([this.yScaleMin, 0])
+      .range([height, 0]);
+
+    // append the svg object to the rux-spectrum-analyzer custom tag
+    // append a 'group' element to 'svg'
+    // moves the 'group' element to the top left margin
+    var svg = d3.select(this.parentNode).select('rux-spectrum-analyzer').append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
-      .attr("class", "chart");
-    // text label for the x axis
-    svg
-      .append("text")
-      .attr(
-        "transform",
-        "translate(" +
-          (width / 2 + margin.left / 2) +
-          " ," +
-          (height + margin.top + 35) +
-          ")"
+      .append("g")
+      .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+    // add the X Axis
+    svg.append("g")
+      .attr("class", "rux-spectrum-analyzer__axis-label")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+    // gridlines in x axis function
+    function make_x_gridlines() {
+      return d3.axisBottom(x)
+        .ticks(5)
+    }
+
+    // gridlines in y axis function
+    function make_y_gridlines() {
+      return d3.axisLeft(y)
+        .ticks(5)
+    }
+    // add the X gridlines
+    svg.append("g")
+      .attr("class", "grid x-grid-lines")
+      .attr("transform", "translate(0," + height + ")")
+      .call(make_x_gridlines()
+        .tickSize(-height)
+        .tickFormat("")
       )
-      .attr("class", "y axis-label")
-      .text(this.chartLegendX);
-    // text label for the y axis
-    svg
-      .append("text")
-      .attr("y", 100)
-      .attr("x", 0)
-      .attr("class", "axis-label")
+
+    // add the Y gridlines
+    svg.append("g")
+      .attr("class", "grid y-grid-lines")
+      .call(make_y_gridlines()
+        .tickSize(-width)
+        .tickFormat(""));
+
+    // add the y Axis
+    svg.append("g")
+      .attr("class", "rux-spectrum-analyzer__axis-label")
+      .call(d3.axisLeft(y)
+        .ticks(5));
+
+    // Add main chart label
+    svg.append("text")
+      .attr("x", -25)
+      .attr("y", -15)
+      .attr("class", "rux-spectrum-analyzer__main-chart-label")
+      .text(this.chartTitle);
+
+    // Add y axis label
+    svg.append("text")
+      .attr("x", -35)
+      .attr("y", 292)
+      .attr("class", "rux-spectrum-analyzer__chart-legend")
       .text(this.chartLegendY);
-    const chart = svg
-      .append("g")
-      .attr("class", "graph")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
-    chart
-      .append("g")
-      .attr("class", "x axis")
-      .attr("transform", `translate(0,${height})`)
-      .call(xAxis);
-    chart
-      .append("g")
-      .attr("class", "y axis")
-      .call(yAxis);
-    // // clean up the labeling of the x-axis
-    var ticks = svg.selectAll(".x .tick text");
-    ticks.attr("class", function(d, i) {
-      if (i === 0 || i % 4 != 0) {
-        d3.select(this).remove();
-      }
+
+    // Add c axis label
+    svg.append("text")
+      .attr("x", 76)
+      .attr("y", 332)
+      .attr("class", "rux-spectrum-analyzer__chart-legend")
+      .text(this.chartLegendX);
+
+    // start animation
+    var ws = new WebSocket(this.dataSource);
+
+    ws.addEventListener('message', function(event) {
+      var payload = JSON.parse(event.data);
+      var graph = payload.graph;
+
+      var data = graph;
+      x.domain(data.map(function(d) { return d.f; }));
+      y.domain([-27, 0]);
+
+      // clear old bars and tips
+      svg.selectAll(".rux-spectrum-analyzer__bar").remove();
+      svg.selectAll(".rux-spectrum-analyzer__bar-tip").remove();
+
+      // append the rectangles for the bar chart
+      svg.selectAll(".bar")
+        .data(data)
+        .enter().append("rect")
+        .attr("class", "rux-spectrum-analyzer__bar")
+        .attr("x", function(d) { return x(d.f); })
+        .attr("width", x.bandwidth())
+        .attr("y", function(d) { return y(d.p); })
+        .attr("height", function(d) { return height - y(d.p); });
+
+      svg.selectAll(".bar-tip")
+        .data(data)
+        .enter().append("rect")
+        .attr("class", "rux-spectrum-analyzer__bar-tip")
+        .attr("x", function(d) { return x(d.f); })
+        .attr("width", x.bandwidth())
+        .attr("y", function(d) { return y(d.p) - 2; })
+        .attr("height", 2);
+
     });
-    //      reference to the graph
-    this.graph = d3.select(this.root.querySelector(".graph"));
+
   }
   disconnectedCallback() {
     super.disconnectedCallback();
   }
+
   ready() {
     super.ready();
-    console.log("d3", d3);
   }
-  _update(data) {
-    this._clear();
-    this._draw(data);
-  }
-  _clear() {
-    this.graph.selectAll(".bar").remove();
-  }
-  _draw(data) {
-    // Using a forEach loop to make use of lexical this, but
-    // currently performance of forEach is substantially slower
-    // than a standard for().
-    //console.log('draw',data);
-    this.chartData.forEach(data => {
-      this.graph
-        .selectAll(".bar")
-        .data(this.chartData)
-        .enter()
-        .append("rect")
-        .attr("class", "bar")
-        .attr("x", data => {
-          return data.frequency;
-        })
-        .attr("y", data => {
-          return data.power;
-        })
-        .attr("height", data => {
-          return this.height - data.power;
-        })
-        .attr("width", 10);
-      // this is the original x/y/height data with the xScale/yScale applied
-      // couldnâ€™t get thsoe functions to return.
-      //
-      // Side note, not knowing anything about d3, but rather than replacing
-      // the bars is it possible to transition them?
-      /*
-        .attr("x", function(d) { return xScale(d.frequency); })
-        .attr("y", function(d) { return yScale(d.power); })
-        .attr("height", function(d) { return height - yScale(d.power); })
-        */
-    });
-  }
-  _buildXDomain(min, max, step) {
-    var xDomain = [];
-    for (var c = min; c < max; c = c + step) {
-      xDomain.push(c);
-    }
-    return xDomain;
-  }
+
 }
 customElements.define("rux-spectrum-analyzer", RuxSpectrumAnalyzer);
