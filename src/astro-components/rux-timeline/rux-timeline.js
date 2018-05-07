@@ -319,7 +319,7 @@ export class RuxTimeline extends PolymerElement {
   connectedCallback() {
     super.connectedCallback();
 
-    console.log("offsetParent", this.offsetParent);
+    // console.log("offsetParent", this.offsetParent);
 
     // hard coded min/max scale (for now)
     this._minScale = 100;
@@ -518,7 +518,7 @@ export class RuxTimeline extends PolymerElement {
 
   _updateTimelineScale() {
     // scale tracks container
-    console.log("tracks", this._tracks);
+    // console.log("tracks", this._tracks);
     this._tracks.style.width = Number(this._scale) + "%";
     this._track.style.width = Number(this._scale) + "%";
 
@@ -537,7 +537,7 @@ export class RuxTimeline extends PolymerElement {
     of course in instances where no playhead exists 
   */
   _setParams() {
-    console.log("set params");
+    // console.log("set params");
     this._updateTimelineScale();
     // This is a very ugly way of targeting grandchildren form a parent
     // but for demo it’ll have to do.

@@ -151,7 +151,7 @@ export class RuxToggle extends PolymerElement {
   connectedCallback() {
     super.connectedCallback();
 
-    console.log(this.checkedLabel);
+    // console.log(this.checkedLabel);
     // this._label = this.checked ? this.checkedLabel : this.uncheckedLabel;
   }
 

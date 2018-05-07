@@ -11,7 +11,12 @@ export class RuxLog extends PolymerElement {
   static get properties() {
     return {
       data: {
-        type: Array
+        type: Object,
+        observer: "_updateLog"
+      },
+      _log: {
+        type: Array,
+        value: []
       }
     };
   }
@@ -24,21 +29,24 @@ export class RuxLog extends PolymerElement {
 		<h1 class="rux-log-header-title">Event Logs</h1>
 	</header>
 
+  [[data.message]]
+  [[data.status]]
+  [[data.timestamp]]
   <!-- Log Header Row //-->
 	<ul class="rux-log-header-labels rux-row">
   </ul>
   
-  <!-- Log
+  
   <ol>
-    <template is="dom-repeat" id="rux-log-data" items=[[data]]>
+    <template is="dom-repeat" id="rux-log-data" items=[[_log]]>
       <li>
-        <time datetime=[[item.time]]>[[item.time]]</time>
-        <rux-status status=[[status]]></rux-status>
-        <div>[[item.logEntry]] message</div>
+        <time datetime=[[item.timestamp]]>[[item.timestamp]]</time>
+        <rux-status status=[[item.status]]></rux-status>
+        <div>[[item.entry]] message</div>
       </li>
     </template>
   </ol>
-  //-->
+  
 
   `;
   }
@@ -52,6 +60,14 @@ export class RuxLog extends PolymerElement {
 
   disconnectedCallback() {
     super.disconnectedCallback();
+  }
+
+  _updateLog() {
+    console.log("update log", this.data);
+    this.unshift("_log", this.data);
+    console.log("_log", this._log);
+    // this.set.push(this.data);
+    // this.notifyPath("_log", this._log);
   }
 }
 customElements.define("rux-log", RuxLog);

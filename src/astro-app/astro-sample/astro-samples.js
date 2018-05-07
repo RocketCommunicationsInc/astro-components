@@ -103,7 +103,7 @@ export class AstroSamples extends PolymerElement {
   }
 
   _setSample(selectedSample) {
-    console.log("test");
+    // console.log("test");
     this._reset();
 
     // find the panel whose aria-labeldby attribute matches the sample’s id

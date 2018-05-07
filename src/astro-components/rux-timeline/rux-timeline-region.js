@@ -276,7 +276,7 @@ export class RuxTimelineRegion extends PolymerElement {
       scale: this.scale
     };
 
-    console.log("track width", this.trackWidth);
+    // console.log("track width", this.trackWidth);
     this._updateRegion();
   }
 

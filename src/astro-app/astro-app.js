@@ -325,8 +325,10 @@ export class AstroApp extends PolymerElement {
 <astro-sample-panel aria-labeledby="sample-log">
     <h1>Log</h1>
     
-    <rux-log data=[[logData]]>
-    </rux-log>
+    <rux-button on-click="_updateLog">Update Log</rux-button>
+    <rux-log data=[[logData]]></rux-log>
+
+    
 
 </astro-sample-panel>
 
@@ -1816,6 +1818,15 @@ export class AstroApp extends PolymerElement {
     } else {
       _notification.setAttribute("opened", "");
     }
+  }
+
+  _updateLog() {
+    console.log("update log");
+    this.logData = {
+      timestamp: new Date(),
+      status: "off",
+      entry: "asdf asdkfhasdf "
+    };
   }
 
   _launchDynamicModal() {
