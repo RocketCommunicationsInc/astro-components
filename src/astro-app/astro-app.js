@@ -18,6 +18,9 @@ import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
 import { RuxToggle } from "../astro-components/rux-toggle/rux-toggle.js";
 import { RuxPushButton } from "../astro-components/rux-push-button/rux-push-button.js";
 import { RuxTimeline } from "../astro-components/rux-timeline/rux-timeline.js";
+import { RuxTree } from "../astro-components/rux-tree/rux-tree.js";
+import { RuxAccordion } from "../astro-components/rux-accordion/rux-accordion.js";
+import { RuxLog } from "../astro-components/rux-log/rux-log.js";
 import { RuxNotification } from "../astro-components/rux-notification/rux-notification.js";
 
 import { AstroSamples } from "./astro-sample/astro-samples.js";
@@ -27,7 +30,7 @@ import { AstroSamples } from "./astro-sample/astro-samples.js";
  */
 export class AstroApp extends PolymerElement {
   static get template() {
-    return html `
+    return html`
 
     <style>
       :host {
@@ -283,6 +286,9 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-log">Log</astro-sample></li>
+<li><astro-sample id="sample-tree">Tree</astro-sample></li>
+<li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
@@ -311,8 +317,22 @@ export class AstroApp extends PolymerElement {
 
 <astro-sample-panels class="detail">
 
-<astro-sample-panel aria-labeledby="sample-log">
+<astro-sample-panel aria-labeledby="sample-tree">
+<h1>Tree</h1>
+<rux-tree></rux-tree>
+</astro-sample-panel>
 
+<astro-sample-panel aria-labeledby="sample-log">
+    <h1>Log</h1>
+    
+    <rux-log data=[[logData]]>
+    </rux-log>
+
+</astro-sample-panel>
+
+<astro-sample-panel aria-labeledby="sample-accordion">
+<h1>Accordion</h1>
+<rux-accordion></rux-accordion>
 </astro-sample-panel>
 
 <astro-sample-panel aria-labeledby="sample-notification-banner">
@@ -1333,7 +1353,8 @@ export class AstroApp extends PolymerElement {
     super();
     this.name = "3.0 preview";
     this._popMenuStatus = "off";
-    this._popMenuItems = [{
+    this._popMenuItems = [
+      {
         label: "Off",
         action: "off"
       },
@@ -1358,6 +1379,8 @@ export class AstroApp extends PolymerElement {
         action: "emergency"
       }
     ];
+
+    this.logTemplate = `<div class="a"></div>`;
 
     this.timelineSelectedRegion = { title: "Batman" };
 
@@ -1405,7 +1428,8 @@ export class AstroApp extends PolymerElement {
 
     this.fakeAOS = Date.now() - 1000000;
     this.fakeLOS = new Date();
-    this.segmentOne = [{
+    this.segmentOne = [
+      {
         label: "Hour"
       },
       {
@@ -1416,99 +1440,110 @@ export class AstroApp extends PolymerElement {
       }
     ];
 
+    this.logData = {
+      timestamp: new Date(),
+      status: "ok",
+      message: "Log message"
+    };
+
     const today = new Date();
 
     this.timeline = {
-      tracks: [{
-        label: "LEO",
-        regions: [{
-            label: "DSP-1 F17",
-            status: "caution",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              2,
-              30,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              4,
-              30,
-              0
-            )
-          },
-          {
-            label: "GPS-IIA-17",
-            status: "caution",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              7,
-              30,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              8,
-              30,
-              0
-            )
-          },
-          {
-            label: "GPS-IIR-2",
-            status: "ok",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              10,
-              0,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              13,
-              0,
-              0
-            )
-          },
-          {
-            label: "DSP-1-18 F20",
-            status: "error",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              15,
-              0,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              20,
-              30,
-              0
-            )
-          }
-        ]
-      }]
+      tracks: [
+        {
+          label: "LEO",
+          regions: [
+            {
+              label: "DSP-1 F17",
+              status: "caution",
+              startTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                2,
+                30,
+                0
+              ),
+              endTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                4,
+                30,
+                0
+              )
+            },
+            {
+              label: "GPS-IIA-17",
+              status: "caution",
+              startTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                7,
+                30,
+                0
+              ),
+              endTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                8,
+                30,
+                0
+              )
+            },
+            {
+              label: "GPS-IIR-2",
+              status: "ok",
+              startTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                10,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                13,
+                0,
+                0
+              )
+            },
+            {
+              label: "DSP-1-18 F20",
+              status: "error",
+              startTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                15,
+                0,
+                0
+              ),
+              endTime: new Date(
+                today.getUTCFullYear(),
+                today.getUTCMonth(),
+                today.getUTCDate(),
+                20,
+                30,
+                0
+              )
+            }
+          ]
+        }
+      ]
     };
 
     this.tracks = this.timeline.tracks;
-    this.multiTrack = [{
+    this.multiTrack = [
+      {
         label: "LEO",
-        regions: [{
+        regions: [
+          {
             label: "NROL-11",
             status: "caution",
             startTime: new Date(
@@ -1572,7 +1607,8 @@ export class AstroApp extends PolymerElement {
       },
       {
         label: "HEO",
-        regions: [{
+        regions: [
+          {
             label: "GPS-IIR-15",
             status: "caution",
             startTime: new Date(
@@ -1636,7 +1672,8 @@ export class AstroApp extends PolymerElement {
       },
       {
         label: "GEO",
-        regions: [{
+        regions: [
+          {
             label: "STSS-Demo",
             status: "caution",
             startTime: new Date(
@@ -1701,14 +1738,16 @@ export class AstroApp extends PolymerElement {
     ];
 
     this.dynamicModal = {
-      message: "Oh what? Custom icons in the modal window? Yeah, because components are dope.",
+      message:
+        "Oh what? Custom icons in the modal window? Yeah, because components are dope.",
       confirmText: "Yup",
       icon: "default:settings",
       denyText: "Nah",
       customEvent: "custom-modal-event"
     };
 
-    this.segmentTwo = [{
+    this.segmentTwo = [
+      {
         label: "Good",
         value: {
           result: "Can’t be fast."
