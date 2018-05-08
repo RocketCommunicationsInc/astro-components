@@ -19,17 +19,10 @@ export class RuxLog extends PolymerElement {
         type: Object
       },
       maxLines: {
-        type: Number,
-        value: 10
+        type: Number
       },
       _height: {
         type: Number
-      },
-      _formattedTimeStamp: {
-        type: String,
-        value: () => {
-          return "12/11/11";
-        }
       },
       _log: {
         type: Array,
@@ -112,13 +105,13 @@ export class RuxLog extends PolymerElement {
     <template is="dom-repeat" id="rux-log-data" items=[[_log]]>
       <li class="rux-log__log-event">
         <div class="log-event__timestamp">
-          <time datetime="[[item.timestamp]]">[[_formatTime(item.timestamp)]]</time>
+          <time datetime$=[[_formatMachineTime(item.timestamp)]]>[[_formatReadableTime(item.timestamp)]]</time>
         </div>
         <div class="log-event__status">
           <rux-status status=[[item.status]]></rux-status>
         </div>
         <div class="log-event__message">
-          <div>[[item.entry]]</div>
+          <div>[[item.timestamp]]</div>
         </div>
       </li>
     </template>
@@ -151,10 +144,15 @@ export class RuxLog extends PolymerElement {
     super.disconnectedCallback();
   }
 
-  _formatTime(time) {
+  // return an HTML5 datetime string
+  _formatMachineTime(time, format) {
+    return `${time.getUTCFullYear()}-${time.getUTCMonth()}-${time.getUTCDate()} ${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}:${time.getUTCMilliseconds()}`;
+  }
+
+  _formatReadableTime(time, format) {
     return new Date(time).toLocaleTimeString(this.locale, {
       hour12: false,
-      timeZone: "Asia/Tokyo"
+      timeZone: "UTC"
     });
   }
 
