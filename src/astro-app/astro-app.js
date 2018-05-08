@@ -327,7 +327,7 @@ export class AstroApp extends PolymerElement {
     
     <rux-button on-click="_updateLog">Update Log</rux-button>
     <rux-log 
-        max-lines=5
+        max-lines=25
         formatting=[[logFormatting]]
         data=[[logData]]>
     </rux-log>
@@ -1837,12 +1837,19 @@ export class AstroApp extends PolymerElement {
 
   _updateLog() {
     const statuses = ["off", "standby", "ok", "caution", "error", "emergency"];
-
+    const messages = [
+      "Architecto temporibus iusto dolor quisquam",
+      "Reiciendis similique earum qui quas corporis error et",
+      "Necessitatibus magni corporis est nam asperiores est",
+      "occaecati laudantium beatae",
+      "Architecto et quasi. Rerum et quod iste eum aperiam voluptates vel. Blanditiis enim deserunt",
+      "Dolorum expedita assumenda quia nihil omnis. Velit omnis fugit dolore laudantium quam dolor tempora asperiores corporis. Cupiditate quia ipsum"
+    ];
     console.log("update log");
     this.logData = {
       timestamp: new Date(),
       status: statuses[Math.floor(Math.random() * statuses.length)],
-      entry: "asdf asdkfhasdf "
+      entry: messages[Math.floor(Math.random() * messages.length)]
     };
   }
 

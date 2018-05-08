@@ -38,17 +38,40 @@ export class RuxLog extends PolymerElement {
 
       :host {
         display: block;
+        font-size: 0.875rem;
       }
 
-      ul, ol {
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.0980392);
+        padding: 0.5rem;
+      }
+
+      h1 {
+        outline: 1px solid red;
+        margin: 0;
+
+        font-size: 1.25rem;
+        font-weight: 300;
+      }
+
+      .rux-log__header-labels {
+        display: flex;
+        width: 100%;
+      }
+
+      .rux-log__header-labels, ol {
         
         padding: 0;
         margin: 0;
         list-style: none;
       }
 
-      ul, ol li {
+      .rux-log__header-labels, ol li {
         display: flex;
+        align-content: flex-start;
       }
 
       ol {
@@ -58,10 +81,11 @@ export class RuxLog extends PolymerElement {
       .rux-log__log-event {
         display: flex;
         flex-shrink: 0;
-        align-items: center;
+        align-items: flex-start;
         padding: 0.5rem 0;
       }
 
+      .rux-log__header-labels > *,
       .rux-log__log-event > * {
         margin: 0 0.5rem;
       }
@@ -93,7 +117,8 @@ export class RuxLog extends PolymerElement {
   
 	<header class="rux-log-header">
     <h1 class="rux-log-header-title">Event Logs</h1>
-    <ul class="rux-log-header-labels rux-row">
+    <input type="search">
+    <ul class="rux-log__header-labels rux-row">
       <template is="dom-repeat" id="rux-log-data" items=[[formatting.labels]]>
       <li>[[item.label]]</li>
       </template>
@@ -111,7 +136,7 @@ export class RuxLog extends PolymerElement {
           <rux-status status=[[item.status]]></rux-status>
         </div>
         <div class="log-event__message">
-          <div>[[item.timestamp]]</div>
+          <div>[[item.entry]]</div>
         </div>
       </li>
     </template>
