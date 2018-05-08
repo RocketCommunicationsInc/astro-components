@@ -45,10 +45,10 @@ export class RuxLog extends PolymerElement {
 
       :host {
         display: block;
-        outline: 1px solid red;
       }
 
       ul, ol {
+        
         padding: 0;
         margin: 0;
         list-style: none;
@@ -62,8 +62,36 @@ export class RuxLog extends PolymerElement {
         overflow-y: scroll;
       }
 
-      ol li:nth-child(odd) {
-        background-color: rgba(255,255,255,0.1);
+      .rux-log__log-event {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        padding: 0.5rem 0;
+      }
+
+      .rux-log__log-event > * {
+        margin: 0 0.5rem;
+      }
+
+      .log-event__timestamp {
+        font-family: var(--font-family-mono);
+        
+        flex-shrink: 1;
+	      
+	      text-align: center;
+      }
+
+      .log-event__status {
+        
+      }
+
+      .log-event__message {
+        flex-grow: 1;
+	      text-align: left;
+      }
+
+      ol li:nth-child(even) {
+        background-color: rgba(255,255,255,0.05);
       }
 
 
@@ -79,17 +107,19 @@ export class RuxLog extends PolymerElement {
     </ul>
 	</header>
 
-  [[labels]]
-  <!-- Log Header Row //-->
-      
-  
-  
+
   <ol style$="max-height: [[_height]]px">
     <template is="dom-repeat" id="rux-log-data" items=[[_log]]>
-      <li class="rux-log--log-line">
-        <time datetime=[[item.timestamp]]>[[_formatTime(item.timestamp)]]</time>
-        <rux-status status=[[item.status]]></rux-status>
-        <div>[[item.entry]] message</div>
+      <li class="rux-log__log-event">
+        <div class="log-event__timestamp">
+          <time datetime="[[item.timestamp]]">[[_formatTime(item.timestamp)]]</time>
+        </div>
+        <div class="log-event__status">
+          <rux-status status=[[item.status]]></rux-status>
+        </div>
+        <div class="log-event__message">
+          <div>[[item.entry]]</div>
+        </div>
       </li>
     </template>
   </ol>
@@ -106,13 +136,13 @@ export class RuxLog extends PolymerElement {
 
     this.data = {
       timestamp: new Date(),
-      status: "ok",
-      message: "Log message"
+      status: "",
+      entry: "Logging inited …"
     };
 
     // set the max height for the
     afterNextRender(this, () => {
-      const logLine = this.shadowRoot.querySelector(".rux-log--log-line");
+      const logLine = this.shadowRoot.querySelector(".rux-log__log-event");
       this._height = logLine.offsetHeight * this.maxLines;
     });
   }
@@ -124,7 +154,7 @@ export class RuxLog extends PolymerElement {
   _formatTime(time) {
     return new Date(time).toLocaleTimeString(this.locale, {
       hour12: false,
-      timeZone: this.timezone
+      timeZone: "Asia/Tokyo"
     });
   }
 
