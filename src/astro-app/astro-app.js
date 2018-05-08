@@ -326,7 +326,10 @@ export class AstroApp extends PolymerElement {
     <h1>Log</h1>
     
     <rux-button on-click="_updateLog">Update Log</rux-button>
-    <rux-log data=[[logData]]></rux-log>
+    <rux-log 
+        formatting=[[logFormatting]]
+        data=[[logData]]>
+    </rux-log>
 
     
 
@@ -1442,10 +1445,21 @@ export class AstroApp extends PolymerElement {
       }
     ];
 
-    this.logData = {
-      timestamp: new Date(),
-      status: "ok",
-      message: "Log message"
+    this.logFormatting = {
+      labels: [
+        {
+          label: "Time",
+          style: ""
+        },
+        {
+          label: "Status",
+          style: ""
+        },
+        {
+          label: "Message",
+          style: ""
+        }
+      ]
     };
 
     const today = new Date();
@@ -1821,10 +1835,12 @@ export class AstroApp extends PolymerElement {
   }
 
   _updateLog() {
+    const statuses = ["off", "standby", "ok", "caution", "error", "emergency"];
+
     console.log("update log");
     this.logData = {
       timestamp: new Date(),
-      status: "off",
+      status: statuses[Math.floor(Math.random() * statuses.length)],
       entry: "asdf asdkfhasdf "
     };
   }
