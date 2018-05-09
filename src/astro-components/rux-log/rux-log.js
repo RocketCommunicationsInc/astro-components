@@ -35,7 +35,7 @@ export class RuxLog extends PolymerElement {
       },
       _filterValue: {
         type: String,
-        value: "dol" /*null*/
+        value: null
       },
       _height: {
         type: Number
@@ -80,6 +80,7 @@ export class RuxLog extends PolymerElement {
       .rux-log__header-labels {
         display: flex;
         width: 100%;
+        color: #989898;
       }
 
       .rux-log__header-labels, ol {
@@ -107,21 +108,33 @@ export class RuxLog extends PolymerElement {
 
       
 
-      .rux-log__header-labels > *,
-      .rux-log__log-event > * {
+      .rux-log__header-labels li:not(:first-child),
+      .rux-log__log-event > *{
         margin: 0 0.5rem;
+        outline: 1px solid red;
       }
+
+      .rux-log__header-labels li:first-child {
+        margin: 0 0.5rem 0 0;
+      }
+
+      
 
       .log-event__timestamp {
         font-family: var(--font-family-mono);
         
-        flex-shrink: 1;
+        flex-shrink: 0;
 	      
-	      text-align: center;
+        text-align: right;
+        width: 5rem;
       }
 
       .log-event__status {
-        
+        flex-grow: 0;
+        flex-shrink: 0;
+        text-align: center;
+        width: 1rem;
+        overflow: hidden;
       }
 
       .log-event__message {
@@ -139,8 +152,8 @@ export class RuxLog extends PolymerElement {
         top: 0;
         left: 0;
         
-        color: #fff;
-        background-color: #283F58; /* rgb(251, 243, 142); */
+        color: rgb(62, 57, 7);
+        background-color: rgb(253, 248, 198);
         padding: 0.5rem;
       }
 
@@ -161,20 +174,19 @@ export class RuxLog extends PolymerElement {
     <h1 class="rux-log-header-title">Event Logs</h1>
     <rux-icon class="test" icon="default:caution" color="#f8e71d" size="18" hidden=[[!_filterValue]]></rux-icon><input type="search" value={{_filterValue::input}}>
     <ul class="rux-log__header-labels rux-row">
-      <template is="dom-repeat" id="rux-log-data" items=[[formatting.labels]]>
-      <li>[[item.label]]</li>
-      </template>
+      <li class="log-event__timestamp">Time</li>
+      <li class="log-event__status"></li>
+      <li>Event</li>
     </ul>
-    
 	</header>
 
 
   <ol style$="max-height: [[_height]]px">
-      <!--
+    
     <li class="rux-log__filter-enabled" hidden=[[!_filterValue]]>
-    <rux-icon icon="default:caution" color="#fff" size="20"></rux-icon>A filter with&nbsp;<b>[[_filterValue]]</b>&nbsp;is enabled. [[_visibleItems]] of [[_log.length]] records are currently hidden.
+    <rux-icon icon="default:caution" color="rgb(62, 57, 7)" size="20"></rux-icon>A filter with&nbsp;<b>[[_filterValue]]</b>&nbsp;is enabled. [[_visibleItems]] of [[_log.length]] records are currently hidden.
     </li>
-    //-->
+    
     <template is="dom-repeat" id="rux-log-data" items={{_log}} filter="{{_filter(_filterValue)}}" rendered-item-count="{{renderedItemCount::dom-change}}" notify-dom-change>
       <li class="rux-log__log-event">
         <div class="log-event__timestamp">
