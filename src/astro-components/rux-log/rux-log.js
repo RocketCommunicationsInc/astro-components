@@ -3,6 +3,7 @@ import { html } from "/node_modules/@polymer/polymer/polymer-element.js";
 import "/node_modules/@polymer/polymer/lib/elements/dom-repeat.js";
 import { afterNextRender } from "/node_modules/@polymer/polymer/lib/utils/render-status.js";
 import { RuxStatus } from "../rux-status/rux-status.js";
+import { RuxIcon } from "../rux-icon/rux-icon.js";
 // import rux-status
 /**
  * @polymer
@@ -25,6 +26,17 @@ export class RuxLog extends PolymerElement {
         type: String,
         value: "UTC"
       },
+      renderedItemCount: {
+        type: Number,
+        observer: "_getVisibleItems"
+      },
+      _visibleItems: {
+        type: Number
+      },
+      _filterValue: {
+        type: String,
+        value: "dol" /*null*/
+      },
       _height: {
         type: Number
       },
@@ -45,16 +57,20 @@ export class RuxLog extends PolymerElement {
         font-size: 0.875rem;
       }
 
+      *[hidden] {
+        display: none !important;
+      }
+
       header {
         display: flex;
         flex-wrap: wrap;
+        position: relative;
         justify-content: space-between;
         background-color: rgba(255, 255, 255, 0.0980392);
         padding: 0.5rem;
       }
 
       h1 {
-        outline: 1px solid red;
         margin: 0;
 
         font-size: 1.25rem;
@@ -93,7 +109,6 @@ export class RuxLog extends PolymerElement {
 
       .rux-log__header-labels > *,
       .rux-log__log-event > * {
-        outline: 1px solid green;
         margin: 0 0.5rem;
       }
 
@@ -118,23 +133,49 @@ export class RuxLog extends PolymerElement {
         background-color: rgba(255,255,255,0.05);
       }
 
+      .rux-log__filter-enabled {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+        
+        color: #fff;
+        background-color: #283F58; /* rgb(251, 243, 142); */
+        padding: 0.5rem;
+      }
+
+      .rux-log__filter-enabled rux-icon {
+        margin-right: 0.5rem;
+      }
+
+
+      .test {
+        margin-left: auto;
+        margin-right: 0.5rem;
+      }
 
     </style>
 
   
 	<header class="rux-log-header">
     <h1 class="rux-log-header-title">Event Logs</h1>
-    <input type="search" value={{_filterValue::input}}>
+    <rux-icon class="test" icon="default:caution" color="#f8e71d" size="18" hidden=[[!_filterValue]]></rux-icon><input type="search" value={{_filterValue::input}}>
     <ul class="rux-log__header-labels rux-row">
       <template is="dom-repeat" id="rux-log-data" items=[[formatting.labels]]>
       <li>[[item.label]]</li>
       </template>
     </ul>
+    
 	</header>
 
 
   <ol style$="max-height: [[_height]]px">
-    <template is="dom-repeat" id="rux-log-data" items={{_log}} filter="{{_filter(_filterValue)}}">
+      <!--
+    <li class="rux-log__filter-enabled" hidden=[[!_filterValue]]>
+    <rux-icon icon="default:caution" color="#fff" size="20"></rux-icon>A filter with&nbsp;<b>[[_filterValue]]</b>&nbsp;is enabled. [[_visibleItems]] of [[_log.length]] records are currently hidden.
+    </li>
+    //-->
+    <template is="dom-repeat" id="rux-log-data" items={{_log}} filter="{{_filter(_filterValue)}}" rendered-item-count="{{renderedItemCount::dom-change}}" notify-dom-change>
       <li class="rux-log__log-event">
         <div class="log-event__timestamp">
           <time datetime$=[[_formatMachineTime(item.timestamp)]]>[[_formatReadableTime(item.timestamp)]]</time>
@@ -147,6 +188,7 @@ export class RuxLog extends PolymerElement {
         </div>
       </li>
     </template>
+    
   </ol>
   `;
   }
@@ -160,7 +202,7 @@ export class RuxLog extends PolymerElement {
     this.data = {
       timestamp: new Date(),
       status: "",
-      entry: "Logging inited …"
+      entry: "Logging inited dol …"
     };
 
     // set the max height for the
@@ -175,11 +217,31 @@ export class RuxLog extends PolymerElement {
   }
 
   _filter(filterValue) {
+    // don't run the filter if there is no search param or if
+    // the search param is less than 3 chars long
     if (!filterValue || filterValue.length < 3) return null;
 
-    return _log.entry.toLowerCase().includes(filterValue.toLowerCase())
-      ? true
-      : false;
+    // returns the log entry if it includes the search term
+    // NOTE: using String.prototype.includes which is unavailable
+    // in IE11
+    return _log => {
+      return _log.entry.toLowerCase().includes(filterValue.toLowerCase())
+        ? true
+        : false;
+    };
+  }
+
+  _getVisibleItems() {
+    if (this._log.length && this.renderedItemCount) {
+      console.log(this._log.length);
+      console.log(this.renderedItemCount);
+      console.log(this._log.length - this.renderedItemCount);
+      this._visibleItems = this._log.length - this.renderedItemCount;
+    }
+    // console.log(this._log.length);
+    // console.log(this.renderedItemCount);
+    // console.log();
+    // return 20;
   }
 
   // return an HTML5 datetime string

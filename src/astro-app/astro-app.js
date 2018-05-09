@@ -326,8 +326,9 @@ export class AstroApp extends PolymerElement {
     <h1>Log</h1>
     
     <rux-button on-click="_updateLog">Update Log</rux-button>
+    <br>
     <rux-log 
-        max-lines=25
+        max-lines=5
         formatting=[[logFormatting]]
         data=[[logData]]>
     </rux-log>
