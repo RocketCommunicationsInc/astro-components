@@ -71,7 +71,8 @@ export class RuxLog extends PolymerElement {
       }
 
       h1 {
-        margin: 0;
+        margin: 0 0 1rem 0;
+        display: none;
 
         font-size: 1.25rem;
         font-weight: 300;
@@ -111,7 +112,6 @@ export class RuxLog extends PolymerElement {
       .rux-log__header-labels li:not(:first-child),
       .rux-log__log-event > *{
         margin: 0 0.5rem;
-        outline: 1px solid red;
       }
 
       .rux-log__header-labels li:first-child {
@@ -120,9 +120,13 @@ export class RuxLog extends PolymerElement {
 
       
 
-      .log-event__timestamp {
+      .rux-log__log-event .log-event__timestamp {
         font-family: var(--font-family-mono);
+      }
+
+      .log-event__timestamp {
         
+    
         flex-shrink: 0;
 	      
         text-align: right;
@@ -139,7 +143,13 @@ export class RuxLog extends PolymerElement {
 
       .log-event__message {
         flex-grow: 1;
-	      text-align: left;
+        text-align: left;
+        
+      }
+
+      .log-header__message {
+        display: flex;
+        justify-content: space-between;
       }
 
       ol li:nth-child(even) {
@@ -151,9 +161,12 @@ export class RuxLog extends PolymerElement {
         position: sticky;
         top: 0;
         left: 0;
+
+        align-content: center;
+        
         
         color: rgb(62, 57, 7);
-        background-color: rgb(253, 248, 198);
+        background-color: rgb(223, 247, 255) /* rgb(253, 248, 198) */;
         padding: 0.5rem;
       }
 
@@ -167,16 +180,22 @@ export class RuxLog extends PolymerElement {
         margin-right: 0.5rem;
       }
 
+      input[type=search] {
+        font-size: 1rem;
+        background: url(data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' …4-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E);
+        
+      }
+
     </style>
 
   
 	<header class="rux-log-header">
     <h1 class="rux-log-header-title">Event Logs</h1>
-    <rux-icon class="test" icon="default:caution" color="#f8e71d" size="18" hidden=[[!_filterValue]]></rux-icon><input type="search" value={{_filterValue::input}}>
+    <!--<rux-icon class="test" icon="default:caution" color="#f8e71d" size="10" hidden=[[!_filterValue]]></rux-icon><input type="search" placeholder="Filter Log" value={{_filterValue::input}}>//-->
     <ul class="rux-log__header-labels rux-row">
       <li class="log-event__timestamp">Time</li>
       <li class="log-event__status"></li>
-      <li>Event</li>
+      <li class="log-event__message log-header__message">Event <input type="search" value={{_filterValue::input}}></li>
     </ul>
 	</header>
 
@@ -184,7 +203,7 @@ export class RuxLog extends PolymerElement {
   <ol style$="max-height: [[_height]]px">
     
     <li class="rux-log__filter-enabled" hidden=[[!_filterValue]]>
-    <rux-icon icon="default:caution" color="rgb(62, 57, 7)" size="20"></rux-icon>A filter with&nbsp;<b>[[_filterValue]]</b>&nbsp;is enabled. [[_visibleItems]] of [[_log.length]] records are currently hidden.
+    A filter with&nbsp;<b>[[_filterValue]]</b>&nbsp;is enabled. [[_visibleItems]] of [[_log.length]] records are currently hidden.
     </li>
     
     <template is="dom-repeat" id="rux-log-data" items={{_log}} filter="{{_filter(_filterValue)}}" rendered-item-count="{{renderedItemCount::dom-change}}" notify-dom-change>
@@ -231,7 +250,7 @@ export class RuxLog extends PolymerElement {
   _filter(filterValue) {
     // don't run the filter if there is no search param or if
     // the search param is less than 3 chars long
-    if (!filterValue || filterValue.length < 3) return null;
+    if (!filterValue || filterValue.length < 4) return null;
 
     // returns the log entry if it includes the search term
     // NOTE: using String.prototype.includes which is unavailable
@@ -245,15 +264,8 @@ export class RuxLog extends PolymerElement {
 
   _getVisibleItems() {
     if (this._log.length && this.renderedItemCount) {
-      console.log(this._log.length);
-      console.log(this.renderedItemCount);
-      console.log(this._log.length - this.renderedItemCount);
       this._visibleItems = this._log.length - this.renderedItemCount;
     }
-    // console.log(this._log.length);
-    // console.log(this.renderedItemCount);
-    // console.log();
-    // return 20;
   }
 
   // return an HTML5 datetime string
