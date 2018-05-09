@@ -1453,7 +1453,7 @@ export class AstroApp extends PolymerElement {
           style: ""
         },
         {
-          label: "Status",
+          label: " ",
           style: ""
         },
         {

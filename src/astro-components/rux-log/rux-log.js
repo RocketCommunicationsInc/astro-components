@@ -21,6 +21,10 @@ export class RuxLog extends PolymerElement {
       maxLines: {
         type: Number
       },
+      timezone: {
+        type: String,
+        value: "UTC"
+      },
       _height: {
         type: Number
       },
@@ -85,8 +89,11 @@ export class RuxLog extends PolymerElement {
         padding: 0.5rem 0;
       }
 
+      
+
       .rux-log__header-labels > *,
       .rux-log__log-event > * {
+        outline: 1px solid green;
         margin: 0 0.5rem;
       }
 
@@ -117,7 +124,7 @@ export class RuxLog extends PolymerElement {
   
 	<header class="rux-log-header">
     <h1 class="rux-log-header-title">Event Logs</h1>
-    <input type="search">
+    <input type="search" value={{_filterValue::input}}>
     <ul class="rux-log__header-labels rux-row">
       <template is="dom-repeat" id="rux-log-data" items=[[formatting.labels]]>
       <li>[[item.label]]</li>
@@ -127,7 +134,7 @@ export class RuxLog extends PolymerElement {
 
 
   <ol style$="max-height: [[_height]]px">
-    <template is="dom-repeat" id="rux-log-data" items=[[_log]]>
+    <template is="dom-repeat" id="rux-log-data" items={{_log}} filter="{{_filter(_filterValue)}}">
       <li class="rux-log__log-event">
         <div class="log-event__timestamp">
           <time datetime$=[[_formatMachineTime(item.timestamp)]]>[[_formatReadableTime(item.timestamp)]]</time>
@@ -141,8 +148,6 @@ export class RuxLog extends PolymerElement {
       </li>
     </template>
   </ol>
-  
-
   `;
   }
   constructor() {
@@ -169,15 +174,26 @@ export class RuxLog extends PolymerElement {
     super.disconnectedCallback();
   }
 
-  // return an HTML5 datetime string
-  _formatMachineTime(time, format) {
-    return `${time.getUTCFullYear()}-${time.getUTCMonth()}-${time.getUTCDate()} ${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}:${time.getUTCMilliseconds()}`;
+  _filter(filterValue) {
+    if (!filterValue || filterValue.length < 3) return null;
+
+    return _log.entry.toLowerCase().includes(filterValue.toLowerCase())
+      ? true
+      : false;
   }
 
-  _formatReadableTime(time, format) {
+  // return an HTML5 datetime string
+  _formatMachineTime(time) {
+    const utc = `${time.getUTCFullYear()}-${time.getUTCMonth()}-${time.getUTCDate()} ${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}:${time.getUTCMilliseconds()}`;
+    const local = `${time.getFullYear()}-${time.getMonth()}-${time.getDate()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}:${time.getMilliseconds()}`;
+
+    return this.timezone.toLowerCase() === "utc" ? utc : local;
+  }
+
+  _formatReadableTime(time) {
     return new Date(time).toLocaleTimeString(this.locale, {
       hour12: false,
-      timeZone: "UTC"
+      timeZone: this.timezone
     });
   }
 
