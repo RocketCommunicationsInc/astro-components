@@ -248,9 +248,8 @@ export class RuxLog extends PolymerElement {
   }
 
   _filter(filterValue) {
-    // don't run the filter if there is no search param or if
-    // the search param is less than 3 chars long
-    if (!filterValue || filterValue.length < 4) return null;
+    // don't run the filter if there is no search param
+    if (!filterValue) return null;
 
     // returns the log entry if it includes the search term
     // NOTE: using String.prototype.includes which is unavailable
@@ -284,6 +283,7 @@ export class RuxLog extends PolymerElement {
   }
 
   _updateLog() {
+    /* TODO - Add support for a log dump of multiple items */
     this.unshift("_log", this.data);
   }
 }

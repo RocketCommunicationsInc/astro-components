@@ -46,7 +46,7 @@ export class RuxClock extends PolymerElement {
   }
 
   static get template() {
-    return html `
+    return html`
       <style>
         *[hidden] {
           display: none !important;
@@ -216,7 +216,7 @@ export class RuxClock extends PolymerElement {
   }
 
   _onWindowResize() {
-    console.log("resizing");
+    // console.log("resizing");
   }
 }
 customElements.define("rux-clock", RuxClock);
