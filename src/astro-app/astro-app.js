@@ -1434,6 +1434,23 @@ export class AstroApp extends PolymerElement {
       labels: "min,mid,max"
     };
 
+    this.logStatuses = [
+      "off",
+      "standby",
+      "ok",
+      "caution",
+      "error",
+      "emergency"
+    ];
+    this.logMessages = [
+      "Architecto temporibus iusto dolor quisquam",
+      "Reiciendis similique earum qui quas corporis error et",
+      "Necessitatibus magni corporis est nam asperiores est",
+      "occaecati laudantium beatae",
+      "Architecto et quasi. Rerum et quod iste eum aperiam voluptates vel. Blanditiis enim deserunt",
+      "Dolorum expedita assumenda quia nihil omnis. Velit omnis fugit dolore laudantium quam dolor tempora asperiores corporis. Cupiditate quia ipsum"
+    ];
+
     this.fakeAOS = Date.now() - 1000000;
     this.fakeLOS = new Date();
     this.segmentOne = [
@@ -1838,20 +1855,14 @@ export class AstroApp extends PolymerElement {
   }
 
   _updateLog() {
-    const statuses = ["off", "standby", "ok", "caution", "error", "emergency"];
-    const messages = [
-      "Architecto temporibus iusto dolor quisquam",
-      "Reiciendis similique earum qui quas corporis error et",
-      "Necessitatibus magni corporis est nam asperiores est",
-      "occaecati laudantium beatae",
-      "Architecto et quasi. Rerum et quod iste eum aperiam voluptates vel. Blanditiis enim deserunt",
-      "Dolorum expedita assumenda quia nihil omnis. Velit omnis fugit dolore laudantium quam dolor tempora asperiores corporis. Cupiditate quia ipsum"
-    ];
-    console.log("update log");
     this.logData = {
       timestamp: new Date(),
-      status: statuses[Math.floor(Math.random() * statuses.length)],
-      entry: messages[Math.floor(Math.random() * messages.length)]
+      status: this.logStatuses[
+        Math.floor(Math.random() * this.logStatuses.length)
+      ],
+      entry: this.logMessages[
+        Math.floor(Math.random() * this.logMessages.length)
+      ]
     };
   }
 
@@ -1906,6 +1917,11 @@ export class AstroApp extends PolymerElement {
         // console.log("removed one", this.passPlanSatellites);
       }
     });
+
+    // quickly populate the log for demo
+    for (let i = 0; i < 10; i++) {
+      this._updateLog();
+    }
   }
   disconnectedCallback() {
     suer.disconnectedCallback();

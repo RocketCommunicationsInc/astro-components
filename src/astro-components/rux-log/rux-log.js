@@ -55,6 +55,7 @@ export class RuxLog extends PolymerElement {
       :host {
         display: block;
         font-size: 0.875rem;
+        background-color: #1d2f41;
       }
 
       *[hidden] {
@@ -66,7 +67,7 @@ export class RuxLog extends PolymerElement {
         flex-wrap: wrap;
         position: relative;
         justify-content: space-between;
-        background-color: rgba(255, 255, 255, 0.0980392);
+        background-color: #1d2f41;
         padding: 0.5rem;
       }
 
@@ -153,7 +154,8 @@ export class RuxLog extends PolymerElement {
       }
 
       ol li:nth-child(even) {
-        background-color: rgba(255,255,255,0.05);
+        
+        background-color: #283f58;
       }
 
       .rux-log__filter-enabled {
@@ -181,8 +183,10 @@ export class RuxLog extends PolymerElement {
       }
 
       input[type=search] {
+        border: none;
+        border-radius: 3px;
         font-size: 1rem;
-        background: url(data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' …4-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E);
+        background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg'/><path d='M6.33 5.67l1 1-3.66 3.66-1-1'/></g></svg>");
         
       }
 
