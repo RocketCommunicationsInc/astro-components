@@ -9,14 +9,6 @@ export class RuxTree extends PolymerElement {
     return {
       data: {
         type: Object
-      },
-      _isExpanded: {
-        type: String,
-        value: ""
-      },
-      _isSelected: {
-        type: String,
-        value: ""
       }
     };
   }
@@ -42,8 +34,14 @@ export class RuxTree extends PolymerElement {
           list-style: none;
         }
 
-        .rux-tree__parent {
-          
+        .rux-tree a {
+          color: #fff;
+          text-decoration: none;
+        }
+
+
+        /* Parent Elements */
+        .rux-tree__parent {  
           padding: 0;
           margin: 0; 
         
@@ -55,44 +53,63 @@ export class RuxTree extends PolymerElement {
         .rux-tree__arrow {
           content: '';
           
-          
           margin: 0.1em 0.25em 0 0;
-        
-          
+
           width: 0;
           height: 0;
           border-style: solid;
           border-width: 7px 0 7px 7px;
           border-color: transparent transparent transparent #007bff;
           display: inline-block;
-        
-          
-          
+                  
           cursor: pointer;
         }
 
+
+        /* Child Elements */
+        .rux-tree__children {
+          display: none;
+          height: 0;
+        }
+
+        
+
+        /* Expanded */
         .expanded .rux-tree__arrow {
           -webkit-transform: rotate(90deg);
           -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-          	transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+
+        .expanded .rux-tree__children {
+          display: block;
+          height: auto;
+        }
+
+        .selected .rux-tree__parent-item{
+          background-color: red;
+        }
+
+        .rux-tree__child.selected  {
+          background-color: blue;
         }
       </style>
 
 
       <menu class="rux-tree">
         <ul class="rux-tree__parent-elements">
-        <template is="dom-repeat" id="rux-tree__parents" items=[[data]]>
-          <li class$="rux-tree__parent {{item.expanded}} [[_isSelected]] [[_isExpanded]] [[_hasChildren]]">
+        <template is="dom-repeat" id="test" items=[[data]]>
+          <li class$="rux-tree__parent {{_getExpanded(item.expanded)}} {{_getSelected(item.selected)}} {{_hasChildren(item.children)}}">
             <div class="rux-tree__parent-item">
               <i class="rux-tree__arrow" on-click="_expand" title="Expand"></i>
-              <a class="rux-tree__parent-label">[[item.label]]
+              <a class="rux-tree__parent-label" href on-click="_select">[[item.label]]</a>
             </div>
-            <menu hidden=[[!item.children.length]]>
+            <menu class="rux-tree__children" hidden=[[!item.children.length]]>
               <ul>
-                <template is="dom-repeat" id="rux-tree__children" items=[[item.children]]>
-                  <li class="rux-tree__child-item [[_isSelected]]">
-                    <a href="">[[item.label]]</a>
+                <template is="dom-repeat" id="rux-tree__children-data" items=[[item.children]]>
+                  <li class$="rux-tree__child {{_getSelected(item.selected) }}">
+                    <a href on-click="_select">[[item.label]]</a>
                   </li>
                 </template>
               </ul>
@@ -112,17 +129,20 @@ export class RuxTree extends PolymerElement {
 
     this.data = [
       {
+        _id: "i1",
         label: "Item 1",
-        action: { action: "doSomethign", payload: "asdf" },
-        children: [{ label: "Child 1" }, { label: "Child 2" }]
+        children: [
+          { _id: "i1-1", label: "Child 1" },
+          { _id: "i1-2", label: "Child 2" }
+        ]
       },
       {
+        _id: "i2",
         label: "Item 2",
-        action: { action: "doSomethign", payload: "asdf" },
         children: [
-          { label: "Child 1.1" },
-          { label: "Child 1.2" },
-          { label: "Child 1.3" }
+          { _id: "i2-1", label: "Child 1.1" },
+          { _id: "i2-2", label: "Child 1.2" },
+          { _id: "i2-3", label: "Child 1.3" }
         ]
       }
     ];
@@ -132,28 +152,90 @@ export class RuxTree extends PolymerElement {
     super.disconnectedCallback();
   }
 
-  _isExpanded() {
-    console.log("_isExpanded");
+  _getSelected(item) {
+    return item ? "selected" : "";
+  }
+
+  _getExpanded(item) {
+    return item ? "expanded" : "";
+  }
+
+  _hasChildren(item) {
+    return item.length ? "has-children" : "";
+  }
+
+  _select(event) {
+    event.preventDefault();
+
+    /* if (this._currentSelection) {
+      var e = event.model.get("item._id", this.selected);
+
+      console.log("old item", event.model.item);
+      this._currentSelection.selected = false;
+      this.notifyPath("data.1.children.0.selected", false);
+      console.log(this._currentSelection);
+    }
+    ; */
+
+    /*
+
+    index:(...)
+    item:(...)
+    itemsIndex:(...)
+    parentModel:(...)
+    */
+
+    console.log(event.model);
+
+    // const {
+    //   item: { children }
+    // } = event.model;
+    // console.log(children);
+
+    // var children = event.model.item.children;
+
+    // console.log(children);
+    console.log(parent);
+    console.log(index);
+
+    if (this._me) {
+      this._me.item.selected = false;
+      if (this._me.parentIndex != undefined) {
+        this.notifyPath(
+          `data.${this._me.parentIndex}.children.${
+            this._me.selfIndex
+          }.selected`,
+          false
+        );
+      } else if (this._me.selfIndex) {
+        this.notifyPath(`data.${this._me.selfIndex}.selected`, false);
+      }
+    }
+
+    var index = event.model.index;
+    var parent = event.model.parentModel.index;
+    this._me = {
+      selfIndex: index,
+      parentIndex: parent,
+      item: event.model.item
+    };
+
+    /* 
+      Destructure the event.model 
+
+      // get children
+      // get parentModel
+
+    */
+
+    console.log(event.model);
+    // console.log(event.model.index);
+    // console.log(event.model.item);
+    event.model.set("item.selected", event.model.item.selected ? false : true);
   }
 
   _expand(event) {
-    console.log("expand", event.currentTarget.parentElement);
-    console.log(event.model.item);
-    if (event.model.item.expanded) {
-      delete event.model.item.expanded;
-    } else {
-      event.model.item.expanded = true;
-    }
-
-    event.model.set("item.expanded", "expanded");
-
-    // this.notifyPath("this.data", this.data);
-    // event.model.item.expanded = ~event.model.item.expanded;
-    // console.log(event.model.item);
-    // this.notifyPath("data.expanded", event.model.item.expanded);
-    // this.notifyPath("ecent.model.item", event.model.item.expanded);
-    // event.model.set("event.model.item", "expanded");
-    // event.model.notifyPath("event.model.item", "event.model.item");
+    event.model.set("item.expanded", event.model.item.expanded ? false : true);
   }
 }
 customElements.define("rux-tree", RuxTree);

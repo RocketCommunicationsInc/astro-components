@@ -319,7 +319,7 @@ export class AstroApp extends PolymerElement {
 
 <astro-sample-panel aria-labeledby="sample-tree">
 <h1>Tree</h1>
-<rux-tree></rux-tree>
+<rux-tree selected=null></rux-tree>
 </astro-sample-panel>
 
 <astro-sample-panel aria-labeledby="sample-log">
