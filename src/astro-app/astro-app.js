@@ -1484,58 +1484,60 @@ Selected Tree Element: [[treeData.selected.label]]
       {
         _id: "i1",
         label: "Item 1",
-        payload: { action: "do something" },
+        payload: { action: "this could be anything …" },
         children: [
-          { _id: "i1-1", label: "Child 1" },
-          { _id: "i1-2", label: "Child 2" }
+          { _id: "i1-1", label: "Child 1", payload: { action: "… an id" } },
+          {
+            _id: "i1-2",
+            label: "Child 2",
+            payload: { action: "… a method call to be interpreted" }
+          }
         ]
       },
       {
         _id: "i2",
         label: "Item 2",
-        payload: { action: "do something" },
+        payload: { action: "It gives developers the chance to add anything …" },
         children: [
           {
             _id: "i2-1",
             label: "Child 1.1",
-            payload: { action: "do something" }
+            payload: { action: "… then react to that thing" }
           },
           {
             _id: "i2-2",
             label: "Child 1.2",
-            payload: { action: "do something" }
+            payload: {
+              action:
+                "… it can also be updated dynamically from outside the component"
+            }
           },
           {
             _id: "i2-3",
             label: "Child 1.3",
-            payload: { action: "do something" }
+            payload: { action: "… so functionality could change on the fly" }
           }
         ]
       },
       {
         _id: "i4",
         label: "Item 4",
-        payload: { action: "do something" }
+        payload: { action: "Works on items with no children" }
       },
       {
         _id: "i2",
         label: "Item 3",
-        payload: { action: "do something" },
+        payload: { action: "Just use the paylod property …" },
         children: [
           {
             _id: "i2-1",
             label: "Child 1.1",
-            payload: { action: "do something" }
+            payload: { action: "… then use whatever key/value pairs you want" }
           },
           {
             _id: "i2-2",
             label: "Child 1.2",
-            payload: { action: "do something" }
-          },
-          {
-            _id: "i2-3",
-            label: "Child 1.3",
-            payload: { action: "do something" }
+            payload: { action: "… it’s just an Object" }
           }
         ]
       }
