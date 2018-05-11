@@ -1,7 +1,4 @@
-import {
-  html,
-  PolymerElement
-} from "/node_modules/@polymer/polymer/polymer-element.js";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import { RuxGlobalStatusBar } from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
 import { RuxSegmentedButton } from "../astro-components/rux-segmented-button/rux-segmented-button.js";
 import { RuxComponent } from "../astro-components/rux-component/rux-component.js";
@@ -294,7 +291,6 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
-<li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 

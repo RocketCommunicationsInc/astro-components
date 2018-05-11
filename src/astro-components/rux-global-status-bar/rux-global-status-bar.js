@@ -1,7 +1,4 @@
-import {
-  html,
-  PolymerElement
-} from "/node_modules/@polymer/polymer/polymer-element.js";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import { RuxButton } from "../rux-button/rux-button.js";
 /**
  * @polymer

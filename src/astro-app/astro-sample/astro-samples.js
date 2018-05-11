@@ -1,7 +1,4 @@
-import {
-  html,
-  PolymerElement
-} from "/node_modules/@polymer/polymer/polymer-element.js";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import { AstroSample } from "./astro-sample.js";
 import { AstroSamplePanels } from "./astro-sample-panels.js";
 import { AstroSamplePanel } from "./astro-sample-panel.js";

@@ -1,7 +1,6 @@
-import { PolymerElement } from "/node_modules/@polymer/polymer/polymer-element.js";
-import { html } from "/node_modules/@polymer/polymer/polymer-element.js";
-import "/node_modules/@polymer/polymer/lib/elements/dom-repeat.js";
-import { afterNextRender } from "/node_modules/@polymer/polymer/lib/utils/render-status.js";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import "@polymer/polymer/lib/elements/dom-repeat.js";
+import { afterNextRender } from "@polymer/polymer/lib/utils/render-status.js";
 import { RuxStatus } from "../rux-status/rux-status.js";
 import { RuxIcon } from "../rux-icon/rux-icon.js";
 // import rux-status

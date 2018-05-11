@@ -1,8 +1,4 @@
-import "/node_modules/@polymer/polymer/polymer.js";
-import {
-  html,
-  PolymerElement
-} from "/node_modules/@polymer/polymer/polymer-element.js";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 /**
  * @polymer
  * @extends HTMLElement

@@ -1,7 +1,4 @@
-import {
-  html,
-  PolymerElement
-} from "/node_modules/@polymer/polymer/polymer-element.js";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import { RuxSegmentedButton } from "/src/astro-components/rux-segmented-button/rux-segmented-button.js";
 /**
  * @polymer
