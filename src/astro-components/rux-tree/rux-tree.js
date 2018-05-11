@@ -22,122 +22,118 @@ export class RuxTree extends PolymerElement {
   static get template() {
     return html`
       <style>
-        :host,
-        .rux-tree {
-          
-          
-          box-sizing: border-box;
-          padding: 0;
-          margin: 0;
+      :host,
+      .rux-tree {
+        display: inline-block;
+        box-sizing: border-box;
 
-          font-weight: 1.125rem;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      
+        font-weight: 1.125rem;
+      
+        background-color: #1c3143;
+      
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      
+      .rux-tree ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      
+      /* Parent Elements */
+      .rux-tree__parent-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: stretch;
+        padding: 0 0 0 1.25rem;
+        margin: 0;
+      
+        border-top: 1px solid rgba(255, 255, 255, 0.125);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      }
+      
+      .rux-tree__label {
+        flex-grow: 1;
+        padding: 0.5rem;
 
-          background-color: #1c3143;
-
-          -webkit-user-select: none;
-	           -moz-user-select: none;
-		          -ms-user-select: none;
-			            user-select: none;
-        }
-
-        *,
-        *:before,
-        *:after {
-          box-sizing: inherit;
-        }
-
-        .rux-tree ul {
-          padding: 0;
-          margin: 0;
-          list-style: none;
-        }
-
-        
-
-        
-
-        /* Parent Elements */
-        .rux-tree__parent-container {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          align-content: stretch;
-          padding: 0 0 0 1.25rem;
-          margin: 0; 
-        
-          border-top: 1px solid rgba(255,255,255,0.125);
-          border-bottom: 1px solid rgba(0,0,0,0.25);
-        }
-
-        .rux-tree__label {
-          flex-grow: 1;
-          padding: 0.5rem;
-        }
-
-
-        .rux-tree__arrow {
-          position: relative;
-          cursor: pointer;
-          width: 7px;
-          visibility: hidden;
-          
-        }
-
-        .rux-tree__arrow::after {
-          content: '';
-          
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 7px 0 7px 7px;
-          border-color: transparent transparent transparent #007bff;
-          display: inline-block;
-        }
-
-
-        .has-children .rux-tree__arrow {
-          visibility: visible;
-        }
-
-
-        /* Child Elements */
-        .rux-tree__children {
-          width: 100%;
-          display: none;
-          padding: 0;
-          margin: 0;
-          height: 0;
-          
-        }
-
-        .rux-tree__child {
-          padding-left: 3rem;
-        }
-
-        
-
-        /* Expanded */
-        .expanded .rux-tree__arrow::after {
-          -webkit-transform: rotate(90deg);
-          -moz-transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-        }
-
-        .expanded .rux-tree__children {
-          display: block;
-          height: auto;
-        }
-
-        .rux-tree__parent-container.selected {
-          box-shadow: inset 5px 0 #0084f0;
-          background-color: #283f58;
-        }
-
-        .rux-tree__child.selected  {
-          box-shadow: inset 5px 0 #0084f0;
-          background-color: #283f58;
-        }
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: calc(100% - 7px);
+      }
+      
+      .rux-tree__arrow {
+        position: relative;
+        cursor: pointer;
+        width: 7px;
+        visibility: hidden;
+      }
+      
+      .rux-tree__arrow::after {
+        content: "";
+      
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 0 7px 7px;
+        border-color: transparent transparent transparent #007bff;
+        display: inline-block;
+      }
+      
+      .has-children .rux-tree__arrow {
+        visibility: visible;
+      }
+      
+      /* Child Elements */
+      .rux-tree__children {
+        width: 100%;
+        display: none;
+        padding: 0;
+        margin: 0;
+        height: 0;
+      }
+      
+      .rux-tree__child {
+        padding-left: 3rem;
+      }
+      
+      /* Expanded */
+      .expanded .rux-tree__arrow::after {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      
+      .expanded .rux-tree__children {
+        display: block;
+        height: auto;
+      }
+      
+      .rux-tree__parent-container.selected {
+        box-shadow: inset 5px 0 #0084f0;
+        background-color: #283f58;
+      }
+      
+      .rux-tree__child.selected {
+        box-shadow: inset 5px 0 #0084f0;
+        background-color: #283f58;
+      }
+      
       </style>
 
 
@@ -145,7 +141,7 @@ export class RuxTree extends PolymerElement {
         <ul class="rux-tree__parent-elements">
         <template is="dom-repeat" id="tree" items=[[data]]>
           
-          <li class$="rux-tree__parent {{_getExpanded(item.expanded)}} {{_hasChildren(item.children)}}">
+          <li title=[[item.label]] class$="rux-tree__parent {{_getExpanded(item.expanded)}} {{_hasChildren(item.children)}}">
             <div class$="rux-tree__parent-container {{_getSelected(item.selected)}}">
               <i class="rux-tree__arrow" on-click="_expand" title="Expand"></i>  
               <div class="rux-tree__label" on-click="_select">[[item.label]]</div>
@@ -154,7 +150,7 @@ export class RuxTree extends PolymerElement {
             <menu class="rux-tree__children" hidden=[[!item.children]]>
               <ul>
                 <template is="dom-repeat" id="rux-tree__children-data" items=[[item.children]]>
-                  <li class$="rux-tree__child {{_getSelected(item.selected) }}">
+                  <li title=[[item.label]] class$="rux-tree__child {{_getSelected(item.selected) }}">
                     <div class="rux-tree__label" on-click="_select">[[item.label]]</div>
                   </li>
                 </template>

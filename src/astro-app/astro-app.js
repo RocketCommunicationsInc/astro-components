@@ -275,7 +275,10 @@ export class AstroApp extends PolymerElement {
                 margin-right: 0.5em;
             }
         
-            
+            rux-tree {
+              width: 300px;
+              
+            }
 
     </style>
     
@@ -1496,12 +1499,13 @@ Selected Tree Element: [[treeData.selected.label]]
       },
       {
         _id: "i2",
-        label: "Item 2",
+        label:
+          "A really long title to see what happens when someone adds a stupid long string",
         payload: { action: "It gives developers the chance to add anything …" },
         children: [
           {
             _id: "i2-1",
-            label: "Child 1.1",
+            label: "And what about this in a child element?",
             payload: { action: "… then react to that thing" }
           },
           {
