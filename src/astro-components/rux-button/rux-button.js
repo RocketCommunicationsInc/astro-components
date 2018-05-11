@@ -1,4 +1,4 @@
-import { Element as PolymerElement } from "/node_modules/@polymer/polymer/polymer-element.js";
+import { PolymerElement } from "/node_modules/@polymer/polymer/polymer-element.js";
 import { html } from "/node_modules/@polymer/polymer/polymer-element.js";
 import { RuxIcon } from "../rux-icon/rux-icon.js";
 /**

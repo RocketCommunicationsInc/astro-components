@@ -1,6 +1,6 @@
 import {
   html,
-  Element as PolymerElement
+  PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
 import { RuxSlider } from "/src/astro-components/rux-slider/rux-slider.js";
 /**

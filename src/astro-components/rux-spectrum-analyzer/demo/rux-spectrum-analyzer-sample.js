@@ -1,6 +1,6 @@
 import {
   html,
-  Element as PolymerElement
+  PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
 import { RuxSpectrumAnalyzer } from "/src/astro-components/rux-spectrum-analyzer/rux-spectrum-analyzer.js";
 /**
@@ -9,7 +9,7 @@ import { RuxSpectrumAnalyzer } from "/src/astro-components/rux-spectrum-analyzer
  */
 export class RuxSpectrumAnalyzerSample extends PolymerElement {
   static get template() {
-    return html `
+    return html`
     <rux-spectrum-analyzer 
     chart-legend-x="freq" 
     chart-legend-y="pwr" 
@@ -25,7 +25,7 @@ export class RuxSpectrumAnalyzerSample extends PolymerElement {
     data-source-type="web-socket"
     > 
   </rux-spectrum-analyzer>
-    `
+    `;
   }
   static get properties() {
     return {

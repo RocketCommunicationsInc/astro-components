@@ -1,6 +1,6 @@
 import {
   html,
-  Element as PolymerElement
+  PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
 import { RuxTabs } from "/src/astro-components/rux-tabs/rux-tabs.js";
 /**

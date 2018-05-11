@@ -1,4 +1,4 @@
-import { Element as PolymerElement } from "/node_modules/@polymer/polymer/polymer-element.js";
+import { PolymerElement } from "/node_modules/@polymer/polymer/polymer-element.js";
 import { html } from "/node_modules/@polymer/polymer/polymer-element.js";
 import "/node_modules/@polymer/polymer/lib/elements/dom-repeat.js";
 import { afterNextRender } from "/node_modules/@polymer/polymer/lib/utils/render-status.js";

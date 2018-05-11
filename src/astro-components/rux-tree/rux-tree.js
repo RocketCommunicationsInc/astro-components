@@ -1,5 +1,6 @@
-import { Element as PolymerElement } from "/node_modules/@polymer/polymer/polymer-element.js";
-import { html } from "/node_modules/@polymer/polymer/polymer-element.js";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import "@polymer/polymer/lib/elements/dom-repeat.js";
+
 /**
  * @polymer
  * @extends HTMLElement
@@ -136,7 +137,7 @@ export class RuxTree extends PolymerElement {
       
       </style>
 
-
+      
       <menu class="rux-tree">
         <ul class="rux-tree__parent-elements">
         <template is="dom-repeat" id="tree" items=[[data]]>
@@ -165,10 +166,12 @@ export class RuxTree extends PolymerElement {
   }
   constructor() {
     super();
+    console.log("data", this.data);
   }
 
   connectedCallback() {
     super.connectedCallback();
+    console.log("data", this.data);
   }
 
   disconnectedCallback() {

@@ -1,6 +1,6 @@
 import {
   html,
-  Element as PolymerElement
+  PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
 import { AstroSample } from "./astro-sample.js";
 import { AstroSamplePanels } from "./astro-sample-panels.js";

@@ -1,6 +1,6 @@
 import {
   html,
-  Element as PolymerElement
+  PolymerElement
 } from "/node_modules/@polymer/polymer/polymer-element.js";
 import { RuxGlobalStatusBar } from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
 import { RuxSegmentedButton } from "../astro-components/rux-segmented-button/rux-segmented-button.js";
@@ -11,7 +11,7 @@ import { RuxStatus } from "../astro-components/rux-status/rux-status.js";
 import { RuxIcon } from "../astro-components/rux-icon/rux-icon.js";
 import { RuxTabs } from "../astro-components/rux-tabs/rux-tabs.js";
 import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
-import { RuxSpectrumAnalyzer } from "../astro-components/rux-spectrum-analyzer/rux-spectrum-analyzer.js";
+/* import { RuxSpectrumAnalyzer } from "../astro-components/rux-spectrum-analyzer/rux-spectrum-analyzer.js"; */
 import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
 import { RuxModal } from "../astro-components/rux-modal/rux-modal.js";
 import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
@@ -277,7 +277,7 @@ export class AstroApp extends PolymerElement {
         
             rux-tree {
               width: 300px;
-              
+              outline: 1px solid red;
             }
 
     </style>
