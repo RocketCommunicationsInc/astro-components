@@ -16,9 +16,13 @@ export class RuxTree extends PolymerElement {
   static get template() {
     return html`
       <style>
-        :host{
-          outline: 1px solid red;
+        :host,
+        .rux-tree {
+          
           padding: 0;
+          margin: 0;
+
+          font-weight: 1.125rem;
 
           background-color: #1c3143;
 
@@ -41,19 +45,35 @@ export class RuxTree extends PolymerElement {
 
 
         /* Parent Elements */
-        .rux-tree__parent {  
+        .rux-tree__parent {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
           padding: 0;
           margin: 0; 
         
           border-top: 1px solid rgba(255,255,255,.1);
           border-bottom: 1px solid rgba(0,0,0,.1);
+
+          border-left: 5px solid transparent;
+	        padding: 0 0.65em;
+
+
+        }
+
+        .rux-tree__parent-label {
+          border-bottom: 1px solid rgba(0,0,0,.1);
+        }
+
+        .rux-tree li {
+          padding: 0.5rem;
         }
 
 
         .rux-tree__arrow {
           content: '';
           
-          margin: 0.1em 0.25em 0 0;
+          margin: 0.1rem 0.5rem 0 0;
 
           width: 0;
           height: 0;
@@ -68,7 +88,10 @@ export class RuxTree extends PolymerElement {
 
         /* Child Elements */
         .rux-tree__children {
+          width: 100%;
           display: none;
+          padding: 0;
+          margin: 0;
           height: 0;
         }
 
@@ -87,12 +110,12 @@ export class RuxTree extends PolymerElement {
           height: auto;
         }
 
-        .selected .rux-tree__parent-item{
-          background-color: red;
+        .rux-tree__parent.selected {
+          border-left: 5px solid #5CB3FF;
         }
 
         .rux-tree__child.selected  {
-          background-color: blue;
+          border-left: 5px solid #5CB3FF;
         }
       </style>
 
@@ -101,15 +124,13 @@ export class RuxTree extends PolymerElement {
         <ul class="rux-tree__parent-elements">
         <template is="dom-repeat" id="test" items=[[data]]>
           <li class$="rux-tree__parent {{_getExpanded(item.expanded)}} {{_getSelected(item.selected)}} {{_hasChildren(item.children)}}">
-            <div class="rux-tree__parent-item">
-              <i class="rux-tree__arrow" on-click="_expand" title="Expand"></i>
-              <a class="rux-tree__parent-label" href on-click="_select">[[item.label]]</a>
-            </div>
+            <i class="rux-tree__arrow" on-click="_expand" title="Expand"></i>  
+            <div class="rux-tree__parent-label"on-click="_select">[[item.label]]</div>
             <menu class="rux-tree__children" hidden=[[!item.children.length]]>
               <ul>
                 <template is="dom-repeat" id="rux-tree__children-data" items=[[item.children]]>
                   <li class$="rux-tree__child {{_getSelected(item.selected) }}">
-                    <a href on-click="_select">[[item.label]]</a>
+                    <div href on-click="_select">[[item.label]]</div>
                   </li>
                 </template>
               </ul>
@@ -175,37 +196,6 @@ export class RuxTree extends PolymerElement {
 
   _select(event) {
     event.preventDefault();
-
-    /* if (this._currentSelection) {
-      var e = event.model.get("item._id", this.selected);
-
-      console.log("old item", event.model.item);
-      this._currentSelection.selected = false;
-      this.notifyPath("data.1.children.0.selected", false);
-      console.log(this._currentSelection);
-    }
-    ; */
-
-    /*
-
-    index:(...)
-    item:(...)
-    itemsIndex:(...)
-    parentModel:(...)
-    */
-
-    console.log(event.model);
-
-    // const {
-    //   item: { children }
-    // } = event.model;
-    // console.log(children);
-
-    // var children = event.model.item.children;
-
-    // console.log(children);
-    // console.log(parent);
-    // console.log(index);
 
     if (this._me) {
       this._me.item.selected = false;
