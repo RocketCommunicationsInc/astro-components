@@ -320,8 +320,10 @@ export class AstroApp extends PolymerElement {
 <astro-sample-panel aria-labeledby="sample-tree">
 <h1>Tree</h1>
 <rux-tree data={{treeData}}></rux-tree>
-
+<br>
+<br>
 Selected Tree Element: [[treeData.selected.label]]
+<br>Action for Tree Element: [[treeData.selected.payload.action]]
 </astro-sample-panel>
 
 <astro-sample-panel aria-labeledby="sample-segmented-button">
@@ -1474,6 +1476,7 @@ Selected Tree Element: [[treeData.selected.label]]
       {
         _id: "i1",
         label: "Item 1",
+        payload: { action: "do something" },
         children: [
           { _id: "i1-1", label: "Child 1" },
           { _id: "i1-2", label: "Child 2" }
@@ -1482,23 +1485,50 @@ Selected Tree Element: [[treeData.selected.label]]
       {
         _id: "i2",
         label: "Item 2",
+        payload: { action: "do something" },
         children: [
-          { _id: "i2-1", label: "Child 1.1" },
-          { _id: "i2-2", label: "Child 1.2" },
-          { _id: "i2-3", label: "Child 1.3" }
+          {
+            _id: "i2-1",
+            label: "Child 1.1",
+            payload: { action: "do something" }
+          },
+          {
+            _id: "i2-2",
+            label: "Child 1.2",
+            payload: { action: "do something" }
+          },
+          {
+            _id: "i2-3",
+            label: "Child 1.3",
+            payload: { action: "do something" }
+          }
         ]
       },
       {
         _id: "i4",
-        label: "Item 4"
+        label: "Item 4",
+        payload: { action: "do something" }
       },
       {
         _id: "i2",
         label: "Item 3",
+        payload: { action: "do something" },
         children: [
-          { _id: "i2-1", label: "Child 1.1" },
-          { _id: "i2-2", label: "Child 1.2" },
-          { _id: "i2-3", label: "Child 1.3" }
+          {
+            _id: "i2-1",
+            label: "Child 1.1",
+            payload: { action: "do something" }
+          },
+          {
+            _id: "i2-2",
+            label: "Child 1.2",
+            payload: { action: "do something" }
+          },
+          {
+            _id: "i2-3",
+            label: "Child 1.3",
+            payload: { action: "do something" }
+          }
         ]
       }
     ];
