@@ -286,9 +286,10 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+
+<li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-tree">Tree</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
-<li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
@@ -345,6 +346,16 @@ Selected Tree Element: [[treeData.selected.label]]
 </astro-sample-panel>
 
 
+<astro-sample-panel aria-labeledby="sample-accordion">
+<h1>Accordion</h1>
+    <rux-accordion title="Accordion">
+      <rux-accordion-bellow title="Item 1">
+          <h1>You can put whatever content you want in here. Neat</h1>
+      </rux-accordion-bellow>
+    </rux-accordion>
+</astro-sample-panel>
+
+
 
 <astro-sample-panel aria-labeledby="sample-log">
     <h1>Log</h1>
@@ -363,10 +374,7 @@ Selected Tree Element: [[treeData.selected.label]]
 </astro-sample-panel>
 
 
-<astro-sample-panel aria-labeledby="sample-accordion">
-<h1>Accordion</h1>
-<rux-accordion></rux-accordion>
-</astro-sample-panel>
+
 
 <astro-sample-panel aria-labeledby="sample-notification-banner">
 <h1>Notification Banner</h1>
@@ -1905,6 +1913,7 @@ Selected Tree Element: [[treeData.selected.label]]
   }
 
   _updateLog() {
+    console.log("update log");
     this.logData = {
       timestamp: new Date(),
       status: this.logStatuses[

@@ -20,7 +20,8 @@ export class RuxLog extends PolymerElement {
         type: Object
       },
       maxLines: {
-        type: Number
+        type: Number,
+        value: 10
       },
       timezone: {
         type: String,
