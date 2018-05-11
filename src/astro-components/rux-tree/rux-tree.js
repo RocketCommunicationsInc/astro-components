@@ -26,7 +26,7 @@ export class RuxTree extends PolymerElement {
         .rux-tree {
           
           
-
+          box-sizing: border-box;
           padding: 0;
           margin: 0;
 
@@ -40,34 +40,33 @@ export class RuxTree extends PolymerElement {
 			            user-select: none;
         }
 
+        *,
+        *:before,
+        *:after {
+          box-sizing: inherit;
+        }
+
         .rux-tree ul {
           padding: 0;
           margin: 0;
           list-style: none;
         }
 
-        .rux-tree a {
-          color: #fff;
-          text-decoration: none;
-        }
+        
 
+        
 
         /* Parent Elements */
-        .rux-tree__parent {
+        .rux-tree__parent-container {
           display: flex;
           flex-wrap: wrap;
           align-items: center;
           align-content: stretch;
-          padding: 0;
+          padding: 0 0 0 1.25rem;
           margin: 0; 
         
-          border-top: 1px solid rgba(255,255,255,.1);
-          border-bottom: 1px solid rgba(0,0,0,.1);
-
-          border-left: 5px solid transparent;
-	        padding: 0 0.65em;
-
-
+          border-top: 1px solid rgba(255,255,255,0.125);
+          border-bottom: 1px solid rgba(0,0,0,0.25);
         }
 
         .rux-tree__label {
@@ -81,13 +80,12 @@ export class RuxTree extends PolymerElement {
           cursor: pointer;
           width: 7px;
           visibility: hidden;
+          
         }
 
         .rux-tree__arrow::after {
           content: '';
           
-          /* margin: 0 0.5rem 0 0; */
-
           width: 0;
           height: 0;
           border-style: solid;
@@ -109,6 +107,11 @@ export class RuxTree extends PolymerElement {
           padding: 0;
           margin: 0;
           height: 0;
+          
+        }
+
+        .rux-tree__child {
+          padding-left: 3rem;
         }
 
         
@@ -126,22 +129,28 @@ export class RuxTree extends PolymerElement {
           height: auto;
         }
 
-        .rux-tree__parent.selected {
-          border-left: 5px solid #5CB3FF;
+        .rux-tree__parent-container.selected {
+          box-shadow: inset 5px 0 #0084f0;
+          background-color: #283f58;
         }
 
         .rux-tree__child.selected  {
-          border-left: 5px solid #5CB3FF;
+          box-shadow: inset 5px 0 #0084f0;
+          background-color: #283f58;
         }
       </style>
 
 
       <menu class="rux-tree">
         <ul class="rux-tree__parent-elements">
-        <template is="dom-repeat" id="test" items=[[data]]>
-          <li class$="rux-tree__parent {{_getExpanded(item.expanded)}} {{_getSelected(item.selected)}} {{_hasChildren(item.children)}}">
-            <i class="rux-tree__arrow" on-click="_expand" title="Expand"></i>  
-            <div class="rux-tree__label" on-click="_select">[[item.label]]</div>
+        <template is="dom-repeat" id="tree" items=[[data]]>
+          
+          <li class$="rux-tree__parent {{_getExpanded(item.expanded)}} {{_hasChildren(item.children)}}">
+            <div class$="rux-tree__parent-container {{_getSelected(item.selected)}}">
+              <i class="rux-tree__arrow" on-click="_expand" title="Expand"></i>  
+              <div class="rux-tree__label" on-click="_select">[[item.label]]</div>
+            </div>
+
             <menu class="rux-tree__children" hidden=[[!item.children]]>
               <ul>
                 <template is="dom-repeat" id="rux-tree__children-data" items=[[item.children]]>
@@ -151,6 +160,7 @@ export class RuxTree extends PolymerElement {
                 </template>
               </ul>
             </menu>
+            
           </li>
         </template>
 
