@@ -287,8 +287,8 @@ export class AstroApp extends PolymerElement {
 <astro-samples class="master">
 <ul>
 
-<li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-tree">Tree</astro-sample></li>
+<li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>

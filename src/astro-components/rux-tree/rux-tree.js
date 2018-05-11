@@ -25,6 +25,8 @@ export class RuxTree extends PolymerElement {
         :host,
         .rux-tree {
           
+          
+
           padding: 0;
           margin: 0;
 
@@ -55,6 +57,7 @@ export class RuxTree extends PolymerElement {
           display: flex;
           flex-wrap: wrap;
           align-items: center;
+          align-content: stretch;
           padding: 0;
           margin: 0; 
         
@@ -67,26 +70,23 @@ export class RuxTree extends PolymerElement {
 
         }
 
-        .rux-tree__parent-label {
-          border-bottom: 1px solid rgba(0,0,0,.1);
-        }
-
-        .rux-tree li {
+        .rux-tree__label {
+          flex-grow: 1;
           padding: 0.5rem;
         }
 
 
         .rux-tree__arrow {
-          
+          position: relative;
           cursor: pointer;
-          height: 100%;
-          
+          width: 7px;
+          visibility: hidden;
         }
 
         .rux-tree__arrow::after {
           content: '';
           
-          margin: 0 0.5rem 0 0;
+          /* margin: 0 0.5rem 0 0; */
 
           width: 0;
           height: 0;
@@ -94,6 +94,11 @@ export class RuxTree extends PolymerElement {
           border-width: 7px 0 7px 7px;
           border-color: transparent transparent transparent #007bff;
           display: inline-block;
+        }
+
+
+        .has-children .rux-tree__arrow {
+          visibility: visible;
         }
 
 
@@ -135,13 +140,13 @@ export class RuxTree extends PolymerElement {
         <ul class="rux-tree__parent-elements">
         <template is="dom-repeat" id="test" items=[[data]]>
           <li class$="rux-tree__parent {{_getExpanded(item.expanded)}} {{_getSelected(item.selected)}} {{_hasChildren(item.children)}}">
-            <i class="rux-tree__arrow" hidden=[[!item.children.length]] on-click="_expand" title="Expand"></i>  
-            <div class="rux-tree__parent-label"on-click="_select">[[item.label]]</div>
+            <i class="rux-tree__arrow" on-click="_expand" title="Expand"></i>  
+            <div class="rux-tree__label" on-click="_select">[[item.label]]</div>
             <menu class="rux-tree__children" hidden=[[!item.children]]>
               <ul>
                 <template is="dom-repeat" id="rux-tree__children-data" items=[[item.children]]>
                   <li class$="rux-tree__child {{_getSelected(item.selected) }}">
-                    <div href on-click="_select">[[item.label]]</div>
+                    <div class="rux-tree__label" on-click="_select">[[item.label]]</div>
                   </li>
                 </template>
               </ul>
@@ -173,7 +178,7 @@ export class RuxTree extends PolymerElement {
   }
 
   _hasChildren(item) {
-    return item && item.length ? "has-children" : "";
+    return item && item.length ? "has-children" : "no-children";
   }
 
   _select(event) {

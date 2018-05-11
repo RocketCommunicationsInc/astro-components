@@ -99,6 +99,7 @@ export class RuxLog extends PolymerElement {
       }
 
       ol {
+        height: 100%;
         overflow-y: scroll;
       }
 
@@ -204,8 +205,11 @@ export class RuxLog extends PolymerElement {
     </ul>
 	</header>
 
-
-  <ol style$="max-height: [[_height]]px">
+  <!-- 
+  Renable when a proper method for determing height/width can be determined
+  <ol style$="max-height: [[_height]]px"> 
+  //-->
+  <ol>
     
     <li class="rux-log__filter-enabled" hidden=[[!_filterValue]]>
     A filter with&nbsp;<b>[[_filterValue]]</b>&nbsp;is enabled. [[_visibleItems]] of [[_log.length]] records are currently hidden.
