@@ -144,6 +144,15 @@ export class RuxTree extends PolymerElement {
           { _id: "i2-2", label: "Child 1.2" },
           { _id: "i2-3", label: "Child 1.3" }
         ]
+      },
+      {
+        _id: "i2",
+        label: "Item 3",
+        children: [
+          { _id: "i2-1", label: "Child 1.1" },
+          { _id: "i2-2", label: "Child 1.2" },
+          { _id: "i2-3", label: "Child 1.3" }
+        ]
       }
     ];
   }
@@ -195,19 +204,23 @@ export class RuxTree extends PolymerElement {
     // var children = event.model.item.children;
 
     // console.log(children);
-    console.log(parent);
-    console.log(index);
+    // console.log(parent);
+    // console.log(index);
 
     if (this._me) {
       this._me.item.selected = false;
-      if (this._me.parentIndex != undefined) {
+      console.log("\n\n", this._me);
+
+      if (this._me.parentIndex >= 0) {
+        console.log("child selected");
         this.notifyPath(
           `data.${this._me.parentIndex}.children.${
             this._me.selfIndex
           }.selected`,
           false
         );
-      } else if (this._me.selfIndex) {
+      } else if (this._me.selfIndex >= 0) {
+        console.log("parent selected");
         this.notifyPath(`data.${this._me.selfIndex}.selected`, false);
       }
     }
@@ -220,6 +233,7 @@ export class RuxTree extends PolymerElement {
       item: event.model.item
     };
 
+    // console.log(this._me);
     /* 
       Destructure the event.model 
 
@@ -228,7 +242,7 @@ export class RuxTree extends PolymerElement {
 
     */
 
-    console.log(event.model);
+    // console.log(event.model);
     // console.log(event.model.index);
     // console.log(event.model.item);
     event.model.set("item.selected", event.model.item.selected ? false : true);
