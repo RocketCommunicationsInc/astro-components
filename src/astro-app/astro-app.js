@@ -319,8 +319,30 @@ export class AstroApp extends PolymerElement {
 
 <astro-sample-panel aria-labeledby="sample-tree">
 <h1>Tree</h1>
-<rux-tree selected=null></rux-tree>
+<rux-tree data={{treeData}}></rux-tree>
+
+Selected Tree Element: [[treeData.selected.label]]
 </astro-sample-panel>
+
+<astro-sample-panel aria-labeledby="sample-segmented-button">
+<h1>Segmented Button</h1>
+<p>Segmented Buttons are just radio-buttons gussied up for the ball.</p>
+<section>
+    <h2>Segmented Button (WIP)</h2>
+    <code>&lt;rux-segmented-button&gt;</code> is highly stylized version of a radio button group offering a distinct user choice.
+    Buttons are defined via a standard JavaScript Array of Objects. Each object must have a button label and supports additional
+    key/value pairs. e.g.,
+    <code>segmentedButtons = [{ "label" : "Hour" }, { "label" : "Day" }, { "label" : "Week" } }]</code> will produce the follwing
+    segmented button</p>
+    <rux-segmented-button data={{segmentOne}}></rux-segmented-button>
+    <div class="output">Output = [[segmentOne.selected.label]]</div>
+
+    <rux-segmented-button data={{segmentTwo}}></rux-segmented-button>
+    <div class="output">Output = [[segmentTwo.selected.value.result]]</div>
+</section>
+</astro-sample-panel>
+
+
 
 <astro-sample-panel aria-labeledby="sample-log">
     <h1>Log</h1>
@@ -337,6 +359,7 @@ export class AstroApp extends PolymerElement {
     
 
 </astro-sample-panel>
+
 
 <astro-sample-panel aria-labeledby="sample-accordion">
 <h1>Accordion</h1>
@@ -516,23 +539,7 @@ export class AstroApp extends PolymerElement {
         </section>
     </astro-sample-panel>
 
-    <astro-sample-panel aria-labeledby="sample-segmented-button">
-        <h1>Segmented Button</h1>
-        <p>Segmented Buttons are just radio-buttons gussied up for the ball.</p>
-        <section>
-            <h2>Segmented Button (WIP)</h2>
-            <code>&lt;rux-segmented-button&gt;</code> is highly stylized version of a radio button group offering a distinct user choice.
-            Buttons are defined via a standard JavaScript Array of Objects. Each object must have a button label and supports additional
-            key/value pairs. e.g.,
-            <code>segmentedButtons = [{ "label" : "Hour" }, { "label" : "Day" }, { "label" : "Week" } }]</code> will produce the follwing
-            segmented button</p>
-            <rux-segmented-button data={{segmentOne}}></rux-segmented-button>
-            <div class="output">Output = [[segmentOne.selected.label]]</div>
-
-            <rux-segmented-button data={{segmentTwo}}></rux-segmented-button>
-            <div class="output">Output = [[segmentTwo.selected.value.result]]</div>
-        </section>
-    </astro-sample-panel>
+   
 
     <astro-sample-panel aria-labeledby="sample-icons">
         <h1>Icons</h1>
@@ -1388,8 +1395,6 @@ export class AstroApp extends PolymerElement {
       }
     ];
 
-    this.logTemplate = `<div class="a"></div>`;
-
     this.timelineSelectedRegion = { title: "Batman" };
 
     this.passPlanSatellites = new Array();
@@ -1465,25 +1470,40 @@ export class AstroApp extends PolymerElement {
       }
     ];
 
-    this.logFormatting = {
-      labels: [
-        {
-          label: "Time",
-          style: ""
-        },
-        {
-          label: " ",
-          style: ""
-        },
-        {
-          label: "Message",
-          style: ""
-        }
-      ]
-    };
+    this.treeData = [
+      {
+        _id: "i1",
+        label: "Item 1",
+        children: [
+          { _id: "i1-1", label: "Child 1" },
+          { _id: "i1-2", label: "Child 2" }
+        ]
+      },
+      {
+        _id: "i2",
+        label: "Item 2",
+        children: [
+          { _id: "i2-1", label: "Child 1.1" },
+          { _id: "i2-2", label: "Child 1.2" },
+          { _id: "i2-3", label: "Child 1.3" }
+        ]
+      },
+      {
+        _id: "i4",
+        label: "Item 4"
+      },
+      {
+        _id: "i2",
+        label: "Item 3",
+        children: [
+          { _id: "i2-1", label: "Child 1.1" },
+          { _id: "i2-2", label: "Child 1.2" },
+          { _id: "i2-3", label: "Child 1.3" }
+        ]
+      }
+    ];
 
     const today = new Date();
-
     this.timeline = {
       tracks: [
         {

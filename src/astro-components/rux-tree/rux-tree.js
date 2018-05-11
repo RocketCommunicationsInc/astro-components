@@ -8,7 +8,8 @@ export class RuxTree extends PolymerElement {
   static get properties() {
     return {
       data: {
-        type: Object
+        type: Object,
+        notify: true
       },
       selected: {
         type: Object,
@@ -93,8 +94,6 @@ export class RuxTree extends PolymerElement {
           border-width: 7px 0 7px 7px;
           border-color: transparent transparent transparent #007bff;
           display: inline-block;
-                  
-          
         }
 
 
@@ -159,39 +158,6 @@ export class RuxTree extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback();
-
-    this.data = [
-      {
-        _id: "i1",
-        label: "Item 1",
-        children: [
-          { _id: "i1-1", label: "Child 1" },
-          { _id: "i1-2", label: "Child 2" }
-        ]
-      },
-      {
-        _id: "i2",
-        label: "Item 2",
-        children: [
-          { _id: "i2-1", label: "Child 1.1" },
-          { _id: "i2-2", label: "Child 1.2" },
-          { _id: "i2-3", label: "Child 1.3" }
-        ]
-      },
-      {
-        _id: "i4",
-        label: "Item 4"
-      },
-      {
-        _id: "i2",
-        label: "Item 3",
-        children: [
-          { _id: "i2-1", label: "Child 1.1" },
-          { _id: "i2-2", label: "Child 1.2" },
-          { _id: "i2-3", label: "Child 1.3" }
-        ]
-      }
-    ];
   }
 
   disconnectedCallback() {
@@ -238,7 +204,9 @@ export class RuxTree extends PolymerElement {
       parentIndex: parent,
       item: event.model.item
     };
-
+    this.data.selected = event.model.item;
+    this.notifyPath("data.selected");
+    console.log(this.data);
     event.model.set("item.selected", event.model.item.selected ? false : true);
   }
 
