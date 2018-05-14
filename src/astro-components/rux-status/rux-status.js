@@ -175,23 +175,23 @@ export class RuxStatus extends PolymerElement {
       }
       
       .rux-status--off {
-        fill: var(--color-off);
+        fill: var(--status-off);
       }
       
       .rux-status--standby {
-        fill: var(--color-standby);
+        fill: var(--status-standby);
       }
       
       .rux-status--ok {
-        fill: var(--color-ok);
+        fill: var(--status-ok);
       }
       
       .rux-status--caution {
-        fill: var(--color-caution);
+        fill: var(--status-caution);
       }
       
       .rux-status--error {
-        fill: var(--color-error);
+        fill: var(--status-error);
       }
       
       .rux-status--emergency,
@@ -226,8 +226,6 @@ export class RuxStatus extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback();
-
-    console.log("status", this.status);
   }
 
   disconnectedCallback() {
@@ -244,7 +242,7 @@ export class RuxStatus extends PolymerElement {
 
   _filterNotifications(n) {
     if (isNaN(n))
-      console.error(`${this.label}â€™s notification count is not a number`);
+      console.error(`${this.label}'s notification count is not a number`);
 
     let _n = Math.floor(n);
 

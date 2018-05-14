@@ -77,22 +77,22 @@ export class RuxNotification extends PolymerElement {
       }
       
       :host([status="emergency"]) {
-        background-color: var(--status-emergency);
+        background-color: var(--color-alert);
       }
       :host([status="error"]) {
-        background-color: var(--status-error);
+        background-color: var(--color-error);
       }
       :host([status="caution"]) {
-        background-color: var(--status-caution);
+        background-color: var(--color-caution);
       }
       :host([status="ok"]) {
-        background-color: var(--status-ok);
+        background-color: var(--color-ok);
       }
       :host([status="standby"]) {
-        background-color: var(--status-standby);
+        background-color: var(--color-standby);
       }
       :host([status="off"]) {
-        background-color: var(--status-off);
+        background-color: var(--color-off);
       }
       
       .rux-notification::after {

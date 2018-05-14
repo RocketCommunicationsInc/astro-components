@@ -70,8 +70,6 @@ export class RuxIcon extends PolymerElement {
   connectedCallback() {
     super.connectedCallback();
     window.addEventListener("icon-library-added", this._iconLibraryEvent);
-
-    console.log("color", this.color);
   }
   disconnectedCallback() {
     super.disconnectedCallback();

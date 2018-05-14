@@ -66,7 +66,7 @@ export class RuxIconLibrary extends PolymerElement {
 
       if (!this.size) this.size = "114";
       let content = sourceSvg.cloneNode(true);
-      console.log("icon color", _icon.color);
+
       if (_icon.color) {
         content.setAttribute("fill", _icon.color);
       }
