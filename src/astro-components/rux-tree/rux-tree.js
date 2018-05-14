@@ -11,11 +11,6 @@ export class RuxTree extends PolymerElement {
       data: {
         type: Object,
         notify: true
-      },
-      selected: {
-        type: Object,
-        reflectToAttribute: true,
-        notify: true
       }
     };
   }
@@ -110,6 +105,7 @@ export class RuxTree extends PolymerElement {
       
       .rux-tree__child {
         padding-left: 3rem;
+        outline: 1px solid green;
       }
       
       /* Expanded */
@@ -151,8 +147,8 @@ export class RuxTree extends PolymerElement {
             <menu class="rux-tree__children" hidden=[[!item.children]]>
               <ul>
                 <template is="dom-repeat" id="rux-tree__children-data" items=[[item.children]]>
-                  <li title=[[item.label]] class$="rux-tree__child {{_getSelected(item.selected) }}">
-                    <div class="rux-tree__label" on-click="_select">[[item.label]]</div>
+                  <li title=[[item.label]] class$="rux-tree__child {{_getSelected(item.selected) }}"  on-click="_select">
+                    <div class="rux-tree__label">[[item.label]]</div>
                   </li>
                 </template>
               </ul>
