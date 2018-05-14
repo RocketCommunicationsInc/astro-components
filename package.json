@@ -87,5 +87,8 @@
       "browser": true,
       "node": true
     }
+  },
+  "scripts": {
+    "start": "polymer serve"
   }
 }
