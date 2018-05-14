@@ -242,10 +242,6 @@ export class RuxTimelineRegion extends PolymerElement {
     window.removeEventListener("resize");
   }
 
-  _handleClick(e) {
-    this.selected = true;
-  }
-
   _setDefaultSize() {
     // console.log("set default size");
     const now = new Date();
