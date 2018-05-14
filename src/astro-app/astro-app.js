@@ -1143,14 +1143,18 @@ Selected Tree Element: [[treeData.selected.label]]
                 <code>aos</code> and
                 <code>los</code> attributes. Expectec values are a JavaScript Date Object. AOS/LOS will not display is the respective attribute
                 is not present or if the value is not a date.</p>
-            <rux-clock aos=[[fakeAOS]] los=[[fakeLOS]]></rux-clock>
+            
+            <rux-clock 
+                aos=[[fakeAOS]] 
+                los=[[fakeLOS]]></rux-clock>
         </section>
 
         <section>
             <h2>Clock with Custom Time Zone</h2>
             <p>
                 <code>rux-clock</code> can use custom timezones. Timezones must be formatted in "Country/City".</p>
-            <rux-clock timezone="America/Los_Angeles"></rux-clock>
+            <rux-clock 
+                timezone="America/Los_Angeles"></rux-clock>
         </section>
 
         <section>
@@ -1158,7 +1162,10 @@ Selected Tree Element: [[treeData.selected.label]]
             <p>Both the date and timezone fields can be hidden via the
                 <code>hide-date</code> and
                 <code>hide-timezone</code> attributes.</p>
-            <rux-clock aos="bad data" hide-date="true" hide-timezone="true"></rux-clock>
+            <rux-clock 
+                aos="bad data" 
+                hide-date="true" 
+                hide-timezone="true"></rux-clock>
         </section>
 
     </astro-sample-panel>
@@ -1202,11 +1209,18 @@ Selected Tree Element: [[treeData.selected.label]]
             </p>
         </section>
 
-        <rux-modal message="This is a dialog box with a very long message to see what happens when it wraps to a second line." confirm-text="Ok"
-          deny-text="Cancel"></rux-modal>
+        <rux-modal
+            message="This is a dialog box with a very long message to see what happens when it wraps to a second line." 
+            confirm-text="Ok"
+            deny-text="Cancel"></rux-modal>
 
-        <rux-modal id="dynamic-modal" message=[[dynamicModal.message]] confirm-text=[[dynamicModal.confirmText]] deny-text=[[dynamicModal.denyText]]
-          icon=[[dynamicModal.icon]] custom-event=[[dynamicModal.customEvent]] </rux-modal>
+        <rux-modal 
+            id="dynamic-modal" 
+            message=[[dynamicModal.message]] 
+            confirm-text=[[dynamicModal.confirmText]] 
+            deny-text=[[dynamicModal.denyText]]
+            icon=[[dynamicModal.icon]] 
+            custom-event=[[dynamicModal.customEvent]] </rux-modal>
 
 
     </astro-sample-panel>

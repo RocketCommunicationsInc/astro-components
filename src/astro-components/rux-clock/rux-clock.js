@@ -33,13 +33,6 @@ export class RuxClock extends PolymerElement {
       timeOptions: {
         type: Object,
         computed: "_setTimeOptions(hideTimezone)"
-      },
-      _dayOfYear: {
-        type: String,
-        computed: "_getDayOfYear()"
-      },
-      _currentTime: {
-        type: String
       }
     };
   }
@@ -97,7 +90,7 @@ export class RuxClock extends PolymerElement {
       </style>      
       <div class="rux-clock">
         <div class="rux-clock__segment rux-clock__day-of-the-year" hidden="[[hideDate]]">
-          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__day-of-year-label">[[_dayOfYear]]</div>
+          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__day-of-year-label">{{_getDayOfYear()}}</div>
           <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label">Date</div>
         </div>
         <div class="rux-clock__segment rux-clock__time">
@@ -120,8 +113,6 @@ export class RuxClock extends PolymerElement {
 
     // set value of one day in milliseconds
     this._oneDay = 86400000;
-
-    this._windowListener = this._onWindowResize.bind(this);
   }
 
   connectedCallback() {
