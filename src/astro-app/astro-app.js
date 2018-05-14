@@ -1312,7 +1312,7 @@ Selected Tree Element: [[treeData.selected.label]]
             <p>The following satellites are in the pass plan</p>
             <ul class="pass-plan__satellites">
                 <template is="dom-repeat" id="pass-plan-sats" items=[[passPlanSatellites]]>
-                    <li><rux-status status=[[item.status]]></rux-status>[[item.title]]</li>
+                    <li><rux-status status=[[item.status]]></rux-status>[[item.label]]</li>
                 </template>
             </ul>
             <br>

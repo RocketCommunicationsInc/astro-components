@@ -196,7 +196,6 @@ export class RuxLog extends PolymerElement {
   
 	<header class="rux-log-header">
     <h1 class="rux-log-header-title">Event Logs</h1>
-    <!--<rux-icon class="test" icon="default:caution" color="#f8e71d" size="10" hidden=[[!_filterValue]]></rux-icon><input type="search" placeholder="Filter Log" value={{_filterValue::input}}>//-->
     <ul class="rux-log__header-labels rux-row">
       <li class="log-event__timestamp">Time</li>
       <li class="log-event__status"></li>

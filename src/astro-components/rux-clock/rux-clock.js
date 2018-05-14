@@ -213,9 +213,5 @@ export class RuxClock extends PolymerElement {
     // update the date
     this._getDayOfYear();
   }
-
-  _onWindowResize() {
-    // console.log("resizing");
-  }
 }
 customElements.define("rux-clock", RuxClock);
