@@ -4,8 +4,8 @@ import { RuxSegmentedButton } from "../astro-components/rux-segmented-button/rux
 import { RuxComponent } from "../astro-components/rux-component/rux-component.js";
 import { RuxProgress } from "../astro-components/rux-progress/rux-progress.js";
 import { RuxButton } from "../astro-components/rux-button/rux-button.js";
-import { RuxStatus } from "../astro-components/rux-status/rux-status.js";
 import { RuxIcon } from "../astro-components/rux-icon/rux-icon.js";
+import { RuxStatus } from "../astro-components/rux-status/rux-status.js";
 import { RuxTabs } from "../astro-components/rux-tabs/rux-tabs.js";
 import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
 /* import { RuxSpectrumAnalyzer } from "../astro-components/rux-spectrum-analyzer/rux-spectrum-analyzer.js"; */
@@ -287,11 +287,11 @@ export class AstroApp extends PolymerElement {
 <astro-samples class="master">
 <ul>
 
+<li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
 <li><astro-sample id="sample-tree">Tree</astro-sample></li>
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
-<li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
@@ -1909,7 +1909,6 @@ Selected Tree Element: [[treeData.selected.label]]
   }
 
   _updateLog() {
-    console.log("update log");
     this.logData = {
       timestamp: new Date(),
       status: this.logStatuses[

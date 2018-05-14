@@ -175,27 +175,28 @@ export class RuxStatus extends PolymerElement {
       }
       
       .rux-status--off {
-        fill: var(--status-off);
+        fill: var(--color-off);
       }
       
       .rux-status--standby {
-        fill: var(--status-standby);
+        fill: var(--color-standby);
       }
       
       .rux-status--ok {
-        fill: var(--status-ok);
+        fill: var(--color-ok);
       }
       
       .rux-status--caution {
-        fill: var(--status-caution);
+        fill: var(--color-caution);
       }
       
       .rux-status--error {
-        fill: var(--status-error);
+        fill: var(--color-error);
       }
       
-      .rux-status--emergency {
-        fill: var(--status-emergency);
+      .rux-status--emergency,
+      .rux-status--alert {
+        fill: var(--color-alert);
       }
 </style>      
 
@@ -225,6 +226,8 @@ export class RuxStatus extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback();
+
+    console.log("status", this.status);
   }
 
   disconnectedCallback() {

@@ -162,12 +162,10 @@ export class RuxTree extends PolymerElement {
   }
   constructor() {
     super();
-    console.log("data", this.data);
   }
 
   connectedCallback() {
     super.connectedCallback();
-    console.log("data", this.data);
   }
 
   disconnectedCallback() {
