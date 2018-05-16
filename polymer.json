@@ -1,28 +1,8 @@
 {
-  "npm": true,
-  "module-resolution": "node",
-  "builds": [{
-      "name": "bundled",
-      "bundle": true,
-      "js": {
-        "minify": true
-      },
-      "css": {
-        "minify": true
-      },
-      "html": {
-        "minify": true
-      }
-    },
-    {
-      "name": "amd",
-      "bundle": {
-        "inlineScripts": false
-      },
-      "js": {
-        "transformModulesToAmd": true
-      }
-    }
+  "extraDependencies": [
+    "public/fonts/*",
+    "public/css/*",
+    "node_modules/@webcomponents/webcomponentsjs/bundles/**"
   ],
   "lint": {
     "rules": ["polymer-3"]

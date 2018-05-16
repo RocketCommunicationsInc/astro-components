@@ -1,23 +1,23 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 // import { RuxComponent } from "@astrouxds/rux-component/rux-component.js";
 
+import { RuxIcon } from "@astrouxds/rux-icon/rux-icon.js";
 import { RuxAccordion } from "@astrouxds/rux-accordion/rux-accordion.js";
-// import { RuxButton } from "@astrouxds/rux-button/rux-button.js";
+import { RuxButton } from "@astrouxds/rux-button/rux-button.js";
 import { RuxClock } from "@astrouxds/rux-clock/rux-clock.js";
-// import { RuxGlobalStatusBar } from "@astrouxds/rux-global-status-bar/rux-global-status-bar.js";
-// import { RuxIcon } from "@astrouxds/rux-icon/rux-icon.js";
+import { RuxGlobalStatusBar } from "@astrouxds/rux-global-status-bar/rux-global-status-bar.js";
 import { RuxLog } from "@astrouxds/rux-log/rux-log.js";
-// import { RuxModal } from "@astrouxds/rux-modal/rux-modal.js";
-// import { RuxNotification } from "@astrouxds/rux-notification/rux-notification.js";
-// import { RuxPopUpMenu } from "@astrouxds/rux-pop-up-menu/rux-pop-up-menu.js";
+import { RuxModal } from "@astrouxds/rux-modal/rux-modal.js";
+import { RuxNotification } from "@astrouxds/rux-notification/rux-notification.js";
+import { RuxPopUpMenu } from "@astrouxds/rux-pop-up-menu/rux-pop-up-menu.js";
 import { RuxProgress } from "@astrouxds/rux-progress/rux-progress.js";
-// import { RuxPushButton } from "@astrouxds/rux-push-button/rux-push-button.js";
+import { RuxPushButton } from "@astrouxds/rux-push-button/rux-push-button.js";
 import { RuxSegmentedButton } from "@astrouxds/rux-segmented-button/rux-segmented-button.js";
-// import { RuxSlider } from "@astrouxds/rux-slider/rux-slider.js";
-// import { RuxSpectrumAnalyzer } from "@astrouxds/rux-spectrum-analyzer/rux-spectrum-analyzer.js";
-// import { RuxStatus } from "@astrouxds/rux-status/rux-status.js";
-// import { RuxTimeline } from "@astrouxds/rux-timeline/rux-timeline.js";
-// import { RuxToggle } from "@astrouxds/rux-toggle/rux-toggle.js";
+import { RuxSlider } from "@astrouxds/rux-slider/rux-slider.js";
+import { RuxSpectrumAnalyzer } from "@astrouxds/rux-spectrum-analyzer/rux-spectrum-analyzer.js";
+import { RuxStatus } from "@astrouxds/rux-status/rux-status.js";
+import { RuxTimeline } from "@astrouxds/rux-timeline/rux-timeline.js";
+import { RuxToggle } from "@astrouxds/rux-toggle/rux-toggle.js";
 import { RuxTabs } from "@astrouxds/rux-tabs/rux-tabs.js";
 import { RuxTree } from "@astrouxds/rux-tree/rux-tree.js";
 
@@ -288,12 +288,11 @@ export class AstroApp extends PolymerElement {
 <astro-samples class="master">
 <ul>
 
-
+<li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-progress">Progress</astro-sample></li>
 <li><astro-sample id="sample-tree">Tree</astro-sample></li>
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
-<li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
