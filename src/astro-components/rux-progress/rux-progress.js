@@ -22,6 +22,11 @@ export class RuxProgress extends PolymerElement {
     return html`
       <style>
       .rux-progress {
+        --progressPadding: 2px 0 0 2px;
+        --progressRadius: 10px;
+        --progressHeight: 14px;
+        --progressWidth: calc(100% - 4px);
+      
         display: flex;
         position: relative;
       
@@ -30,58 +35,59 @@ export class RuxProgress extends PolymerElement {
       }
       
       .rux-progress progress[value] {
-        -webkit-appearance: none;
-        -moz-appearance: none;
         appearance: none;
       
-        background: #21384f;
-        border: 2px solid #0e5996;
-        border-radius: 9px;
+        /* background: #21384f; */
+        background-color: var(
+          --progressDeterminateTrackBackgroundColor,
+          rgb(30, 47, 66)
+        );
+        border: 1px solid var(--progressDeterminateTrackBorderColor, rgb(20, 32, 44));
+        border-radius: var(--progressRadius);
         height: 20px;
         width: 100%;
       }
       
       .rux-progress__value {
-        margin-left: 1rem;
-      }
-      
-      .rux-progress__value::after {
-        content: "%";
+        margin-left: 0.25rem;
+        width: 5.5rem;
+        text-align: right;
+        font-size: 24px;
+        color: var(--controlLabelColor, #fff);
       }
       
       .rux-progress progress[value]::-webkit-progress-bar {
         background-color: transparent;
-        border-radius: 10px;
-        height: 16px;
       }
       
       .rux-progress progress[value]::-webkit-progress-value {
-        border-radius: 10px;
-        height: 14px;
-        margin: 1px 0 0 1px;
+        border-radius: var(--progressRadius);
       
-        max-width: calc(100% - 1px);
+        height: var(--progressHeight);
+        margin: var(--progressPadding);
+        max-width: var(--progressWidth);
       
-        background: #5cb3ff;
+        background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+      }
       
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      .rux-progress progress[value]::-ms-fill {
+        border-radius: var(--progressRadius);
       
-        filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 1));
+        height: var(--progressHeight), 14px;
+        margin: var(--progressPadding, 2px);
+        max-width: var(--progressWidth);
+      
+        background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
       }
       
       .rux-progress progress[value]::-moz-progress-bar {
-        border-radius: 9px;
-        margin: 1px 0 0 1px;
-        height: 14px;
+        border-radius: var(--progressRadius);
       
-        max-width: 90%;
+        margin: 2px 2px 0 2px;
+        height: var(--progressHeight);
+        max-width: var(--progressWidth);
       
-        background: #5cb3ff;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-      
-        filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 1));
+        background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
       }
       
       /* Indeterminate */
@@ -90,24 +96,46 @@ export class RuxProgress extends PolymerElement {
       
         position: relative;
       
-        height: 4rem !important;
-        width: 4rem !important;
-      
+        height: 5rem;
+        width: 5rem;
         background-color: transparent;
-        outline: 1px solid red;
+        /* outline: 1px solid rgba(0, 255, 0, 0.2); */
+        border: none;
       
-        /* background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%/* 20%20%20%3Cpath%20d%3D%22M32%2064C14.327%2064%200%2049.673%200%2032%200%2014.327%2014.327%200%2032%200c17.673%200%2032%2014.327%2032%2032%200%2017.673-14.327%2032-32%2032zm0-6c14.36%200%2026-11.64%2026-26S46.36%206%2032%206%206%2017.64%206%2032s11.64%2026%2026%2026z%22%20id%3D%22a%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cfilter%20x%3D%22-3.1%25%22%20y%3D%22-3.1%25%22%20width%3D%22106.2%25%22%20height%3D%22106.2%25%22%20filterUnits%3D%22objectBoundingBox%22%20id%3D%22b%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeGaussianBlur%20stdDeviation%3D%221.5%22%20in%3D%22SourceAlpha%22%20result%3D%22shadowBlurInner1%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeOffset%20dy%3D%221%22%20in%3D%22shadowBlurInner1%22%20result%3D%22shadowOffsetInner1%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeComposite%20in%3D%22shadowOffsetInner1%22%20in2%3D%22SourceAlpha%22%20operator%3D%22arithmetic%22%20k2%3D%22-1%22%20k3%3D%221%22%20result%3D%22shadowInnerInner1%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeColorMatrix%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200%22%20in%3D%22shadowInnerInner1%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20x1%3D%2250%25%22%20y1%3D%226.903%25%22%20x2%3D%2250%25%22%20y2%3D%22100%25%22%20id%3D%22c%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20stop-color%3D%22%2360b5fc%22%20offset%3D%220%25%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20stop-color%3D%22%23010F1B%22%20stop-opacity%3D%220%22%20offset%3D%22100%25%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cuse%20fill%3D%22%23313234%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%0A%20%20%20%20%3Cuse%20filter%3D%22url(%23b)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%0A%20%20%20%20%3Cg%20id%3D%22d%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.908%207.236l-2.358%203.245A26.894%2026.894%200%200%200%2031%204C16.088%204%204%2016.088%204%2031s12.088%2027%2027%2027c1.129%200%202.242-.07%203.334-.204l4.435%203.222A30.997%2030.997%200%200%201%2031%2062C13.88%2062%200%2048.12%200%2031%200%2013.88%2013.88%200%2031%200c7.579%200%2014.522%202.72%2019.908%207.236z%22%20fill%3D%22url(%23c)%22%20transform%3D%22translate(1%201)%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.683%2011.836c.908%200%201.681-.306%201.926-1.134.053-.18.17-.322.17-.519C52.779%209.078%2052.105%208%2051%208a2%202%200%200%200-2%202c0%201.105.579%201.836%201.683%201.836z%22%20fill%3D%22%2360b5fc%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3CanimateTransform%20xlink%3Ahref%3D%22%23d%22%20attributeName%3D%22transform%22%20attributeType%3D%22XML%22%20type%3D%22rotate%22%20from%3D%220%2032%2032%22%20to%3D%22360%2032%2032%22%20dur%3D%221.2s%22%20repeatCount%3D%22indefinite%22%20fill%3D%22freeze%22%20restart%3D%22whenNotActive%22%2F%3E%0A%3C%2Fsvg%3E%0A"); */
-        /* background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23C6CCD1%22%20d%3D%22M3%203h6v6H3z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E"); */
-        background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%09%3Cdefs%3E%0A%09%09%09%3Cpath%20d%3D%22M32%2064C14.327%2064%200%2049.673%200%2032%200%2014.327%2014.327%200%2032%200c17.673%200%2032%2014.327%2032%2032%200%2017.673-14.327%2032-32%2032zm0-6c14.36%200%2026-11.64%2026-26S46.36%206%2032%206%206%2017.64%206%2032s11.64%2026%2026%2026z%22%20id%3D%22a%22%2F%3E%0A%09%09%09%3Cfilter%20x%3D%22-3.1%25%22%20y%3D%22-3.1%25%22%20width%3D%22106.2%25%22%20height%3D%22106.2%25%22%20filterUnits%3D%22objectBoundingBox%22%20id%3D%22b%22%3E%0A%09%09%09%09%3CfeGaussianBlur%20stdDeviation%3D%221.5%22%20in%3D%22SourceAlpha%22%20result%3D%22shadowBlurInner1%22%2F%3E%0A%09%09%09%09%3CfeOffset%20dy%3D%221%22%20in%3D%22shadowBlurInner1%22%20result%3D%22shadowOffsetInner1%22%2F%3E%0A%09%09%09%09%3CfeComposite%20in%3D%22shadowOffsetInner1%22%20in2%3D%22SourceAlpha%22%20operator%3D%22arithmetic%22%20k2%3D%22-1%22%20k3%3D%221%22%20result%3D%22shadowInnerInner1%22%2F%3E%0A%09%09%09%09%3CfeColorMatrix%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200%22%20in%3D%22shadowInnerInner1%22%2F%3E%0A%20%20%20%20%09%3C%2Ffilter%3E%0A%09%09%09%3ClinearGradient%20x1%3D%2250%25%22%20y1%3D%226.903%25%22%20x2%3D%2250%25%22%20y2%3D%22100%25%22%20id%3D%22c%22%3E%0A%09%09%09%09%3Cstop%20stop-color%3D%22%2360b5fc%22%20offset%3D%220%25%22%2F%3E%0A%09%09%09%09%3Cstop%20stop-color%3D%22%23010F1B%22%20stop-opacity%3D%220%22%20offset%3D%22100%25%22%2F%3E%0A%09%09%09%3C%2FlinearGradient%3E%0A%09%3C%2Fdefs%3E%0A%20%20%3Cuse%20fill%3D%22%23313234%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%0A%09%0A%09%3Cg%20id%3D%22progress%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%09%3Cpath%20d%3D%22M50.908%207.236l-2.358%203.245A26.894%2026.894%200%200%200%2031%204C16.088%204%204%2016.088%204%2031s12.088%2027%2027%2027c1.129%200%202.242-.07%203.334-.204l4.435%203.222C36.286%2061.66%2033.683%2062%2031%2062%2013.88%2062%200%2048.12%200%2031%200%2013.88%2013.88%200%2031%200c7.579%200%2014.522%202.72%2019.908%207.236z%22%20fill%3D%22%23f00%22%20transform%3D%22translate(1%201)%22%2F%3E%0A%20%20%20%20%09%3Cpath%20d%3D%22M50.683%2011.836c.908%200%201.681-.306%201.926-1.134.053-.18.17-.322.17-.519C52.779%209.078%2052.105%208%2051%208a2%202%200%200%200-2%202c0%201.105.579%201.836%201.683%201.836z%22%20fill%3D%22%2360b5fc%22%2F%3E%0A%09%3C%2Fg%3E%0A%09%3CanimateTransform%20%0A%09%09xlink%3Ahref%3D%22%23progress%22%0A%09%09attributeName%3D%22transform%22%20%0A%09%09attributeType%3D%22XML%22%0A%09%09type%3D%22rotate%22%0A%09%09from%3D%220%2032%2032%22%0A%09%09to%3D%22360%2032%2032%22%20%0A%09%09dur%3D%221.2s%22%0A%09%09repeatCount%3D%22indefinite%22%0A%09%09fill%3D%22freeze%22%20%0A%09%09restart%3D%22whenNotActive%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+        background-image: var(
+          --progressIndeterminate,
+          url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E %3ClinearGradient x1='65.479%25' y1='-8.436%25' x2='50%25' y2='100%25' id='a'%3E %3Cstop stop-color='%235CB3FF' offset='0%25'/%3E %3Cstop stop-color='%23010F1B' stop-opacity='0' offset='100%25'/%3E %3C/linearGradient%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M32 64C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32zm0-6c14.36 0 26-11.64 26-26S46.36 6 32 6 6 17.64 6 32s11.64 26 26 26z' fill='%23192B3C'/%3E %3Cpath d='M51.908 8.236l-2.358 3.245A26.894 26.894 0 0 0 32 5C17.088 5 5 17.088 5 32s12.088 27 27 27c1.129 0 2.242-.07 3.334-.204l4.435 3.222C37.286 62.66 34.683 63 32 63 14.88 63 1 49.12 1 32 1 14.88 14.88 1 32 1c7.579 0 14.522 2.72 19.908 7.236z' fill='url(%23a)'/%3E %3Cpath d='M47.564 12c1.92 0 3.557-.64 4.075-2.367.112-.375.361-.67.361-1.08C52 6.248 50.572 4 48.234 4S44 5.867 44 8.17c0 2.304 1.225 3.83 3.564 3.83z' fill='%2352AEFF'/%3E %3C/g%3E %3C/svg%3E ")
+        );
+        background-repeat: no-repeat;
+        background-position: center center;
+      
+        animation-name: spin;
+        animation-duration: 1.367s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
       }
       
-      .rux-progress progress:indeterminate::-moz-progress-value,
+      /* Removes the default animation from IE */
+      .rux-progress progress:indeterminate::-ms-fill {
+        animation-name: none;
+      }
+      
       .rux-progress progress:indeterminate::-moz-progress-bar {
         background-color: transparent;
       }
+      
       .rux-progress progress:indeterminate::-webkit-progress-value,
       .rux-progress progress:indeterminate::-webkit-progress-bar {
         background-color: transparent;
+      }
+      
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
       }
 </style>      
 
