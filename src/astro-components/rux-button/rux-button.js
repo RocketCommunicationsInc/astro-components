@@ -29,117 +29,156 @@ export class RuxButton extends PolymerElement {
       .rux-button {
         display: inline-block;
         position: relative;
-        min-width: 4rem;
-        height: 2.25rem;
+      
         margin: 0;
-        padding: 0 0.8rem;
-        border-top: var(--button-border-top);
-        border-left: var(--button-border-left);
-        border-bottom: var(--button-border-bottom);
-        border-right: var(--button-border-right);
-        color: var(--button-color);
-        background-color: var(--button-background);
-        font-family: var(--font-family);
-        font-size: 0.875rem;
-        text-align: center;
-        vertical-align: middle;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        padding: 0.34375rem 1rem;
+      
+        height: 2.1875rem;
+        min-width: 2.25rem;
+        max-width: 10.125rem;
+      
+        border-radius: var(--buttonBorderRadius, 3px);
+      
+        color: var(--buttonTextColor, #fff);
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+      
         white-space: nowrap;
-        cursor: pointer;
-        outline: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.25;
+      
         user-select: none;
-        transition: background var(--standard-transition-speed);
       }
       
-      .rux-button--icon {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 0;
-        border: none;
-        background: none;
-        font-size: 0.75rem;
-        opacity: 0.2;
-        transition: opacity var(--standard-transition-speed);
-      }
+      /* 
+        
+        Disabled States
       
-      .rux-button--icon .rux-icon--button {
-        height: 43px;
-        width: 43px;
-      }
-      
-      .rux-button--icon:hover {
-        opacity: 1;
-      }
-      
-      .rux-button:hover:not([disabled]):not(.rux-button--icon) {
-        background-color: var(--button-background--hover);
-      }
-      
-      .rux-button:active:not([disabled]):not(.rux-button--icon) {
-        border: 1px solid #0462ab;
-        background-color: var(--button-background);
-        box-shadow: inset 0 1px 2px 2px rgba(0, 0, 0, 0.5);
-      }
-      
+      */
+      /* disabled state */
       .rux-button:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
+        opacity: var(--disabledOpacity, 0.4);
+        cursor: var(--disabledCursor, not-allowed);
       }
       
-      .rux-button--default:not(.rux-button--icon) {
-        border: 1px solid rgba(255, 255, 255, 0.6);
+      .rux-button:focus {
+        outline: none;
       }
       
-      .rux-button[hidden] {
-        display: none;
+      .rux-button:not(.rux-button--outline):not(.rux-button--outline) {
+        border: 1px solid var(--buttonBackgroundColor, rgb(0, 90, 143));
+        background-color: var(--buttonBorderColor, rgb(0, 90, 143));
+        box-shadow: var(
+          --controlBoxShadow,
+          0 2px 4px rgba(0, 0, 0, 0.14),
+          0 3px 4px rgba(0, 0, 0, 0.12),
+          0 1px 5px rgba(0, 0, 0, 0.2)
+        );
       }
       
-      .rux-button--large {
-        height: 3.25rem;
-        font-size: 1.125rem;
+      .rux-button--default {
+        border-color: var(--buttonDefaultBorderColor, rgb(255, 255, 255)) !important;
+      }
+      
+      /* Outline Button Specific Styles */
+      .rux-button--outline {
+        color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
+        background-color: var(--buttonOutlineBackgroundColor, transparent);
+        border: 1px solid var(--buttonOutlineBorderColor, rgb(0, 90, 143));
+      }
+      
+      /* 
+        
+        Press/Active States
+      
+      */
+      .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+        border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
+        background-color: var(
+          --buttonActiveBackgroundColor,
+          rgb(0, 90, 143)
+        ) !important;
+        box-shadow: none !important;
+      }
+      
+      /* 
+        
+        Hover States
+      
+      */
+      .rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
+        border-color: var(--buttonHoverBorderColor, rgb(58, 129, 191));
+        background-color: var(--buttonHoverBackgroundColor, rgb(58, 129, 191));
+        box-shadow: var(
+          --buttonHoverBoxShadow,
+          0 8px 10px 1px rgba(0, 0, 0, 0.14),
+          0 3px 14px 3px rgba(0, 0, 0, 0.12),
+          0 4px 5px rgba(0, 0, 0, 0.2)
+        );
+      }
+      
+      .rux-button--outline:hover:not([disabled]) {
+        color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
+        background-color: var(
+          --buttonOutlineHoverBackgroundColor,
+          rgba(30, 47, 66, 0.75)
+        );
+        border-color: var(--buttonOutlineHoverBorderColor, rgb(58, 129, 191));
+      }
+      
+      /* 
+        
+        Icons
+      
+      */
+      .rux-icon {
+        fill: #fff;
       }
       
       .rux-button--small {
-        min-width: 2rem;
+        font-size: var(--smallLabelTextSize, 0.875rem);
+        height: 1.625rem;
+        padding: 0 1rem;
+        line-height: 1;
+      }
+      
+      .rux-button--large {
+        font-size: var(--largeLabelTextSize, 1.125rem);
+        height: 2.8125rem;
+        min-width: 2.875rem;
+        padding: 0.657rem 1.5rem;
+      }
+      
+      .rux-button__icon {
+        display: inline-block;
+        vertical-align: middle;
+      
         height: 1.5rem;
-        /* padding: 0.25rem 0.5rem; */
-        font-size: 0.775rem;
-        line-height: 1.25;
+        width: 1.5rem;
+      
+        margin: -0.45rem 0.525rem -0.25rem calc((1rem - 0.325rem) * -1);
+      
+        outline: 1px solid rgba(255, 255, 255, 0.2);
       }
       
-      .rux-button--narrow {
-        min-width: 1.125rem;
-        padding-left: 0.3125rem;
-        padding-right: 0.3125rem;
+      .rux-button--small .rux-button__icon {
+        height: 0.875rem;
+        width: 0.875rem;
+      
+        margin-right: 0.2em;
       }
       
-      .rux-button--narrow {
-        outline: 1px solid red !important;
-        padding-top: 0.1rem !important;
-        padding-bottom: 0.1rem !important;
+      .rux-button--large .rux-button__icon {
+        height: 1.75rem;
+        width: 1.75rem;
+      
+        margin: -0.5rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1);
       }
       
-      .rux-button--large .rux-icon--button {
-        height: var(--icon-size--button-large, 24px);
-        width: var(--icon-size--button-large, 24px);
-      }
-      
-      .rux-icon--button {
-        vertical-align: top;
-        margin-right: 0.25rem;
-      }
-      
-      .rux-button--small .rux-icon--button,
-      .rux-button--narrow .rux-icon--button,
-      .rux-button--compact .rux-icon--button,
-      .rux-icon--button[hidden] {
-        display: none !important;
+      .rux-button--icon .rux-button__icon {
+        margin-right: -1.5rem;
+        margin-left: -1.5rem;
       }
   </style>      
 

@@ -1,0 +1,16 @@
+/*
+**
+** 	ASTRO RADIO BUTTON
+** 	==========================================================================
+**  3.0 Notes
+**  Moved all directives to 
+**  2.0 Notes
+**  - Removed hand cursor on checkbox
+**  - Updated styles to Astro 2.0
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed linear gradients
+**  - Removed user-select and placed it in astro.css to apply to all input types
+**  - Added line-height to label to fix minor alignment issue
+**  - Adjusted background position of checked state to sit more centrally
+*/

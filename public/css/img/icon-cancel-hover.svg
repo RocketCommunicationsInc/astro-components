@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="22px" viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch Beta 3.3.2 (12041) - http://www.bohemiancoding.com/sketch -->
+    <title>cancel-over</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="cancel-icon-copy-2" sketch:type="MSLayerGroup">
+            <circle id="Path" fill="#B4BBC2" sketch:type="MSShapeGroup" cx="11" cy="11" r="11"></circle>
+            <path d="M6.35579411,16.2374948 L15.6442059,5.76250522" id="circle" stroke="#FFFFFF" stroke-width="2" fill="#DEE2E7" sketch:type="MSShapeGroup"></path>
+            <path d="M5.76250522,6.35579411 L16.2374948,15.6442059" id="circle-copy" stroke="#FFFFFF" stroke-width="2" fill="#DEE2E7" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

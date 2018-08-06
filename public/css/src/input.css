@@ -1,0 +1,96 @@
+/*
+**
+** 	ASTRO INPUT TEXT FIELDS
+** 	==========================================================================
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed linear gradients
+**  - Updated text entry field to WCAG
+*/
+
+/*
+**
+** 	INPUT TEXT
+** 	==========================================================================
+*/
+
+/* 	REQUIRED CLASSES */
+
+label {
+  color: var(--fontColor, rgb(255, 255, 255));
+}
+
+.rux-form-field,
+.satcom-form-chunk {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  margin: 0 0 1rem 0;
+}
+
+.rux-form-field label,
+.satcom-form-chunk label {
+  display: flex;
+  order: 0;
+  margin: 0 0 0.25rem 0;
+  width: 100%;
+  font-size: var(--fontSize, 1rem);
+
+  user-select: none;
+}
+
+.rux-form-field input[type="text"],
+.rux-form-field input[type="number"],
+.rux-form-field input[type="date"],
+.rux-form-field input[type="datetimelocal"],
+.rux-form-field input[type="email"],
+.rux-form-field input[type="month"],
+.rux-form-field input[type="password"],
+.rux-form-field input[type="search"],
+.rux-form-field input[type="tel"],
+.rux-form-field input[type="time"],
+.rux-form-field input[type="url"],
+.rux-form-field input[type="week"],
+.satcom-text-entry {
+  font-size: 1rem;
+  padding: 2px 5px;
+
+  border-radius: 3px;
+  border: 1px solid var(--colorPrimary, rgb(0, 90, 143));
+
+  /* border: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: none; */
+
+  color: #000;
+
+  background: #fff;
+  width: calc(100% - 28px);
+}
+
+.rux-text-entry:invalid,
+.satcom-v2-text-entry:invalid,
+.force-validity {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29 27'%3E%3cg fill='none' fill-rule='evenodd'%3E%3ccircle cx='13' cy='13' r='13' fill='#F72501'/%3E%3cpath fill='#FFF' d='M14.45 16h-2.902L11 6.055c-.03-.55.392-1.023.944-1.053L12 5h2c.552 0 1 .448 1 1 0 .018 0 .037-.002.055L14.45 16zm-2.936 2.506c.343-.337.842-.506 1.497-.506.635 0 1.124.173 1.47.518.348.345.52.84.52 1.482 0 .62-.174 1.108-.525 1.465-.35.357-.838.535-1.463.535-.64 0-1.134-.175-1.484-.524-.35-.35-.526-.84-.526-1.476 0-.66.17-1.157.514-1.494z'/%3E%3c/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70%;
+  width: 28px;
+  height: 28px;
+
+  margin-top: -2px;
+}
+
+.required {
+  margin-right: 0.4em;
+  color: #fff;
+
+  font-size: 16px;
+}
+
+.rux-text-entry:disabled,
+.satcom-text-entry:disabled {
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: var(--disabledCursor, not-allowed);
+}

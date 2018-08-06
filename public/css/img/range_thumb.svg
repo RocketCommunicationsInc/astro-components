@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="67" height="18">
+  <defs>
+    <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#076EBC"/>
+      <stop offset="100%" stop-color="#047CDC"/>
+    </linearGradient>
+    <linearGradient id="b" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A70BA"/>
+      <stop offset="100%" stop-color="#0B7ED4"/>
+    </linearGradient>
+    <linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="48.507%" stop-color="#FFF" stop-opacity=".5"/>
+      <stop offset="100%" stop-color="#FFF"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g fill-rule="nonzero" transform="translate(17 1)">
+      <path fill="url(#a)" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm0-2A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+      <path fill="#000" fill-opacity=".2" d="M15.985 7.5a8 8 0 1 1-15.97 0 8 8 0 0 0 15.97 0z"/>
+      <path fill="#FFF" fill-opacity=".1" d="M15.985 8.5a8 8 0 1 0-15.97 0 8 8 0 0 1 15.97 0z"/>
+      <circle cx="8" cy="8" r="6" fill="#263F58"/>
+      <rect width="8" height="8" x="4" y="4" fill="url(#b)" rx="4"/>
+    </g>
+    <g fill-rule="nonzero">
+      <path fill="url(#a)" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm0-2A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" transform="translate(34 .602)"/>
+      <path fill="#000" fill-opacity=".2" d="M49.985 8.102a8 8 0 1 1-15.97 0 8 8 0 0 0 15.97 0z"/>
+      <path fill="#FFF" fill-opacity=".1" d="M49.985 9.102a8 8 0 1 0-15.97 0 8 8 0 0 1 15.97 0z"/>
+    </g>
+    <g fill-rule="nonzero" transform="translate(36 2.602)">
+      <circle cx="6" cy="6" r="6" fill="#263F58"/>
+      <rect width="8" height="8" x="2" y="2" fill="url(#b)" rx="4"/>
+    </g>
+    <rect width="16" height="16" stroke="url(#c)" rx="8" transform="translate(34 .602)"/>
+    <g fill-rule="nonzero" transform="translate(0 1)">
+      <path fill="url(#a)" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm0-2A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+      <path fill="#000" fill-opacity=".2" d="M15.985 7.5a8 8 0 1 1-15.97 0 8 8 0 0 0 15.97 0z"/>
+      <path fill="#FFF" fill-opacity=".1" d="M15.985 8.5a8 8 0 1 0-15.97 0 8 8 0 0 1 15.97 0z"/>
+      <circle cx="8" cy="8" r="6" fill="#263F58"/>
+    </g>
+    <g fill-rule="nonzero" transform="translate(51 1)">
+      <path fill="url(#a)" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm0-2A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+      <path fill="#000" fill-opacity=".2" d="M15.985 7.5a8 8 0 1 1-15.97 0 8 8 0 0 0 15.97 0z"/>
+      <path fill="#FFF" fill-opacity=".1" d="M15.985 8.5a8 8 0 1 0-15.97 0 8 8 0 0 1 15.97 0z"/>
+      <path fill="#000" fill-opacity=".2" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm0-2A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+      <circle cx="8" cy="8" r="6" fill="#263F58"/>
+    </g>
+  </g>
+</svg>
