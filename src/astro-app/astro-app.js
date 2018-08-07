@@ -374,6 +374,13 @@ Selected Tree Element: [[treeData.selected.label]]
 <astro-sample-panel aria-labeledby="sample-notification-banner">
 <h1>Notification Banner</h1>
 <p>This is the second stage of notifications</p>
+<select on-change="_updateNotificationStatus">
+        <option value="">Default</option>
+        <option value="critical">Critical</option>
+        <option value="caution">Caution</option>
+        <option value="normal">Normal</option>
+        <option value="info">Info</option>
+    </select>
 <section style="position: releative;">
     <h2>Global Notification Banner</h2>
     <p>This is a notification banner that will sit at the top of a given window. It’s kind of predicated on how the app is constructed though which is, sub-optimal. If the containing element(s) the <code>rux-notification</code> is attached to have no explicit position, the notifiation becomes a global notification.</p>
@@ -381,16 +388,9 @@ Selected Tree Element: [[treeData.selected.label]]
     <rux-notification
     status$=[[notificationStatus]]
         target="global"
-        message="This is a global notification banner."
-        opened>
+        message="This is a global notification banner.">
     </rux-notification>
-    <select on-change="_updateNotificationStatus">
-        <option value="">Default</option>
-        <option value="critical">Critical</option>
-        <option value="caution">Caution</option>
-        <option value="normal">Normal</option>
-        <option value="info">Info</option>
-    </select>
+    
 </section>
 
 <section style="position: releative;">
@@ -398,7 +398,8 @@ Selected Tree Element: [[treeData.selected.label]]
     <p>This is a notification banner display localized to its containing element, in this case the <code>section</code> element.</p>
     <rux-button on-click="_showNotification" data-notification="1">Toggle Notification Banner</rux-button>
     <rux-notification
-            message="This is a local notification banner.">
+    status$=[[notificationStatus]]
+        message="This is a local notification banner.">
     </rux-notification>
 </section>
 
@@ -407,8 +408,9 @@ Selected Tree Element: [[treeData.selected.label]]
     <p>Same as above, but will automatically close after 2 seconds. Timeout to close can be set within reason. Nothing shorter than 2 seconds or longer than 10 seconds currently.</p>
     <rux-button on-click="_showNotification" data-notification="2">Toggle Notification Banner</rux-button>
     <rux-notification
-            close-after=2
-            message="This is a local notification banner.">
+    status$=[[notificationStatus]]
+        close-after=2
+        message="This is a local notification banner.">
     </rux-notification>
 </section>
 
@@ -417,8 +419,9 @@ Selected Tree Element: [[treeData.selected.label]]
     <p>This is a notification banner display localized to its containing element. Instead of overlaying content, it pushes the content down.</p>
     <rux-button on-click="_showNotification" data-notification="3">Toggle Notification Banner</rux-button>
     <rux-notification
-            push=true
-            message="This is a local notification that pushes content down.">
+    status$=[[notificationStatus]]
+        push=true
+        message="This is a local notification that pushes content down.">
     </rux-notification>
 </section>
 
@@ -428,8 +431,8 @@ Selected Tree Element: [[treeData.selected.label]]
     <p>This is a notification banner display that accepts a <code>status</code> paramater to match the six status color states.</p>
     <rux-button on-click="_showNotification" data-notification="4">Toggle Notification Banner</rux-button>
     <rux-notification
-            status="emergency"
-            message="This is a local notification banner.">
+        status$=[[notificationStatus]]
+         message="This is a local notification banner.">
     </rux-notification>
 </section>
 
