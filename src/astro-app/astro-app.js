@@ -287,6 +287,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-progress">Progress</astro-sample></li>
@@ -294,7 +295,7 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
-<li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
+
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
 <li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
 <li><astro-sample id="sample-slider">Slider</astro-sample></li>
@@ -378,9 +379,18 @@ Selected Tree Element: [[treeData.selected.label]]
     <p>This is a notification banner that will sit at the top of a given window. It’s kind of predicated on how the app is constructed though which is, sub-optimal. If the containing element(s) the <code>rux-notification</code> is attached to have no explicit position, the notifiation becomes a global notification.</p>
     <rux-button on-click="_showNotification" data-notification="0">Toggle Notification Banner</rux-button>
     <rux-notification
+    status$=[[notificationStatus]]
         target="global"
-        message="This is a global notification banner.">
+        message="This is a global notification banner."
+        opened>
     </rux-notification>
+    <select on-change="_updateNotificationStatus">
+        <option value="">Default</option>
+        <option value="critical">Critical</option>
+        <option value="caution">Caution</option>
+        <option value="normal">Normal</option>
+        <option value="info">Info</option>
+    </select>
 </section>
 
 <section style="position: releative;">
@@ -1873,6 +1883,11 @@ Selected Tree Element: [[treeData.selected.label]]
     ];
   }
 
+  _updateNotificationStatus(e) {
+    console.log(e.target.value);
+
+    this.notificationStatus = e.target.value;
+  }
   _showNotification(e) {
     console.log(e.currentTarget.dataset.notification);
 
