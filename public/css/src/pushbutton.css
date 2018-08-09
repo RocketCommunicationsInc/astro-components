@@ -20,10 +20,11 @@
 .satcom-pushbutton {
   display: inline-block;
 
-  height: 1.375rem;
-  /* width: auto; */
+  height: 1.3125rem;
 
-  font-weight: 600;
+  /* width: auto; */
+  -webkit-font-smoothing: subpixel-antialiased;
+
   font-size: 0.75rem;
 }
 
@@ -35,48 +36,31 @@
 
 .rux-pushbutton__button,
 .satcom-pushbutton-button {
-  display: inline-block;
-
-  height: 1.375rem;
-  /* width: auto; */
-
-  margin: 0;
-  padding: 0 0.5rem;
-
-  color: #fff;
-
-  background-color: var(--button__border-color, rgb(0, 90, 143));
-  border-radius: var(--button__border-radius, 3px);
-  border: 1px solid var(--color-secondary--darken-1, rgb(30, 47, 66));
-}
-
-.rux-pushbutton__input + .rux-pushbutton__button span,
-.satcom-pushbutton-input + .satcom-pushbutton-button span {
   display: flex;
 
-  align-content: center;
   justify-content: center;
   align-items: center;
 
-  height: 100%;
-  width: 100%;
-}
+  height: 1.375rem;
 
-.rux-pushbutton__input:checked + .rux-pushbutton__button .off,
-.satcom-pushbutton-input:checked + .satcom-pushbutton-button .off {
-  display: none;
-}
+  margin: 0;
+  padding: 0 0.625rem;
 
-.rux-pushbutton__input:checked + .rux-pushbutton__button .on,
-.satcom-pushbutton-input:checked + .satcom-pushbutton-button .on {
-  display: flex;
-  color: #3ae304;
+  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+
+  background-color: var(--pushbuttonBackgroundColor, rgb(0, 90, 143));
+  border-radius: var(--defaultBorderRadius, 3px);
+  border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
 }
 
 .rux-pushbutton__input:checked + .rux-pushbutton__button,
 .satcom-pushbutton-input:checked + .satcom-pushbutton-button {
-  background-color: #0f1b25;
-  border: 1px solid #101923;
+  display: flex;
+  color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
+  background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
+  border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
+
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.33);
 }
 
 .rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on,
@@ -86,8 +70,8 @@
 
 .rux-pushbutton__input:disabled + .rux-pushbutton__button,
 .satcom-pushbutton-input:disabled + .satcom-pushbutton-button {
-  opacity: var(--ui-element-disabled-opacity, 0.4);
-  color: #fff;
+  opacity: var(--disabledOpacity, 0.4);
+  /* color: #fff; */
 
   cursor: not-allowed;
 }

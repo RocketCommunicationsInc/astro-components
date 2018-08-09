@@ -1,7 +1,0 @@
-/* 
-	The hidden attribute on an element gets ignored when
-	display 
-*/
-body /deep/ [hidden] {
-	display: none !important;
-}

@@ -23,23 +23,15 @@
   display: inline-block;
   box-sizing: border-box;
 
-  font-weight: 600;
   font-size: 0.75rem;
+  -webkit-font-smoothing: subpixel-antialiased;
 
-  height: 1.375rem;
-
-  user-select: none;
-}
-
-.rux-toggle:not(.rux-toggle--alt),
-.satcom-toggle:not(.rux-toggle--alt) {
+  height: 1.3125rem;
   width: 4.375rem;
-  border-radius: var(--button__border-radius, 0.1875rem);
-}
-
-.rux-toggle--alt,
-.satcom-toggle--alt {
-  width: 2.1875rem;
+  border-radius: var(--defaultBorderRadius, 0.1875rem);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
+  user-select: none;
+  overflow: hidden;
 }
 
 .rux-toggle__input,
@@ -57,37 +49,19 @@
   width: 100%;
 }
 
-.rux-toggle--alt .rux-toggle__button::before {
-  border: 1px solid
-    var(--toggle-alt__track--off__border-color, rgb(148, 159, 172));
-  background-color: var(
-    --toggle-alt__track--off__background-color,
-    rgb(201, 207, 213)
+.rux-toggle .rux-toggle__button::before {
+  border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
+  border-radius: 0.1875rem;
+
+  background: var(
+    --toggleBaseBackgroundColor,
+    linear-gradient(
+      to right,
+      #000 50%,
+      rgb(50, 51, 52) 50.1%,
+      rgb(50, 51, 52) 100%
+    )
   );
-
-  height: 0.6875rem;
-  width: 100%;
-
-  /* outline: 1px solid red; */
-  border-radius: 0.3125rem;
-
-  transition: 0.167s border ease-in-out, 0.167s background-color ease-in-out;
-}
-
-.rux-toggle--alt2 .rux-toggle__button::before {
-  background: linear-gradient(
-    to right,
-    rgb(91, 255, 0) 0%,
-    rgb(91, 255, 0) 50%,
-    #000 50%
-  );
-}
-
-.rux-toggle:not(.rux-toggle--alt) .rux-toggle__button::before {
-  border: 1px solid var(--color-secondary--darken-2: rgb(20, 32, 44));
-  border-radius: var(--button__border-radius, 0.1875rem);
-
-  background-color: #000;
 }
 
 .rux-toggle__button {
@@ -103,10 +77,6 @@
 
   height: 100%;
   width: 100%;
-  /* outline: 1px solid orange; */
-
-  /* cursor: pointer; */
-  /* z-index: 50; */
 }
 
 .rux-toggle__button span {
@@ -119,21 +89,6 @@
   width: 50%;
   height: 100%;
   z-index: 1;
-
-  /* line-height: 0; */
-  /* outline: 1px solid blue; */
-}
-
-.rux-toggle--alt span {
-  display: none;
-}
-
-.rux-toggle__button .on {
-  color: #3ae304;
-}
-
-.rux-toggle--alt2 .rux-toggle__button .on {
-  color: #fff;
 }
 
 .rux-toggle__button::after {
@@ -153,91 +108,45 @@
   transition: left 0.1s ease-out;
 }
 
-.rux-toggle--alt .rux-toggle__button::after {
-  height: 18px;
-  width: 18px;
-
-  border-radius: 50%;
-  /* border: 1px solid var(--toggle-alt__thumb__border-color, #fff);
-
-  background-color: var(--toggle-alt__thumb__background-color, #fff); */
-
-  background-color: var(--color-primary);
-  border: 1px solid var(--color-primary--lighten-2) !important;
+.rux-toggle .on {
+  color: var(--toggleBaseSelectedTextColor, rgb(91, 255, 0));
 }
 
-.rux-toggle:not(.rux-toggle--alt) .rux-toggle__button::after {
+.rux-toggle .off {
+  color: var(--toggleBaseTextColor, rgb(198, 204, 209));
+}
+
+.rux-toggle .rux-toggle__button::after {
   width: 50%;
   height: calc(100% - 0.125rem);
 
   border-radius: 0.125rem;
-  background: #005a8f
+
+  background: var(--toggleButtonBackgroundColor, rgb(0, 90, 143))
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E %3Cdefs%3E %3ClinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3E %3Cstop offset='0%25' stop-color='%23000'/%3E %3Cstop offset='100%25' stop-color='%23023861' stop-opacity='0'/%3E %3C/linearGradient%3E %3C/defs%3E %3Ccircle cx='3' cy='3' r='3' fill='url(%23a)' fill-rule='evenodd'/%3E %3C/svg%3E")
     center center no-repeat;
-  /* background: #005a8f
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%226%22%20height%3D%226%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22a%22%20x1%3D%2250%25%22%20x2%3D%2250%25%22%20y1%3D%220%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23111111%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23055A9F%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3Ccircle%20id%3D%22b%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%2F%3E%0A%20%20%20%20%3Cfilter%20id%3D%22c%22%20width%3D%22150%25%22%20height%3D%22150%25%22%20x%3D%22-25%25%22%20y%3D%22-25%25%22%20filterUnits%3D%22objectBoundingBox%22%3E%0A%20%20%20%20%20%20%3CfeGaussianBlur%20in%3D%22sa%22%20result%3D%22sb%22%20stdDeviation%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3CfeOffset%20dy%3D%221%22%20in%3D%22sb%22%20result%3D%22so%22%2F%3E%0A%20%20%20%20%20%20%3CfeComposite%20in%3D%22so%22%20in2%3D%22sa%22%20k2%3D%22-1%22%20k3%3D%221%22%20operator%3D%22arithmetic%22%20result%3D%22si%22%2F%3E%0A%20%20%20%20%20%20%3CfeColorMatrix%20in%3D%22si%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200%22%2F%3E%0A%20%20%20%20%3C%2Ffilter%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cuse%20fill%3D%22url(%23a)%22%20xlink%3Ahref%3D%22%23b%22%2F%3E%0A%20%20%20%20%3Cuse%20fill%3D%22%23000%22%20filter%3D%22url(%23c)%22%20xlink%3Ahref%3D%22%23b%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
-    center center no-repeat; */
+
+  box-shadow: var(
+    --toggleButtonBoxShadow,
+    0 0 3px rgba(0, 0, 0, 0.5),
+    1px 0 2px rgba(0, 0, 0, 0.6)
+  );
 }
 
 .rux-toggle__input:disabled + .rux-toggle__button {
-  opacity: var(--ui-element-disabled-opacity, 0.3);
+  opacity: var(--disabledOpacity, 0.4);
   cursor: not-allowed;
 }
 
-.rux-toggle--alt .rux-toggle__input + .rux-toggle__button::after {
-  top: 0.125rem;
-  left: -0.1875rem;
+.rux-toggle__input:checked + .rux-toggle__button::before {
+  border: 1px solid var(--toggleBaseBorderColor);
 }
 
 .rux-toggle__input:checked + .rux-toggle__button::after {
   left: calc(50% - 1px);
+  box-shadow: var(
+    --toggleButtonSelectedBoxShadow,
+    0 0 3px rgba(0, 0, 0, 0.5),
+    -1px 0 2px rgba(0, 0, 0, 0.6)
+  );
 }
-
-.rux-toggle--alt .rux-toggle__input:checked + .rux-toggle__button::after {
-  left: calc(50% + 0.1875rem);
-}
-
-.rux-toggle--alt .rux-toggle__input:checked .rux-toggle__button {
-  background-color: red;
-}
-
-.rux-toggle--alt .rux-toggle__input:checked + .rux-toggle__button::before {
-  border: 1px solid var(--toggle-alt__track--on__border-color, #06b500);
-  background-color: var(--toggle-alt__track--on__background-color, #39df04);
-
-  border: 1px solid var(--color-tertiary--darken-1);
-  background-color: var(--color-tertiary--lighten-1);
-}
-
-/* .rux-toggle::before,
-.satcom-toggle::before,
-.rux-toggle::after,
-.satcom-toggle::after {
-  display: flex;
-
-  top: 0;
-  position: absolute;
-  color: #fff;
-  height: 100%;
-  width: 50%;
-
-  justify-content: center;
-  align-items: center;
-  padding-top: 1px;
-
-  
-} */
-/* 
-.rux-toggle::before,
-.satcom-toggle::before {
-  content: "ON";
-  left: 0;
-  z-index: 100;
-}
-
-.rux-toggle::after,
-.satcom-toggle::after {
-  content: "OFF";
-  right: 0;
-  z-index: 200;
-} */

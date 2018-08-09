@@ -1,6 +1,0 @@
-.light-theme {
-	--font-color: rgb(85, 84, 89);
-  --background-start: rgb(227, 227, 227);
-  --background-end: rgb(237, 236, 235);
-  --background: linear-gradient(to bottom, var(--background-start) 0%, var(--light-background-end) 100%);
-}

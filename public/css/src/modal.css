@@ -4,14 +4,15 @@
   flex-direction: column;
   justify-content: space-between;
 
-  background-color: var(--modal__background-color, rgba(0, 0, 0, 0.5));
+  background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
 
   width: 28.125rem;
   min-height: 12.5rem;
-  border: 2px solid var(--modal__border-color, rgb(0, 90, 143));
+  border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
 
   border-radius: 4px;
   margin: auto;
+  padding: 0;
 
   user-select: none;
 
@@ -28,7 +29,7 @@
   width: 100%;
   height: 2rem;
 
-  background-color: var(--modal__border-color, rgb(0, 90, 143));
+  background-color: var(--modalBorderColor, rgb(0, 90, 143));
   user-select: none;
   cursor: move;
 }
@@ -47,20 +48,15 @@
   flex-direction: column;
   flex-grow: 1;
   padding: 1rem;
-  color: var(--font-ui-color, #fff);
+  color: var(--fontColor, #fff);
 }
 
 .rux-button-group {
   margin-left: auto;
-  /* margin-right: 0;
-  margin-left: auto;
-  margin-top: auto;
-  margin-bottom: 0; */
 }
 
 .rux-modal__message {
   margin: 0.5rem 1.875rem 2.5rem 1.875rem;
-  /* padding: 0 1.875rem 0 1.875rem; */
 }
 
 .rux-modal .rux-button {

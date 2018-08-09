@@ -890,50 +890,89 @@ label {
 
   /* 
     
-    Segmented Button Colors 
+    Drop Down/Select Colors 
+    ==========================================================================
+    
+  */
+  --selectBackgroundColor: rgb(0, 90, 143);
+  --selectBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --selectBorderColor: rgb(0, 90, 143);
+  --selectBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --selectTextColor: rgb(255, 255, 255);
+  --selectTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --selectCaret: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20(51167)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate(5.000000%2C%202.500000)%20scale(1%2C%20-1)%20translate(-5.000000%2C%20-2.500000)%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+
+  /* 
+    
+    Toggle Colors 
     ==========================================================================
 
   */
-  --toggle-alt__thumb__border-color: #fff;
-  --toggle-alt__thumb__background-color: #fff;
-  --toggle-alt__track--off__border-color: rgb(148, 159, 172)
-  ;
-  --toggle-alt__track--off__border-color: var(
-    --color-secondary--lighten-2,
-    rgb(148, 159, 172)
-  );
-  --toggle-alt__track--off__background-color: rgb(201, 207, 213)
-  ;
-  --toggle-alt__track--off__background-color: var(
-    --color-secondary--lighten-3,
-    rgb(201, 207, 213)
-  );
-  /* --toggle-alt__track--on__border-color: #06b500;
-  --toggle-alt__track--on__background-color: #3ae304; */
-  --toggle-alt__track--on__border-color: rgb(148, 159, 172)
-  ;
-  --toggle-alt__track--on__border-color: var(
-    --color-tertiary--darken-1,
-    rgb(148, 159, 172)
-  );
-  --toggle-alt__track--on__background-color: rgb(201, 207, 213)
-  ;
-  --toggle-alt__track--on__background-color: var(
-    --color-tertiary,
-    rgb(201, 207, 213)
+
+  --toggleButtonBackgroundColor: rgb(0, 90, 143);
+
+  --toggleButtonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.5),
+    1px 0 2px rgba(0, 0, 0, 0.6);
+
+  --toggleBaseBackgroundColor: linear-gradient(
+    to right,
+    var(--colorBlack) 50%,
+    var(--colorOffDarken3) 50.1%
   );
 
-  --toggle__thumb__border-color: #fff;
-  --toggle__thumb__background-color: #fff;
-  --toggle__track--off__border-color: red;
-  --toggle__track--off__background-color: purple;
-  --toggle__track--on__border-color: orange;
-  --toggle__track--on__background-color: green;
+  --toggleBaseBackgroundColor: linear-gradient(
+    to right,
+    var(--colorBlack) 50%,
+    var(--colorOffDarken3) 50.1%
+  );
+  --toggleBaseBorderColor: rgb(0, 0, 0);
+  --toggleBaseBorderColor: var(--colorBlack, rgb(0, 0, 0));
+  --toggleBaseTextColor: rgb(198, 204, 209);
+  --toggleBaseTextColor: var(--colorOff, rgb(198, 204, 209));
 
-  --slider__track__background-color: var(--color-primary);
+  --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.5),
+    -1px 0 2px rgba(0, 0, 0, 0.6);
 
-  --slider__track__background-color: var(--color-primary);
-  --slider__track__border-color: transparent;
+  --toggleBaseSelectedTextColor: rgb(91, 255, 0);
+
+  --toggleBaseSelectedTextColor: var(--colorNormal, rgb(91, 255, 0));
+
+  /* 
+    
+    Pushbutton Colors 
+    ==========================================================================
+
+  */
+  --pushbuttonBackgroundColor: rgb(0, 90, 143);
+  --pushbuttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --pushbuttonBorderColor: rgb(0, 0, 0);
+  --pushbuttonBorderColor: var(--colorBlack, rgb(0, 0, 0));
+  --pushbuttonTextColor: rgb(255, 255, 255);
+  --pushbuttonTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --pushbuttonSelectedBackgroundColor: rgb(0, 0, 0);
+
+  --pushbuttonSelectedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
+  --pushbuttonSelectedBorderColor: rgb(0, 0, 0);
+  --pushbuttonSelectedBorderColor: var(--colorBlack, rgb(0, 0, 0));
+  --pushbuttonSelectedTextColor: rgb(91, 255, 0);
+  --pushbuttonSelectedTextColor: var(--colorNormal, rgb(91, 255, 0));
+
+  /* 
+    
+    Clock Colors 
+    ==========================================================================
+
+  */
+
+  --clockTextColor: rgb(255, 255, 255);
+
+  --clockTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --clockBackgroundColor: rgb(20, 32, 44);
+  --clockBackgroundColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
+  --clockBorderColor: rgb(39, 86, 128);
+  --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
 }
 
 li.dark-theme {
@@ -1109,7 +1148,8 @@ li.dark-theme {
   */
   --segmentedButtonBorderColor: rgb(0, 90, 143);
   --segmentedButtonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --segmentedButtonBackgroundColor: transparent;
+  --segmentedButtonBackgroundColor: rgba(255, 255, 255);
+  --segmentedButtonBackgroundColor: var(--colorWhite, rgba(255, 255, 255));
   --segmentedButtonTextColor: rgb(0, 90, 143);
   --segmentedButtonTextColor: var(--colorPrimary, rgb(0, 90, 143));
 
@@ -1128,6 +1168,111 @@ li.dark-theme {
   --segmentedButtonSelectedTextColor: rgb(255, 255, 255);
 
   --segmentedButtonSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  /* 
+    
+    Drop Down/Select Colors 
+    ==========================================================================
+    
+  */
+  --selectBackgroundColor: rgb(255, 255, 255);
+  --selectBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --selectBorderColor: rgb(0, 90, 143);
+  --selectBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --selectTextColor: rgb(0, 90, 143);
+  --selectTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --selectCaret: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20(51167)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22rgb(0,0,0)%22%20transform%3D%22translate(5.000000%2C%202.500000)%20scale(1%2C%20-1)%20translate(-5.000000%2C%20-2.500000)%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+
+  /* 
+    
+    Toggle Colors 
+    ==========================================================================
+
+  */
+
+  --toggleButtonBackgroundColor: rgb(255, 255, 255);
+
+  --toggleButtonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25),
+    1px 0 2px rgba(0, 0, 0, 0.3);
+
+  --toggleBaseBackgroundColor: linear-gradient(
+    to right,
+    var(--colorNormalDarken1) 50%,
+    var(--colorOffLighten2) 50.1%
+  );
+
+  --toggleBaseBackgroundColor: linear-gradient(
+    to right,
+    var(--colorNormalDarken1) 50%,
+    var(--colorOffLighten2) 50.1%
+  );
+  --toggleBaseBorderColor: rgb(0, 90, 143);
+  --toggleBaseBorderColor: var(--colorPrimaryLighten1, rgb(0, 90, 143));
+  --toggleBaseTextColor: rgb(0, 90, 143);
+  --toggleBaseTextColor: var(--colorOffDarken2, rgb(0, 90, 143));
+
+  --toggleBaseSelectedTextColor: rgb(255, 255, 255);
+
+  --toggleBaseSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
+    -1px 0 2px rgba(0, 0, 0, 0.3);
+  /* 
+    
+    Pushbutton Colors 
+    ==========================================================================
+
+  */
+
+  --pushbuttonBackgroundColor: rgb(255, 255, 255);
+
+  --pushbuttonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --pushbuttonBorderColor: rgb(0, 90, 143);
+  --pushbuttonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --pushbuttonTextColor: rgb(0, 90, 143);
+  --pushbuttonTextColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  --pushbuttonSelectedBackgroundColor: rgb(91, 255, 0)
+  ;
+
+  --pushbuttonSelectedBackgroundColor: var(
+    --colorNormalDarken1,
+    rgb(91, 255, 0)
+  );
+  --pushbuttonSelectedBorderColor: rgb(91, 255, 0);
+  --pushbuttonSelectedBorderColor: var(--colorNormalDarken2, rgb(91, 255, 0));
+  --pushbuttonSelectedTextColor: rgb(255, 255, 255);
+  --pushbuttonSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  /* 
+    
+    Clock Colors 
+    ==========================================================================
+
+  */
+
+  --clockTextColor: rgb(0, 0, 0);
+
+  --clockTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --clockBackgroundColor: rgb(255, 255, 255);
+  --clockBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --clockBorderColor: rgb(39, 86, 128);
+  --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
+
+  /* 
+    
+    Modal Colors 
+    ==========================================================================
+
+  */
+
+  --modalTextColor: rgb(0, 0, 0);
+
+  --modalTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --modalBackgroundColor: rgb(255, 255, 255);
+  --modalBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --modalBorderColor: rgb(0, 90, 143);
+  --modalBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 }
 
 li.light-theme {
@@ -1188,6 +1333,7 @@ p {
   --disabledCursor: not-allowed;
 
   --buttonBorderRadius: 3px;
+  --defaultBorderRadius: 3px;
 
   --controlOptionSize: 1.25rem;
   --controlBorderRadius: 3px;
@@ -1759,6 +1905,64 @@ svg circle {
   margin-left: -1.5rem;
 }
 
+.rux-clock {
+  display: -webkit-flex;
+  display: flex;
+  color: rgb(255, 255, 255);
+  color: var(--clockTextColor, rgb(255, 255, 255));
+
+  font-size: 1.15rem;
+}
+
+.rux-clock__segment {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+.rux-clock__segment__value {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  font-family: "Roboto Mono", monospace;
+  font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+  font-weight: 700;
+  font-size: 1.75rem;
+  height: 2.75rem;
+  padding: 0 0.75rem;
+  border: 1px solid rgb(39, 86, 128);
+  border: 1px solid var(--clockBorderColor, rgb(39, 86, 128));
+
+  background-color: rgb(20, 32, 44);
+
+  background-color: var(--clockBackgroundColor, rgb(20, 32, 44));
+  margin-bottom: 0.25rem;
+
+  white-space: nowrap;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+}
+
+.rux-clock__segment__label {
+  font-size: 0.875rem;
+}
+
+.rux-clock__day-of-the-year .rux-clock__segment__value {
+  border-right: none;
+}
+
+.rux-clock__aos {
+  margin-left: 1em;
+}
+
+.rux-clock__los {
+  margin-left: 0.5em;
+}
+
 /*
 **
 ** 	ASTRO CHECKBOX & RADIO BUTTONS
@@ -1942,19 +2146,29 @@ svg circle {
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  border: none;
-  border-radius: 0;
+  border: 1px solid rgb(0, 90, 143);
 
-  /* background-color: #004872; */
-  border: 1px solid #0084f0;
-  color: #fff;
+  border: 1px solid var(--selectBorderColor, rgb(0, 90, 143));
+  border-radius: 3px;
+  border-radius: var(--buttonBorderRadius, 3px);
+
+  color: rgb(255, 255, 255);
+
+  color: var(--selectTextColor, rgb(255, 255, 255));
   font-size: 0.875rem;
   line-height: 1;
   height: 2rem;
   padding: 0 1.2rem 0 0.625rem;
 
-  background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20(51167)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate(5.000000%2C%202.500000)%20scale(1%2C%20-1)%20translate(-5.000000%2C%20-2.500000)%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E"),
-    #055da0;
+  background-color: rgb(0, 90, 143);
+
+  background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20(51167)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate(5.000000%2C%202.500000)%20scale(1%2C%20-1)%20translate(-5.000000%2C%20-2.500000)%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+  ;
+  background-image: var(
+    --selectCaret,
+    url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20(51167)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate(5.000000%2C%202.500000)%20scale(1%2C%20-1)%20translate(-5.000000%2C%20-2.500000)%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+  );
   background-position: center right 0.625rem;
   background-repeat: no-repeat;
 }
@@ -2108,17 +2322,18 @@ label {
   -webkit-justify-content: space-between;
           justify-content: space-between;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0);
 
-  background-color: var(--modal__background-color, rgba(0, 0, 0, 0.5));
+  background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
 
   width: 28.125rem;
   min-height: 12.5rem;
   border: 2px solid rgb(0, 90, 143);
-  border: 2px solid var(--modal__border-color, rgb(0, 90, 143));
+  border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
 
   border-radius: 4px;
   margin: auto;
+  padding: 0;
 
   -webkit-user-select: none;
 
@@ -2147,7 +2362,7 @@ label {
 
   background-color: rgb(0, 90, 143);
 
-  background-color: var(--modal__border-color, rgb(0, 90, 143));
+  background-color: var(--modalBorderColor, rgb(0, 90, 143));
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -2173,24 +2388,194 @@ label {
           flex-grow: 1;
   padding: 1rem;
   color: #fff;
-  color: var(--font-ui-color, #fff);
+  color: var(--fontColor, #fff);
 }
 
 .rux-button-group {
   margin-left: auto;
-  /* margin-right: 0;
-  margin-left: auto;
-  margin-top: auto;
-  margin-bottom: 0; */
 }
 
 .rux-modal__message {
   margin: 0.5rem 1.875rem 2.5rem 1.875rem;
-  /* padding: 0 1.875rem 0 1.875rem; */
 }
 
 .rux-modal .rux-button {
   box-shadow: none !important;
+}
+
+/*
+**
+** 	ASTRO NOTIFICATION
+** 	==========================================================================
+**	2.0 Notes
+**
+*/
+.rux-notification {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-align-content: center;
+          align-content: center;
+
+  top: -4.25rem;
+  left: 0;
+
+  height: 4.25rem;
+  width: 100%;
+
+  padding: 0.7rem 1.25rem;
+  background-color: rgb(160, 232, 255);
+  background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
+  transition: all 0.5s ease;
+
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  color: var(--colorBlack, rgb(0, 0, 0));
+}
+
+.rux-notification::after {
+  position: relative;
+  display: block;
+  content: "";
+  height: 60px;
+}
+
+.visible {
+  margin-top: 0;
+}
+
+.notification-buffer.show {
+  margin-top: 0;
+}
+
+.show .rux-notification-container {
+  top: 0;
+}
+.show .rux-notification-buffer {
+  height: 60px;
+}
+
+.rux-notification_close-button {
+  border: 3px solid rgb(96, 168, 191);
+  border: 3px solid var(--colorStandbyDarken1, rgb(96, 168, 191));
+  color: rgb(96, 168, 191);
+  color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+
+  background-color: transparent;
+
+  height: 2.2rem;
+  width: 2.2rem;
+  border-radius: 50%;
+
+  position: relative;
+
+  margin-left: auto;
+
+  display: -webkit-flex;
+
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+.rux-notification_close-button::after,
+.rux-notification_close-button::before {
+  display: block;
+  position: absolute;
+
+  height: 2px;
+  width: 66%;
+
+  content: "";
+
+  background-color: rgb(96, 168, 191);
+
+  background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+}
+
+.rux-notification_close-button::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.rux-notification_close-button::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+/* Critical Variant */
+.rux-notification--critical {
+  background-color: rgb(255, 100, 100);
+  background-color: var(--colorCriticalLighten1, rgb(255, 100, 100));
+}
+
+.rux-notification--critical .rux-notification_close-button {
+  border-color: rgb(191, 36, 36);
+  border-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
+}
+
+.rux-notification--critical .rux-notification_close-button::after,
+.rux-notification--critical .rux-notification_close-button::before {
+  background-color: rgb(191, 36, 36);
+  background-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
+}
+
+/* Caution Variant */
+.rux-notification--caution {
+  background-color: rgb(250, 237, 86);
+  background-color: var(--colorCautionLighten1, rgb(250, 237, 86));
+}
+.rux-notification--caution .rux-notification_close-button {
+  border-color: rgb(186, 173, 22);
+  border-color: var(--colorCautionDarken1, rgb(186, 173, 22));
+}
+
+.rux-notification--caution .rux-notification_close-button::after,
+.rux-notification--caution .rux-notification_close-button::before {
+  background-color: rgb(186, 173, 22);
+  background-color: var(--colorCautionDarken1, rgb(186, 173, 22));
+}
+
+/* Normal Variant */
+.rux-notification--normal {
+  background-color: rgb(173, 255, 128);
+  background-color: var(--colorNormalLighten2, rgb(173, 255, 128));
+}
+
+.rux-notification--normal .rux-notification_close-button {
+  border-color: rgb(68, 191, 0);
+  border-color: var(--colorNormalDarken1, rgb(68, 191, 0));
+}
+
+.rux-notification--normal .rux-notification_close-button::after,
+.rux-notification--normal .rux-notification_close-button::before {
+  background-color: rgb(68, 191, 0);
+  background-color: var(--colorNormalDarken1, rgb(68, 191, 0));
+}
+
+/* Info Variant */
+.rux-notification--info {
+  background-color: rgb(160, 232, 255);
+  background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
+}
+.rux-notification--info .rux-notification_close-button {
+  border-color: rgb(96, 168, 191);
+  border-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+}
+
+.rux-notification--info .rux-notification_close-button::after,
+.rux-notification--info .rux-notification_close-button::before {
+  background-color: rgb(96, 168, 191);
+  background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
 }
 
 /*
@@ -2341,7 +2726,7 @@ label {
 
 /*
 **
-** 	ASTRO RADIO BUTTON
+** 	ASTRO PROGRESS
 ** 	==========================================================================
 **	2.0 Notes
 **  - Updated indeterminate progress to use animated SVG and the :indeterminate pseudo class
@@ -2402,8 +2787,8 @@ label {
 }
 
 .rux-progress__value {
-  margin-left: 0.25rem;
-  width: 5.5rem;
+  margin-left: 1rem;
+
   text-align: right;
   font-size: 24px;
   color: #fff;
@@ -2554,10 +2939,11 @@ label {
 .satcom-pushbutton {
   display: inline-block;
 
-  height: 1.375rem;
-  /* width: auto; */
+  height: 1.3125rem;
 
-  font-weight: 600;
+  /* width: auto; */
+  -webkit-font-smoothing: subpixel-antialiased;
+
   font-size: 0.75rem;
 }
 
@@ -2569,58 +2955,45 @@ label {
 
 .rux-pushbutton__button,
 .satcom-pushbutton-button {
-  display: inline-block;
-
-  height: 1.375rem;
-  /* width: auto; */
-
-  margin: 0;
-  padding: 0 0.5rem;
-
-  color: #fff;
-
-  background-color: rgb(0, 90, 143);
-
-  background-color: var(--button__border-color, rgb(0, 90, 143));
-  border-radius: 3px;
-  border-radius: var(--button__border-radius, 3px);
-  border: 1px solid rgb(30, 47, 66);
-  border: 1px solid var(--color-secondary--darken-1, rgb(30, 47, 66));
-}
-
-.rux-pushbutton__input + .rux-pushbutton__button span,
-.satcom-pushbutton-input + .satcom-pushbutton-button span {
   display: -webkit-flex;
   display: flex;
 
-  -webkit-align-content: center;
-
-          align-content: center;
   -webkit-justify-content: center;
+
           justify-content: center;
   -webkit-align-items: center;
           align-items: center;
 
-  height: 100%;
-  width: 100%;
-}
+  height: 1.375rem;
 
-.rux-pushbutton__input:checked + .rux-pushbutton__button .off,
-.satcom-pushbutton-input:checked + .satcom-pushbutton-button .off {
-  display: none;
-}
+  margin: 0;
+  padding: 0 0.625rem;
 
-.rux-pushbutton__input:checked + .rux-pushbutton__button .on,
-.satcom-pushbutton-input:checked + .satcom-pushbutton-button .on {
-  display: -webkit-flex;
-  display: flex;
-  color: #3ae304;
+  color: rgb(255, 255, 255);
+
+  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+
+  background-color: rgb(0, 90, 143);
+
+  background-color: var(--pushbuttonBackgroundColor, rgb(0, 90, 143));
+  border-radius: 3px;
+  border-radius: var(--defaultBorderRadius, 3px);
+  border: 1px solid rgb(30, 47, 66);
+  border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
 }
 
 .rux-pushbutton__input:checked + .rux-pushbutton__button,
 .satcom-pushbutton-input:checked + .satcom-pushbutton-button {
-  background-color: #0f1b25;
-  border: 1px solid #101923;
+  display: -webkit-flex;
+  display: flex;
+  color: rgb(91, 255, 0);
+  color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
+  background-color: rgb(0, 0, 0);
+  background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
+  border-color: rgb(0, 0, 0);
+  border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
+
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.33);
 }
 
 .rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on,
@@ -2631,8 +3004,8 @@ label {
 .rux-pushbutton__input:disabled + .rux-pushbutton__button,
 .satcom-pushbutton-input:disabled + .satcom-pushbutton-button {
   opacity: 0.4;
-  opacity: var(--ui-element-disabled-opacity, 0.4);
-  color: #fff;
+  opacity: var(--disabledOpacity, 0.4);
+  /* color: #fff; */
 
   cursor: not-allowed;
 }
@@ -3277,30 +3650,19 @@ input[type="range"]:focus {
   display: inline-block;
   box-sizing: border-box;
 
-  font-weight: 600;
   font-size: 0.75rem;
+  -webkit-font-smoothing: subpixel-antialiased;
 
-  height: 1.375rem;
-
-  -webkit-user-select: none;
-
-     -moz-user-select: none;
-
-      -ms-user-select: none;
-
-          user-select: none;
-}
-
-.rux-toggle:not(.rux-toggle--alt),
-.satcom-toggle:not(.rux-toggle--alt) {
+  height: 1.3125rem;
   width: 4.375rem;
   border-radius: 0.1875rem;
-  border-radius: var(--button__border-radius, 0.1875rem);
-}
-
-.rux-toggle--alt,
-.satcom-toggle--alt {
-  width: 2.1875rem;
+  border-radius: var(--defaultBorderRadius, 0.1875rem);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
 }
 
 .rux-toggle__input,
@@ -3318,43 +3680,28 @@ input[type="range"]:focus {
   width: 100%;
 }
 
-.rux-toggle--alt .rux-toggle__button::before {
-  border: 1px solid
-    rgb(148, 159, 172);
-  border: 1px solid
-    var(--toggle-alt__track--off__border-color, rgb(148, 159, 172));
-  background-color: rgb(201, 207, 213)
-  ;
-  background-color: var(
-    --toggle-alt__track--off__background-color,
-    rgb(201, 207, 213)
-  );
-
-  height: 0.6875rem;
-  width: 100%;
-
-  /* outline: 1px solid red; */
-  border-radius: 0.3125rem;
-
-  transition: 0.167s border ease-in-out, 0.167s background-color ease-in-out;
-}
-
-.rux-toggle--alt2 .rux-toggle__button::before {
-  background: linear-gradient(
-    to right,
-    rgb(91, 255, 0) 0%,
-    rgb(91, 255, 0) 50%,
-    #000 50%
-  );
-}
-
-.rux-toggle:not(.rux-toggle--alt) .rux-toggle__button::before {
-  border: 1px solid var(--color-secondary--darken-2);
-  border: 1px solid var(--color-secondary--darken-2: rgb(20, 32, 44));
+.rux-toggle .rux-toggle__button::before {
+  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
   border-radius: 0.1875rem;
-  border-radius: var(--button__border-radius, 0.1875rem);
 
-  background-color: #000;
+  background: linear-gradient(
+      to right,
+      #000 50%,
+      rgb(50, 51, 52) 50.1%,
+      rgb(50, 51, 52) 100%
+    )
+  ;
+
+  background: var(
+    --toggleBaseBackgroundColor,
+    linear-gradient(
+      to right,
+      #000 50%,
+      rgb(50, 51, 52) 50.1%,
+      rgb(50, 51, 52) 100%
+    )
+  );
 }
 
 .rux-toggle__button {
@@ -3375,10 +3722,6 @@ input[type="range"]:focus {
 
   height: 100%;
   width: 100%;
-  /* outline: 1px solid orange; */
-
-  /* cursor: pointer; */
-  /* z-index: 50; */
 }
 
 .rux-toggle__button span {
@@ -3396,21 +3739,6 @@ input[type="range"]:focus {
   width: 50%;
   height: 100%;
   z-index: 1;
-
-  /* line-height: 0; */
-  /* outline: 1px solid blue; */
-}
-
-.rux-toggle--alt span {
-  display: none;
-}
-
-.rux-toggle__button .on {
-  color: #3ae304;
-}
-
-.rux-toggle--alt2 .rux-toggle__button .on {
-  color: #fff;
 }
 
 .rux-toggle__button::after {
@@ -3430,100 +3758,60 @@ input[type="range"]:focus {
   transition: left 0.1s ease-out;
 }
 
-.rux-toggle--alt .rux-toggle__button::after {
-  height: 18px;
-  width: 18px;
-
-  border-radius: 50%;
-  /* border: 1px solid var(--toggle-alt__thumb__border-color, #fff);
-
-  background-color: var(--toggle-alt__thumb__background-color, #fff); */
-
-  background-color: var(--color-primary);
-
-  background-color: var(--color-primary);
-  border: 1px solid var(--color-primary--lighten-2) !important;
-  border: 1px solid var(--color-primary--lighten-2) !important;
+.rux-toggle .on {
+  color: rgb(91, 255, 0);
+  color: var(--toggleBaseSelectedTextColor, rgb(91, 255, 0));
 }
 
-.rux-toggle:not(.rux-toggle--alt) .rux-toggle__button::after {
+.rux-toggle .off {
+  color: rgb(198, 204, 209);
+  color: var(--toggleBaseTextColor, rgb(198, 204, 209));
+}
+
+.rux-toggle .rux-toggle__button::after {
   width: 50%;
   height: calc(100% - 0.125rem);
 
   border-radius: 0.125rem;
-  background: #005a8f
+
+  background: rgb(0, 90, 143)
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E %3Cdefs%3E %3ClinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3E %3Cstop offset='0%25' stop-color='%23000'/%3E %3Cstop offset='100%25' stop-color='%23023861' stop-opacity='0'/%3E %3C/linearGradient%3E %3C/defs%3E %3Ccircle cx='3' cy='3' r='3' fill='url(%23a)' fill-rule='evenodd'/%3E %3C/svg%3E")
     center center no-repeat;
-  /* background: #005a8f
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%226%22%20height%3D%226%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22a%22%20x1%3D%2250%25%22%20x2%3D%2250%25%22%20y1%3D%220%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23111111%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23055A9F%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3Ccircle%20id%3D%22b%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%2F%3E%0A%20%20%20%20%3Cfilter%20id%3D%22c%22%20width%3D%22150%25%22%20height%3D%22150%25%22%20x%3D%22-25%25%22%20y%3D%22-25%25%22%20filterUnits%3D%22objectBoundingBox%22%3E%0A%20%20%20%20%20%20%3CfeGaussianBlur%20in%3D%22sa%22%20result%3D%22sb%22%20stdDeviation%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3CfeOffset%20dy%3D%221%22%20in%3D%22sb%22%20result%3D%22so%22%2F%3E%0A%20%20%20%20%20%20%3CfeComposite%20in%3D%22so%22%20in2%3D%22sa%22%20k2%3D%22-1%22%20k3%3D%221%22%20operator%3D%22arithmetic%22%20result%3D%22si%22%2F%3E%0A%20%20%20%20%20%20%3CfeColorMatrix%20in%3D%22si%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200%22%2F%3E%0A%20%20%20%20%3C%2Ffilter%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cuse%20fill%3D%22url(%23a)%22%20xlink%3Ahref%3D%22%23b%22%2F%3E%0A%20%20%20%20%3Cuse%20fill%3D%22%23000%22%20filter%3D%22url(%23c)%22%20xlink%3Ahref%3D%22%23b%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
-    center center no-repeat; */
+
+  background: var(--toggleButtonBackgroundColor, rgb(0, 90, 143))
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E %3Cdefs%3E %3ClinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3E %3Cstop offset='0%25' stop-color='%23000'/%3E %3Cstop offset='100%25' stop-color='%23023861' stop-opacity='0'/%3E %3C/linearGradient%3E %3C/defs%3E %3Ccircle cx='3' cy='3' r='3' fill='url(%23a)' fill-rule='evenodd'/%3E %3C/svg%3E")
+    center center no-repeat;
+
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
+    1px 0 2px rgba(0, 0, 0, 0.6)
+  ;
+
+  box-shadow: var(
+    --toggleButtonBoxShadow,
+    0 0 3px rgba(0, 0, 0, 0.5),
+    1px 0 2px rgba(0, 0, 0, 0.6)
+  );
 }
 
 .rux-toggle__input:disabled + .rux-toggle__button {
-  opacity: 0.3;
-  opacity: var(--ui-element-disabled-opacity, 0.3);
+  opacity: 0.4;
+  opacity: var(--disabledOpacity, 0.4);
   cursor: not-allowed;
 }
 
-.rux-toggle--alt .rux-toggle__input + .rux-toggle__button::after {
-  top: 0.125rem;
-  left: -0.1875rem;
+.rux-toggle__input:checked + .rux-toggle__button::before {
+  border: 1px solid var(--toggleBaseBorderColor);
+  border: 1px solid var(--toggleBaseBorderColor);
 }
 
 .rux-toggle__input:checked + .rux-toggle__button::after {
   left: calc(50% - 1px);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
+    -1px 0 2px rgba(0, 0, 0, 0.6)
+  ;
+  box-shadow: var(
+    --toggleButtonSelectedBoxShadow,
+    0 0 3px rgba(0, 0, 0, 0.5),
+    -1px 0 2px rgba(0, 0, 0, 0.6)
+  );
 }
-
-.rux-toggle--alt .rux-toggle__input:checked + .rux-toggle__button::after {
-  left: calc(50% + 0.1875rem);
-}
-
-.rux-toggle--alt .rux-toggle__input:checked .rux-toggle__button {
-  background-color: red;
-}
-
-.rux-toggle--alt .rux-toggle__input:checked + .rux-toggle__button::before {
-  border: 1px solid #06b500;
-  border: 1px solid var(--toggle-alt__track--on__border-color, #06b500);
-  background-color: #39df04;
-  background-color: var(--toggle-alt__track--on__background-color, #39df04);
-
-  border: 1px solid var(--color-tertiary--darken-1);
-
-  border: 1px solid var(--color-tertiary--darken-1);
-  background-color: var(--color-tertiary--lighten-1);
-  background-color: var(--color-tertiary--lighten-1);
-}
-
-/* .rux-toggle::before,
-.satcom-toggle::before,
-.rux-toggle::after,
-.satcom-toggle::after {
-  display: flex;
-
-  top: 0;
-  position: absolute;
-  color: #fff;
-  height: 100%;
-  width: 50%;
-
-  justify-content: center;
-  align-items: center;
-  padding-top: 1px;
-
-  
-} */
-/* 
-.rux-toggle::before,
-.satcom-toggle::before {
-  content: "ON";
-  left: 0;
-  z-index: 100;
-}
-
-.rux-toggle::after,
-.satcom-toggle::after {
-  content: "OFF";
-  right: 0;
-  z-index: 200;
-} */
