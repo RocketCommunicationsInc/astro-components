@@ -130,9 +130,9 @@ export class RuxToggle extends PolymerElement {
         height: 100%;
       
         border-radius: 0.125rem;
-          
-        background-color: var(--toggleButtonBackgroundColor, rgb(0, 90, 143));
+        background: var(--toggleButtonBackgroundColor, rgb(0, 90, 143)) url("data:image/svg+xml,%3Csvg%20width%3D%276%27%20height%3D%276%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%27a%27%20x1%3D%2750%25%27%20x2%3D%2750%25%27%20y1%3D%270%25%27%20y2%3D%27100%25%27%3E%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23000%27/%3E%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23023861%27%20stop-opacity%3D%270%27/%3E%20%3C/linearGradient%3E%20%3C/defs%3E%20%3Ccircle%20cx%3D%273%27%20cy%3D%273%27%20r%3D%273%27%20fill%3D%27url%28%23a%29%27%20fill-rule%3D%27evenodd%27/%3E%20%3C/svg%3E") center center no-repeat;
 
+        
         box-shadow: var(
           --toggleButtonBoxShadow,
           0 0 3px rgba(0, 0, 0, 0.5),
