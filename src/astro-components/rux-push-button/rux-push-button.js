@@ -46,7 +46,7 @@ export class RuxPushButton extends PolymerElement {
       <style>
       :host {
         font-size: 12px;
-        height: 1.375rem;
+        height: 1.3125rem;
         line-height: 1.7;
       
         margin: 0 2px;
@@ -61,43 +61,45 @@ export class RuxPushButton extends PolymerElement {
         display: none !important;
       }
       
-      :host .rux-push-button__button {
+      .rux-push-button__button {
         display: flex;
-        align-content: center;
+
         justify-content: center;
-      
-        height: 100%;
-      
-        color: #fff;
-        /* padding: 0 0.5rem; */
-        cursor: pointer;
-      
-        background-color: #005a8f;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        outline: 1px solid #0e1822;
-      
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        align-items: center;
+
+        height: 1.375rem;
+        font-size: 0.75rem !important;
+
+        margin: 0;
+        padding: 0 0.625rem;
+
+        color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+
+        background-color: var(--pushbuttonBackgroundColor, rgb(0, 90, 143));
+        border-radius: var(--defaultBorderRadius, 3px);
+        border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
       }
       
-      :host .rux-push-button__input:checked + .rux-push-button__button {
-        background-color: #000;
-        color: #3ae304;
+      .rux-push-button__input:checked + .rux-push-button__button {
+        display: flex;
+        color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
+        background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
+        border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
+
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.33);
       }
       
       :host([disabled]) {
-        opacity: 0.4;
+        opacity: var(--disabledOpacity, 0.4);
       }
       
       .rux-push-button__input:disabled + .rux-push-button__button {
-        cursor: not-allowed;
+        cursor: var(-disabledCursor, not-allowed);
       }
 </style>      
       
-      <input class="rux-push-button__input" type="checkbox" id="[[_id]]" disabled$=[[disabled]] checked={{checked::change}}></input>
-      <label for$="[[_id]]" class="rux-push-button__button">[[_label]]</label> 
+      <input class="rux-push-button__input" id="[[_id]]" type="checkbox" disabled$=[[disabled]] checked={{checked::change}}></input>
+      <label class="rux-push-button__button" for$="[[_id]]" ><slot></slot></label> 
       `;
   }
 
@@ -107,9 +109,6 @@ export class RuxPushButton extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback();
-
-    // set a default width
-    this._getWidth(this.checkedLabel, this.uncheckedLabel);
   }
 
   disconnectedCallback() {
@@ -118,40 +117,6 @@ export class RuxPushButton extends PolymerElement {
 
   ready() {
     super.ready();
-  }
-
-  /*
-  **
-  ** To avoid the “jittery” nature of a push button when the checked/unchecked
-  ** lables aren’t of equal length this sets the width of the pushbutton to the
-  ** longest of those two
-  **
-  */
-  _getWidth(_checkedLabel, _uncheckedLabel) {
-    if (!_checkedLabel || !_uncheckedLabel) return;
-
-    // get the longest label
-    const _longest =
-      _checkedLabel.length > _uncheckedLabel.length
-        ? _checkedLabel
-        : _uncheckedLabel;
-
-    // temporarily set the label of the push button
-    // to the longest string
-    this._label = _longest;
-
-    // get the width of the push button
-    const _label = this.root.querySelector("label");
-
-    // set the css width of the push button
-    _label.style.width = _label.offsetWidth + "px";
-
-    // reset the label
-    this._setLabel();
-  }
-
-  _setLabel() {
-    this._label = this.checked ? this.checkedLabel : this.uncheckedLabel;
   }
 }
 

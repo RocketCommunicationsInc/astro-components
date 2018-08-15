@@ -9,14 +9,14 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Clock](http://www.astrouxds.com/library/clock)
+- [Astro UXDS: Clock](http://www.astrouxds.com/library/clock)
 
 ##Installation
 Install the Astro Component Library.
 `git clone https://bitbucket.org/rocketcom/astro-components.git`
 ###Dependancies
 
-* [Polymer 3](https://www.polymer-project.com)
+- [Polymer 3](https://www.polymer-project.com)
 
 ##Usage
 ###Import the RUX Clock
@@ -39,8 +39,9 @@ The following example shows a more advanced RUX Clock instance with data-bound *
 <rux-clock
 	aos=[[sat1.aos]]
 	los=[[sat1.los]]
-	hide-timezon=true
-	hide-date=true></rux-clock>
+	hide-timezone=true
+	hide-date=true
+	compact></rux-clock>
 ```
 
 ###Properties
@@ -53,3 +54,4 @@ The following example shows a more advanced RUX Clock instance with data-bound *
 | `locale`        | `string`  | Optional locale setting to format time in local time format. e.g., `us-en`. Default locale is us-en.                                                                             |
 | `hide-timezone` | `boolean` | Hides the timezone in the main 24-hour clock. Defaults to `false`                                                                                                                |
 | `hide-date`     | `boolean` | Hides the day of the year. Defaults to `false`.                                                                                                                                  |
+| `compact`       | `boolean` | Uses a compact clock similar.                                                                                                                                                    |

@@ -287,11 +287,11 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-clock">Clock</astro-sample></li>
 <li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
-<li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-progress">Progress</astro-sample></li>
 <li><astro-sample id="sample-tree">Tree</astro-sample></li>
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
@@ -487,17 +487,16 @@ Selected Tree Element: [[treeData.selected.label]]
             <p>A push button does some other neat stuff …</p>
             <ul class="toggle-buttons">
                 <li>
-                    <rux-push-button checked-label="Active" unchecked-label="Inactive Button"></rux-push-button>
+                    <rux-push-button>Tx</rux-push-button>
                 </li>
                 <li>
-                    <rux-push-button checked-label="Active" unchecked-label="Inactive Button" checked>
-                        <rux-push-button>
+                    <rux-push-button checked>Rx</rux-push-button>
                 </li>
                 <li>
-                    <rux-push-button checked-label="Disabled Active" unchecked-label="Disabled Inactive Button" disabled></rux-push-button>
+                    <rux-push-button disabled>Xx</rux-push-button>
                 </li>
                 <li>
-                    <rux-push-button checked-label="Disabled Active" unchecked-label="Disabled Inactive Button" checked disabled></rux-push-button>
+                    <rux-push-button checked disabled>Yx</rux-push-button>
                 </li>
             </ul>
         </section>

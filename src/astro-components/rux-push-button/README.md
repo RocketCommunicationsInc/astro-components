@@ -9,7 +9,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Push Button](http://www.astrouxds.com/library/push-button)
+- [Astro UXDS: Push Button](http://www.astrouxds.com/library/push-button)
 
 ##Installation
 Install the Astro Component Library.
@@ -17,20 +17,20 @@ Install the Astro Component Library.
 
 ###Dependencies
 
-* [Polymer 3](https://www.polymer-project.com)
+- [Polymer 3](https://www.polymer-project.com)
 
 ##Usage
 ###Import the RUX Push Button
 
 ```javascript
-import { RuxPush Button } from "@astro-components/rux-push-button/rux-push-button.js";
+import { RuxPushButton } from "@astro-components/rux-push-button/rux-push-button.js";
 ```
 
 ###Basic HTML Usage
 RUX Push Button …
 
 ```xml
-<rux-push-button></rux-push-button>
+<rux-push-button>Label</rux-push-button>
 ```
 
 ###Event Listener
@@ -38,9 +38,6 @@ RUX Push Button …
 
 ###Properties
 
-| Property          | Type      | Default | Required | Description                                                  |
-| ----------------- | --------- | ------- | -------- | ------------------------------------------------------------ |
-| `pushbutton`      | `Boolean` | false   | false    | Renders the button as a pushbutton rather than a push-button |
-| `checked-label`   | `string`  | On      | false    |                                                              | … |
-| `unchecked-label` | `string`  | Off     | false    | …                                                            |  |
-| `checked`         | `Boolean` | false   | false    |                                                              | Checked status of the push-button button |
+| Property  | Type      | Default | Required | Description                              |
+| --------- | --------- | ------- | -------- | ---------------------------------------- |
+| `checked` | `Boolean` | false   | false    | Checked status of the push-button button |
