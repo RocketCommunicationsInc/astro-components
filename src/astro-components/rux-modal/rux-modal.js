@@ -51,6 +51,7 @@ export class RuxModal extends PolymerElement {
       :host {
         display: none;
         box-sizing: border-box;
+        
       }
 
       :host([open]) {
@@ -67,6 +68,15 @@ export class RuxModal extends PolymerElement {
         display: none !important;
       }
 
+
+      .rux-button-group {
+        margin-top: auto;
+        margin-left: auto;
+      }
+
+      .rux-button-group rux-button:not(:last-child) {
+        margin-right: 0.375rem;
+      }
 
       .rux-modal-container {
         position: fixed;
@@ -145,9 +155,6 @@ export class RuxModal extends PolymerElement {
       }
 
 
-      .rux-button-group {
-        margin-left: auto;
-      }
       
       .rux-modal__message {
         margin: 0.5rem 1.875rem 2.5rem 1.875rem;
@@ -180,8 +187,8 @@ export class RuxModal extends PolymerElement {
           <div class="rux-modal__content">
             <div class="rux-modal__message">[[message]]</div>
             <div class="rux-button-group">
-              <span hidden="[[!denyText]]"><rux-button on-click="_handleModalChoice" data-value="false">[[denyText]]</rux-button></span>
-              <span hidden="[[!confirmText]]"><rux-button on-click="_handleModalChoice" data-value="true">[[confirmText]]</rux-button></span>
+              <rux-button on-click="_handleModalChoice" data-value="false" hidden$="[[!denyText]]">[[denyText]]</rux-button>
+              <rux-button on-click="_handleModalChoice" data-value="true" hidden$="[[!confirmText]]">[[confirmText]]</rux-button>
             </div>
           </div>
         </dialog>

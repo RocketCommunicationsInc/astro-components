@@ -17,8 +17,9 @@ export class RuxButton extends PolymerElement {
     return html`
       <style>
       :host {
-        display: inline-block;
-        contain: content;
+        display: inline-flex;
+        
+        
         /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
       }
       

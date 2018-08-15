@@ -41,6 +41,7 @@ export class AstroApp extends PolymerElement {
         background-color: red !important;
       }
 
+ 
       section {
         /* outline: 1px solid red; */
         margin: 1em 1em 1em 0;
@@ -973,7 +974,10 @@ Selected Tree Element: [[treeData.selected.label]]
             <ul class="button-library">
                 <li>
                     <figure>
-                        <rux-button>Standard Button</rux-button>
+                        <div class="rux-button-group">
+                            <rux-button>Standard Button</rux-button>
+                            <rux-button>Standard Button</rux-button>
+                        </div>
                         <figcaption>Button</figcaption>
                     </figure>
                 </li>
@@ -1236,7 +1240,7 @@ Selected Tree Element: [[treeData.selected.label]]
 
         <rux-modal
             message="Release Modem 2 on slice 1000 for deactivation. Releasing this modem cannot be undone." 
-            confirm-text="Ok"
+            confirm-text="Release"
             deny-text="Cancel"
             opened></rux-modal>
 
