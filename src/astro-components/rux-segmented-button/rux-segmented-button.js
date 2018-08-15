@@ -36,7 +36,6 @@ export class RuxSegmentedButton extends PolymerElement {
 .rux-segmented-buttons {
   display: inline-flex;
   
-  
   height: 1.6875rem;
   overflow: hidden;
 
@@ -50,8 +49,6 @@ export class RuxSegmentedButton extends PolymerElement {
 }
 
 .rux-segmented-button {
-  
-  
   height: 1.6875rem;
   width: auto;
   margin: 0;
@@ -84,7 +81,7 @@ export class RuxSegmentedButton extends PolymerElement {
   
 }
 
-.rux-segmented-button:last-of-type label {
+.rux-segmented-button:last-child label {
   border-right: none !important;
 }
 
