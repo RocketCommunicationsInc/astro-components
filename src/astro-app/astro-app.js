@@ -287,6 +287,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-clock">Clock</astro-sample></li>
 <li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
@@ -300,7 +301,7 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
 <li><astro-sample id="sample-slider">Slider</astro-sample></li>
 <li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
-<li><astro-sample id="sample-clock">Clock</astro-sample></li>
+
 <li><astro-sample id="sample-spectrum-analyzer">Spectrum Analyzer</astro-sample></li>
 <li><astro-sample id="sample-icons">Icons</astro-sample></li>
 </ul>
@@ -1178,6 +1179,20 @@ Selected Tree Element: [[treeData.selected.label]]
                 hide-date="true" 
                 hide-timezone="true"></rux-clock>
         </section>
+
+        <section>
+        <h2>Small Clock Variant</h2>
+        <p>
+            <code>rux-clock</code> can be customized to include an Acquisition of Signal (AOS) and Loss of Signal (LOS) via the
+            <code>aos</code> and
+            <code>los</code> attributes. Expectec values are a JavaScript Date Object. AOS/LOS will not display is the respective attribute
+            is not present or if the value is not a date.</p>
+        
+        <rux-clock 
+            aos=[[fakeAOS]] 
+            los=[[fakeLOS]]
+            compact></rux-clock>
+    </section>
 
     </astro-sample-panel>
 

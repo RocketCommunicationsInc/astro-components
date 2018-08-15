@@ -7,11 +7,11 @@ export class RuxClock extends PolymerElement {
   static get properties() {
     return {
       aos: {
-        type: Number,
+        type: Date,
         value: false
       },
       los: {
-        type: Number,
+        type: Date,
         value: false
       },
       timezone: {
@@ -33,6 +33,11 @@ export class RuxClock extends PolymerElement {
       timeOptions: {
         type: Object,
         computed: "_setTimeOptions(hideTimezone)"
+      },
+      compact: {
+        type: Boolean,
+        value: false,
+        reflectToAttribute: true
       }
     };
   }
@@ -46,47 +51,65 @@ export class RuxClock extends PolymerElement {
 
         .rux-clock {
           display: flex;
-          color: rgb(205, 210, 212);
+          color: var(--clockTextColor, rgb(255, 255, 255));
+        
           font-size: 1.15rem;
         }
-
+        
         .rux-clock__segment {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-
+        
         .rux-clock__segment__value {
           display: flex;
           align-items: center;
-          font-family: var(--font-family-mono);
-          height: 44px;
-          padding: 0 0.75rem;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+          font-weight: 700;
+        
+          border: 1px solid var(--clockBorderColor, rgb(39, 86, 128));
+        
+          background-color: var(--clockBackgroundColor, rgb(20, 32, 44));
           margin-bottom: 0.25rem;
-
+        
           white-space: nowrap;
           overflow-y: hidden;
           text-overflow: ellipsis;
         }
+        
 
-        .rux-clock__segment__label {
-          font-size: 0.875rem;
-          /* margin-right: auto;
-          margin-left: 0.85rem; */
+        .rux-clock .rux-clock__segment__value {
+          font-size: 1.75rem;
+          height: 2.75rem;
+          padding: 0 0.75rem;
         }
 
+        :host([compact]) .rux-clock__segment__value {
+          height: 2.75rem;
+          padding: 0 0.75rem;
+          font-size: 1.15rem;
+          font-weight: 500;
+        }
+        
+        
+        
+        .rux-clock__segment__label {
+          font-size: 0.875rem;
+        }
+        
         .rux-clock__day-of-the-year .rux-clock__segment__value {
           border-right: none;
         }
-
+        
         .rux-clock__aos {
           margin-left: 1em;
         }
-
+        
         .rux-clock__los {
           margin-left: 0.5em;
         }
+        
       </style>      
       <div class="rux-clock">
         <div class="rux-clock__segment rux-clock__day-of-the-year" hidden="[[hideDate]]">
