@@ -1,0 +1,207 @@
+:root {
+  --colorBlack: rgb(0, 0, 0);
+  --colorWhite: rgb(255, 255, 255);
+  --colorGray: rgb(204, 204, 204);
+
+  --colorPrimary: rgb(0, 90, 143);
+  --colorSecondary: rgb(77, 172, 255);
+  --colorTertiary: rgb(207, 214, 227);
+
+  --colorCritical: rgb(255, 48, 48);
+  --colorSerious: rgb(255, 176, 0);
+  --colorCaution: rgb(248, 231, 29);
+  --colorNormal: rgb(91, 255, 0);
+  --colorStandby: rgb(128, 224, 255);
+  --colorOff: rgb(198, 204, 209);
+}
+.light-theme {
+  --colorBlack: rgb(0, 0, 0);
+  --colorWhite: rgb(255, 255, 255);
+  --colorGray: rgb(204, 204, 204);
+
+  --colorPrimary: rgb(0, 90, 143);
+  --colorSecondary: rgb(77, 172, 255);
+  --colorTertiary: rgb(207, 214, 227);
+
+  --colorAlert: var(--colorAlert);
+  --colorError: var(--colorError);
+  --colorCaution: rgb(248, 231, 29);
+  --colorNormal: rgb(91, 255, 0);
+  --colorStandby: rgb(128, 224, 255);
+  --colorOff: rgb(198, 204, 209);
+
+  --colorPrimaryLighten1: rgb(64, 131, 171);
+  --colorPrimaryLighten2: rgb(128, 173, 199);
+  --colorPrimaryLighten3: rgb(191, 214, 227);
+  --colorPrimaryDarken1: rgb(0, 68, 107);
+  --colorPrimaryDarken2: rgb(0, 45, 72);
+  --colorPrimaryDarken3: rgb(0, 23, 36);
+
+  --colorSecondaryLighten1: rgb(122, 193, 255);
+  --colorSecondaryLighten2: rgb(166, 214, 255);
+  --colorSecondaryLighten3: rgb(211, 234, 255);
+  --colorSecondaryDarken1: rgb(58, 129, 191);
+  --colorSecondaryDarken2: rgb(39, 86, 128);
+  --colorSecondaryDarken3: rgb(19, 43, 64);
+
+  --colorTertiaryLighten1: rgb(219, 224, 234);
+  --colorTertiaryLighten2: rgb(231, 235, 241);
+  --colorTertiaryLighten3: rgb(243, 245, 248);
+  --colorTertiaryDarken1: rgb(155, 161, 170);
+  --colorTertiaryDarken2: rgb(104, 107, 114);
+  --colorTertiaryDarken3: rgb(52, 54, 57);
+
+  --colorAlertLighten1: color(var(--colorAlert) tint(25%));
+  --colorAlertLighten2: color(var(--colorAlert) tint(50%));
+  --colorAlertLighten3: color(var(--colorAlert) tint(75%));
+  --colorAlertDarken1: color(var(--colorAlert) shade(25%));
+  --colorAlertDarken2: color(var(--colorAlert) shade(50%));
+  --colorAlertDarken3: color(var(--colorAlert) shade(75%));
+
+  --colorErrorLighten1: color(var(--colorError) tint(25%));
+  --colorErrorLighten2: color(var(--colorError) tint(50%));
+  --colorErrorLighten3: color(var(--colorError) tint(75%));
+  --colorErrorDarken1: color(var(--colorError) shade(25%));
+  --colorErrorDarken2: color(var(--colorError) shade(50%));
+  --colorErrorDarken3: color(var(--colorError) shade(75%));
+
+  --colorCautionLighten1: rgb(250, 237, 86);
+  --colorCautionLighten2: rgb(252, 243, 142);
+  --colorCautionLighten3: rgb(253, 249, 199);
+  --colorCautionDarken1: rgb(186, 173, 22);
+  --colorCautionDarken2: rgb(124, 116, 15);
+  --colorCautionDarken3: rgb(62, 58, 7);
+
+  --colorNormalLighten1: rgb(132, 255, 64);
+  --colorNormalLighten2: rgb(173, 255, 128);
+  --colorNormalLighten3: rgb(214, 255, 191);
+  --colorNormalDarken1: rgb(68, 191, 0);
+  --colorNormalDarken2: rgb(46, 128, 0);
+  --colorNormalDarken3: rgb(23, 64, 0);
+
+  --colorStandbyLighten1: rgb(160, 232, 255);
+  --colorStandbyLighten2: rgb(192, 240, 255);
+  --colorStandbyLighten3: rgb(223, 247, 255);
+  --colorStandbyDarken1: rgb(96, 168, 191);
+  --colorStandbyDarken2: rgb(64, 112, 128);
+  --colorStandbyDarken3: rgb(32, 56, 64);
+
+  --colorOffLighten1: rgb(212, 217, 221);
+  --colorOffLighten2: rgb(227, 230, 232);
+  --colorOffLighten3: rgb(241, 242, 244);
+  --colorOffDarken1: rgb(149, 153, 157);
+  --colorOffDarken2: rgb(99, 102, 105);
+  --colorOffDarken3: rgb(50, 51, 52);
+
+  --color-grayLighten1: color(var(--color-gray) tint(25%));
+  --color-grayLighten2: color(var(--color-gray) tint(50%));
+  --color-grayLighten3: color(var(--color-gray) tint(75%));
+  --color-grayDarken1: color(var(--color-gray) shade(25%));
+  --color-grayDarken2: color(var(--color-gray) shade(50%));
+  --color-grayDarken3: color(var(--color-gray) shade(75%));
+  /* 
+  --color-black: rgb(0, 0, 0);
+  --color-white: rgb(255, 255, 255);
+  --color-gray: rgb(204, 204, 204);
+
+  --color-primary: rgb(207, 214, 227);
+  --color-secondary: rgb(0, 90, 143);
+  --color-tertiary: rgb(77, 172, 255);
+
+  --color-alert: rgb(255, 48, 48);
+  --color-error: rgb(255, 176, 0);
+  --color-caution: rgb(248, 231, 29);
+  --color-ok: rgb(91, 255, 0);
+  --color-standby: rgb(128, 224, 255);
+  --color-off: rgb(198, 204, 209);
+
+  --color-primary--lighten-1: color(var(--color-primary) tint(25%));
+  --color-primary--lighten-2: color(var(--color-primary) tint(50%));
+  --color-primary--lighten-3: color(var(--color-primary) tint(75%));
+  --color-primary--lighten-4: var(--color-white);
+  --color-primary--darken-1: color(var(--color-primary) shade(25%));
+  --color-primary--darken-2: color(var(--color-primary) shade(50%));
+  --color-primary--darken-3: color(var(--color-primary) shade(75%));
+  --color-primary--darken-4: var(--color-black);
+
+  --color-secondary--lighten-1: color(var(--color-secondary) tint(25%));
+  --color-secondary--lighten-2: color(var(--color-secondary) tint(50%));
+  --color-secondary--lighten-3: color(var(--color-secondary) tint(75%));
+  --color-secondary--lighten-4: var(--color-white);
+  --color-secondary--darken-1: color(var(--color-secondary) shade(25%));
+  --color-secondary--darken-2: color(var(--color-secondary) shade(50%));
+  --color-secondary--darken-3: color(var(--color-secondary) shade(75%));
+  --color-secondary--darken-4: var(--color-black);
+
+  --color-tertiary--lighten-1: color(var(--color-tertiary) tint(25%));
+  --color-tertiary--lighten-2: color(var(--color-tertiary) tint(50%));
+  --color-tertiary--lighten-3: color(var(--color-tertiary) tint(75%));
+  --color-tertiary--lighten-4: var(--color-white);
+  --color-tertiary--darken-1: color(var(--color-tertiary) shade(25%));
+  --color-tertiary--darken-2: color(var(--color-tertiary) shade(50%));
+  --color-tertiary--darken-3: color(var(--color-tertiary) shade(75%));
+  --color-tertiary--darken-4: var(--color-black);
+
+  --color-alert--lighten-1: color(var(--color-alert) tint(25%));
+  --color-alert--lighten-2: color(var(--color-alert) tint(50%));
+  --color-alert--lighten-3: color(var(--color-alert) tint(75%));
+  --color-alert--lighten-4: var(--color-white);
+  --color-alert--darken-1: color(var(--color-alert) shade(25%));
+  --color-alert--darken-2: color(var(--color-alert) shade(50%));
+  --color-alert--darken-3: color(var(--color-alert) shade(75%));
+  --color-alert--darken-4: var(--color-black);
+
+  --color-error--lighten-1: color(var(--color-error) tint(25%));
+  --color-error--lighten-2: color(var(--color-error) tint(50%));
+  --color-error--lighten-3: color(var(--color-error) tint(75%));
+  --color-error--lighten-4: var(--color-white);
+  --color-error--darken-1: color(var(--color-error) shade(25%));
+  --color-error--darken-2: color(var(--color-error) shade(50%));
+  --color-error--darken-3: color(var(--color-error) shade(75%));
+  --color-error--darken-4: var(--color-black);
+
+  --color-caution--lighten-1: color(var(--color-caution) tint(25%));
+  --color-caution--lighten-2: color(var(--color-caution) tint(50%));
+  --color-caution--lighten-3: color(var(--color-caution) tint(75%));
+  --color-caution--lighten-4: var(--color-white);
+  --color-caution--darken-1: color(var(--color-caution) shade(25%));
+  --color-caution--darken-2: color(var(--color-caution) shade(50%));
+  --color-caution--darken-3: color(var(--color-caution) shade(75%));
+  --color-caution--darken-4: var(--color-black);
+
+  --color-ok--lighten-1: color(var(--color-ok) tint(25%));
+  --color-ok--lighten-2: color(var(--color-ok) tint(50%));
+  --color-ok--lighten-3: color(var(--color-ok) tint(75%));
+  --color-ok--lighten-4: var(--color-white);
+  --color-ok--darken-1: color(var(--color-ok) shade(25%));
+  --color-ok--darken-2: color(var(--color-ok) shade(50%));
+  --color-ok--darken-3: color(var(--color-ok) shade(75%));
+  --color-ok--darken-4: var(--color-black);
+
+  --color-standby--lighten-1: color(var(--color-standby) tint(25%));
+  --color-standby--lighten-2: color(var(--color-standby) tint(50%));
+  --color-standby--lighten-3: color(var(--color-standby) tint(75%));
+  --color-standby--lighten-4: var(--color-white);
+  --color-standby--darken-1: color(var(--color-standby) shade(25%));
+  --color-standby--darken-2: color(var(--color-standby) shade(50%));
+  --color-standby--darken-3: color(var(--color-standby) shade(75%));
+  --color-standby--darken-4: var(--color-black);
+
+  --color-off--lighten-1: color(var(--color-off) tint(25%));
+  --color-off--lighten-2: color(var(--color-off) tint(50%));
+  --color-off--lighten-3: color(var(--color-off) tint(75%));
+  --color-off--lighten-4: var(--color-white);
+  --color-off--darken-1: color(var(--color-off) shade(25%));
+  --color-off--darken-2: color(var(--color-off) shade(50%));
+  --color-off--darken-3: color(var(--color-off) shade(75%));
+  --color-off--darken-4: var(--color-black);
+
+  --color-gray--lighten-1: color(var(--color-gray) tint(25%));
+  --color-gray--lighten-2: color(var(--color-gray) tint(50%));
+  --color-gray--lighten-3: color(var(--color-gray) tint(75%));
+  --color-gray--lighten-4: var(--color-white);
+  --color-gray--darken-1: color(var(--color-gray) shade(25%));
+  --color-gray--darken-2: color(var(--color-gray) shade(50%));
+  --color-gray--darken-3: color(var(--color-gray) shade(75%));
+  --color-gray--darken-4: var(--color-black); */
+}

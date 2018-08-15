@@ -1,0 +1,143 @@
+/*
+**
+** 	ASTRO POP-UPS
+** 	==========================================================================
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed transform
+**  - Updated colors to WCAG
+*/
+
+/* 	REQUIRED CLASSES */
+.rux-pop-up,
+.satcom-pop-up {
+  font-size: 0.875rem;
+  display: inline-block;
+
+  margin: 1em;
+
+  min-width: 15em;
+  position: relative;
+
+  border: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+}
+
+.rux-pop-up ul,
+.satcom-pop-up ul {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  background-color: #fff;
+
+  z-index: 2;
+}
+
+/* .rux-pop-up li,
+.satcom-pop-up li {
+  border-bottom: 1px solid #f0f1f3;
+} */
+
+.rux-pop-up li:last-child,
+.satcom-pop-up li:last-child {
+  border: none;
+}
+
+.rux-pop-up a,
+.satcom-pop-up a {
+  display: block;
+  padding: 0.5em;
+  color: #000;
+  text-decoration: none;
+}
+
+.rux-pop-up a:hover,
+.satcom-pop-up a:hover {
+  background-color: var(--colorSecondaryLighten3, rgb(211, 234, 255));
+}
+
+.rux-pop-up--top,
+.satcom-pop-up-top {
+  border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+}
+
+.rux-pop-up--top::before,
+.satcom-pop-up-top::before {
+  content: "";
+  display: block;
+  position: absolute;
+
+  width: 1.1875rem;
+  height: 1.1875rem;
+
+  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  z-index: 1;
+
+  margin: -13px 0 0 16px;
+  transform: rotate(45deg);
+}
+
+.rux-pop-up--bottom,
+.satcom-pop-up-bottom {
+  border-bottom: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+}
+
+.rux-pop-up--bottom::after,
+.satcom-pop-up-bottom::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  width: 1.1875rem;
+  height: 1.1875rem;
+
+  background-color: var(--colorSecondary, rgb(77, 172, 255));
+
+  margin: -6px 0 0 16px;
+  transform: rotate(45deg);
+}
+
+.rux-pop-up--left,
+.satcom-pop-up-left {
+  border-left: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+}
+
+.rux-pop-up--left::before,
+.satcom-pop-up-left::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-left: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  width: 1.1875rem;
+  height: 1.1875rem;
+
+  background-color: var(--colorSecondary, rgb(77, 172, 255));
+
+  margin: 16px 0 0 -13px;
+  transform: rotate(45deg);
+}
+
+.rux-pop-up--right,
+.satcom-pop-up-right {
+  border-right: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+}
+
+.rux-pop-up--right::before,
+.satcom-pop-up-right::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-top: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  width: 1.1875rem;
+  height: 1.1875rem;
+
+  background-color: var(--colorSecondary, rgb(77, 172, 255));
+
+  right: 0;
+  margin: 16px -13px 0 0;
+  transform: rotate(45deg);
+}

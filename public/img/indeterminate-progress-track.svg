@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+  <defs>
+    <filter id="a" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="soi"/>
+      <feGaussianBlur in="soi" result="sb" stdDeviation="1.5"/>
+      <feComposite in="sb" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+      <feColorMatrix in="s" result="shadowMatrixInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="shadowMatrixInner1"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path fill="#303234" fill-rule="evenodd" d="M32 865c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32zm0-6c14.36 0 26-11.64 26-26s-11.64-26-26-26-26 11.64-26 26 11.64 26 26 26z" filter="url(#a)" transform="translate(0 -801)"/>
+</svg>

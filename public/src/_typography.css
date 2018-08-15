@@ -1,0 +1,44 @@
+h1,
+h2,
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: var(--fontColor, rgb(255, 255, 255));
+}
+
+h1 {
+  font-size: 2.375rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  color: #fff;
+}
+
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 500;
+}
+.semi-bold {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.condensed {
+  font-stretch: condensed;
+}

@@ -1,0 +1,28 @@
+:root {
+  --disabledControlOpacity: 0.4;
+  --disabledControlCursor: not-allowed;
+
+  --disabledOpacity: 0.4;
+  --disabledCursor: not-allowed;
+
+  --buttonBorderRadius: 3px;
+  --defaultBorderRadius: 3px;
+
+  --controlOptionSize: 1.25rem;
+  --controlBorderRadius: 3px;
+
+  --labelFontSize: 1rem;
+  --smallLabelFontSize: 0.875rem;
+  --largeLabelFontSize: 1.125rem;
+
+  /* Typography */
+  --fontFamily: "Open Sans", sans-serif;
+  --fontSize: 1rem; /* 16px */
+
+  --fontFamilyLight: "Open Sans Light", sans-serif;
+  --fontFamilyMono: "Roboto Mono", monospace;
+}
+
+.any-theme {
+  display: none;
+}
