@@ -45,7 +45,7 @@ export class AstroApp extends PolymerElement {
         /* outline: 1px solid red; */
         margin: 1em 1em 1em 0;
         padding: 1em 2rem;
-        background-color: rgba(0,0,0,0.2);
+        
       }
 
       ul {
@@ -287,6 +287,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
@@ -295,7 +296,6 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
-
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
 <li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
 <li><astro-sample id="sample-slider">Slider</astro-sample></li>
@@ -303,8 +303,6 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-clock">Clock</astro-sample></li>
 <li><astro-sample id="sample-spectrum-analyzer">Spectrum Analyzer</astro-sample></li>
 <li><astro-sample id="sample-icons">Icons</astro-sample></li>
-
-<li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
 </ul>
 </astro-samples>
     
@@ -325,7 +323,7 @@ Selected Tree Element: [[treeData.selected.label]]
 <astro-sample-panel aria-labeledby="sample-segmented-button">
 <h1>Segmented Button</h1>
 <p>Segmented Buttons are just radio-buttons gussied up for the ball.</p>
-<section>
+<section class="light-theme">
     <h2>Segmented Button (WIP)</h2>
     <code>&lt;rux-segmented-button&gt;</code> is highly stylized version of a radio button group offering a distinct user choice.
     Buttons are defined via a standard JavaScript Array of Objects. Each object must have a button label and supports additional

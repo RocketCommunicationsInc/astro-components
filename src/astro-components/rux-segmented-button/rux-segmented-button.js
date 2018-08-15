@@ -23,69 +23,92 @@ export class RuxSegmentedButton extends PolymerElement {
     return html`
       <style>
       :host {
+        box-sizing: border-box;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
       }
       
-      .rux-segmented-buttons {
-        display: flex;
       
-        overflow: auto;
-      
-        padding: 0;
-      
-        list-style: none;
-      }
-      
-      .rux-segmented-button label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      
-        width: auto;
-        height: 1.5rem;
-      
-        padding: 0 0.75rem;
-      
-        border: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        border-right: 1px solid #15057a;
-      
-        color: #fff;
-        background-color: var(--button-background);
-      
-        font-size: 0.875rem;
-      
-        cursor: pointer;
-      }
-      
-      .rux-segmented-button input {
-        display: none;
-      }
-      
-      .rux-segmented-button label {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      
-      .rux-segmented-button input:checked + label {
-        background-color: var(--button-background--hover);
-      }
-      
-      .rux-segmented-button:active,
-      .rux-segmented-button:default:active,
-      .rux-segmented-button.selected {
-        background: #0182ce;
-        outline: none;
-      }
-      
-      .rux-segmented-button label:hover {
-        background: var(--button-background--hover);
-        outline: none;
-      }
+.rux-segmented-buttons {
+  display: inline-flex;
+  
+  
+  height: 1.6875rem;
+  overflow: hidden;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+
+  border-radius: var(--controlBorderRadius, 3px);
+  border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+}
+
+.rux-segmented-button {
+  
+  
+  height: 1.6875rem;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.rux-segmented-button label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: auto;
+  height: 1.5625rem;
+
+  margin: 0;
+  padding: 0 0.75rem;
+
+  border: none;
+  border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+
+  color: var(--segmentedButtonTextColor, #fff);
+  background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
+
+  font-size: 0.875rem;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+
+.rux-segmented-button:last-of-type label {
+  border-right: none !important;
+}
+
+.rux-segmented-button input {
+  display: none !important;
+  
+}
+
+.rux-segmented-button label:hover {
+  background-color: var(
+    --segmentedButtonHoverBackgroundColor,
+    rgb(58, 129, 191)
+  );
+  color: var(--segmentedButtonHoverTextColor, #fff);
+  outline: none;
+}
+
+.rux-segmented-button input:checked + label {
+  background-color: var(
+    --segmentedButtonSelectedBackgroundColor,
+    rgb(58, 129, 191)
+  );
+  color: var(--segmentedButtonSelectedTextColor, #fff);
+}
     </style>      
 
       <ul class="rux-segmented-buttons">
