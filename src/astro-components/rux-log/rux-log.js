@@ -62,79 +62,88 @@ export class RuxLog extends PolymerElement {
         display: none !important;
       }
 
-      header {
+      .rux-log {
+        display: block;
+        font-size: 0.875rem;
+        background-color: var(--logBackgroundColor, rgb(30, 47, 66));
+      }
+      
+      .rux-log-header {
         display: flex;
         flex-wrap: wrap;
         position: relative;
         justify-content: space-between;
-        background-color: #1d2f41;
+      
         padding: 0.5rem;
+        background-color: var(--logHeaderBackgroundColor, rgb(20, 32, 44));
       }
-
-      h1 {
+      
+      .rux-log-header-title {
         margin: 0 0 1rem 0;
         display: none;
-
+      
         font-size: 1.25rem;
         font-weight: 300;
       }
-
+      
       .rux-log__header-labels {
         display: flex;
         width: 100%;
-        color: #989898;
+        color: var(--logHeaderTextColor, rgb(255, 255, 255));
       }
-
-      .rux-log__header-labels, ol {
-        
+      
+      .rux-log__header-labels,
+      .rux-log__events {
         padding: 0;
         margin: 0;
         list-style: none;
       }
-
-      .rux-log__header-labels, ol li {
+      
+      .rux-log__header-labels,
+      .rux-log__log-event {
         display: flex;
         align-content: flex-start;
       }
-
-      ol {
+      
+      .rux-log__events {
         height: 100%;
         overflow-y: scroll;
       }
-
+      
+      .log-event__timestamp {
+        flex-shrink: 0;
+      
+        text-align: right;
+        width: 5rem;
+      }
+      
+      
+      
       .rux-log__log-event {
         display: flex;
         flex-shrink: 0;
         align-items: flex-start;
         padding: 0.5rem 0;
+        border-bottom: 1px solid var(--logBorderColor, rgb(40, 63, 88));
       }
-
       
-
+      .rux-log__log-event:last-child {
+        border-bottom: none;
+      }
+      
       .rux-log__header-labels li:not(:first-child),
-      .rux-log__log-event > *{
+      .rux-log__log-event > * {
         margin: 0 0.5rem;
       }
-
+      
       .rux-log__header-labels li:first-child {
         margin: 0 0.5rem 0 0;
       }
-
       
-
       .rux-log__log-event .log-event__timestamp {
-        font-family: var(--font-family-mono);
+        font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
       }
-
-      .log-event__timestamp {
-        
-    
-        flex-shrink: 0;
-	      
-        text-align: right;
-        width: 5rem;
-      }
-
+      
       .log-event__status {
         flex-grow: 0;
         flex-shrink: 0;
@@ -142,54 +151,45 @@ export class RuxLog extends PolymerElement {
         width: 1rem;
         overflow: hidden;
       }
-
+      
       .log-event__message {
         flex-grow: 1;
         text-align: left;
-        
       }
-
+      
       .log-header__message {
         display: flex;
         justify-content: space-between;
       }
-
-      ol li:nth-child(even) {
-        
+      
+      /* ol li:nth-child(even) {
         background-color: #283f58;
-      }
-
+      } */
+      
       .rux-log__filter-enabled {
         position: -webkit-sticky;
         position: sticky;
         top: 0;
         left: 0;
-
+      
         align-content: center;
-        
-        
-        color: rgb(62, 57, 7);
-        background-color: rgb(223, 247, 255) /* rgb(253, 248, 198) */;
+      
+        color: var(--logFilterTextColor, rgb(0, 0, 0));
+        background-color: var(--logFilterBackgroundColor, rgb(192, 240, 255));
         padding: 0.5rem;
       }
-
+      
       .rux-log__filter-enabled rux-icon {
         margin-right: 0.5rem;
       }
-
-
-      .test {
-        margin-left: auto;
-        margin-right: 0.5rem;
-      }
-
-      input[type=search] {
+      
+      input[type="search"] {
         border: none;
         border-radius: 3px;
         font-size: 1rem;
         background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg'/><path d='M6.33 5.67l1 1-3.66 3.66-1-1'/></g></svg>");
-        
       }
+      
 
     </style>
 
@@ -205,9 +205,9 @@ export class RuxLog extends PolymerElement {
 
   <!-- 
   Renable when a proper method for determing height/width can be determined
-  <ol style$="max-height: [[_height]]px"> 
+  <ol class="rux-log__events" style$="max-height: [[_height]]px"> 
   //-->
-  <ol>
+  <ol class="rux-log__events">
     
     <li class="rux-log__filter-enabled" hidden=[[!_filterValue]]>
     A filter with&nbsp;<b>[[_filterValue]]</b>&nbsp;is enabled. [[_visibleItems]] of [[_log.length]] records are currently hidden.
