@@ -287,6 +287,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-clock">Clock</astro-sample></li>
 <li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
@@ -298,7 +299,6 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
-<li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
 <li><astro-sample id="sample-slider">Slider</astro-sample></li>
 <li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
 
@@ -1235,9 +1235,10 @@ Selected Tree Element: [[treeData.selected.label]]
         </section>
 
         <rux-modal
-            message="This is a dialog box with a very long message to see what happens when it wraps to a second line." 
+            message="Release Modem 2 on slice 1000 for deactivation. Releasing this modem cannot be undone." 
             confirm-text="Ok"
-            deny-text="Cancel"></rux-modal>
+            deny-text="Cancel"
+            opened></rux-modal>
 
         <rux-modal 
             id="dynamic-modal" 

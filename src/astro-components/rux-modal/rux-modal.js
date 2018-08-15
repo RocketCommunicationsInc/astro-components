@@ -32,6 +32,10 @@ export class RuxModal extends PolymerElement {
         type: String,
         value: "default:caution"
       },
+      shadowBox: {
+        type: Boolean,
+        value: false
+      },
       _choice: {
         type: Boolean,
         observer: "_handleModalChoice"
@@ -81,31 +85,60 @@ export class RuxModal extends PolymerElement {
       .rux-modal {
         position: relative;
         display: flex;
-        font-size: 0.875rem;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-between;
 
-        background: black;
-        
-        
-        width: 27.5rem;
-        min-height: 12.5rem;
-        border: 2px solid #5CB3FF;
+        background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
+
+        width: 28rem;
+        height: 13.5rem;
+        border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
+
         border-radius: 4px;
         margin: auto;
-        padding: 1rem;
+        padding: 0;
+
+        user-select: none;
+
+        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+          0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
 
       }
 
 
-      .rux-modal__message {
+      .rux-modal__titlebar {
         display: flex;
-        align-items: top;
-        margin-top: auto;
-        width:70%;
-        color: #fff;
+        flex-grow: 0;
+        justify-content: center;
+        align-items: center;
+      
+        width: 100%;
+        height: 2rem;
+      
+        background-color: var(--modalBorderColor, rgb(0, 90, 143));
+        user-select: none;
+        cursor: move;
       }
+      
+      .rux-modal__titlebar h1 {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.2;
+        padding: 0;
+        margin: 0;
+        color: #fff !important;
+      }
+
+      .rux-modal__content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 1rem;
+        color: var(--fontColor, #fff);
+      }
+
+
 
       rux-icon {
         margin-right: 0.75rem;
@@ -114,10 +147,17 @@ export class RuxModal extends PolymerElement {
 
       .rux-button-group {
         margin-left: auto;
-        margin-top: auto;
+      }
+      
+      .rux-modal__message {
+        margin: 0.5rem 1.875rem 2.5rem 1.875rem;
+      }
+      
+      .rux-modal .rux-button {
+        box-shadow: none !important;
       }
 
-      .rux-modal::before {
+     .rux-modal::before {
         content: '';
         position: fixed;
         top: 0;
@@ -126,18 +166,23 @@ export class RuxModal extends PolymerElement {
         width: 100vw;
         background-color: rgba(0,0,0,0.5);
         z-index: -1;
-      }
+      } 
 
  
 
       </style>
       
       <div class="rux-modal-container">
-        <dialog class="rux-modal" {{open}}>
-          <div class="rux-modal__message"><rux-icon icon=[[icon]] size="22" color="#fff"></rux-icon>[[message]]</div>
-          <div class="rux-button-group">
-            <span hidden="[[!denyText]]"><rux-button on-click="_handleModalChoice" data-value="false">[[denyText]]</rux-button></span>
-            <span hidden="[[!confirmText]]"><rux-button on-click="_handleModalChoice" data-value="true">[[confirmText]]</rux-button></span>
+        <dialog class="rux-modal" aria-role="modal" {{open}}>
+          <header class="rux-modal__titlebar">
+            <h1>Modal Title</h1>
+          </header>
+          <div class="rux-modal__content">
+            <div class="rux-modal__message">[[message]]</div>
+            <div class="rux-button-group">
+              <span hidden="[[!denyText]]"><rux-button on-click="_handleModalChoice" data-value="false">[[denyText]]</rux-button></span>
+              <span hidden="[[!confirmText]]"><rux-button on-click="_handleModalChoice" data-value="true">[[confirmText]]</rux-button></span>
+            </div>
           </div>
         </dialog>
       </div>
