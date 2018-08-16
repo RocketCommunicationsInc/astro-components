@@ -187,7 +187,7 @@ export class RuxModal extends PolymerElement {
           <div class="rux-modal__content">
             <div class="rux-modal__message">[[message]]</div>
             <div class="rux-button-group">
-              <rux-button on-click="_handleModalChoice" data-value="false" hidden$="[[!denyText]]">[[denyText]]</rux-button>
+              <rux-button on-click="_handleModalChoice" data-value="false" hidden$="[[!denyText]]" type="outline">[[denyText]]</rux-button>
               <rux-button on-click="_handleModalChoice" data-value="true" hidden$="[[!confirmText]]">[[confirmText]]</rux-button>
             </div>
           </div>
