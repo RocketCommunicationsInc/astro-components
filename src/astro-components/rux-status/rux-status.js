@@ -175,28 +175,30 @@ export class RuxStatus extends PolymerElement {
       }
       
       .rux-status--off {
-        fill: var(--status-off);
+        fill: var(--colorOff, rgb(198, 204, 209));
       }
       
       .rux-status--standby {
-        fill: var(--status-standby);
+        fill: var(--colorStandby, rgb(128, 224, 255));
       }
       
+      .rux-status--normal,
       .rux-status--ok {
-        fill: var(--status-ok);
+        fill: var(--colorNormal, rgb(91, 255, 0));
       }
       
       .rux-status--caution {
-        fill: var(--status-caution);
+        fill: var(--colorCaution, rgb(248, 231, 29));
       }
       
       .rux-status--error {
-        fill: var(--status-error);
+        fill: var(--colorSerious, rgb(255, 176, 0));
       }
       
+      .rux-status--critical,
       .rux-status--emergency,
       .rux-status--alert {
-        fill: var(--color-alert);
+        fill: var(--colorCritical, rgb(255, 48, 48));
       }
 </style>      
 
