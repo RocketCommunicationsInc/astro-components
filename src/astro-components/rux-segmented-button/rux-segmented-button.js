@@ -81,7 +81,7 @@ export class RuxSegmentedButton extends PolymerElement {
   
 }
 
-.rux-segmented-button:last-child label {
+.rux-segmented-button:last-of-type label {
   border-right: none !important;
 }
 
