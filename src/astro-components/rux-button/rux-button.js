@@ -27,27 +27,38 @@ export class RuxButton extends PolymerElement {
         display: none !important;
       }
       
+      .rux-button-group {
+        display: flex;
+      }
+      
+      .rux-button-group .rux-button:not(:last-child) {
+        margin-right: 0.625rem;
+      }
+      
+      /* Global Button Styles */
       .rux-button {
-        display: inline-block;
+        display: flex;
         position: relative;
       
         margin: 0;
-        padding: 0.34375rem 1rem;
+        padding: 0 1rem;
       
-        height: 2.1875rem;
+        height: 2.125rem;
         min-width: 2.25rem;
-        max-width: 10.125rem;
+        /* max-width: 10.125rem; */
       
         border-radius: var(--buttonBorderRadius, 3px);
       
         color: var(--buttonTextColor, #fff);
-        font-family: "Open Sans", sans-serif;
+        font-family: var(--fontFamily, "Open Sans");
         font-size: 1rem;
       
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        line-height: 1.25;
+      
+        justify-content: center;
+        align-items: center;
       
         user-select: none;
       }
@@ -66,8 +77,7 @@ export class RuxButton extends PolymerElement {
       .rux-button:focus {
         outline: none;
       }
-      
-      .rux-button:not(.rux-button--outline):not(.rux-button--outline) {
+      .rux-button:not(.rux-button--outline) {
         border: 1px solid var(--buttonBackgroundColor, rgb(0, 90, 143));
         background-color: var(--buttonBorderColor, rgb(0, 90, 143));
         box-shadow: var(
@@ -100,7 +110,7 @@ export class RuxButton extends PolymerElement {
           --buttonActiveBackgroundColor,
           rgb(0, 90, 143)
         ) !important;
-        box-shadow: none !important;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
       }
       
       /* 
@@ -133,9 +143,6 @@ export class RuxButton extends PolymerElement {
         Icons
       
       */
-      .rux-icon {
-        fill: #fff;
-      }
       
       .rux-button--small {
         font-size: var(--smallLabelTextSize, 0.875rem);
@@ -146,45 +153,62 @@ export class RuxButton extends PolymerElement {
       
       .rux-button--large {
         font-size: var(--largeLabelTextSize, 1.125rem);
-        height: 2.8125rem;
-        min-width: 2.875rem;
-        padding: 0.657rem 1.5rem;
+        height: 2.875rem;
+        /* min-width: 2.875rem; */
+        padding: 0 1.5rem;
       }
       
       .rux-button__icon {
-        display: inline-block;
-        vertical-align: middle;
-      
         height: 1.5rem;
         width: 1.5rem;
       
-        margin: -0.45rem 0.525rem -0.25rem calc((1rem - 0.325rem) * -1);
+        margin-right: 0.625rem;
+        margin-left: -0.625rem;
+      }
       
-        outline: 1px solid rgba(255, 255, 255, 0.2);
+      .rux-button--icon-only .rux-button__icon {
+        margin-left: -0.625rem;
+        margin-right: -0.625rem;
+      }
+      
+      .rux-button--large.rux-button--icon-only .rux-button__icon {
+        margin-left: -1rem;
+        margin-right: -1rem;
       }
       
       .rux-button--small .rux-button__icon {
         height: 0.875rem;
         width: 0.875rem;
-      
-        margin-right: 0.2em;
+        outline: 1px solid red;
       }
       
       .rux-button--large .rux-button__icon {
         height: 1.75rem;
         width: 1.75rem;
-      
-        margin: -0.5rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1);
+        margin-left: -0.8rem;
+        /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
       }
       
-      .rux-button--icon .rux-button__icon {
-        margin-right: -1.5rem;
-        margin-left: -1.5rem;
+      .rux-button__icon .rux-icon {
+        height: auto;
+        width: 100%;
+        fill: var(--buttonTextColor, rgb(255, 255, 255));
+      }
+      
+      .rux-button.rux-button--critical,
+      .rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+        background-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
+        border-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
+      }
+      
+      .rux-button.rux-button--critical:hover:not([active]):not([disabled]) {
+        background-color: var(--colorCritical, rgb(255, 48, 48));
+        border-color: var(--colorCritical, rgb(255, 48, 48));
       }
   </style>      
 
       <button class$="rux-button rux-button--[[type]] [[default]]" disabled$="[[disabled]]">
-        <rux-icon icon="[[icon]]" class="rux-icon rux-icon--button" hidden="[[hidden]]"></rux-icon>
+        <rux-icon icon="[[icon]]" color="#fff" class="rux-icon rux-button__icon" hidden="[[hidden]]"></rux-icon>
         <slot></slot>
       </button>`;
   }

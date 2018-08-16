@@ -288,12 +288,12 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
 <li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
 <li><astro-sample id="sample-toggle">Toggle</astro-sample></li>
 <li><astro-sample id="sample-clock">Clock</astro-sample></li>
 <li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
-<li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
 <li><astro-sample id="sample-progress">Progress</astro-sample></li>
 <li><astro-sample id="sample-tree">Tree</astro-sample></li>
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
@@ -1075,8 +1075,27 @@ Selected Tree Element: [[treeData.selected.label]]
             </ul>
         </section>
 
-
         <section>
+            <h2>Outline Button</h2>
+            <ul class="button-library">
+                <li>
+                    <figure>
+                        <rux-button type="outline">Outline Button</rux-button>
+                        <figcaption>Button</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <rux-button type="outline" disabled>Outline Button</rux-button>
+                        <figcaption>Disabled</figcaption>
+                    </figure>
+                </li>
+                
+            </ul>
+        </section>
+
+
+       <!-- <section>
             <h2>Icon Button</h2>
             <ul class="button-library">
                 <li>
@@ -1098,7 +1117,7 @@ Selected Tree Element: [[treeData.selected.label]]
                     </figure>
                 </li>
             </ul>
-        </section>
+        </section> //-->
 
 
         <section>
@@ -1106,26 +1125,26 @@ Selected Tree Element: [[treeData.selected.label]]
             <ul class="button-library">
                 <li>
                     <figure>
-                        <rux-button icon="media-controls:play"></rux-button>
+                        <rux-button type="icon-only" icon="media-controls:play"></rux-button>
                         <figcaption>Button</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <rux-button icon="media-controls:play" default></rux-button>
+                        <rux-button type="icon-only" icon="media-controls:play" default></rux-button>
                         <figcaption>Default</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <rux-button icon="media-controls:play" disabled></rux-button>
+                        <rux-button type="icon-only" icon="media-controls:play" disabled></rux-button>
                         <figcaption>Disabled</figcaption>
                     </figure>
                 </li>
             </ul>
         </section>
 
-        <section>
+       <!-- <section>
             <h2>Button Group (WIP)</h2>
             <ul class="button-group">
                 <li>
@@ -1135,7 +1154,7 @@ Selected Tree Element: [[treeData.selected.label]]
                     <rux-button icon="media-controls:play"></rux-button>
                 </li>
             </ul>
-        </section>
+        </section> //-->
 
     </astro-sample-panel>
 
