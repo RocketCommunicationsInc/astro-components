@@ -9,7 +9,8 @@ export class RuxPopUpMenu extends PolymerElement {
   static get properties() {
     return {
       orientation: {
-        type: String
+        type: String,
+        value: "top"
       },
       opened: {
         type: Boolean,
@@ -42,7 +43,7 @@ export class RuxPopUpMenu extends PolymerElement {
         max-width: 20em;
         position: relative;
       
-        border-top: 3px solid #047cdc;
+        border: 1px solid var(--colorSecondary, rgb(77, 172, 255));
         z-index: 10000;
       
         -webkit-user-select: none;
@@ -69,8 +70,7 @@ export class RuxPopUpMenu extends PolymerElement {
         transform: rotate(45deg);
       }
       
-      .rux-pop-up {
-      }
+  
       
       :host ul {
         position: relative;
@@ -109,83 +109,85 @@ export class RuxPopUpMenu extends PolymerElement {
       
       :host a:hover {
         /* font-weight: 700; */
-        background-color: #b1d5f2;
+        background-color: var(--colorSecondaryLighten3, rgb(211, 234, 255));
       }
       
+      :host,
       .rux-pop-up--top {
-        border-top: 3px solid #047cdc;
+        border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
       }
       
+      :host::before,
       .rux-pop-up--top::before {
         content: "";
         display: block;
         position: absolute;
-      
+
         width: 1.1875rem;
         height: 1.1875rem;
-      
-        background-color: #047cdc;
+
+        background-color: var(--colorSecondary, rgb(77, 172, 255));
         z-index: 1;
-      
-        margin: -13px 0 0 15px;
+
+        margin: -13px 0 0 16px;
         transform: rotate(45deg);
       }
       
       .rux-pop-up--bottom {
-        border-bottom: 3px solid #047cdc;
+        border-bottom: 3px solid var(--colorSecondary, rgb(77, 172, 255));
       }
       
       .rux-pop-up--bottom::after {
         content: "";
         display: block;
         position: absolute;
-        border-bottom: 1px solid #047cdc;
-        border-right: 1px solid #047cdc;
+        border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+        border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
         width: 1.1875rem;
         height: 1.1875rem;
-      
-        background-color: #047cdc;
-      
-        margin: -6px 0 0 10px;
+
+        background-color: var(--colorSecondary, rgb(77, 172, 255));
+
+        margin: -6px 0 0 16px;
         transform: rotate(45deg);
       }
       
       .rux-pop-up--left {
-        border-left: 3px solid #047cdc;
+        border-left: 3px solid var(--colorSecondary, rgb(77, 172, 255));
       }
       
       .rux-pop-up--left::before {
         content: "";
         display: block;
         position: absolute;
-        border-bottom: 1px solid #047cdc;
-        border-left: 1px solid #047cdc;
+        border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+        border-left: 1px solid var(--colorSecondary, rgb(77, 172, 255));
         width: 1.1875rem;
         height: 1.1875rem;
-      
-        background-color: #047cdc;
-      
-        margin: 8px 0 0 -13px;
+
+        background-color: var(--colorSecondary, rgb(77, 172, 255));
+
+        margin: 16px 0 0 -13px;
         transform: rotate(45deg);
       }
       
       .rux-pop-up--right {
-        border-right: 3px solid #047cdc;
+        border-right: 3px solid var(--colorSecondary, rgb(77, 172, 255));
       }
       
       .rux-pop-up--right::before {
         content: "";
         display: block;
         position: absolute;
-        border-top: 1px solid #047cdc;
-        border-right: 1px solid #047cdc;
+        border-top: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+        border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
         width: 1.1875rem;
         height: 1.1875rem;
-      
-        background-color: #047cdc;
-      
+
+        background-color: var(--colorSecondary, rgb(77, 172, 255));
+
         right: 0;
-        margin: 8px -13px 0 0;
+        margin: 16px -13px 0 0;
         transform: rotate(45deg);
       }
       
