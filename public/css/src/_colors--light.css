@@ -99,7 +99,7 @@
   --color-grayDarken1: color(var(--color-gray) shade(25%));
   --color-grayDarken2: color(var(--color-gray) shade(50%));
   --color-grayDarken3: color(var(--color-gray) shade(75%));
-
+  /* 
   --color-black: rgb(0, 0, 0);
   --color-white: rgb(255, 255, 255);
   --color-gray: rgb(204, 204, 204);
@@ -203,5 +203,5 @@
   --color-gray--darken-1: color(var(--color-gray) shade(25%));
   --color-gray--darken-2: color(var(--color-gray) shade(50%));
   --color-gray--darken-3: color(var(--color-gray) shade(75%));
-  --color-gray--darken-4: var(--color-black);
+  --color-gray--darken-4: var(--color-black); */
 }

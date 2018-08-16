@@ -16,9 +16,7 @@
   align-items: center;
   font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
   font-weight: 700;
-  font-size: 1.75rem;
-  height: 2.75rem;
-  padding: 0 0.75rem;
+
   border: 1px solid var(--clockBorderColor, rgb(39, 86, 128));
 
   background-color: var(--clockBackgroundColor, rgb(20, 32, 44));
@@ -27,6 +25,19 @@
   white-space: nowrap;
   overflow-y: hidden;
   text-overflow: ellipsis;
+}
+
+.rux-clock--compact .rux-clock__segment__value {
+  height: 2.75rem;
+  padding: 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.rux-clock:not(.rux-clock--compact) .rux-clock__segment__value {
+  font-size: 1.75rem;
+  height: 2.75rem;
+  padding: 0 0.75rem;
 }
 
 .rux-clock__segment__label {

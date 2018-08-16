@@ -192,10 +192,25 @@
     ==========================================================================
 
   */
-
   --clockTextColor: var(--colorWhite, rgb(255, 255, 255));
   --clockBackgroundColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
   --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
+
+  /* 
+    
+    Log Colors 
+    ==========================================================================
+
+  */
+  --logTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --logBackgroundColor: var(--colorTertiaryDarken1);
+  --logBorderColor: var(--colorTertiary);
+
+  --logHeaderTextColor: var(--colorWhiteDarken2);
+  --logHeaderBackgroundColor: var(--colorTertiaryDarken2);
+
+  --logFilterBackgroundColor: var(--colorStandbyLighten1);
+  --logFilterTextColor: var(--colorStandbyDarken3);
 }
 
 li.dark-theme {

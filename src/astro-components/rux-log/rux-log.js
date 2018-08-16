@@ -55,17 +55,11 @@ export class RuxLog extends PolymerElement {
       :host {
         display: block;
         font-size: 0.875rem;
-        background-color: #1d2f41;
+        background-color: var(--logBackgroundColor, rgb(30, 47, 66));
       }
 
       *[hidden] {
         display: none !important;
-      }
-
-      .rux-log {
-        display: block;
-        font-size: 0.875rem;
-        background-color: var(--logBackgroundColor, rgb(30, 47, 66));
       }
       
       .rux-log-header {

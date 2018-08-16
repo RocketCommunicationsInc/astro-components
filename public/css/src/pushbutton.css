@@ -24,14 +24,11 @@
 
   /* width: auto; */
   -webkit-font-smoothing: subpixel-antialiased;
-
-  font-size: 0.75rem;
 }
 
 .rux-pushbutton__input,
 .satcom-pushbutton-input {
   display: none;
-  position: relative;
 }
 
 .rux-pushbutton__button,
@@ -42,6 +39,7 @@
   align-items: center;
 
   height: 1.375rem;
+  font-size: 0.75rem !important;
 
   margin: 0;
   padding: 0 0.625rem;
@@ -71,7 +69,5 @@
 .rux-pushbutton__input:disabled + .rux-pushbutton__button,
 .satcom-pushbutton-input:disabled + .satcom-pushbutton-button {
   opacity: var(--disabledOpacity, 0.4);
-  /* color: #fff; */
-
-  cursor: not-allowed;
+  cursor: var(-disabledCursor, not-allowed);
 }

@@ -114,187 +114,101 @@
   --color-caution: rgb(248, 231, 29);
   --color-ok: rgb(91, 255, 0);
   --color-standby: rgb(128, 224, 255);
-  --color-off: rgb(198, 204, 209);
-
-  --color-primary--lighten-1: color(var(--color-primary) tint(25%));
+  --color-off: rgb(
+    198,
+    204,
+    209
+  ); /* 
 
   --color-primary--lighten-1: color(var(--color-primary) tint(25%));
   --color-primary--lighten-2: color(var(--color-primary) tint(50%));
-  --color-primary--lighten-2: color(var(--color-primary) tint(50%));
-  --color-primary--lighten-3: color(var(--color-primary) tint(75%));
   --color-primary--lighten-3: color(var(--color-primary) tint(75%));
   --color-primary--lighten-4: var(--color-white);
-  --color-primary--lighten-4: var(--color-white);
-  --color-primary--darken-1: color(var(--color-primary) shade(25%));
   --color-primary--darken-1: color(var(--color-primary) shade(25%));
   --color-primary--darken-2: color(var(--color-primary) shade(50%));
-  --color-primary--darken-2: color(var(--color-primary) shade(50%));
   --color-primary--darken-3: color(var(--color-primary) shade(75%));
-  --color-primary--darken-3: color(var(--color-primary) shade(75%));
-  --color-primary--darken-4: var(--color-black);
   --color-primary--darken-4: var(--color-black);
 
   --color-secondary--lighten-1: color(var(--color-secondary) tint(25%));
-
-  --color-secondary--lighten-1: color(var(--color-secondary) tint(25%));
-  --color-secondary--lighten-2: color(var(--color-secondary) tint(50%));
   --color-secondary--lighten-2: color(var(--color-secondary) tint(50%));
   --color-secondary--lighten-3: color(var(--color-secondary) tint(75%));
-  --color-secondary--lighten-3: color(var(--color-secondary) tint(75%));
-  --color-secondary--lighten-4: var(--color-white);
   --color-secondary--lighten-4: var(--color-white);
   --color-secondary--darken-1: color(var(--color-secondary) shade(25%));
-  --color-secondary--darken-1: color(var(--color-secondary) shade(25%));
-  --color-secondary--darken-2: color(var(--color-secondary) shade(50%));
   --color-secondary--darken-2: color(var(--color-secondary) shade(50%));
   --color-secondary--darken-3: color(var(--color-secondary) shade(75%));
-  --color-secondary--darken-3: color(var(--color-secondary) shade(75%));
-  --color-secondary--darken-4: var(--color-black);
   --color-secondary--darken-4: var(--color-black);
 
   --color-tertiary--lighten-1: color(var(--color-tertiary) tint(25%));
-
-  --color-tertiary--lighten-1: color(var(--color-tertiary) tint(25%));
-  --color-tertiary--lighten-2: color(var(--color-tertiary) tint(50%));
   --color-tertiary--lighten-2: color(var(--color-tertiary) tint(50%));
   --color-tertiary--lighten-3: color(var(--color-tertiary) tint(75%));
-  --color-tertiary--lighten-3: color(var(--color-tertiary) tint(75%));
-  --color-tertiary--lighten-4: var(--color-white);
   --color-tertiary--lighten-4: var(--color-white);
   --color-tertiary--darken-1: color(var(--color-tertiary) shade(25%));
-  --color-tertiary--darken-1: color(var(--color-tertiary) shade(25%));
-  --color-tertiary--darken-2: color(var(--color-tertiary) shade(50%));
   --color-tertiary--darken-2: color(var(--color-tertiary) shade(50%));
   --color-tertiary--darken-3: color(var(--color-tertiary) shade(75%));
-  --color-tertiary--darken-3: color(var(--color-tertiary) shade(75%));
-  --color-tertiary--darken-4: var(--color-black);
   --color-tertiary--darken-4: var(--color-black);
 
   --color-alert--lighten-1: color(var(--color-alert) tint(25%));
-
-  --color-alert--lighten-1: color(var(--color-alert) tint(25%));
-  --color-alert--lighten-2: color(var(--color-alert) tint(50%));
   --color-alert--lighten-2: color(var(--color-alert) tint(50%));
   --color-alert--lighten-3: color(var(--color-alert) tint(75%));
-  --color-alert--lighten-3: color(var(--color-alert) tint(75%));
-  --color-alert--lighten-4: var(--color-white);
   --color-alert--lighten-4: var(--color-white);
   --color-alert--darken-1: color(var(--color-alert) shade(25%));
-  --color-alert--darken-1: color(var(--color-alert) shade(25%));
-  --color-alert--darken-2: color(var(--color-alert) shade(50%));
   --color-alert--darken-2: color(var(--color-alert) shade(50%));
   --color-alert--darken-3: color(var(--color-alert) shade(75%));
-  --color-alert--darken-3: color(var(--color-alert) shade(75%));
-  --color-alert--darken-4: var(--color-black);
   --color-alert--darken-4: var(--color-black);
 
   --color-error--lighten-1: color(var(--color-error) tint(25%));
-
-  --color-error--lighten-1: color(var(--color-error) tint(25%));
-  --color-error--lighten-2: color(var(--color-error) tint(50%));
   --color-error--lighten-2: color(var(--color-error) tint(50%));
   --color-error--lighten-3: color(var(--color-error) tint(75%));
-  --color-error--lighten-3: color(var(--color-error) tint(75%));
-  --color-error--lighten-4: var(--color-white);
   --color-error--lighten-4: var(--color-white);
   --color-error--darken-1: color(var(--color-error) shade(25%));
-  --color-error--darken-1: color(var(--color-error) shade(25%));
-  --color-error--darken-2: color(var(--color-error) shade(50%));
   --color-error--darken-2: color(var(--color-error) shade(50%));
   --color-error--darken-3: color(var(--color-error) shade(75%));
-  --color-error--darken-3: color(var(--color-error) shade(75%));
-  --color-error--darken-4: var(--color-black);
   --color-error--darken-4: var(--color-black);
 
   --color-caution--lighten-1: color(var(--color-caution) tint(25%));
-
-  --color-caution--lighten-1: color(var(--color-caution) tint(25%));
-  --color-caution--lighten-2: color(var(--color-caution) tint(50%));
   --color-caution--lighten-2: color(var(--color-caution) tint(50%));
   --color-caution--lighten-3: color(var(--color-caution) tint(75%));
-  --color-caution--lighten-3: color(var(--color-caution) tint(75%));
-  --color-caution--lighten-4: var(--color-white);
   --color-caution--lighten-4: var(--color-white);
   --color-caution--darken-1: color(var(--color-caution) shade(25%));
-  --color-caution--darken-1: color(var(--color-caution) shade(25%));
-  --color-caution--darken-2: color(var(--color-caution) shade(50%));
   --color-caution--darken-2: color(var(--color-caution) shade(50%));
   --color-caution--darken-3: color(var(--color-caution) shade(75%));
-  --color-caution--darken-3: color(var(--color-caution) shade(75%));
-  --color-caution--darken-4: var(--color-black);
   --color-caution--darken-4: var(--color-black);
 
   --color-ok--lighten-1: color(var(--color-ok) tint(25%));
-
-  --color-ok--lighten-1: color(var(--color-ok) tint(25%));
-  --color-ok--lighten-2: color(var(--color-ok) tint(50%));
   --color-ok--lighten-2: color(var(--color-ok) tint(50%));
   --color-ok--lighten-3: color(var(--color-ok) tint(75%));
-  --color-ok--lighten-3: color(var(--color-ok) tint(75%));
-  --color-ok--lighten-4: var(--color-white);
   --color-ok--lighten-4: var(--color-white);
   --color-ok--darken-1: color(var(--color-ok) shade(25%));
-  --color-ok--darken-1: color(var(--color-ok) shade(25%));
-  --color-ok--darken-2: color(var(--color-ok) shade(50%));
   --color-ok--darken-2: color(var(--color-ok) shade(50%));
   --color-ok--darken-3: color(var(--color-ok) shade(75%));
-  --color-ok--darken-3: color(var(--color-ok) shade(75%));
-  --color-ok--darken-4: var(--color-black);
   --color-ok--darken-4: var(--color-black);
 
   --color-standby--lighten-1: color(var(--color-standby) tint(25%));
-
-  --color-standby--lighten-1: color(var(--color-standby) tint(25%));
-  --color-standby--lighten-2: color(var(--color-standby) tint(50%));
   --color-standby--lighten-2: color(var(--color-standby) tint(50%));
   --color-standby--lighten-3: color(var(--color-standby) tint(75%));
-  --color-standby--lighten-3: color(var(--color-standby) tint(75%));
-  --color-standby--lighten-4: var(--color-white);
   --color-standby--lighten-4: var(--color-white);
   --color-standby--darken-1: color(var(--color-standby) shade(25%));
-  --color-standby--darken-1: color(var(--color-standby) shade(25%));
-  --color-standby--darken-2: color(var(--color-standby) shade(50%));
   --color-standby--darken-2: color(var(--color-standby) shade(50%));
   --color-standby--darken-3: color(var(--color-standby) shade(75%));
-  --color-standby--darken-3: color(var(--color-standby) shade(75%));
-  --color-standby--darken-4: var(--color-black);
   --color-standby--darken-4: var(--color-black);
 
   --color-off--lighten-1: color(var(--color-off) tint(25%));
-
-  --color-off--lighten-1: color(var(--color-off) tint(25%));
-  --color-off--lighten-2: color(var(--color-off) tint(50%));
   --color-off--lighten-2: color(var(--color-off) tint(50%));
   --color-off--lighten-3: color(var(--color-off) tint(75%));
-  --color-off--lighten-3: color(var(--color-off) tint(75%));
-  --color-off--lighten-4: var(--color-white);
   --color-off--lighten-4: var(--color-white);
   --color-off--darken-1: color(var(--color-off) shade(25%));
-  --color-off--darken-1: color(var(--color-off) shade(25%));
-  --color-off--darken-2: color(var(--color-off) shade(50%));
   --color-off--darken-2: color(var(--color-off) shade(50%));
   --color-off--darken-3: color(var(--color-off) shade(75%));
-  --color-off--darken-3: color(var(--color-off) shade(75%));
-  --color-off--darken-4: var(--color-black);
   --color-off--darken-4: var(--color-black);
 
   --color-gray--lighten-1: color(var(--color-gray) tint(25%));
-
-  --color-gray--lighten-1: color(var(--color-gray) tint(25%));
-  --color-gray--lighten-2: color(var(--color-gray) tint(50%));
   --color-gray--lighten-2: color(var(--color-gray) tint(50%));
   --color-gray--lighten-3: color(var(--color-gray) tint(75%));
-  --color-gray--lighten-3: color(var(--color-gray) tint(75%));
-  --color-gray--lighten-4: var(--color-white);
   --color-gray--lighten-4: var(--color-white);
   --color-gray--darken-1: color(var(--color-gray) shade(25%));
-  --color-gray--darken-1: color(var(--color-gray) shade(25%));
-  --color-gray--darken-2: color(var(--color-gray) shade(50%));
   --color-gray--darken-2: color(var(--color-gray) shade(50%));
   --color-gray--darken-3: color(var(--color-gray) shade(75%));
-  --color-gray--darken-3: color(var(--color-gray) shade(75%));
-  --color-gray--darken-4: var(--color-black);
-  --color-gray--darken-4: var(--color-black);
+  --color-gray--darken-4: var(--color-black); */
 }
 
 :root {
@@ -422,7 +336,7 @@
   --color-grayDarken2: color(var(--color-gray) shade(50%));
   --color-grayDarken3: color(var(--color-gray) shade(75%));
   --color-grayDarken3: color(var(--color-gray) shade(75%));
-
+  /* 
   --color-black: rgb(0, 0, 0);
   --color-white: rgb(255, 255, 255);
   --color-gray: rgb(204, 204, 204);
@@ -439,184 +353,94 @@
   --color-off: rgb(198, 204, 209);
 
   --color-primary--lighten-1: color(var(--color-primary) tint(25%));
-
-  --color-primary--lighten-1: color(var(--color-primary) tint(25%));
-  --color-primary--lighten-2: color(var(--color-primary) tint(50%));
   --color-primary--lighten-2: color(var(--color-primary) tint(50%));
   --color-primary--lighten-3: color(var(--color-primary) tint(75%));
-  --color-primary--lighten-3: color(var(--color-primary) tint(75%));
-  --color-primary--lighten-4: var(--color-white);
   --color-primary--lighten-4: var(--color-white);
   --color-primary--darken-1: color(var(--color-primary) shade(25%));
-  --color-primary--darken-1: color(var(--color-primary) shade(25%));
-  --color-primary--darken-2: color(var(--color-primary) shade(50%));
   --color-primary--darken-2: color(var(--color-primary) shade(50%));
   --color-primary--darken-3: color(var(--color-primary) shade(75%));
-  --color-primary--darken-3: color(var(--color-primary) shade(75%));
-  --color-primary--darken-4: var(--color-black);
   --color-primary--darken-4: var(--color-black);
 
   --color-secondary--lighten-1: color(var(--color-secondary) tint(25%));
-
-  --color-secondary--lighten-1: color(var(--color-secondary) tint(25%));
-  --color-secondary--lighten-2: color(var(--color-secondary) tint(50%));
   --color-secondary--lighten-2: color(var(--color-secondary) tint(50%));
   --color-secondary--lighten-3: color(var(--color-secondary) tint(75%));
-  --color-secondary--lighten-3: color(var(--color-secondary) tint(75%));
-  --color-secondary--lighten-4: var(--color-white);
   --color-secondary--lighten-4: var(--color-white);
   --color-secondary--darken-1: color(var(--color-secondary) shade(25%));
-  --color-secondary--darken-1: color(var(--color-secondary) shade(25%));
-  --color-secondary--darken-2: color(var(--color-secondary) shade(50%));
   --color-secondary--darken-2: color(var(--color-secondary) shade(50%));
   --color-secondary--darken-3: color(var(--color-secondary) shade(75%));
-  --color-secondary--darken-3: color(var(--color-secondary) shade(75%));
-  --color-secondary--darken-4: var(--color-black);
   --color-secondary--darken-4: var(--color-black);
 
   --color-tertiary--lighten-1: color(var(--color-tertiary) tint(25%));
-
-  --color-tertiary--lighten-1: color(var(--color-tertiary) tint(25%));
-  --color-tertiary--lighten-2: color(var(--color-tertiary) tint(50%));
   --color-tertiary--lighten-2: color(var(--color-tertiary) tint(50%));
   --color-tertiary--lighten-3: color(var(--color-tertiary) tint(75%));
-  --color-tertiary--lighten-3: color(var(--color-tertiary) tint(75%));
-  --color-tertiary--lighten-4: var(--color-white);
   --color-tertiary--lighten-4: var(--color-white);
   --color-tertiary--darken-1: color(var(--color-tertiary) shade(25%));
-  --color-tertiary--darken-1: color(var(--color-tertiary) shade(25%));
-  --color-tertiary--darken-2: color(var(--color-tertiary) shade(50%));
   --color-tertiary--darken-2: color(var(--color-tertiary) shade(50%));
   --color-tertiary--darken-3: color(var(--color-tertiary) shade(75%));
-  --color-tertiary--darken-3: color(var(--color-tertiary) shade(75%));
-  --color-tertiary--darken-4: var(--color-black);
   --color-tertiary--darken-4: var(--color-black);
 
   --color-alert--lighten-1: color(var(--color-alert) tint(25%));
-
-  --color-alert--lighten-1: color(var(--color-alert) tint(25%));
-  --color-alert--lighten-2: color(var(--color-alert) tint(50%));
   --color-alert--lighten-2: color(var(--color-alert) tint(50%));
   --color-alert--lighten-3: color(var(--color-alert) tint(75%));
-  --color-alert--lighten-3: color(var(--color-alert) tint(75%));
-  --color-alert--lighten-4: var(--color-white);
   --color-alert--lighten-4: var(--color-white);
   --color-alert--darken-1: color(var(--color-alert) shade(25%));
-  --color-alert--darken-1: color(var(--color-alert) shade(25%));
-  --color-alert--darken-2: color(var(--color-alert) shade(50%));
   --color-alert--darken-2: color(var(--color-alert) shade(50%));
   --color-alert--darken-3: color(var(--color-alert) shade(75%));
-  --color-alert--darken-3: color(var(--color-alert) shade(75%));
-  --color-alert--darken-4: var(--color-black);
   --color-alert--darken-4: var(--color-black);
 
   --color-error--lighten-1: color(var(--color-error) tint(25%));
-
-  --color-error--lighten-1: color(var(--color-error) tint(25%));
-  --color-error--lighten-2: color(var(--color-error) tint(50%));
   --color-error--lighten-2: color(var(--color-error) tint(50%));
   --color-error--lighten-3: color(var(--color-error) tint(75%));
-  --color-error--lighten-3: color(var(--color-error) tint(75%));
-  --color-error--lighten-4: var(--color-white);
   --color-error--lighten-4: var(--color-white);
   --color-error--darken-1: color(var(--color-error) shade(25%));
-  --color-error--darken-1: color(var(--color-error) shade(25%));
-  --color-error--darken-2: color(var(--color-error) shade(50%));
   --color-error--darken-2: color(var(--color-error) shade(50%));
   --color-error--darken-3: color(var(--color-error) shade(75%));
-  --color-error--darken-3: color(var(--color-error) shade(75%));
-  --color-error--darken-4: var(--color-black);
   --color-error--darken-4: var(--color-black);
 
   --color-caution--lighten-1: color(var(--color-caution) tint(25%));
-
-  --color-caution--lighten-1: color(var(--color-caution) tint(25%));
-  --color-caution--lighten-2: color(var(--color-caution) tint(50%));
   --color-caution--lighten-2: color(var(--color-caution) tint(50%));
   --color-caution--lighten-3: color(var(--color-caution) tint(75%));
-  --color-caution--lighten-3: color(var(--color-caution) tint(75%));
-  --color-caution--lighten-4: var(--color-white);
   --color-caution--lighten-4: var(--color-white);
   --color-caution--darken-1: color(var(--color-caution) shade(25%));
-  --color-caution--darken-1: color(var(--color-caution) shade(25%));
-  --color-caution--darken-2: color(var(--color-caution) shade(50%));
   --color-caution--darken-2: color(var(--color-caution) shade(50%));
   --color-caution--darken-3: color(var(--color-caution) shade(75%));
-  --color-caution--darken-3: color(var(--color-caution) shade(75%));
-  --color-caution--darken-4: var(--color-black);
   --color-caution--darken-4: var(--color-black);
 
   --color-ok--lighten-1: color(var(--color-ok) tint(25%));
-
-  --color-ok--lighten-1: color(var(--color-ok) tint(25%));
-  --color-ok--lighten-2: color(var(--color-ok) tint(50%));
   --color-ok--lighten-2: color(var(--color-ok) tint(50%));
   --color-ok--lighten-3: color(var(--color-ok) tint(75%));
-  --color-ok--lighten-3: color(var(--color-ok) tint(75%));
-  --color-ok--lighten-4: var(--color-white);
   --color-ok--lighten-4: var(--color-white);
   --color-ok--darken-1: color(var(--color-ok) shade(25%));
-  --color-ok--darken-1: color(var(--color-ok) shade(25%));
-  --color-ok--darken-2: color(var(--color-ok) shade(50%));
   --color-ok--darken-2: color(var(--color-ok) shade(50%));
   --color-ok--darken-3: color(var(--color-ok) shade(75%));
-  --color-ok--darken-3: color(var(--color-ok) shade(75%));
-  --color-ok--darken-4: var(--color-black);
   --color-ok--darken-4: var(--color-black);
 
   --color-standby--lighten-1: color(var(--color-standby) tint(25%));
-
-  --color-standby--lighten-1: color(var(--color-standby) tint(25%));
-  --color-standby--lighten-2: color(var(--color-standby) tint(50%));
   --color-standby--lighten-2: color(var(--color-standby) tint(50%));
   --color-standby--lighten-3: color(var(--color-standby) tint(75%));
-  --color-standby--lighten-3: color(var(--color-standby) tint(75%));
-  --color-standby--lighten-4: var(--color-white);
   --color-standby--lighten-4: var(--color-white);
   --color-standby--darken-1: color(var(--color-standby) shade(25%));
-  --color-standby--darken-1: color(var(--color-standby) shade(25%));
-  --color-standby--darken-2: color(var(--color-standby) shade(50%));
   --color-standby--darken-2: color(var(--color-standby) shade(50%));
   --color-standby--darken-3: color(var(--color-standby) shade(75%));
-  --color-standby--darken-3: color(var(--color-standby) shade(75%));
-  --color-standby--darken-4: var(--color-black);
   --color-standby--darken-4: var(--color-black);
 
   --color-off--lighten-1: color(var(--color-off) tint(25%));
-
-  --color-off--lighten-1: color(var(--color-off) tint(25%));
-  --color-off--lighten-2: color(var(--color-off) tint(50%));
   --color-off--lighten-2: color(var(--color-off) tint(50%));
   --color-off--lighten-3: color(var(--color-off) tint(75%));
-  --color-off--lighten-3: color(var(--color-off) tint(75%));
-  --color-off--lighten-4: var(--color-white);
   --color-off--lighten-4: var(--color-white);
   --color-off--darken-1: color(var(--color-off) shade(25%));
-  --color-off--darken-1: color(var(--color-off) shade(25%));
-  --color-off--darken-2: color(var(--color-off) shade(50%));
   --color-off--darken-2: color(var(--color-off) shade(50%));
   --color-off--darken-3: color(var(--color-off) shade(75%));
-  --color-off--darken-3: color(var(--color-off) shade(75%));
-  --color-off--darken-4: var(--color-black);
   --color-off--darken-4: var(--color-black);
 
   --color-gray--lighten-1: color(var(--color-gray) tint(25%));
-
-  --color-gray--lighten-1: color(var(--color-gray) tint(25%));
-  --color-gray--lighten-2: color(var(--color-gray) tint(50%));
   --color-gray--lighten-2: color(var(--color-gray) tint(50%));
   --color-gray--lighten-3: color(var(--color-gray) tint(75%));
-  --color-gray--lighten-3: color(var(--color-gray) tint(75%));
-  --color-gray--lighten-4: var(--color-white);
   --color-gray--lighten-4: var(--color-white);
   --color-gray--darken-1: color(var(--color-gray) shade(25%));
-  --color-gray--darken-1: color(var(--color-gray) shade(25%));
-  --color-gray--darken-2: color(var(--color-gray) shade(50%));
   --color-gray--darken-2: color(var(--color-gray) shade(50%));
   --color-gray--darken-3: color(var(--color-gray) shade(75%));
-  --color-gray--darken-3: color(var(--color-gray) shade(75%));
-  --color-gray--darken-4: var(--color-black);
-  --color-gray--darken-4: var(--color-black);
+  --color-gray--darken-4: var(--color-black); */
 }
 
 @font-face {
@@ -965,14 +789,37 @@ label {
     ==========================================================================
 
   */
-
   --clockTextColor: rgb(255, 255, 255);
-
   --clockTextColor: var(--colorWhite, rgb(255, 255, 255));
   --clockBackgroundColor: rgb(20, 32, 44);
   --clockBackgroundColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
   --clockBorderColor: rgb(39, 86, 128);
   --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
+
+  /* 
+    
+    Log Colors 
+    ==========================================================================
+
+  */
+  --logTextColor: rgb(255, 255, 255);
+  --logTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --logBackgroundColor: var(--colorTertiaryDarken1);
+  --logBackgroundColor: var(--colorTertiaryDarken1);
+  --logBorderColor: var(--colorTertiary);
+  --logBorderColor: var(--colorTertiary);
+
+  --logHeaderTextColor: var(--colorWhiteDarken2);
+
+  --logHeaderTextColor: var(--colorWhiteDarken2);
+  --logHeaderBackgroundColor: var(--colorTertiaryDarken2);
+  --logHeaderBackgroundColor: var(--colorTertiaryDarken2);
+
+  --logFilterBackgroundColor: var(--colorStandbyLighten1);
+
+  --logFilterBackgroundColor: var(--colorStandbyLighten1);
+  --logFilterTextColor: var(--colorStandbyDarken3);
+  --logFilterTextColor: var(--colorStandbyDarken3);
 }
 
 li.dark-theme {
@@ -1013,8 +860,8 @@ li.dark-theme {
   --buttonHoverTextColor: var(--colorWhite, #fff);
   --buttonHoverBackgroundColor: rgb(58, 129, 191);
   --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBorderColor: rgb(255, 255, 255);
-  --buttonHoverBorderColor: var(--colorWhite, rgb(255, 255, 255));
+  --buttonHoverBorderColor: rgb(58, 129, 191);
+  --buttonHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
   --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
@@ -1273,6 +1120,30 @@ li.dark-theme {
   --modalBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --modalBorderColor: rgb(0, 90, 143);
   --modalBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  /* 
+    
+    Log Colors 
+    ==========================================================================
+
+  */
+  --logTextColor: var(--colorBlack);
+  --logTextColor: var(--colorBlack);
+  --logBackgroundColor: var(--colorWhite);
+  --logBackgroundColor: var(--colorWhite);
+  --logBorderColor: var(--colorTertiaryLighten2);
+  --logBorderColor: var(--colorTertiaryLighten2);
+
+  --logHeaderTextColor: var(--colorBlack);
+
+  --logHeaderTextColor: var(--colorBlack);
+  --logHeaderBackgroundColor: var(--colorTertiary);
+  --logHeaderBackgroundColor: var(--colorTertiary);
+
+  --logFilterBackgroundColor: var(--colorStandbyLighten3);
+
+  --logFilterBackgroundColor: var(--colorStandbyLighten3);
+  --logFilterTextColor: var(--colorStandbyDarken2);
+  --logFilterTextColor: var(--colorStandbyDarken2);
 }
 
 li.light-theme {
@@ -1712,17 +1583,27 @@ svg circle {
 **  - Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
 */
 
+.rux-button-group {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.rux-button-group .rux-button:not(:last-child) {
+  margin-right: 0.625rem;
+}
+
 /* Global Button Styles */
 .rux-button {
-  display: inline-block;
+  display: -webkit-flex;
+  display: flex;
   position: relative;
 
   margin: 0;
-  padding: 0.34375rem 1rem;
+  padding: 0 1rem;
 
-  height: 2.1875rem;
+  height: 2.125rem;
   min-width: 2.25rem;
-  max-width: 10.125rem;
+  /* max-width: 10.125rem; */
 
   border-radius: 3px;
 
@@ -1731,13 +1612,19 @@ svg circle {
   color: #fff;
 
   color: var(--buttonTextColor, #fff);
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans";
+  font-family: var(--fontFamily, "Open Sans");
   font-size: 1rem;
 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.25;
+
+  -webkit-justify-content: center;
+
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
 
   -webkit-user-select: none;
 
@@ -1764,8 +1651,7 @@ svg circle {
 .rux-button:focus {
   outline: none;
 }
-
-.rux-button:not(.rux-button--outline):not(.rux-button--outline) {
+.rux-button:not(.rux-button--outline) {
   border: 1px solid rgb(0, 90, 143);
   border: 1px solid var(--buttonBackgroundColor, rgb(0, 90, 143));
   background-color: rgb(0, 90, 143);
@@ -1811,7 +1697,7 @@ svg circle {
     --buttonActiveBackgroundColor,
     rgb(0, 90, 143)
   ) !important;
-  box-shadow: none !important;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
 }
 
 /* 
@@ -1854,9 +1740,6 @@ svg circle {
   Icons
 
 */
-.rux-icon {
-  fill: #fff;
-}
 
 .rux-button--small {
   font-size: 0.875rem;
@@ -1869,40 +1752,61 @@ svg circle {
 .rux-button--large {
   font-size: 1.125rem;
   font-size: var(--largeLabelTextSize, 1.125rem);
-  height: 2.8125rem;
-  min-width: 2.875rem;
-  padding: 0.657rem 1.5rem;
+  height: 2.875rem;
+  /* min-width: 2.875rem; */
+  padding: 0 1.5rem;
 }
 
 .rux-button__icon {
-  display: inline-block;
-  vertical-align: middle;
-
   height: 1.5rem;
   width: 1.5rem;
 
-  margin: -0.45rem 0.525rem -0.25rem calc((1rem - 0.325rem) * -1);
+  margin-right: 0.625rem;
+  margin-left: -0.625rem;
+}
 
-  outline: 1px solid rgba(255, 255, 255, 0.2);
+.rux-button--icon-only .rux-button__icon {
+  margin-left: -0.625rem;
+  margin-right: -0.625rem;
+}
+
+.rux-button--large.rux-button--icon-only .rux-button__icon {
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
 .rux-button--small .rux-button__icon {
   height: 0.875rem;
   width: 0.875rem;
-
-  margin-right: 0.2em;
 }
 
 .rux-button--large .rux-button__icon {
   height: 1.75rem;
   width: 1.75rem;
-
-  margin: -0.5rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1);
+  margin-left: -0.8rem;
+  /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
 }
 
-.rux-button--icon .rux-button__icon {
-  margin-right: -1.5rem;
-  margin-left: -1.5rem;
+.rux-button__icon .rux-icon {
+  height: auto;
+  width: 100%;
+  fill: rgb(255, 255, 255);
+  fill: var(--buttonTextColor, rgb(255, 255, 255));
+}
+
+.rux-button.rux-button--critical,
+.rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+  background-color: rgb(191, 36, 36) !important;
+  background-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
+  border-color: rgb(191, 36, 36) !important;
+  border-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
+}
+
+.rux-button.rux-button--critical:hover:not([active]):not([disabled]) {
+  background-color: rgb(255, 48, 48);
+  background-color: var(--colorCritical, rgb(255, 48, 48));
+  border-color: rgb(255, 48, 48);
+  border-color: var(--colorCritical, rgb(255, 48, 48));
 }
 
 .rux-clock {
@@ -1931,10 +1835,9 @@ svg circle {
   font-family: "Roboto Mono", monospace;
   font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
   font-weight: 700;
-  font-size: 1.75rem;
-  height: 2.75rem;
-  padding: 0 0.75rem;
+
   border: 1px solid rgb(39, 86, 128);
+
   border: 1px solid var(--clockBorderColor, rgb(39, 86, 128));
 
   background-color: rgb(20, 32, 44);
@@ -1945,6 +1848,19 @@ svg circle {
   white-space: nowrap;
   overflow-y: hidden;
   text-overflow: ellipsis;
+}
+
+.rux-clock--compact .rux-clock__segment__value {
+  height: 2.75rem;
+  padding: 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.rux-clock:not(.rux-clock--compact) .rux-clock__segment__value {
+  font-size: 1.75rem;
+  height: 2.75rem;
+  padding: 0 0.75rem;
 }
 
 .rux-clock__segment__label {
@@ -2313,6 +2229,157 @@ label {
   cursor: var(--disabledCursor, not-allowed);
 }
 
+.rux-log {
+  display: block;
+  font-size: 0.875rem;
+  background-color: rgb(30, 47, 66);
+  background-color: var(--logBackgroundColor, rgb(30, 47, 66));
+}
+
+.rux-log-header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  position: relative;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+
+  padding: 0.5rem;
+  background-color: rgb(20, 32, 44);
+  background-color: var(--logHeaderBackgroundColor, rgb(20, 32, 44));
+}
+
+.rux-log-header-title {
+  margin: 0 0 1rem 0;
+  display: none;
+
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.rux-log__header-labels {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  color: var(--logHeaderTextColor, rgb(255, 255, 255));
+}
+
+.rux-log__header-labels,
+.rux-log__events {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.rux-log__header-labels,
+.rux-log__log-event {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: flex-start;
+          align-content: flex-start;
+}
+
+.rux-log__events {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.log-event__timestamp {
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+
+  text-align: right;
+  width: 5rem;
+}
+
+.rux-log__log-event {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgb(40, 63, 88);
+  border-bottom: 1px solid var(--logBorderColor, rgb(40, 63, 88));
+}
+
+.rux-log__log-event:last-child {
+  border-bottom: none;
+}
+
+.rux-log__header-labels li:not(:first-child),
+.rux-log__log-event > * {
+  margin: 0 0.5rem;
+}
+
+.rux-log__header-labels li:first-child {
+  margin: 0 0.5rem 0 0;
+}
+
+.rux-log__log-event .log-event__timestamp {
+  font-family: "Roboto Mono", monospace;
+  font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+}
+
+.log-event__status {
+  -webkit-flex-grow: 0;
+          flex-grow: 0;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  text-align: center;
+  width: 1rem;
+  overflow: hidden;
+}
+
+.log-event__message {
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  text-align: left;
+}
+
+.log-header__message {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+
+/* ol li:nth-child(even) {
+  background-color: #283f58;
+} */
+
+.rux-log__filter-enabled {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  -webkit-align-content: center;
+
+          align-content: center;
+
+  color: rgb(0, 0, 0);
+
+  color: var(--logFilterTextColor, rgb(0, 0, 0));
+  background-color: rgb(192, 240, 255);
+  background-color: var(--logFilterBackgroundColor, rgb(192, 240, 255));
+  padding: 0.5rem;
+}
+
+.rux-log__filter-enabled rux-icon {
+  margin-right: 0.5rem;
+}
+
+input[type="search"] {
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg'/><path d='M6.33 5.67l1 1-3.66 3.66-1-1'/></g></svg>");
+}
+
 .rux-modal {
   position: relative;
   display: -webkit-flex;
@@ -2326,8 +2393,8 @@ label {
 
   background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
 
-  width: 28.125rem;
-  min-height: 12.5rem;
+  width: 28rem;
+  height: 13.5rem;
   border: 2px solid rgb(0, 90, 143);
   border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
 
@@ -2375,7 +2442,9 @@ label {
   font-weight: 600;
   padding: 0;
   margin: 0;
-  color: #fff;
+  line-height: 1.2;
+
+  color: #fff !important;
 }
 
 .rux-modal__content {
@@ -2392,6 +2461,7 @@ label {
 }
 
 .rux-button-group {
+  margin-top: auto;
   margin-left: auto;
 }
 
@@ -2598,6 +2668,10 @@ label {
 
   min-width: 15em;
   position: relative;
+
+  border: 1px solid rgb(77, 172, 255);
+
+  border: 1px solid var(--colorSecondary, rgb(77, 172, 255));
 }
 
 .rux-pop-up ul,
@@ -2628,16 +2702,21 @@ label {
   padding: 0.5em;
   color: #000;
   text-decoration: none;
+
+  min-width: 15em;
+  max-width: 20em;
 }
 
 .rux-pop-up a:hover,
 .satcom-pop-up a:hover {
-  background-color: #b1d5f2;
+  background-color: rgb(211, 234, 255);
+  background-color: var(--colorSecondaryLighten3, rgb(211, 234, 255));
 }
 
 .rux-pop-up--top,
 .satcom-pop-up-top {
-  border-top: 3px solid #047cdc;
+  border-top: 3px solid rgb(77, 172, 255);
+  border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
 }
 
 .rux-pop-up--top::before,
@@ -2649,17 +2728,20 @@ label {
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: #047cdc;
+  background-color: rgb(77, 172, 255);
+
+  background-color: var(--colorSecondary, rgb(77, 172, 255));
   z-index: 1;
 
-  margin: -13px 0 0 15px;
+  margin: -13px 0 0 16px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
 .rux-pop-up--bottom,
 .satcom-pop-up-bottom {
-  border-bottom: 3px solid #047cdc;
+  border-bottom: 3px solid rgb(77, 172, 255);
+  border-bottom: 3px solid var(--colorSecondary, rgb(77, 172, 255));
 }
 
 .rux-pop-up--bottom::after,
@@ -2667,21 +2749,26 @@ label {
   content: "";
   display: block;
   position: absolute;
-  border-bottom: 1px solid #047cdc;
-  border-right: 1px solid #047cdc;
+  border-bottom: 1px solid rgb(77, 172, 255);
+  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-right: 1px solid rgb(77, 172, 255);
+  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: #047cdc;
+  background-color: rgb(77, 172, 255);
 
-  margin: -6px 0 0 10px;
+  background-color: var(--colorSecondary, rgb(77, 172, 255));
+
+  margin: -6px 0 0 16px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
 .rux-pop-up--left,
 .satcom-pop-up-left {
-  border-left: 3px solid #047cdc;
+  border-left: 3px solid rgb(77, 172, 255);
+  border-left: 3px solid var(--colorSecondary, rgb(77, 172, 255));
 }
 
 .rux-pop-up--left::before,
@@ -2689,21 +2776,26 @@ label {
   content: "";
   display: block;
   position: absolute;
-  border-bottom: 1px solid #047cdc;
-  border-left: 1px solid #047cdc;
+  border-bottom: 1px solid rgb(77, 172, 255);
+  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-left: 1px solid rgb(77, 172, 255);
+  border-left: 1px solid var(--colorSecondary, rgb(77, 172, 255));
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: #047cdc;
+  background-color: rgb(77, 172, 255);
 
-  margin: 8px 0 0 -13px;
+  background-color: var(--colorSecondary, rgb(77, 172, 255));
+
+  margin: 16px 0 0 -13px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
 .rux-pop-up--right,
 .satcom-pop-up-right {
-  border-right: 3px solid #047cdc;
+  border-right: 3px solid rgb(77, 172, 255);
+  border-right: 3px solid var(--colorSecondary, rgb(77, 172, 255));
 }
 
 .rux-pop-up--right::before,
@@ -2711,15 +2803,19 @@ label {
   content: "";
   display: block;
   position: absolute;
-  border-top: 1px solid #047cdc;
-  border-right: 1px solid #047cdc;
+  border-top: 1px solid rgb(77, 172, 255);
+  border-top: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-right: 1px solid rgb(77, 172, 255);
+  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: #047cdc;
+  background-color: rgb(77, 172, 255);
+
+  background-color: var(--colorSecondary, rgb(77, 172, 255));
 
   right: 0;
-  margin: 8px -13px 0 0;
+  margin: 16px -13px 0 0;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -2943,14 +3039,11 @@ label {
 
   /* width: auto; */
   -webkit-font-smoothing: subpixel-antialiased;
-
-  font-size: 0.75rem;
 }
 
 .rux-pushbutton__input,
 .satcom-pushbutton-input {
   display: none;
-  position: relative;
 }
 
 .rux-pushbutton__button,
@@ -2965,6 +3058,7 @@ label {
           align-items: center;
 
   height: 1.375rem;
+  font-size: 0.75rem !important;
 
   margin: 0;
   padding: 0 0.625rem;
@@ -3005,9 +3099,8 @@ label {
 .satcom-pushbutton-input:disabled + .satcom-pushbutton-button {
   opacity: 0.4;
   opacity: var(--disabledOpacity, 0.4);
-  /* color: #fff; */
-
   cursor: not-allowed;
+  cursor: var(-disabledCursor, not-allowed);
 }
 
 /*
@@ -3037,8 +3130,10 @@ label {
 */
 
 .rux-segmented-buttons {
-  display: inline-block;
-  height: 27px;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  height: 1.6875rem;
+
   overflow: hidden;
 
   padding: 0;
@@ -3054,9 +3149,8 @@ label {
 }
 
 .rux-segmented-button {
-  display: block;
-  float: left;
-  height: 27px;
+  height: 1.6875rem;
+  width: auto;
   margin: 0;
   padding: 0;
 }
@@ -3070,7 +3164,7 @@ label {
           align-items: center;
 
   width: auto;
-  height: 25px;
+  height: 1.5625rem;
 
   margin: 0;
   padding: 0 0.75rem;
@@ -3096,19 +3190,12 @@ label {
           user-select: none;
 }
 
-.rux-segmented-button:first-child label {
-  /* border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px; */
-}
-
 .rux-segmented-button:last-child label {
-  border-right: none;
-  /* border-top-right-radius: var(--button__border-radius, 3px);
-  border-bottom-right-radius: var(--button__border-radius, 3px); */
+  border-right: none !important;
 }
 
 .rux-segmented-button input {
-  display: none;
+  display: none !important;
 }
 
 .rux-segmented-button label:hover {
@@ -3132,19 +3219,7 @@ label {
   );
   color: #fff;
   color: var(--segmentedButtonSelectedTextColor, #fff);
-  /* box-shadow: inset 0 0 0 1px rgba(27, 45, 62, 0.2),
-    inset 0 0 4px rgba(0, 0, 0, 0.5); */
-
-  /* box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5),
-    inset 0 0 0 -1px rgba(255, 0, 0, 1); */
 }
-
-/* .rux-segmented-button:active,
-.rux-segmented-button:default:active,
-.rux-segmented-button.selected {
-  background: #0182ce;
-  outline: none;
-} */
 
 /*
 **
@@ -3307,6 +3382,8 @@ input[type="range"]:focus {
 **
 ** 	ASTRO STATUS INDICATOR
 ** 	==========================================================================
+**  3.0 Notes
+**  Removed margin on status symbols
 **	1.4 Notes
 **	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
 **  - Embeded SVG graphics
@@ -3314,10 +3391,12 @@ input[type="range"]:focus {
 .rux-status,
 .satcom-status {
   font-size: 1rem;
-  margin: 10px auto; /* Deprecate in 2.0 */
+
   line-height: 1;
   padding: 0;
   vertical-align: middle;
+  text-align: center;
+  /* border: 1px solid red !important; */
 }
 
 /* Icon */
@@ -3338,7 +3417,7 @@ input[type="range"]:focus {
 .rux-status--off::before,
 .satcom-status-off::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Crect width='5' height='5' fill='%23C6CCD1' transform='translate(4 4)'/%3E%3C/svg%3E");
-  background-position: 1px 1px;
+  background-position: 0 0;
 }
 
 .rux-status--standby::before,
@@ -3347,10 +3426,11 @@ input[type="range"]:focus {
   background-position: 0 0;
 }
 
+.rux-status--normal::before,
 .rux-status--ok::before,
 .satcom-status-ok::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Crect width='10' height='5' fill='%237ED321' transform='translate(1 4)'/%3E%3C/svg%3E");
-  background-position: 0 1px;
+  background-position: 1px 1px;
 }
 
 .rux-status--caution::before,
@@ -3359,16 +3439,18 @@ input[type="range"]:focus {
   background-position: 1px 1px;
 }
 
+.rux-status--serious::before,
 .rux-status--error::before,
 .satcom-status-error::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Ccircle cx='5.5' cy='5.5' r='5.5' fill='rgb(255, 176, 0)' transform='translate(1 1)'/%3E%3C/svg%3E");
-  background-position: 1px 1px;
+  background-position: 0 0;
 }
 
+.rux-status--critical::before,
 .rux-status--alert::before,
 .satcom-status-alert::before {
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212px%22%20height%3D%2212px%22%20viewBox%3D%220%200%2012%2012%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%3Cg%20id%3D%22emergency%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23F72501%22%20d%3D%22M12%2012H0L6%200z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
-  background-position: 0 0;
+  background-position: 1px 0;
 }
 
 /* Small Status Modifiers */
@@ -3650,14 +3732,15 @@ input[type="range"]:focus {
   display: inline-block;
   box-sizing: border-box;
 
-  font-size: 0.75rem;
   -webkit-font-smoothing: subpixel-antialiased;
 
   height: 1.3125rem;
   width: 4.375rem;
   border-radius: 0.1875rem;
   border-radius: var(--defaultBorderRadius, 0.1875rem);
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
+  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
+  /* box-shadow: inset 0 0 2px rgba(0, 0, 0, 1); */
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -3670,19 +3753,55 @@ input[type="range"]:focus {
   display: none !important;
 }
 
-.rux-toggle__button::before {
+.rux-toggle__button {
   position: absolute;
-  /* z-index: -1; */
-  content: "";
-  display: block;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-justify-content: space-around;
+
+          justify-content: space-around;
+  -webkit-align-content: center;
+          align-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+
+  top: 0;
+  left: 0;
+
+  font-size: 0.75rem !important;
 
   height: 100%;
   width: 100%;
 }
 
-.rux-toggle .rux-toggle__button::before {
-  border: 1px solid rgb(0, 0, 0);
-  border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
+.rux-toggle__button span {
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-align-content: center;
+
+          align-content: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+
+  text-transform: uppercase;
+}
+
+.rux-toggle__button::before {
+  position: absolute;
+  content: "";
+  display: block;
+
+  height: 100%;
+  width: 100%;
+
   border-radius: 0.1875rem;
 
   background: linear-gradient(
@@ -3704,43 +3823,6 @@ input[type="range"]:focus {
   );
 }
 
-.rux-toggle__button {
-  position: absolute;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-justify-content: space-around;
-
-          justify-content: space-around;
-  -webkit-align-content: center;
-          align-content: center;
-  -webkit-align-items: center;
-          align-items: center;
-
-  top: 0;
-  left: 0;
-
-  height: 100%;
-  width: 100%;
-}
-
-.rux-toggle__button span {
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-align-content: center;
-
-          align-content: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
-
-  width: 50%;
-  height: 100%;
-  z-index: 1;
-}
-
 .rux-toggle__button::after {
   content: "";
 
@@ -3750,27 +3832,15 @@ input[type="range"]:focus {
 
   box-sizing: border-box;
 
-  top: 1px;
-  left: 1px;
+  top: 0;
+  left: 0;
 
   z-index: 10;
 
   transition: left 0.1s ease-out;
-}
 
-.rux-toggle .on {
-  color: rgb(91, 255, 0);
-  color: var(--toggleBaseSelectedTextColor, rgb(91, 255, 0));
-}
-
-.rux-toggle .off {
-  color: rgb(198, 204, 209);
-  color: var(--toggleBaseTextColor, rgb(198, 204, 209));
-}
-
-.rux-toggle .rux-toggle__button::after {
   width: 50%;
-  height: calc(100% - 0.125rem);
+  height: 100%;
 
   border-radius: 0.125rem;
 
@@ -3793,19 +3863,24 @@ input[type="range"]:focus {
   );
 }
 
+.rux-toggle .on {
+  color: rgb(91, 255, 0);
+  color: var(--toggleBaseSelectedTextColor, rgb(91, 255, 0));
+}
+
+.rux-toggle .off {
+  color: rgb(198, 204, 209);
+  color: var(--toggleBaseTextColor, rgb(198, 204, 209));
+}
+
 .rux-toggle__input:disabled + .rux-toggle__button {
   opacity: 0.4;
   opacity: var(--disabledOpacity, 0.4);
   cursor: not-allowed;
 }
 
-.rux-toggle__input:checked + .rux-toggle__button::before {
-  border: 1px solid var(--toggleBaseBorderColor);
-  border: 1px solid var(--toggleBaseBorderColor);
-}
-
 .rux-toggle__input:checked + .rux-toggle__button::after {
-  left: calc(50% - 1px);
+  left: 50%;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
     -1px 0 2px rgba(0, 0, 0, 0.6)
   ;

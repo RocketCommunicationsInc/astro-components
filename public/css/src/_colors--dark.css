@@ -114,7 +114,11 @@
   --color-caution: rgb(248, 231, 29);
   --color-ok: rgb(91, 255, 0);
   --color-standby: rgb(128, 224, 255);
-  --color-off: rgb(198, 204, 209);
+  --color-off: rgb(
+    198,
+    204,
+    209
+  ); /* 
 
   --color-primary--lighten-1: color(var(--color-primary) tint(25%));
   --color-primary--lighten-2: color(var(--color-primary) tint(50%));
@@ -204,5 +208,5 @@
   --color-gray--darken-1: color(var(--color-gray) shade(25%));
   --color-gray--darken-2: color(var(--color-gray) shade(50%));
   --color-gray--darken-3: color(var(--color-gray) shade(75%));
-  --color-gray--darken-4: var(--color-black);
+  --color-gray--darken-4: var(--color-black); */
 }

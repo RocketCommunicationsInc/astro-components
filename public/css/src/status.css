@@ -2,6 +2,8 @@
 **
 ** 	ASTRO STATUS INDICATOR
 ** 	==========================================================================
+**  3.0 Notes
+**  Removed margin on status symbols
 **	1.4 Notes
 **	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
 **  - Embeded SVG graphics
@@ -9,10 +11,12 @@
 .rux-status,
 .satcom-status {
   font-size: 1rem;
-  margin: 10px auto; /* Deprecate in 2.0 */
+
   line-height: 1;
   padding: 0;
   vertical-align: middle;
+  text-align: center;
+  /* border: 1px solid red !important; */
 }
 
 /* Icon */
@@ -33,7 +37,7 @@
 .rux-status--off::before,
 .satcom-status-off::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Crect width='5' height='5' fill='%23C6CCD1' transform='translate(4 4)'/%3E%3C/svg%3E");
-  background-position: 1px 1px;
+  background-position: 0 0;
 }
 
 .rux-status--standby::before,
@@ -42,10 +46,11 @@
   background-position: 0 0;
 }
 
+.rux-status--normal::before,
 .rux-status--ok::before,
 .satcom-status-ok::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Crect width='10' height='5' fill='%237ED321' transform='translate(1 4)'/%3E%3C/svg%3E");
-  background-position: 0 1px;
+  background-position: 1px 1px;
 }
 
 .rux-status--caution::before,
@@ -54,16 +59,18 @@
   background-position: 1px 1px;
 }
 
+.rux-status--serious::before,
 .rux-status--error::before,
 .satcom-status-error::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Ccircle cx='5.5' cy='5.5' r='5.5' fill='rgb(255, 176, 0)' transform='translate(1 1)'/%3E%3C/svg%3E");
-  background-position: 1px 1px;
+  background-position: 0 0;
 }
 
+.rux-status--critical::before,
 .rux-status--alert::before,
 .satcom-status-alert::before {
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212px%22%20height%3D%2212px%22%20viewBox%3D%220%200%2012%2012%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%3Cg%20id%3D%22emergency%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23F72501%22%20d%3D%22M12%2012H0L6%200z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
-  background-position: 0 0;
+  background-position: 1px 0;
 }
 
 /* Small Status Modifiers */

@@ -288,6 +288,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
 <li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
 <li><astro-sample id="sample-dialog">Dialog</astro-sample></li>
@@ -297,7 +298,6 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-progress">Progress</astro-sample></li>
 <li><astro-sample id="sample-tree">Tree</astro-sample></li>
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
-<li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
 <li><astro-sample id="sample-slider">Slider</astro-sample></li>

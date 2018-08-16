@@ -6,8 +6,8 @@
 
   background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
 
-  width: 28.125rem;
-  min-height: 12.5rem;
+  width: 28rem;
+  height: 13.5rem;
   border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
 
   border-radius: 4px;
@@ -39,7 +39,9 @@
   font-weight: 600;
   padding: 0;
   margin: 0;
-  color: #fff;
+  line-height: 1.2;
+
+  color: #fff !important;
 }
 
 .rux-modal__content {
@@ -52,6 +54,7 @@
 }
 
 .rux-button-group {
+  margin-top: auto;
   margin-left: auto;
 }
 

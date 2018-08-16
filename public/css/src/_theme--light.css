@@ -25,7 +25,7 @@
   /* Button Hover State */
   --buttonHoverTextColor: var(--colorWhite, #fff);
   --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBorderColor: var(--colorWhite, rgb(255, 255, 255));
+  --buttonHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
   --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
@@ -207,6 +207,21 @@
   --modalTextColor: var(--colorBlack, rgb(0, 0, 0));
   --modalBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --modalBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  /* 
+    
+    Log Colors 
+    ==========================================================================
+
+  */
+  --logTextColor: var(--colorBlack);
+  --logBackgroundColor: var(--colorWhite);
+  --logBorderColor: var(--colorTertiaryLighten2);
+
+  --logHeaderTextColor: var(--colorBlack);
+  --logHeaderBackgroundColor: var(--colorTertiary);
+
+  --logFilterBackgroundColor: var(--colorStandbyLighten3);
+  --logFilterTextColor: var(--colorStandbyDarken2);
 }
 
 li.light-theme {
