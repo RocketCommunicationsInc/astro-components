@@ -42,14 +42,17 @@ export class AstroSamples extends PolymerElement {
     this._samples = this._registerSamples();
     this._panels = null;
 
-    window.addEventListener("register-panels", this._registerPanelsListener);
+    window.addEventListener("register-spanels", this._registerPanelsListener);
 
     this.addEventListener("click", this._onClick);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener("register-panels", this._registerPanelsListener);
+    window.removeEventListener(
+      "register-spanels",
+      this._registerPanelsListener
+    );
   }
 
   ready() {

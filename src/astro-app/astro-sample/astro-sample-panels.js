@@ -22,7 +22,7 @@ export class AstroSamplePanels extends PolymerElement {
     let _panels = this.querySelectorAll("astro-sample-panel");
 
     window.dispatchEvent(
-      new CustomEvent("register-panels", {
+      new CustomEvent("register-spanels", {
         detail: { panels: _panels }
       })
     );
