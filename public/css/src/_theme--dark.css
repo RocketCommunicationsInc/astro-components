@@ -7,7 +7,7 @@
   */
   --backgroundColor: var(--colorTertiary, rgb(40, 63, 88));
   --fontColor: var(--colorWhite, rgb(255, 255, 255));
-
+  --batman: var(--colorCritical, green);
   /* 
     
     Button Colors 
@@ -211,6 +211,19 @@
 
   --logFilterBackgroundColor: var(--colorStandbyLighten1);
   --logFilterTextColor: var(--colorStandbyDarken3);
+
+  /* 
+    
+    Tree Colors 
+    ==========================================================================
+
+  */
+  --treeTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --treeBackgroundColor: var(--colorTertiaryDarken1);
+  --treeBorderColor: var(--colorBlack);
+  --treeItemBorderColor: var(--colorTertiary);
+
+  --treeSelectedBackgroundColor: var(--colorPrimaryDarken1, rgb(58, 129, 191));
 }
 
 li.dark-theme {

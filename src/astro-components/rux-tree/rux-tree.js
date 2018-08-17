@@ -22,20 +22,24 @@ export class RuxTree extends PolymerElement {
       .rux-tree {
         display: inline-block;
         box-sizing: border-box;
-
+      
         width: 100%;
         padding: 0;
         margin: 0;
       
-        font-weight: 1.125rem;
+        font-size: 1rem;
       
-        background-color: #1c3143;
+        background-color: var(--treeBackgroundColor, rgb(30, 47, 66));
       
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+      
+        
       }
+
+      
       
       *,
       *:before,
@@ -49,6 +53,10 @@ export class RuxTree extends PolymerElement {
         list-style: none;
       }
       
+      .rux-tree li:not(:first-child) {
+        border-top: 1px solid var(--treeItemBorderColor, rgb(40, 63, 88));
+      }
+      
       /* Parent Elements */
       .rux-tree__parent-container {
         display: flex;
@@ -57,15 +65,12 @@ export class RuxTree extends PolymerElement {
         align-content: stretch;
         padding: 0 0 0 1.25rem;
         margin: 0;
-      
-        border-top: 1px solid rgba(255, 255, 255, 0.125);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
       }
       
       .rux-tree__label {
         flex-grow: 1;
         padding: 0.5rem;
-
+      
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -86,7 +91,8 @@ export class RuxTree extends PolymerElement {
         height: 0;
         border-style: solid;
         border-width: 7px 0 7px 7px;
-        border-color: transparent transparent transparent #007bff;
+        border-color: transparent transparent transparent
+          var(--treeAccentColor, rgb(77, 172, 255));
         display: inline-block;
       }
       
@@ -105,7 +111,6 @@ export class RuxTree extends PolymerElement {
       
       .rux-tree__child {
         padding-left: 3rem;
-        outline: 1px solid green;
       }
       
       /* Expanded */
@@ -121,14 +126,16 @@ export class RuxTree extends PolymerElement {
         height: auto;
       }
       
-      .rux-tree__parent-container.selected {
-        box-shadow: inset 5px 0 #0084f0;
-        background-color: #283f58;
+      .selected {
+        background-color: var(--treeSelectedBackgroundColor, rgb(0, 68, 107));
+        box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
+      
+        color: var(--treeSelectedTextColor, rgb(255, 255, 255));
       }
       
-      .rux-tree__child.selected {
-        box-shadow: inset 5px 0 #0084f0;
-        background-color: #283f58;
+      .selected .rux-tree__arrow::after {
+        border-color: transparent transparent transparent
+          var(--treeSelectedAccentColor, rgb(77, 172, 255));
       }
       
       </style>

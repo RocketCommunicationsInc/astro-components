@@ -276,7 +276,7 @@ export class AstroApp extends PolymerElement {
         
             rux-tree {
               width: 300px;
-              outline: 1px solid red;
+              
             }
 
     </style>
@@ -288,6 +288,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-tree">Tree</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
 <li><astro-sample id="sample-buttons">Buttons</astro-sample></li>
@@ -296,7 +297,6 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-clock">Clock</astro-sample></li>
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-progress">Progress</astro-sample></li>
-<li><astro-sample id="sample-tree">Tree</astro-sample></li>
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
