@@ -30,17 +30,19 @@ export class RuxTab extends PolymerElement {
         :host {
           box-sizing: border-box;
 
-          flex-grow: 1;
-          flex-shrink: 1;
+          // flex-grow: 1;
+          // flex-shrink: 1;
 
           height: 100%;
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 0 2rem;
+
+          // width: 5rem;
           
           max-width: 12rem;
-          min-width: 2rem;
+          min-width: 10px;
 
           text-decoration: none;
 
@@ -59,13 +61,23 @@ export class RuxTab extends PolymerElement {
           border-right: 1px solid var(--tabBorderColor, rgb(20, 32, 44));
         }
 
+        :host([compact]),
+        :host([interior]) {
+          min-width: 5rem;
+        }
+
         :host([transparent]) {
           background-color: transparent;
           border-right: 1px solid var(--tabTransparentBorderColor, rgb(255,255,255,.1));
         }
 
-        :host([compact][selected]) {
+
+        :host([interior][selected]) {
           box-shadow: inset 0 -2px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+        }
+
+        :host([compact][selected]) {
+          box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
         }
 
         :host([selected]) {
@@ -105,6 +117,10 @@ export class RuxTab extends PolymerElement {
 
     if (this.parentElement.getAttributeNode("transparent")) {
       this.setAttribute("transparent", "");
+    }
+
+    if (this.parentElement.getAttributeNode("interior")) {
+      this.setAttribute("interior", "");
     }
 
     console.log(this.parentElement.getAttributeNode("compact"));

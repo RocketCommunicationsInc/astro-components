@@ -347,8 +347,7 @@ export class AstroApp extends PolymerElement {
         
     <rux-tabs
         id="compact-tabs"
-        compact
-        transparent>
+        compact>
         <rux-tab id="t1" role="tab" selected>Tab 1</rux-tab>
         <rux-tab id="t2" role="tab">Tab 2</rux-tab>
         <rux-tab id="t3" role="tab" disabled>Tab 3</rux-tab>
@@ -369,6 +368,28 @@ export class AstroApp extends PolymerElement {
     </rux-tab-panels>
 
     <br>
+        
+    <rux-tabs
+        id="interior-tabs"
+        interior>
+        <rux-tab id="i1" role="tab" selected>Tiny 1</rux-tab>
+        <rux-tab id="i2" role="tab">Tiny 2</rux-tab>
+        <rux-tab id="i3" role="tab" disabled>Tiny 3</rux-tab>
+    </rux-tabs>
+
+    <rux-tab-panels role="tablist" aria-labeledby="interior-tabs">
+        <rux-tab-panel aria-labeledby="i1" role="tabpanel">  
+            <h2>Tab 1</h2>
+        </rux-tab-panel>
+
+        <rux-tab-panel aria-labeledby="i2" role="tabpanel">  
+            <h2>Tab 2</h2>
+        </rux-tab-panel>
+
+        <rux-tab-panel aria-labeledby="i3" role="tabpanel">  
+            <h2>Tab 3</h2>
+        </rux-tab-panel>
+    </rux-tab-panels>
     
 
 </astro-sample-panel>

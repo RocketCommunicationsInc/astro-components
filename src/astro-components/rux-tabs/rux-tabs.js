@@ -42,9 +42,12 @@ export class RuxTabs extends PolymerElement {
       .rux-tabs {
         box-sizing: border-box;
         display: flex;
+        justify-content: flex-start;
         font-size: 1.5rem;
 
-        width: 100%;
+        
+
+        width: auto;
         margin: 0;
         padding: 0;
         height: 5.625rem;
@@ -63,6 +66,11 @@ export class RuxTabs extends PolymerElement {
       :host([compact]) {
         height: 3.125rem;
         font-size: 1rem;
+      }
+
+      :host([interior]) {
+        height: 2.25rem;
+        font-size: 0.875rem;
       }
       
       /* rux-panes */
