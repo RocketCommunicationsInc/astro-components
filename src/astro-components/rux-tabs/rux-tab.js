@@ -12,6 +12,9 @@ export class RuxTab extends PolymerElement {
       selected: {
         type: Boolean,
         reflectToAttribute: true
+      },
+      type: {
+        type: String
       }
     };
   }
@@ -19,81 +22,61 @@ export class RuxTab extends PolymerElement {
   static get template() {
     return html`
       <style>
-      /* rux tab */
-:host {
-  flex-grow: 1;
-  flex-shrink: 1;
+        /* rux tab */
 
-  position: relative;
-  height: 5rem;
-  max-width: 12rem;
-  display: block;
-  padding: 2rem 1.5rem 1rem;
-  margin: 0;
-  font-family: var(--font-family);
-  font-size: 1.875em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  color: #5cb3ff;
+        :host {
+          box-sizing: border-box;
 
-  /* background: #23384e; */
+          flex-grow: 1;
+          flex-shrink: 1;
 
-  border-left: 1px solid rgba(0, 0, 0, 0.5);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 3px 2rem 0;
+          
+          max-width: 12rem;
+          min-width: 2rem;
 
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+          text-decoration: none;
 
-  cursor: pointer;
+          
 
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+          color: var(--tabTextColor, rgb(77, 172, 255));
 
-  transition: color var(--standard-transition-speed);
-}
+          background-color: var(--tabBackgroundColor, rgb(30, 47, 66));
+          
+          border-bottom: 0.3125rem solid var(--tabBackgroundColor, rgb(30, 47, 66));
+        }
 
-:host::before,
-.rux-tabs__tab::before {
-  position: absolute;
-  content: "";
-  display: block;
-  height: 8px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: transparent;
+        :host span {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
 
-  transition: background-color var(--slow-transition-speed);
-}
+        :host {
+          border-right: 1px solid var(--tabBorderColor, rgb(20, 32, 44));
+        }
 
-:host([selected]),
-.rux-tabs__tab[selected] {
-  /* background: var(--status-standby); */
-  color: #fff;
-}
+        :host([selected]) {
+          color: var(--tabSelectedTextColor, rgb(255, 255, 255));
+          border-bottom: 5px solid var(--tabSelectedBorderColor, rgb(77, 172, 255));
+        }
 
-:host([selected])::before,
-.rux-tabs__tab[selected]::before {
-  /* background: var(--status-standby); */
-  background-color: var(--selected-color);
-}
 
-:host(:hover),
-.rux-tabs__tab:hover {
-  color: #fff;
-}
+        :host(:hover){
+          color: var(--tabHoverTextColor, rgb(255, 255, 255));
+        }
 
-:host(:hover)::before,
-.rux-tabs__tab:hover::before {
-  background-color: #fff;
-}
-</style>
-      <slot></slot>
+        :host([disabled]) {
+          opacity: var(--disabledOpacity, 0.4);
+          cursor: var(--disabledCursor, not-allowed);
+        }
+
+      </style>
+      <span><slot></slot></span>
     `;
   }
 

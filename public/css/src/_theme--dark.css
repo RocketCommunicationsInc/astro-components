@@ -224,6 +224,19 @@
   --treeItemBorderColor: var(--colorTertiary);
 
   --treeSelectedBackgroundColor: var(--colorPrimaryDarken1, rgb(58, 129, 191));
+
+  /* 
+    
+    Tab Colors 
+    ==========================================================================
+
+  */
+  --tabTextColor: var(--colorSecondary, rgb(77, 172, 255));
+  --tabBackgroundColor: var(--colorTertiaryDarken1, rgb(30, 47, 66));
+  --tabBorderColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
+
+  --tabSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --tabSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 355));
 }
 
 li.dark-theme {

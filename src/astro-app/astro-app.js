@@ -288,6 +288,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-tabs">Tabs</astro-sample></li>
 <li><astro-sample id="sample-tree">Tree</astro-sample></li>
 <li><astro-sample id="sample-log">Log</astro-sample></li>
 <li><astro-sample id="sample-segmented-button">Segmented Button</astro-sample></li>
@@ -313,6 +314,59 @@ export class AstroApp extends PolymerElement {
 
 <astro-sample-panels class="detail">
 
+<astro-sample-panel aria-labeledby="sample-tabs">
+    <h1>Tabs</h1>
+
+    <rux-tabs>
+        <rux-tab id="tab-modems" role="tab" selected>Modems</rux-tab>
+        <rux-tab id="tab-pass-plans" role="tab">Pass Plans Long Title Goes Here</rux-tab>
+        <rux-tab id="tab-satellites" role="tab">Satellites</rux-tab>
+        <rux-tab id="tab-dishes" role="tab" disabled>Dishes</rux-tab>
+    </rux-tabs>
+
+    <rux-tab-panels role="tablist">
+        <rux-tab-panel aria-labeledby="tab-modems" role="tabpanel">  
+            <h2>Modems</h2>
+        </rux-tab-panel>
+
+        <rux-tab-panel aria-labeledby="tab-pass-plans" role="tabpanel">  
+            <h2>Pass Plans</h2>
+        </rux-tab-panel>
+
+        <rux-tab-panel aria-labeledby="tab-satellites" role="tabpanel">  
+            <h2>Satellites</h2>
+        </rux-tab-panel>
+
+        <rux-tab-panel aria-labeledby="tab-dishes" role="tabpanel">  
+            <h2>Dishes</h2>
+        </rux-tab-panel>
+    </rux-tab-panels>
+
+
+    <br>
+
+    <rux-tabs type="compact">
+        <rux-tab id="tab-compact-1" role="tab" selected>Tab 1</rux-tab>
+        <rux-tab id="tab-compact-2" role="tab">Tab 2</rux-tab>
+        <rux-tab id="tab-compact-3" role="tab" disabled>Tab 3</rux-tab>
+    </rux-tabs>
+
+    <rux-tab-panels role="tablist">
+        <rux-tab-panel aria-labeledby="tab-compact-tab-1" role="tabpanel">  
+            <h2>Tab 1</h2>
+        </rux-tab-panel>
+
+        <rux-tab-panel aria-labeledby="tab-compact-tab-2" role="tabpanel">  
+            <h2>Tab 2</h2>
+        </rux-tab-panel>
+
+        <rux-tab-panel aria-labeledby="tab-compact-tab-3" role="tabpanel">  
+            <h2>Tab 3</h2>
+        </rux-tab-panel>
+    </rux-tab-panels>
+
+</astro-sample-panel>
+
 <astro-sample-panel aria-labeledby="sample-tree">
 <h1>Tree</h1>
 <rux-tree data={{treeData}}></rux-tree>
@@ -321,6 +375,8 @@ export class AstroApp extends PolymerElement {
 Selected Tree Element: [[treeData.selected.label]]
 <br>Action for Tree Element: [[treeData.selected.payload.action]]
 </astro-sample-panel>
+
+
 
 <astro-sample-panel aria-labeledby="sample-segmented-button">
 <h1>Segmented Button</h1>

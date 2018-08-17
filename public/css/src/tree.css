@@ -16,6 +16,10 @@
   user-select: none;
 }
 
+.rux-tree--compact {
+  font-size: 0.875rem;
+}
+
 *,
 *:before,
 *:after {
@@ -50,6 +54,10 @@
   text-overflow: ellipsis;
   overflow: hidden;
   width: calc(100% - 7px);
+}
+
+.rux-tree--compact .rux-tree__label {
+  padding: 0.35rem;
 }
 
 .rux-tree__arrow {

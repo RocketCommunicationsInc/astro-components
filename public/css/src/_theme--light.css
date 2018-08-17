@@ -242,6 +242,21 @@
   );
   --treeSelectedAccentColor: var(--colorSecondaryLighten1);
   --treeSelectedTextColor: var(--colorWhite);
+
+  /* 
+    
+    Tab Colors 
+    ==========================================================================
+
+  */
+  --tabTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --tabBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --tabBorderColor: var(--colorTertiaryLighten1, rgb(219, 224, 234));
+
+  --tabHoverTextColor: var(--colorSecondary, rgb(77, 172, 255));
+
+  --tabSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --tabSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
 }
 
 li.light-theme {

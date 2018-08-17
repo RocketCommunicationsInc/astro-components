@@ -22,6 +22,9 @@ export class RuxTabs extends PolymerElement {
       },
       _panels: {
         type: Object
+      },
+      type: {
+        type: String
       }
     };
   }
@@ -31,19 +34,27 @@ export class RuxTabs extends PolymerElement {
       <style>
       :host,
       .rux-tabs {
+        box-sizing: border-box;
+        display: flex;
+        font-size: 1.5rem;
+
+        width: 100%;
         margin: 0;
         padding: 0;
-        display: flex;
-        /* flex-grow: 1; */
-        align-self: flex-start;
-        align-content: stretch;
-        justify-content: flex-start;
-      
-        font-weight: 300;
-        font-family: var(--font-family-light);
+        height: 5.625rem;
+
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        
       
         contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
       }
+
+      
       
       /* rux-panes */
       .rux-tabs__panels {
@@ -53,7 +64,8 @@ export class RuxTabs extends PolymerElement {
         align-self: flex-start;
         contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
       }
-      </style>      
+      </style>
+      
       <slot></slot>
     `;
   }

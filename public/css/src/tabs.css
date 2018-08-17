@@ -12,17 +12,17 @@
 **  - Replace use a radio-button based structure for tabs? (http://alistapart.com/article/radio-controlled-web-design)
 */
 
-
 /* 	REQUIRED CLASSES */
 
 .rux-tabs,
 .satcom-tabs {
-  
+  font-size: 1.5rem;
+
   width: 100%;
   margin: 0;
   padding: 0;
-  height: auto;
-  
+  height: 5.625rem;
+
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -30,23 +30,33 @@
   user-select: none;
 }
 
+.rux-tabs--compact {
+  height: 3.125rem;
+  font-size: 1rem;
+}
+
 .rux-tabs ul,
 .satcom-tabs ul {
-  font-weight: 300;
   padding: 0;
   margin: 0;
-  height: auto;
-  
+  height: 100%;
+
   display: flex;
   list-style: none;
 }
 
 .rux-tabs li,
 .satcom-tabs li {
-  text-align: center;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+
+  /* outline: 1px solid green; */
+}
+
+.rux-tabs li:not(:last-child),
+.satcom-tabs li:not(:last-child) {
+  border-right: 1px solid var(--tabBorderColor, rgb(20, 32, 44));
 }
 
 .rux-tabs li::before,
@@ -56,128 +66,34 @@
 
 .rux-tabs a,
 .satcom-tabs a {
-  position: relative;
   height: 100%;
-  display: block;
-  padding: 1rem 3rem 1.2rem;
-  margin: 0;
-  font-size: 30px;
+  display: flex;
+  align-items: center;
+  padding: 3px 2rem 0;
+
   text-decoration: none;
-  color: #5CB3FF;
+  color: var(--tabTextColor, rgb(77, 172, 255));
 
-  background: #23384e;
+  background-color: var(--tabBackgroundColor, rgb(30, 47, 66));
+  border-bottom: 0.3125rem solid var(--tabBackgroundColor, rgb(30, 47, 66));
   overflow: show;
-  
 }
 
-
-
-
-.rux-tabs a::after,
-.satcom-tabs a::after {
-  position: absolute;
-  content: '';
-  display: block;
-  height: 4px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid #000;
-  /* opacity: 0; */
-  margin: 0;
-  
-  transition: background 0.367s ease-out;
+.rux-tabs a[disabled] {
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: var(--disabledCursor, not-allowed);
 }
-
-
-
-
-.rux-tabs a:hover:not(:disabled),
-.satcom-tabs a:hover:not(:disabled) {
-  color: #fff;
-}
-
-.rux-tabs a:hover:not(:disabled)::after,
-.satcom-tabs a:hover:not(:disabled)::after {
-  opacity: 1;
-  background: #fff;
-  
-  transition: opacity 0.167s ease-out;
-}
-
 
 .rux-tabs .selected a,
 .satcom-tabs .selected a,
 .rux-tabs .selected a:hover,
 .satcom-tabs .selected a:hover {
-  color: #fff;
+  color: var(--tabSelectedTextColor, rgb(255, 255, 255));
+  border-bottom: 0.3125rem solid
+    var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
-.rux-tabs .selected a::after,
-.satcom-tabs .selected a::after,
-.rux-tabs .selected a:hover::after,
-.satcom-tabs .selected a:hover::after {
-  opacity: 1;
-  background: #5cb3ff;
-
-  transition: opacity 0.167s ease-out;
-}
-
-
-.rux-tabs a:disabled {
-  opacity: 0.4;
-}
-
-
-/* VARIANT CLASSES */
-
-.satcom-tabs--interior,
-.satcom-tabs-interior {
-  width: auto;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  font-size: 0.9em;
-}
-
-.rux-tabs--interior li,
-.satcom-tabs-interior li {
-  text-align: center;
-  margin-right: 0.3em;
-}
-
-.rux-tabs--interior a,
-.satcom-tabs-interior a {
-  width: 7em;
-  height: 100%;
-  display: block;
-  padding: 1em 0;
-  text-decoration: none;
-  color: #494949;
-  border: none;
-
-  background: linear-gradient(to top, #fff 0%, #efefef 100%);
-}
-
-
-
-.rux-tabs--interior .selected a,
-.rux-tabs--interior .selected a:hover,
-.satcom-tabs-interior .selected a,
-.satcom-tabs-interior .selected a:hover {
-  border-top: 4px solid #7abfe3;
-  padding-top: 0.85em;
-  border-left: 1px solid #dee2e7;
-  border-right: 1px solid #dee2e7;
-}
-
-.rux-tabs-interior a:hover,
-.satcom-tabs-interior a:hover {
-  background: linear-gradient(to top, #fff 0%, #e9f4fa 100%);
+.rux-tabs a:hover:not([disabled]),
+.satcom-tabs a:hover:not([disabled]) {
+  color: var(--tabHoverTextColor, rgb(255, 255, 255));
 }
