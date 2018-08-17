@@ -26,11 +26,11 @@ export class RuxTabs extends PolymerElement {
       _panelGroup: {
         type: String
       },
-      type: {
-        type: String
+      compact: {
+        type: Boolean
       },
-      style: {
-        type: String
+      transparent: {
+        type: Boolean
       }
     };
   }
@@ -56,11 +56,14 @@ export class RuxTabs extends PolymerElement {
         user-select: none;
 
         
-      
+        
         contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
       }
 
-      
+      :host([compact]) {
+        height: 3.125rem;
+        font-size: 1rem;
+      }
       
       /* rux-panes */
       .rux-tabs__panels {
@@ -103,7 +106,11 @@ export class RuxTabs extends PolymerElement {
   }
 
   _onClick(e) {
-    if (e.target.getAttribute("role") === "tab") {
+    // fire click event if the target is a tab and it hasn’t been disabled
+    if (
+      e.target.getAttribute("role") === "tab" &&
+      e.target.getAttribute("disabled") === null
+    ) {
       this._setTab(e.target);
     }
   }

@@ -37,19 +37,16 @@ export class RuxTab extends PolymerElement {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 3px 2rem 0;
+          padding: 0 2rem;
           
           max-width: 12rem;
           min-width: 2rem;
 
           text-decoration: none;
 
-          
-
           color: var(--tabTextColor, rgb(77, 172, 255));
 
           background-color: var(--tabBackgroundColor, rgb(30, 47, 66));
-          border-bottom: 0.3125rem solid var(--tabBackgroundColor, rgb(30, 47, 66));
         }
 
         :host span {
@@ -62,9 +59,18 @@ export class RuxTab extends PolymerElement {
           border-right: 1px solid var(--tabBorderColor, rgb(20, 32, 44));
         }
 
+        :host([transparent]) {
+          background-color: transparent;
+          border-right: 1px solid var(--tabTransparentBorderColor, rgb(255,255,255,.1));
+        }
+
+        :host([compact][selected]) {
+          box-shadow: inset 0 -2px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+        }
+
         :host([selected]) {
           color: var(--tabSelectedTextColor, rgb(255, 255, 255));
-          border-bottom: 5px solid var(--tabSelectedBorderColor, rgb(77, 172, 255));
+          box-shadow: inset 0 -5px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
         }
 
 
@@ -75,6 +81,7 @@ export class RuxTab extends PolymerElement {
         :host([disabled]) {
           opacity: var(--disabledOpacity, 0.4);
           cursor: var(--disabledCursor, not-allowed);
+          
         }
 
       </style>
@@ -91,6 +98,16 @@ export class RuxTab extends PolymerElement {
 
     // set the role to tab
     this.setAttribute("role", "tab");
+
+    if (this.parentElement.getAttributeNode("compact")) {
+      this.setAttribute("compact", "");
+    }
+
+    if (this.parentElement.getAttributeNode("transparent")) {
+      this.setAttribute("transparent", "");
+    }
+
+    console.log(this.parentElement.getAttributeNode("compact"));
   }
 
   ready() {
