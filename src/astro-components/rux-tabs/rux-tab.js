@@ -15,6 +15,9 @@ export class RuxTab extends PolymerElement {
       },
       type: {
         type: String
+      },
+      style: {
+        type: String
       }
     };
   }
@@ -46,7 +49,6 @@ export class RuxTab extends PolymerElement {
           color: var(--tabTextColor, rgb(77, 172, 255));
 
           background-color: var(--tabBackgroundColor, rgb(30, 47, 66));
-          
           border-bottom: 0.3125rem solid var(--tabBackgroundColor, rgb(30, 47, 66));
         }
 

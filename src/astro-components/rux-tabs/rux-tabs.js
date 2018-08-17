@@ -23,7 +23,13 @@ export class RuxTabs extends PolymerElement {
       _panels: {
         type: Object
       },
+      _panelGroup: {
+        type: String
+      },
       type: {
+        type: String
+      },
+      style: {
         type: String
       }
     };
@@ -65,7 +71,7 @@ export class RuxTabs extends PolymerElement {
         contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
       }
       </style>
-      
+
       <slot></slot>
     `;
   }
@@ -84,7 +90,6 @@ export class RuxTabs extends PolymerElement {
     this._panels = null;
 
     window.addEventListener("register-panels", this._registerPanelsListener);
-
     this.addEventListener("click", this._onClick);
   }
 
@@ -108,7 +113,9 @@ export class RuxTabs extends PolymerElement {
   }
 
   _registerPanels(e) {
-    this._panels = Array.from(e.detail.panels);
+    if (e.detail.for === this.getAttribute("id")) {
+      this._panels = Array.from(e.detail.panels);
+    }
 
     // if a tab isn’t selected in markup then default to first tab in the list
     const selectedTab = this._tabs.find(tab => tab.selected || this._tabs[0]);
@@ -144,6 +151,8 @@ export class RuxTabs extends PolymerElement {
         panel.getAttribute("aria-labeledby") === selectedTab.getAttribute("id")
     );
 
+    // console.log(selectedTab);
+    // console.log(selectedPanel);
     selectedTab.selected = true;
     selectedPanel.hidden = false;
   }

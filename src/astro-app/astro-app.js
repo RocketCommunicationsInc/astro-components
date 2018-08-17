@@ -317,53 +317,59 @@ export class AstroApp extends PolymerElement {
 <astro-sample-panel aria-labeledby="sample-tabs">
     <h1>Tabs</h1>
 
-    <rux-tabs>
-        <rux-tab id="tab-modems" role="tab" selected>Modems</rux-tab>
-        <rux-tab id="tab-pass-plans" role="tab">Pass Plans Long Title Goes Here</rux-tab>
-        <rux-tab id="tab-satellites" role="tab">Satellites</rux-tab>
-        <rux-tab id="tab-dishes" role="tab" disabled>Dishes</rux-tab>
+    <rux-tabs id="main">
+        <rux-tab id="a1" role="tab" selected>Modems</rux-tab>
+        <rux-tab id="a2" role="tab">Pass Plans Long Title Goes Here</rux-tab>
+        <rux-tab id="a3" role="tab">Satellites</rux-tab>
+        <rux-tab id="a4" role="tab" disabled>Dishes</rux-tab>
     </rux-tabs>
 
-    <rux-tab-panels role="tablist">
-        <rux-tab-panel aria-labeledby="tab-modems" role="tabpanel">  
+    <rux-tab-panels role="tablist" aria-labeledby="main">
+        <rux-tab-panel aria-labeledby="a1" role="tabpanel">  
             <h2>Modems</h2>
         </rux-tab-panel>
 
-        <rux-tab-panel aria-labeledby="tab-pass-plans" role="tabpanel">  
+        <rux-tab-panel aria-labeledby="a2" role="tabpanel">  
             <h2>Pass Plans</h2>
         </rux-tab-panel>
 
-        <rux-tab-panel aria-labeledby="tab-satellites" role="tabpanel">  
+        <rux-tab-panel aria-labeledby="a3" role="tabpanel">  
             <h2>Satellites</h2>
         </rux-tab-panel>
 
-        <rux-tab-panel aria-labeledby="tab-dishes" role="tabpanel">  
+        <rux-tab-panel aria-labeledby="a4" role="tabpanel">  
             <h2>Dishes</h2>
         </rux-tab-panel>
     </rux-tab-panels>
 
 
     <br>
-
-    <rux-tabs type="compact">
-        <rux-tab id="tab-compact-1" role="tab" selected>Tab 1</rux-tab>
-        <rux-tab id="tab-compact-2" role="tab">Tab 2</rux-tab>
-        <rux-tab id="tab-compact-3" role="tab" disabled>Tab 3</rux-tab>
+        
+    <rux-tabs
+        id="compact-tabs"
+        type="compact"
+        style="transparent">
+        <rux-tab id="t1" role="tab" selected>Tab 1</rux-tab>
+        <rux-tab id="t2" role="tab">Tab 2</rux-tab>
+        <rux-tab id="t3" role="tab" disabled>Tab 3</rux-tab>
     </rux-tabs>
 
-    <rux-tab-panels role="tablist">
-        <rux-tab-panel aria-labeledby="tab-compact-tab-1" role="tabpanel">  
+    <rux-tab-panels role="tablist" aria-labeledby="compact-tabs">
+        <rux-tab-panel aria-labeledby="t1" role="tabpanel">  
             <h2>Tab 1</h2>
         </rux-tab-panel>
 
-        <rux-tab-panel aria-labeledby="tab-compact-tab-2" role="tabpanel">  
+        <rux-tab-panel aria-labeledby="t2" role="tabpanel">  
             <h2>Tab 2</h2>
         </rux-tab-panel>
 
-        <rux-tab-panel aria-labeledby="tab-compact-tab-3" role="tabpanel">  
+        <rux-tab-panel aria-labeledby="t3" role="tabpanel">  
             <h2>Tab 3</h2>
         </rux-tab-panel>
     </rux-tab-panels>
+
+    <br>
+    
 
 </astro-sample-panel>
 

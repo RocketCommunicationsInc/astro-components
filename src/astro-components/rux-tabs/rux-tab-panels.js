@@ -19,11 +19,13 @@ export class RuxTabPanels extends PolymerElement {
     // set the role to tab
     this.setAttribute("role", "tablist");
 
+    // console.log(this.getAttribute("aria-labeledby"));
+
     let _panels = this.querySelectorAll("rux-tab-panel");
 
     window.dispatchEvent(
       new CustomEvent("register-panels", {
-        detail: { panels: _panels }
+        detail: { panels: _panels, for: this.getAttribute("aria-labeledby") }
       })
     );
 
