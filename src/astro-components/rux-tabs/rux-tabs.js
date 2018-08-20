@@ -45,12 +45,10 @@ export class RuxTabs extends PolymerElement {
         justify-content: flex-start;
         font-size: 1.5rem;
 
-        
-
+        height: 5.625rem;
         width: auto;
         margin: 0;
         padding: 0;
-        height: 5.625rem;
 
         -moz-user-select: none;
         -khtml-user-select: none;
@@ -58,9 +56,11 @@ export class RuxTabs extends PolymerElement {
         -ms-user-select: none;
         user-select: none;
 
-        
-        
         contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+      }
+
+      :host([main]) {
+        height: 100%;
       }
 
       :host([compact]) {

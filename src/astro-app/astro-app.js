@@ -279,11 +279,61 @@ export class AstroApp extends PolymerElement {
               
             }
 
+            rux-global-status-bar {
+                height: 100px;
+                padding: 0 2.625rem;
+            }
+
+
+            rux-global-status-bar rux-clock {
+                margin-top: 1rem;   
+            }
+
     </style>
     
-<rux-global-status-bar appname="Astro Components"></rux-global-status-bar>
+    <rux-global-status-bar
+    appname="Astro App"
+    version="2.0a">
+    
+    <rux-tabs
+        id="main-nav"
+        main
+        transparent>
+      <rux-tab id="tab-modems">Modems</rux-tab>
+      <rux-tab id="tab-pass-plans">Pass Plans</rux-tab>
+      <rux-tab id="tab-satellites">Satellites</rux-tab>
+    </rux-tabs>
 
+    <rux-clock></rux-clock>
 
+    <ul class="astro-advanced-status-indicators">
+      <dom-repeat id="astroAdvancedStatus" items="{{statusIndicators}}">
+        <template>
+          <li>
+            <rux-status
+              status="ok"
+              label=[[item.label]]
+              icon=[[item.icon]]
+              notifications=[[item.notifications]]
+              on-click="_showPopUp"></rux-status>
+          </li>
+        </template>
+      </dom-repeat>
+    </ul>
+
+    
+
+    <rux-button
+      type="large"
+      icon="default:caution"
+      on-click="goFullScreen">Master Off</rux-button>
+  </rux-global-status-bar>
+
+  <rux-tab-panels role="tablist" aria-labeledby="main-nav">
+    <rux-panel aria-labeledby="tab-modems"></rux-panel>
+    <rux-panel aria-labeledby="tab-pass-plans"></rux-panel>
+    <rux-panel aria-labeledby="tab-satellites"></rux-panel>
+  </rux-tab-panels>
 
 <div class="master-detail">
 <astro-samples class="master">
@@ -1617,6 +1667,21 @@ Selected Tree Element: [[treeData.selected.label]]
       },
       {
         label: "Week"
+      }
+    ];
+
+    this.statusIndicators = [
+      {
+        label: "Power",
+        status: "ok",
+        icon: "advanced-status-egs:propulsion-power",
+        notifications: 1
+      },
+      {
+        label: "Communications",
+        status: "ok",
+        icon: "advanced-status-egs:netcom",
+        notifications: 0
       }
     ];
 

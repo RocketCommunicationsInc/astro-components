@@ -34,10 +34,12 @@ export class RuxTab extends PolymerElement {
           // flex-shrink: 1;
 
           height: 100%;
+          
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 0 2rem;
+          margin: 0;
 
           // width: 5rem;
           

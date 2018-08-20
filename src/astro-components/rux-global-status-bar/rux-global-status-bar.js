@@ -24,27 +24,30 @@ export class RuxGlobalStatusBar extends PolymerElement {
       width: 100%;
     
       box-sizing: border-box;
+      background-color: var(--colorPrimaryDarken3, red);
     
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
     
+
       contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
     }
+
+    
     
     header {
       display: flex;
     
-      height: 6.25rem;
+      height: 100%;
       width: 100%;
     
       padding: 0;
-      margin: 0 0 1.25rem 0;
-    
+      
       align-items: center;
       justify-content: space-between;
-      /* outline: 1px solid red; */
+      
     
       box-sizing: border-box;
     }
@@ -61,7 +64,7 @@ export class RuxGlobalStatusBar extends PolymerElement {
     
     .app-meta {
       display: block;
-      /* outline: 1px solid red; */
+      
       padding: 0;
       margin: 0;
       color: #bdc3c9;
