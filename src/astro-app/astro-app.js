@@ -683,7 +683,11 @@ Selected Tree Element: [[treeData.selected.label]]
             <code>&lt;rux-slider&gt;</code>
             </p>
             <div class="rux-slider-container">
-                <rux-slider axis-labels=[[sliderObjThree.labels]] val={{sliderObjThree.value}}></rux-slider>
+                <rux-slider 
+                    axis-labels=[[sliderObjThree.labels]] 
+                    min=10
+                    max=85
+                    val={{sliderObjThree.value}}></rux-slider>
             </div>
             <div class="output">Slider Value is = [[sliderObjThree.value]]</div>
         </section>

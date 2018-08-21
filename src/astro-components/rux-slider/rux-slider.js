@@ -229,9 +229,23 @@ export class RuxSlider extends PolymerElement {
     const min = this._range.getAttribute("min");
     const max = this._range.getAttribute("max");
     const val = this._range.value;
-    const dif = ((max - (max - val)) / max) * 100;
+    // const dif = ((max - (max - val)) / max) * 100;
 
-    console.log(dif);
+    /*
+
+    10 = 0
+    45 = 50
+    100 = 100
+
+    x / 2 = 45
+
+    */
+
+    // min - max = 90
+    // val = 45
+    // 45 = 50%
+
+    let dif = ((val - min) / (max - min)) * 100;
 
     this._range.style.setProperty("--value", dif);
   }
