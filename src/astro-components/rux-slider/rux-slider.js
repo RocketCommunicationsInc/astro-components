@@ -217,12 +217,29 @@ export class RuxSlider extends PolymerElement {
   }
   connectedCallback() {
     super.connectedCallback();
+
+    this._range = this.shadowRoot.querySelector("input[type=range]");
+    this._updateVisual();
   }
   disconnectedCallback() {
     super.disconnectedCallback();
   }
+
+  _updateVisual() {
+    const min = this._range.getAttribute("min");
+    const max = this._range.getAttribute("max");
+    const val = this._range.value;
+    const dif = ((max - (max - val)) / max) * 100;
+
+    console.log(dif);
+
+    this._range.style.setProperty("--value", dif);
+  }
+
   _updateValue(e) {
     this.val = e.target.value;
+    // e.target.style.setProperty("--value", e.target.value);
+    this._updateVisual(e.target);
   }
   _getAxisLabels(values) {
     return values.split(",");

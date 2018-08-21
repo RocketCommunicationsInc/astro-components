@@ -687,6 +687,19 @@ Selected Tree Element: [[treeData.selected.label]]
             </div>
             <div class="output">Slider Value is = [[sliderObjThree.value]]</div>
         </section>
+
+        <section>
+            <h2>Slider with Labels</h2>
+            <code>&lt;rux-slider&gt;</code>
+            </p>
+            <div class="rux-slider-container">
+                <rux-slider  
+                    min=0
+                    max=10
+                    val=0></rux-slider>
+            </div>
+            <div class="output">Slider Value is = [[sliderObjThree.value]]</div>
+        </section>
     </astro-sample-panel>
 
    
