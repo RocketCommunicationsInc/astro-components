@@ -74,8 +74,8 @@ export class RuxTimelineRegion extends PolymerElement {
         font-size: 0.875rem;
         top: 0;
         height: 100%;
-        background-color: var(--timelineRegionBackgroundColor);
-        color: var(--timelineRegionTextColor);
+        background-color: var(--timelineRegionBackgroundColor, rgb(0, 90, 143));
+        color: var(--timelineRegionTextColor, rgb(255,255,255));
         overflow: hidden;
       
         -webkit-user-select: none;
@@ -84,7 +84,7 @@ export class RuxTimelineRegion extends PolymerElement {
         user-select: none;
         box-sizing: border-box;
       
-        border: 1px solid var(--timelineRegionBorderColor);
+        border: 1px solid var(--timelineRegionBorderColor, rgb(0, 68, 107));
         /* transition: border 0.667s ease-in-out; */
       
         box-sizing: border-box;
@@ -117,9 +117,9 @@ export class RuxTimelineRegion extends PolymerElement {
       }
       
       :host([selected]) {
-        border: 1px solid var(--timelineRegionSelectedBorderColor);
-        background-color: var(--timelineRegionSelectedBackgroundColor);
-        color: var(--timelineRegionSelectedTextColor);
+        border: 1px solid var(--timelineRegionSelectedBorderColor, rgb(77, 172, 255));
+        background-color: var(--timelineRegionSelectedBackgroundColor, rgb(58, 129, 191));
+        color: var(--timelineRegionSelectedTextColor, rgb(255,255,255));
       }
       
       .rux-region__segment {
