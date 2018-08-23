@@ -98,9 +98,9 @@ export class RuxTimeline extends PolymerElement {
         display: flex;
         align-items: center;
         padding: 0 1em;
-        /* background-color: rgba(255, 255, 255, 0.1); */
-        /* background-color: hsl(204,53%,12%); */
-        background-color: #24384d;
+        
+        background-color: var(--timelineHeaderBackgroundColor, rgb(0, 68, 107));
+        
         z-index: 10;
       }
 
@@ -130,20 +130,20 @@ export class RuxTimeline extends PolymerElement {
       }
 
       rux-timeline-track:nth-child(even) {
-        background-color: rgba(255, 255, 255, 0.01);
+        background-color: var(--timelineTrackBackgroundColor);
       }
       rux-timeline-track:nth-child(odd) {
-        /* background-color: rgba(255, 255, 255, 0.04); */
-        background-color: #1e2f41;
+        
+        background-color: var(--timelineTrackBackgroundColor);
       }
       
       #rux-timeline__ruler {
         display: block;
         position: relative;
         margin-top: auto;
-        color: #bdc3c9;
-        /* background-color: rgba(0, 0, 0, 0.15); */
-        background-color: #24384d;
+        color: var(--fontColor, rgb(255,255,255));
+        
+        background-color: var(--timelineHeaderBackgroundColor);
         height: 2em;
         box-shadow: 0 -2px 6px rgba(0,0,0,0.2)
       }
@@ -218,7 +218,7 @@ export class RuxTimeline extends PolymerElement {
           padding: 0 1em;
           width: 100%;
           /* background-color: #0e202e; */
-          background-color: hsl(204, 53%, 14%);
+          background-color: var(--timelineHeaderBackgroundColor);
           font-size: 0.875rem;
           display: flex;
           justify-content: flex-start;
@@ -233,8 +233,8 @@ export class RuxTimeline extends PolymerElement {
           width: 7.875rem;
           z-index: 200;
 
-          background-color: hsl(204, 53%, 14%);
-          box-shadow: 5px 0 2.5px rgba(0,0,0,0.13);
+          background-color: var(--timelineHeaderBackgroundColor);
+          // box-shadow: 5px 0 2.5px rgba(0,0,0,0.13);
         }
 
         #rux-timeline__viewport__tracks {
@@ -480,7 +480,7 @@ export class RuxTimeline extends PolymerElement {
 
     // time of today, like right now
     const dif = utc.getTime() - then.getTime();
-    const loc = dif * this._ruler.offsetWidth / this._duration;
+    const loc = (dif * this._ruler.offsetWidth) / this._duration;
 
     if (loc >= this._ruler.offsetWidth) {
       this._currentTime.style.display = "none";
@@ -524,7 +524,7 @@ export class RuxTimeline extends PolymerElement {
     if (!this._tics) return;
     this._tics.forEach((tic, i) => {
       tic.style.left =
-        3600000 * i * this._ruler.offsetWidth / this._duration + "px";
+        (3600000 * i * this._ruler.offsetWidth) / this._duration + "px";
     });
   }
 
@@ -566,7 +566,7 @@ export class RuxTimeline extends PolymerElement {
     y.forEach((tic, i) => {
       let z = document.createElement("div");
       z.style.left =
-        3600000 * i * this._tracks.offsetWidth / this._duration + "px";
+        (3600000 * i * this._tracks.offsetWidth) / this._duration + "px";
       z.innerHTML = y[i];
 
       this._ruler.appendChild(z);

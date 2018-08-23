@@ -556,8 +556,8 @@ label {
   --clockTextColor: var(--colorWhite, rgb(255, 255, 255));
   --clockBackgroundColor: rgb(20, 32, 44);
   --clockBackgroundColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
-  --clockBorderColor: rgb(39, 86, 128);
-  --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
+  --clockBorderColor: rgb(40, 63, 88);
+  --clockBorderColor: var(--colorTertiary, rgb(40, 63, 88));
 
   /* 
     
@@ -621,6 +621,39 @@ label {
   --tabSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
   --tabSelectedBorderColor: rgb(77, 172, 355);
   --tabSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 355));
+
+  /* 
+    
+    Timeline Colors 
+    ==========================================================================
+
+  */
+
+  --timelineHeaderBackgroundColor: orange;
+
+  --timelineHeaderBackgroundColor: var(--colorPrimaryDarken1, orange);
+
+  --timelineTrackBackgroundColor: var(--colorPrimaryDarken2);
+
+  --timelineTrackBackgroundColor: var(--colorPrimaryDarken2);
+  --timelineTrackLabelBackgroundColor: var(--colorTertiaryDarken2);
+  --timelineTrackLabelBackgroundColor: var(--colorTertiaryDarken2);
+
+  --timelineRegionSelectedBackgroundColor: var(--colorSecondary);
+
+  --timelineRegionSelectedBackgroundColor: var(--colorSecondary);
+  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken1);
+  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken1);
+  --timelineRegionSelectedTextColor: var(--colorWhite);
+  --timelineRegionSelectedTextColor: var(--colorWhite);
+
+  --timelineRegionBackgroundColor: var(--colorPrimary);
+
+  --timelineRegionBackgroundColor: var(--colorPrimary);
+  --timelineRegionBorderColor: var(--colorPrimaryDarken1);
+  --timelineRegionBorderColor: var(--colorPrimaryDarken1);
+  --timelineRegionTextColor: var(--colorWhite);
+  --timelineRegionTextColor: var(--colorWhite);
 }
 
 li.dark-theme {
@@ -999,6 +1032,37 @@ li.dark-theme {
   --tabSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
   --tabSelectedBorderColor: rgb(77, 172, 255);
   --tabSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
+
+  /* 
+    
+    Timeline Colors 
+    ==========================================================================
+
+  */
+  --timelineHeaderBackgroundColor: var(--colorTertiary);
+  --timelineHeaderBackgroundColor: var(--colorTertiary);
+
+  --timelineTrackBackgroundColor: var(--colorTertiaryLighten1);
+
+  --timelineTrackBackgroundColor: var(--colorTertiaryLighten1);
+  --timelineTrackLabelBackgroundColor: var(--colorTertiaryDarken2);
+  --timelineTrackLabelBackgroundColor: var(--colorTertiaryDarken2);
+
+  --timelineRegionSelectedBackgroundColor: var(--colorSecondary);
+
+  --timelineRegionSelectedBackgroundColor: var(--colorSecondary);
+  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken1);
+  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken1);
+  --timelineRegionSelectedTextColor: var(--colorWhite);
+  --timelineRegionSelectedTextColor: var(--colorWhite);
+
+  --timelineRegionBackgroundColor: var(--colorPrimary);
+
+  --timelineRegionBackgroundColor: var(--colorPrimary);
+  --timelineRegionBorderColor: var(--colorPrimaryDarken1);
+  --timelineRegionBorderColor: var(--colorPrimaryDarken1);
+  --timelineRegionTextColor: var(--colorWhite);
+  --timelineRegionTextColor: var(--colorWhite);
 }
 
 li.light-theme {

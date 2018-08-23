@@ -23,14 +23,16 @@ export class AstroSample extends PolymerElement {
           padding: 0 0 0 2rem;
 
           cursor: pointer;
-          color: rgba(255,255,255,.66);
+          color: var(--sampleLinkColor, rgba(255,255,255,.66));
 
-          transition: color 0.967s ease-in;
+          
         }
 
+        
+
         :host(:hover) {
-          color: rgba(255,255,255,1);
-          transition: color 0.367s ease-out;
+          color: var(--sampleLinkHoverColor, rgba(255,255,255,1));
+          
         }
 
         

@@ -74,8 +74,8 @@ export class RuxTimelineRegion extends PolymerElement {
         font-size: 0.875rem;
         top: 0;
         height: 100%;
-        background-color: #324e69;
-      
+        background-color: var(--timelineRegionBackgroundColor);
+        color: var(--timelineRegionTextColor);
         overflow: hidden;
       
         -webkit-user-select: none;
@@ -84,7 +84,7 @@ export class RuxTimelineRegion extends PolymerElement {
         user-select: none;
         box-sizing: border-box;
       
-        border: 1px solid #324e69;
+        border: 1px solid var(--timelineRegionBorderColor);
         /* transition: border 0.667s ease-in-out; */
       
         box-sizing: border-box;
@@ -112,12 +112,14 @@ export class RuxTimelineRegion extends PolymerElement {
       
       :host(.current) {
         border: 1px solid #4dacff;
+
         transition: border 0.267s ease-in-out;
       }
       
       :host([selected]) {
-        border: 1px solid #4dacff;
-        background-color: black;
+        border: 1px solid var(--timelineRegionSelectedBorderColor);
+        background-color: var(--timelineRegionSelectedBackgroundColor);
+        color: var(--timelineRegionSelectedTextColor);
       }
       
       .rux-region__segment {
@@ -171,7 +173,7 @@ export class RuxTimelineRegion extends PolymerElement {
         align-items: center;
       
         height: 50%;
-        color: #bdc3c9;
+        // color: #bdc3c9;
       
         /* outline: 1px solid white; */
       }
@@ -254,13 +256,12 @@ export class RuxTimelineRegion extends PolymerElement {
       0
     );
     const left =
-      (this._startTime.getTime() - today.getTime()) *
-      this.trackWidth /
+      ((this._startTime.getTime() - today.getTime()) * this.trackWidth) /
       this.duration;
 
     const width =
-      (this._endTime.getTime() - this._startTime.getTime()) *
-      this.trackWidth /
+      ((this._endTime.getTime() - this._startTime.getTime()) *
+        this.trackWidth) /
       this.duration;
 
     // set the initial values for each region

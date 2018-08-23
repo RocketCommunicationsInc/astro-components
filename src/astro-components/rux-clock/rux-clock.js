@@ -68,7 +68,7 @@ export class RuxClock extends PolymerElement {
           font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
           font-weight: 700;
         
-          border: 1px solid var(--clockBorderColor, rgb(39, 86, 128));
+          border: 1px solid var(--clockBorderColor, rgb(40, 63, 88));
         
           background-color: var(--clockBackgroundColor, rgb(20, 32, 44));
           margin-bottom: 0.25rem;

@@ -15,14 +15,85 @@
   <!-- <script src="./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script> -->
   <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
+  <style>
+    .dark-theme {
+      --sampleLinkColor: rgba(255, 255, 255, .5);
+      --sampleLinkHoverColor: rgba(255, 255, 255, 1);
+    }
+
+    .light-theme {
+      --sampleLinkColor: rgba(0, 0, 0, .5);
+      --sampleLinkHoverColor: rgba(0, 0, 0, 1);
+    }
+  </style>
   <!-- Load Astro App //-->
   <script type="module" src="src/astro-app/astro-app.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
 
+  <script>
+
+    /* Quick and dirty theme switcher */
+    document.addEventListener('DOMContentLoaded', () => {
+      // get all theme switching radio buttons
+      const radios = Array.from(document.querySelectorAll('.theme-switcher'));
+      console.log('radios', radios)
+
+      // get the body
+      const body = document.getElementsByTagName('body')[0];
+
+      // add an event listener to all radio buttons
+      radios.forEach(radio => {
+        radio.addEventListener('change', event => {
+
+          // remove all themese
+          body.classList = [];
+
+          // get the theme value from the radio button
+          let theme = event.currentTarget.value;
+
+          // if anything other than the default theme is selected
+          // concatenate and set body class to that theme
+          if (theme !== 'default') {
+            body.classList.add(`${theme}-theme`);
+          }
+        })
+      })
+    }, false);
+
+    toggleTheme = function () {
+      const body = document.getElementsByTagName('html')[0];
+    }
+  </script>
 
 </head>
 
-<body class="dark-theme">
+<body class="">
+  <div class="no-theme">
+    <ul>
+      <li class="any-theme">CSS Custom Properties did not load. Default Theme Only.</li>
+      <li class="dark-theme">Dark Theme CSS Custom Properties did not load. Default Theme Only.</li>
+      <li class="light-theme">Light Theme CSS Custom Properties did not load. Default Theme Only.</li>
+    </ul>
+  </div>
+
+  <div>
+    <ul style="list-style: none;">
+      <li>
+        <input class="theme-switcher" type="radio" name="theme" id="dark" value="dark" checked />
+        <label for="dark">Dark Theme</label>
+      </li>
+      <li>
+        <input class="theme-switcher" type="radio" name="theme" id="light" value="light" />
+        <label for="light">Light Theme</label>
+      </li>
+      <li>
+        <input class="theme-switcher" type="radio" name="theme" id="default" value="default" />
+        <label for="default">No Theme</label>
+      </li>
+    </ul>
+
+  </div>
+
   <astro-app></astro-app>
 </body>
 
