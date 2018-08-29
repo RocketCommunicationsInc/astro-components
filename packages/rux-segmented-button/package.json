@@ -1,0 +1,47 @@
+{
+  "_args": [
+    [
+      "@astrouxds/rux-segmented-button@1.0.4",
+      "/private/var/www/astro/05-components.astrouxds.com"
+    ]
+  ],
+  "_from": "@astrouxds/rux-segmented-button@1.0.4",
+  "_id": "@astrouxds/rux-segmented-button@1.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-30Sys7/hSix+6z03UVczP9oIFw0HIO7+V1gMCZXMtn8cqEEwWfZjkNiMNo20b9icnq7w2JsSIi/vEDqGVYPaXQ==",
+  "_location": "/@astrouxds/rux-segmented-button",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@astrouxds/rux-segmented-button@1.0.4",
+    "name": "@astrouxds/rux-segmented-button",
+    "escapedName": "@astrouxds%2frux-segmented-button",
+    "scope": "@astrouxds",
+    "rawSpec": "1.0.4",
+    "saveSpec": null,
+    "fetchSpec": "1.0.4"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-segmented-button/-/rux-segmented-button-1.0.4.tgz",
+  "_spec": "1.0.4",
+  "_where": "/private/var/www/astro/05-components.astrouxds.com",
+  "author": {
+    "name": "Rocket Communications",
+    "email": "astro@rocketcom.com"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  },
+  "description": "Astro Web Component for segmented buttons",
+  "license": "GPL-3.0",
+  "main": "rux-segmented-button.js",
+  "name": "@astrouxds/rux-segmented-button",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.4"
+}

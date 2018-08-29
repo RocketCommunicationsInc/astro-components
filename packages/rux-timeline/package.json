@@ -2,7 +2,7 @@
   "_args": [
     [
       "@astrouxds/rux-timeline@1.0.3",
-      "/Users/rocket/Projects/Astro/components"
+      "/private/var/www/astro/05-components.astrouxds.com"
     ]
   ],
   "_from": "@astrouxds/rux-timeline@1.0.3",
@@ -30,7 +30,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/@astrouxds/rux-timeline/-/rux-timeline-1.0.3.tgz",
   "_spec": "1.0.3",
-  "_where": "/Users/rocket/Projects/Astro/components",
+  "_where": "/private/var/www/astro/05-components.astrouxds.com",
   "author": {
     "name": "Rocket Communications",
     "email": "astro@rocketcom.com"

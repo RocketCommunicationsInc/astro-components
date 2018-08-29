@@ -1,0 +1,47 @@
+{
+  "_args": [
+    [
+      "@astrouxds/rux-tree@1.0.2",
+      "/private/var/www/astro/05-components.astrouxds.com"
+    ]
+  ],
+  "_from": "@astrouxds/rux-tree@1.0.2",
+  "_id": "@astrouxds/rux-tree@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-6xM/+JlVtsgUwdJ2Y40KtNPC8yM56gcEdjqVvAE+mAPP565DYSEuDhpymhbq/hKBQQ8auj4YkXYk/OKtryCagQ==",
+  "_location": "/@astrouxds/rux-tree",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@astrouxds/rux-tree@1.0.2",
+    "name": "@astrouxds/rux-tree",
+    "escapedName": "@astrouxds%2frux-tree",
+    "scope": "@astrouxds",
+    "rawSpec": "1.0.2",
+    "saveSpec": null,
+    "fetchSpec": "1.0.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-tree/-/rux-tree-1.0.2.tgz",
+  "_spec": "1.0.2",
+  "_where": "/private/var/www/astro/05-components.astrouxds.com",
+  "author": {
+    "name": "Rocket Communications",
+    "email": "astro@rocketcom.com"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  },
+  "description": "Astro Web Component for tree controls",
+  "license": "GPL-3.0",
+  "main": "rux-tree.js",
+  "name": "@astrouxds/rux-tree",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
+}

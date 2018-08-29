@@ -1,0 +1,45 @@
+{
+  "_from": "@astrouxds/rux-spectrum-analyzer@^1.0.5",
+  "_id": "@astrouxds/rux-spectrum-analyzer@1.0.5",
+  "_inBundle": false,
+  "_integrity": "sha512-pUWFUOx3e1243x27DtVkLa8Oi4BpHIQF9ucbAPsCz18hwAfkdHJyJg+OxZHQlGJnVl4b0IH4LIYYzptPJXJB9A==",
+  "_location": "/@astrouxds/rux-spectrum-analyzer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@astrouxds/rux-spectrum-analyzer@^1.0.5",
+    "name": "@astrouxds/rux-spectrum-analyzer",
+    "escapedName": "@astrouxds%2frux-spectrum-analyzer",
+    "scope": "@astrouxds",
+    "rawSpec": "^1.0.5",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.5"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-spectrum-analyzer/-/rux-spectrum-analyzer-1.0.5.tgz",
+  "_shasum": "06f3bc620ab7b706e36a7d865d9eab5014388161",
+  "_spec": "@astrouxds/rux-spectrum-analyzer@^1.0.5",
+  "_where": "/private/var/www/astro/05-components.astrouxds.com",
+  "author": {
+    "name": "Rocket Communications",
+    "email": "astro@rocketcom.com"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/polymer": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "d3": "^4.0.0"
+  },
+  "deprecated": false,
+  "description": "Astro Web Component for spectrum analyzer",
+  "license": "GPL-3.0",
+  "main": "rux-spectrum-analyzer.js",
+  "name": "@astrouxds/rux-spectrum-analyzer",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.5"
+}
