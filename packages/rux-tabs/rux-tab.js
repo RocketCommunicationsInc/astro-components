@@ -124,8 +124,6 @@ export class RuxTab extends PolymerElement {
     if (this.parentElement.getAttributeNode("interior")) {
       this.setAttribute("interior", "");
     }
-
-    console.log(this.parentElement.getAttributeNode("compact"));
   }
 
   ready() {

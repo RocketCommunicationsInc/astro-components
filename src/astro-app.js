@@ -1,6 +1,6 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 
-// import { RuxIcon } from "../../packages/rux-icon/rux-icon.js";
+import { RuxIcon } from "../../packages/rux-icon/rux-icon.js";
 import { RuxAccordion } from "../packages/rux-accordion/rux-accordion.js";
 import { RuxButton } from "../packages/rux-button/rux-button.js";
 import { RuxClock } from "../packages/rux-clock/rux-clock.js";
