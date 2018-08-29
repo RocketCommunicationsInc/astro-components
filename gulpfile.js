@@ -30,6 +30,7 @@ gulp.task("serve", ["concatCss"], cb => {
 
       gulp.watch("public/css/**/*.css", ["concatCss"]);
       gulp.watch("public/*.html").on("change", browserSync.reload);
+      gulp.watch("packages/**/*").on("change", browserSync.reload);
       gulp.watch("src/**/*").on("change", browserSync.reload);
       gulp.watch("index*.html").on("change", browserSync.reload);
     }

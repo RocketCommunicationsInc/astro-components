@@ -2,9 +2,19 @@
   "extraDependencies": [
     "public/fonts/*",
     "public/css/*",
-    "node_modules/@webcomponents/webcomponentsjs/bundles/**"
+    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js",
+    "node_modules/@webcomponents/webcomponentsjs/bundles/*",
+    "node_modules/@astrouxds/*",
+    "node_modules/@polymer/*",
+    "packages/*"
   ],
   "lint": {
     "rules": ["polymer-3"]
-  }
+  },
+  "builds": [
+    {
+      "css": { "minify": false },
+      "html": { "minify": false }
+    }
+  ]
 }

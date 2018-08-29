@@ -1,10 +1,10 @@
 {
   "name": "astro-app",
   "flat": true,
-  "version": "1.0.0",
+  "version": "3.0.0",
   "author": "Rocket Communications",
   "private": true,
-  "description": "Sample application using the Astro Design System",
+  "description": "Sample Components from the Astro UXDS Library",
   "main": "index.html",
   "dependencies": {
     "@polymer/polymer": "^3.0.2",

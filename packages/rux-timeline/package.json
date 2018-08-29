@@ -1,0 +1,53 @@
+{
+  "_args": [
+    [
+      "@astrouxds/rux-timeline@1.0.3",
+      "/Users/rocket/Projects/Astro/components"
+    ]
+  ],
+  "_from": "@astrouxds/rux-timeline@1.0.3",
+  "_id": "@astrouxds/rux-timeline@1.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-7XPUIPmLHUtxvw254UuzgyXYDkK8RfMo+2YCCvckVXG5gp/yeHYl78zelaKqGTA0Ds/Fi1+xH7mHL06B30T9kQ==",
+  "_location": "/@astrouxds/rux-timeline",
+  "_phantomChildren": {
+    "@polymer/polymer": "3.0.2",
+    "@webcomponents/webcomponentsjs": "2.0.0"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@astrouxds/rux-timeline@1.0.3",
+    "name": "@astrouxds/rux-timeline",
+    "escapedName": "@astrouxds%2frux-timeline",
+    "scope": "@astrouxds",
+    "rawSpec": "1.0.3",
+    "saveSpec": null,
+    "fetchSpec": "1.0.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-timeline/-/rux-timeline-1.0.3.tgz",
+  "_spec": "1.0.3",
+  "_where": "/Users/rocket/Projects/Astro/components",
+  "author": {
+    "name": "Rocket Communications",
+    "email": "astro@rocketcom.com"
+  },
+  "dependencies": {
+    "@astrouxds/rux-icon": "1.0.1",
+    "@astrouxds/rux-slider": "1.0.1",
+    "@astrouxds/rux-status": "1.0.0",
+    "@polymer/polymer": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  },
+  "description": "Astro Web Component for timelines",
+  "license": "GPL-3.0",
+  "main": "rux-timeline.js",
+  "name": "@astrouxds/rux-timeline",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.3"
+}

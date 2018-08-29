@@ -1,25 +1,24 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-// import { RuxComponent } from "@astrouxds/rux-component/rux-component.js";
 
-import { RuxIcon } from "../astro-components/rux-icon/rux-icon.js";
-import { RuxAccordion } from "../astro-components/rux-accordion/rux-accordion.js";
-import { RuxButton } from "../astro-components/rux-button/rux-button.js";
-import { RuxClock } from "../astro-components/rux-clock/rux-clock.js";
-import { RuxGlobalStatusBar } from "../astro-components/rux-global-status-bar/rux-global-status-bar.js";
-import { RuxLog } from "../astro-components/rux-log/rux-log.js";
-import { RuxModal } from "../astro-components/rux-modal/rux-modal.js";
-import { RuxNotification } from "../astro-components/rux-notification/rux-notification.js";
-import { RuxPopUpMenu } from "../astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
-import { RuxProgress } from "../astro-components/rux-progress/rux-progress.js";
-import { RuxPushButton } from "../astro-components/rux-push-button/rux-push-button.js";
-import { RuxSegmentedButton } from "../astro-components/rux-segmented-button/rux-segmented-button.js";
-import { RuxSlider } from "../astro-components/rux-slider/rux-slider.js";
-import { RuxSpectrumAnalyzer } from "../astro-components/rux-spectrum-analyzer/rux-spectrum-analyzer.js";
-import { RuxStatus } from "../astro-components/rux-status/rux-status.js";
-import { RuxTimeline } from "../astro-components/rux-timeline/rux-timeline.js";
-import { RuxToggle } from "../astro-components/rux-toggle/rux-toggle.js";
-import { RuxTabs } from "../astro-components/rux-tabs/rux-tabs.js";
-import { RuxTree } from "../astro-components/rux-tree/rux-tree.js";
+// import { RuxIcon } from "../../packages/rux-icon/rux-icon.js";
+import { RuxAccordion } from "../../packages/rux-accordion/rux-accordion.js";
+import { RuxButton } from "../../packages/rux-button/rux-button.js";
+import { RuxClock } from "../../packages/rux-clock/rux-clock.js";
+import { RuxGlobalStatusBar } from "../../packages/rux-global-status-bar/rux-global-status-bar.js";
+import { RuxLog } from "../../packages/rux-log/rux-log.js";
+import { RuxModal } from "../../packages/rux-modal/rux-modal.js";
+import { RuxNotification } from "../../packages/rux-notification/rux-notification.js";
+import { RuxPopUpMenu } from "../../packages/rux-pop-up-menu/rux-pop-up-menu.js";
+import { RuxProgress } from "../../packages/rux-progress/rux-progress.js";
+import { RuxPushButton } from "../../packages/rux-push-button/rux-push-button.js";
+import { RuxSegmentedButton } from "../../packages/rux-segmented-button/rux-segmented-button.js";
+import { RuxSlider } from "../../packages/rux-slider/rux-slider.js";
+import { RuxSpectrumAnalyzer } from "../../packages/rux-spectrum-analyzer/rux-spectrum-analyzer.js";
+import { RuxStatus } from "../../packages/rux-status/rux-status.js";
+import { RuxTimeline } from "../../packages/rux-timeline/rux-timeline.js";
+import { RuxToggle } from "../../packages/rux-toggle/rux-toggle.js";
+import { RuxTabs } from "../../packages/rux-tabs/rux-tabs.js";
+import { RuxTree } from "../../packages/rux-tree/rux-tree.js";
 
 import { AstroSamples } from "./astro-sample/astro-samples.js";
 /**
