@@ -73,6 +73,7 @@ export class RuxTimeline extends PolymerElement {
     return html`
       
       <style>
+      
 
       :host {
         display: flex;

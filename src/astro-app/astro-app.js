@@ -289,12 +289,18 @@ export class AstroApp extends PolymerElement {
                 margin-top: 1rem;   
             }
 
+
+            section.light-theme {
+                background-color: #fff;
+                color:
+            }
         
 
     </style>
     
+    
     <rux-global-status-bar
-    class="dark-theme"
+    
     appname="Astro App"
     version="2.0a">
     
@@ -331,6 +337,7 @@ export class AstroApp extends PolymerElement {
       icon="default:caution"
       on-click="goFullScreen">Master Off</rux-button>
   </rux-global-status-bar>
+  </div>
 
   <rux-tab-panels role="tablist" aria-labeledby="main-nav">
     <rux-panel aria-labeledby="tab-modems"></rux-panel>
@@ -369,10 +376,10 @@ export class AstroApp extends PolymerElement {
 
 <astro-sample-panels class="detail">
 
-<astro-sample-panel aria-labeledby="sample-tabs">
+<astro-sample-panel aria-labeledby="sample-tabs"  >
     <h1>Tabs</h1>
 
-    <rux-tabs id="main">
+    <rux-tabs id="main" >
         <rux-tab id="a1" role="tab" selected>Modems</rux-tab>
         <rux-tab id="a2" role="tab">Pass Plans Long Title Goes Here</rux-tab>
         <rux-tab id="a3" role="tab">Satellites</rux-tab>
@@ -463,7 +470,7 @@ Selected Tree Element: [[treeData.selected.label]]
 <astro-sample-panel aria-labeledby="sample-segmented-button">
 <h1>Segmented Button</h1>
 <p>Segmented Buttons are just radio-buttons gussied up for the ball.</p>
-<section class="light-theme">
+<section>
     <h2>Segmented Button (WIP)</h2>
     <code>&lt;rux-segmented-button&gt;</code> is highly stylized version of a radio button group offering a distinct user choice.
     Buttons are defined via a standard JavaScript Array of Objects. Each object must have a button label and supports additional
@@ -1469,19 +1476,23 @@ Selected Tree Element: [[treeData.selected.label]]
     <astro-sample-panel aria-labeledby="sample-timeline">
         <h1>Timeline</h1>
         <p>The timeline does some cool stuff …</p>
-        <rux-clock></rux-clock>
+        <div>
+        <rux-clock theme="light"></rux-clock>
+        </div>
+
+        
 
         <section>
         <h2>Timeline</h2>
         <p>The standard timeline will default to a 24 hour time period</p>
         <rux-timeline
-                status="standby"
-                label="Timeline" 
-                initial-scale=100
-                tracks=[[tracks]]
-                zoom-control=true
-                selected-region={{timelineSelectedRegion}}>
-            </rux-timeline>
+            status="standby"
+            label="Forced Light Theme" 
+            initial-scale=100
+            tracks=[[tracks]]
+            zoom-control=true
+            selected-region={{timelineSelectedRegion}}>
+        </rux-timeline>
 
             
         </section>
@@ -1540,7 +1551,7 @@ Selected Tree Element: [[treeData.selected.label]]
         </section>
     </astro-sample-panel>
 </astro-sample-panels>
-</div>
+
 
     `;
   }

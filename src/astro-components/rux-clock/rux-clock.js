@@ -34,6 +34,9 @@ export class RuxClock extends PolymerElement {
         type: Object,
         computed: "_setTimeOptions(hideTimezone)"
       },
+      theme: {
+        type: String
+      },
       compact: {
         type: Boolean,
         value: false,
@@ -47,6 +50,15 @@ export class RuxClock extends PolymerElement {
       <style>
         *[hidden] {
           display: none !important;
+        }
+
+
+        .light {
+          --clockTextColor: red;
+        }
+
+        .dark {
+          --clockTextColor: green;
         }
 
         .rux-clock {
@@ -111,7 +123,7 @@ export class RuxClock extends PolymerElement {
         }
         
       </style>      
-      <div class="rux-clock">
+      <div class$="rux-clock [[light]]">
         <div class="rux-clock__segment rux-clock__day-of-the-year" hidden="[[hideDate]]">
           <div class="rux-clock__segment__value" aria-labeledby="rux-clock__day-of-year-label">{{_getDayOfYear()}}</div>
           <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label">Date</div>
