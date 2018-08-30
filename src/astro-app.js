@@ -347,6 +347,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-spectrum-analyzer">Spectrum Analyzer</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-slider">Slider</astro-sample></li>
 <li><astro-sample id="sample-tabs">Tabs</astro-sample></li>
@@ -365,7 +366,7 @@ export class AstroApp extends PolymerElement {
 
 <li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
 
-<li><astro-sample id="sample-spectrum-analyzer">Spectrum Analyzer</astro-sample></li>
+
 <li><astro-sample id="sample-icons">Icons</astro-sample></li>
 </ul>
 </astro-samples>
@@ -1443,7 +1444,7 @@ Selected Tree Element: [[treeData.selected.label]]
     chart-legend-y="pwr" 
     chart-title="signals" 
     height="384" 
-    width="500" 
+    width="800" 
     x-scale-min="900" 
     x-scale-max="2301" 
     x-scale-step="175" 

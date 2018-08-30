@@ -4,7 +4,68 @@ import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
  * @extends HTMLElement
  */
 export class RuxSpectrumAnalyzer extends PolymerElement {
-  static get template() {}
+  static get template() {
+    return html`
+    <style>
+    svg {
+      background-color: #1b3044;
+      
+    }
+    
+    .rux-spectrum-analyzer__bar {
+      fill: #4586be;
+    }
+    
+    .rux-spectrum-analyzer__bar-tip {
+      fill: #b2bac0;
+    }
+    
+    text,
+    .rux-spectrum-analyzer__main-chart-label {
+      fill: #bdc3c9;
+    }
+    
+    .rux-spectrum-analyzer__main-chart-label {
+      font-family: "Open Sans";
+      font-weight: 300;
+      font-size: 20px;
+      text-transform: capitalize;
+      margin-bottom: 5px;
+    }
+    
+    .rux-spectrum-analyzer__chart-legend {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      fill: #fff;
+    }
+    
+    g.rux-spectrum-analyzer__axis-label line {
+      stroke: none;
+    }
+    
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 2px;
+    }
+    
+    .grid line {
+      stroke: #455d6e;
+      stroke-opacity: 0.3;
+      shape-rendering: crispEdges;
+    }
+    
+    .tick text {
+      font-family: "Open Sans";
+      font-weight: 300;
+      font-size: 12px;
+      color: #bdc3c9;
+      font-weight: 300;
+    }
+    </style>
+    `;
+  }
 
   static get properties() {
     return {

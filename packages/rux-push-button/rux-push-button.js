@@ -32,8 +32,7 @@ export class RuxPushButton extends PolymerElement {
       checked: {
         type: Boolean,
         value: false,
-        reflectToAttribute: true,
-        observer: "_setLabel"
+        reflectToAttribute: true
       },
       _label: {
         type: String

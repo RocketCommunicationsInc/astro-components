@@ -17,7 +17,7 @@ var csso = require("gulp-csso");
 const browserSync = require("browser-sync").create();
 
 // Static Server + watching scss/html files
-gulp.task("serve", ["concatCss"], cb => {
+gulp.task("serve", cb => {
   var process = spawn("polymer serve --port 8082", [], {
     shell: true
   });

@@ -176,9 +176,6 @@ export class RuxToggle extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback();
-
-    // console.log(this.checkedLabel);
-    // this._label = this.checked ? this.checkedLabel : this.uncheckedLabel;
   }
 
   disconnectedCallback() {
@@ -187,11 +184,6 @@ export class RuxToggle extends PolymerElement {
 
   ready() {
     super.ready();
-  }
-
-  _setLabel() {
-    console.log("updating");
-    this._label = this.checked ? this.checkedLabel : this.uncheckedLabel;
   }
 }
 
