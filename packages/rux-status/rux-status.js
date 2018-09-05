@@ -63,6 +63,12 @@ export class RuxStatus extends PolymerElement {
         margin: 0 0.75rem;
         line-height: 0;
         /* width: 6.25rem; */
+       
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
