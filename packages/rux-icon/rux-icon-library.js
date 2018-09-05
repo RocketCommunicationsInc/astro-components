@@ -64,7 +64,7 @@ export class RuxIconLibrary extends PolymerElement {
         console.error(`No icon for "${_icon.icon}" exists in the SVG library`);
       }
 
-      if (!this.size) this.size = "114";
+      if (!this.size) this.size = "128";
       let content = sourceSvg.cloneNode(true);
 
       if (_icon.color) {

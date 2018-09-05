@@ -298,44 +298,7 @@ export class AstroApp extends PolymerElement {
     </style>
     
     
-    <rux-global-status-bar
     
-    appname="Astro App"
-    version="2.0a">
-    
-    <rux-tabs
-        id="main-nav"
-        main
-        transparent>
-      <rux-tab id="tab-modems">Modems</rux-tab>
-      <rux-tab id="tab-pass-plans">Pass Plans</rux-tab>
-      <rux-tab id="tab-satellites">Satellites</rux-tab>
-    </rux-tabs>
-
-    <rux-clock></rux-clock>
-
-    <ul class="astro-advanced-status-indicators">
-      <dom-repeat id="astroAdvancedStatus" items="{{statusIndicators}}">
-        <template>
-          <li>
-            <rux-status
-              status="ok"
-              label=[[item.label]]
-              icon=[[item.icon]]
-              notifications=[[item.notifications]]
-              on-click="_showPopUp"></rux-status>
-          </li>
-        </template>
-      </dom-repeat>
-    </ul>
-
-    
-
-    <rux-button
-      type="large"
-      icon="default:caution"
-      on-click="goFullScreen">Master Off</rux-button>
-  </rux-global-status-bar>
   </div>
 
   <rux-tab-panels role="tablist" aria-labeledby="main-nav">
@@ -347,6 +310,7 @@ export class AstroApp extends PolymerElement {
 <div class="master-detail">
 <astro-samples class="master">
 <ul>
+<li><astro-sample id="sample-icons">Icons</astro-sample></li>
 <li><astro-sample id="sample-spectrum-analyzer">Spectrum Analyzer</astro-sample></li>
 <li><astro-sample id="sample-timeline">Timeline</astro-sample></li>
 <li><astro-sample id="sample-slider">Slider</astro-sample></li>
@@ -361,13 +325,8 @@ export class AstroApp extends PolymerElement {
 <li><astro-sample id="sample-notification-banner">Notification Banner</astro-sample></li>
 <li><astro-sample id="sample-progress">Progress</astro-sample></li>
 <li><astro-sample id="sample-accordion">Accordion</astro-sample></li>
-
 <li><astro-sample id="sample-pop-up-menus">Pop Ups</astro-sample></li>
-
 <li><astro-sample id="sample-status-indicator">Status</astro-sample></li>
-
-
-<li><astro-sample id="sample-icons">Icons</astro-sample></li>
 </ul>
 </astro-samples>
     
@@ -798,7 +757,7 @@ Selected Tree Element: [[treeData.selected.label]]
                 </li>
                 <li>
                     <figure>
-                        <rux-icon icon="advanced-status:antenna"></rux-icon>
+                        <rux-icon icon="advanced-status:antenna-off"></rux-icon>
                         <figcaption>antenna</figcaption>
                     </figure>
                 </li>
@@ -816,7 +775,7 @@ Selected Tree Element: [[treeData.selected.label]]
                 </li>
                 <li>
                     <figure>
-                        <rux-icon icon="advanced-status:satellite"></rux-icon>
+                        <rux-icon icon="advanced-status:satellite-off"></rux-icon>
                         <figcaption>satellite</figcaption>
                     </figure>
                 </li>
@@ -1003,7 +962,7 @@ Selected Tree Element: [[treeData.selected.label]]
                 </li>
                 <li>
                     <figure>
-                        <rux-status icon="advanced-status:antenna" status="error" label="Label" sublabel="Sub-label" notifications=1000>
+                        <rux-status icon="advanced-status:antenna-off" status="error" label="Label" sublabel="Sub-label" notifications=1000>
                         </rux-status>
                         <figcaption></figcaption>
                     </figure>
@@ -1024,7 +983,7 @@ Selected Tree Element: [[treeData.selected.label]]
                 </li>
                 <li>
                     <figure>
-                        <rux-status icon="advanced-status:satellite" status="off" label="Label" sublabel="Sub-label" notifications=1000000>
+                        <rux-status icon="advanced-status:satellite-off" status="off" label="Label" sublabel="Sub-label" notifications=1000000>
                         </rux-status>
                         <figcaption></figcaption>
                     </figure>
