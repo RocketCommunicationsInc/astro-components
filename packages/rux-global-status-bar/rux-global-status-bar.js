@@ -43,7 +43,7 @@ export class RuxGlobalStatusBar extends PolymerElement {
       height: 100%;
       width: 100%;
     
-      padding: 0;
+      padding: 0 2.5rem;
       
       align-items: center;
       justify-content: space-between;

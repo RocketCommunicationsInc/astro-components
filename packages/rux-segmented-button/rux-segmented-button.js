@@ -13,7 +13,7 @@ export class RuxSegmentedButton extends PolymerElement {
         type: Object
       },
       data: {
-        type: Object,
+        type: Array,
         notify: true
       }
     };
@@ -129,6 +129,14 @@ export class RuxSegmentedButton extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback();
+
+    /* 
+    
+      TODO: accept a default selected item
+    */
+    let selected = this.data.find(element => {
+      return element.selected;
+    });
   }
 
   disconnectedCallback() {
