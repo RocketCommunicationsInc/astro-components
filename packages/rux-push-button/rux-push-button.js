@@ -90,12 +90,15 @@ export class RuxPushButton extends PolymerElement {
       
       :host([disabled]) {
         opacity: var(--disabledOpacity, 0.4);
+        cursor: not-allowed;
       }
       
       .rux-push-button__input:disabled + .rux-push-button__button {
-        cursor: var(-disabledCursor, not-allowed);
+        opacity: var(--disabledOpacity, 0.4);
+        cursor: not-allowed;
       }
-</style>      
+
+      </style>
       
       <input class="rux-push-button__input" id="[[_id]]" type="checkbox" disabled$=[[disabled]] checked={{checked::change}}></input>
       <label class="rux-push-button__button" for$="[[_id]]" ><slot></slot></label> 
