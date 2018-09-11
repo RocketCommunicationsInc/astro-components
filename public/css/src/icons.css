@@ -4,5 +4,87 @@
   width: 2.8rem;
   height: 2.8rem;
 
-  fill: #329fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  fill: var(--colorSecondary);
+}
+
+i.rux-icon {
+  display: block;
+  width: 2.8rem;
+  height: 2.8rem;
+
+  color: var(--colorSecondary);
+}
+
+i.rux-icon::before {
+  font-family: "astro-icons";
+  font-size: 2.7rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+.altitude::before {
+  content: "\ea01";
+}
+.antenna-off::before {
+  content: "\ea02";
+}
+.antenna-receive::before {
+  content: "\ea03";
+}
+.antenna-transmit::before {
+  content: "\ea04";
+}
+.antenna::before {
+  content: "\ea05";
+}
+.caution::before {
+  content: "\ea06";
+}
+.equipment::before {
+  content: "\ea0c";
+}
+.mission::before {
+  content: "\ea08";
+}
+.netcom::before {
+  content: "\ea09";
+}
+.notifications::before {
+  content: "\ea0a";
+}
+.payload::before {
+  content: "\ea0b";
+}
+.processor::before {
+  content: "\ea0d";
+}
+.processor-alt::before {
+  content: "\ea0c";
+}
+.propulsion-power::before {
+  content: "\ea0e";
+}
+.satellite-off::before {
+  content: "\ea0f";
+}
+.satellite-receive::before {
+  content: "\ea10";
+}
+.satellite-transmit::before {
+  content: "\ea11";
+}
+.settings::before {
+  content: "\ea12";
+}
+.thermal::before {
+  content: "\ea13";
 }

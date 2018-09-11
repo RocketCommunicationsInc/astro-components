@@ -260,22 +260,15 @@
 
   /* 
     
-    Timeline Colors 
+    Card Colors 
     ==========================================================================
 
   */
-  --timelineHeaderBackgroundColor: var(--colorTertiary);
 
-  --timelineTrackBackgroundColor: var(--colorTertiaryLighten1);
-  --timelineTrackLabelBackgroundColor: var(--colorTertiaryDarken2);
+  --cardBackgroundColor: var(--colorTertiaryLighten2);
 
-  --timelineRegionSelectedBackgroundColor: var(--colorSecondary);
-  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken1);
-  --timelineRegionSelectedTextColor: var(--colorWhite);
-
-  --timelineRegionBackgroundColor: var(--colorPrimary);
-  --timelineRegionBorderColor: var(--colorPrimaryDarken1);
-  --timelineRegionTextColor: var(--colorWhite);
+  --cardHeaderBackgroundColor: var(--colorTertiaryLighten1);
+  --cardHeaderTextColor: var(--colorWhite, #fff);
 }
 
 li.light-theme {

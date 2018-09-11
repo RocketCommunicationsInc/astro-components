@@ -194,7 +194,7 @@
   */
   --clockTextColor: var(--colorWhite, rgb(255, 255, 255));
   --clockBackgroundColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
-  --clockBorderColor: var(--colorTertiary, rgb(40, 63, 88));
+  --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
 
   /* 
     
@@ -240,23 +240,15 @@
 
   /* 
     
-    Timeline Colors 
+    Card Colors 
     ==========================================================================
 
   */
 
-  --timelineHeaderBackgroundColor: var(--colorPrimaryDarken1, orange);
+  --cardBackgroundColor: var(--colorTertiaryDarken1);
 
-  --timelineTrackBackgroundColor: var(--colorPrimaryDarken2);
-  --timelineTrackLabelBackgroundColor: var(--colorTertiaryDarken2);
-
-  --timelineRegionSelectedBackgroundColor: var(--colorSecondary);
-  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken1);
-  --timelineRegionSelectedTextColor: var(--colorWhite);
-
-  --timelineRegionBackgroundColor: var(--colorPrimary);
-  --timelineRegionBorderColor: var(--colorPrimaryDarken1);
-  --timelineRegionTextColor: var(--colorWhite);
+  --cardHeaderBackgroundColor: var(--colorTertiaryDarken2);
+  --cardHeaderTextColor: var(--colorWhite, #fff);
 }
 
 li.dark-theme {

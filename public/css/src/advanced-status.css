@@ -50,44 +50,6 @@
   width: 12px;
 }
 
-.rux-status--off svg {
-  fill: #c6ccd1;
-}
-.rux-status--standby svg {
-  fill: #a1dcfb;
-}
-.rux-status--ok svg {
-  fill: #7ed321;
-}
-.rux-status--caution svg {
-  fill: #f8e71c;
-}
-.rux-status--error svg {
-  fill: #c05846;
-}
-.rux-status--emergency svg {
-  fill: #f72501;
-}
-
-.rux-status--off .rux-advanced-status__icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23C6CCD1%22%20d%3D%22M3%203h6v6H3z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E");
-}
-.rux-status--standby .rux-advanced-status__icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23A1DCFB%22%20d%3D%22M6%2012A6%206%200%201%201%206%200a6%206%200%200%201%200%2012zm0-2a4%204%200%201%200%200-8%204%204%200%200%200%200%208z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E");
-}
-.rux-status--ok .rux-advanced-status__icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%237ED321%22%20d%3D%22M1%203h10v5H1z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E");
-}
-.rux-status--caution .rux-advanced-status__icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23F8E81C%22%20d%3D%22M1%201h10v10H1z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A");
-}
-.rux-status--error .rux-advanced-status__icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23C05846%22%20cx%3D%226%22%20cy%3D%226%22%20r%3D%226%22%3E%3C%2Fcircle%3E%0A%3C%2Fsvg%3E%0A");
-}
-.rux-status--emergency .rux-advanced-status__icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23F72501%22%20d%3D%22M12%2012H0L6%200z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A");
-}
-
 .rux-advanced-status__badge:empty {
   display: none;
 }
@@ -130,30 +92,6 @@
   font-size: 0.65em;
   color: rgba(255, 255, 255, 0.6);
   display: block;
-}
-
-.rux-status--off {
-  fill: var(--status-off);
-}
-
-.rux-status--standby {
-  fill: var(--status-standby);
-}
-
-.rux-status--ok {
-  fill: #f00;
-}
-
-.rux-status--caution {
-  fill: var(--status-caution);
-}
-
-.rux-status--error {
-  fill: var(--status-error);
-}
-
-.rux-status--emergency {
-  fill: var(--status-emergency);
 }
 
 /*
@@ -231,7 +169,7 @@ svg circle {
 **			style definitions will only apply to label elements with content
 */
 .satcom-advanced-status .label:not(:empty) {
-  font-family: open_sanscondensed_light;
+  font-family: var(--fontFamily, "Open Sans");
   text-align: center;
   color: #fff;
   line-height: 1.2;
@@ -249,7 +187,7 @@ svg circle {
 **			style definitions will only apply to label elements with content
 */
 .satcom-advanced-status .sub-label:not(:empty) {
-  font-family: open_sansregular;
+  font-family: var(--fontFamily, "Open Sans");
   font-size: 0.65em;
   color: rgba(255, 255, 255, 0.6);
 }
@@ -280,47 +218,4 @@ svg circle {
   left: -15px;
   background-image: url(../images/off.svg);
   background-repeat: no-repeat;
-}
-
-/* ALERT */
-.satcom-advanced-status-alert use {
-  fill: #f72501;
-}
-
-.satcom-advanced-status-alert::before {
-  background-image: url(../images/alert.svg);
-}
-
-/* ERROR */
-.satcom-advanced-status-error use {
-  fill: #be5849;
-}
-
-.satcom-advanced-status-error::before {
-  background-image: url(../images/error.svg);
-}
-
-/* CAUTION */
-.satcom-advanced-status-caution use {
-  fill: #f7e63b;
-}
-
-.satcom-advanced-status-caution::before {
-  background-image: url(../images/caution.svg);
-}
-
-/* ALERT */
-.satcom-advanced-status-standby use {
-  fill: #afddf5;
-}
-.satcom-advanced-status-standby::before {
-  background-image: url(../images/standby.svg);
-}
-
-/* OK */
-.satcom-advanced-status-ok use {
-  fill: #81d135;
-}
-.satcom-advanced-status-ok::before {
-  background-image: url(../images/ok.svg);
 }

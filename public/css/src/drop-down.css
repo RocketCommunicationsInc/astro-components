@@ -32,3 +32,8 @@
   color: #000;
   background-color: #fff;
 }
+
+.rux-select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
