@@ -13,6 +13,11 @@
   --colorNormal: rgb(91, 255, 0);
   --colorStandby: rgb(128, 224, 255);
   --colorOff: rgb(198, 204, 209);
+
+  --colorCivilian1: rgb(25, 199, 202);
+  --colorCivilian2: rgb(120, 112, 208);
+  --colorCivilian3: rgb(160, 13, 190);
+  --colorCivilian4: rgb(216, 83, 30);
 }
 
 .dark-theme {
@@ -100,4 +105,32 @@
   --colorGrayDarken1: rgb(153, 153, 153);
   --colorGrayDarken2: rgb(102, 102, 102);
   --colorGrayDarken3: rgb(51, 51, 51);
+
+  --colorCivilian1Lighten1: rgb(83, 213, 215);
+  --colorCivilian1Lighten2: rgb(140, 227, 229);
+  --colorCivilian1Lighten3: rgb(198, 241, 242);
+  --colorCivilian1Darken1: rgb(19, 149, 152);
+  --colorCivilian1Darken2: rgb(13, 100, 101);
+  --colorCivilian1Darken3: rgb(6, 50, 51);
+
+  --colorCivilian2Lighten1: rgb(154, 148, 220);
+  --colorCivilian2Lighten2: rgb(188, 184, 232);
+  --colorCivilian2Lighten3: rgb(221, 219, 243);
+  --colorCivilian2Darken1: rgb(90, 84, 156);
+  --colorCivilian2Darken2: rgb(60, 56, 104);
+  --colorCivilian2Darken3: rgb(30, 28, 52);
+
+  --colorCivilian3Lighten1: rgb(184, 74, 206);
+  --colorCivilian3Lighten2: rgb(208, 134, 223);
+  --colorCivilian3Lighten3: rgb(231, 195, 239);
+  --colorCivilian3Darken1: rgb(120, 10, 143);
+  --colorCivilian3Darken2: rgb(80, 7, 95);
+  --colorCivilian3Darken3: rgb(40, 3, 48);
+
+  --colorCivilian4Lighten1: rgb(226, 126, 86);
+  --colorCivilian4Lighten2: rgb(236, 169, 143);
+  --colorCivilian4Lighten3: rgb(245, 212, 199);
+  --colorCivilian4Darken1: rgb(162, 62, 23);
+  --colorCivilian4Darken2: rgb(108, 42, 15);
+  --colorCivilian4Darken3: rgb(54, 21, 8);
 }

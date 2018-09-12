@@ -13,6 +13,11 @@
   --colorNormal: rgb(91, 255, 0);
   --colorStandby: rgb(128, 224, 255);
   --colorOff: rgb(198, 204, 209);
+
+  --colorCivilian1: rgb(25, 199, 202);
+  --colorCivilian2: rgb(120, 112, 208);
+  --colorCivilian3: rgb(160, 13, 190);
+  --colorCivilian4: rgb(216, 83, 30);
 }
 .light-theme {
   --colorBlack: var(--colorBlack);
@@ -99,4 +104,32 @@
   --colorGrayDarken1: color(var(--colorGray) shade(25%));
   --colorGrayDarken2: color(var(--colorGray) shade(50%));
   --colorGrayDarken3: color(var(--colorGray) shade(75%));
+
+  --colorCivilian1Lighten1: color(var(--colorCivilian1) tint(25%));
+  --colorCivilian1Lighten2: color(var(--colorCivilian1) tint(50%));
+  --colorCivilian1Lighten3: color(var(--colorCivilian1) tint(75%));
+  --colorCivilian1Darken1: color(var(--colorCivilian1) shade(25%));
+  --colorCivilian1Darken2: color(var(--colorCivilian1) shade(50%));
+  --colorCivilian1Darken3: color(var(--colorCivilian1) shade(75%));
+
+  --colorCivilian2Lighten1: color(var(--colorCivilian2) tint(25%));
+  --colorCivilian2Lighten2: color(var(--colorCivilian2) tint(50%));
+  --colorCivilian2Lighten3: color(var(--colorCivilian2) tint(75%));
+  --colorCivilian2Darken1: color(var(--colorCivilian2) shade(25%));
+  --colorCivilian2Darken2: color(var(--colorCivilian2) shade(50%));
+  --colorCivilian2Darken3: color(var(--colorCivilian2) shade(75%));
+
+  --colorCivilian3Lighten1: color(var(--colorCivilian3) tint(25%));
+  --colorCivilian3Lighten2: color(var(--colorCivilian3) tint(50%));
+  --colorCivilian3Lighten3: color(var(--colorCivilian3) tint(75%));
+  --colorCivilian3Darken1: color(var(--colorCivilian3) shade(25%));
+  --colorCivilian3Darken2: color(var(--colorCivilian3) shade(50%));
+  --colorCivilian3Darken3: color(var(--colorCivilian3) shade(75%));
+
+  --colorCivilian4Lighten1: color(var(--colorCivilian4) tint(25%));
+  --colorCivilian4Lighten2: color(var(--colorCivilian4) tint(50%));
+  --colorCivilian4Lighten3: color(var(--colorCivilian4) tint(75%));
+  --colorCivilian4Darken1: color(var(--colorCivilian4) shade(25%));
+  --colorCivilian4Darken2: color(var(--colorCivilian4) shade(50%));
+  --colorCivilian4Darken3: color(var(--colorCivilian4) shade(75%));
 }

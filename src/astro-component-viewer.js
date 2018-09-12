@@ -324,7 +324,7 @@ ul {
 
 .theme-colors {
   grid-row-start: 1;
-  grid-row-end: 8;
+  grid-row-end: 13;
   grid-column-start: 1;
   grid-column-end: 13;
 }
@@ -440,7 +440,7 @@ ul {
 
 .swatch {
   display: block;
-  height: 30px;
+  height: 50px;
   width: 100px;
   
   
@@ -1087,12 +1087,20 @@ ul {
                   <figure class="swatches">
                     <figcaption>[[item.label]]</figcaption>
 
-                    <template is="dom-repeat" items=[[item.colors]]>
                     <figure class="swatch-meta">
-                      <div class="swatch" style$="background-color: var([[item.color]])">
-                      
+                      <div class="swatch" style="background-color: #fff">
+                    </figure>
+
+                    <template is="dom-repeat" items=[[item.colors]]>
+                      <figure class="swatch-meta">
+                        <div class="swatch" style$="background-color: var([[item.color]])">
                       </figure>
                     </template>
+
+                    <figure class="swatch-meta">
+                      <div class="swatch" style="background-color: #000">
+                    </figure>
+
                   </figure>
                 </template>
               </div>
@@ -1773,6 +1781,166 @@ ul {
             rgb: "rgb(111,111,111)",
             hex: "#ff0000",
             color: "--colorOffDarken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Civ 1",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian1Lighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian1Lighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian1Lighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian1, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian1Darken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian1Darken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian1Darken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Civ 2",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian2Lighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian2Lighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian2Lighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian2, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian2Darken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian2Darken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian2Darken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Civ 3",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian3Lighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian3Lighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian3Lighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian3, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian3Darken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian3Darken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian3Darken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Civ 4",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian4Lighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian4Lighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian4Lighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian4, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian4Darken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian4Darken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCivilian4Darken3, rgb(10, 16, 22)"
           }
         ]
       }
