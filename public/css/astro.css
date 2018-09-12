@@ -292,8 +292,18 @@ label {
   --backgroundColor: var(--colorTertiary, rgb(40, 63, 88));
   --fontColor: rgb(255, 255, 255);
   --fontColor: var(--colorWhite, rgb(255, 255, 255));
-  --batman: green;
-  --batman: var(--colorCritical, green);
+  --fontLowContrastColor: rgb(204, 204, 204);
+  --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
+  --fontInvertedColor: rgb(0, 0, 0);
+  --fontInvertedColor: var(--colorBlack, rgb(0, 0, 0));
+  --fontInvertedBackgroundColor: rgb(255, 255, 255);
+  --fontInvertedBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --fontLinkColor: var(--colorSecondary);
+
+  --fontLinkColor: var(--colorSecondary);
+  --fontLinkHoverColor: var(--colorSecondaryLighten1);
+  --fontLinkHoverColor: var(--colorSecondaryLighten1);
   /* 
     
     Button Colors 
@@ -655,6 +665,18 @@ li.dark-theme {
   --backgroundColor: var(--colorTertiaryLighten3, rgb(243, 245, 248));
   --fontColor: rgb(0, 0, 0);
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
+  --fontLowContrastColor: rgb(204, 204, 204);
+  --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
+  --fontInvertedColor: rgb(255, 255, 255);
+  --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
+  --fontInvertedBackgroundColor: rgb(0, 0, 0);
+  --fontInvertedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
+
+  --fontLinkColor: var(--colorSecondaryDarken1);
+
+  --fontLinkColor: var(--colorSecondaryDarken1);
+  --fontLinkHoverColor: var(--colorSecondary);
+  --fontLinkHoverColor: var(--colorSecondary);
   /* 
     
     Button Colors 
@@ -1023,9 +1045,7 @@ li.dark-theme {
     ==========================================================================
 
   */
-
   --cardBackgroundColor: var(--colorTertiaryLighten2);
-
   --cardBackgroundColor: var(--colorTertiaryLighten2);
 
   --cardHeaderBackgroundColor: var(--colorTertiaryLighten1);
@@ -1033,6 +1053,13 @@ li.dark-theme {
   --cardHeaderBackgroundColor: var(--colorTertiaryLighten1);
   --cardHeaderTextColor: #fff;
   --cardHeaderTextColor: var(--colorWhite, #fff);
+
+  /* 
+    
+    Typography 
+    ==========================================================================
+
+  */
 }
 
 li.light-theme {
@@ -1046,22 +1073,52 @@ h3 {
   font-weight: 300;
   color: rgb(255, 255, 255);
   color: var(--fontColor, rgb(255, 255, 255));
+  margin: 0 0 0.5rem 0;
 }
 
-h1 {
+h1,
+.h1 {
   font-size: 2.375rem;
 }
 
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
+h2,
+.h2 {
   font-size: 1.75rem;
 }
 
+h3,
+.h3 {
+  font-size: 1.375rem;
+}
+
 p {
-  color: #fff;
+  margin: 0 0 1rem 0;
+  color: rgb(255, 255, 255);
+  color: var(--fontColor, rgb(255, 255, 255));
+}
+
+a {
+  color: var(--fontLinkColor);
+  color: var(--fontLinkColor);
+}
+
+a:hover {
+  color: var(--fontLinkHoverColor);
+  color: var(--fontLinkHoverColor);
+}
+
+ul,
+ol {
+}
+
+dl {
+}
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+dd {
+  margin: 0 0 0.5rem 0;
 }
 
 .light {
@@ -1083,6 +1140,42 @@ p {
 
 .condensed {
   font-stretch: condensed;
+}
+
+.monospace {
+  font-family: "Roboto", sans-serif;
+}
+
+.inverted {
+  background-color: rgb(255, 255, 255);
+  background-color: var(--fontInvertedBackgroundColor, rgb(255, 255, 255));
+  color: rgb(0, 0, 0);
+  color: var(--fontInvertedColor, rgb(0, 0, 0));
+}
+
+.low-contrast {
+  opacity: 0.2;
+}
+
+/* Size Options */
+.xl {
+  font-size: 1.125rem;
+}
+
+.lg {
+  font-size: 1rem;
+}
+
+.md {
+  font-size: 0.875rem;
+}
+
+.sm {
+  font-size: 0.75rem;
+}
+
+.xs {
+  font-size: 0.65rem;
 }
 
 :root {
@@ -1594,6 +1687,7 @@ svg circle {
   background-color: rgb(30, 47, 66);
   background-color: var(--cardBackgroundColor, rgb(30, 47, 66));
   padding: 1px;
+  overflow: hidden;
 }
 
 .rux-card__header {

@@ -1,4 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import "@polymer/polymer/lib/elements/dom-repeat.js";
 
 import { RuxIcon } from "../../packages/rux-icon/rux-icon.js";
 import { RuxAccordion } from "../packages/rux-accordion/rux-accordion.js";
@@ -98,7 +99,7 @@ export class AstroComponentViewer extends PolymerElement {
   height: calc(100vh - 9.275rem);
 
   overflow-y: hidden;
-  outline: 1px solid red;
+  
 
   grid-template-columns: repeat(12, [col-start] 1fr);
   grid-template-rows: repeat(12, [row-start] 1fr);
@@ -112,12 +113,12 @@ export class AstroComponentViewer extends PolymerElement {
   margin: 0;
 }
 
-ol,
+/* ol,
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
+} */
 
 
 
@@ -291,6 +292,125 @@ ul {
   grid-column-end: 13;
 }
 
+.monitoring-icons {
+  grid-row-start: 1;
+  grid-row-end: 10;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.utility-icons {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 4;
+  grid-column-end: 7;
+}
+
+.component-icons {
+  grid-row-start: 3;
+  grid-row-end: 6;
+  grid-column-start: 4;
+  grid-column-end: 7;
+}
+
+.status-icons {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 7;
+  grid-column-end: 10;
+}
+
+
+.theme-colors {
+  grid-row-start: 1;
+  grid-row-end: 8;
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+.status-colors {
+  display: none;
+  grid-row-start: 5;
+  grid-row-end: 9;
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+.civilian-colors {
+  display: none;
+  grid-row-start: 9;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+.headings {
+  grid-row-start: 1;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 7;
+}
+
+.text {
+  grid-row-start: 1;
+  grid-row-end: 13;
+  grid-column-start: 7;
+  grid-column-end: 13;
+}
+
+.variants {
+  grid-row-start: 6;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 7;
+
+}
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon-list li {
+  
+  margin: 0.5rem;
+  padding: 0.5rem;
+  
+
+}
+
+.swatch-book {
+  display: flex;
+  
+  overflow: hidden;
+  justify-content: space-around;
+  
+}
+
+.swatches {
+  margin: 0;
+}
+
+.swatch-meta {
+  margin: 0;
+  
+}
+
+.swatch {
+  display: block;
+  height: 30px;
+  width: 100px;
+  
+  
+}
+
+// dl {
+//   display: none;
+// }
 
 .push-buttons-list {
   list-style: none;
@@ -305,10 +425,8 @@ ul {
   margin: 2px;
 }
 
-
 .rux-card {
   overflow: hidden;
-  
 }
 
       
@@ -318,18 +436,18 @@ ul {
 
 
     
-    <rux-global-status-bar
-      appname="Component Viewer">
+    <rux-global-status-bar>
 
       <rux-tabs
         id="main"
         transparent>
+        <rux-tab id="t5" role="tab">Typography</rux-tab>
+        <rux-tab id="t4" role="tab">Colors</rux-tab>
         <rux-tab id="t6" role="tab">Icons</rux-tab>
         <rux-tab id="t3" role="tab">Widgets</rux-tab>
         <rux-tab id="t2" role="tab">Components</rux-tab>
         <rux-tab id="t1" role="tab">Elements</rux-tab>
-        <rux-tab id="t4" role="tab">Colors</rux-tab>
-        <rux-tab id="t5" role="tab">Typography</rux-tab>
+        
         
       </rux-tabs>
 
@@ -778,7 +896,7 @@ ul {
             <rux-status
               status="off"
               label="Mission"
-              icon="advanced-status:mission"
+              icon="monitoring:mission"
               notifications=0
               ></rux-status>
             </li>
@@ -786,7 +904,7 @@ ul {
             <rux-status
               status="standby"
               label="Equipment"
-              icon="advanced-status:equipment"
+              icon="monitoring:equipment"
               notifications=1
               ></rux-status>
             </li>
@@ -794,7 +912,7 @@ ul {
             <rux-status
               status="normal"
               label="Processor"
-              icon="advanced-status:processor"
+              icon="monitoring:processor"
               notifications=10
               ></rux-status>
             </li>
@@ -802,7 +920,7 @@ ul {
             <rux-status
               status="caution"
               label="Antenna"
-              icon="advanced-status:antenna-off"
+              icon="monitoring:antenna-off"
               notifications=100
               ></rux-status>
             </li>
@@ -810,7 +928,7 @@ ul {
             <rux-status
               status="error"
               label="Ant"
-              icon="advanced-status:antenna-transmit"
+              icon="monitoring:antenna-transmit"
               notifications=1000
               active></rux-status>
             </li>
@@ -818,7 +936,7 @@ ul {
             <rux-status
               status="critical"
               label="Ant"
-              icon="advanced-status:antenna-receive"
+              icon="monitoring:antenna-receive"
               notifications=1000000
               active></rux-status>
             </li>
@@ -891,28 +1009,139 @@ ul {
 
       <rux-tab-panel aria-labeledby="t4" role="tabpanel">  
         <div class="grid">
-          <section class="rux-card">
+          <section class="rux-card theme-colors">
             <header class="rux-card__header">
-              <h1>Colors</h1>
+              <h1>Theme Colors</h1>
             </header>
+            <div class="rux-card__content">
+              <div class="swatch-book">
+                <template is="dom-repeat" items=[[themeColors]]>
+                  <figure class="swatches">
+                    <figcaption>[[item.label]]</figcaption>
+
+                    <template is="dom-repeat" items=[[item.colors]]>
+                    <figure class="swatch-meta">
+                      <div class="swatch" style$="background-color: var([[item.color]])">
+                      <dl>
+                        <dt>Hex:</dt>
+                        <dd>[[item.hex]]</dd>
+                        <dt>RGB:</dt>
+                        <dd>[[item.rgb]]</dd>
+                      </dl>
+                      </figure>
+                    </template>
+                  </figure>
+                </template>
+              </div>
+
+            </div>
           </section>
+
+
+          <section class="rux-card status-colors">
+            <header class="rux-card__header">
+              <h1>Status Colors</h1>
+            </header>
+            <div class="rux-card__content">
+
+              
+
+            </div>
+          </section>
+
+
+          <section class="rux-card civilian-colors">
+            <header class="rux-card__header">
+              <h1>Civilian Colors</h1>
+            </header>
+            <div class="rux-card__content">
+
+              
+
+            </div>
+          </section>
+
         </div>
       </rux-tab-panel>
 
     
       <rux-tab-panel aria-labeledby="t5" role="tabpanel">  
         <div class="grid">
-          <section class="rux-card">
+          <section class="rux-card headings">
             <header class="rux-card__header">
-              <h1>Typography</h1>
+              <h1>Headers</h1>
             </header>
+
+            <div class="rux-card__content">
+              <h1>Semantic Heading Level 1</h1>
+              <h2>Semantic Heading Level 2</h2>
+              <h3>Semantic Heading Level 3</h3>
+              <br>
+
+              <h1 class="h3">Semantic Heading Level 1, Visually Level 3</h1>
+              <h2 class="h3">Semantic Heading Level 2, Visually Level 3</h2>
+              <h3 class="h3">Semantic Heading Level 3, Visually Level 3</h3>
+            </div>
           </section>
+
+          <section class="rux-card text">
+            <header class="rux-card__header">
+              <h1>Content</h1>
+            </header>
+            <div class="rux-card__content">
+              <h2 class="h3">Extra Large Text</h2>
+              <p class="xl">Repellendus molestiae corrupti recusandae ut autem ab. Sequi inventore pariatur tempora inventore quo voluptatem quis aut. Nihil ut ullam sequi optio qui est voluptatem et suscipit. Omnis quaerat officiis deserunt ex quo quis fugit eum id. Corporis ipsam voluptatem quas qui temporibus neque et.</p>
+              <h2 class="h3">Large/Default Text</h2>
+              <p class="l">Est molestiae cumque. Perspiciatis eaque occaecati cupiditate rerum accusamus praesentium quasi id at. Modi id nemo in sed. Consequatur iure et distinctio est. Suscipit nesciunt itaque.</p>
+              <h2 class="h3">Medium Text</h2>
+              <p class="md">Amet et ea eos voluptate ut voluptatem temporibus non sit. Dicta quo alias. Quam qui ut nihil dicta vel minima tempora. Atque blanditiis nihil officiis laborum quas quis.</p>
+              <h2 class="h3">Small Text</h2>
+              <p class="sm">Omnis enim nostrum eius necessitatibus odit. Eum qui consequatur neque molestias perferendis dignissimos occaecati autem.</p>
+              <h2 class="h3">Extra Small Text</h2>
+              <p class="xs">Sint officia et libero. Eveniet occaecati aut in quia qui.</p>
+            </div>
+          </section>
+
+          <section class="rux-card variants">
+            <header class="rux-card__header">
+              <h1>Variants &amp; Lists</h1>
+            </header>
+
+            <div class="rux-card__content">
+              <p class="inverted">Inverted Text</p>
+              <p class="low-contrast">Low Contrast Text</p>
+              <a href>Link Color</a>
+
+              <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+              </ul>
+
+              <ol>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ol>
+
+              <dl>
+                <dt>Definition Term 1</dt>
+                <dd>Eius in aspernatur adipisci.</dd>
+                <dt>Definition Term 2</dt>
+                <dd>Molestiae nostrum qui.</dd>
+                <dt>Definition Term 3</dt>
+                <dd>Laudantium et consequatur sunt nihil porro.</dd>
+              </dl>
+            </div>
+          </section>
+
         </div>
       </rux-tab-panel>
 
       <rux-tab-panel aria-labeledby="t6" role="tabpanel">  
         <div class="grid">
-          <section class="rux-card">
+
+          <section class="rux-card monitoring-icons">
             <header class="rux-card__header">
               <h1>Monitoring Icons</h1>
             </header>
@@ -924,13 +1153,11 @@ ul {
                 <li><rux-icon icon="monitoring:antenna-off"></li>
                 <li><rux-icon icon="monitoring:antenna-receive"></li>
                 <li><rux-icon icon="monitoring:antenna-transmit"></li>
-
                 <li><rux-icon icon="monitoring:equipment"></li>
                 <li><rux-icon icon="monitoring:mission"></li>
                 <li><rux-icon icon="monitoring:payload"></li>
                 <li><rux-icon icon="monitoring:processor"></li>
                 <li><rux-icon icon="monitoring:processor-alt"></li>
-
                 <li><rux-icon icon="monitoring:netcom"></li>
                 <li><rux-icon icon="monitoring:propulsion-power"></li>
                 <li><rux-icon icon="monitoring:thermal"></li>
@@ -940,7 +1167,7 @@ ul {
             </ul>
         </section>
 
-        <section class="rux-card">
+        <section class="rux-card utility-icons">
           <header class="rux-card__header">
             <h1>Utility Icons</h1>
           </header>
@@ -948,43 +1175,50 @@ ul {
             <ul class="icon-list">
               <li><rux-icon icon="utility:notifications"></li>
               <li><rux-icon icon="utility:settings"></li>
+              <li><rux-icon icon="utility:maintenance"></li>
               <li><rux-icon icon="utility:caution"></li>
             </ul>
-          </div.
+          </div>
         </section>
 
 
-        <section class="astro-pane">
+        <section class="rux-card component-icons">
           <header class="rux-card__header">
             <h1>Component Icons</h1>
           </header>
-          <ul class="icon-list">
-            <li><rux-icon icon="status:critical"></li>
-            <li><rux-icon icon="status:serious"></li>
-            <li><rux-icon icon="status:caution"></li>
-            <li><rux-icon icon="status:normal"></li>
-            <li><rux-icon icon="status:standby"></li>
-            <li><rux-icon icon="status:off"></li>
-            <li><rux-icon icon="status:null"></li>
-          </ul>
+          <div class="rux-card__body">
+            <ul class="icon-list">
+              <li><rux-icon icon="component:add-large"></li>
+              <li><rux-icon icon="component:add-small"></li>
+              <li><rux-icon icon="component:close-large"></li>
+              <li><rux-icon icon="component:close-small"></li>
+              <li><rux-icon icon="component:collapse"></li>
+              <li><rux-icon icon="component:expand"></li>
+              <li><rux-icon icon="component:lock"></li>
+              <li><rux-icon icon="component:unlock"></li>
+              <li><rux-icon icon="component:search"></li>
+            </ul>
+          </div>
         </section>
 
 
-        <section class="astro-pane">
-          <header class="rux-card__header">
+        <section class="rux-card status-icons">
+          <header class="rux-card__header status-icons">
             <h1>Status Symbols</h1>
           </header>
+          <div class="rux-card__content">
           <ul class="icon-list">
-            <li><rux-icon icon="status:critical"></li>
-            <li><rux-icon icon="status:serious"></li>
-            <li><rux-icon icon="status:caution"></li>
-            <li><rux-icon icon="status:normal"></li>
-            <li><rux-icon icon="status:standby"></li>
-            <li><rux-icon icon="status:off"></li>
-            <li><rux-icon icon="status:null"></li>
+            <li><rux-status status="critical"></rux-status></li>
+            <li><rux-status status="caution"></rux-status></li>
+            <li><rux-status status="serious"></rux-status></li>
+            <li><rux-status status="normal"></rux-status></li>
+            <li><rux-status status="standby"></rux-status></li>
+            <li><rux-status status="off"></rux-status></li>
+            
           </ul>
+          </div>
         </section>
-          </header>
+          
         </div>
       </rux-tab-panel>
 
@@ -1093,6 +1327,370 @@ ul {
       "occaecati laudantium beatae",
       "Architecto et quasi. Rerum et quod iste eum aperiam voluptates vel. Blanditiis enim deserunt",
       "Dolorum expedita assumenda quia nihil omnis. Velit omnis fugit dolore laudantium quam dolor tempora asperiores corporis. Cupiditate quia ipsum"
+    ];
+
+    /* COLORS */
+    this.themeColors = [
+      {
+        label: "Primary",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorPrimaryLighten3, rgb(191, 214, 227)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorPrimaryLighten2, rgb(128, 173, 199)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorPrimaryLighten1, rgb(64, 131, 171)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorPrimary, rgb(0, 90, 143)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorPrimaryDarken1, rgb(0, 68, 107)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorPrimaryDarken2, rgb(0, 45, 72)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorPrimaryDarken3, rgb(0, 23, 36)"
+          }
+        ]
+      },
+      {
+        label: "Secondary",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSecondaryLighten3, rgb(211, 234, 255)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSecondaryLighten2, rgb(166, 214, 255)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSecondaryLighten1, rgb(122, 193, 255)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSecondary, rgb(77, 172, 255)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSecondaryDarken1, rgb(58, 129, 191)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSecondaryDarken2, rgb(39, 86, 128)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSecondaryDarken3, rgb(19, 43, 64)"
+          }
+        ]
+      },
+      {
+        label: "Tertiary",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorTertiaryLighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorTertiaryLighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorTertiaryLighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorTertiary, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorTertiaryDarken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorTertiaryDarken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorTertiaryDarken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Critical",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCriticalLighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCriticalLighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCriticalLighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCritical, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCriticalDarken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCriticalDarken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCriticalDarken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Serious",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSeriousLighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSeriousLighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSeriousLighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSerious, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSeriousDarken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSeriousDarken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorSeriousDarken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Caution",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCautionLighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCautionLighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCautionLighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCaution, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCautionDarken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCautionDarken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorCautionDarken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Normal",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorNormalLighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorNormalLighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorNormalLighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorNormal, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorNormalDarken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorNormalDarken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorNormalDarken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Standby",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorStandbyLighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorStandbyLighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorStandbyLighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorStandby, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorStandbyDarken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorStandbyDarken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorStandbyDarken3, rgb(10, 16, 22)"
+          }
+        ]
+      },
+      {
+        label: "Off",
+        colors: [
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorOffLighten3, rgb(201, 207, 213)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorOffLighten2, rgb(148, 159, 172)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorOffLighten1, rgb(94, 111, 130)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorOff, rgb(40, 63, 88)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorOffDarken1, rgb(30, 47, 66)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorOffDarken2, rgb(20, 32, 44)"
+          },
+          {
+            rgb: "rgb(111,111,111)",
+            hex: "#ff0000",
+            color: "--colorOffDarken3, rgb(10, 16, 22)"
+          }
+        ]
+      }
     ];
 
     /* FAKE TIMELINE */

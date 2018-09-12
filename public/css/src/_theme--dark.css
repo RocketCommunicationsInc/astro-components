@@ -7,7 +7,12 @@
   */
   --backgroundColor: var(--colorTertiary, rgb(40, 63, 88));
   --fontColor: var(--colorWhite, rgb(255, 255, 255));
-  --batman: var(--colorCritical, green);
+  --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
+  --fontInvertedColor: var(--colorBlack, rgb(0, 0, 0));
+  --fontInvertedBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --fontLinkColor: var(--colorSecondary);
+  --fontLinkHoverColor: var(--colorSecondaryLighten1);
   /* 
     
     Button Colors 

@@ -7,6 +7,12 @@
   */
   --backgroundColor: var(--colorTertiaryLighten3, rgb(243, 245, 248));
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
+  --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
+  --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
+  --fontInvertedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
+
+  --fontLinkColor: var(--colorSecondaryDarken1);
+  --fontLinkHoverColor: var(--colorSecondary);
   /* 
     
     Button Colors 
@@ -264,11 +270,17 @@
     ==========================================================================
 
   */
-
   --cardBackgroundColor: var(--colorTertiaryLighten2);
 
   --cardHeaderBackgroundColor: var(--colorTertiaryLighten1);
   --cardHeaderTextColor: var(--colorWhite, #fff);
+
+  /* 
+    
+    Typography 
+    ==========================================================================
+
+  */
 }
 
 li.light-theme {

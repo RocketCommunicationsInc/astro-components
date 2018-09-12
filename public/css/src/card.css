@@ -1,6 +1,7 @@
 .rux-card {
   background-color: var(--cardBackgroundColor, rgb(30, 47, 66));
   padding: 1px;
+  overflow: hidden;
 }
 
 .rux-card__header {
