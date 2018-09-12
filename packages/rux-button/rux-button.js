@@ -7,6 +7,7 @@ import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 export class RuxButton extends PolymerElement {
   static get properties() {
     return {
+      size: String,
       type: String,
       icon: String,
       default: Boolean,
@@ -207,7 +208,7 @@ export class RuxButton extends PolymerElement {
       }
   </style>      
 
-      <button class$="rux-button rux-button--[[type]] [[default]]" disabled$="[[disabled]]">
+      <button class$="rux-button rux-button--[[size]] rux-button--[[type]] [[default]]" disabled$="[[disabled]]">
         <rux-icon icon="[[icon]]" color="#fff" class="rux-icon rux-button__icon" hidden="[[hidden]]"></rux-icon>
         <slot></slot>
       </button>`;
@@ -223,6 +224,8 @@ export class RuxButton extends PolymerElement {
     this.hidden = !this.icon;
     // set type to standard if there is no type
     this.type = this.type ? this.type : "standard";
+    // set type to standard if there is no type
+    this.size = this.size ? this.size : "standard";
   }
 }
 customElements.define("rux-button", RuxButton);

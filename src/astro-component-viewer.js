@@ -113,6 +113,8 @@ export class AstroComponentViewer extends PolymerElement {
   margin: 0;
 }
 
+
+
 /* ol,
 ul {
   list-style: none;
@@ -124,50 +126,51 @@ ul {
 
 .checkbox {
   grid-row-start: 1;
-  grid-row-end: 4;
+  grid-row-end: 5;
   grid-column-start: 1;
   grid-column-end: 3;
 }
 
 .radio {
-  grid-row-start: 4;
-  grid-row-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 9;
   grid-column-start: 1;
   grid-column-end: 3;
 }
 
 .pushbuttons {
-  grid-row-start: 1;
-  grid-row-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 9;
   grid-column-start: 3;
   grid-column-end: 5;
+  
 }
 
 .toggles {
-  grid-row-start: 4;
-  grid-row-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 5;
   grid-column-start: 3;
   grid-column-end: 5;
 }
 
 .text-fields {
-  grid-row-start: 1;
-  grid-row-end: 9;
-  grid-column-start: 10;
+  grid-row-start: 7;
+  grid-row-end: 13;
+  grid-column-start: 7;
   grid-column-end: 13; 
 }
 
 
 .segmented {
-  grid-row-start: 1;
-  grid-row-end: 3;
-  grid-column-start: 5;
-  grid-column-end: 7; 
+  grid-row-start: 9;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 
 .drop-downs {
-  grid-row-start: 3;
+  grid-row-start: 1;
   grid-row-end: 5;
   grid-column-start: 5;
   grid-column-end: 7;
@@ -175,9 +178,9 @@ ul {
 
 .buttons {
   grid-row-start: 1;
-  grid-row-end: 9;
+  grid-row-end: 7;
   grid-column-start: 7;
-  grid-column-end: 10;
+  grid-column-end: 13;
 }
 
 .progress {
@@ -188,8 +191,8 @@ ul {
 }
 
 .status {
-  grid-row-start: 7;
-  grid-row-end: 9;
+  grid-row-start: 9;
+  grid-row-end: 13;
   grid-column-start: 3;
   grid-column-end: 5; 
 }
@@ -202,13 +205,11 @@ ul {
 }
 
 
-
-.icons {
-  grid-row-start: 10;
-  grid-row-end: 13;
-  grid-column-start: 1;
-  grid-column-end: 12;   
+.no-list {
+  margin: 0;
+  padding: 0;
 }
+
 
 .popups {
   display: none;
@@ -230,42 +231,42 @@ ul {
 .tree {
   
   grid-row-start: 1;
-  grid-row-end: 9;
+  grid-row-end: 8;
   grid-column-start: 4;
   grid-column-end: 7;
 }
 
 .clock {
   grid-row-start: 4;
-  grid-row-end: 7;
+  grid-row-end: 8;
   grid-column-start: 1;
   grid-column-end: 4;
 }
 
 .search {
-  
-  grid-row-start: 7;
-  grid-row-end: 9;
+  display: none;
+  grid-row-start: 8;
+  grid-row-end: 10;
   grid-column-start: 1;
   grid-column-end: 4;
 }
 
 .notifications-sample {
-  grid-row-start: 4;
-  grid-row-end: 7;
-  grid-column-start: 10;
-  grid-column-end: 13;
+  grid-row-start: 8;
+  grid-row-end: 10;
+  grid-column-start: 4;
+  grid-column-end: 7;
 }
 
 .modal {
-  grid-row-start: 4;
-  grid-row-end: 7;
-  grid-column-start: 7;
-  grid-column-end: 10;
+  grid-row-start: 8;
+  grid-row-end: 10;
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 .advanced-status {
-  grid-row-start: 9;
+  grid-row-start: 10;
   grid-row-end: 13;
   grid-column-start: 1;
   grid-column-end: 7;
@@ -273,7 +274,7 @@ ul {
 
 .tabs {
   grid-row-start: 1;
-  grid-row-end: 4;
+  grid-row-end: 7;
   grid-column-start: 7;
   grid-column-end: 13;
 }
@@ -294,29 +295,29 @@ ul {
 
 .monitoring-icons {
   grid-row-start: 1;
-  grid-row-end: 10;
+  grid-row-end: fr;
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 13;
 }
 
 .utility-icons {
   grid-row-start: 1;
   grid-row-end: 3;
-  grid-column-start: 4;
-  grid-column-end: 7;
+  grid-column-start: 5;
+  grid-column-end: 8;
 }
 
 .component-icons {
   grid-row-start: 3;
-  grid-row-end: 6;
-  grid-column-start: 4;
-  grid-column-end: 7;
+  grid-row-end: 5;
+  grid-column-start: 5;
+  grid-column-end: 11;
 }
 
 .status-icons {
   grid-row-start: 1;
   grid-row-end: 3;
-  grid-column-start: 7;
+  grid-column-start: 8;
   grid-column-end: 10;
 }
 
@@ -346,7 +347,7 @@ ul {
 
 .headings {
   grid-row-start: 1;
-  grid-row-end: 6;
+  grid-row-end: 7;
   grid-column-start: 1;
   grid-column-end: 7;
 }
@@ -359,7 +360,7 @@ ul {
 }
 
 .variants {
-  grid-row-start: 6;
+  grid-row-start: 7;
   grid-row-end: 13;
   grid-column-start: 1;
   grid-column-end: 7;
@@ -375,12 +376,36 @@ ul {
   flex-wrap: wrap;
 }
 
-.icon-list li {
+.advanced-status-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   
-  margin: 0.5rem;
-  padding: 0.5rem;
-  
+}
 
+.advanced-status-list li {
+  // display: inline-block;
+}
+
+.icon-list li {
+  // outline: 1px solid red;
+  
+  width: 8.333%;
+}
+
+.icon-list figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-list figcaption {
+  margin-top: 1.5rem;
+  font-family: monospace;
 }
 
 .swatch-book {
@@ -398,6 +423,19 @@ ul {
 .swatch-meta {
   margin: 0;
   
+}
+
+.button-list {
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+
+  display: flex;
+  // justify-content: space-between;
+}
+
+.button-list li {
+  margin: 0 0.5rem 0 0;
 }
 
 .swatch {
@@ -429,6 +467,17 @@ ul {
   overflow: hidden;
 }
 
+.toggle-buttons {
+  
+  padding: 0;
+}
+.toggle-buttons .rux-form-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+  
+}
       
 
     </style>
@@ -441,12 +490,14 @@ ul {
       <rux-tabs
         id="main"
         transparent>
+        <rux-tab id="t2" role="tab">Components</rux-tab>
+        <rux-tab id="t6" role="tab">Icons</rux-tab>
+        <rux-tab id="t1" role="tab">Elements</rux-tab>
         <rux-tab id="t5" role="tab">Typography</rux-tab>
         <rux-tab id="t4" role="tab">Colors</rux-tab>
-        <rux-tab id="t6" role="tab">Icons</rux-tab>
+        
         <rux-tab id="t3" role="tab">Widgets</rux-tab>
-        <rux-tab id="t2" role="tab">Components</rux-tab>
-        <rux-tab id="t1" role="tab">Elements</rux-tab>
+        
         
         
       </rux-tabs>
@@ -476,7 +527,7 @@ ul {
           <h1>Checkboxes</h1>
         </header>
 				<div class="rux-card__content">
-					<ol>
+					<ol class="no-list">
 						<li class="rux-checkbox">
 							<input type="checkbox" name="checkbox1c" id="checkbox1c">
 							<label for="checkbox1c">Checkbox</label>
@@ -507,7 +558,7 @@ ul {
           <h1>Radio Buttons</h1>
         </header>
 				<div class="rux-card__content">
-					<ol>
+					<ol class="no-list">
 						<li class="rux-radio-button">
 							<input type="radio" name="radio1c" id="radio1c">
 							<label for="radio1c">Radio Button</label>
@@ -542,7 +593,7 @@ ul {
           <figure>
             <div class="rux-form-field">
             <label aria-label="pushbuttons">Enable:</label>
-            <ul class="push-buttons-list">
+            <ul class="no-list push-buttons-list">
               <li><rux-push-button>Tx</rux-push-button></li>
               <li><rux-push-button checked>Rx</rux-push-button></li>
               <li><rux-push-button disabled>Xx</rux-push-button></li>
@@ -559,10 +610,7 @@ ul {
           <h1>Segmented Button</h1>
         </header>
         <div class="rux-card__content">
-          <figure>
             <rux-segmented-button data={{segmentOne}}></rux-segmented-button>
-            <figcaption class="output">Output = [[segmentOne.selected.label]]</figcaption>
-          </figure>
         </div>
       </section>
 
@@ -573,18 +621,26 @@ ul {
           <h1>Toggles Button</h1>
         </header>
         <div class="rux-card__content">
-        <figure>
-          <ul class="toggle-buttons">
+        
+          <ul class="no-list toggle-buttons">
             <li class="rux-form-field">
               <div id="toggle1">Toggle 1:</div>
               <rux-toggle aria-labeledby="toggle1"></rux-toggle>
             </li>
             <li class="rux-form-field">
+              <div id="toggle3">Toggle 2:</div>
+              <rux-toggle aria-labeledby="toggle1" checked></rux-toggle>
+            </li>
+            <li class="rux-form-field">
               <div id="toggle3">Toggle 3:</div>
               <rux-toggle disabled aria-labeledby="toggle1"></rux-toggle>
             </li>
+            <li class="rux-form-field">
+              <div id="toggle3">Toggle 4:</div>
+              <rux-toggle disabled aria-labeledby="toggle1" checked></rux-toggle>
+            </li>
           </ul>
-        </figure>
+        
       </div>
     </section>
 
@@ -651,19 +707,38 @@ ul {
         <h1>Buttons</h1>
       </header>
       <div class="rux-card__content">
-        <rux-button type="small">Button</rux-button>
-        <rux-button>Button</rux-button>
-        <rux-button type="large">Button</rux-button>
-        <br>
-        <rux-button disabled type="small">Button</rux-button>
-        <rux-button disabled>Button</rux-button>
-        <rux-button disabled type="large">Button</rux-button>
-        <br>
-        <rux-button default type="small">Button</rux-button>
-        <rux-button default>Button</rux-button>
-        <rux-button default type="large">Button</rux-button>
-        <br>
-        <rux-button type="outline">Outline Button</rux-button>
+      <h2 class="h3">Small</h3>
+      <ul class="button-list">
+        <li><rux-button size="small">Button</rux-button></li>
+        <li><rux-button size="small" default>Button</rux-button></li>
+        <li><rux-button size="small" icon="utility:caution">Button</rux-button></li>
+        <li><rux-button size="small" disabled>Buttons</rux-button></li>
+        <li><rux-button size="small" type="outline">Button</rux-button></li>
+        <li><rux-button size="small" type="outline" disabled>Button</rux-button></li>
+      </ul>
+        <h2 class="h3">Standard</h3>
+        <ul class="button-list">          
+          <li><rux-button>Button</rux-button></li>
+          <li><rux-button default>Button</rux-button></li>
+          <li><rux-button icon="utility:caution">Button</rux-button></li>
+          <li><rux-button disabled>Buttons</rux-button></li>
+          <li><rux-button type="outline">Button</rux-button></li>
+          <li><rux-button type="outline" disabled>Button</rux-button></li>
+        </ul>
+        <h2 class="h3">Large</h3>    
+        <ul class="button-list">  
+          <li><rux-button size="large">Button</rux-button></li>
+          <li><rux-button size="large" default>Button</rux-button></li>
+          <li><rux-button size="large" icon="utility:caution">Button</rux-button></li>
+          <li><rux-button size="large" disabled>Buttons</rux-button></li>
+          <li><rux-button size="large" type="outline">Button</rux-button></li>
+          <li><rux-button size="large" type="outline" disabled>Button</rux-button></li>
+        </ul>
+        
+        
+
+        
+        
 
       </div>
     </section>
@@ -686,7 +761,7 @@ ul {
         <h1>Status</h1>
       </header>
       <div class="rux-card__content">
-        <ul>
+        <ul class="no-list">
           <li><rux-status status="off"></rux-status></li>
           <li><rux-status status="standby"></rux-status></li>
           <li><rux-status status="normal"></rux-status></li>
@@ -698,16 +773,7 @@ ul {
       </div>
     </section>
 
-    <!-- 11. ICONS //-->
-    <section class="rux-card icons">
-      <header class="rux-card__header">
-        <h1>Icons</h1>
-      </header>
-      <div class="rux-card__content">
-       
-
-      </div>
-    </section>
+    
 
 
     <!-- 12. POP UPS //-->
@@ -856,12 +922,14 @@ ul {
               <h1>Modal</h1>
             </header>
             <div class="rux-card__content">
-              <figure>
+              
                 <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
-              </figure>
+              
+              <!--
               <figcaption>
                 <p>I’m just sitting here listening for a modal window event: <span class="look">[[modalMessage]]</span></p>
               </figcaption>
+              //-->
 
             <rux-modal
               message="Release Modem 2 on slice 1000 for deactivation. Releasing this modem cannot be undone." 
@@ -885,13 +953,13 @@ ul {
           </section>
           
 
-          <!-- 6. ADVANCED STATUS //-->
+        <!-- 6. ADVANCED STATUS //-->
           <section class="rux-card advanced-status">
             <header class="rux-card__header">
               <h1>Advanced Status</h1>
             </header>
             <div class="rux-card__content">
-            <ul class="icon-list">
+            <ul class="no-list advanced-status-list">
             <li>
             <rux-status
               status="off"
@@ -948,10 +1016,10 @@ ul {
           <section class="rux-card log">
             <header class="rux-card__header">
               <h1>Log</h1>
+              <rux-button type="small" style="margin-left: auto" on-click="_updateLog">Update Log</rux-button>
             </header>
             <div class="rux-card__content">
-            <rux-button on-click="_updateLog">Update Log</rux-button>
-            <br><br>
+            
             <rux-log 
                 max-lines=5
                 formatting=[[logFormatting]]
@@ -1022,12 +1090,7 @@ ul {
                     <template is="dom-repeat" items=[[item.colors]]>
                     <figure class="swatch-meta">
                       <div class="swatch" style$="background-color: var([[item.color]])">
-                      <dl>
-                        <dt>Hex:</dt>
-                        <dd>[[item.hex]]</dd>
-                        <dt>RGB:</dt>
-                        <dd>[[item.rgb]]</dd>
-                      </dl>
+                      
                       </figure>
                     </template>
                   </figure>
@@ -1073,9 +1136,9 @@ ul {
             </header>
 
             <div class="rux-card__content">
-              <h1>Semantic Heading Level 1</h1>
-              <h2>Semantic Heading Level 2</h2>
-              <h3>Semantic Heading Level 3</h3>
+              <h1>Semantic Heading Level 1 <span class="low-contrast">38px / 2.375rem</span></h1>
+              <h2>Semantic Heading Level 2 <span class="low-contrast">28px / 1.75rem</span></h2>
+              <h3>Semantic Heading Level 3 <span class="low-contrast">22px / 1.375rem</span></h3>
               <br>
 
               <h1 class="h3">Semantic Heading Level 1, Visually Level 3</h1>
@@ -1089,16 +1152,29 @@ ul {
               <h1>Content</h1>
             </header>
             <div class="rux-card__content">
-              <h2 class="h3">Extra Large Text</h2>
-              <p class="xl">Repellendus molestiae corrupti recusandae ut autem ab. Sequi inventore pariatur tempora inventore quo voluptatem quis aut. Nihil ut ullam sequi optio qui est voluptatem et suscipit. Omnis quaerat officiis deserunt ex quo quis fugit eum id. Corporis ipsam voluptatem quas qui temporibus neque et.</p>
-              <h2 class="h3">Large/Default Text</h2>
-              <p class="l">Est molestiae cumque. Perspiciatis eaque occaecati cupiditate rerum accusamus praesentium quasi id at. Modi id nemo in sed. Consequatur iure et distinctio est. Suscipit nesciunt itaque.</p>
-              <h2 class="h3">Medium Text</h2>
-              <p class="md">Amet et ea eos voluptate ut voluptatem temporibus non sit. Dicta quo alias. Quam qui ut nihil dicta vel minima tempora. Atque blanditiis nihil officiis laborum quas quis.</p>
-              <h2 class="h3">Small Text</h2>
-              <p class="sm">Omnis enim nostrum eius necessitatibus odit. Eum qui consequatur neque molestias perferendis dignissimos occaecati autem.</p>
-              <h2 class="h3">Extra Small Text</h2>
-              <p class="xs">Sint officia et libero. Eveniet occaecati aut in quia qui.</p>
+              <div class="xl-sample" style="max-width: 600px;">
+                <h2 class="h3">Extra Large Text</h2>
+                <p class="xl">Repellendus molestiae corrupti recusandae ut autem ab. Sequi inventore pariatur tempora inventore quo voluptatem quis aut. Nihil ut ullam sequi optio qui est voluptatem et suscipit. Omnis quaerat officiis deserunt ex quo quis fugit eum id.</p>
+              </div>
+              <div class="xl-sample" style="max-width: 550px;">
+                <h2 class="h3">Large/Default Text</h2>
+                <p>Enim quam est dolorem officia explicabo incidunt qui. Et rerum et dolorem et vero corrupti delectus pariatur. Quaerat doloribus minima natus quaerat labore sint consequatur aut.</p>
+                <p class="lg">Est molestiae cumque. Perspiciatis eaque occaecati cupiditate rerum accusamus praesentium quasi id at. Modi id nemo in sed. Consequatur iure et distinctio est. Suscipit nesciunt itaque.</p>
+              </div>
+              <div class="xl-sample" style="max-width: 480px;">
+                <h2 class="h3">Medium Text</h2>
+                <p class="md">Amet et ea eos voluptate ut voluptatem temporibus non sit. Dicta quo alias. Quam qui ut nihil dicta vel minima tempora. Atque blanditiis nihil officiis laborum quas quis.</p>
+              </div>
+              <div class="xl-sample" style="max-width: 400px;">
+                <h2 class="h3">Small Text</h2>
+                <p class="sm">Minus blanditiis cumque consequatur quo occaecati possimus est mollitia quae. Corrupti dolor illo voluptas enim ullam quidem mollitia. </p>
+                <p class="sm">Magnam consequatur minus quidem explicabo odio. Aut ut reprehenderit. Optio voluptates officiis fuga pariatur quidem aut occaecati.</p>
+              </div>
+              <div class="xl-sample" style="max-width: 350px;">
+                <h2 class="h3">Extra Small Text</h2>
+                <p class="xs">Accusantium laborum et ipsa sint quo voluptas est pariatur in. Distinctio tempora eum necessitatibus et nam aliquid ut excepturi voluptate. Impedit fuga enim. Exercitationem iusto ipsa.</p>
+                <p class="xs">Facere vero aut consequatur qui asperiores. Distinctio nisi asperiores corrupti dolorem. Suscipit ratione a commodi quisquam consequuntur dolorem ab. Facilis consequuntur enim neque veritatis nihil.</p>
+              </div>
             </div>
           </section>
 
@@ -1108,9 +1184,10 @@ ul {
             </header>
 
             <div class="rux-card__content">
-              <p class="inverted">Inverted Text</p>
+              
               <p class="low-contrast">Low Contrast Text</p>
               <a href>Link Color</a>
+              <p class="inverted">Inverted Text</p>
 
               <ul>
                 <li>List Item 1</li>
@@ -1124,14 +1201,7 @@ ul {
                 <li>List Item</li>
               </ol>
 
-              <dl>
-                <dt>Definition Term 1</dt>
-                <dd>Eius in aspernatur adipisci.</dd>
-                <dt>Definition Term 2</dt>
-                <dd>Molestiae nostrum qui.</dd>
-                <dt>Definition Term 3</dt>
-                <dd>Laudantium et consequatur sunt nihil porro.</dd>
-              </dl>
+             
             </div>
           </section>
 
@@ -1143,36 +1213,50 @@ ul {
 
           <section class="rux-card monitoring-icons">
             <header class="rux-card__header">
-              <h1>Monitoring Icons</h1>
+              <h1>Icons</h1>
             </header>
             <div class="rux-card__content">
             
               <ul class="icon-list">
-                <li><rux-icon icon="monitoring:altitude"></li>
-                <li><rux-icon icon="monitoring:antenna"></li>
-                <li><rux-icon icon="monitoring:antenna-off"></li>
-                <li><rux-icon icon="monitoring:antenna-receive"></li>
-                <li><rux-icon icon="monitoring:antenna-transmit"></li>
-                <li><rux-icon icon="monitoring:equipment"></li>
-                <li><rux-icon icon="monitoring:mission"></li>
-                <li><rux-icon icon="monitoring:payload"></li>
-                <li><rux-icon icon="monitoring:processor"></li>
-                <li><rux-icon icon="monitoring:processor-alt"></li>
-                <li><rux-icon icon="monitoring:netcom"></li>
-                <li><rux-icon icon="monitoring:propulsion-power"></li>
-                <li><rux-icon icon="monitoring:thermal"></li>
-                <li><rux-icon icon="monitoring:satellite-off"></li>
-                <li><rux-icon icon="monitoring:satellite-receive"></li>
-                <li><rux-icon icon="monitoring:satellite-transmit"></li>
+                <li><figure><rux-icon icon="monitoring:altitude"></rux-icon><figcaption>altitude</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:antenna-off"></rux-icon><figcaption>antenna-off</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:antenna-receive"></rux-icon><figcaption>antenna-receive</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:antenna-transmit"></rux-icon><figcaption>antenna-transmit</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:equipment"></rux-icon><figcaption>equipment</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:mission"></rux-icon><figcaption>mission</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:payload"></rux-icon><figcaption>payload</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:processor"></rux-icon><figcaption>processor</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:processor-alt"></rux-icon><figcaption>processor</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:netcom"></rux-icon><figcaption>netcom</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:propulsion-power"></rux-icon><figcaption>propulsion</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:thermal"></rux-icon><figcaption>thermal</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:satellite-off"></rux-icon><figcaption>satellite-off</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:satellite-receive"></rux-icon><figcaption>satellite-receive</figcaption></figure></li>
+                <li><figure><rux-icon icon="monitoring:satellite-transmit"></rux-icon><figcaption>satellite-transmit</figcaption></figure></li>
+                <li><figure><rux-icon icon="utility:notifications"></rux-icon><figcaption>notifications</figcaption></figure></li>
+                <li><figure><rux-icon icon="utility:settings"></rux-icon><figcaption>settings</figcaption></figure></li>
+                <li><figure><rux-icon icon="utility:maintenance"></rux-icon><figcaption>maintenance</figcaption></figure></li>
+                <li><figure><rux-icon icon="utility:caution"></rux-icon><figcaption>caution</figcaption></figure></li>
+                <li><figure><rux-icon icon="component:add-large"></rux-icon><figcaption>add-large</figcaption></figure></li>
+                <li><figure><rux-icon icon="component:add-small"></rux-icon><figcaption>add-small</figcaption></figure></li>
+                <li><figure><rux-icon icon="component:close-large"></rux-icon><figcaption>close-large</figcaption></figure></li>
+                <li><figure><rux-icon icon="component:close-small"></rux-icon><figcaption>close-small</figcaption></figure></li>
+                <li><figure><rux-icon icon="component:collapse"></rux-icon><figcaption>collapse</figcaption></figure></li>
+                <li><figure><rux-icon icon="component:expand"></rux-icon><figcaption>expand</figcaption></figure></li>
+                <li><figure><rux-icon icon="component:lock"></rux-icon><figcaption>lock</figcaption></figure></li>
+                <li><figure><rux-icon icon="component:unlock"></rux-icon><figcaption>unlock</figcaption></figure></li>
+                <li><figure><rux-icon icon="component:search"></rux-icon><figcaption>search</figcaption></figure></li>
             </ul>
         </section>
 
+        <!--
         <section class="rux-card utility-icons">
           <header class="rux-card__header">
             <h1>Utility Icons</h1>
           </header>
           <div class="rux-card__content">
-            <ul class="icon-list">
+            <ul class="no-list icon-list">
               <li><rux-icon icon="utility:notifications"></li>
               <li><rux-icon icon="utility:settings"></li>
               <li><rux-icon icon="utility:maintenance"></li>
@@ -1187,7 +1271,7 @@ ul {
             <h1>Component Icons</h1>
           </header>
           <div class="rux-card__body">
-            <ul class="icon-list">
+            <ul class="no-list icon-list">
               <li><rux-icon icon="component:add-large"></li>
               <li><rux-icon icon="component:add-small"></li>
               <li><rux-icon icon="component:close-large"></li>
@@ -1207,7 +1291,7 @@ ul {
             <h1>Status Symbols</h1>
           </header>
           <div class="rux-card__content">
-          <ul class="icon-list">
+          <ul class="no-list icon-list">
             <li><rux-status status="critical"></rux-status></li>
             <li><rux-status status="caution"></rux-status></li>
             <li><rux-status status="serious"></rux-status></li>
@@ -1218,6 +1302,7 @@ ul {
           </ul>
           </div>
         </section>
+        //-->
           
         </div>
       </rux-tab-panel>
