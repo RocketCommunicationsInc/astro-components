@@ -85,21 +85,21 @@ dd {
 
 /* Size Options */
 .xl {
-  font-size: 1.125rem;
+  font-size: var(--fontSizeXL, 1.125rem);
 }
 
 .lg {
-  font-size: 1rem;
+  font-size: var(--fontSize, 1rem);
 }
 
 .md {
-  font-size: 0.875rem;
+  font-size: var(--fontSizeMD, 0.875rem);
 }
 
 .sm {
-  font-size: 0.75rem;
+  font-size: var(--fontSizeSM, 0.75rem);
 }
 
 .xs {
-  font-size: 0.65rem;
+  font-size: var(--fontSizeXS, 0.65rem);
 }

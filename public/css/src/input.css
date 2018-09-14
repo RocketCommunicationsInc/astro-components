@@ -16,6 +16,13 @@
 
 /* 	REQUIRED CLASSES */
 
+:root {
+  --paddingLeft: 0.5rem;
+  --paddingRight: 0.5rem;
+  --paddingTop: 0.25rem;
+  --paddingBottom: 0.25rem;
+}
+
 label {
   color: var(--fontColor, rgb(255, 255, 255));
 }
@@ -27,70 +34,147 @@ label {
   flex-wrap: wrap;
   align-items: flex-start;
 
-  margin: 0 0 1rem 0;
+  font-size: var(--fontSize, 1rem);
 }
 
 .rux-form-field label,
 .satcom-form-chunk label {
   display: flex;
-  order: 0;
-  margin: 0 0 0.25rem 0;
+  order: 1;
+  margin: 0 0 0.15rem 0;
   width: 100%;
-  font-size: var(--fontSize, 1rem);
 
   user-select: none;
 }
 
-.rux-form-field input[type="text"],
-.rux-form-field input[type="number"],
-.rux-form-field input[type="date"],
-.rux-form-field input[type="datetimelocal"],
-.rux-form-field input[type="email"],
-.rux-form-field input[type="month"],
-.rux-form-field input[type="password"],
+.rux-form-field input[type="number"] {
+  -webkit-appearance: none;
+}
+
+.rux-form-field input,
+.rux-form-field textarea,
 .rux-form-field input[type="search"],
-.rux-form-field input[type="tel"],
-.rux-form-field input[type="time"],
-.rux-form-field input[type="url"],
-.rux-form-field input[type="week"],
 .satcom-text-entry {
-  font-size: 1rem;
-  padding: 2px 5px;
+  order: 2;
+
+  padding: 0.5rem 0.5rem;
+  font-size: var(--fontSize, 1rem);
 
   border-radius: 3px;
-  border: 1px solid var(--colorPrimary, rgb(0, 90, 143));
+  border: 1px solid var(--inputBorderColor, rgb(0, 90, 143));
 
-  /* border: 2px solid rgba(0, 0, 0, 0.1);
-  border-bottom: none; */
+  color: black;
 
-  color: #000;
-
-  background: #fff;
-  width: calc(100% - 28px);
+  width: 100%;
 }
 
-.rux-text-entry:invalid,
-.satcom-v2-text-entry:invalid,
-.force-validity {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29 27'%3E%3cg fill='none' fill-rule='evenodd'%3E%3ccircle cx='13' cy='13' r='13' fill='#F72501'/%3E%3cpath fill='#FFF' d='M14.45 16h-2.902L11 6.055c-.03-.55.392-1.023.944-1.053L12 5h2c.552 0 1 .448 1 1 0 .018 0 .037-.002.055L14.45 16zm-2.936 2.506c.343-.337.842-.506 1.497-.506.635 0 1.124.173 1.47.518.348.345.52.84.52 1.482 0 .62-.174 1.108-.525 1.465-.35.357-.838.535-1.463.535-.64 0-1.134-.175-1.484-.524-.35-.35-.526-.84-.526-1.476 0-.66.17-1.157.514-1.494z'/%3E%3c/g%3E%3C/svg%3E");
+.rux-form-field input[type="search"] {
+  padding: 0.5rem 0 0.5rem 2rem;
+  background: no-repeat center left 0.3rem/1.1em
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
+    var(inputBackgroundColor, rgb(255, 255, 255));
+}
+
+.rux-form-field input[type="search"]::-webkit-search-cancel-button {
+  position: relative;
+
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22rgb(0%2C%2090%2C%20143)%22%20fill-rule%3D%22evenodd%22%20d%3D%22M69.028%2064l22.628%2022.627-5.029%205.029L64%2069.028%2041.373%2091.656l-5.029-5.029L58.972%2064%2036.344%2041.373l5.029-5.029L64%2058.972l22.627-22.628%205.029%205.029L69.028%2064z%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.rux-form-field input[type="search"]::-ms-clear {
+  position: relative;
+  right: 0.25rem;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+.rux-form-field input:not([type="search"]):optional + label::after {
+  display: block;
+  content: "(optional)";
+  font-size: 0.875rem;
+  margin: 0.1rem auto 0 0.25rem;
+
+  opacity: 0.4;
+}
+
+.rux-form-field input:invalid,
+.satcom-text-entry {
+  border: 1px solid var(--inputInvalidBorderColor);
+  padding-right: 1.65rem;
+  padding-left: 0.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 70%;
-  width: 28px;
-  height: 28px;
-
-  margin-top: -2px;
+  background-size: 1.125rem;
+  background-position: center right 0.5rem;
 }
 
-.required {
-  margin-right: 0.4em;
-  color: #fff;
-
-  font-size: 16px;
+.rux-form-field input:focus .rux-form-field input:invalid:focus,
+.satcom-text-entry {
+  -webkit-appearance: none;
+  box-shadow: inset 0 0 3px var(--colorGray);
+  border-color: var(--inputFocusBorderColor);
+  outline: none;
+  color: black;
 }
 
-.rux-text-entry:disabled,
+.rux-form-field__validation-message {
+  display: none;
+  position: absolute;
+  max-width: 16rem;
+  background-color: var(--colorCritical);
+  width: 100%;
+  padding: 0.25rem;
+  right: 0;
+  font-size: var(--fontSizeMD);
+}
+
+.rux-form-field input:invalid .rux-form-field__validation-message {
+  display: block;
+}
+
+.rux-form-field input:disabled,
 .satcom-text-entry:disabled {
   opacity: var(--disabledOpacity, 0.4);
   cursor: var(--disabledCursor, not-allowed);
+}
+
+.rux-form-field--large,
+.rux-form-field--large label,
+.rux-form-field--large input,
+.rux-form-field--large textarea {
+  font-size: var(--fontSizeXL, 1.125rem);
+}
+
+.rux-form-field--small,
+.rux-form-field--small label,
+.rux-form-field--small input,
+.rux-form-field--small textarea {
+  font-size: var(--fontSizeMD, 0.875rem);
+}
+
+.rux-form-field--large input,
+.rux-form-field--large textarea {
+  padding: 0.5rem;
+}
+
+.rux-form-field--large input[type="search"] {
+}
+
+.rux-form-field--small input,
+.rux-form-field--small textarea {
+  padding: 0.3rem;
+}
+
+.rux-form-field--small input[type="search"] {
+  padding: 0.3rem 0 0.3rem 2rem;
+}
+
+.rux-form-field--large input:invalid {
+  background-size: 1.375rem;
+  background-position: center right 0.5rem;
+  padding: 0.5rem 1.875rem 0.5rem 0.5rem;
 }

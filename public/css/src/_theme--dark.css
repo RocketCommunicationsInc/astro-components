@@ -254,6 +254,20 @@
 
   --cardHeaderBackgroundColor: var(--colorTertiaryDarken2);
   --cardHeaderTextColor: var(--colorWhite, #fff);
+  /* 
+    
+    Input/Text Field Colors 
+    ==========================================================================
+    
+  */
+
+  --inputBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --inputBorderColor: transparent;
+  --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
+
+  --inputFocusBorderColor: transparent;
+
+  --inputInvalidBorderColor: var(--colorCritical, red);
 }
 
 li.dark-theme {

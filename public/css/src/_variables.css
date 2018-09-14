@@ -18,6 +18,11 @@
   /* Typography */
   --fontFamily: "Open Sans", sans-serif;
   --fontSize: 1rem; /* 16px */
+  --fontSizeXL: 1.125rem;
+  --fontSizeLG: 1rem;
+  --fontSizeMD: 0.875rem;
+  --fontSizeSM: 0.75rem;
+  --fontSizeXS: 0.65rem;
 
   --fontFamilyLight: "Open Sans Light", sans-serif;
   --fontFamilyMono: "Roboto Mono", monospace;

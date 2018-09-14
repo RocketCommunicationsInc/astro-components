@@ -180,7 +180,6 @@ export class RuxButton extends PolymerElement {
       .rux-button--small .rux-button__icon {
         height: 0.875rem;
         width: 0.875rem;
-        outline: 1px solid red;
       }
       
       .rux-button--large .rux-button__icon {

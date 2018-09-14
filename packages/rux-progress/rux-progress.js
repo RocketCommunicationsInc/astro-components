@@ -32,6 +32,8 @@ export class RuxProgress extends PolymerElement {
       
         justify-content: space-between;
         align-items: center;
+
+        outline: 1px solid red;
       }
       
       .rux-progress progress[value] {
@@ -99,13 +101,17 @@ export class RuxProgress extends PolymerElement {
         height: 5rem;
         width: 5rem;
         background-color: transparent;
-        /* outline: 1px solid rgba(0, 255, 0, 0.2); */
+        outline: 1px solid rgba(0, 255, 0, 0.2);
         border: none;
       
+        /*
         background-image: var(
           --progressIndeterminate,
-          url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E %3ClinearGradient x1='65.479%25' y1='-8.436%25' x2='50%25' y2='100%25' id='a'%3E %3Cstop stop-color='%235CB3FF' offset='0%25'/%3E %3Cstop stop-color='%23010F1B' stop-opacity='0' offset='100%25'/%3E %3C/linearGradient%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M32 64C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32zm0-6c14.36 0 26-11.64 26-26S46.36 6 32 6 6 17.64 6 32s11.64 26 26 26z' fill='%23192B3C'/%3E %3Cpath d='M51.908 8.236l-2.358 3.245A26.894 26.894 0 0 0 32 5C17.088 5 5 17.088 5 32s12.088 27 27 27c1.129 0 2.242-.07 3.334-.204l4.435 3.222C37.286 62.66 34.683 63 32 63 14.88 63 1 49.12 1 32 1 14.88 14.88 1 32 1c7.579 0 14.522 2.72 19.908 7.236z' fill='url(%23a)'/%3E %3Cpath d='M47.564 12c1.92 0 3.557-.64 4.075-2.367.112-.375.361-.67.361-1.08C52 6.248 50.572 4 48.234 4S44 5.867 44 8.17c0 2.304 1.225 3.83 3.564 3.83z' fill='%2352AEFF'/%3E %3C/g%3E %3C/svg%3E ")
+          url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2055%2062%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22a%22%20x1%3D%2295.084%25%22%20x2%3D%2250%25%22%20y1%3D%2215.688%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234DACFF%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23333%22%20stop-opacity%3D%220%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22url(%23a)%22%20d%3D%22M50.282%206.725c.07.045.139.095.204.15l.766.643a2%202%200%200%201-2.57%203.065l-.128-.107-.004.005A26.894%2026.894%200%200%200%2031%204C16.088%204%204%2016.088%204%2031s12.088%2027%2027%2027c1.129%200%202.242-.07%203.334-.204l4.435%203.222C36.286%2061.66%2033.683%2062%2031%2062%2013.88%2062%200%2048.12%200%2031%200%2013.88%2013.88%200%2031%200c7.288%200%2013.99%202.515%2019.282%206.725z%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2251%22%20cy%3D%2210%22%20r%3D%224%22%20fill%3D%22%234DACFF%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
         );
+        */
+       
+        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2055%2062%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22a%22%20x1%3D%2295.084%25%22%20x2%3D%2250%25%22%20y1%3D%2215.688%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234DACFF%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23333%22%20stop-opacity%3D%220%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22url(%23a)%22%20d%3D%22M50.282%206.725c.07.045.139.095.204.15l.766.643a2%202%200%200%201-2.57%203.065l-.128-.107-.004.005A26.894%2026.894%200%200%200%2031%204C16.088%204%204%2016.088%204%2031s12.088%2027%2027%2027c1.129%200%202.242-.07%203.334-.204l4.435%203.222C36.286%2061.66%2033.683%2062%2031%2062%2013.88%2062%200%2048.12%200%2031%200%2013.88%2013.88%200%2031%200c7.288%200%2013.99%202.515%2019.282%206.725z%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2251%22%20cy%3D%2210%22%20r%3D%224%22%20fill%3D%22%234DACFF%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
         background-repeat: no-repeat;
         background-position: center center;
       

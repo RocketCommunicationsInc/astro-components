@@ -277,10 +277,18 @@
 
   /* 
     
-    Typography 
+    Input/Text Field Colors 
     ==========================================================================
-
+    
   */
+
+  --inputBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --inputBorderColor: var(--colorTertiaryDarken1, rgb(255, 255, 255));
+  --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
+
+  --inputFocusBorderColor: var(--colorPrimary);
+
+  --inputInvalidBorderColor: var(--colorCritical, red);
 }
 
 li.light-theme {

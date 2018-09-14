@@ -100,7 +100,7 @@ export class AstroComponentViewer extends PolymerElement {
 
   overflow-y: hidden;
   
-
+  display: inline-grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
   grid-template-rows: repeat(12, [row-start] 1fr);
   grid-gap: 20px;
@@ -154,7 +154,7 @@ ul {
 }
 
 .text-fields {
-  grid-row-start: 7;
+  grid-row-start: 6;
   grid-row-end: 13;
   grid-column-start: 7;
   grid-column-end: 13; 
@@ -178,14 +178,14 @@ ul {
 
 .buttons {
   grid-row-start: 1;
-  grid-row-end: 7;
+  grid-row-end: 6;
   grid-column-start: 7;
   grid-column-end: 13;
 }
 
 .progress {
   grid-row-start: 5;
-  grid-row-end: 9;
+  grid-row-end: 13;
   grid-column-start: 5;
   grid-column-end: 7;
 }
@@ -478,7 +478,16 @@ ul {
   
   
 }
-      
+
+.rux-form {
+  padding: 0;
+  width: 50%;
+}
+
+
+.rux-form li {
+  margin-bottom: 1rem;
+}
 
     </style>
 
@@ -490,9 +499,9 @@ ul {
       <rux-tabs
         id="main"
         transparent>
+        <rux-tab id="t1" role="tab">Elements</rux-tab>
         <rux-tab id="t2" role="tab">Components</rux-tab>
         <rux-tab id="t6" role="tab">Icons</rux-tab>
-        <rux-tab id="t1" role="tab">Elements</rux-tab>
         <rux-tab id="t5" role="tab">Typography</rux-tab>
         <rux-tab id="t4" role="tab">Colors</rux-tab>
         
@@ -651,9 +660,28 @@ ul {
         <h1>Input Fields</h1>
       </header>
       <div class="rux-card__content">
-        <input type="text"></input>
-        <input type="search"></input>
-        <input type="text" disabled></input>
+        <ol class="rux-form">
+          <li class="rux-form-field">
+            <input class="rux-input" type="text" value=" " required></input>
+            <label for="">Standard Text</label>
+          </li>
+          <li class="rux-form-field">
+            <input class="rux-input" type="text" required></input>
+            <label for="">Invalid</label>
+          </li>
+          <li class="rux-form-field">
+            <input class="rux-input" type="text" required disabled></input>
+            <label for="">Disabled</label>
+          </li>
+          <li class="rux-form-field">
+            <input class="rux-input" type="text"></input>
+            <label for="">Optional</label>
+          </li>
+          <li class="rux-form-field">
+            <label for="">Search</label>
+            <input type="search"></input>
+          </li>
+        </ol>
       </div>
     </section>
     
