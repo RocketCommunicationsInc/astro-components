@@ -1,5 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxSlider } from "/src/astro-components/rux-slider/rux-slider.js";
+import { RuxSlider } from "../rux-slider.js";
 /**
  * @polymer
  * @extends HTMLElement

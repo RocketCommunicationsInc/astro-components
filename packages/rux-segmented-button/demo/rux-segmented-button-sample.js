@@ -1,5 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxSegmentedButton } from "/src/astro-components/rux-segmented-button/rux-segmented-button.js";
+import { RuxSegmentedButton } from "../rux-segmented-button.js";
 /**
  * @polymer
  * @extends HTMLElement

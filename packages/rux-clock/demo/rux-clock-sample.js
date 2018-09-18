@@ -1,5 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxClock } from "/src/astro-components/rux-clock/rux-clock.js";
+import { RuxClock } from "../rux-clock.js";
 /**
  * @polymer
  * @extends HTMLElement

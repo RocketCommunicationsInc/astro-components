@@ -1,5 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxButton } from "/src/astro-components/rux-button/rux-button.js";
+import { RuxButton } from "../rux-button.js";
 /**
  * @polymer
  * @extends HTMLElement

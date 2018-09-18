@@ -1,5 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxProgress } from "/src/astro-components/rux-progress/rux-progress.js";
+import { RuxProgress } from "../rux-progress.js";
 /**
  * @polymer
  * @extends HTMLElement

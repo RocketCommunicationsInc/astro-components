@@ -1,5 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxTimeline } from "/src/astro-components/rux-timeline/rux-timeline.js";
+import { RuxTimeline } from "../rux-timeline.js";
 /**
  * @polymer
  * @extends HTMLElement

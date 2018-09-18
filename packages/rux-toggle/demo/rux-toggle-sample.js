@@ -1,5 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxToggle } from "/src/astro-components/rux-toggle/rux-toggle.js";
+import { RuxToggle } from "../rux-toggle.js";
 /**
  * @polymer
  * @extends HTMLElement

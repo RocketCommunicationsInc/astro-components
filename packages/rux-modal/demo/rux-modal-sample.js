@@ -1,6 +1,6 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxComponent } from "/src/astro-components/rux-component/rux-component.js";
-import { RuxButton } from "/src/astro-components/rux-button/rux-button.js";
+import { RuxButton } from "../../rux-button/rux-button.js";
+import { RuxModal } from "../rux-modal.js";
 /**
  * @polymer
  * @extends HTMLElement

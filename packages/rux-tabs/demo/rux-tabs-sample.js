@@ -1,5 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxTabs } from "/src/astro-components/rux-tabs/rux-tabs.js";
+import { RuxTabs } from "../rux-tabs.js";
 /**
  * @polymer
  * @extends HTMLElement

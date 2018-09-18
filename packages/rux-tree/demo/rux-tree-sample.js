@@ -1,10 +1,10 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import { RuxClock } from "/src/astro-components/rux-clock/rux-clock.js";
+import { RuxTree } from "../rux-tree.js";
 /**
  * @polymer
  * @extends HTMLElement
  */
-export class RuxClockSample extends PolymerElement {
+export class RuxTreeSample extends PolymerElement {
   static get template() {
     return html`
       <style>
@@ -19,7 +19,11 @@ export class RuxClockSample extends PolymerElement {
       <ul class="side-by-side">
         <li>
           <figure>
-            <rux-clock aos=[[demoAOS]] los=[[demoLOS]]></rux-clock>
+            <rux-tree data={{treeData}}></rux-tree>
+            <figcaption>
+              <dl>
+              <dt>Selected Tree Element</dt><dd>[[treeData.selected.label]]</dd>
+              <dt>Action for Tree Element</dt><dd>[[treeData.selected.payload.action]]</dd></figcaption>
           </figure>
         </li>
       </ul>
@@ -29,7 +33,7 @@ export class RuxClockSample extends PolymerElement {
     return {
       name: {
         type: String,
-        value: "Clock Component"
+        value: "Tree Component"
       }
     };
   }
@@ -37,8 +41,44 @@ export class RuxClockSample extends PolymerElement {
   constructor() {
     super();
 
-    this.demoAOS = Date.now() - 1000000;
-    this.demoLOS = new Date();
+    /* TREE DATA */
+    this.treeData = [
+      {
+        _id: "i1",
+        label: "Item 1",
+        payload: { action: "this could be anything …" },
+        children: [
+          { _id: "i1-1", label: "Child 1", payload: { action: "… an id" } },
+          {
+            _id: "i1-2",
+            label: "Child 2",
+            payload: { action: "… a method call to be interpreted" }
+          }
+        ]
+      },
+      {
+        _id: "i4",
+        label: "Item 4",
+        payload: { action: "Works on items with no children" }
+      },
+      {
+        _id: "i2",
+        label: "Item 3",
+        payload: { action: "Just use the paylod property …" },
+        children: [
+          {
+            _id: "i2-1",
+            label: "Child 1.1",
+            payload: { action: "… then use whatever key/value pairs you want" }
+          },
+          {
+            _id: "i2-2",
+            label: "Child 1.2",
+            payload: { action: "… it’s just an Object" }
+          }
+        ]
+      }
+    ];
   }
 
   connectedCallback() {
@@ -51,4 +91,4 @@ export class RuxClockSample extends PolymerElement {
     super.ready();
   }
 }
-customElements.define("rux-clock-sample", RuxClockSample);
+customElements.define("rux-tree-sample", RuxTreeSample);
