@@ -61,7 +61,11 @@ export class RuxButton extends PolymerElement {
         justify-content: center;
         align-items: center;
       
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
         user-select: none;
+        
       }
       
       /* 

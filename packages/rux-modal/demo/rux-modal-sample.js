@@ -8,8 +8,13 @@ import { RuxModal } from "../rux-modal.js";
 export class RuxModalSample extends PolymerElement {
   static get template() {
     return html`
-		<rux-modal></rux-modal>
-		<rux-button>Launch Modal</rux-button>`;
+		<rux-modal
+      message="Release Modem 2 on slice 1000 for deactivation. Releasing this modem cannot be undone." 
+      confirm-text="Release"
+      deny-text="Cancel"
+      opened></rux-modal>
+    
+      <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>  `;
   }
   static get properties() {
     return {
@@ -32,6 +37,13 @@ export class RuxModalSample extends PolymerElement {
   }
   ready() {
     super.ready();
+  }
+
+  /* MODAL WINDOW */
+  /* Functions */
+  _launchModal() {
+    const _modal = this.shadowRoot.querySelectorAll("rux-modal")[0];
+    _modal.setAttribute("open", "");
   }
 }
 customElements.define("rux-modal-sample", RuxModalSample);
