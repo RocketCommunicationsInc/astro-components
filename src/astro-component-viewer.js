@@ -600,15 +600,15 @@ ul {
         <div class="rux-card__content">
           <figure>
             <div class="rux-form-field">
-            <label aria-label="pushbuttons">Enable:</label>
-            <ul class="no-list push-buttons-list">
-              <li><rux-push-button>Tx</rux-push-button></li>
-              <li><rux-push-button checked>Rx</rux-push-button></li>
-              <li><rux-push-button disabled>Xx</rux-push-button></li>
-              <li><rux-push-button checked disabled>Yx</rux-push-button></li>
-            </ul>
+              <label aria-label="pushbuttons">Enable:</label>
+              <ul class="no-list push-buttons-list">
+                <li><rux-push-button>Tx</rux-push-button></li>
+                <li><rux-push-button checked>Rx</rux-push-button></li>
+                <li><rux-push-button disabled>Xx</rux-push-button></li>
+                <li><rux-push-button checked disabled>Yx</rux-push-button></li>
+              </ul>
+            </div>
           </figure>
-        </div>
       </section>
 
 
