@@ -7,8 +7,14 @@ import { RuxProgress } from "../rux-progress.js";
 export class RuxProgressSample extends PolymerElement {
   static get template() {
     return html`
-			<rux-progress></rux-progress>
-			<rux-progress value="50"></rux-progress>
+      <div class="side-by-side">
+        <div class="indeterminate">
+          <rux-progress></rux-progress>
+        </div>
+        <div class="determinate">
+          <rux-progress value="50"></rux-progress>
+        </div>
+      </div>
 		`;
   }
   static get properties() {
