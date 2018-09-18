@@ -21,7 +21,6 @@ import { RuxToggle } from "../packages/rux-toggle/rux-toggle.js";
 import { RuxTabs } from "../packages/rux-tabs/rux-tabs.js";
 import { RuxTree } from "../packages/rux-tree/rux-tree.js";
 
-import { AstroSamples } from "./astro-sample/astro-samples.js";
 /**
  * @polymer
  * @extends HTMLElement
