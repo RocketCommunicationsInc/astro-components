@@ -8,25 +8,12 @@ export class RuxTreeSample extends PolymerElement {
   static get template() {
     return html`
       <style>
-        .side-by-side {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          justify-content: center;
+        rux-tree {
+          width: 300px;
         }
       </style>
-      <ul class="side-by-side">
-        <li>
-          <figure>
-            <rux-tree data={{treeData}}></rux-tree>
-            <figcaption>
-              <dl>
-              <dt>Selected Tree Element</dt><dd>[[treeData.selected.label]]</dd>
-              <dt>Action for Tree Element</dt><dd>[[treeData.selected.payload.action]]</dd></figcaption>
-          </figure>
-        </li>
-      </ul>
+      <rux-tree data={{treeData}}></rux-tree>
+      
     `;
   }
   static get properties() {
