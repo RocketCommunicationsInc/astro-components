@@ -55,6 +55,7 @@ export class RuxLog extends PolymerElement {
       :host {
         display: block;
         font-size: 0.875rem;
+        color: var(--fontColor, rgb(255,255,255));
         background-color: var(--logBackgroundColor, rgb(30, 47, 66));
       }
 
