@@ -1,5 +1,7 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import { RuxTimeline } from "../rux-timeline.js";
+import { RuxIcon } from "../../rux-icon/rux-icon.js";
+import { RuxStatus } from "../../rux-status/rux-status.js";
 /**
  * @polymer
  * @extends HTMLElement
@@ -9,7 +11,7 @@ export class RuxTimelineSample extends PolymerElement {
     return html`
 
 		<rux-timeline
-				status="ok"
+				status="normal"
 				duration=8
 				label="8 Hour Timeline" 
 				initial-scale=100
@@ -93,7 +95,7 @@ export class RuxTimelineSample extends PolymerElement {
           },
           {
             label: "GPS-IIR-2",
-            status: "ok",
+            status: "normal",
             startTime: new Date(
               today.getUTCFullYear(),
               today.getUTCMonth(),
@@ -113,7 +115,7 @@ export class RuxTimelineSample extends PolymerElement {
           },
           {
             label: "DSP-1-18 F20",
-            status: "error",
+            status: "caution",
             startTime: new Date(
               today.getUTCFullYear(),
               today.getUTCMonth(),

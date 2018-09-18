@@ -9,8 +9,9 @@
   <meta name="description" content="Sample application using the Astro Design System">
 
   <!-- Global Styles //-->
-  <link rel="stylesheet" href="/public/css/astro.css">
+
   <link rel="stylesheet" href="/public/css/demo.css">
+  <link rel="stylesheet" href="/public/css/astro.min.css">
   <!-- Load WebComponent Polyfill //-->
   <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
@@ -22,12 +23,13 @@
 </head>
 
 <body class="dark-theme">
-  <rux-tabs>
+  <rux-tabs id="tabs">
     <rux-tab id="tab-1">Modems</rux-tab>
     <rux-tab id="tab-2">Pass Plans</rux-tab>
     <rux-tab id="tab-3">Satellites</rux-tab>
   </rux-tabs>
-  <rux-tab-panels>
+
+  <rux-tab-panels aria-labelledby="tabs">
     <rux-tab-panel aria-labeledby="tab-1">
       <div>Tab One Content</div>
     </rux-tab-panel>

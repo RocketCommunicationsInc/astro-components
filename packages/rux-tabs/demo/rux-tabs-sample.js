@@ -4,7 +4,7 @@ import { RuxTabs } from "../rux-tabs.js";
  * @polymer
  * @extends HTMLElement
  */
-export class RuxComponentSample extends PolymerElement {
+export class RuxTabsSample extends PolymerElement {
   static get template() {
     return html`<rux-tabs></rux-tabs>`;
   }
@@ -31,4 +31,4 @@ export class RuxComponentSample extends PolymerElement {
     super.ready();
   }
 }
-customElements.define("rux-tabs-sample", RuxComponentSample);
+customElements.define("rux-tabs-sample", RuxTabsSample);
