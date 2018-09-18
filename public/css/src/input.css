@@ -17,62 +17,124 @@
 /* 	REQUIRED CLASSES */
 
 :root {
+  --padding: 0.5rem;
   --paddingLeft: 0.5rem;
   --paddingRight: 0.5rem;
   --paddingTop: 0.25rem;
   --paddingBottom: 0.25rem;
 }
 
-label {
-  color: var(--fontColor, rgb(255, 255, 255));
-}
-
-.rux-form-field,
-.satcom-form-chunk {
+.rux-form-field {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
 
+  font-family: var(--fontFamilty, "Open Sans", sans-serif);
   font-size: var(--fontSize, 1rem);
+  color: var(--fontColor, rgb(255, 255, 255));
 }
 
-.rux-form-field label,
-.satcom-form-chunk label {
+.rux-form-field label {
   display: flex;
   order: 1;
   margin: 0 0 0.15rem 0;
   width: 100%;
+  align-content: center;
+  align-items: center;
 
+  color: var(--fontColor, rgb(255, 255, 255));
   user-select: none;
 }
 
-.rux-form-field input[type="number"] {
-  -webkit-appearance: none;
-}
-
-.rux-form-field input,
-.rux-form-field textarea,
-.rux-form-field input[type="search"],
-.satcom-text-entry {
-  order: 2;
-
-  padding: 0.5rem 0.5rem;
-  font-size: var(--fontSize, 1rem);
-
-  border-radius: 3px;
-  border: 1px solid var(--inputBorderColor, rgb(0, 90, 143));
-
-  color: black;
-
-  width: 100%;
-}
-
+/* SEARCH VARIANT */
 .rux-form-field input[type="search"] {
-  padding: 0.5rem 0 0.5rem 2rem;
+  -webkit-appearance: none;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+
   background: no-repeat center left 0.3rem/1.1em
     url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
     var(inputBackgroundColor, rgb(255, 255, 255));
+}
+
+.rux-form-field input {
+  box-sizing: border-box;
+  order: 2;
+
+  height: 2.25rem;
+  width: 100%;
+  padding: 0.5rem;
+
+  border: 1px solid var(--inputBorderColor, transparent);
+  border-radius: 3px;
+
+  font-size: var(--fontSize, 1rem);
+  color: var(--inputTextColor, rgb(0, 0, 0));
+}
+
+.rux-form-field input[type="number"]::-webkit-inner-spin-button,
+.rux-form-field input[type="number"]::-webkit-outer-spin-button,
+.rux-form-field input[type="date"]::-webkit-inner-spin-button,
+.rux-form-field input[type="date"]::-webkit-outer-spin-button,
+.rux-form-field input[type="date"]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+  display: none;
+}
+
+/* VALIDATION */
+
+.rux-form-field input:invalid {
+  border: 1px solid var(--inputInvalidBorderColor);
+
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: 1.125rem;
+  background-position: center right 0.5rem;
+}
+
+/* FOCUS RULES */
+.rux-form-field input:focus,
+.rux-form-field input:invalid:focus {
+  outline: none;
+  border: 1px solid var(--inputFocusBorderColor);
+  border-left: 4px solid var(--inputFocusBorderColor);
+}
+
+.rux-form-field input:not([type="search"]):focus,
+.rux-form-field input:not([type="search"]):invalid:focus {
+  padding-left: calc(0.5rem - 3px);
+}
+
+.rux-form-field input::selection {
+  background-color: var(--colorSecondaryLighten3);
+}
+/* 
+.rux-form-field input:invalid + label::before {
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1.25rem;
+  margin-right: 0.25rem;
+  
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: center center;
+} */
+
+.rux-form-field__validation-message {
+  display: none;
+  position: absolute;
+  max-width: 16rem;
+  background-color: var(--colorCritical);
+  width: 100%;
+  padding: 0.25rem;
+  right: 0;
+  font-size: var(--fontSizeMD);
+}
+
+.rux-form-field input:invalid .rux-form-field__validation-message {
+  display: block;
 }
 
 .rux-form-field input[type="search"]::-webkit-search-cancel-button {
@@ -92,7 +154,9 @@ label {
   background-color: red;
 }
 
-.rux-form-field input:not([type="search"]):optional + label::after {
+.rux-form-field
+  input:not([type="search"]):not([type="checkbox"]):not([type="radio"]):optional
+  + label::after {
   display: block;
   content: "(optional)";
   font-size: 0.875rem;
@@ -101,43 +165,7 @@ label {
   opacity: 0.4;
 }
 
-.rux-form-field input:invalid,
-.satcom-text-entry {
-  border: 1px solid var(--inputInvalidBorderColor);
-  padding-right: 1.65rem;
-  padding-left: 0.5rem;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
-  background-repeat: no-repeat;
-  background-size: 1.125rem;
-  background-position: center right 0.5rem;
-}
-
-.rux-form-field input:focus .rux-form-field input:invalid:focus,
-.satcom-text-entry {
-  -webkit-appearance: none;
-  box-shadow: inset 0 0 3px var(--colorGray);
-  border-color: var(--inputFocusBorderColor);
-  outline: none;
-  color: black;
-}
-
-.rux-form-field__validation-message {
-  display: none;
-  position: absolute;
-  max-width: 16rem;
-  background-color: var(--colorCritical);
-  width: 100%;
-  padding: 0.25rem;
-  right: 0;
-  font-size: var(--fontSizeMD);
-}
-
-.rux-form-field input:invalid .rux-form-field__validation-message {
-  display: block;
-}
-
-.rux-form-field input:disabled,
-.satcom-text-entry:disabled {
+.rux-form-field input:disabled {
   opacity: var(--disabledOpacity, 0.4);
   cursor: var(--disabledCursor, not-allowed);
 }
@@ -161,6 +189,10 @@ label {
   padding: 0.5rem;
 }
 
+.rux-form-field--large input {
+  height: 2.5rem;
+}
+
 .rux-form-field--large input[type="search"] {
 }
 
@@ -169,12 +201,23 @@ label {
   padding: 0.3rem;
 }
 
+.rux-form-field--small input {
+  height: 1.625rem;
+}
+
 .rux-form-field--small input[type="search"] {
-  padding: 0.3rem 0 0.3rem 2rem;
+  padding: 0.3rem 0 0.3rem 1rem;
 }
 
 .rux-form-field--large input:invalid {
   background-size: 1.375rem;
   background-position: center right 0.5rem;
   padding: 0.5rem 1.875rem 0.5rem 0.5rem;
+}
+
+.rux-form-field input:focus .rux-form-field input:invalid:focus {
+  box-shadow: inset 0 0 3px var(--colorGray);
+  border-color: var(--inputFocusBorderColor);
+  outline: none;
+  color: black;
 }

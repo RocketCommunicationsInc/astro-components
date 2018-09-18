@@ -286,9 +286,10 @@
   --inputBorderColor: var(--colorTertiaryDarken1, rgb(255, 255, 255));
   --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
 
-  --inputFocusBorderColor: var(--colorPrimary);
+  --inputFocusBorderColor: var(--colorSecondary);
+  --inputFocusBoxShadow: none;
 
-  --inputInvalidBorderColor: var(--colorCritical, red);
+  --inputInvalidBorderColor: var(--colorCritical, rrgb(255, 48, 48) ed);
 }
 
 li.light-theme {

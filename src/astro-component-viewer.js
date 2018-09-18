@@ -1022,7 +1022,7 @@ ul {
             </li>
             <li>
             <rux-status
-              status="error"
+              status="serious"
               label="Ant"
               icon="monitoring:antenna-transmit"
               notifications=1000
@@ -1436,10 +1436,10 @@ ul {
     this.logStatuses = [
       "off",
       "standby",
-      "ok",
+      "normal",
       "caution",
-      "error",
-      "emergency"
+      "serious",
+      "critical"
     ];
     this.logMessages = [
       "Architecto temporibus iusto dolor quisquam",
@@ -2002,7 +2002,7 @@ ul {
           },
           {
             label: "DSP-1-18 F21",
-            status: "ok",
+            status: "normal",
             startTime: new Date(
               today.getUTCFullYear(),
               today.getUTCMonth(),
@@ -2022,7 +2022,7 @@ ul {
           },
           {
             label: "NROL-14 (KH-11)",
-            status: "error",
+            status: "serious",
             startTime: new Date(
               today.getUTCFullYear(),
               today.getUTCMonth(),
@@ -2067,7 +2067,7 @@ ul {
           },
           {
             label: "GPS-IIR-16",
-            status: "ok",
+            status: "normal",
             startTime: new Date(
               today.getUTCFullYear(),
               today.getUTCMonth(),
@@ -2087,7 +2087,7 @@ ul {
           },
           {
             label: "GPS-IIR-16",
-            status: "error",
+            status: "serious",
             startTime: new Date(
               today.getUTCFullYear(),
               today.getUTCMonth(),
@@ -2132,7 +2132,7 @@ ul {
           },
           {
             label: "WGS-3",
-            status: "ok",
+            status: "normal",
             startTime: new Date(
               today.getUTCFullYear(),
               today.getUTCMonth(),
@@ -2152,7 +2152,7 @@ ul {
           },
           {
             label: "GPS IIF-1",
-            status: "error",
+            status: "serious",
             startTime: new Date(
               today.getUTCFullYear(),
               today.getUTCMonth(),
