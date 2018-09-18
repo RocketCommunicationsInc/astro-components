@@ -4,9 +4,11 @@ import { RuxSegmentedButton } from "../rux-segmented-button.js";
  * @polymer
  * @extends HTMLElement
  */
-export class RuxComponentSample extends PolymerElement {
+export class RuxSegmentedButtonSample extends PolymerElement {
   static get template() {
-    return html`<rux-segmented-button></rux-segmented-button>`;
+    return html`
+      <rux-segmented-button data={{segmentOne}}></rux-segmented-button>
+    `;
   }
   static get properties() {
     return {
@@ -19,6 +21,18 @@ export class RuxComponentSample extends PolymerElement {
 
   constructor() {
     super();
+
+    this.segmentOne = [
+      {
+        label: "Hour"
+      },
+      {
+        label: "Day"
+      },
+      {
+        label: "Week"
+      }
+    ];
   }
 
   connectedCallback() {
@@ -31,4 +45,4 @@ export class RuxComponentSample extends PolymerElement {
     super.ready();
   }
 }
-customElements.define("rux-segmented-button-sample", RuxComponentSample);
+customElements.define("rux-segmented-button-sample", RuxSegmentedButtonSample);
