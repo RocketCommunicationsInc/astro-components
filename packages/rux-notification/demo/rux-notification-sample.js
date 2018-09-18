@@ -8,9 +8,15 @@ import { RuxButton } from "../../rux-button/rux-button.js";
 export class RuxNotificationSample extends PolymerElement {
   static get template() {
     return html`
-			<rux-notification></rux-notification>
-			<rux-button>Show Notification</rux-button>
-			`;
+    
+    <rux-button on-click="_showNotification" data-notification="0">Toggle Notification Banner</rux-button>
+    <rux-notification
+      status$=[[notificationStatus]]
+      message="This is a global notification banner.">
+    </rux-notification>
+
+		
+		`;
   }
   static get properties() {
     return {
@@ -33,6 +39,20 @@ export class RuxNotificationSample extends PolymerElement {
   }
   ready() {
     super.ready();
+  }
+
+  /* NOTIFICATIONS */
+
+  _showNotification(e) {
+    const _notification = this.shadowRoot.querySelectorAll("rux-notification")[
+      e.currentTarget.dataset.notification
+    ];
+
+    if (_notification.hasAttribute("opened")) {
+      _notification.removeAttribute("opened");
+    } else {
+      _notification.setAttribute("opened", "");
+    }
   }
 }
 customElements.define("rux-notification-sample", RuxNotificationSample);

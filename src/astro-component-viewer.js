@@ -38,7 +38,7 @@ export class AstroComponentViewer extends PolymerElement {
 
       :host {
         display: block;
-
+        z-index: 100;
         
         /* box-sizing: border-box; */
       }
