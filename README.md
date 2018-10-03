@@ -5,16 +5,14 @@ The Astro Web Component v1 Library is provided as a preview release. It should n
 
 Starting with Astro 2.0 Rocket will be transitioning the Astro Component Library to Web Components v1. __IMPORTANT__ Rocket will continue to maintain the original HTML/CSS library in parity with the Web Component Library. For current production use or for projects unable to use Web Components please see the [latest Astro UXDS Stylesheet](https://bitbucket.org/rocketcom/astro-styles)
 
-__Note__: Polymer 3 is still in preview release. Release candidate is expected Q2 2018
-
 #### Benefits
 
 - Style scope isolation, styles will exist as defined and cannot be overridden by other stylesheets
 - Code is portable with self contained HTML/CSS/JS
 - Eliminates future CSS class name changes
-- Code is “generic” it follows a similar format to where popular frameworks like Angular and React are headed without being prescriptive. The code provided should be used as a sample not production
+- Code is "generic" it follows a similar format to where popular frameworks like Angular and React are headed without being prescriptive. The code provided should be used as a sample not production
 - All the major frameworks were built reflecting the ideas of WebComponents and/or influenced the Web Component v1 
-- Minimizes/eliminates the need for complicated CSS naming structures e.g., .rux-button—small__light
+- Minimizes/eliminates the need for complicated CSS naming structures e.g., .rux-button-small__light
 - Web Components are a W3 standard, no vendor lock-in or decisions about which frameworks to use. Chrome and Safari support Web Components v1 without the need for polyfills. [Firefox will add native support in r63 released 2018-08-21](https://wiki.mozilla.org/Release_Management/Calendar) and Microsoft has committed to supporting the standard in a future version of Edge. __Note__: both Firefox and IE11+ support Web Components via polyfills
 
 ### Why Web Components?
@@ -22,23 +20,14 @@ There are several reasons. When SATCOM components were initially created they we
 
 ## Download
 
-The preview release of the Astro Web Component Library is using Polymer Pre9 release __not__ the latest Polymer Pre12 release which contains breaking changes. To install 
-
-Install the Polymer CLI
-```
-npm install -g polymer-cli@3.0.0-pre.9
-```
-
-[Install Yarn](https://yarnpkg.com/lang/en/docs/install/)
-
 Clone this repository
 ```
 git clone https://bitbucket.org/rocketcom/astro-components.git
 ```
 
-Run Yarn install to update npm modules
+Run NPM install to update npm modules
 ```
-yarn install --flat
+npm install
 ```
 
 ## Viewing the Astro Components
