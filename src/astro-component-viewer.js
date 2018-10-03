@@ -737,7 +737,6 @@ ul {
       <h2 class="h3">Small</h3>
       <ul class="button-list">
         <li><rux-button size="small">Button</rux-button></li>
-        <li><rux-button size="small" default>Button</rux-button></li>
         <li><rux-button size="small" icon="utility:caution">Button</rux-button></li>
         <li><rux-button size="small" disabled>Buttons</rux-button></li>
         <li><rux-button size="small" type="outline">Button</rux-button></li>
@@ -746,7 +745,6 @@ ul {
         <h2 class="h3">Standard</h3>
         <ul class="button-list">          
           <li><rux-button>Button</rux-button></li>
-          <li><rux-button default>Button</rux-button></li>
           <li><rux-button icon="utility:caution">Button</rux-button></li>
           <li><rux-button disabled>Buttons</rux-button></li>
           <li><rux-button type="outline">Button</rux-button></li>
@@ -755,7 +753,6 @@ ul {
         <h2 class="h3">Large</h3>    
         <ul class="button-list">  
           <li><rux-button size="large">Button</rux-button></li>
-          <li><rux-button size="large" default>Button</rux-button></li>
           <li><rux-button size="large" icon="utility:caution">Button</rux-button></li>
           <li><rux-button size="large" disabled>Buttons</rux-button></li>
           <li><rux-button size="large" type="outline">Button</rux-button></li>
