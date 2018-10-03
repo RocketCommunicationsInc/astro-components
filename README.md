@@ -10,16 +10,15 @@ Starting with Astro 2.0 Rocket will be transitioning the Astro Component Library
 - Style scope isolation, styles will exist as defined and cannot be overridden by other stylesheets
 - Code is portable with self contained HTML/CSS/JS
 - Eliminates future CSS class name changes
-- Code is �generic� it follows a similar format to where popular frameworks like Angular and React are headed without being prescriptive. The code provided should be used as a sample not production
+- Code is "generic" it follows a similar format to where popular frameworks like Angular and React are headed without being prescriptive. The code provided should be used as a sample not production
 - All the major frameworks were built reflecting the ideas of WebComponents and/or influenced the Web Component v1 
-- Minimizes/eliminates the need for complicated CSS naming structures e.g., .rux-button�small__light
+- Minimizes/eliminates the need for complicated CSS naming structures e.g., .rux-button-small__light
 - Web Components are a W3 standard, no vendor lock-in or decisions about which frameworks to use. Chrome and Safari support Web Components v1 without the need for polyfills. [Firefox will add native support in r63 released 2018-08-21](https://wiki.mozilla.org/Release_Management/Calendar) and Microsoft has committed to supporting the standard in a future version of Edge. __Note__: both Firefox and IE11+ support Web Components via polyfills
 
 ### Why Web Components?
 There are several reasons. When SATCOM components were initially created they were specific to the SATCOM domain. The scope of use has expanded to include other domains in space, changing to Astro allows us to create a more agnostic set of components for use across a wider spectrum of space systems.  Additionally the initial components were created very specifically as framework agnostic which limited the demonstrated versions to pure HTML/CSS implementations, we want to provide more practical demonstrations that can be used across a wide variety of frameworks, WebComponents v1 provide us with that opportunity to deliver functional examples that can be incorporated in a variety of frameworks (Angular 2+, React, Ember) or simply used as a more relevant example of implementing Astro Guidelines in a modern framework.
 
 ## Download
-
 
 Clone this repository
 ```
