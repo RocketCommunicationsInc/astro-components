@@ -96,12 +96,12 @@
 .rux-form-field input:focus,
 .rux-form-field input:invalid:focus {
   outline: none;
-  border: 1px solid var(--inputFocusBorderColor);
-  border-left: 4px solid var(--inputFocusBorderColor);
 }
 
 .rux-form-field input:not([type="search"]):focus,
 .rux-form-field input:not([type="search"]):invalid:focus {
+  border: 1px solid var(--inputFocusBorderColor);
+  border-left: 4px solid var(--inputFocusBorderColor);
   padding-left: calc(0.5rem - 3px);
 }
 

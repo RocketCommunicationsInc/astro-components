@@ -13,6 +13,9 @@
 
   --fontLinkColor: var(--colorSecondaryDarken1);
   --fontLinkHoverColor: var(--colorSecondary);
+
+  --wcagCompliance: rgba(0, 0, 0, 0.5);
+  --criticalBorder: #7f1c1c;
   /* 
     
     Button Colors 

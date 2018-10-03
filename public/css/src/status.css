@@ -19,14 +19,15 @@
   vertical-align: middle;
   text-align: center;
 
-  height: 15px;
-  width: 15px;
+  height: 16px;
+  width: 16px;
 
   margin: 2px;
-  outline: 1px solid rgba(255, 255, 255, 0.1);
+  /* outline: 1px solid rgba(127, 127, 127, 0.5); */
 }
 
 /* Icon */
+.rux-status-indicator-a::after,
 .rux-status-indicator-a::before,
 .rux-status-indicator::before,
 .rux-status::before,
@@ -34,58 +35,97 @@
   content: "";
   display: inline-block;
 
-  height: 15px;
-  width: 15px;
+  height: 16px;
+  width: 16px;
 
   background-repeat: no-repeat;
   background-position: 0 0;
 }
 
-.rux-status-indicator-a::before {
+.rux-status-indicator-a {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 }
 
-.rux-status-indicator-a.rux-status--off::before {
-  background-color: var(--colorOff);
-  height: 5px;
-  width: 5px;
+.rux-status-indicator-a::after,
+.rux-advanced-status__icon-a::after {
+  position: absolute;
 }
-.rux-status-indicator-a.rux-status--standby::before {
-  border: 2px solid var(--colorStandby);
+
+.rux-status-indicator-a.rux-status--off::before,
+.rux-status--off .rux-advanced-status__icon-a::before {
+  background-color: var(--colorOff);
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--standby::before,
+.rux-status--standby .rux-advanced-status__icon-a::before {
   height: 11px;
   width: 11px;
   border-radius: 50%;
-  margin-bottom: 1px;
+
+  background: radial-gradient(
+    transparent,
+    transparent 2px,
+    var(--colorStandby) 2px,
+    var(--colorStandby) 100%
+  );
+  border: 1px solid var(--wcagCompliance, transparent);
 }
-.rux-status-indicator-a.rux-status--normal::before {
+
+.rux-status-indicator-a.rux-status--normal::before,
+.rux-status--normal .rux-advanced-status__icon-a::before {
   background-color: var(--colorNormal);
   height: 11px;
   width: 11px;
   border-radius: 50%;
-  margin-bottom: 1px;
+  border: 1px solid var(--wcagCompliance, transparent);
 }
-.rux-status-indicator-a.rux-status--caution::before {
+
+.rux-status-indicator-a.rux-status--caution::before,
+.rux-status--caution .rux-advanced-status__icon-a::before {
   background-color: var(--colorCaution);
-  height: 9px;
-  width: 9px;
-  margin-bottom: 2px;
+  height: 11px;
+  width: 11px;
+  border: 1px solid var(--wcagCompliance, transparent);
 }
-.rux-status-indicator-a.rux-status--serious::before {
+
+.rux-status-indicator-a.rux-status--serious::before,
+.rux-status--serious .rux-advanced-status__icon-a::before {
   background-color: var(--colorSerious);
-  height: 9px;
-  width: 9px;
+  height: 11px;
+  width: 11px;
   transform: rotate(45deg);
-  margin-bottom: 2px;
+  border: 1px solid var(--wcagCompliance, transparent);
 }
-.rux-status-indicator-a.rux-status--critical::before {
+
+.rux-status-indicator-a.rux-status--critical::before,
+.rux-status--critical .rux-advanced-status__icon-a::before {
   width: 0;
   height: 0;
-
+  z-index: 1;
   border-style: solid;
   border-width: 11px 6px 0 6px;
   border-color: var(--colorCritical) transparent transparent transparent;
-  margin-bottom: 0;
 }
 
+.rux-status-indicator-a.rux-status--critical::after,
+.rux-status--critical .rux-advanced-status__icon-a::after {
+  width: 0;
+  height: 0;
+  z-index: 0;
+
+  border-style: solid;
+  border-width: 13.9px 8px 0 8px;
+  border-color: var(--criticalBorder) transparent transparent transparent;
+}
+
+/* Advanced Status */
 .rux-advanced-status__icon-a::before {
   content: "";
   position: absolute;
@@ -99,7 +139,7 @@
   background-position: 0 0;
 }
 
-/* Specific Status Iconography */
+/* Specific Status Iconography 
 .rux-status-indicator.rux-status--off::before,
 .rux-status--off .rux-advanced-status__icon::before,
 .satcom-status-off::before {
@@ -111,7 +151,7 @@
   height: 5px;
   width: 5px;
 }
-
+ 
 .rux-status-indicator.rux-status--standby::before,
 .rux-status--standby .rux-advanced-status__icon::before,
 .satcom-status-standby::before {
@@ -133,16 +173,16 @@
 .satcom-status-ok::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Crect width='10' height='5' fill='%237ED321' transform='translate(1 4)'/%3E%3C/svg%3E");
   background-position: 1px 1px;
-}
+} 
 
-.rux-status--normal .rux-advanced-status__icon-a::before {
+/* .rux-status--normal .rux-advanced-status__icon-a::before {
   background-color: var(--colorNormal);
 
   height: 11px;
   width: 11px;
   border-radius: 50%;
   margin-bottom: 1px;
-}
+} 
 
 .rux-status-indicator.rux-status--caution::before,
 .rux-status--caution .rux-advanced-status__icon::before,
@@ -166,11 +206,12 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Ccircle cx='5.5' cy='5.5' r='5.5' fill='rgb(255, 176, 0)' transform='translate(1 1)'/%3E%3C/svg%3E");
 }
 
+
 .rux-status--serious .rux-advanced-status__icon-a::before {
   background-color: var(--colorSerious);
   height: 9px;
   width: 9px;
-  /* border-radius: 50%; */
+  
   transform: rotate(45deg);
   margin-bottom: 2px;
 }
@@ -194,6 +235,7 @@
   border-color: var(--colorCritical) transparent transparent transparent;
   margin-bottom: 0;
 }
+*/
 
 /* Specific Color */
 .rux-status--off svg,

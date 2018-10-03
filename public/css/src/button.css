@@ -79,10 +79,6 @@
   );
 }
 
-.rux-button--default {
-  border-color: var(--buttonDefaultBorderColor, rgb(255, 255, 255)) !important;
-}
-
 /* Outline Button Specific Styles */
 .rux-button--outline {
   color: var(--buttonOutlineTextColor, rgb(255, 255, 255));

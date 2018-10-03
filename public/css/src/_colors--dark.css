@@ -7,12 +7,12 @@
   --colorSecondary: rgb(77, 172, 255);
   --colorTertiary: rgb(40, 63, 88);
 
-  --colorCritical: rgb(255, 48, 48);
-  --colorSerious: rgb(255, 176, 0);
-  --colorCaution: rgb(248, 231, 29);
-  --colorNormal: rgb(91, 255, 0);
-  --colorStandby: rgb(128, 224, 255);
-  --colorOff: rgb(198, 204, 209);
+  --colorCritical: rgb(255, 56, 56);
+  --colorSerious: rgb(255, 179, 0);
+  --colorCaution: rgb(252, 232, 58);
+  --colorNormal: rgb(86, 240, 0);
+  --colorStandby: rgb(45, 204, 255);
+  --colorOff: rgb(158, 167, 173);
 
   --colorCivilian1: rgb(25, 199, 202);
   --colorCivilian2: rgb(120, 112, 208);
@@ -29,108 +29,35 @@
   --colorSecondary: rgb(77, 172, 255);
   --colorTertiary: rgb(40, 63, 88);
 
-  --colorCritical: rgb(255, 48, 48);
-  --colorSerious: rgb(255, 176, 0);
-  --colorCaution: rgb(248, 231, 29);
-  --colorNormal: rgb(91, 255, 0);
-  --colorStandby: rgb(128, 224, 255);
-  --colorOff: rgb(198, 204, 209);
+  --colorCritical: rgb(255, 56, 56);
+  --colorSerious: rgb(255, 179, 0);
+  --colorCaution: rgb(252, 232, 58);
+  --colorNormal: rgb(86, 240, 0);
+  --colorStandby: rgb(45, 204, 255);
+  --colorOff: rgb(158, 167, 173);
 
-  --colorPrimaryLighten1: rgb(64, 131, 171);
-  --colorPrimaryLighten2: rgb(128, 173, 199);
-  --colorPrimaryLighten3: rgb(191, 214, 227);
-  --colorPrimaryDarken1: rgb(0, 68, 107);
-  --colorPrimaryDarken2: rgb(0, 45, 72);
-  --colorPrimaryDarken3: rgb(0, 23, 36);
-
+  --colorPrimaryLighten1: rgb(51, 123, 165);
+  --colorPrimaryLighten2: rgb(102, 156, 188);
+  --colorPrimaryLighten3: rgb(153, 189, 210);
+  --colorPrimaryLighten4: rgb(204, 222, 233);
+  --colorPrimaryDarken1: rgb(0, 72, 114);
+  --colorPrimaryDarken2: rgb(0, 54, 86);
+  --colorPrimaryDarken3: rgb(0, 36, 57);
+  --colorPrimaryDarken4: rgb(0, 18, 29);
   --colorSecondaryLighten1: rgb(122, 193, 255);
-  --colorSecondaryLighten2: rgb(166, 214, 255);
-  --colorSecondaryLighten3: rgb(211, 234, 255);
-  --colorSecondaryDarken1: rgb(58, 129, 191);
-  --colorSecondaryDarken2: rgb(39, 86, 128);
-  --colorSecondaryDarken3: rgb(19, 43, 64);
-
+  --colorSecondaryLighten2: rgb(148, 205, 255);
+  --colorSecondaryLighten3: rgb(184, 222, 255);
+  --colorSecondaryLighten4: rgb(219, 238, 255);
+  --colorSecondaryDarken1: rgb(62, 138, 204);
+  --colorSecondaryDarken2: rgb(46, 103, 153);
+  --colorSecondaryDarken3: rgb(31, 69, 102);
+  --colorSecondaryDarken4: rgb(15, 34, 51);
   --colorTertiaryLighten1: rgb(94, 111, 130);
-  --colorTertiaryLighten2: rgb(148, 159, 172);
-  --colorTertiaryLighten3: rgb(201, 207, 213);
-  --colorTertiaryDarken1: rgb(30, 47, 66);
-  --colorTertiaryDarken2: rgb(20, 32, 44);
-  --colorTertiaryDarken3: rgb(10, 16, 22);
-
-  --colorCriticalLighten1: rgb(255, 100, 100);
-  --colorCriticalLighten2: rgb(255, 152, 152);
-  --colorCriticalLighten3: rgb(255, 203, 203);
-  --colorCriticalDarken1: rgb(191, 36, 36);
-  --colorCriticalDarken2: rgb(128, 24, 24);
-  --colorCriticalDarken3: rgb(64, 12, 12);
-
-  --colorSeriousLighten1: rgb(255, 196, 64);
-  --colorSeriousLighten2: rgb(255, 216, 128);
-  --colorSeriousLighten3: rgb(255, 235, 191);
-  --colorSeriousDarken1: rgb(191, 132, 0);
-  --colorSeriousDarken2: rgb(128, 88, 0);
-  --colorSeriousDarken3: rgb(64, 44, 0);
-
-  --colorCautionLighten1: rgb(250, 237, 86);
-  --colorCautionLighten2: rgb(252, 243, 142);
-  --colorCautionLighten3: rgb(253, 249, 199);
-  --colorCautionDarken1: rgb(186, 173, 22);
-  --colorCautionDarken2: rgb(124, 116, 15);
-  --colorCautionDarken3: rgb(62, 58, 7);
-
-  --colorNormalLighten1: rgb(132, 255, 64);
-  --colorNormalLighten2: rgb(173, 255, 128);
-  --colorNormalLighten3: rgb(214, 255, 191);
-  --colorNormalDarken1: rgb(68, 191, 0);
-  --colorNormalDarken2: rgb(46, 128, 0);
-  --colorNormalDarken3: rgb(23, 64, 0);
-
-  --colorStandbyLighten1: rgb(160, 232, 255);
-  --colorStandbyLighten2: rgb(192, 240, 255);
-  --colorStandbyLighten3: rgb(223, 247, 255);
-  --colorStandbyDarken1: rgb(96, 168, 191);
-  --colorStandbyDarken2: rgb(64, 112, 128);
-  --colorStandbyDarken3: rgb(32, 56, 64);
-
-  --colorOffLighten1: rgb(212, 217, 221);
-  --colorOffLighten2: rgb(227, 230, 232);
-  --colorOffLighten3: rgb(241, 242, 244);
-  --colorOffDarken1: rgb(149, 153, 157);
-  --colorOffDarken2: rgb(99, 102, 105);
-  --colorOffDarken3: rgb(50, 51, 52);
-
-  --colorGrayLighten1: rgb(217, 217, 217);
-  --colorGrayLighten2: rgb(230, 230, 230);
-  --colorGrayLighten3: rgb(242, 242, 242);
-  --colorGrayDarken1: rgb(153, 153, 153);
-  --colorGrayDarken2: rgb(102, 102, 102);
-  --colorGrayDarken3: rgb(51, 51, 51);
-
-  --colorCivilian1Lighten1: rgb(83, 213, 215);
-  --colorCivilian1Lighten2: rgb(140, 227, 229);
-  --colorCivilian1Lighten3: rgb(198, 241, 242);
-  --colorCivilian1Darken1: rgb(19, 149, 152);
-  --colorCivilian1Darken2: rgb(13, 100, 101);
-  --colorCivilian1Darken3: rgb(6, 50, 51);
-
-  --colorCivilian2Lighten1: rgb(154, 148, 220);
-  --colorCivilian2Lighten2: rgb(188, 184, 232);
-  --colorCivilian2Lighten3: rgb(221, 219, 243);
-  --colorCivilian2Darken1: rgb(90, 84, 156);
-  --colorCivilian2Darken2: rgb(60, 56, 104);
-  --colorCivilian2Darken3: rgb(30, 28, 52);
-
-  --colorCivilian3Lighten1: rgb(184, 74, 206);
-  --colorCivilian3Lighten2: rgb(208, 134, 223);
-  --colorCivilian3Lighten3: rgb(231, 195, 239);
-  --colorCivilian3Darken1: rgb(120, 10, 143);
-  --colorCivilian3Darken2: rgb(80, 7, 95);
-  --colorCivilian3Darken3: rgb(40, 3, 48);
-
-  --colorCivilian4Lighten1: rgb(226, 126, 86);
-  --colorCivilian4Lighten2: rgb(236, 169, 143);
-  --colorCivilian4Lighten3: rgb(245, 212, 199);
-  --colorCivilian4Darken1: rgb(162, 62, 23);
-  --colorCivilian4Darken2: rgb(108, 42, 15);
-  --colorCivilian4Darken3: rgb(54, 21, 8);
+  --colorTertiaryLighten2: rgb(126, 140, 155);
+  --colorTertiaryLighten3: rgb(169, 178, 188);
+  --colorTertiaryLighten4: rgb(212, 217, 222);
+  --colorTertiaryDarken1: rgb(32, 50, 70);
+  --colorTertiaryDarken2: rgb(24, 38, 53);
+  --colorTertiaryDarken3: rgb(16, 25, 35);
+  --colorTertiaryDarken4: rgb(8, 13, 18);
 }

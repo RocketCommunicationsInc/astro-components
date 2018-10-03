@@ -13,6 +13,11 @@
 
   --fontLinkColor: var(--colorSecondary);
   --fontLinkHoverColor: var(--colorSecondaryLighten1);
+
+  /* Status Custom */
+  --wcagCompliance: rgba(255, 255, 255, 0);
+  --criticalBorder: var(--colorCritical, rgb(255, 56, 56));
+
   /* 
     
     Button Colors 

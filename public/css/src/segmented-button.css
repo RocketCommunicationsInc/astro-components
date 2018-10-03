@@ -7,7 +7,7 @@
 
 */
 
-.rux-segmented-buttons {
+.rux-segmented-button {
   display: inline-flex;
   height: 1.6875rem;
 
@@ -22,14 +22,14 @@
   border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
 }
 
-.rux-segmented-button {
+.rux-segmented-button__segment {
   height: 1.6875rem;
   width: auto;
   margin: 0;
   padding: 0;
 }
 
-.rux-segmented-button label {
+.rux-segmented-button__segment label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,15 +51,15 @@
   user-select: none;
 }
 
-.rux-segmented-button:last-child label {
+.rux-segmented-button__segment:last-child label {
   border-right: none !important;
 }
 
-.rux-segmented-button input {
+.rux-segmented-button__segment input {
   display: none !important;
 }
 
-.rux-segmented-button label:hover {
+.rux-segmented-button__segment label:hover {
   background-color: var(
     --segmentedButtonHoverBackgroundColor,
     rgb(58, 129, 191)
@@ -68,7 +68,7 @@
   outline: none;
 }
 
-.rux-segmented-button input:checked + label {
+.rux-segmented-button__segment input:checked + label {
   background-color: var(
     --segmentedButtonSelectedBackgroundColor,
     rgb(58, 129, 191)

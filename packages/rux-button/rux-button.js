@@ -93,9 +93,7 @@ export class RuxButton extends PolymerElement {
         );
       }
       
-      .rux-button--default {
-        border-color: var(--buttonDefaultBorderColor, rgb(255, 255, 255)) !important;
-      }
+      
       
       /* Outline Button Specific Styles */
       .rux-button--outline {
@@ -214,7 +212,7 @@ export class RuxButton extends PolymerElement {
       }
   </style>      
 
-      <button class$="rux-button rux-button--[[size]] rux-button--[[type]] [[default]]" disabled$="[[disabled]]">
+      <button class$="rux-button rux-button--[[size]] rux-button--[[type]]" disabled$="[[disabled]]">
         <rux-icon icon="[[icon]]" color="#fff" class="rux-icon rux-button__icon" hidden="[[hidden]]"></rux-icon>
         <slot></slot>
       </button>`;
@@ -225,7 +223,7 @@ export class RuxButton extends PolymerElement {
   ready() {
     super.ready();
     // set default
-    this.default = this.default ? "rux-button--default" : "";
+    // this.default = this.default ? "rux-button--default" : "";
     // hide the icon if there is no icon
     this.hidden = !this.icon;
     // set type to standard if there is no type
