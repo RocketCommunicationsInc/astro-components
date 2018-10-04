@@ -33,20 +33,20 @@ import { RuxTabs } from "@astro-components/rux-tabs/rux-tabs.js";
 ```
 
 ###Basic HTML Usage
-To create a RUX Tab interface start with a containing `rux-tabs` element, inside of which add a `rux-tab` element for each Tab you need. The `rux-tab` element requires a unique `id` attribute. The user viewable tab label is set like standard HTML.
+To create a RUX Tab interface start with a containing `rux-tabs` element with a united `id` attribute, inside of which add a `rux-tab` element for each Tab you need. The `rux-tab` element requires a unique `id` attribute. The user viewable tab label is set like standard HTML.
 
-A corresponding `rux-panels` containing element along with a matching `rux-panel` element for each `rux-tab` element. `rux-panel` elements require an `aria-labeledby` attribute with a value that matches the value of the matching `id` attribute value.
+A corresponding `rux-tab-panels` containing element with an `aria-labeledby` attribute referencing the `id` of the associated `rux-tabs` element. Along with a matching `rux-tab-panel` element for each `rux-tab` element. `rux-tab-panel` elements require an `aria-labeledby` attribute with a value that matches the value of the matching `id` attribute value.
 
 ```xml
-<rux-tabs>
+<rux-tabs id="tab-set-id-1">
 	<rux-tab id="tab-id-1">Tab 1</rux-tab>
 	<rux-tab id="tab-id-2">Tab 2</rux-tab>
 	<rux-tab id="tab-id-3">Tab 3</rux-tab>
 </rux-tabs>
 
-<rux-panels>
-	<rux-panel aria-labeledby="tab-id-1"> ... </rux-tab>
-	<rux-panel aria-labeledby="tab-id-2"> ... </rux-tab>
-	<rux-panel aria-labeledby="tab-id-3"> ... </rux-tab>
-</rux-panels>
+<rux-tab-panels aria-labeledby="tab-set-id-1">
+	<rux-tab-panel aria-labeledby="tab-id-1"> ... </rux-tab-panel>
+	<rux-tab-panel aria-labeledby="tab-id-2"> ... </rux-tab-panel>
+	<rux-tab-panel aria-labeledby="tab-id-3"> ... </rux-tab-panel>
+</rux-tab-panels>
 ```
