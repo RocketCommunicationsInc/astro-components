@@ -78,8 +78,6 @@ export class RuxGlobalStatusBar extends PolymerElement {
     .app-meta h1 {
       font-size: 2rem;
       font-weight: 300;
-      /* color: rgba(255, 255, 255, 0.298039); */
-      /* color: #bdc3c9; */
     }
     
     .app-version {
@@ -125,6 +123,8 @@ export class RuxGlobalStatusBar extends PolymerElement {
     // would implement an override
     if (this.theme) {
       for (let slot of this.children) {
+        console.log("slot", slot.children.length, slot.children);
+
         slot.classList.add(`${this.theme}-theme`);
       }
     }
