@@ -531,7 +531,7 @@ ul {
 
       <rux-clock compact></rux-clock>
 
-      <ul class="astro-advanced-status-indicators" class="dark-theme">
+      <ul class="astro-advanced-status-indicators">
         <dom-repeat id="astroAdvancedStatus" items="{{statusIndicators}}">
           <template>
             <li>
@@ -549,14 +549,14 @@ ul {
         <li>
           <rux-status
             label="Notifications"
-            icon="default:notifications"
+            icon="utility:notifications"
             notifications=5
             active></rux-status>
         </li>
         <li>
             <rux-status
               label="Settings"
-              icon="default:settings"></rux-status>
+              icon="utility:settings"></rux-status>
           </li>
         </li>
       </ul>
@@ -1678,13 +1678,13 @@ ul {
       {
         label: "Power",
         status: "caution",
-        icon: "advanced-status-egs:propulsion-power",
+        icon: "monitoring:propulsion-power",
         notifications: 1
       },
       {
         label: "Communications",
-        status: "ok",
-        icon: "advanced-status-egs:netcom",
+        status: "normal",
+        icon: "monitoring:netcom",
         notifications: 0
       }
     ];
