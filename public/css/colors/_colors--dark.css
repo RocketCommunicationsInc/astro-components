@@ -40,24 +40,39 @@
   --colorPrimaryLighten2: color(var(--colorPrimary) tint(40%));
   --colorPrimaryLighten3: color(var(--colorPrimary) tint(60%));
   --colorPrimaryLighten4: color(var(--colorPrimary) tint(80%));
+
   --colorPrimaryDarken1: color(var(--colorPrimary) shade(20%));
   --colorPrimaryDarken2: color(var(--colorPrimary) shade(40%));
   --colorPrimaryDarken3: color(var(--colorPrimary) shade(60%));
   --colorPrimaryDarken4: color(var(--colorPrimary) shade(80%));
-  --colorSecondaryLighten1: color(var(--colorSecondary) tint(25%));
+
+  --colorSecondaryLighten1: color(var(--colorSecondary) tint(20%));
   --colorSecondaryLighten2: color(var(--colorSecondary) tint(40%));
   --colorSecondaryLighten3: color(var(--colorSecondary) tint(60%));
   --colorSecondaryLighten4: color(var(--colorSecondary) tint(80%));
+
   --colorSecondaryDarken1: color(var(--colorSecondary) shade(20%));
   --colorSecondaryDarken2: color(var(--colorSecondary) shade(40%));
   --colorSecondaryDarken3: color(var(--colorSecondary) shade(60%));
   --colorSecondaryDarken4: color(var(--colorSecondary) shade(80%));
-  --colorTertiaryLighten1: color(var(--colorTertiary) tint(25%));
+
+  --colorTertiaryLighten1: color(var(--colorTertiary) tint(20%));
   --colorTertiaryLighten2: color(var(--colorTertiary) tint(40%));
   --colorTertiaryLighten3: color(var(--colorTertiary) tint(60%));
   --colorTertiaryLighten4: color(var(--colorTertiary) tint(80%));
+
   --colorTertiaryDarken1: color(var(--colorTertiary) shade(20%));
   --colorTertiaryDarken2: color(var(--colorTertiary) shade(40%));
   --colorTertiaryDarken3: color(var(--colorTertiary) shade(60%));
   --colorTertiaryDarken4: color(var(--colorTertiary) shade(80%));
+
+  --colorGrayLighten1: color(var(--colorGray) tint(20%));
+  --colorGrayLighten2: color(var(--colorGray) tint(40%));
+  --colorGrayLighten3: color(var(--colorGray) tint(60%));
+  --colorGrayLighten4: color(var(--colorGray) tint(80%));
+
+  --colorGrayDarken1: color(var(--colorGray) shade(20%));
+  --colorGrayDarken2: color(var(--colorGray) shade(40%));
+  --colorGrayDarken3: color(var(--colorGray) shade(60%));
+  --colorGrayDarken4: color(var(--colorGray) shade(80%));
 }

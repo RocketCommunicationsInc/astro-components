@@ -43,14 +43,14 @@ export class RuxTab extends PolymerElement {
 
           // width: 5rem;
           
-          max-width: 12rem;
-          min-width: 10px;
+          // max-width: 12rem;
+          min-width: 5rem;
 
           text-decoration: none;
 
           color: var(--tabTextColor, rgb(77, 172, 255));
 
-          background-color: var(--tabBackgroundColor, rgb(30, 47, 66));
+          // background-color: var(--tabBackgroundColor, rgb(30, 47, 66));
         }
 
         :host span {
@@ -60,17 +60,17 @@ export class RuxTab extends PolymerElement {
         }
 
         :host {
-          border-right: 1px solid var(--tabBorderColor, rgb(20, 32, 44));
+          // border-right: 1px solid var(--tabBorderColor, rgb(20, 32, 44));
         }
 
         :host([compact]),
         :host([interior]) {
-          min-width: 5rem;
+          min-width: 2rem;
         }
 
         :host([transparent]) {
           background-color: transparent;
-          border-right: 1px solid var(--tabTransparentBorderColor, rgb(255,255,255,.1));
+          // border-right: 1px solid var(--tabTransparentBorderColor, rgb(255,255,255,.1));
         }
 
 

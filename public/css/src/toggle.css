@@ -17,7 +17,6 @@
 */
 
 .rux-toggle,
-.rux-toggle--alt2,
 .satcom-toggle {
   position: relative;
   display: inline-block;
@@ -80,15 +79,7 @@
 
   border-radius: 0.1875rem;
 
-  background: var(
-    --toggleBaseBackgroundColor,
-    linear-gradient(
-      to right,
-      #000 50%,
-      rgb(50, 51, 52) 50.1%,
-      rgb(50, 51, 52) 100%
-    )
-  );
+  background: var(--toggleBaseBackgroundColor, #000);
 }
 
 .rux-toggle__button::after {
@@ -124,11 +115,12 @@
 }
 
 .rux-toggle .on {
+  font-weight: 600;
   color: var(--toggleBaseSelectedTextColor, rgb(91, 255, 0));
 }
 
 .rux-toggle .off {
-  color: var(--toggleBaseTextColor, rgb(198, 204, 209));
+  color: var(--toggleBaseTextColor, #fff);
 }
 
 .rux-toggle__input:disabled + .rux-toggle__button {

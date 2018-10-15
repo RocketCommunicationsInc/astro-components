@@ -24,7 +24,7 @@ export class RuxGlobalStatusBar extends PolymerElement {
       width: 100%;
     
       box-sizing: border-box;
-      background-color: var(--colorPrimaryDarken3, rgb(0, 23, 36));
+      background-color: var(--colorTertiaryDarken3, rgb(0, 23, 36));
     
       -webkit-user-select: none;
       -moz-user-select: none;

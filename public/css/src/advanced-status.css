@@ -64,7 +64,6 @@
   right: -0.5rem;
 
   border: 1px solid rgba(255, 255, 255, 0.6);
-  /* border: 1px solid rgba(0, 0, 0, 1); */
   border-radius: 3px;
   padding: 0.65rem 0.25rem;
   font-size: 0.775rem;
@@ -207,4 +206,16 @@ svg circle {
 .satcom-advanced-status,
 .satcom-advanced-status-off use {
   fill: #b4bbc2;
+}
+
+.satcom-advanced-status::before,
+.satcom-advanced-status-off::before {
+  content: "";
+  display: block;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  left: -15px;
+  background-image: url(../images/off.svg);
+  background-repeat: no-repeat;
 }

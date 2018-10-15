@@ -32,7 +32,7 @@
 
   font-family: var(--fontFamilty, "Open Sans", sans-serif);
   font-size: var(--fontSize, 1rem);
-  color: var(--fontColor, rgb(255, 255, 255));
+  /* color: var(--fontColor, rgb(255, 255, 255)); */
 }
 
 .rux-form-field label {
@@ -43,7 +43,7 @@
   align-content: center;
   align-items: center;
 
-  color: var(--fontColor, rgb(255, 255, 255));
+  /* color: var(--fontColor, rgb(255, 255, 255)); */
   user-select: none;
 }
 

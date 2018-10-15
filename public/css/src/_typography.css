@@ -28,11 +28,12 @@ p {
 }
 
 a {
-  color: var(--fontLinkColor);
+  color: var(--fontLinkColor, rgb(77, 172, 255));
+  text-decoration: none;
 }
 
 a:hover {
-  color: var(--fontLinkHoverColor);
+  color: var(--fontLinkHoverColor, rgb(113, 189, 255));
 }
 
 ul,
@@ -74,9 +75,11 @@ dd {
   font-family: "Roboto", sans-serif;
 }
 
+.invert,
 .inverted {
   background-color: var(--fontInvertedBackgroundColor, rgb(255, 255, 255));
   color: var(--fontInvertedColor, rgb(0, 0, 0));
+  padding: 0 0.25rem;
 }
 
 .low-contrast {
