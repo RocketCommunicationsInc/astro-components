@@ -389,6 +389,30 @@ ul {
   // display: inline-block;
 }
 
+.astro-advanced-status-indicators {
+  list-style: none;
+  padding: 0;
+  
+  margin: 0 5rem;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  
+
+
+  
+  height: 5.5rem;
+}
+
+.astro-advanced-status-indicators li {
+  margin: 0 0.5rem;
+}
+
+.astro-advanced-status-indicators li:nth-last-child(2)  {
+  margin-right: 0;
+  margin-left: auto;
+}
+
 .icon-list li {
   
   
@@ -506,6 +530,36 @@ ul {
       </rux-tabs>
 
       <rux-clock compact></rux-clock>
+
+      <ul class="astro-advanced-status-indicators" class="dark-theme">
+        <dom-repeat id="astroAdvancedStatus" items="{{statusIndicators}}">
+          <template>
+            <li>
+              <rux-status
+                status=[[item.status]]
+                label=[[item.label]]
+                sublabel="sub label"
+                icon=[[item.icon]]
+                notifications=[[item.notifications]]
+                on-click="_showPopUp"></rux-status>
+            </li>
+            
+          </template>
+        </dom-repeat>
+        <li>
+          <rux-status
+            label="Notifications"
+            icon="default:notifications"
+            notifications=5
+            active></rux-status>
+        </li>
+        <li>
+            <rux-status
+              label="Settings"
+              icon="default:settings"></rux-status>
+          </li>
+        </li>
+      </ul>
 
       <rux-segmented-button
         data={{theme}}>
@@ -1617,6 +1671,21 @@ ul {
             color: "--colorCivilian4, rgb(40, 63, 88)"
           }
         ]
+      }
+    ];
+
+    this.statusIndicators = [
+      {
+        label: "Power",
+        status: "caution",
+        icon: "advanced-status-egs:propulsion-power",
+        notifications: 1
+      },
+      {
+        label: "Communications",
+        status: "ok",
+        icon: "advanced-status-egs:netcom",
+        notifications: 0
       }
     ];
 

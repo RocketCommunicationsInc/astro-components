@@ -163,7 +163,7 @@ export class RuxStatus extends PolymerElement {
       
       .rux-advanced-status__label {
         text-align: center;
-        color: var(--font-color);
+        color: var(--fontColor, #fff);
         font-size: 0.875rem;
         line-height: 1.2;
         margin-top: 1rem;
