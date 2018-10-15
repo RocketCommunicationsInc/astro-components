@@ -29,7 +29,7 @@ body {
   font-size: 1rem;
   color: var(--fontColor, rgb(255, 255, 255));
 
-  background-color: var(--backgroundColor, rgb(40, 63, 88));
+  background-color: var(--backgroundColor, rgb(24, 38, 53));
 }
 
 label {

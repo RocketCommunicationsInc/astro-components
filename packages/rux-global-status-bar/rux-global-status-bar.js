@@ -8,7 +8,10 @@ export class RuxGlobalStatusBar extends PolymerElement {
   static get properties() {
     return {
       appname: String,
-      version: String
+      version: String,
+      theme: {
+        type: String
+      }
     };
   }
   static get template() {
@@ -24,7 +27,7 @@ export class RuxGlobalStatusBar extends PolymerElement {
       width: 100%;
     
       box-sizing: border-box;
-      background-color: var(--colorTertiaryDarken3, rgb(0, 23, 36));
+      background-color: rgb(0, 23, 36);
     
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -34,6 +37,8 @@ export class RuxGlobalStatusBar extends PolymerElement {
 
       contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
     }
+
+    
 
     
     
@@ -91,7 +96,7 @@ export class RuxGlobalStatusBar extends PolymerElement {
           <h1>[[appname]]<span class="app-version">[[version]]</span></h1>
         </div>
 
-        <!-- optional for tabbed based UIs //-->
+        
         <slot></slot>
       </header>`;
   }
@@ -104,6 +109,25 @@ export class RuxGlobalStatusBar extends PolymerElement {
     // set the appname property to false to hide the app-meta
     // section from being included in the flex DOM
     if (!this.appname) this.appname = false;
+
+    // if the user passes in a theme override loop through all
+    // of the slotted child content and apply the necessary theme
+
+    // TODO: This should probably become a small sub-routine for
+    // any Astro component that might need an override. Current
+    // candidates include:
+    //    - Tabs
+    //    - Timeline
+    //    - Cards/Tiles
+
+    // NOTE: There may be some interesting conflicts if you have
+    // something like tabs inside of a global status each one
+    // would implement an override
+    if (this.theme) {
+      for (let slot of this.children) {
+        slot.classList.add(`${this.theme}-theme`);
+      }
+    }
   }
   _masterOff() {
     console.log("master off from inside global status");

@@ -71,7 +71,7 @@ export class AstroComponentViewer extends PolymerElement {
 
       .astro-elements-pane__content {
         padding: 0 1.5rem;
-        outine; 1px solid red;
+        
       }
 	
 	.astro-elements-pane h1 {
@@ -390,7 +390,7 @@ ul {
 }
 
 .icon-list li {
-  // outline: 1px solid red;
+  
   
   width: 8.333%;
 }
@@ -493,25 +493,23 @@ ul {
 
 
     
-    <rux-global-status-bar>
+    <rux-global-status-bar theme="dark">
 
       <rux-tabs
-        id="main"
-        transparent>
+        id="main">
         <rux-tab id="t1" role="tab">Elements</rux-tab>
         <rux-tab id="t2" role="tab">Components</rux-tab>
         <rux-tab id="t6" role="tab">Icons</rux-tab>
         <rux-tab id="t5" role="tab">Typography</rux-tab>
-        <rux-tab id="t4" role="tab">Colors</rux-tab>
-        
+        <rux-tab id="t4" role="tab">Colors</rux-tab>        
         <rux-tab id="t3" role="tab">Widgets</rux-tab>
-        
-        
-        
       </rux-tabs>
 
+      <rux-clock compact></rux-clock>
+
       <rux-segmented-button
-        data={{theme}}></rux-segmented-button>
+        data={{theme}}>
+      </rux-segmented-button>
 
     </rux-global-status-bar>
 
@@ -729,7 +727,7 @@ ul {
 
 
     <!-- 8. BUTTONS //-->
-    <section class="rux-card buttons">
+    <section class="rux-card buttons  dark-theme">
       <header class="rux-card__header">
         <h1>Buttons</h1>
       </header>
@@ -1111,19 +1109,11 @@ ul {
                   <figure class="swatches">
                     <figcaption>[[item.label]]</figcaption>
 
-                    <figure class="swatch-meta">
-                      <div class="swatch" style="background-color: #fff">
-                    </figure>
-
                     <template is="dom-repeat" items=[[item.colors]]>
                       <figure class="swatch-meta">
                         <div class="swatch" style$="background-color: var([[item.color]])">
                       </figure>
                     </template>
-
-                    <figure class="swatch-meta">
-                      <div class="swatch" style="background-color: #000">
-                    </figure>
 
                   </figure>
                 </template>
@@ -1574,57 +1564,7 @@ ul {
           {
             rgb: "rgb(111,111,111)",
             hex: "#ff0000",
-            color: "--colorCriticalLighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCriticalLighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCriticalLighten1, rgb(94, 111, 130)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
             color: "--colorCritical, rgb(40, 63, 88)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCriticalDarken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCriticalDarken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCriticalDarken3, rgb(10, 16, 22)"
-          }
-        ]
-      },
-      {
-        label: "Serious",
-        colors: [
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSeriousLighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSeriousLighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSeriousLighten1, rgb(94, 111, 130)"
           },
           {
             rgb: "rgb(111,111,111)",
@@ -1634,77 +1574,7 @@ ul {
           {
             rgb: "rgb(111,111,111)",
             hex: "#ff0000",
-            color: "--colorSeriousDarken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSeriousDarken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSeriousDarken3, rgb(10, 16, 22)"
-          }
-        ]
-      },
-      {
-        label: "Caution",
-        colors: [
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCautionLighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCautionLighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCautionLighten1, rgb(94, 111, 130)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
             color: "--colorCaution, rgb(40, 63, 88)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCautionDarken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCautionDarken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCautionDarken3, rgb(10, 16, 22)"
-          }
-        ]
-      },
-      {
-        label: "Normal",
-        colors: [
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorNormalLighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorNormalLighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorNormalLighten1, rgb(94, 111, 130)"
           },
           {
             rgb: "rgb(111,111,111)",
@@ -1714,157 +1584,22 @@ ul {
           {
             rgb: "rgb(111,111,111)",
             hex: "#ff0000",
-            color: "--colorNormalDarken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorNormalDarken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorNormalDarken3, rgb(10, 16, 22)"
-          }
-        ]
-      },
-      {
-        label: "Standby",
-        colors: [
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorStandbyLighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorStandbyLighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorStandbyLighten1, rgb(94, 111, 130)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
             color: "--colorStandby, rgb(40, 63, 88)"
           },
           {
             rgb: "rgb(111,111,111)",
             hex: "#ff0000",
-            color: "--colorStandbyDarken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorStandbyDarken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorStandbyDarken3, rgb(10, 16, 22)"
-          }
-        ]
-      },
-      {
-        label: "Off",
-        colors: [
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorOffLighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorOffLighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorOffLighten1, rgb(94, 111, 130)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
             color: "--colorOff, rgb(40, 63, 88)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorOffDarken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorOffDarken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorOffDarken3, rgb(10, 16, 22)"
           }
         ]
       },
       {
-        label: "Civ 1",
+        label: "Civillian Status",
         colors: [
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian1Lighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian1Lighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian1Lighten1, rgb(94, 111, 130)"
-          },
           {
             rgb: "rgb(111,111,111)",
             hex: "#ff0000",
             color: "--colorCivilian1, rgb(40, 63, 88)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian1Darken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian1Darken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian1Darken3, rgb(10, 16, 22)"
-          }
-        ]
-      },
-      {
-        label: "Civ 2",
-        colors: [
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian2Lighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian2Lighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian2Lighten1, rgb(94, 111, 130)"
           },
           {
             rgb: "rgb(111,111,111)",
@@ -1874,97 +1609,12 @@ ul {
           {
             rgb: "rgb(111,111,111)",
             hex: "#ff0000",
-            color: "--colorCivilian2Darken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian2Darken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian2Darken3, rgb(10, 16, 22)"
-          }
-        ]
-      },
-      {
-        label: "Civ 3",
-        colors: [
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian3Lighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian3Lighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian3Lighten1, rgb(94, 111, 130)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
             color: "--colorCivilian3, rgb(40, 63, 88)"
           },
           {
             rgb: "rgb(111,111,111)",
             hex: "#ff0000",
-            color: "--colorCivilian3Darken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian3Darken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian3Darken3, rgb(10, 16, 22)"
-          }
-        ]
-      },
-      {
-        label: "Civ 4",
-        colors: [
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian4Lighten3, rgb(201, 207, 213)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian4Lighten2, rgb(148, 159, 172)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian4Lighten1, rgb(94, 111, 130)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
             color: "--colorCivilian4, rgb(40, 63, 88)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian4Darken1, rgb(30, 47, 66)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian4Darken2, rgb(20, 32, 44)"
-          },
-          {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian4Darken3, rgb(10, 16, 22)"
           }
         ]
       }

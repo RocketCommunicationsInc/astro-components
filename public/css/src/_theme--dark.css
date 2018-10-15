@@ -5,7 +5,7 @@
     ==========================================================================
 
   */
-  --backgroundColor: var(--colorTertiaryDarken2, rgb(40, 63, 88));
+  --backgroundColor: var(--colorTertiaryDarken2, rgb(46, 103, 153));
   --fontColor: var(--colorWhite, rgb(255, 255, 255));
   --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
   --fontInvertedColor: var(--colorBlack, rgb(0, 0, 0));

@@ -109,14 +109,14 @@
   height: auto;
 }
 
-.selected {
+.rux-tree .selected {
   background-color: var(--treeSelectedBackgroundColor, rgb(0, 68, 107));
   box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
 
   color: var(--treeSelectedTextColor, rgb(255, 255, 255));
 }
 
-.selected .rux-tree__arrow::after {
+.rux-tree .selected .rux-tree__arrow::after {
   border-color: transparent transparent transparent
     var(--treeSelectedAccentColor, rgb(77, 172, 255));
 }

@@ -36,8 +36,6 @@ export class RuxProgress extends PolymerElement {
       
         justify-content: space-between;
         align-items: center;
-
-        outline: 1px solid red;
       }
       
       .rux-progress progress[value] {
@@ -46,7 +44,7 @@ export class RuxProgress extends PolymerElement {
         /* background: #21384f; */
         background-color: var(
           --progressDeterminateTrackBackgroundColor,
-          rgb(30, 47, 66)
+          rgba(0,0,0,0.3)
         );
         border: 1px solid var(--progressDeterminateTrackBorderColor, rgb(20, 32, 44));
         border-radius: var(--progressRadius);
