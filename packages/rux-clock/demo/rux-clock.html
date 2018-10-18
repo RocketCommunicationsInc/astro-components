@@ -9,7 +9,27 @@
   <meta name="description" content="Sample clock component using the Astro Design System">
 
   <!-- Global Styles //-->
-  <link rel="stylesheet" href="/public/css/demo.css">
+  <link rel="stylesheet" href="/public/css/astro.css">
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--fontFamily, "Open Sans", sans-serif);
+      color: var(--fontColor);
+      background: var(--backgroundColor);
+    }
+
+  </style>
 
   <!-- Load WebComponent Polyfill //-->
   <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
@@ -18,7 +38,7 @@
   <script type="module" src="./rux-clock-sample.js"></script>
 </head>
 
-<body>
+<body class="dark-theme">
   <rux-clock-sample>
     <div style="display: flex; justify-content: center; align-content: center">
       <p>Sorry, this example requires a browser that supports Web Components.</p>
