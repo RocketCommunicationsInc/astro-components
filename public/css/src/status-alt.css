@@ -1,0 +1,170 @@
+/*
+
+NOTE: This is an experiment in rendering status indicators in pure CSS, time ran out so SVG is the current approved shipping version in 3.0
+Ideally this will supplant SVG in a near future release.
+
+.rux-status-indicator-a {
+  font-size: 1rem;
+
+  line-height: 1;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+
+  height: 16px;
+  width: 16px;
+
+  margin: 2px;
+  outline: 1px solid rgba(127, 127, 127, 0.5);
+}
+
+.rux-status-indicator-a::after,
+.rux-status-indicator-a::before .satcom-status::before {
+  content: "";
+  display: inline-block;
+
+  height: 14px;
+  width: 14px;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.rux-status-indicator-a {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.rux-status-indicator-a::after {
+  position: absolute;
+}
+
+.rux-status-indicator-a.rux-status--off::before {
+  background-color: var(--colorOff);
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--standby::before {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    transparent,
+    transparent 3px,
+    var(--colorStandby) 3px,
+    var(--colorStandby) 100%
+  );
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--normal::before {
+  background-color: var(--colorNormal);
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--caution::before {
+  background-color: var(--colorCaution);
+  height: 9px;
+  width: 12px;
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--serious::before {
+  background-color: var(--colorSerious);
+  height: 11px;
+  width: 11px;
+  transform: rotate(45deg);
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--critical::before {
+  width: 0;
+  height: 0;
+  z-index: 1;
+  border-style: solid;
+  border-width: 11px 6px 0 6px;
+  border-color: var(--colorCritical) transparent transparent transparent;
+}
+
+.rux-status-indicator-a.rux-status--critical::after {
+  width: 0;
+  height: 0;
+  z-index: 0;
+
+  border-style: solid;
+  border-width: 13.9px 8px 0 8px;
+  border-color: var(--criticalBorder) transparent transparent transparent;
+}
+
+.rux-status--caution .rux-advanced-status__icon-a::before {
+  background-color: var(--colorCaution);
+  height: 9px;
+  width: 9px;
+  margin-bottom: 2px;
+}
+.rux-status--serious .rux-advanced-status__icon-a::before {
+  background-color: var(--colorSerious);
+  height: 9px;
+  width: 9px;
+  
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.rux-advanced-status__icon-a::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+
+  top: 3px;
+  left: -4px;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.rux-status--off .rux-advanced-status__icon-a::before {
+  background-color: var(--colorOff);
+  height: 5px;
+  width: 5px;
+}
+
+.rux-status--standby .rux-advanced-status__icon-a::before {
+  border: 2px solid var(--colorStandby);
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  margin-bottom: 1px;
+}
+
+.rux-status--normal .rux-advanced-status__icon-a::before {
+  background-color: var(--colorNormal);
+
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  margin-bottom: 1px;
+}
+
+.rux-status--critical .rux-advanced-status__icon-a::before {
+  width: 0;
+  height: 0;
+
+  border-style: solid;
+  border-width: 11px 6px 0 6px;
+  border-color: var(--colorCritical) transparent transparent transparent;
+  margin-bottom: 0;
+}
+
+
+*/

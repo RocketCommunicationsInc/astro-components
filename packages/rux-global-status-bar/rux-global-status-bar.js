@@ -18,12 +18,14 @@ export class RuxGlobalStatusBar extends PolymerElement {
     return html`
     <style>
     :host {
+      
       display: block;
       position: sticky;
     
       top: 0;
       left: 0;
     
+      height: 110px;
       width: 100%;
     
       box-sizing: border-box;
@@ -34,7 +36,7 @@ export class RuxGlobalStatusBar extends PolymerElement {
       -ms-user-select: none;
       user-select: none;
     
-
+      
       contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
     }
 
@@ -44,6 +46,7 @@ export class RuxGlobalStatusBar extends PolymerElement {
     
     header {
       display: flex;
+      
     
       height: 100%;
       width: 100%;

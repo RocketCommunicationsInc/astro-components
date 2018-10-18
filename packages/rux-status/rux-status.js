@@ -113,8 +113,8 @@ export class RuxStatus extends PolymerElement {
         position: relative;
         margin-bottom: -12px;
         margin-left: -18px !important;
-        height: 12px;
-        width: 12px;
+        height: 16px;
+        width: 16px;
       }
       
       :host([status="off"]) .rux-advanced-status__icon::before {
@@ -197,7 +197,8 @@ export class RuxStatus extends PolymerElement {
         fill: var(--colorCaution, rgb(248, 231, 29));
       }
       
-      .rux-status--error {
+      .rux-status--error,
+      .rux-status--serious {
         fill: var(--colorSerious, rgb(255, 176, 0));
       }
       
@@ -206,6 +207,111 @@ export class RuxStatus extends PolymerElement {
       .rux-status--alert {
         fill: var(--colorCritical, rgb(255, 48, 48));
       }
+
+
+      .rux-status-indicator,
+.rux-status,
+.satcom-status {
+  font-size: 1rem;
+
+  line-height: 1;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+
+  height: 16px;
+  width: 16px;
+
+  margin: 2px;
+  /* outline: 1px solid rgba(127, 127, 127, 0.5); */
+}
+
+/* Icon */
+.rux-status-indicator::before,
+.rux-status::before,
+.satcom-status::before {
+  content: "";
+  display: inline-block;
+
+  height: 16px;
+  width: 16px;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+}
+
+
+
+/* Specific Status Iconography */
+.rux-status-indicator.rux-status--off::before,
+.rux-status--off .rux-advanced-status__icon::before,
+.satcom-status-off::before {
+  background-image: var(
+    --statusOff,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+}
+
+.rux-status-indicator.rux-status--standby::before,
+.rux-status--standby .rux-advanced-status__icon::before,
+.satcom-status-standby::before {
+  background-image: var(
+    --statusStandby,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%231EDCFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+}
+
+.rux-status-indicator.rux-status--normal::before,
+.rux-status-indicator.rux-status--ok::before,
+.rux-status--normal .rux-advanced-status__icon::before,
+.rux-status--ok .rux-advanced-status__icon::before,
+.satcom-status-ok::before {
+  background-image: var(
+    --statusNormal,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+  /* background-position: 1px 1px; */
+}
+
+.rux-status-indicator.rux-status--caution::before,
+.rux-status--caution .rux-advanced-status__icon::before,
+.satcom-status-caution::before {
+  background-image: var(
+    --statusCaution,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+  /* background-position: 1px 1px; */
+}
+
+.rux-status-indicator.rux-status--serious::before,
+.rux-status-indicator.rux-status--error::before,
+.rux-status--serious .rux-advanced-status__icon::before,
+.rux-status--error .rux-advanced-status__icon::before,
+.satcom-status-error::before {
+  background-image: var(
+    --statusSerious,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+  margin-top: 1px;
+  transform: rotate(45deg);
+}
+
+.rux-status-indicator.rux-status--critical::before,
+.rux-status-indicator.rux-status--alert::before,
+.rux-status--critical .rux-advanced-status__icon::before,
+.rux-status--alert .rux-advanced-status__icon::before,
+.rux-status--emergency .rux-advanced-status__icon::before,
+.satcom-status-alert::before {
+  background-image: var(
+    --statusCritical,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+  transform: rotate(180deg);
+  background-position: 0 -1px;
+  
+}
+
 </style>      
 
       <!-- Use Advanced Status Template is any property is set //-->
@@ -224,7 +330,9 @@ export class RuxStatus extends PolymerElement {
       </div>
 
       <!-- Use simple status if no other properties are set //-->
-      <rux-icon icon="status:[[status]]" class="rux-icon--status" hidden=[[advanced]]></rux-icon>	
+      <!-- <rux-icon icon="status:[[status]]" class="rux-icon--status" hidden=[[advanced]]></rux-icon> //-->
+      <div class$='rux-status-indicator rux-status--[[status]]' hidden=[[advanced]]></div>
+      
     `;
   }
 

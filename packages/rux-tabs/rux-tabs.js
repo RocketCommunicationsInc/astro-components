@@ -45,7 +45,8 @@ export class RuxTabs extends PolymerElement {
         justify-content: flex-start;
         font-size: 1.5rem;
 
-        height: 5.625rem;
+        /* height: 5.625rem; */
+        height: 100%;
         width: auto;
         margin: 0;
         padding: 0;

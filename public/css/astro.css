@@ -221,7 +221,7 @@ label {
 .dark-theme {
   /* 
     
-    Global Colors 
+    Global Colors ulp
     ==========================================================================
 
   */
@@ -418,6 +418,9 @@ label {
     --colorSecondaryDarken1,
     rgb(58, 129, 191)
   );
+
+  --segmentedButtonSelectedBoxShadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
+    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
 
   --segmentedButtonSelectedTextColor: rgb(255, 255, 255);
 
@@ -627,6 +630,20 @@ label {
   --inputInvalidBorderColor: rgb(255, 48, 48);
 
   --inputInvalidBorderColor: var(--colorCritical, rgb(255, 48, 48));
+
+  /* 
+    
+    Status
+    ==========================================================================
+    
+  */
+
+  --statusOff: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusStandby: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%231EDCFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusNormal: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusCaution: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusSerious: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusCritical: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
 li.dark-theme {
@@ -832,6 +849,10 @@ li.dark-theme {
     --colorSecondaryDarken1,
     rgb(58, 129, 191)
   );
+
+  --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 5px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.067s ease-out;
 
   --segmentedButtonSelectedTextColor: rgb(255, 255, 255);
 
@@ -1075,6 +1096,20 @@ li.dark-theme {
   --inputInvalidBorderColor: rrgb(255, 48, 48) ed;
 
   --inputInvalidBorderColor: var(--colorCritical, rrgb(255, 48, 48) ed);
+
+  /* 
+    
+    Status
+    ==========================================================================
+    
+  */
+
+  --statusOff: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222.5%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusStandby: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20stroke%3D%22%231EDCFF%22%20stroke-width%3D%224%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222.5%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%225.5%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A");
+  --statusNormal: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%225.5%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusCaution: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M2.5%204.5H13.5V11.5H2.5z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusSerious: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M3.5%203.5H11.5V11.5H3.5z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusCritical: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M14.1294815%2C13.5%20L8%2C2.99231743%20L1.8705185%2C13.5%20L14.1294815%2C13.5%20Z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
 li.light-theme {
@@ -1287,8 +1322,8 @@ dd {
   position: relative;
   margin-bottom: -12px;
   margin-left: -18px !important;
-  height: 12px;
-  width: 12px;
+  height: 16px;
+  width: 16px;
 }
 
 .rux-advanced-status__badge:empty {
@@ -2860,11 +2895,17 @@ i.rux-icon::before {
   border-bottom: 1px solid #f0f1f3;
 } */
 
-.rux-pop-up li:last-child,
-.satcom-pop-up li:last-child {
+.rux-pop-up li:first-child a,
+.satcom-pop-up li:first-child a {
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+.rux-pop-up li:last-child a,
+.satcom-pop-up li:last-child a {
   border: none;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 .rux-pop-up a,
@@ -3397,6 +3438,17 @@ i.rux-icon::before {
   );
   color: #fff;
   color: var(--segmentedButtonSelectedTextColor, #fff);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
+    inset 0 3px 4px rgba(0, 0, 0, 0.12),
+    inset 0 1px 5px rgba(0, 0, 0, 0.2)
+  ;
+  box-shadow: var(
+    --segmentedButtonSelectedBoxShadow,
+    inset 0 2px 4px rgba(0, 0, 0, 0.14),
+    inset 0 3px 4px rgba(0, 0, 0, 0.12),
+    inset 0 1px 5px rgba(0, 0, 0, 0.2)
+  );
+  transition: box-shadow 0.067 ease-out;
 }
 
 /*
@@ -3430,11 +3482,17 @@ i.rux-icon::before {
 :root {
   --thumbSize: 1.25rem;
   --thumbSize: var(--controlOptionSize, 1.25rem);
-  --thumbShadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
-    0 3px 5px rgba(0, 0, 0, 0.2);
-  --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary), 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
-    0 3px 5px rgba(0, 0, 0, 0.2);
-  --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary), var(--thumbShadow);
+
+  --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+  --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
+    0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+  --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary),
+    0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
+    0 1px 1px rgba(0, 0, 0, 0.2);
+  --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary),
+    0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
+    0 1px 1px rgba(0, 0, 0, 0.2);
 
   --trackHeight: 2px;
   --trackCursor: pointer;
@@ -3557,8 +3615,8 @@ input[type="range"]:focus {
   background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
   cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
-    0 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 
   outline: none !important;
@@ -3587,8 +3645,8 @@ input:-moz-focusring {
   background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
   cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
-    0 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 }
 
@@ -3611,8 +3669,9 @@ input:-moz-focusring {
   border-color: var(--colorSecondary);
   border-color: var(--colorSecondary);
   background-color: #fff;
-  box-shadow: inset 0 0 0 4px var(--colorPrimary), 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
-    0 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 4px var(--colorPrimary),
+    0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
+    0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: var(--thumbShadowActive);
 }
 
@@ -3622,7 +3681,181 @@ input:-moz-focusring {
 .satcom-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
   background-color: rgb(58, 129, 191);
   background-color: var(--sliderHoverThumbBackgroundColor, rgb(58, 129, 191));
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
+    0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--thumbShadowHover);
 }
+
+/*
+
+NOTE: This is an experiment in rendering status indicators in pure CSS, time ran out so SVG is the current approved shipping version in 3.0
+Ideally this will supplant SVG in a near future release.
+
+.rux-status-indicator-a {
+  font-size: 1rem;
+
+  line-height: 1;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+
+  height: 16px;
+  width: 16px;
+
+  margin: 2px;
+  outline: 1px solid rgba(127, 127, 127, 0.5);
+}
+
+.rux-status-indicator-a::after,
+.rux-status-indicator-a::before .satcom-status::before {
+  content: "";
+  display: inline-block;
+
+  height: 14px;
+  width: 14px;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.rux-status-indicator-a {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.rux-status-indicator-a::after {
+  position: absolute;
+}
+
+.rux-status-indicator-a.rux-status--off::before {
+  background-color: var(--colorOff);
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--standby::before {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    transparent,
+    transparent 3px,
+    var(--colorStandby) 3px,
+    var(--colorStandby) 100%
+  );
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--normal::before {
+  background-color: var(--colorNormal);
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--caution::before {
+  background-color: var(--colorCaution);
+  height: 9px;
+  width: 12px;
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--serious::before {
+  background-color: var(--colorSerious);
+  height: 11px;
+  width: 11px;
+  transform: rotate(45deg);
+  border: 1px solid var(--wcagCompliance, transparent);
+}
+
+.rux-status-indicator-a.rux-status--critical::before {
+  width: 0;
+  height: 0;
+  z-index: 1;
+  border-style: solid;
+  border-width: 11px 6px 0 6px;
+  border-color: var(--colorCritical) transparent transparent transparent;
+}
+
+.rux-status-indicator-a.rux-status--critical::after {
+  width: 0;
+  height: 0;
+  z-index: 0;
+
+  border-style: solid;
+  border-width: 13.9px 8px 0 8px;
+  border-color: var(--criticalBorder) transparent transparent transparent;
+}
+
+.rux-status--caution .rux-advanced-status__icon-a::before {
+  background-color: var(--colorCaution);
+  height: 9px;
+  width: 9px;
+  margin-bottom: 2px;
+}
+.rux-status--serious .rux-advanced-status__icon-a::before {
+  background-color: var(--colorSerious);
+  height: 9px;
+  width: 9px;
+  
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.rux-advanced-status__icon-a::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+
+  top: 3px;
+  left: -4px;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.rux-status--off .rux-advanced-status__icon-a::before {
+  background-color: var(--colorOff);
+  height: 5px;
+  width: 5px;
+}
+
+.rux-status--standby .rux-advanced-status__icon-a::before {
+  border: 2px solid var(--colorStandby);
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  margin-bottom: 1px;
+}
+
+.rux-status--normal .rux-advanced-status__icon-a::before {
+  background-color: var(--colorNormal);
+
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  margin-bottom: 1px;
+}
+
+.rux-status--critical .rux-advanced-status__icon-a::before {
+  width: 0;
+  height: 0;
+
+  border-style: solid;
+  border-width: 11px 6px 0 6px;
+  border-color: var(--colorCritical) transparent transparent transparent;
+  margin-bottom: 0;
+}
+
+
+*/
 
 /*
 **
@@ -3634,7 +3867,7 @@ input:-moz-focusring {
 **	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
 **  - Embeded SVG graphics
 */
-.rux-status-indicator-a,
+
 .rux-status-indicator,
 .rux-status,
 .satcom-status {
@@ -3653,8 +3886,6 @@ input:-moz-focusring {
 }
 
 /* Icon */
-.rux-status-indicator-a::after,
-.rux-status-indicator-a::before,
 .rux-status-indicator::before,
 .rux-status::before,
 .satcom-status::before {
@@ -3666,147 +3897,32 @@ input:-moz-focusring {
 
   background-repeat: no-repeat;
   background-position: 0 0;
-}
-
-.rux-status-indicator-a {
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-align-items: center;
-
-          align-items: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-}
-
-.rux-status-indicator-a::after {
-  position: absolute;
-}
-
-.rux-status-indicator-a.rux-status--off::before {
-  background-color: var(--colorOff);
-  background-color: var(--colorOff);
-  height: 7px;
-  width: 7px;
-  border-radius: 50%;
-  border: 1px solid transparent;
-  border: 1px solid var(--wcagCompliance, transparent);
-}
-
-.rux-status-indicator-a.rux-status--standby::before {
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-
-  background: radial-gradient(
-    transparent,
-    transparent 3px,
-    var(--colorStandby) 3px,
-    var(--colorStandby) 100%
-  );
-
-  background: radial-gradient(
-    transparent,
-    transparent 3px,
-    var(--colorStandby) 3px,
-    var(--colorStandby) 100%
-  );
-  border: 1px solid transparent;
-  border: 1px solid var(--wcagCompliance, transparent);
-}
-
-.rux-status-indicator-a.rux-status--normal::before {
-  background-color: var(--colorNormal);
-  background-color: var(--colorNormal);
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  border: 1px solid transparent;
-  border: 1px solid var(--wcagCompliance, transparent);
-}
-
-.rux-status-indicator-a.rux-status--caution::before {
-  background-color: var(--colorCaution);
-  background-color: var(--colorCaution);
-  height: 9px;
-  width: 12px;
-  border: 1px solid transparent;
-  border: 1px solid var(--wcagCompliance, transparent);
-}
-
-.rux-status-indicator-a.rux-status--serious::before {
-  background-color: var(--colorSerious);
-  background-color: var(--colorSerious);
-  height: 11px;
-  width: 11px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  border: 1px solid transparent;
-  border: 1px solid var(--wcagCompliance, transparent);
-}
-
-.rux-status-indicator-a.rux-status--critical::before {
-  width: 0;
-  height: 0;
-  z-index: 1;
-  border-style: solid;
-  border-width: 11px 6px 0 6px;
-  border-color: var(--colorCritical) transparent transparent transparent;
-  border-color: var(--colorCritical) transparent transparent transparent;
-}
-
-.rux-status-indicator-a.rux-status--critical::after {
-  width: 0;
-  height: 0;
-  z-index: 0;
-
-  border-style: solid;
-  border-width: 13.9px 8px 0 8px;
-  border-color: var(--criticalBorder) transparent transparent transparent;
-  border-color: var(--criticalBorder) transparent transparent transparent;
+  background-size: cover;
 }
 
 /* Advanced Status */
-.rux-advanced-status__icon-a::before {
-  content: "";
-  position: absolute;
-  height: 15px;
-  width: 15px;
-
-  top: 3px;
-  left: -4px;
-
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
 
 /* Specific Status Iconography */
 .rux-status-indicator.rux-status--off::before,
 .rux-status--off .rux-advanced-status__icon::before,
 .satcom-status-off::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Crect width='5' height='5' fill='%23C6CCD1' transform='translate(4 4)'/%3E%3C/svg%3E");
-}
-
-.rux-status--off .rux-advanced-status__icon-a::before {
-  background-color: var(--colorOff);
-  background-color: var(--colorOff);
-  height: 5px;
-  width: 5px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
+  background-image: var(
+    --statusOff,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
 }
 
 .rux-status-indicator.rux-status--standby::before,
 .rux-status--standby .rux-advanced-status__icon::before,
 .satcom-status-standby::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Ccircle cx='5' cy='5' r='5' stroke='%23A1DCFB' fill='none' stroke-width='2' transform='translate(1 1)'/%3E%3C/svg%3E");
-}
-
-.rux-status--standby .rux-advanced-status__icon-a::before {
-  border: 2px solid var(--colorStandby);
-  border: 2px solid var(--colorStandby);
-  height: 11px;
-  width: 11px;
-  border-radius: 50%;
-  margin-bottom: 1px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%231EDCFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
+  background-image: var(
+    --statusStandby,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%231EDCFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
 }
 
 .rux-status-indicator.rux-status--normal::before,
@@ -3814,33 +3930,25 @@ input:-moz-focusring {
 .rux-status--normal .rux-advanced-status__icon::before,
 .rux-status--ok .rux-advanced-status__icon::before,
 .satcom-status-ok::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Crect width='10' height='5' fill='%237ED321' transform='translate(1 4)'/%3E%3C/svg%3E");
-  background-position: 1px 1px;
-}
-
-.rux-status--normal .rux-advanced-status__icon-a::before {
-  background-color: var(--colorNormal);
-  background-color: var(--colorNormal);
-
-  height: 11px;
-  width: 11px;
-  border-radius: 50%;
-  margin-bottom: 1px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
+  background-image: var(
+    --statusNormal,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+  /* background-position: 1px 1px; */
 }
 
 .rux-status-indicator.rux-status--caution::before,
 .rux-status--caution .rux-advanced-status__icon::before,
 .satcom-status-caution::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Crect width='10' height='10' fill='%23F8E81C' transform='translate(1 1)'/%3E%3C/svg%3E");
-  background-position: 1px 1px;
-}
-
-.rux-status--caution .rux-advanced-status__icon-a::before {
-  background-color: var(--colorCaution);
-  background-color: var(--colorCaution);
-  height: 9px;
-  width: 9px;
-  margin-bottom: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
+  background-image: var(
+    --statusCaution,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+  /* background-position: 1px 1px; */
 }
 
 .rux-status-indicator.rux-status--serious::before,
@@ -3848,18 +3956,15 @@ input:-moz-focusring {
 .rux-status--serious .rux-advanced-status__icon::before,
 .rux-status--error .rux-advanced-status__icon::before,
 .satcom-status-error::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Ccircle cx='5.5' cy='5.5' r='5.5' fill='rgb(255, 176, 0)' transform='translate(1 1)'/%3E%3C/svg%3E");
-}
-
-.rux-status--serious .rux-advanced-status__icon-a::before {
-  background-color: var(--colorSerious);
-  background-color: var(--colorSerious);
-  height: 9px;
-  width: 9px;
-  /* border-radius: 50%; */
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
+  background-image: var(
+    --statusSerious,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+  margin-top: 1px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  margin-bottom: 2px;
 }
 
 .rux-status-indicator.rux-status--critical::before,
@@ -3868,19 +3973,15 @@ input:-moz-focusring {
 .rux-status--alert .rux-advanced-status__icon::before,
 .rux-status--emergency .rux-advanced-status__icon::before,
 .satcom-status-alert::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212px%22%20height%3D%2212px%22%20viewBox%3D%220%200%2012%2012%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%3Cg%20id%3D%22emergency%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23F72501%22%20d%3D%22M12%2012H0L6%200z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
-  background-position: 1px 0;
-}
-
-.rux-status--critical .rux-advanced-status__icon-a::before {
-  width: 0;
-  height: 0;
-
-  border-style: solid;
-  border-width: 11px 6px 0 6px;
-  border-color: var(--colorCritical) transparent transparent transparent;
-  border-color: var(--colorCritical) transparent transparent transparent;
-  margin-bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%20transform%3D%22matrix(1%200%200%20-1%200%2015.667)%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
+  background-image: var(
+    --statusCritical,
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%20transform%3D%22matrix(1%200%200%20-1%200%2015.667)%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  );
+  background-position: 0 -1px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 /* Specific Color */

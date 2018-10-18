@@ -74,7 +74,7 @@ export class RuxTimelineRegion extends PolymerElement {
         font-size: 0.875rem;
         top: 0;
         height: 100%;
-        background-color: var(--timelineRegionBackgroundColor, rgb(0, 90, 143));
+        background-color: var(--timelineRegionBackgroundColor, rgb(24, 38, 53));
         color: var(--timelineRegionTextColor, rgb(255,255,255));
         overflow: hidden;
       

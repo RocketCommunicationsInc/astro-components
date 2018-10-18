@@ -53,6 +53,7 @@ export class RuxTimelineTrack extends PolymerElement {
         position: relative;
       
         height: 100%;
+        
       }
       
       ol {

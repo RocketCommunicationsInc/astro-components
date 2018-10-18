@@ -507,6 +507,10 @@ ul {
   width: 50%;
 }
 
+rux-global-status-bar {
+  align-self: flex-end;
+}
+
 
 .rux-form li {
   margin-bottom: 1rem;
@@ -521,15 +525,16 @@ ul {
 
       <rux-tabs
         id="main">
+        <rux-tab id="t3" role="tab">Widgets</rux-tab>
         <rux-tab id="t1" role="tab">Elements</rux-tab>
         <rux-tab id="t2" role="tab">Components</rux-tab>
         <rux-tab id="t6" role="tab">Icons</rux-tab>
         <rux-tab id="t5" role="tab">Typography</rux-tab>
         <rux-tab id="t4" role="tab">Colors</rux-tab>        
-        <rux-tab id="t3" role="tab">Widgets</rux-tab>
+        
       </rux-tabs>
 
-      <rux-clock compact></rux-clock>
+      
 
       <ul class="astro-advanced-status-indicators">
         <dom-repeat id="astroAdvancedStatus" items="{{statusIndicators}}">

@@ -43,9 +43,9 @@ export class RuxSlider extends PolymerElement {
       <style>
       :root {
         --thumbSize: var(--controlOptionSize, 1.25rem);
-        --thumbShadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
-          0 3px 5px rgba(0, 0, 0, 0.2);
-        --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary), var(--thumbShadow);
+        --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+        --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+        --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary),0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.2);
 
         --trackHeight: 2px;
         --trackCursor: pointer;

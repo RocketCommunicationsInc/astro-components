@@ -46,8 +46,8 @@
   position: relative;
   margin-bottom: -12px;
   margin-left: -18px !important;
-  height: 12px;
-  width: 12px;
+  height: 16px;
+  width: 16px;
 }
 
 .rux-advanced-status__badge:empty {
