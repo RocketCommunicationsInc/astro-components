@@ -6,7 +6,11 @@ import { RuxClock } from "../rux-clock.js";
  */
 export class RuxClockSample extends PolymerElement {
   static get template() {
-    return html`<rux-clock aos=[[demoAOS]] los=[[demoLOS]]></rux-clock>`;
+    return html`
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <rux-clock aos=[[demoAOS]] los=[[demoLOS]]></rux-clock>
+      <rux-clock aos=[[demoAOS]] los=[[demoLOS]] compact></rux-clock>
+    </div>`;
   }
   static get properties() {
     return {
