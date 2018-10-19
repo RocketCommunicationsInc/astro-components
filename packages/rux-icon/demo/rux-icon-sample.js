@@ -1,5 +1,6 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import { RuxIcon } from "../rux-icon.js";
+
 /**
  * @polymer
  * @extends HTMLElement

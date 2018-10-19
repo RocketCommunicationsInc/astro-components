@@ -5,29 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-  <title>Astro Clock Component</title>
+  <title>Astro Clock Demo</title>
   <meta name="description" content="Sample clock component using the Astro Design System">
 
   <!-- Global Styles //-->
   <link rel="stylesheet" href="/public/css/astro.css">
   <style>
-    html {
-      box-sizing: border-box;
-    }
 
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: var(--fontFamily, "Open Sans", sans-serif);
-      color: var(--fontColor);
-      background: var(--backgroundColor);
-    }
 
   </style>
 
@@ -36,9 +20,12 @@
 
   <!-- Load Astro App //-->
   <script type="module" src="./rux-clock-sample.js"></script>
+
+  <script src="/public/demo/demo.js"></script>
+  <link rel="stylesheet" href="/public/demo/demo.css">
 </head>
 
-<body>
+<body class="dark-theme">
   <rux-clock-sample>
     <div style="display: flex; justify-content: center; align-content: center">
       <p>Sorry, this example requires a browser that supports Web Components.</p>

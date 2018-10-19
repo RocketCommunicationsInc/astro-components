@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-  <title>Astro Clock Component</title>
+  <title>Astro Log Demo</title>
   <meta name="description" content="Sample log component using the Astro Design System">
 
   <!-- Global Styles //-->
@@ -16,10 +16,17 @@
 
   <!-- Load Astro App //-->
   <script type="module" src="./rux-log-sample.js"></script>
+
+  <script src="/public/demo/demo.js"></script>
+  <link rel="stylesheet" href="/public/demo/demo.css">
 </head>
 
-<body>
-  <rux-log-sample></rux-log-sample>
+<body class="dark-theme">
+  <rux-log-sample>
+    <div style="display: flex; justify-content: center; align-content: center">
+      <p>Sorry, this example requires a browser that supports Web Components.</p>
+    </div>
+  </rux-log-sample>
 </body>
 
 </html>
