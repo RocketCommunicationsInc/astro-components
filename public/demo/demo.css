@@ -16,3 +16,13 @@ body {
   color: var(--fontColor);
   background: var(--backgroundColor);
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  width: 100%;
+  outline: 1px solid red;
+}

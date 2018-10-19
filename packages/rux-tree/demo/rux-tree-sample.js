@@ -11,8 +11,16 @@ export class RuxTreeSample extends PolymerElement {
         rux-tree {
           width: 300px;
         }
+
+        .container {
+          display: flex;
+          justify-content: center;
+        }
       </style>
-      <rux-tree data={{treeData}}></rux-tree>
+
+      <div class="container">
+        <rux-tree data={{treeData}}></rux-tree>
+      </div>
       
     `;
   }
