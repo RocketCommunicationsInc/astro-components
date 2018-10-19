@@ -1,12 +1,8 @@
 {
-  "extraDependencies": [
-    "public/fonts/*",
-    "public/css/*",
-    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js",
-    "node_modules/@webcomponents/webcomponentsjs/bundles/*",
-    "node_modules/@polymer/*",
-    "packages/**/*"
-  ],
+  "entrypoint": "index.html",
+  "shell": "src/astro-component-viewer.js",
+  "sources": ["packages/**/*"],
+  "extraDependencies": ["public/**/*"],
   "lint": {
     "rules": ["polymer-3"]
   },
