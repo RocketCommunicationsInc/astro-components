@@ -1,8 +1,8 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import "@polymer/polymer/lib/elements/dom-repeat.js";
 import { afterNextRender } from "@polymer/polymer/lib/utils/render-status.js";
-// import { RuxStatus } from "../rux-status/rux-status.js";
-// import { RuxIcon } from "../rux-icon/rux-icon.js";
+import { RuxStatus } from "../rux-status/rux-status.js";
+import { RuxIcon } from "../rux-icon/rux-icon.js";
 // import rux-status
 /**
  * @polymer

@@ -115,6 +115,7 @@ export class RuxStatus extends PolymerElement {
         margin-left: -18px !important;
         height: 16px;
         width: 16px;
+        background-repeat: no-repeat;
       }
       
       :host([status="off"]) .rux-advanced-status__icon::before {

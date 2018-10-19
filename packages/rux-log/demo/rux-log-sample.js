@@ -3,6 +3,7 @@ import {
   html
 } from "../../../node_modules/@polymer/polymer/polymer-element.js";
 import { RuxLog } from "../rux-log.js";
+import { RuxButton } from "../../rux-button/rux-button.js";
 /**
  * @polymer
  * @extends HTMLElement
