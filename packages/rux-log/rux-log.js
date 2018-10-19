@@ -70,7 +70,7 @@ export class RuxLog extends PolymerElement {
         justify-content: space-between;
       
         padding: 0.5rem;
-        background-color: var(--logHeaderBackgroundColor, rgb(20, 32, 44));
+        
       }
       
       .rux-log-header-title {
@@ -103,6 +103,7 @@ export class RuxLog extends PolymerElement {
       .rux-log__events {
         height: 100%;
         overflow-y: scroll;
+        background-color: var(--logHeaderBackgroundColor, rgb(20, 32, 44));
       }
       
       .log-event__timestamp {
