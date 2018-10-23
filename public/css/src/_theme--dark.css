@@ -1,7 +1,7 @@
 .dark-theme {
   /* 
     
-    Global Colors ulp
+    Global Colors
     ==========================================================================
 
   */
@@ -17,6 +17,13 @@
   /* Status Custom */
   --wcagCompliance: rgba(255, 255, 255, 0);
   --criticalBorder: var(--colorCritical, rgb(255, 56, 56));
+
+  --colorCritical: var(--statusDarkCritical, rgb(255, 42, 4));
+  --colorSerious: var(--statusDarkSerious, rgb(255, 175, 61));
+  --colorCaution: var(--statusDarkCaution, rgb(250, 216, 0));
+  --colorNormal: var(--statusDarkNormal, rgb(0, 226, 0));
+  --colorStandby: var(--statusDarkStandby, rgb(100, 217, 255));
+  --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
 
   /* 
     

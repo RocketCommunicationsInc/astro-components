@@ -52,6 +52,11 @@
   border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
 }
 
+.rux-pushbutton__button label,
+.satcom-pushbutton-button label {
+  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+}
+
 .rux-pushbutton__input:checked + .rux-pushbutton__button,
 .satcom-pushbutton-input:checked + .satcom-pushbutton-button {
   display: flex;

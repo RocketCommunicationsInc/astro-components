@@ -101,6 +101,7 @@
 /* Indeterminate */
 .rux-progress progress:indeterminate {
   -webkit-appearance: none;
+  -moz-appearance: none;
   box-sizing: border-box;
   position: relative;
 
@@ -120,6 +121,9 @@
   animation-duration: 1.367s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+
+  background-color: transparent;
+  border: none;
 }
 
 /* Removes the default animation from IE */

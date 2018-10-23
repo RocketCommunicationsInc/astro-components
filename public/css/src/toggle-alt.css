@@ -25,7 +25,7 @@
 
   /* height: 1.175rem; */
   /* width: 2.3875rem; */
-  height: 21px;
+  height: 22px;
   width: 42px;
 
   user-select: none;
@@ -38,7 +38,9 @@
 
 .rux-toggle--alt__button {
   display: flex;
-  justify-content: center;
+  /* justify-content: center;
+  align-content: center; */
+  align-items: center;
 }
 
 .rux-toggle--alt__button::before {

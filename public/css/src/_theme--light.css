@@ -5,7 +5,7 @@
     ==========================================================================
 
   */
-  --backgroundColor: var(--colorTertiaryLighten3, rgb(243, 245, 248));
+  --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
   --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
   --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
@@ -16,6 +16,13 @@
 
   --wcagCompliance: rgba(0, 0, 0, 0.5);
   --criticalBorder: #7f1c1c;
+
+  --colorCritical: var(--statusLightCritical, rgb(255, 42, 4));
+  --colorSerious: var(--statusLightSerious, rgb(255, 175, 61));
+  --colorCaution: var(--statusLightCaution, rgb(250, 216, 0));
+  --colorNormal: var(--statusLightNormal, rgb(0, 226, 0));
+  --colorStandby: var(--statusLightStandby, rgb(100, 217, 255));
+  --colorOff: var(--statusLightOff, rgb(142, 154, 163));
   /* 
     
     Button Colors 
@@ -101,7 +108,7 @@
     rgb(255, 255, 255)
   );
   --progressDeterminateTrackBorderColor: var(
-    --colorTertiary,
+    --colorQuaternary,
     rgb(207, 214, 227)
   );
 
@@ -115,7 +122,7 @@
   --sliderThumbBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
   --sliderThumbBorderColor: var(--colorWhite, rgb(255, 255, 255));
 
-  --sliderTrackBorderColor: var(--colorTertiary, rgb(207, 214, 227));
+  --sliderTrackBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
   --sliderTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
 
   --sliderSelectedThumb--sliderSelectedTrackBackgroundColor: var(
@@ -220,7 +227,7 @@
 
   --clockTextColor: var(--colorBlack, rgb(0, 0, 0));
   --clockBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
+  --clockBorderColor: var(--colorQuaternary, rgb(39, 86, 128));
 
   /* 
     
@@ -240,10 +247,10 @@
   */
   --logTextColor: var(--colorBlack);
   --logBackgroundColor: var(--colorWhite);
-  --logBorderColor: var(--colorTertiaryLighten2);
+  --logBorderColor: var(--colorQuaternaryLighten2);
 
   --logHeaderTextColor: var(--colorBlack);
-  --logHeaderBackgroundColor: var(--colorTertiary);
+  --logHeaderBackgroundColor: var(--colorQuaternary);
 
   --logFilterBackgroundColor: var(--colorStandbyLighten3);
   --logFilterTextColor: var(--colorStandbyDarken2);
@@ -256,8 +263,8 @@
   */
   --treeTextColor: var(--colorBlack, rgb(0, 0, 0));
   --treeBackgroundColor: var(--colorWhite);
-  --treeBorderColor: var(--colorTertiary);
-  --treeItemBorderColor: var(--colorTertiary);
+  --treeBorderColor: var(--colorQuaternary);
+  --treeItemBorderColor: var(--colorQuaternary);
 
   --treeAccentColor: var(--colorSecondary);
 
@@ -276,7 +283,7 @@
   */
   --tabTextColor: var(--colorPrimary, rgb(0, 90, 143));
   --tabBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --tabBorderColor: var(--colorTertiaryLighten1, rgb(219, 224, 234));
+  --tabBorderColor: var(--colorQuaternaryLighten1, rgb(219, 224, 234));
 
   --tabHoverTextColor: var(--colorSecondary, rgb(77, 172, 255));
 
@@ -289,9 +296,9 @@
     ==========================================================================
 
   */
-  --cardBackgroundColor: var(--colorTertiaryLighten2);
+  --cardBackgroundColor: var(--colorQuaternaryLighten2);
 
-  --cardHeaderBackgroundColor: var(--colorTertiaryLighten1);
+  --cardHeaderBackgroundColor: var(--colorQuaternaryLighten1);
   --cardHeaderTextColor: var(--colorWhite, #fff);
 
   /* 
@@ -302,7 +309,7 @@
   */
 
   --inputBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --inputBorderColor: var(--colorTertiaryDarken1, rgb(255, 255, 255));
+  --inputBorderColor: var(--colorQuaternaryDarken1, rgb(255, 255, 255));
   --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
 
   --inputFocusBorderColor: var(--colorSecondary);

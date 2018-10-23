@@ -6,41 +6,31 @@
   --colorPrimary: rgb(0, 90, 143);
   --colorSecondary: rgb(77, 172, 255);
   --colorTertiary: rgb(40, 63, 88);
+  --colorQuaternary: rgb(207, 214, 227);
 
-  --colorCritical: rgb(255, 56, 56);
-  --colorSerious: rgb(255, 179, 0);
-  --colorCaution: rgb(252, 232, 58);
-  --colorNormal: rgb(86, 240, 0);
-  --colorStandby: rgb(45, 204, 255);
-  --colorOff: rgb(158, 167, 173);
+  --statusDarkCritical: rgb(255, 56, 56);
+  --statusDarkSerious: rgb(255, 179, 0);
+  --statusDarkCaution: rgb(252, 232, 58);
+  --statusDarkNormal: rgb(86, 240, 0);
+  --statusDarkStandby: rgb(45, 204, 255);
+  --statusDarkOff: rgb(158, 167, 173);
+
+  --statusLightCritical: rgb(255, 42, 4);
+  --statusLightSerious: rgb(255, 175, 61);
+  --statusLightCaution: rgb(250, 216, 0);
+  --statusLightNormal: rgb(0, 226, 0);
+  --statusLightStandby: rgb(100, 217, 255);
+  --statusLightOff: rgb(142, 154, 163);
 
   --colorCivilian1: rgb(25, 199, 202);
   --colorCivilian2: rgb(120, 112, 208);
   --colorCivilian3: rgb(160, 13, 190);
   --colorCivilian4: rgb(216, 83, 30);
-}
-
-.dark-theme {
-  --colorBlack: rgb(0, 0, 0);
-  --colorWhite: rgb(255, 255, 255);
-  --colorGray: rgb(204, 204, 204);
-
-  --colorPrimary: rgb(0, 90, 143);
-  --colorSecondary: rgb(77, 172, 255);
-  --colorTertiary: rgb(40, 63, 88);
-
-  --colorCritical: rgb(255, 56, 56);
-  --colorSerious: rgb(255, 179, 0);
-  --colorCaution: rgb(252, 232, 58);
-  --colorNormal: rgb(86, 240, 0);
-  --colorStandby: rgb(45, 204, 255);
-  --colorOff: rgb(158, 167, 173);
 
   --colorPrimaryLighten1: rgb(51, 123, 165);
   --colorPrimaryLighten2: rgb(102, 156, 188);
   --colorPrimaryLighten3: rgb(153, 189, 210);
   --colorPrimaryLighten4: rgb(204, 222, 233);
-
   --colorPrimaryDarken1: rgb(0, 72, 114);
   --colorPrimaryDarken2: rgb(0, 54, 86);
   --colorPrimaryDarken3: rgb(0, 36, 57);
@@ -50,7 +40,6 @@
   --colorSecondaryLighten2: rgb(148, 205, 255);
   --colorSecondaryLighten3: rgb(184, 222, 255);
   --colorSecondaryLighten4: rgb(219, 238, 255);
-
   --colorSecondaryDarken1: rgb(62, 138, 204);
   --colorSecondaryDarken2: rgb(46, 103, 153);
   --colorSecondaryDarken3: rgb(31, 69, 102);
@@ -60,87 +49,143 @@
   --colorTertiaryLighten2: rgb(126, 140, 155);
   --colorTertiaryLighten3: rgb(169, 178, 188);
   --colorTertiaryLighten4: rgb(212, 217, 222);
-
   --colorTertiaryDarken1: rgb(32, 50, 70);
   --colorTertiaryDarken2: rgb(24, 38, 53);
   --colorTertiaryDarken3: rgb(16, 25, 35);
   --colorTertiaryDarken4: rgb(8, 13, 18);
 
+  --colorQuaternaryLighten1: rgb(217, 222, 233);
+  --colorQuaternaryLighten2: rgb(226, 230, 238);
+  --colorQuaternaryLighten3: rgb(236, 239, 244);
+  --colorQuaternaryLighten4: rgb(245, 247, 249);
+  --colorQuaternaryDarken1: rgb(166, 171, 182);
+  --colorQuaternaryDarken2: rgb(124, 128, 136);
+  --colorQuaternaryDarken3: rgb(83, 86, 91);
+  --colorQuaternaryDarken4: rgb(41, 43, 45);
+
   --colorGrayLighten1: rgb(214, 214, 214);
   --colorGrayLighten2: rgb(224, 224, 224);
   --colorGrayLighten3: rgb(235, 235, 235);
   --colorGrayLighten4: rgb(245, 245, 245);
-
   --colorGrayDarken1: rgb(163, 163, 163);
   --colorGrayDarken2: rgb(122, 122, 122);
   --colorGrayDarken3: rgb(82, 82, 82);
   --colorGrayDarken4: rgb(41, 41, 41);
+
+  --colorCriticalLighten1: rgb(255, 96, 96);
+  --colorCriticalLighten2: rgb(255, 136, 136);
+  --colorCriticalLighten3: rgb(255, 175, 175);
+  --colorCriticalLighten4: rgb(255, 215, 215);
+  --colorCriticalDarken1: rgb(204, 45, 45);
+  --colorCriticalDarken2: rgb(153, 34, 34);
+  --colorCriticalDarken3: rgb(102, 22, 22);
+  --colorCriticalDarken4: rgb(51, 11, 11);
+
+  --colorSeriousLighten1: rgb(255, 194, 51);
+  --colorSeriousLighten2: rgb(255, 209, 102);
+  --colorSeriousLighten3: rgb(255, 225, 153);
+  --colorSeriousLighten4: rgb(255, 240, 204);
+  --colorSeriousDarken1: rgb(204, 143, 0);
+  --colorSeriousDarken2: rgb(153, 107, 0);
+  --colorSeriousDarken3: rgb(102, 72, 0);
+  --colorSeriousDarken4: rgb(51, 36, 0);
+
+  --colorCautionLighten1: rgb(253, 237, 97);
+  --colorCautionLighten2: rgb(253, 241, 137);
+  --colorCautionLighten3: rgb(254, 246, 176);
+  --colorCautionLighten4: rgb(254, 250, 216);
+  --colorCautionDarken1: rgb(202, 186, 46);
+  --colorCautionDarken2: rgb(151, 139, 35);
+  --colorCautionDarken3: rgb(101, 93, 23);
+  --colorCautionDarken4: rgb(50, 46, 12);
+
+  --colorNormalLighten1: rgb(120, 243, 51);
+  --colorNormalLighten2: rgb(154, 246, 102);
+  --colorNormalLighten3: rgb(187, 249, 153);
+  --colorNormalLighten4: rgb(221, 252, 204);
+  --colorNormalDarken1: rgb(69, 192, 0);
+  --colorNormalDarken2: rgb(52, 144, 0);
+  --colorNormalDarken3: rgb(34, 96, 0);
+  --colorNormalDarken4: rgb(17, 48, 0);
+
+  --colorStandbyLighten1: rgb(87, 214, 255);
+  --colorStandbyLighten2: rgb(129, 224, 255);
+  --colorStandbyLighten3: rgb(171, 235, 255);
+  --colorStandbyLighten4: rgb(213, 245, 255);
+  --colorStandbyDarken1: rgb(36, 163, 204);
+  --colorStandbyDarken2: rgb(27, 122, 153);
+  --colorStandbyDarken3: rgb(18, 82, 102);
+  --colorStandbyDarken4: rgb(9, 41, 51);
+
+  --colorOffLighten1: rgb(177, 185, 189);
+  --colorOffLighten2: rgb(197, 202, 206);
+  --colorOffLighten3: rgb(216, 220, 222);
+  --colorOffLighten4: rgb(236, 237, 239);
+  --colorOffDarken1: rgb(126, 134, 138);
+  --colorOffDarken2: rgb(95, 100, 104);
+  --colorOffDarken3: rgb(63, 67, 69);
+  --colorOffDarken4: rgb(32, 33, 35);
 }
 
-:root {
-  --colorBlack: rgb(0, 0, 0);
-  --colorWhite: rgb(255, 255, 255);
-  --colorGray: rgb(204, 204, 204);
+/* 
+.dark-theme {
+  
 
-  --colorPrimary: rgb(0, 90, 143);
-  --colorSecondary: rgb(77, 172, 255);
-  --colorTertiary: rgb(207, 214, 227);
+  
 
-  --colorCritical: rgb(255, 42, 4);
-  --colorSerious: rgb(255, 175, 61);
-  --colorCaution: rgb(250, 216, 0);
-  --colorNormal: rgb(0, 226, 0);
-  --colorStandby: rgb(100, 217, 255);
-  --colorOff: rgb(142, 154, 163);
+  --colorCritical: var(--colorCritical);
+  --colorSerious: var(--colorSerious);
+  --colorCaution: var(--colorCaution);
+  --colorNormal: var(--colorNormal);
+  --colorStandby: var(--colorStandby);
+  --colorOff: var(--colorOff);
 
-  --colorCivilian1: rgb(25, 199, 202);
-  --colorCivilian2: rgb(120, 112, 208);
-  --colorCivilian3: rgb(160, 13, 190);
-  --colorCivilian4: rgb(216, 83, 30);
-}
-.light-theme {
-  --colorBlack: rgb(0, 0, 0);
-  --colorWhite: rgb(255, 255, 255);
-  --colorGray: rgb(204, 204, 204);
+  --colorPrimaryLighten1: color(var(--colorPrimary) tint(20%));
+  --colorPrimaryLighten2: color(var(--colorPrimary) tint(40%));
+  --colorPrimaryLighten3: color(var(--colorPrimary) tint(60%));
+  --colorPrimaryLighten4: color(var(--colorPrimary) tint(80%));
+  --colorPrimaryDarken1: color(var(--colorPrimary) shade(20%));
+  --colorPrimaryDarken2: color(var(--colorPrimary) shade(40%));
+  --colorPrimaryDarken3: color(var(--colorPrimary) shade(60%));
+  --colorPrimaryDarken4: color(var(--colorPrimary) shade(80%));
 
-  --colorPrimary: rgb(0, 90, 143);
-  --colorSecondary: rgb(77, 172, 255);
-  --colorTertiary: rgb(207, 214, 227);
+  --colorSecondaryLighten1: color(var(--colorSecondary) tint(20%));
+  --colorSecondaryLighten2: color(var(--colorSecondary) tint(40%));
+  --colorSecondaryLighten3: color(var(--colorSecondary) tint(60%));
+  --colorSecondaryLighten4: color(var(--colorSecondary) tint(80%));
+  --colorSecondaryDarken1: color(var(--colorSecondary) shade(20%));
+  --colorSecondaryDarken2: color(var(--colorSecondary) shade(40%));
+  --colorSecondaryDarken3: color(var(--colorSecondary) shade(60%));
+  --colorSecondaryDarken4: color(var(--colorSecondary) shade(80%));
 
-  --colorCritical: rgb(255, 42, 4);
-  --colorSerious: rgb(255, 175, 61);
-  --colorCaution: rgb(250, 216, 0);
-  --colorNormal: rgb(0, 226, 0);
-  --colorStandby: rgb(100, 217, 255);
-  --colorOff: rgb(142, 154, 163);
+  --colorTertiaryLighten1: color(var(--colorTertiary) tint(20%));
+  --colorTertiaryLighten2: color(var(--colorTertiary) tint(40%));
+  --colorTertiaryLighten3: color(var(--colorTertiary) tint(60%));
+  --colorTertiaryLighten4: color(var(--colorTertiary) tint(80%));
+  --colorTertiaryDarken1: color(var(--colorTertiary) shade(20%));
+  --colorTertiaryDarken2: color(var(--colorTertiary) shade(40%));
+  --colorTertiaryDarken3: color(var(--colorTertiary) shade(60%));
+  --colorTertiaryDarken4: color(var(--colorTertiary) shade(80%));
 
-  --colorPrimaryLighten1: rgb(51, 123, 165);
-  --colorPrimaryLighten2: rgb(102, 156, 188);
-  --colorPrimaryLighten3: rgb(153, 189, 210);
-  --colorPrimaryLighten4: rgb(204, 222, 233);
-  --colorPrimaryDarken1: rgb(0, 72, 114);
-  --colorPrimaryDarken2: rgb(0, 54, 86);
-  --colorPrimaryDarken3: rgb(0, 36, 57);
-  --colorPrimaryDarken4: rgb(0, 18, 29);
+  --colorQuaternaryLighten1: color(var(--colorQuaternary) tint(20%));
+  --colorQuaternaryLighten2: color(var(--colorQuaternary) tint(40%));
+  --colorQuaternaryLighten3: color(var(--colorQuaternary) tint(60%));
+  --colorQuaternaryLighten4: color(var(--colorQuaternary) tint(80%));
+  --colorQuaternaryDarken1: color(var(--colorQuaternary) shade(20%));
+  --colorQuaternaryDarken2: color(var(--colorQuaternary) shade(40%));
+  --colorQuaternaryDarken3: color(var(--colorQuaternary) shade(60%));
+  --colorQuaternaryDarken4: color(var(--colorQuaternary) shade(80%));
 
-  --colorSecondaryLighten1: rgb(113, 189, 255);
-  --colorSecondaryLighten2: rgb(148, 205, 255);
-  --colorSecondaryLighten3: rgb(184, 222, 255);
-  --colorSecondaryLighten4: rgb(219, 238, 255);
-  --colorSecondaryDarken1: rgb(62, 138, 204);
-  --colorSecondaryDarken2: rgb(46, 103, 153);
-  --colorSecondaryDarken3: rgb(31, 69, 102);
-  --colorSecondaryDarken4: rgb(15, 34, 51);
+  --colorGrayLighten1: color(var(--colorGray) tint(20%));
+  --colorGrayLighten2: color(var(--colorGray) tint(40%));
+  --colorGrayLighten3: color(var(--colorGray) tint(60%));
+  --colorGrayLighten4: color(var(--colorGray) tint(80%));
 
-  --colorTertiaryLighten1: rgb(217, 222, 233);
-  --colorTertiaryLighten2: rgb(226, 230, 238);
-  --colorTertiaryLighten3: rgb(236, 239, 244);
-  --colorTertiaryLighten4: rgb(245, 247, 249);
-  --colorTertiaryDarken1: rgb(166, 171, 182);
-  --colorTertiaryDarken2: rgb(124, 128, 136);
-  --colorTertiaryDarken3: rgb(83, 86, 91);
-  --colorTertiaryDarken4: rgb(41, 43, 45);
-}
+  --colorGrayDarken1: color(var(--colorGray) shade(20%));
+  --colorGrayDarken2: color(var(--colorGray) shade(40%));
+  --colorGrayDarken3: color(var(--colorGray) shade(60%));
+  --colorGrayDarken4: color(var(--colorGray) shade(80%));
+} */
 
 @font-face {
   font-family: "Open Sans";
@@ -221,7 +266,7 @@ label {
 .dark-theme {
   /* 
     
-    Global Colors ulp
+    Global Colors
     ==========================================================================
 
   */
@@ -246,6 +291,20 @@ label {
   --wcagCompliance: rgba(255, 255, 255, 0);
   --criticalBorder: rgb(255, 56, 56);
   --criticalBorder: var(--colorCritical, rgb(255, 56, 56));
+
+  --colorCritical: rgb(255, 42, 4);
+
+  --colorCritical: var(--statusDarkCritical, rgb(255, 42, 4));
+  --colorSerious: rgb(255, 175, 61);
+  --colorSerious: var(--statusDarkSerious, rgb(255, 175, 61));
+  --colorCaution: rgb(250, 216, 0);
+  --colorCaution: var(--statusDarkCaution, rgb(250, 216, 0));
+  --colorNormal: rgb(0, 226, 0);
+  --colorNormal: var(--statusDarkNormal, rgb(0, 226, 0));
+  --colorStandby: rgb(100, 217, 255);
+  --colorStandby: var(--statusDarkStandby, rgb(100, 217, 255));
+  --colorOff: rgb(142, 154, 163);
+  --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
 
   /* 
     
@@ -658,7 +717,7 @@ li.dark-theme {
 
   */
   --backgroundColor: rgb(243, 245, 248);
-  --backgroundColor: var(--colorTertiaryLighten3, rgb(243, 245, 248));
+  --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
   --fontColor: rgb(0, 0, 0);
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
   --fontLowContrastColor: rgb(204, 204, 204);
@@ -676,6 +735,20 @@ li.dark-theme {
 
   --wcagCompliance: rgba(0, 0, 0, 0.5);
   --criticalBorder: #7f1c1c;
+
+  --colorCritical: rgb(255, 42, 4);
+
+  --colorCritical: var(--statusLightCritical, rgb(255, 42, 4));
+  --colorSerious: rgb(255, 175, 61);
+  --colorSerious: var(--statusLightSerious, rgb(255, 175, 61));
+  --colorCaution: rgb(250, 216, 0);
+  --colorCaution: var(--statusLightCaution, rgb(250, 216, 0));
+  --colorNormal: rgb(0, 226, 0);
+  --colorNormal: var(--statusLightNormal, rgb(0, 226, 0));
+  --colorStandby: rgb(100, 217, 255);
+  --colorStandby: var(--statusLightStandby, rgb(100, 217, 255));
+  --colorOff: rgb(142, 154, 163);
+  --colorOff: var(--statusLightOff, rgb(142, 154, 163));
   /* 
     
     Button Colors 
@@ -795,7 +868,7 @@ li.dark-theme {
   --progressDeterminateTrackBorderColor: rgb(207, 214, 227)
   ;
   --progressDeterminateTrackBorderColor: var(
-    --colorTertiary,
+    --colorQuaternary,
     rgb(207, 214, 227)
   );
 
@@ -813,7 +886,7 @@ li.dark-theme {
 
   --sliderTrackBorderColor: rgb(207, 214, 227);
 
-  --sliderTrackBorderColor: var(--colorTertiary, rgb(207, 214, 227));
+  --sliderTrackBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
   --sliderTrackBackgroundColor: rgb(255, 255, 255);
   --sliderTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
 
@@ -963,7 +1036,7 @@ li.dark-theme {
   --clockBackgroundColor: rgb(255, 255, 255);
   --clockBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --clockBorderColor: rgb(39, 86, 128);
-  --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
+  --clockBorderColor: var(--colorQuaternary, rgb(39, 86, 128));
 
   /* 
     
@@ -989,14 +1062,14 @@ li.dark-theme {
   --logTextColor: var(--colorBlack);
   --logBackgroundColor: var(--colorWhite);
   --logBackgroundColor: var(--colorWhite);
-  --logBorderColor: var(--colorTertiaryLighten2);
-  --logBorderColor: var(--colorTertiaryLighten2);
+  --logBorderColor: var(--colorQuaternaryLighten2);
+  --logBorderColor: var(--colorQuaternaryLighten2);
 
   --logHeaderTextColor: var(--colorBlack);
 
   --logHeaderTextColor: var(--colorBlack);
-  --logHeaderBackgroundColor: var(--colorTertiary);
-  --logHeaderBackgroundColor: var(--colorTertiary);
+  --logHeaderBackgroundColor: var(--colorQuaternary);
+  --logHeaderBackgroundColor: var(--colorQuaternary);
 
   --logFilterBackgroundColor: var(--colorStandbyLighten3);
 
@@ -1014,10 +1087,10 @@ li.dark-theme {
   --treeTextColor: var(--colorBlack, rgb(0, 0, 0));
   --treeBackgroundColor: var(--colorWhite);
   --treeBackgroundColor: var(--colorWhite);
-  --treeBorderColor: var(--colorTertiary);
-  --treeBorderColor: var(--colorTertiary);
-  --treeItemBorderColor: var(--colorTertiary);
-  --treeItemBorderColor: var(--colorTertiary);
+  --treeBorderColor: var(--colorQuaternary);
+  --treeBorderColor: var(--colorQuaternary);
+  --treeItemBorderColor: var(--colorQuaternary);
+  --treeItemBorderColor: var(--colorQuaternary);
 
   --treeAccentColor: var(--colorSecondary);
 
@@ -1046,7 +1119,7 @@ li.dark-theme {
   --tabBackgroundColor: rgb(255, 255, 255);
   --tabBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --tabBorderColor: rgb(219, 224, 234);
-  --tabBorderColor: var(--colorTertiaryLighten1, rgb(219, 224, 234));
+  --tabBorderColor: var(--colorQuaternaryLighten1, rgb(219, 224, 234));
 
   --tabHoverTextColor: rgb(77, 172, 255);
 
@@ -1064,12 +1137,12 @@ li.dark-theme {
     ==========================================================================
 
   */
-  --cardBackgroundColor: var(--colorTertiaryLighten2);
-  --cardBackgroundColor: var(--colorTertiaryLighten2);
+  --cardBackgroundColor: var(--colorQuaternaryLighten2);
+  --cardBackgroundColor: var(--colorQuaternaryLighten2);
 
-  --cardHeaderBackgroundColor: var(--colorTertiaryLighten1);
+  --cardHeaderBackgroundColor: var(--colorQuaternaryLighten1);
 
-  --cardHeaderBackgroundColor: var(--colorTertiaryLighten1);
+  --cardHeaderBackgroundColor: var(--colorQuaternaryLighten1);
   --cardHeaderTextColor: #fff;
   --cardHeaderTextColor: var(--colorWhite, #fff);
 
@@ -1084,7 +1157,7 @@ li.dark-theme {
 
   --inputBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --inputBorderColor: rgb(255, 255, 255);
-  --inputBorderColor: var(--colorTertiaryDarken1, rgb(255, 255, 255));
+  --inputBorderColor: var(--colorQuaternaryDarken1, rgb(255, 255, 255));
   --inputTextColor: rgb(14, 11, 11);
   --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
 
@@ -1395,109 +1468,6 @@ dd {
 svg path,
 svg circle {
   fill: inherit;
-}
-
-/*
-** Default Settings for Advanced Status
-** -----------------------------------------------------------------------
-** Basic margins and default sizes
-**
-*/
-.satcom-advanced-status {
-  display: inline-block;
-}
-
-.satcom-advanced-status svg {
-  height: 2.8em;
-  width: 2.8em;
-  display: block;
-}
-
-/*
-** Badges (Optional)
-** -----------------------------------------------------------------------
-** Small bugs in the lower right corner of a status icon indicating a count
-**
-** NOTE:	An assumption made here about is badges will always be included
-**			in the markup regardless of content, hence the style only being
-**			applied in instances where the badge element has content
-*/
-.satcom-advanced-status .badge:not(:empty) {
-  position: absolute;
-  left: 80%;
-  bottom: 2.25em;
-  border-radius: 3px;
-  width: auto;
-  padding: 0.1em 0.25em 0.1em;
-  font-size: 0.9em;
-  text-align: center;
-
-  color: #fff;
-  background-color: #000;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-}
-
-/*
-** Labels (Optional)
-** -----------------------------------------------------------------------
-** 
-**
-** NOTE:	Like badges the assumption here is labels will always be 
-**			included in the markup, but may not have content, so these
-**			style definitions will only apply to label elements with content
-*/
-.satcom-advanced-status .label:not(:empty) {
-  font-family: "Open Sans";
-  font-family: var(--fontFamily, "Open Sans");
-  text-align: center;
-  color: #fff;
-  line-height: 1.2;
-  margin-top: 0.5em;
-}
-
-/*
-** Sub Labels (Optional)
-** -----------------------------------------------------------------------
-** Mostly a graphical differentiation of supporting data for the primary
-** label. E.g., Mhz or dBm
-**
-** NOTE:	Like badges the assumption here is labels will always be 
-**			included in the markup, but may not have content, so these
-**			style definitions will only apply to label elements with content
-*/
-.satcom-advanced-status .sub-label:not(:empty) {
-  font-family: "Open Sans";
-  font-family: var(--fontFamily, "Open Sans");
-  font-size: 0.65em;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/*
-** Status
-** -----------------------------------------------------------------------
-** Defines the state of the icon both in color and additional status bug
-** for color impaired users. Status bugs are the same as those used in the
-** standard
-** 
-**
-*/
-
-/* DEFAULT SETTINGS/OFF  */
-.satcom-advanced-status,
-.satcom-advanced-status-off use {
-  fill: #b4bbc2;
-}
-
-.satcom-advanced-status::before,
-.satcom-advanced-status-off::before {
-  content: "";
-  display: block;
-  height: 12px;
-  width: 12px;
-  position: absolute;
-  left: -15px;
-  background-image: url(../images/off.svg);
-  background-repeat: no-repeat;
 }
 
 /*
@@ -2072,7 +2042,7 @@ svg circle {
           align-items: baseline;
 }
 
-label {
+.rux-form-element label {
   color: #fff;
 }
 
@@ -2212,10 +2182,16 @@ i.rux-icon::before {
   font-family: var(--fontFamilty, "Open Sans", sans-serif);
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
-  /* color: var(--fontColor, rgb(255, 255, 255)); */
+  color: rgb(255, 255, 255);
+  color: var(--fontColor, rgb(255, 255, 255));
 }
 
-.rux-form-field label {
+.rux-form-field input:required + label::before {
+  content: "*";
+  margin-right: 0.25rem;
+}
+
+.rux-form-field__label {
   display: -webkit-flex;
   display: flex;
   -webkit-order: 1;
@@ -2227,25 +2203,13 @@ i.rux-icon::before {
   -webkit-align-items: center;
           align-items: center;
 
-  /* color: var(--fontColor, rgb(255, 255, 255)); */
+  color: rgb(255, 255, 255);
+
+  color: var(--fontColor, rgb(255, 255, 255));
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-/* SEARCH VARIANT */
-.rux-form-field input[type="search"] {
-  -webkit-appearance: none;
-  padding: 0.5rem 0 0.5rem 1.5rem;
-
-  background: no-repeat center left 0.3rem/1.1em
-    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
-    rgb(255, 255, 255);
-
-  background: no-repeat center left 0.3rem/1.1em
-    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
-    var(inputBackgroundColor, rgb(255, 255, 255));
 }
 
 .rux-form-field input {
@@ -2293,16 +2257,15 @@ i.rux-icon::before {
 /* FOCUS RULES */
 .rux-form-field input:focus,
 .rux-form-field input:invalid:focus {
-  outline: none;
+  /* outline: none; */
 }
 
 .rux-form-field input:not([type="search"]):focus,
 .rux-form-field input:not([type="search"]):invalid:focus {
   border: 1px solid var(--inputFocusBorderColor);
   border: 1px solid var(--inputFocusBorderColor);
-  border-left: 4px solid var(--inputFocusBorderColor);
-  border-left: 4px solid var(--inputFocusBorderColor);
-  padding-left: calc(0.5rem - 3px);
+  /* border-left: 4px solid var(--inputFocusBorderColor); */
+  /* padding-left: calc(0.5rem - 3px); */
 }
 
 .rux-form-field input::-moz-selection {
@@ -2345,24 +2308,7 @@ i.rux-icon::before {
   display: block;
 }
 
-.rux-form-field input[type="search"]::-webkit-search-cancel-button {
-  position: relative;
-
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22rgb(0%2C%2090%2C%20143)%22%20fill-rule%3D%22evenodd%22%20d%3D%22M69.028%2064l22.628%2022.627-5.029%205.029L64%2069.028%2041.373%2091.656l-5.029-5.029L58.972%2064%2036.344%2041.373l5.029-5.029L64%2058.972l22.627-22.628%205.029%205.029L69.028%2064z%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.rux-form-field input[type="search"]::-ms-clear {
-  position: relative;
-  right: 0.25rem;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-}
-
-.rux-form-field
+/* .rux-form-field
   input:not([type="search"]):not([type="checkbox"]):not([type="radio"]):optional
   + label::after {
   display: block;
@@ -2371,7 +2317,7 @@ i.rux-icon::before {
   margin: 0.1rem auto 0 0.25rem;
 
   opacity: 0.4;
-}
+} */
 
 .rux-form-field input:disabled {
   opacity: 0.4;
@@ -2405,9 +2351,6 @@ i.rux-icon::before {
   height: 2.5rem;
 }
 
-.rux-form-field--large input[type="search"] {
-}
-
 .rux-form-field--small input,
 .rux-form-field--small textarea {
   padding: 0.3rem;
@@ -2415,10 +2358,6 @@ i.rux-icon::before {
 
 .rux-form-field--small input {
   height: 1.625rem;
-}
-
-.rux-form-field--small input[type="search"] {
-  padding: 0.3rem 0 0.3rem 1rem;
 }
 
 .rux-form-field--large input:invalid {
@@ -2434,6 +2373,50 @@ i.rux-icon::before {
   border-color: var(--inputFocusBorderColor);
   outline: none;
   color: black;
+}
+
+.rux-form-field input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: textfield;
+}
+
+/* SEARCH VARIANT */
+.rux-form-field input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+
+  background: no-repeat center left 0.3rem/1.1em
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
+    rgb(255, 255, 255);
+
+  background: no-repeat center left 0.3rem/1.1em
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
+    var(inputBackgroundColor, rgb(255, 255, 255));
+}
+
+.rux-form-field--large input[type="search"] {
+  padding: 0.5rem 0 0.5rem 2rem;
+}
+
+.rux-form-field--small input[type="search"] {
+  padding: 0.3rem 0 0.3rem 1.5rem;
+}
+
+.rux-form-field input[type="search"]::-webkit-search-cancel-button {
+  position: relative;
+
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22rgb(0%2C%2090%2C%20143)%22%20fill-rule%3D%22evenodd%22%20d%3D%22M69.028%2064l22.628%2022.627-5.029%205.029L64%2069.028%2041.373%2091.656l-5.029-5.029L58.972%2064%2036.344%2041.373l5.029-5.029L64%2058.972l22.627-22.628%205.029%205.029L69.028%2064z%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.rux-form-field input[type="search"]::-ms-clear {
+  position: relative;
+  right: 0.25rem;
+  width: 20px;
+  height: 20px;
+  background-color: red;
 }
 
 .rux-log {
@@ -3166,6 +3149,7 @@ i.rux-icon::before {
 /* Indeterminate */
 .rux-progress progress:indeterminate {
   -webkit-appearance: none;
+  -moz-appearance: none;
   box-sizing: border-box;
   position: relative;
 
@@ -3193,6 +3177,9 @@ i.rux-icon::before {
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+
+  background-color: transparent;
+  border: none;
 }
 
 /* Removes the default animation from IE */
@@ -3293,6 +3280,12 @@ i.rux-icon::before {
   border-radius: var(--defaultBorderRadius, 3px);
   border: 1px solid rgb(30, 47, 66);
   border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
+}
+
+.rux-pushbutton__button label,
+.satcom-pushbutton-button label {
+  color: rgb(255, 255, 255);
+  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
 }
 
 .rux-pushbutton__input:checked + .rux-pushbutton__button,
@@ -3973,11 +3966,11 @@ Ideally this will supplant SVG in a near future release.
 .rux-status--alert .rux-advanced-status__icon::before,
 .rux-status--emergency .rux-advanced-status__icon::before,
 .satcom-status-alert::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%20transform%3D%22matrix(1%200%200%20-1%200%2015.667)%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   ;
   background-image: var(
     --statusCritical,
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%20transform%3D%22matrix(1%200%200%20-1%200%2015.667)%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   );
   background-position: 0 -1px;
   -webkit-transform: rotate(180deg);
@@ -4251,7 +4244,7 @@ Ideally this will supplant SVG in a near future release.
 
   /* height: 1.175rem; */
   /* width: 2.3875rem; */
-  height: 21px;
+  height: 22px;
   width: 42px;
 
   -webkit-user-select: none;
@@ -4271,8 +4264,10 @@ Ideally this will supplant SVG in a near future release.
 .rux-toggle--alt__button {
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
+  /* justify-content: center;
+  align-content: center; */
+  -webkit-align-items: center;
+          align-items: center;
 }
 
 .rux-toggle--alt__button::before {
