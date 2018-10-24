@@ -75,6 +75,7 @@ export class RuxTree extends PolymerElement {
         text-overflow: ellipsis;
         overflow: hidden;
         width: calc(100% - 7px);
+        background-color: transparent;
       }
       
       .rux-tree__arrow {
@@ -82,6 +83,7 @@ export class RuxTree extends PolymerElement {
         cursor: pointer;
         width: 7px;
         visibility: hidden;
+        background-color: transparent;
       }
       
       .rux-tree__arrow::after {
@@ -111,7 +113,11 @@ export class RuxTree extends PolymerElement {
       
       .rux-tree__child {
         padding-left: 3rem;
+        display: flex;
+        align-content: center;
       }
+
+      
       
       /* Expanded */
       .expanded .rux-tree__arrow::after {
