@@ -75,10 +75,19 @@
 
   height: 2px;
   width: 66%;
+  margin-left: -32%;
+  margin-top: -1px;
 
   content: "";
 
   background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+}
+
+@supports (--css: variables) {
+  .rux-notification_close-button::after,
+  .rux-notification_close-button::before {
+    margin: 0;
+  }
 }
 
 .rux-notification_close-button::after {

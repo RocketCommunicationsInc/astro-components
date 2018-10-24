@@ -92,6 +92,9 @@ export class RuxNotification extends PolymerElement {
       
         height: 2px;
         width: 66%;
+
+        margin-left: -32%;
+        margin-top: -1px;
       
         content: "";
       
@@ -99,6 +102,13 @@ export class RuxNotification extends PolymerElement {
         
       }
       
+      @supports (--css: variables) {
+        .rux-notification_close-button::after,
+        .rux-notification_close-button::before {
+          margin: 0;
+        }
+      }
+
       .rux-notification_close-button::after {
         transform: rotate(-45deg);
       }
