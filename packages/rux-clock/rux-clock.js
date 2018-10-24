@@ -104,10 +104,18 @@ export class RuxClock extends PolymerElement {
           font-weight: 500;
         }
         
-        
-        
+        /* HotFix for IE - needs a better solution */
+        :host([compact]) .rux-clock {
+          font-size: 1.15rem !important;
+        }
+
         .rux-clock__segment__label {
           font-size: 0.875rem;
+        }
+
+        /* HotFix for IE - needs a better solution */
+        :host([compact]) .rux-clock__segment__label {
+          font-size: 0.875rem !important;
         }
         
         .rux-clock__day-of-the-year .rux-clock__segment__value {

@@ -263,6 +263,60 @@ label {
           user-select: none;
 }
 
+/*
+** CSS-styled Scrollbars for IE & Webkit browsers
+** Dark theme by default.
+**
+*/
+
+body {
+  scrollbar-face-color: rgb(58, 129, 191);
+  scrollbar-face-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191)); 
+  scrollbar-track-color: rgb(32, 50, 70); 
+  scrollbar-track-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70)); 
+}
+
+::-webkit-scrollbar {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(46, 103, 153);
+  background-color: var(--scrollBarThumbBackgroundColor, rgb(46, 103, 153));
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+/* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+::-webkit-scrollbar-thumb:vertical { 
+  border-left-width: 4px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  border-top-width: 4px;
+}
+
+::-webkit-scrollbar-thumb:active,
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(58, 129, 191);
+  background-color: var(--scrollBarThumbBackgroundHoverColor, rgb(58, 129, 191)); 
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: rgb(32, 50, 70);
+  background-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
+}
+::-webkit-scrollbar-track:vertical {
+  -webkit-box-shadow: inset 2px 0 4px rgba(0,0,0,0.15);
+}
+::-webkit-scrollbar-track:horizontal {
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+}
+
+
 .dark-theme {
   /* 
     
@@ -692,17 +746,45 @@ label {
 
   /* 
     
-    Status
+    Status Symbols
     ==========================================================================
     
   */
-
   --statusOff: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusStandby: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%231EDCFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusNormal: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusCaution: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusSerious: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusCritical: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+
+  /* 
+    
+    Scrollbar Colors -- Dark
+    ==========================================================================
+    
+  */
+
+  --scrollBarThumbBackgroundColor: rgb(46, 103, 153)
+  ;
+
+  --scrollBarThumbBackgroundColor: var(
+    --colorSecondaryDarken2,
+    rgb(46, 103, 153)
+  );
+  --scrollBarThumbBackgroundHoverColor: rgb(58, 129, 191)
+  ;
+  --scrollBarThumbBackgroundHoverColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+  --scrollBarTrackBackgroundColor: rgb(32, 50, 70);
+  --scrollBarTrackBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
+  --scrollBarTrackCornerBackgroundColor: rgb(32, 50, 70)
+  ;
+  --scrollBarTrackCornerBackgroundColor: var(
+    --colorTertiaryDarken1,
+    rgb(32, 50, 70)
+  );
 }
 
 li.dark-theme {
@@ -1174,7 +1256,7 @@ li.dark-theme {
     
     Status
     ==========================================================================
-    
+
   */
 
   --statusOff: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222.5%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%2F%3E%0A%3C%2Fsvg%3E%0A");
@@ -1183,6 +1265,26 @@ li.dark-theme {
   --statusCaution: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M2.5%204.5H13.5V11.5H2.5z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusSerious: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M3.5%203.5H11.5V11.5H3.5z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusCritical: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M14.1294815%2C13.5%20L8%2C2.99231743%20L1.8705185%2C13.5%20L14.1294815%2C13.5%20Z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  /* 
+   
+    
+    Scrollbar Colors -- Light
+    ==========================================================================
+    
+  */
+
+  --scrollBarThumbBackgroundColor: #9ba0aa;
+
+  --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1, #9ba0aa);
+  --scrollBarThumbBackgroundHoverColor: #676a71;
+  --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2, #676a71);
+  --scrollBarTrackBackgroundColor: transparent;
+  --scrollBarTrackCornerBackgroundColor: #f2f4f7
+  ;
+  --scrollBarTrackCornerBackgroundColor: var(
+    --colorQuaternaryLighten4,
+    #f2f4f7
+  );
 }
 
 li.light-theme {

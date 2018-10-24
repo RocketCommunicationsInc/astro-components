@@ -195,7 +195,12 @@ export class RuxLog extends PolymerElement {
     <ul class="rux-log__header-labels rux-row">
       <li class="log-event__timestamp">Time</li>
       <li class="log-event__status"></li>
-      <li class="log-event__message log-header__message">Event <input type="search" value={{_filterValue::input}}></li>
+      <li class="log-event__message log-header__message">Event
+      <div class="rux-form-field rux-form-field--small">
+        <input class="rux-form-field__text-input" placeholder="Filter Log …" type="search" value={{_filterValue::input}}></li>
+        
+      </div>
+      
     </ul>
 	</header>
 
