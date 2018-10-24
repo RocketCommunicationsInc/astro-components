@@ -3040,16 +3040,13 @@ i.rux-icon::before {
 */
 
 :root {
-  --colorTest: orange;
-}
-.rux-progress {
   --progressPadding: 2px 0 0 2px;
-  --progressRadius: 10px;
+  --progressRadius: 10px 10px 10px 10px;
   --progressHeight: 14px;
   --progressWidth: calc(100% - 4px);
-
+}
+.rux-progress {
   display: -webkit-flex;
-
   display: flex;
   position: relative;
 
@@ -3076,7 +3073,7 @@ i.rux-icon::before {
   );
   border: 1px solid rgb(20, 32, 44);
   border: 1px solid var(--progressDeterminateTrackBorderColor, rgb(20, 32, 44));
-  border-radius: var(--progressRadius);
+  border-radius: 10px 10px 10px 10px;
   border-radius: var(--progressRadius);
   height: 20px;
   width: 100%;
@@ -3098,52 +3095,60 @@ i.rux-icon::before {
 }
 
 .rux-progress progress[value]::-webkit-progress-value {
+  border-radius: 10px 10px 10px 10px;
   border-radius: var(--progressRadius);
-  border-radius: var(--progressRadius);
+
+  height: 14px;
 
   height: var(--progressHeight);
-
-  height: var(--progressHeight);
+  margin: 2px 0 0 2px;
   margin: var(--progressPadding);
-  margin: var(--progressPadding);
-  max-width: var(--progressWidth);
+  max-width: calc(100% - 4px);
   max-width: var(--progressWidth);
 
-  background: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
 
-  background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+  background-color: var(
+    --progressDeterminateBarBackgroundColor,
+    rgb(77, 172, 255)
+  );
 }
 
 .rux-progress progress[value]::-ms-fill {
-  border-radius: var(--progressRadius);
-  border-radius: var(--progressRadius);
+  border-radius: 10px; /*  var(--progressRadius, 10px);*/
 
-  height: var(--progressHeight), 14px;
-
-  height: var(--progressHeight), 14px;
+  border: none;
+  height: 14px; /* var(--progressHeight), 14px); */
   margin: 2px;
-  margin: var(--progressPadding, 2px);
-  max-width: var(--progressWidth);
-  max-width: var(--progressWidth);
+  max-width: calc(100% - 6px); /* var(--progressWidth);*/
 
-  background: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
 
-  background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+  background-color: var(
+    --progressDeterminateBarBackgroundColor,
+    rgb(77, 172, 255)
+  );
 }
 
 .rux-progress progress[value]::-moz-progress-bar {
-  border-radius: var(--progressRadius);
+  border-radius: 10px 10px 10px 10px;
   border-radius: var(--progressRadius);
 
   margin: 2px 2px 0 2px;
+  height: 14px;
   height: var(--progressHeight);
-  height: var(--progressHeight);
-  max-width: var(--progressWidth);
+  max-width: calc(100% - 4px);
   max-width: var(--progressWidth);
 
-  background: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
 
-  background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+  background-color: var(
+    --progressDeterminateBarBackgroundColor,
+    rgb(77, 172, 255)
+  );
 }
 
 /* Indeterminate */
@@ -3551,8 +3556,7 @@ input[type="range"]:focus {
   );
 }
 
-.rux-range::-moz-range-track,
-.satcom-range::-moz-range-track {
+.rux-range::-moz-range-track {
   display: flex;
   align-items: center;
 
@@ -3567,30 +3571,52 @@ input[type="range"]:focus {
   background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
   outline: 1px solid transparent;
   outline: 1px solid var(--sliderTrackBorderColor, transparent);
+}
 
-  background-image: linear-gradient(
-    to right,
-    rgb(77, 172, 255) 0%,
+.rux-range::-moz-range-progress {
+  background-color: rgb(77, 172, 255)
+  ;
+  background-color: var(
+    --sliderSelectedTrackBackgroundColor,
     rgb(77, 172, 255)
-      calc(1% * var(--value)),
-    rgb(217, 217, 217)
-      calc(1% * var(--value)),
-    rgb(217, 217, 217) 100%
-  );
-
-  background-image: linear-gradient(
-    to right,
-    var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255)) 0%,
-    var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))
-      calc(1% * var(--value)),
-    var(--sliderTrackBackgroundColor, rgb(217, 217, 217))
-      calc(1% * var(--value)),
-    var(--sliderTrackBackgroundColor, rgb(217, 217, 217)) 100%
   );
 }
 
-.rux-range::-webkit-slider-thumb,
-.satcom-range::-webkit-slider-thumb {
+.rux-range:disabled {
+  opacity: 0.4;
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: not-allowed;
+  cursor: var(--disabledCursor, not-allowed);
+}
+
+.rux-range::-ms-track {
+  display: flex;
+  align-items: center;
+
+  /* width: 100%; */
+  height: 1.25rem;
+  padding: 2px 0;
+
+  cursor: pointer;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  /* background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217)); */
+  outline: 1px solid transparent;
+}
+
+.rux-range::-ms-fill-lower {
+  height: 2px;
+  background-color: rgb(77, 172, 255);
+}
+
+.rux-range::-ms-fill-upper {
+  height: 2px;
+  background-color: rgb(217, 217, 217);
+  background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
+}
+
+.rux-range::-webkit-slider-thumb {
   -webkit-appearance: none;
 
   position: relative;
@@ -3619,8 +3645,7 @@ input:-moz-focusring {
   outline: none;
 }
 
-.rux-range::-moz-range-thumb,
-.satcom-range::-moz-range-thumb {
+.rux-range::-moz-range-thumb {
   -moz-appearance: none;
 
   position: relative;
@@ -3643,6 +3668,27 @@ input:-moz-focusring {
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 }
 
+.rux-range:disabled::-moz-range-thumb {
+  cursor: not-allowed;
+  cursor: var(--disabledCursor, not-allowed);
+}
+
+.rux-range::-ms-thumb {
+  position: relative;
+
+  height: 1.25rem;
+  width: 1.25rem;
+
+  border-radius: 100%;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(0, 90, 143);
+
+  cursor: pointer;
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 .rux-range:disabled::-webkit-slider-runnable-track,
 .satcom-range:disabled::-webkit-slider-runnable-track {
   opacity: 0.4;
@@ -3655,6 +3701,11 @@ input:-moz-focusring {
 .satcom-range:disabled::-webkit-slider-thumbtrack {
   cursor: not-allowed;
   cursor: var(--disabledCursor, not-allowed);
+}
+
+.rux-range:disabled::-ms-thumb {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:active,

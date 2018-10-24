@@ -23,14 +23,12 @@
 */
 
 :root {
-  --colorTest: orange;
-}
-.rux-progress {
   --progressPadding: 2px 0 0 2px;
-  --progressRadius: 10px;
+  --progressRadius: 10px 10px 10px 10px;
   --progressHeight: 14px;
   --progressWidth: calc(100% - 4px);
-
+}
+.rux-progress {
   display: flex;
   position: relative;
 
@@ -75,17 +73,24 @@
   margin: var(--progressPadding);
   max-width: var(--progressWidth);
 
-  background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+  background-color: var(
+    --progressDeterminateBarBackgroundColor,
+    rgb(77, 172, 255)
+  );
 }
 
 .rux-progress progress[value]::-ms-fill {
-  border-radius: var(--progressRadius);
+  border-radius: 10px; /*  var(--progressRadius, 10px);*/
 
-  height: var(--progressHeight), 14px;
-  margin: var(--progressPadding, 2px);
-  max-width: var(--progressWidth);
+  border: none;
+  height: 14px; /* var(--progressHeight), 14px); */
+  margin: 2px;
+  max-width: calc(100% - 6px); /* var(--progressWidth);*/
 
-  background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+  background-color: var(
+    --progressDeterminateBarBackgroundColor,
+    rgb(77, 172, 255)
+  );
 }
 
 .rux-progress progress[value]::-moz-progress-bar {
@@ -95,7 +100,10 @@
   height: var(--progressHeight);
   max-width: var(--progressWidth);
 
-  background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+  background-color: var(
+    --progressDeterminateBarBackgroundColor,
+    rgb(77, 172, 255)
+  );
 }
 
 /* Indeterminate */

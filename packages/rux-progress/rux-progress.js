@@ -75,14 +75,19 @@ export class RuxProgress extends PolymerElement {
       }
       
       .rux-progress progress[value]::-ms-fill {
-        border-radius: var(--progressRadius);
+        border-radius: 10px; /*  var(--progressRadius, 10px);*/
       
-        height: var(--progressHeight), 14px;
-        margin: var(--progressPadding, 2px);
-        max-width: var(--progressWidth);
+        border: none;
+        height: 14px; /* var(--progressHeight), 14px); */
+        margin: 2px;
+        max-width: calc(100% - 6px); /* var(--progressWidth);*/
       
-        background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+        background-color: var(
+          --progressDeterminateBarBackgroundColor,
+          rgb(77, 172, 255)
+        );
       }
+      
       
       .rux-progress progress[value]::-moz-progress-bar {
         border-radius: var(--progressRadius);
