@@ -37,3 +37,11 @@
   opacity: 0.4;
   cursor: not-allowed;
 }
+
+.rux-select::-ms-expand {
+  display: none;
+}
+
+.rux-select:focus::-ms-value {
+  background: transparent;
+}

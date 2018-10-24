@@ -72,6 +72,7 @@ export class RuxModal extends PolymerElement {
       .rux-button-group {
         margin-top: auto;
         margin-left: auto;
+        align-self: flex-end;
       }
 
       .rux-button-group rux-button:not(:last-child) {

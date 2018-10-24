@@ -2035,6 +2035,14 @@ svg circle {
   cursor: not-allowed;
 }
 
+.rux-select::-ms-expand {
+  display: none;
+}
+
+.rux-select:focus::-ms-value {
+  background: transparent;
+}
+
 .rux-form-element {
   display: -webkit-flex;
   display: flex;
@@ -2646,6 +2654,8 @@ i.rux-icon::before {
 .rux-button-group {
   margin-top: auto;
   margin-left: auto;
+  -webkit-align-self: flex-end;
+          align-self: flex-end;
 }
 
 .rux-modal__message {
