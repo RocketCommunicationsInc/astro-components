@@ -1,7 +1,4 @@
-import {
-  html,
-  PolymerElement
-} from "/node_modules/@polymer/polymer/polymer-element.js";
+import { html, PolymerElement } from "@polymer/polymer/polymer-element.js";
 import { RuxTab } from "./rux-tab.js";
 import { RuxTabPanels } from "./rux-tab-panels.js";
 import { RuxTabPanel } from "./rux-tab-panel.js";
