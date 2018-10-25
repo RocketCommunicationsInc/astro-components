@@ -84,6 +84,7 @@ export class RuxTimeline extends PolymerElement {
         padding: 0;
 
         box-sizing: border-box;
+        
       }
       
       *,
@@ -100,13 +101,13 @@ export class RuxTimeline extends PolymerElement {
         align-items: center;
         padding: 0 1em;
         
-        background-color: var(--timelineHeaderBackgroundColor, rgb(16, 25, 35));
+        background-color: var(--timelineHeaderBackgroundColor, rgb(32, 50, 70));
         
         z-index: 10;
       }
 
       .rux-timeline__header {
-        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        // box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       }
       
       .rux-timeline__header h1 {
@@ -142,9 +143,9 @@ export class RuxTimeline extends PolymerElement {
         margin-top: auto;
         color: var(--fontColor, rgb(255,255,255));
         
-        background-color: var(--timelineHeaderBackgroundColor, rgb(24, 38, 53));
+        background-color: var(--timelineRulerBackgroundColor, rgb(32, 50, 70));
         height: 2em;
-        box-shadow: 0 -2px 6px rgba(0,0,0,0.2)
+        // box-shadow: 0 -2px 6px rgba(0,0,0,0.2)
       }
       
       #rux-timeline__ruler div {
@@ -211,6 +212,8 @@ export class RuxTimeline extends PolymerElement {
           justify-content: flex-start;
           width: 100%;
           z-index: 5;
+          
+          overflow-y: hidden;
         }
 
         .rux-timeline__track__label {
@@ -218,14 +221,14 @@ export class RuxTimeline extends PolymerElement {
           
           width: 100%;
           /* background-color: #0e202e; */
-          background-color: var(--timelineHeaderBackgroundColor, rgb(40, 63, 88));
+          background-color: var(--timelineTrackLabelBackgroundColor, rgb(40, 63, 88));
           font-size: 0.875rem;
           display: flex;
           justify-content: flex-start;
           align-items: center;
           height: 60px;
-          margin: 2px 0;
-          border-right: 1px solid #182635;
+          margin: 2px 1px 2px 0;
+          /* border-right: 1px solid #182635; */
           
         }
 
@@ -234,8 +237,9 @@ export class RuxTimeline extends PolymerElement {
           position: relative;
           width: 7.875rem;
           z-index: 200;
+          margin-right: 2px;
 
-          background-color: var(--timelineHeaderBackgroundColor, rgb(24, 38, 53));
+          /* background-color: var(--timelineHeaderBackgroundColor, rgb(24, 38, 53)); */
           // box-shadow: 5px 0 2.5px rgba(0,0,0,0.13);
         }
 
@@ -253,7 +257,7 @@ export class RuxTimeline extends PolymerElement {
 
         #rux-timeline__viewport__track-container {
           position: relative;
-          overflow-y: scroll;
+          overflow-y: hidden;
           z-index: 0;
           width: 100%;
         }

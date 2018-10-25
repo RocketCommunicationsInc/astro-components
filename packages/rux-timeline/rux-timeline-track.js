@@ -39,8 +39,6 @@ export class RuxTimelineTrack extends PolymerElement {
       
         box-sizing: border-box;
         overflow: hidden;
-      
-        /* background-color: red; */
       }
       
       *,

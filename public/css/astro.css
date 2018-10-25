@@ -271,9 +271,13 @@ label {
 
 body {
   scrollbar-face-color: rgb(58, 129, 191);
-  scrollbar-face-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191)); 
-  scrollbar-track-color: rgb(32, 50, 70); 
-  scrollbar-track-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70)); 
+  scrollbar-face-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191));
+  scrollbar-track-color: rgb(32, 50, 70)
+  ;
+  scrollbar-track-color: var(
+    --scrollBarTrackCornerBackgroundColor,
+    rgb(32, 50, 70)
+  );
 }
 
 ::-webkit-scrollbar {
@@ -290,7 +294,7 @@ body {
   background-clip: padding-box;
 }
 /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
-::-webkit-scrollbar-thumb:vertical { 
+::-webkit-scrollbar-thumb:vertical {
   border-left-width: 4px;
 }
 
@@ -300,8 +304,12 @@ body {
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(58, 129, 191);
-  background-color: var(--scrollBarThumbBackgroundHoverColor, rgb(58, 129, 191)); 
+  background-color: rgb(58, 129, 191)
+  ;
+  background-color: var(
+    --scrollBarThumbBackgroundHoverColor,
+    rgb(58, 129, 191)
+  );
 }
 
 ::-webkit-scrollbar-track,
@@ -310,12 +318,11 @@ body {
   background-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
 }
 ::-webkit-scrollbar-track:vertical {
-  -webkit-box-shadow: inset 2px 0 4px rgba(0,0,0,0.15);
+  -webkit-box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
 }
 ::-webkit-scrollbar-track:horizontal {
-  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
-
 
 .dark-theme {
   /* 
@@ -785,6 +792,47 @@ body {
     --colorTertiaryDarken1,
     rgb(32, 50, 70)
   );
+
+  /* 
+    
+    Timeline Colors -- Dark
+    ==========================================================================
+      
+  */
+
+  --timelineHeaderBackgroundColor: rgb(32, 50, 70);
+
+  --timelineHeaderBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
+  --timelineHeaderTextColor: rgb(255,255,255);
+  --timelineHeaderTextColor: var(--fontColor, rgb(255,255,255));
+
+  --timelineRulerBackgroundColor: rgb(32, 50, 70);
+
+  --timelineRulerBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
+  --timelineRulerTextColor: rgb(255,255,255);
+  --timelineRulerTextColor: var(--fontColor, rgb(255,255,255));
+
+  --timelineTrackLabelBackgroundColor: rgb(40, 63, 88);
+
+  --timelineTrackLabelBackgroundColor: var(--colorTertiary, rgb(40, 63, 88));
+  --timelineTrackBackgroundColor: rgb(40, 63, 88);
+  --timelineTrackBackgroundColor: var(--colorTertiary, rgb(40, 63, 88));
+
+  --timelineRegionBackgroundColor: var(--colorPrimaryDarken3);
+
+  --timelineRegionBackgroundColor: var(--colorPrimaryDarken3 rgb(0, 36, 57));
+  --timelineRegionTextColor: rgb(255, 255, 255);
+  --timelineRegionTextColor: var(--fontColor, rgb(255, 255, 255));
+  --timelineRegionBorderColor: rgb(0, 90, 143);
+  --timelineRegionBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  --timelineRegionSelectedBorderColor: rgb(77, 172, 255);
+
+  --timelineRegionSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
+  --timelineRegionSelectedBackgroundColor: rgb(62, 138, 204);
+  --timelineRegionSelectedBackgroundColor: var(--colorSecondaryDarken1, rgb(62, 138, 204));
+  --timelineRegionSelectedTextColor: var(--fontColor) rgb(255,255,255));
+  --timelineRegionSelectedTextColor: var(--fontColor) rgb(255,255,255));
 }
 
 li.dark-theme {
@@ -1285,6 +1333,55 @@ li.dark-theme {
     --colorQuaternaryLighten4,
     #f2f4f7
   );
+
+  /* 
+    
+    Timeline Colors -- Dark
+    ==========================================================================
+      
+  */
+
+  --timelineHeaderBackgroundColor: rgb(16, 25, 35);
+
+  --timelineHeaderBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
+  --timelineHeaderTextColor: rgb(0,0,0);
+  --timelineHeaderTextColor: var(--fontColor, rgb(0,0,0));
+
+  --timelineRulerBackgroundColor: rgb(16, 25, 35);
+
+  --timelineRulerBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
+  --timelineRulerTextColor: rgb(0,0,0);
+  --timelineRulerTextColor: var(--fontColor, rgb(0,0,0));
+
+  --timelineTrackLabelBackgroundColor: rgb(40, 63, 88)
+  ;
+
+  --timelineTrackLabelBackgroundColor: var(
+    --colorQuaternaryLighten2,
+    rgb(40, 63, 88)
+  );
+  --timelineTrackBackgroundColor: rgb(40, 63, 88)
+  ;
+  --timelineTrackBackgroundColor: var(
+    --colorQuaternaryLighten2,
+    rgb(40, 63, 88)
+  );
+
+  --timelineRegionBackgroundColor: var(--colorPrimaryLighten4);
+
+  --timelineRegionBackgroundColor: var(--colorPrimaryLighten4 rgb(24, 38, 53));
+  --timelineRegionTextColor: rgb(255, 255, 255);
+  --timelineRegionTextColor: var(--fontColor, rgb(255, 255, 255));
+  --timelineRegionBorderColor: var(--colorPrimaryLighten3);
+  --timelineRegionBorderColor: var(--colorPrimaryLighten3);
+
+  --timelineRegionSelectedBorderColor: rgb(77, 172, 255);
+
+  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken3, rgb(77, 172, 255));
+  --timelineRegionSelectedBackgroundColor: rgb(62, 138, 204);
+  --timelineRegionSelectedBackgroundColor: var(--colorSecondaryDarken1, rgb(62, 138, 204));
+  --timelineRegionSelectedTextColor: var(--fontColor) rgb(255,255,255));
+  --timelineRegionSelectedTextColor: var(--fontColor) rgb(255,255,255));
 }
 
 li.light-theme {

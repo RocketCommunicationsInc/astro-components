@@ -345,6 +345,36 @@
     --colorQuaternaryLighten4,
     #f2f4f7
   );
+
+  /* 
+    
+    Timeline Colors -- Dark
+    ==========================================================================
+      
+  */
+
+  --timelineHeaderBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
+  --timelineHeaderTextColor: var(--fontColor, rgb(0,0,0));
+
+  --timelineRulerBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
+  --timelineRulerTextColor: var(--fontColor, rgb(0,0,0));
+
+  --timelineTrackLabelBackgroundColor: var(
+    --colorQuaternaryLighten2,
+    rgb(40, 63, 88)
+  );
+  --timelineTrackBackgroundColor: var(
+    --colorQuaternaryLighten2,
+    rgb(40, 63, 88)
+  );
+
+  --timelineRegionBackgroundColor: var(--colorPrimaryLighten4 rgb(24, 38, 53));
+  --timelineRegionTextColor: var(--fontColor, rgb(255, 255, 255));
+  --timelineRegionBorderColor: var(--colorPrimaryLighten3);
+
+  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken3, rgb(77, 172, 255));
+  --timelineRegionSelectedBackgroundColor: var(--colorSecondaryDarken1, rgb(62, 138, 204));
+  --timelineRegionSelectedTextColor: var(--fontColor) rgb(255,255,255));
 }
 
 li.light-theme {

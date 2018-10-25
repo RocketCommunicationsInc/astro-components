@@ -74,7 +74,7 @@ export class RuxTimelineRegion extends PolymerElement {
         font-size: 0.875rem;
         top: 0;
         height: 100%;
-        background-color: var(--timelineRegionBackgroundColor, rgb(24, 38, 53));
+        background-color: var(--timelineRegionBackgroundColor, rgb(0, 36, 57));
         color: var(--timelineRegionTextColor, rgb(255,255,255));
         overflow: hidden;
       
@@ -84,13 +84,15 @@ export class RuxTimelineRegion extends PolymerElement {
         user-select: none;
         box-sizing: border-box;
       
-        border: 1px solid var(--timelineRegionBorderColor, rgb(0, 68, 107));
+        border: 1px solid var(--timelineRegionBorderColor, rgb(0, 90, 143));
         /* transition: border 0.667s ease-in-out; */
       
         box-sizing: border-box;
         height: 60px;
         /* background-color: red; */
+
       }
+
       
       *,
       *:after,
@@ -121,7 +123,8 @@ export class RuxTimelineRegion extends PolymerElement {
         background-color: var(--timelineRegionSelectedBackgroundColor, rgb(58, 129, 191));
         color: var(--timelineRegionSelectedTextColor, rgb(255,255,255));
       }
-      
+
+
       .rux-region__segment {
         display: flex;
         align-items: center;
@@ -204,7 +207,7 @@ export class RuxTimelineRegion extends PolymerElement {
 </style>      
       <div class="container" label="[[label]]: [[_formatTime(_startTime)]]-[[_formatTime(_endTime)]]">
         <div class="rux-region__segment rux-region__header rux-region__segment rux-region__header">
-          <rux-status status=[[status]]></rux-status>
+          <rux-status class="light-theme" status=[[status]]></rux-status>
           <div class="rux-region__label">[[label]]</div>
         </div>
         <div class="rux-region__segment rux-region__time">
