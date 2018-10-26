@@ -40,6 +40,7 @@ export class RuxSlider extends PolymerElement {
   }
   static get template() {
     return html`
+      <link rel="stylesheet" href="/public/css/src/input.css"></link>
       <style>
       :root {
         --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
@@ -68,6 +69,8 @@ export class RuxSlider extends PolymerElement {
       .rux-slider__label {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        font-size: 1.25rem;
       }
       
       .rux-slider__control {
@@ -263,10 +266,17 @@ export class RuxSlider extends PolymerElement {
         padding: 0 0.1rem;
         margin: 0.5em 0 0 0;
       
-        color: rgb(131, 137, 142);
+        color: var(--fontColor, #fff);
         font-size: 0.875rem;
       }
       
+      .rux-slider__input {
+        margin-right: 0;
+        margin-bottom: 1rem;
+
+        width: 4rem !important;
+      }
+
       /* 
       Fake tick marks, sort of works, but label using flex are imprecise
       .rux-slider__control__labels li::before {
@@ -282,9 +292,9 @@ export class RuxSlider extends PolymerElement {
     </style>      
 
       <div class="rux-slider">
-        <div class="rux-slider__label">
-          <label id=[[_name]] hidden=[[!label]]>[[label]]</label>
-          <input type="number" on-input="_updateValue" min=[[min]] max=[[max]] step=[[step]] value={{val}} aria-labeledby=[[_name]] hidden=[[hideInput]] />
+        <div class="rux-form-field rux-form-field--small rux-slider__label">
+          <label class="rux-label" id=[[_name]] hidden=[[!label]]>[[label]]</label>
+          <input class="rux-input rux-slider__input" type="number" on-input="_updateValue" min=[[min]] max=[[max]] step=[[step]] value={{val}} aria-labeledby=[[_name]] hidden=[[hideInput]] />
         </div>
         <div class="rux-slider__control">
 
@@ -319,6 +329,8 @@ export class RuxSlider extends PolymerElement {
 
     this._range = this.shadowRoot.querySelector("input[type=range]");
     this._updateVisual();
+
+    this._axisLabels = this.axisLabels.split(",");
   }
   disconnectedCallback() {
     super.disconnectedCallback();
@@ -340,6 +352,7 @@ export class RuxSlider extends PolymerElement {
     this._updateVisual(e.target);
   }
   _getAxisLabels(values) {
+    console.log(values);
     return values.split(",");
   }
 }
