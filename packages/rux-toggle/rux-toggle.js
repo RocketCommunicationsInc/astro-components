@@ -27,7 +27,7 @@ export class RuxToggle extends PolymerElement {
 
   static get template() {
     return html`
-      <style>
+      <style>/* 
       :host {
         position: relative;
         display: inline-block;
@@ -57,116 +57,104 @@ export class RuxToggle extends PolymerElement {
       
       :host input {
         display: none !important;
-      }
+      } */
 
-      .rux-toggle__button {
-        position: absolute;
+      .rux-toggle {
+        position: relative;
         display: flex;
-
-        justify-content: space-around;
-        align-content: center;
-        align-items: center;
-
-        top: 0;
-        left: 0;
-
-        font-size: 0.75rem !important;
-
-        height: 100%;
-        width: 100%;
-      }
-
-      .rux-toggle__button span {
-        display: flex;
-      
-        align-content: center;
         justify-content: center;
         align-items: center;
+        box-sizing: border-box;
       
-        width: 50%;
-        height: 100%;
-        z-index: 1;
+        
+        height: 1.375rem;
+        width: 2.875rem;
+        
       
-        text-transform: uppercase;
+        user-select: none;
+        overflow: hidden;
+      }
+      
+      .rux-toggle__input {
+        display: none !important;
+      }
+      
+
+            
+      .rux-toggle__button {
+        display: flex;
+        /* justify-content: center;
+        align-content: center; */
+        align-items: center;
       }
 
       .rux-toggle__button::before {
-        position: absolute;
-       
-        content: "";
-        display: block;
-      
-        height: 100%;
-        width: 100%;
+        position: relative;
 
-        background: var(
-          --toggleBaseBackgroundColor,
-          linear-gradient(
-            to right,
-            #000 50%,
-            rgb(50, 51, 52) 50.1%,
-            rgb(50, 51, 52) 100%
-          )
+        content: "";
+        border-radius: 5.5px;
+        border: 1px solid var(--toggleTrackBorderColor, rgb(122, 122, 122));
+        background-color: var(--toggleTrackBackgroundColor, rgb(204, 204, 204));
+
+        height: 11px;
+        width: 32px;
+
+        transition: 0.167s background-color ease-in-out;
+      }
+
+      /* Track */
+      .rux-toggle__input:checked + .rux-toggle__button::before {
+        background-color: var(
+          --toggleSelectedTrackBackgroundColor,
+          rgb(100, 217, 255)
         );
+        border-color: var(--toggleSelectedTrackBorderColor, rgb(27, 122, 153));
       }
 
       .rux-toggle__button::after {
-        content: "";
-
-        display: block;
-
         position: absolute;
-
-        box-sizing: border-box;
-
-        top: 0;
+        content: "";
         left: 0;
+        height: 19px;
+        width: 19px;
 
-        z-index: 10;
+        border-radius: 50%;
+        border: 1px solid var(--toggleThumbBorderColor, #fff);
+        background-color: var(--toggleThumbBackgroundColor, rgb(255, 255, 255));
 
-        transition: left 0.1s ease-out;
-    
-        width: 50%;
-        height: 100%;
-      
-        border-radius: 0.125rem;
-        background: var(--toggleButtonBackgroundColor, rgb(0, 90, 143)) url("data:image/svg+xml,%3Csvg%20width%3D%276%27%20height%3D%276%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%27a%27%20x1%3D%2750%25%27%20x2%3D%2750%25%27%20y1%3D%270%25%27%20y2%3D%27100%25%27%3E%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23000%27/%3E%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23023861%27%20stop-opacity%3D%270%27/%3E%20%3C/linearGradient%3E%20%3C/defs%3E%20%3Ccircle%20cx%3D%273%27%20cy%3D%273%27%20r%3D%273%27%20fill%3D%27url%28%23a%29%27%20fill-rule%3D%27evenodd%27/%3E%20%3C/svg%3E") center center no-repeat;
+        transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
+      }
 
-        
-        box-shadow: var(
-          --toggleButtonBoxShadow,
-          0 0 3px rgba(0, 0, 0, 0.5),
-          1px 0 2px rgba(0, 0, 0, 0.6)
+      .rux-toggle__input:disabled + .rux-toggle__button::after {
+        background-color: var(
+          --toggleDisabledThumbBackgroundColor,
+          rgb(163, 163, 163)
         );
+        border-color: var(--toggleDisabledThumbBorderColor, rgb(163, 163, 163));
       }
 
-      .on {
-        color: var(--toggleBaseSelectedTextColor, rgb(91, 255, 0));
-      }
-      
-      .off {
-        color: var(--toggleBaseTextColor, rgb(198, 204, 209));
-      }
-          
       .rux-toggle__input:checked + .rux-toggle__button::after {
-        left: 50%;
-        box-shadow: var(
-          --toggleButtonSelectedBoxShadow,
-          0 0 3px rgba(0, 0, 0, 0.5),
-          -1px 0 2px rgba(0, 0, 0, 0.6)
-        );
+        left: calc(50% + 2px);
+        border-color: var(--toggleSelectedThumbBorderColor, #fff);
       }
-      
-      .rux-toggle__input:disabled + .rux-toggle__button {
+
+      .rux-toggle__input:checked:disabled + .rux-toggle__button::after {
+        border-color: var(
+          --toggleDisabledSelectedThumbBorderColor,
+          rgb(163, 163, 163)
+        );
+        cursor: not-allowed;
+      }
+
+      .rux-toggle__input:disabled + .rux-toggle__button::before {
+        opacity: var(--disabledOpacity, 0.4);
         cursor: not-allowed;
       }
       </style>      
-      
-      <input class="rux-toggle__input" type="checkbox" id="[[_id]]" disabled$=[[disabled]] checked={{checked::change}}></input>
-      <label for$="[[_id]]" class="rux-toggle__button">
-        <span class='on'>On</span>
-        <span class='off'>Off</span>
-      </label> 
+      <div class='rux-toggle'>
+        <input class="rux-toggle__input" type="checkbox" id="[[_id]]" disabled$=[[disabled]] checked={{checked::change}}></input>
+        <label class="rux-toggle__button" for$="[[_id]]" class="rux-toggle__button"></label> 
+      </div>
       `;
   }
 

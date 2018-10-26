@@ -314,7 +314,7 @@ export class RuxSlider extends PolymerElement {
           <ol class="rux-slider__control__labels" hidden=[[!axisLabels]]>
             <dom-repeat id="sliderAxisLabels" items=[[_getAxisLabels(axisLabels)]]>
               <template>
-                <li>[[item]]</li>
+                <li style="font: monospace">|</li>
               </template>
             </dom-repeat>
           </ol>
