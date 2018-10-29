@@ -180,23 +180,27 @@
   --toggleBaseSelectedTextColor: var(--colorNormal, rgb(86, 240, 0));
 
   /* Alt Toggle */
-  --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
+  /* --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122)); */
+  --toggleThumbBorderColor: #fff;
   --toggleThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --toggleSelectedThumbBorderColor: #3dc100;
-  --toggleSelectedThumbBackgroundColor: var(--colorNormal, rgb(86, 240, 0));
 
   --toggleTrackBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
   --toggleTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
 
-  --toggleSelectedTrackBorderColor: #3dc100;
-  --toggleSelectedTrackBackgroundColor: var(--colorNormal, rgb(86, 240, 0));
+  /* Selected State */
+  /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153)); */
+  --toggleSelectedThumbBorderColor: #fff;
+  
+  --toggleSelectedTrackBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
+  --toggleSelectedTrackBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153));
 
+  /* Disabled State */
   --toggleDisabledThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
   --toggleDisabledThumbBackgroundColor: var(
     --colorGrayDarken1,
     rgb(163, 163, 163)
   );
+  --toggleDisabledSelectedThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
 
   /* 
     

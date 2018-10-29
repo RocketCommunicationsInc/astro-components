@@ -22,10 +22,10 @@
   --statusLightStandby: rgb(100, 217, 255);
   --statusLightOff: rgb(142, 154, 163);
 
-  --colorCivilian1: rgb(25, 199, 202);
-  --colorCivilian2: rgb(120, 112, 208);
-  --colorCivilian3: rgb(160, 13, 190);
-  --colorCivilian4: rgb(216, 83, 30);
+  --colorTag1: rgb(25, 199, 202);
+  --colorTag2: rgb(120, 112, 208);
+  --colorTag3: rgb(160, 13, 190);
+  --colorTag4: rgb(216, 83, 30);
 
   --colorPrimaryLighten1: color(var(--colorPrimary) tint(20%));
   --colorPrimaryLighten2: color(var(--colorPrimary) tint(40%));
@@ -125,64 +125,40 @@
   --colorOffDarken2: color(var(--statusDarkOff) shade(40%));
   --colorOffDarken3: color(var(--statusDarkOff) shade(60%));
   --colorOffDarken4: color(var(--statusDarkOff) shade(80%));
+
+  --colorTag1Lighten1: color(var(--colorTag1) tint(20%));
+  --colorTag1Lighten2: color(var(--colorTag1) tint(40%));
+  --colorTag1Lighten3: color(var(--colorTag1) tint(60%));
+  --colorTag1Lighten4: color(var(--colorTag1) tint(80%));
+  --colorTag1Darken1: color(var(--colorTag1) shade(20%));
+  --colorTag1Darken2: color(var(--colorTag1) shade(40%));
+  --colorTag1Darken3: color(var(--colorTag1) shade(60%));
+  --colorTag1Darken4: color(var(--colorTag1) shade(80%));
+
+  --colorTag2Lighten1: color(var(--colorTag2) tint(20%));
+  --colorTag2Lighten2: color(var(--colorTag2) tint(40%));
+  --colorTag2Lighten3: color(var(--colorTag2) tint(60%));
+  --colorTag2Lighten4: color(var(--colorTag2) tint(80%));
+  --colorTag2Darken1: color(var(--colorTag2) shade(20%));
+  --colorTag2Darken2: color(var(--colorTag2) shade(40%));
+  --colorTag2Darken3: color(var(--colorTag2) shade(60%));
+  --colorTag2Darken4: color(var(--colorTag2) shade(80%));
+
+  --colorTag3Lighten1: color(var(--colorTag3) tint(20%));
+  --colorTag3Lighten2: color(var(--colorTag3) tint(40%));
+  --colorTag3Lighten3: color(var(--colorTag3) tint(60%));
+  --colorTag3Lighten4: color(var(--colorTag3) tint(80%));
+  --colorTag3Darken1: color(var(--colorTag3) shade(20%));
+  --colorTag3Darken2: color(var(--colorTag3) shade(40%));
+  --colorTag3Darken3: color(var(--colorTag3) shade(60%));
+  --colorTag3Darken4: color(var(--colorTag3) shade(80%));
+
+  --colorTag4Lighten1: color(var(--colorTag4) tint(20%));
+  --colorTag4Lighten2: color(var(--colorTag4) tint(40%));
+  --colorTag4Lighten3: color(var(--colorTag4) tint(60%));
+  --colorTag4Lighten4: color(var(--colorTag4) tint(80%));
+  --colorTag4Darken1: color(var(--colorTag4) shade(20%));
+  --colorTag4Darken2: color(var(--colorTag4) shade(40%));
+  --colorTag4Darken3: color(var(--colorTag4) shade(60%));
+  --colorTag4Darken4: color(var(--colorTag4) shade(80%));
 }
-
-/* 
-.dark-theme {
-  
-
-  
-
-  --colorCritical: var(--colorCritical);
-  --colorSerious: var(--colorSerious);
-  --colorCaution: var(--colorCaution);
-  --colorNormal: var(--colorNormal);
-  --colorStandby: var(--colorStandby);
-  --colorOff: var(--colorOff);
-
-  --colorPrimaryLighten1: color(var(--colorPrimary) tint(20%));
-  --colorPrimaryLighten2: color(var(--colorPrimary) tint(40%));
-  --colorPrimaryLighten3: color(var(--colorPrimary) tint(60%));
-  --colorPrimaryLighten4: color(var(--colorPrimary) tint(80%));
-  --colorPrimaryDarken1: color(var(--colorPrimary) shade(20%));
-  --colorPrimaryDarken2: color(var(--colorPrimary) shade(40%));
-  --colorPrimaryDarken3: color(var(--colorPrimary) shade(60%));
-  --colorPrimaryDarken4: color(var(--colorPrimary) shade(80%));
-
-  --colorSecondaryLighten1: color(var(--colorSecondary) tint(20%));
-  --colorSecondaryLighten2: color(var(--colorSecondary) tint(40%));
-  --colorSecondaryLighten3: color(var(--colorSecondary) tint(60%));
-  --colorSecondaryLighten4: color(var(--colorSecondary) tint(80%));
-  --colorSecondaryDarken1: color(var(--colorSecondary) shade(20%));
-  --colorSecondaryDarken2: color(var(--colorSecondary) shade(40%));
-  --colorSecondaryDarken3: color(var(--colorSecondary) shade(60%));
-  --colorSecondaryDarken4: color(var(--colorSecondary) shade(80%));
-
-  --colorTertiaryLighten1: color(var(--colorTertiary) tint(20%));
-  --colorTertiaryLighten2: color(var(--colorTertiary) tint(40%));
-  --colorTertiaryLighten3: color(var(--colorTertiary) tint(60%));
-  --colorTertiaryLighten4: color(var(--colorTertiary) tint(80%));
-  --colorTertiaryDarken1: color(var(--colorTertiary) shade(20%));
-  --colorTertiaryDarken2: color(var(--colorTertiary) shade(40%));
-  --colorTertiaryDarken3: color(var(--colorTertiary) shade(60%));
-  --colorTertiaryDarken4: color(var(--colorTertiary) shade(80%));
-
-  --colorQuaternaryLighten1: color(var(--colorQuaternary) tint(20%));
-  --colorQuaternaryLighten2: color(var(--colorQuaternary) tint(40%));
-  --colorQuaternaryLighten3: color(var(--colorQuaternary) tint(60%));
-  --colorQuaternaryLighten4: color(var(--colorQuaternary) tint(80%));
-  --colorQuaternaryDarken1: color(var(--colorQuaternary) shade(20%));
-  --colorQuaternaryDarken2: color(var(--colorQuaternary) shade(40%));
-  --colorQuaternaryDarken3: color(var(--colorQuaternary) shade(60%));
-  --colorQuaternaryDarken4: color(var(--colorQuaternary) shade(80%));
-
-  --colorGrayLighten1: color(var(--colorGray) tint(20%));
-  --colorGrayLighten2: color(var(--colorGray) tint(40%));
-  --colorGrayLighten3: color(var(--colorGray) tint(60%));
-  --colorGrayLighten4: color(var(--colorGray) tint(80%));
-
-  --colorGrayDarken1: color(var(--colorGray) shade(20%));
-  --colorGrayDarken2: color(var(--colorGray) shade(40%));
-  --colorGrayDarken3: color(var(--colorGray) shade(60%));
-  --colorGrayDarken4: color(var(--colorGray) shade(80%));
-} */

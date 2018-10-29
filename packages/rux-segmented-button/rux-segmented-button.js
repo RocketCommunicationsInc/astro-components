@@ -46,6 +46,7 @@ export class RuxSegmentedButton extends PolymerElement {
 
   border-radius: var(--controlBorderRadius, 3px);
   border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
 }
 
 .rux-segmented-button {
@@ -70,7 +71,7 @@ export class RuxSegmentedButton extends PolymerElement {
   border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
 
   color: var(--segmentedButtonTextColor, #fff);
-  background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
+  
 
   font-size: 0.875rem;
 
@@ -112,6 +113,25 @@ export class RuxSegmentedButton extends PolymerElement {
     inset 0 1px 5px rgba(0, 0, 0, 0.2)
   );
 }
+
+
+/* 
+  OVERRIDE FOR IE 
+  Otherwise all segments get rounded corners. Need to override and re-enable
+  some style definitions.
+*/
+
+.rux-segmented-buttons.style-scope {
+  border-radius: 3px 6px 6px 3px !important;
+}
+.rux-segmented-button.style-scope { 
+  border-radius: 0;   
+  height: auto;       
+  border: none;
+  border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+}
+/* END OVERRDIDE FOR IE EDGE */
+
     </style>      
 
       <ul class="rux-segmented-buttons">

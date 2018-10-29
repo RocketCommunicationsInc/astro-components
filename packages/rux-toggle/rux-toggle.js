@@ -38,7 +38,7 @@ export class RuxToggle extends PolymerElement {
         height: 1.3125rem;
         width: 4.375rem;
         border-radius: var(--defaultBorderRadius, 0.1875rem);
-        border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
+        // border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
         // box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
         user-select: none;
         overflow: hidden;
@@ -65,7 +65,7 @@ export class RuxToggle extends PolymerElement {
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
-      
+        border: none;
         
         height: 1.375rem;
         width: 2.875rem;
@@ -92,7 +92,7 @@ export class RuxToggle extends PolymerElement {
         position: relative;
 
         content: "";
-        border-radius: 5.5px;
+        border-radius: 6px;
         border: 1px solid var(--toggleTrackBorderColor, rgb(122, 122, 122));
         background-color: var(--toggleTrackBackgroundColor, rgb(204, 204, 204));
 

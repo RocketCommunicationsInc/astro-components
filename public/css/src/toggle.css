@@ -16,123 +16,92 @@
 **  - Updated transition speed
 */
 
-.rux-toggle,
-.satcom-toggle {
+.rux-toggle {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
 
-  -webkit-font-smoothing: subpixel-antialiased;
+  /* height: 1.175rem; */
+  /* width: 2.3875rem; */
+  height: 22px;
+  width: 42px;
 
-  height: 1.3125rem;
-  width: 4.375rem;
-  border-radius: var(--defaultBorderRadius, 0.1875rem);
-  border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
-  /* box-shadow: inset 0 0 2px rgba(0, 0, 0, 1); */
   user-select: none;
   overflow: hidden;
 }
 
-.rux-toggle__input,
-.satcom-toggle input {
+.rux-toggle__input {
   display: none !important;
 }
 
 .rux-toggle__button {
-  position: absolute;
   display: flex;
-
-  justify-content: space-around;
-  align-content: center;
+  /* justify-content: center;
+  align-content: center; */
   align-items: center;
-
-  top: 0;
-  left: 0;
-
-  font-size: 0.75rem !important;
-
-  height: 100%;
-  width: 100%;
-}
-
-.rux-toggle__button span {
-  display: flex;
-
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-
-  width: 50%;
-  height: 100%;
-  z-index: 1;
-
-  text-transform: uppercase;
 }
 
 .rux-toggle__button::before {
-  position: absolute;
+  position: relative;
+
   content: "";
-  display: block;
+  border-radius: 5.5px;
+  border: 1px solid var(--toggleTrackBorderColor, rgb(122, 122, 122));
+  background-color: var(--toggleTrackBackgroundColor, rgb(204, 204, 204));
 
-  height: 100%;
-  width: 100%;
+  height: 11px;
+  width: 32px;
 
-  border-radius: 0.1875rem;
+  transition: 0.167s background-color ease-in-out;
+}
 
-  background: var(--toggleBaseBackgroundColor, #000);
+/* Track */
+.rux-toggle__input:checked + .rux-toggle__button::before {
+  background-color: var(
+    --toggleSelectedTrackBackgroundColor,
+    rgb(100, 217, 255)
+  );
+  border-color: var(--toggleSelectedTrackBorderColor, rgb(27, 122, 153));
 }
 
 .rux-toggle__button::after {
-  content: "";
-
-  display: block;
-
   position: absolute;
-
-  box-sizing: border-box;
-
-  top: 0;
+  content: "";
   left: 0;
+  height: 19px;
+  width: 19px;
 
-  z-index: 10;
+  border-radius: 50%;
+  border: 1px solid var(--toggleThumbBorderColor, #fff);
+  background-color: var(--toggleThumbBackgroundColor, rgb(255, 255, 255));
 
-  transition: left 0.1s ease-out;
+  transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
+}
 
-  width: 50%;
-  height: 100%;
-
-  border-radius: 0.125rem;
-
-  background: var(--toggleButtonBackgroundColor, rgb(0, 90, 143))
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E %3Cdefs%3E %3ClinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3E %3Cstop offset='0%25' stop-color='%23000'/%3E %3Cstop offset='100%25' stop-color='%23023861' stop-opacity='0'/%3E %3C/linearGradient%3E %3C/defs%3E %3Ccircle cx='3' cy='3' r='3' fill='url(%23a)' fill-rule='evenodd'/%3E %3C/svg%3E")
-    center center no-repeat;
-
-  box-shadow: var(
-    --toggleButtonBoxShadow,
-    0 0 3px rgba(0, 0, 0, 0.5),
-    1px 0 2px rgba(0, 0, 0, 0.6)
+.rux-toggle__input:disabled + .rux-toggle__button::after {
+  background-color: var(
+    --toggleDisabledThumbBackgroundColor,
+    rgb(163, 163, 163)
   );
-}
-
-.rux-toggle .on {
-  font-weight: 600;
-  color: var(--toggleBaseSelectedTextColor, rgb(91, 255, 0));
-}
-
-.rux-toggle .off {
-  color: var(--toggleBaseTextColor, #fff);
-}
-
-.rux-toggle__input:disabled + .rux-toggle__button {
-  opacity: var(--disabledOpacity, 0.4);
-  cursor: not-allowed;
+  border-color: var(--toggleDisabledThumbBorderColor, rgb(163, 163, 163));
 }
 
 .rux-toggle__input:checked + .rux-toggle__button::after {
-  left: 50%;
-  box-shadow: var(
-    --toggleButtonSelectedBoxShadow,
-    0 0 3px rgba(0, 0, 0, 0.5),
-    -1px 0 2px rgba(0, 0, 0, 0.6)
+  left: calc(50% + 2px);
+  border-color: var(--toggleSelectedThumbBorderColor, #fff);
+}
+
+.rux-toggle__input:checked:disabled + .rux-toggle__button::after {
+  border-color: var(
+    --toggleDisabledSelectedThumbBorderColor,
+    rgb(163, 163, 163)
   );
+  cursor: not-allowed;
+}
+
+.rux-toggle__input:disabled + .rux-toggle__button::before {
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: not-allowed;
 }

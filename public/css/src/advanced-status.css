@@ -114,6 +114,7 @@
 **
 */
 
+svg,
 svg path,
 svg circle {
   fill: inherit;

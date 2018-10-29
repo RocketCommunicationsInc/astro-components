@@ -330,7 +330,7 @@ export class RuxSlider extends PolymerElement {
     this._range = this.shadowRoot.querySelector("input[type=range]");
     this._updateVisual();
 
-    this._axisLabels = this.axisLabels.split(",");
+    // this._axisLabels = this.axisLabels.split(",");
   }
   disconnectedCallback() {
     super.disconnectedCallback();

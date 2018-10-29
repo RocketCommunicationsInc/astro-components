@@ -22,10 +22,10 @@
   --statusLightStandby: rgb(100, 217, 255);
   --statusLightOff: rgb(142, 154, 163);
 
-  --colorCivilian1: rgb(25, 199, 202);
-  --colorCivilian2: rgb(120, 112, 208);
-  --colorCivilian3: rgb(160, 13, 190);
-  --colorCivilian4: rgb(216, 83, 30);
+  --colorTag1: rgb(25, 199, 202);
+  --colorTag2: rgb(120, 112, 208);
+  --colorTag3: rgb(160, 13, 190);
+  --colorTag4: rgb(216, 83, 30);
 
   --colorPrimaryLighten1: rgb(51, 123, 165);
   --colorPrimaryLighten2: rgb(102, 156, 188);
@@ -125,67 +125,43 @@
   --colorOffDarken2: rgb(95, 100, 104);
   --colorOffDarken3: rgb(63, 67, 69);
   --colorOffDarken4: rgb(32, 33, 35);
+
+  --colorTag1Lighten1: rgb(71, 210, 213);
+  --colorTag1Lighten2: rgb(117, 221, 223);
+  --colorTag1Lighten3: rgb(163, 233, 234);
+  --colorTag1Lighten4: rgb(209, 244, 244);
+  --colorTag1Darken1: rgb(20, 159, 162);
+  --colorTag1Darken2: rgb(15, 119, 121);
+  --colorTag1Darken3: rgb(10, 80, 81);
+  --colorTag1Darken4: rgb(5, 40, 40);
+
+  --colorTag2Lighten1: rgb(147, 141, 217);
+  --colorTag2Lighten2: rgb(174, 169, 227);
+  --colorTag2Lighten3: rgb(201, 198, 236);
+  --colorTag2Lighten4: rgb(228, 226, 246);
+  --colorTag2Darken1: rgb(96, 90, 166);
+  --colorTag2Darken2: rgb(72, 67, 125);
+  --colorTag2Darken3: rgb(48, 45, 83);
+  --colorTag2Darken4: rgb(24, 22, 42);
+
+  --colorTag3Lighten1: rgb(179, 61, 203);
+  --colorTag3Lighten2: rgb(198, 110, 216);
+  --colorTag3Lighten3: rgb(217, 158, 229);
+  --colorTag3Lighten4: rgb(236, 207, 242);
+  --colorTag3Darken1: rgb(128, 10, 152);
+  --colorTag3Darken2: rgb(96, 8, 114);
+  --colorTag3Darken3: rgb(64, 5, 76);
+  --colorTag3Darken4: rgb(32, 3, 38);
+
+  --colorTag4Lighten1: rgb(224, 117, 75);
+  --colorTag4Lighten2: rgb(232, 152, 120);
+  --colorTag4Lighten3: rgb(239, 186, 165);
+  --colorTag4Lighten4: rgb(247, 221, 210);
+  --colorTag4Darken1: rgb(173, 66, 24);
+  --colorTag4Darken2: rgb(130, 50, 18);
+  --colorTag4Darken3: rgb(86, 33, 12);
+  --colorTag4Darken4: rgb(43, 17, 6);
 }
-
-/* 
-.dark-theme {
-  
-
-  
-
-  --colorCritical: var(--colorCritical);
-  --colorSerious: var(--colorSerious);
-  --colorCaution: var(--colorCaution);
-  --colorNormal: var(--colorNormal);
-  --colorStandby: var(--colorStandby);
-  --colorOff: var(--colorOff);
-
-  --colorPrimaryLighten1: color(var(--colorPrimary) tint(20%));
-  --colorPrimaryLighten2: color(var(--colorPrimary) tint(40%));
-  --colorPrimaryLighten3: color(var(--colorPrimary) tint(60%));
-  --colorPrimaryLighten4: color(var(--colorPrimary) tint(80%));
-  --colorPrimaryDarken1: color(var(--colorPrimary) shade(20%));
-  --colorPrimaryDarken2: color(var(--colorPrimary) shade(40%));
-  --colorPrimaryDarken3: color(var(--colorPrimary) shade(60%));
-  --colorPrimaryDarken4: color(var(--colorPrimary) shade(80%));
-
-  --colorSecondaryLighten1: color(var(--colorSecondary) tint(20%));
-  --colorSecondaryLighten2: color(var(--colorSecondary) tint(40%));
-  --colorSecondaryLighten3: color(var(--colorSecondary) tint(60%));
-  --colorSecondaryLighten4: color(var(--colorSecondary) tint(80%));
-  --colorSecondaryDarken1: color(var(--colorSecondary) shade(20%));
-  --colorSecondaryDarken2: color(var(--colorSecondary) shade(40%));
-  --colorSecondaryDarken3: color(var(--colorSecondary) shade(60%));
-  --colorSecondaryDarken4: color(var(--colorSecondary) shade(80%));
-
-  --colorTertiaryLighten1: color(var(--colorTertiary) tint(20%));
-  --colorTertiaryLighten2: color(var(--colorTertiary) tint(40%));
-  --colorTertiaryLighten3: color(var(--colorTertiary) tint(60%));
-  --colorTertiaryLighten4: color(var(--colorTertiary) tint(80%));
-  --colorTertiaryDarken1: color(var(--colorTertiary) shade(20%));
-  --colorTertiaryDarken2: color(var(--colorTertiary) shade(40%));
-  --colorTertiaryDarken3: color(var(--colorTertiary) shade(60%));
-  --colorTertiaryDarken4: color(var(--colorTertiary) shade(80%));
-
-  --colorQuaternaryLighten1: color(var(--colorQuaternary) tint(20%));
-  --colorQuaternaryLighten2: color(var(--colorQuaternary) tint(40%));
-  --colorQuaternaryLighten3: color(var(--colorQuaternary) tint(60%));
-  --colorQuaternaryLighten4: color(var(--colorQuaternary) tint(80%));
-  --colorQuaternaryDarken1: color(var(--colorQuaternary) shade(20%));
-  --colorQuaternaryDarken2: color(var(--colorQuaternary) shade(40%));
-  --colorQuaternaryDarken3: color(var(--colorQuaternary) shade(60%));
-  --colorQuaternaryDarken4: color(var(--colorQuaternary) shade(80%));
-
-  --colorGrayLighten1: color(var(--colorGray) tint(20%));
-  --colorGrayLighten2: color(var(--colorGray) tint(40%));
-  --colorGrayLighten3: color(var(--colorGray) tint(60%));
-  --colorGrayLighten4: color(var(--colorGray) tint(80%));
-
-  --colorGrayDarken1: color(var(--colorGray) shade(20%));
-  --colorGrayDarken2: color(var(--colorGray) shade(40%));
-  --colorGrayDarken3: color(var(--colorGray) shade(60%));
-  --colorGrayDarken4: color(var(--colorGray) shade(80%));
-} */
 
 @font-face {
   font-family: "Open Sans";
@@ -582,14 +558,10 @@ body {
   --toggleBaseSelectedTextColor: var(--colorNormal, rgb(86, 240, 0));
 
   /* Alt Toggle */
-  --toggleThumbBorderColor: rgb(122, 122, 122);
-  --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
+  /* --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122)); */
+  --toggleThumbBorderColor: #fff;
   --toggleThumbBackgroundColor: rgb(255, 255, 255);
   --toggleThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --toggleSelectedThumbBorderColor: #3dc100;
-  --toggleSelectedThumbBackgroundColor: rgb(86, 240, 0);
-  --toggleSelectedThumbBackgroundColor: var(--colorNormal, rgb(86, 240, 0));
 
   --toggleTrackBorderColor: rgb(122, 122, 122);
 
@@ -597,12 +569,18 @@ body {
   --toggleTrackBackgroundColor: rgb(204, 204, 204);
   --toggleTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
 
-  --toggleSelectedTrackBorderColor: #3dc100;
-  --toggleSelectedTrackBackgroundColor: rgb(86, 240, 0);
-  --toggleSelectedTrackBackgroundColor: var(--colorNormal, rgb(86, 240, 0));
+  /* Selected State */
+  /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153)); */
+  --toggleSelectedThumbBorderColor: #fff;
+  
+  --toggleSelectedTrackBackgroundColor: rgb(100, 217, 255);
+  
+  --toggleSelectedTrackBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
+  --toggleSelectedTrackBorderColor: rgb(27, 122, 153);
+  --toggleSelectedTrackBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153));
 
+  /* Disabled State */
   --toggleDisabledThumbBorderColor: rgb(122, 122, 122);
-
   --toggleDisabledThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
   --toggleDisabledThumbBackgroundColor: rgb(163, 163, 163)
   ;
@@ -610,6 +588,8 @@ body {
     --colorGrayDarken1,
     rgb(163, 163, 163)
   );
+  --toggleDisabledSelectedThumbBorderColor: rgb(122, 122, 122);
+  --toggleDisabledSelectedThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
 
   /* 
     
@@ -1110,25 +1090,39 @@ li.dark-theme {
 
   /* Alt Toggle */
   --toggleThumbBorderColor: rgb(122, 122, 122);
-  --toggleThumbBorderColor: var(--colorPrimary, rgb(122, 122, 122));
+  --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
   --toggleThumbBackgroundColor: rgb(255, 255, 255);
   --toggleThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
 
-  --toggleSelectedThumbBorderColor: #3dc100;
-  --toggleSelectedThumbBackgroundColor: rgb(86, 240, 0);
-  --toggleSelectedThumbBackgroundColor: var(--colorNormal, rgb(86, 240, 0));
+  --toggleSelectedThumbBorderColor: rgb(27, 122, 153);
 
-  --toggleTrackBorderColor: rgb(153, 189, 210);
+  --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153));
+  --toggleSelectedThumbBackgroundColor: rgb(100, 217, 255);
+  --toggleSelectedThumbBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
 
-  --toggleTrackBorderColor: var(--colorPrimaryLighten2, rgb(153, 189, 210));
+  --toggleTrackBorderColor: rgb(122, 122, 122);
+
+  --toggleTrackBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
   --toggleTrackBackgroundColor: rgb(204, 204, 204);
-  --toggleTrackBackgroundColor: var(--colorPrimaryLighten3, rgb(204, 204, 204));
+  --toggleTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
 
-  --toggleDisabledThumbBorderColor: rgb(163, 163, 163);
+  --toggleSelectedTrackBorderColor: rgb(27, 122, 153);
 
-  --toggleDisabledThumbBorderColor: var(--colorGray, rgb(163, 163, 163));
-  --toggleDisabledThumbBackgroundColor: rgb(255, 255, 255);
-  --toggleDisabledThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --toggleSelectedTrackBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153));
+  --toggleSelectedTrackBackgroundColor: rgb(100, 217, 255);
+  --toggleSelectedTrackBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
+
+  --toggleDisabledThumbBorderColor: rgb(122, 122, 122);
+
+  --toggleDisabledThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
+  --toggleDisabledThumbBackgroundColor: rgb(255, 255, 255)
+  ;
+  --toggleDisabledThumbBackgroundColor: var(
+    --colorWhite,
+    rgb(255, 255, 255)
+  );
+  --toggleDisabledSelectedThumbBorderColor: rgb(153, 189, 210);
+  --toggleDisabledSelectedThumbBorderColor: var(--colorPrimaryLighten3, rgb(153, 189, 210));
 
   /* 
     
@@ -1664,6 +1658,7 @@ dd {
 **
 */
 
+svg,
 svg path,
 svg circle {
   fill: inherit;
@@ -2187,7 +2182,7 @@ svg circle {
 
 /*
 **
-** 	ASTRO CHECKBOX
+** 	ASTRO SELECT/DROP DOWN
 ** 	==========================================================================
 **	2.0.1 Notes
 */
@@ -4485,7 +4480,7 @@ Ideally this will supplant SVG in a near future release.
 
 /*
 **
-** 	ASTRO TOGGLE BUTTONS
+** 	ASTRO TOGGLE BUTTONS LEGACT
 ** 	==========================================================================
 **  3.0 Notes
 **  - Breaking change to markup of toggle button
@@ -4501,130 +4496,8 @@ Ideally this will supplant SVG in a near future release.
 **  - Updated transition speed
 */
 
-.rux-toggle--alt {
-  position: relative;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
-  box-sizing: border-box;
-
-  /* height: 1.175rem; */
-  /* width: 2.3875rem; */
-  height: 22px;
-  width: 42px;
-
-  -webkit-user-select: none;
-
-     -moz-user-select: none;
-
-      -ms-user-select: none;
-
-          user-select: none;
-  overflow: hidden;
-}
-
-.rux-toggle--alt__input {
-  display: none !important;
-}
-
-.rux-toggle--alt__button {
-  display: -webkit-flex;
-  display: flex;
-  /* justify-content: center;
-  align-content: center; */
-  -webkit-align-items: center;
-          align-items: center;
-}
-
-.rux-toggle--alt__button::before {
-  position: relative;
-
-  content: "";
-  border-radius: 5.5px;
-  border: 1px solid rgb(122, 122, 122);
-  border: 1px solid var(--toggleTrackBorderColor, rgb(122, 122, 122));
-  background-color: rgb(204, 204, 204);
-  background-color: var(--toggleTrackBackgroundColor, rgb(204, 204, 204));
-
-  height: 11px;
-  width: 32px;
-
-  transition: 0.167s background-color ease-in-out;
-}
-
-.rux-toggle--alt__input:checked + .rux-toggle--alt__button::before {
-  background-color: rgb(86, 240, 0);
-  background-color: var(--toggleSelectedThumbBackgroundColor, rgb(86, 240, 0));
-  border-color: #3dc100;
-  border-color: var(--toggleSelectedThumbBorderColor, #3dc100);
-}
-
-.rux-toggle--alt__button::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  height: 19px;
-  width: 19px;
-
-  border-radius: 50%;
-  border: 1px solid rgb(122, 122, 122);
-  border: 1px solid var(--toggleThumbBorderColor, rgb(122, 122, 122));
-  background-color: #ffffff;
-  background-color: var(--toggleThumbBackgroundColor, #ffffff);
-
-  transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
-}
-
-.rux-toggle--alt__input:disabled + .rux-toggle--alt__button::after {
-  background-color: rgb(163, 163, 163)
-  ;
-  background-color: var(
-    --toggleDisabledThumbBackgroundColor,
-    rgb(163, 163, 163)
-  );
-  border-color: rgb(122, 122, 122);
-  border-color: var(--toggleDisabledThumbBorderColor, rgb(122, 122, 122));
-}
-
-.rux-toggle--alt__input:checked + .rux-toggle--alt__button::after {
-  left: calc(50% + 2px);
-  border-color: #3dc100;
-}
-
-.rux-toggle--alt__input:checked:disabled + .rux-toggle--alt__button::after {
-  border-color: #3dc100;
-  cursor: not-allowed;
-}
-
-.rux-toggle--alt__input:disabled + .rux-toggle--alt__button::before {
-  opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
-  cursor: not-allowed;
-}
-
-/*
-**
-** 	ASTRO TOGGLE BUTTONS
-** 	==========================================================================
-**  3.0 Notes
-**  - Breaking change to markup of toggle button
-**  2.1 Notes
-**	- Moved Pushbuttons to its own style sheet
-**	1.4 Notes
-**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
-**	- Removed prefixed linear gradients
-**	- Removed prefixed transition
-**  - Fixed added colon to checked pseudo class (e.g., checked became :checked)
-**  - Alignment issue fixed on toggle button label
-**  - Updated to WCAG colors
-**  - Updated transition speed
-*/
-
-.rux-toggle,
-.satcom-toggle {
+.rux-toggle--legacy,
+.satcom-toggle--legacy {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -4645,12 +4518,12 @@ Ideally this will supplant SVG in a near future release.
   overflow: hidden;
 }
 
-.rux-toggle__input,
-.satcom-toggle input {
+.rux-toggle--legacy__input,
+.satcom-toggle--legacy input {
   display: none !important;
 }
 
-.rux-toggle__button {
+.rux-toggle--legacy__button {
   position: absolute;
   display: -webkit-flex;
   display: flex;
@@ -4672,7 +4545,7 @@ Ideally this will supplant SVG in a near future release.
   width: 100%;
 }
 
-.rux-toggle__button span {
+.rux-toggle--legacy__button span {
   display: -webkit-flex;
   display: flex;
 
@@ -4691,7 +4564,7 @@ Ideally this will supplant SVG in a near future release.
   text-transform: uppercase;
 }
 
-.rux-toggle__button::before {
+.rux-toggle--legacy__button::before {
   position: absolute;
   content: "";
   display: block;
@@ -4706,7 +4579,7 @@ Ideally this will supplant SVG in a near future release.
   background: var(--toggleBaseBackgroundColor, #000);
 }
 
-.rux-toggle__button::after {
+.rux-toggle--legacy__button::after {
   content: "";
 
   display: block;
@@ -4746,24 +4619,24 @@ Ideally this will supplant SVG in a near future release.
   );
 }
 
-.rux-toggle .on {
+.rux-toggle--legacy .on {
   font-weight: 600;
   color: rgb(91, 255, 0);
   color: var(--toggleBaseSelectedTextColor, rgb(91, 255, 0));
 }
 
-.rux-toggle .off {
+.rux-toggle--legacy .off {
   color: #fff;
   color: var(--toggleBaseTextColor, #fff);
 }
 
-.rux-toggle__input:disabled + .rux-toggle__button {
+.rux-toggle--legacy__input:disabled + .rux-toggle--legacy__button {
   opacity: 0.4;
   opacity: var(--disabledOpacity, 0.4);
   cursor: not-allowed;
 }
 
-.rux-toggle__input:checked + .rux-toggle__button::after {
+.rux-toggle--legacy__input:checked + .rux-toggle--legacy__button::after {
   left: 50%;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
     -1px 0 2px rgba(0, 0, 0, 0.6)
@@ -4773,6 +4646,139 @@ Ideally this will supplant SVG in a near future release.
     0 0 3px rgba(0, 0, 0, 0.5),
     -1px 0 2px rgba(0, 0, 0, 0.6)
   );
+}
+
+/*
+**
+** 	ASTRO TOGGLE BUTTONS
+** 	==========================================================================
+**  3.0 Notes
+**  - Breaking change to markup of toggle button
+**  2.1 Notes
+**	- Moved Pushbuttons to its own style sheet
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed linear gradients
+**	- Removed prefixed transition
+**  - Fixed added colon to checked pseudo class (e.g., checked became :checked)
+**  - Alignment issue fixed on toggle button label
+**  - Updated to WCAG colors
+**  - Updated transition speed
+*/
+
+.rux-toggle {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+  box-sizing: border-box;
+
+  /* height: 1.175rem; */
+  /* width: 2.3875rem; */
+  height: 22px;
+  width: 42px;
+
+  -webkit-user-select: none;
+
+     -moz-user-select: none;
+
+      -ms-user-select: none;
+
+          user-select: none;
+  overflow: hidden;
+}
+
+.rux-toggle__input {
+  display: none !important;
+}
+
+.rux-toggle__button {
+  display: -webkit-flex;
+  display: flex;
+  /* justify-content: center;
+  align-content: center; */
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+.rux-toggle__button::before {
+  position: relative;
+
+  content: "";
+  border-radius: 5.5px;
+  border: 1px solid rgb(122, 122, 122);
+  border: 1px solid var(--toggleTrackBorderColor, rgb(122, 122, 122));
+  background-color: rgb(204, 204, 204);
+  background-color: var(--toggleTrackBackgroundColor, rgb(204, 204, 204));
+
+  height: 11px;
+  width: 32px;
+
+  transition: 0.167s background-color ease-in-out;
+}
+
+/* Track */
+.rux-toggle__input:checked + .rux-toggle__button::before {
+  background-color: rgb(100, 217, 255)
+  ;
+  background-color: var(
+    --toggleSelectedTrackBackgroundColor,
+    rgb(100, 217, 255)
+  );
+  border-color: rgb(27, 122, 153);
+  border-color: var(--toggleSelectedTrackBorderColor, rgb(27, 122, 153));
+}
+
+.rux-toggle__button::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  height: 19px;
+  width: 19px;
+
+  border-radius: 50%;
+  border: 1px solid #fff;
+  border: 1px solid var(--toggleThumbBorderColor, #fff);
+  background-color: rgb(255, 255, 255);
+  background-color: var(--toggleThumbBackgroundColor, rgb(255, 255, 255));
+
+  transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
+}
+
+.rux-toggle__input:disabled + .rux-toggle__button::after {
+  background-color: rgb(163, 163, 163)
+  ;
+  background-color: var(
+    --toggleDisabledThumbBackgroundColor,
+    rgb(163, 163, 163)
+  );
+  border-color: rgb(163, 163, 163);
+  border-color: var(--toggleDisabledThumbBorderColor, rgb(163, 163, 163));
+}
+
+.rux-toggle__input:checked + .rux-toggle__button::after {
+  left: calc(50% + 2px);
+  border-color: #fff;
+  border-color: var(--toggleSelectedThumbBorderColor, #fff);
+}
+
+.rux-toggle__input:checked:disabled + .rux-toggle__button::after {
+  border-color: rgb(163, 163, 163)
+  ;
+  border-color: var(
+    --toggleDisabledSelectedThumbBorderColor,
+    rgb(163, 163, 163)
+  );
+  cursor: not-allowed;
+}
+
+.rux-toggle__input:disabled + .rux-toggle__button::before {
+  opacity: 0.4;
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: not-allowed;
 }
 
 .rux-tree {

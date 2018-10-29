@@ -133,6 +133,10 @@ export class RuxStatus extends PolymerElement {
       :host([status="emergency"]) .rux-advanced-status__icon::before {
         background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23F72501%22%20d%3D%22M12%2012H0L6%200z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A");
       }
+
+      ,rux-status--off.style-scope svg {
+        fill: #f00 !important;
+      }
       
       .rux-advanced-status__badge:empty {
         display: none;
