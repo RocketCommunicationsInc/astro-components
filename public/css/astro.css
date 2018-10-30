@@ -1658,7 +1658,6 @@ dd {
 **
 */
 
-svg,
 svg path,
 svg circle {
   fill: inherit;
@@ -2182,7 +2181,7 @@ svg circle {
 
 /*
 **
-** 	ASTRO SELECT/DROP DOWN
+** 	ASTRO DROP DOWN
 ** 	==========================================================================
 **	2.0.1 Notes
 */
@@ -4480,7 +4479,7 @@ Ideally this will supplant SVG in a near future release.
 
 /*
 **
-** 	ASTRO TOGGLE BUTTONS LEGACT
+** 	ASTRO TOGGLE BUTTONS
 ** 	==========================================================================
 **  3.0 Notes
 **  - Breaking change to markup of toggle button
@@ -4707,6 +4706,9 @@ Ideally this will supplant SVG in a near future release.
 .rux-toggle__button::before {
   position: relative;
 
+  display: -webkit-flex;
+
+  display: flex;
   content: "";
   border-radius: 5.5px;
   border: 1px solid rgb(122, 122, 122);
@@ -4735,7 +4737,9 @@ Ideally this will supplant SVG in a near future release.
 .rux-toggle__button::after {
   position: absolute;
   content: "";
+  top: 1px;
   left: 0;
+  z-index: 1;
   height: 19px;
   width: 19px;
 
