@@ -524,52 +524,37 @@ rux-global-status-bar {
     
     <rux-global-status-bar theme="dark">
 
-      <rux-tabs
-        id="main">
+      <rux-tabs id="main">
+        <rux-tab id="t6" role="tab">Icons</rux-tab>
         <rux-tab id="t2" role="tab">Components</rux-tab>
         <rux-tab id="t1" role="tab">Elements</rux-tab>
         <rux-tab id="t3" role="tab">Widgets</rux-tab>
-        <rux-tab id="t6" role="tab">Icons</rux-tab>
         <rux-tab id="t5" role="tab">Typography</rux-tab>
-        <rux-tab id="t4" role="tab">Colors</rux-tab>        
-        
-        
+        <rux-tab id="t4" role="tab">Colors</rux-tab>
       </rux-tabs>
 
-      
+
 
       <ul class="astro-advanced-status-indicators">
         <dom-repeat id="astroAdvancedStatus" items="{{statusIndicators}}">
           <template>
             <li>
-              <rux-status
-                status=[[item.status]]
-                label=[[item.label]]
-                sublabel="sub label"
-                icon=[[item.icon]]
-                notifications=[[item.notifications]]
-                on-click="_showPopUp"></rux-status>
+              <rux-status status=[[item.status]] label=[[item.label]] sublabel="sub label" icon=[[item.icon]] notifications=[[item.notifications]]
+              on-click="_showPopUp"></rux-status>
             </li>
-            
+
           </template>
         </dom-repeat>
         <li>
-          <rux-status
-            label="Notifications"
-            icon="utility:notifications"
-            notifications=5
-            active></rux-status>
+          <rux-status label="Notifications" icon="utility:notifications" notifications=5 active></rux-status>
         </li>
         <li>
-            <rux-status
-              label="Settings"
-              icon="utility:settings"></rux-status>
-          </li>
+          <rux-status label="Settings" icon="utility:settings"></rux-status>
+        </li>
         </li>
       </ul>
 
-      <rux-segmented-button
-        data={{theme}}>
+      <rux-segmented-button data={{theme}}>
       </rux-segmented-button>
 
     </rux-global-status-bar>
@@ -578,300 +563,344 @@ rux-global-status-bar {
     <rux-tab-panels role="tablist" aria-labeledby="main">
 
 
-    
 
-	<rux-tab-panel aria-labeledby="t1" role="tabpanel">
-		<div class="grid">
 
-			
+      <rux-tab-panel aria-labeledby="t1" role="tabpanel">
+        <div class="grid">
 
 
 
 
-			<!-- 1. CHECKBOXES  //-->
-			<section class="rux-card checkbox">
-        <header class="rux-card__header">
-          <h1>Checkboxes</h1>
-        </header>
-				<div class="rux-card__content">
-					<ol class="no-list">
-						<li class="rux-checkbox">
-							<input type="checkbox" name="checkbox1c" id="checkbox1c">
-							<label for="checkbox1c">Checkbox</label>
-						</li>
-
-						<li class="rux-checkbox">
-							<input type="checkbox" name="checkbox2c" id="checkbox2c" checked="">
-							<label for="checkbox2c">Checkbox checked</label>
-						</li>
-
-						<li class="rux-checkbox">
-							<input type="checkbox" name="checkbox3c" id="checkbox3c" disabled="">
-							<label for="checkbox3c">Checkbox disabled</label>
-						</li>
-
-						<li class="rux-checkbox">
-							<input type="checkbox" name="checkbox4c" id="checkbox4c" checked="" disabled="">
-							<label for="checkbox4c">Checkbox disabled checked</label>
-						</li>
-          </ol>
-        </div>
-      </section>
 
 
-      <!-- 2. RADIO BUTTONS  //-->
-      <section class="rux-card radio">
-        <header class="rux-card__header">
-          <h1>Radio Buttons</h1>
-        </header>
-				<div class="rux-card__content">
-					<ol class="no-list">
-						<li class="rux-radio-button">
-							<input type="radio" name="radio1c" id="radio1c">
-							<label for="radio1c">Radio Button</label>
-						</li>
+          <!-- 1. CHECKBOXES  //-->
+          <section class="rux-card checkbox">
+            <header class="rux-card__header">
+              <h1>Checkboxes</h1>
+            </header>
+            <div class="rux-card__content">
+              <ol class="no-list">
+                <li class="rux-checkbox">
+                  <input type="checkbox" name="checkbox1c" id="checkbox1c">
+                  <label for="checkbox1c">Checkbox</label>
+                </li>
 
-						<li class="rux-radio-button">
-							<input type="radio" name="radio1c" id="radio2c" checked="">
-							<label for="radio2c">Radio Button checked</label>
-						</li>
+                <li class="rux-checkbox">
+                  <input type="checkbox" name="checkbox2c" id="checkbox2c" checked="">
+                  <label for="checkbox2c">Checkbox checked</label>
+                </li>
 
-						<li class="rux-radio-button">
-							<input type="radio" name="radio2c" id="radio3c" disabled="">
-							<label for="radio3c">Radio Button disabled</label>
-						</li>
+                <li class="rux-checkbox">
+                  <input type="checkbox" name="checkbox3c" id="checkbox3c" disabled="">
+                  <label for="checkbox3c">Checkbox disabled</label>
+                </li>
 
-						<li class="rux-radio-button">
-							<input type="radio" name="radio2c" id="radio4c" checked="" disabled="">
-							<label for="radio4c">Radio Button disabled checked</label>
-						</li>
-					</ol>
-				</div>
-      </section>
-      
+                <li class="rux-checkbox">
+                  <input type="checkbox" name="checkbox4c" id="checkbox4c" checked="" disabled="">
+                  <label for="checkbox4c">Checkbox disabled checked</label>
+                </li>
+              </ol>
+            </div>
+          </section>
 
 
-      <!-- 3. PUSHBUTTONS //-->
-      <section class="rux-card pushbuttons">
-        <header class="rux-card__header">
-          <h1>Pushbuttons</h1>
-        </header>
-        <div class="rux-card__content">
-          <figure>
-            <div class="rux-form-field">
-              <label aria-label="pushbuttons">Enable:</label>
-              <ul class="no-list push-buttons-list">
-                <li><rux-push-button>Tx</rux-push-button></li>
-                <li><rux-push-button checked>Rx</rux-push-button></li>
-                <li><rux-push-button disabled>Xx</rux-push-button></li>
-                <li><rux-push-button checked disabled>Yx</rux-push-button></li>
+          <!-- 2. RADIO BUTTONS  //-->
+          <section class="rux-card radio">
+            <header class="rux-card__header">
+              <h1>Radio Buttons</h1>
+            </header>
+            <div class="rux-card__content">
+              <ol class="no-list">
+                <li class="rux-radio-button">
+                  <input type="radio" name="radio1c" id="radio1c">
+                  <label for="radio1c">Radio Button</label>
+                </li>
+
+                <li class="rux-radio-button">
+                  <input type="radio" name="radio1c" id="radio2c" checked="">
+                  <label for="radio2c">Radio Button checked</label>
+                </li>
+
+                <li class="rux-radio-button">
+                  <input type="radio" name="radio2c" id="radio3c" disabled="">
+                  <label for="radio3c">Radio Button disabled</label>
+                </li>
+
+                <li class="rux-radio-button">
+                  <input type="radio" name="radio2c" id="radio4c" checked="" disabled="">
+                  <label for="radio4c">Radio Button disabled checked</label>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+
+
+          <!-- 3. PUSHBUTTONS //-->
+          <section class="rux-card pushbuttons">
+            <header class="rux-card__header">
+              <h1>Pushbuttons</h1>
+            </header>
+            <div class="rux-card__content">
+              <figure>
+                <div class="rux-form-field">
+                  <label aria-label="pushbuttons">Enable:</label>
+                  <ul class="no-list push-buttons-list">
+                    <li>
+                      <rux-push-button>Tx</rux-push-button>
+                    </li>
+                    <li>
+                      <rux-push-button checked>Rx</rux-push-button>
+                    </li>
+                    <li>
+                      <rux-push-button disabled>Xx</rux-push-button>
+                    </li>
+                    <li>
+                      <rux-push-button checked disabled>Yx</rux-push-button>
+                    </li>
+                  </ul>
+                </div>
+              </figure>
+          </section>
+
+
+          <!-- 4. SEGMENTED BUTTONS //-->
+          <section class="rux-card segmented">
+            <header class="rux-card__header">
+              <h1>Segmented Button</h1>
+            </header>
+            <div class="rux-card__content">
+              <rux-segmented-button data={{segmentOne}}></rux-segmented-button>
+            </div>
+          </section>
+
+
+          <!-- 5. TOGGLE BUTTONS //-->
+          <section class="rux-card toggles">
+            <header class="rux-card__header">
+              <h1>Toggles Button</h1>
+            </header>
+            <div class="rux-card__content">
+
+              <ul class="no-list toggle-buttons">
+                <li class="rux-form-field">
+                  <div id="toggle1">Toggle 1:</div>
+                  <rux-toggle aria-labeledby="toggle1"></rux-toggle>
+                </li>
+                <li class="rux-form-field">
+                  <div id="toggle3">Toggle 2:</div>
+                  <rux-toggle aria-labeledby="toggle1" checked></rux-toggle>
+                </li>
+                <li class="rux-form-field">
+                  <div id="toggle3">Toggle 3:</div>
+                  <rux-toggle disabled aria-labeledby="toggle1"></rux-toggle>
+                </li>
+                <li class="rux-form-field">
+                  <div id="toggle3">Toggle 4:</div>
+                  <rux-toggle disabled aria-labeledby="toggle1" checked></rux-toggle>
+                </li>
+              </ul>
+
+            </div>
+          </section>
+
+
+          <!-- 6. INPUT FIELDS //-->
+          <section class="rux-card text-fields">
+            <header class="rux-card__header">
+              <h1>Input Fields</h1>
+            </header>
+            <div class="rux-card__content">
+              <ol class="rux-form">
+                <li class="rux-form-field">
+                  <input class="rux-input" type="text" value=" " required></input>
+                  <label for="">Standard Text</label>
+                </li>
+                <li class="rux-form-field">
+                  <input class="rux-input" type="text" required></input>
+                  <label for="">Invalid</label>
+                </li>
+                <li class="rux-form-field">
+                  <input class="rux-input" type="text" required disabled></input>
+                  <label for="">Disabled</label>
+                </li>
+                <li class="rux-form-field">
+                  <input class="rux-input" type="text"></input>
+                  <label for="">Optional</label>
+                </li>
+                <li class="rux-form-field">
+                  <label for="">Search</label>
+                  <input type="search"></input>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+
+
+          <!-- 7. DROP DOWNS/SELECT //-->
+          <section class="rux-card drop-downs">
+            <header class="rux-card__header">
+              <h1>Drop Down/Select</h1>
+            </header>
+            <div class="rux-card__content">
+              <select class="rux-select" style="--value:Group One Option Three;">
+                <optgroup label="Group One">
+                  <option>Group One Option One</option>
+                  <option>Group One Option Two</option>
+                  <option>Group One Option Three</option>
+                  <option>Group One Option Four</option>
+                </optgroup>
+                <optgroup label="Group Two">
+                  <option>Group Two Option One</option>
+                  <option>Group Two Option Two</option>
+                  <option>Group Two Option Three</option>
+                  <option>Group Two Option Four</option>
+                </optgroup>
+              </select>
+
+              <br>
+              <br>
+
+              <select class="rux-select" disabled style="--value:Group One Option Three;">
+                <optgroup label="Group One">
+                  <option>Group One Option One</option>
+                  <option>Group One Option Two</option>
+                  <option>Group One Option Three</option>
+                  <option>Group One Option Four</option>
+                </optgroup>
+                <optgroup label="Group Two">
+                  <option>Group Two Option One</option>
+                  <option>Group Two Option Two</option>
+                  <option>Group Two Option Three</option>
+                  <option>Group Two Option Four</option>
+                </optgroup>
+              </select>
+            </div>
+          </section>
+
+
+          <!-- 8. BUTTONS //-->
+          <section class="rux-card buttons  dark-theme">
+            <header class="rux-card__header">
+              <h1>Buttons</h1>
+            </header>
+            <div class="rux-card__content">
+              <h2 class="h3">Small</h2>
+              <ul class="button-list">
+                <li>
+                  <rux-button size="small">Button</rux-button>
+                </li>
+                <li>
+                  <rux-button size="small" icon="utility:caution">Button</rux-button>
+                </li>
+                <li>
+                  <rux-button size="small" disabled>Buttons</rux-button>
+                </li>
+                <li>
+                  <rux-button size="small" type="outline">Button</rux-button>
+                </li>
+                <li>
+                  <rux-button size="small" type="outline" disabled>Button</rux-button>
+                </li>
+              </ul>
+              <h2 class="h3">Standard</h2>
+              <ul class="button-list">
+                <li>
+                  <rux-button>Button</rux-button>
+                </li>
+                <li>
+                  <rux-button icon="utility:caution">Button</rux-button>
+                </li>
+                <li>
+                  <rux-button disabled>Buttons</rux-button>
+                </li>
+                <li>
+                  <rux-button type="outline">Button</rux-button>
+                </li>
+                <li>
+                  <rux-button type="outline" disabled>Button</rux-button>
+                </li>
+              </ul>
+              <h2 class="h3">Large</h2>
+              <ul class="button-list">
+                <li>
+                  <rux-button size="large">Button</rux-button>
+                </li>
+                <li>
+                  <rux-button size="large" icon="utility:caution">Button</rux-button>
+                </li>
+                <li>
+                  <rux-button size="large" disabled>Buttons</rux-button>
+                </li>
+                <li>
+                  <rux-button size="large" type="outline">Button</rux-button>
+                </li>
+                <li>
+                  <rux-button size="large" type="outline" disabled>Button</rux-button>
+                </li>
               </ul>
             </div>
-          </figure>
-      </section>
+          </section>
+
+          <!-- 9. PROGRESS //-->
+          <section class="rux-card progress">
+            <header class="rux-card__header">
+              <h1>Progress</h1>
+            </header>
+            <div class="rux-card__content">
+              <rux-progress value=50 label=true></rux-progress>
+              <rux-progress></rux-progress>
+
+            </div>
+          </section>
+
+          <!-- 10. STATUS //-->
+          <section class="rux-card status">
+            <header class="rux-card__header">
+              <h1>Status</h1>
+            </header>
+            <div class="rux-card__content">
+              <ul class="no-list">
+                <li>
+                  <rux-status status="off"></rux-status>
+                </li>
+                <li>
+                  <rux-status status="standby"></rux-status>
+                </li>
+                <li>
+                  <rux-status status="normal"></rux-status>
+                </li>
+                <li>
+                  <rux-status status="caution"></rux-status>
+                </li>
+                <li>
+                  <rux-status status="serious"></rux-status>
+                </li>
+                <li>
+                  <rux-status status="critical"></rux-status>
+                </li>
+              </ul>
+
+            </div>
+          </section>
 
 
-      <!-- 4. SEGMENTED BUTTONS //-->
-      <section class="rux-card segmented">
-        <header class="rux-card__header">
-          <h1>Segmented Button</h1>
-        </header>
-        <div class="rux-card__content">
-            <rux-segmented-button data={{segmentOne}}></rux-segmented-button>
+
+
+          <!-- 12. POP UPS //-->
+          <section class="rux-card popups">
+            <header class="rux-card__header">
+              <h1>Pop Ups</h1>
+            </header>
+            <div class="rux-card__content">
+            </div>
+          </section>
+
+
+          <!-- END GRID //-->
         </div>
-      </section>
-
-
-      <!-- 5. TOGGLE BUTTONS //-->
-      <section class="rux-card toggles">
-        <header class="rux-card__header">
-          <h1>Toggles Button</h1>
-        </header>
-        <div class="rux-card__content">
-        
-          <ul class="no-list toggle-buttons">
-            <li class="rux-form-field">
-              <div id="toggle1">Toggle 1:</div>
-              <rux-toggle aria-labeledby="toggle1"></rux-toggle>
-            </li>
-            <li class="rux-form-field">
-              <div id="toggle3">Toggle 2:</div>
-              <rux-toggle aria-labeledby="toggle1" checked></rux-toggle>
-            </li>
-            <li class="rux-form-field">
-              <div id="toggle3">Toggle 3:</div>
-              <rux-toggle disabled aria-labeledby="toggle1"></rux-toggle>
-            </li>
-            <li class="rux-form-field">
-              <div id="toggle3">Toggle 4:</div>
-              <rux-toggle disabled aria-labeledby="toggle1" checked></rux-toggle>
-            </li>
-          </ul>
-        
-      </div>
-    </section>
-
-
-    <!-- 6. INPUT FIELDS //-->
-    <section class="rux-card text-fields">
-      <header class="rux-card__header">
-        <h1>Input Fields</h1>
-      </header>
-      <div class="rux-card__content">
-        <ol class="rux-form">
-          <li class="rux-form-field">
-            <input class="rux-input" type="text" value=" " required></input>
-            <label for="">Standard Text</label>
-          </li>
-          <li class="rux-form-field">
-            <input class="rux-input" type="text" required></input>
-            <label for="">Invalid</label>
-          </li>
-          <li class="rux-form-field">
-            <input class="rux-input" type="text" required disabled></input>
-            <label for="">Disabled</label>
-          </li>
-          <li class="rux-form-field">
-            <input class="rux-input" type="text"></input>
-            <label for="">Optional</label>
-          </li>
-          <li class="rux-form-field">
-            <label for="">Search</label>
-            <input type="search"></input>
-          </li>
-        </ol>
-      </div>
-    </section>
-    
-
-
-    <!-- 7. DROP DOWNS/SELECT //-->
-    <section class="rux-card drop-downs">
-      <header class="rux-card__header">
-        <h1>Drop Down/Select</h1>
-      </header>
-      <div class="rux-card__content">
-        <select class="rux-select" style="--value:Group One Option Three;">
-          <optgroup label="Group One">
-            <option>Group One Option One</option>
-            <option>Group One Option Two</option>
-            <option>Group One Option Three</option>
-            <option>Group One Option Four</option>
-          </optgroup>
-          <optgroup label="Group Two">
-            <option>Group Two Option One</option>
-            <option>Group Two Option Two</option>
-            <option>Group Two Option Three</option>
-            <option>Group Two Option Four</option>
-          </optgroup>
-        </select>
-
-        <br>
-        <br>
-
-        <select class="rux-select" disabled style="--value:Group One Option Three;">
-          <optgroup label="Group One">
-            <option>Group One Option One</option>
-            <option>Group One Option Two</option>
-            <option>Group One Option Three</option>
-            <option>Group One Option Four</option>
-          </optgroup>
-          <optgroup label="Group Two">
-            <option>Group Two Option One</option>
-            <option>Group Two Option Two</option>
-            <option>Group Two Option Three</option>
-            <option>Group Two Option Four</option>
-          </optgroup>
-        </select>
-      </div>
-    </section>
-
-
-    <!-- 8. BUTTONS //-->
-    <section class="rux-card buttons  dark-theme">
-      <header class="rux-card__header">
-        <h1>Buttons</h1>
-      </header>
-      <div class="rux-card__content">
-      <h2 class="h3">Small</h3>
-      <ul class="button-list">
-        <li><rux-button size="small">Button</rux-button></li>
-        <li><rux-button size="small" icon="utility:caution">Button</rux-button></li>
-        <li><rux-button size="small" disabled>Buttons</rux-button></li>
-        <li><rux-button size="small" type="outline">Button</rux-button></li>
-        <li><rux-button size="small" type="outline" disabled>Button</rux-button></li>
-      </ul>
-        <h2 class="h3">Standard</h3>
-        <ul class="button-list">          
-          <li><rux-button>Button</rux-button></li>
-          <li><rux-button icon="utility:caution">Button</rux-button></li>
-          <li><rux-button disabled>Buttons</rux-button></li>
-          <li><rux-button type="outline">Button</rux-button></li>
-          <li><rux-button type="outline" disabled>Button</rux-button></li>
-        </ul>
-        <h2 class="h3">Large</h3>    
-        <ul class="button-list">  
-          <li><rux-button size="large">Button</rux-button></li>
-          <li><rux-button size="large" icon="utility:caution">Button</rux-button></li>
-          <li><rux-button size="large" disabled>Buttons</rux-button></li>
-          <li><rux-button size="large" type="outline">Button</rux-button></li>
-          <li><rux-button size="large" type="outline" disabled>Button</rux-button></li>
-        </ul>
-        
-        
-
-        
-        
-
-      </div>
-    </section>
-
-    <!-- 9. PROGRESS //-->
-    <section class="rux-card progress">
-      <header class="rux-card__header">
-        <h1>Progress</h1>
-      </header>
-      <div class="rux-card__content">
-      <rux-progress value=50 label=true></rux-progress>
-      <rux-progress></rux-progress>
-
-      </div>
-    </section>
-
-    <!-- 10. STATUS //-->
-    <section class="rux-card status">
-      <header class="rux-card__header">
-        <h1>Status</h1>
-      </header>
-      <div class="rux-card__content">
-        <ul class="no-list">
-          <li><rux-status status="off"></rux-status></li>
-          <li><rux-status status="standby"></rux-status></li>
-          <li><rux-status status="normal"></rux-status></li>
-          <li><rux-status status="caution"></rux-status></li>
-          <li><rux-status status="serious"></rux-status></li>
-          <li><rux-status status="critical"></rux-status></li>
-        </ul>
-
-      </div>
-    </section>
-
-    
-
-
-    <!-- 12. POP UPS //-->
-    <section class="rux-card popups">
-      <header class="rux-card__header">
-        <h1>Pop Ups</h1>
-      </header>
-      <div class="rux-card__content">
-      </div>
-    </section>
-
-
-			<!-- END GRID //-->
-		</div>
-	</rux-tab-panel>
+      </rux-tab-panel>
 
 
 
@@ -885,25 +914,18 @@ rux-global-status-bar {
 
       <rux-tab-panel aria-labeledby="t2" role="tabpanel">
 
-    
+
         <div class="grid">
-        <rux-notification
-        status$=[[notificationStatus]]
-        
-        message="This is a global notification banner.">
-      </rux-notification>
-          
+          <rux-notification status$=[[notificationStatus]] message="This is a global notification banner.">
+          </rux-notification>
+
           <!-- 1. SLIDER //-->
           <section class="rux-card slider">
             <header class="rux-card__header">
               <h1>Slider</h1>
             </header>
             <div class="rux-card__content">
-              <rux-slider 
-                axis-labels=[[sliderObjThree.labels]] 
-                min=0
-                max=100
-                val={{sliderObjThree.value}}></rux-slider>
+              <rux-slider axis-labels=[[sliderObjThree.labels]] min=0 max=100 val={{sliderObjThree.value}}></rux-slider>
             </div>
           </section>
 
@@ -914,72 +936,72 @@ rux-global-status-bar {
               <h1>Tabs</h1>
             </header>
             <div class="rux-card__content">
-            <!-- <rux-tabs id="main">
-            <rux-tab id="a1" role="tab" selected>Tab 1</rux-tab>
-            <rux-tab id="a2" role="tab">Tab with a Long Title</rux-tab>
-            <rux-tab id="a3" role="tab" disabled>Tab 3</rux-tab>
-            
-          </rux-tabs> 
-    
-          <rux-tab-panels role="tablist" aria-labeledby="main">
-            <rux-tab-panel aria-labeledby="a1" role="tabpanel">
-              <h3>Modems</h3>
-            </rux-tab-panel>
-    
-            <rux-tab-panel aria-labeledby="a2" role="tabpanel">
-              <h3>Pass Plans</h3>
-            </rux-tab-panel>
-    
-            <rux-tab-panel aria-labeledby="a3" role="tabpanel">
-              <h3>Satellites</h3>
-            </rux-tab-panel>
-          </rux-tab-panels>
-          //-->
-    
-    
-          <br>
-    
-          <rux-tabs id="compact-tabs" compact>
-            <rux-tab id="ct1" role="tab" selected>Tab 1</rux-tab>
-            <rux-tab id="ct2" role="tab">Tab 2</rux-tab>
-            <rux-tab id="ct3" role="tab" disabled>Tab 3</rux-tab>
-          </rux-tabs>
-    
-          <rux-tab-panels role="tablist" aria-labeledby="compact-tabs">
-            <rux-tab-panel aria-labeledby="ct1" role="tabpanel">
-              <h3>Tab 1</h3>
-            </rux-tab-panel>
-    
-            <rux-tab-panel aria-labeledby="ct2" role="tabpanel">
-              <h3>Tab 2</h3>
-            </rux-tab-panel>
-    
-            <rux-tab-panel aria-labeledby="ct3" role="tabpanel">
-              <h3>Tab 3</h3>
-            </rux-tab-panel>
-          </rux-tab-panels>
-    
-          <br>
-    
-          <rux-tabs id="interior-tabs" interior>
-            <rux-tab id="i1" role="tab" selected>Tiny 1</rux-tab>
-            <rux-tab id="i2" role="tab">Tiny 2</rux-tab>
-            <rux-tab id="i3" role="tab" disabled>Tiny 3</rux-tab>
-          </rux-tabs>
-    
-          <rux-tab-panels role="tablist" aria-labeledby="interior-tabs">
-            <rux-tab-panel aria-labeledby="i1" role="tabpanel">
-              <h3>Tab 1</h3>
-            </rux-tab-panel>
-    
-            <rux-tab-panel aria-labeledby="i2" role="tabpanel">
-              <h3>Tab 2</h3>
-            </rux-tab-panel>
-    
-            <rux-tab-panel aria-labeledby="i3" role="tabpanel">
-              <h3>Tab 3</h3>
-            </rux-tab-panel>
-          </rux-tab-panels>
+              <!-- <rux-tabs id="main">
+                <rux-tab id="a1" role="tab" selected>Tab 1</rux-tab>
+                <rux-tab id="a2" role="tab">Tab with a Long Title</rux-tab>
+                <rux-tab id="a3" role="tab" disabled>Tab 3</rux-tab>
+                
+              </rux-tabs> 
+        
+              <rux-tab-panels role="tablist" aria-labeledby="main">
+                <rux-tab-panel aria-labeledby="a1" role="tabpanel">
+                  <h3>Modems</h3>
+                </rux-tab-panel>
+        
+                <rux-tab-panel aria-labeledby="a2" role="tabpanel">
+                  <h3>Pass Plans</h3>
+                </rux-tab-panel>
+        
+                <rux-tab-panel aria-labeledby="a3" role="tabpanel">
+                  <h3>Satellites</h3>
+                </rux-tab-panel>
+              </rux-tab-panels>
+              //-->
+
+
+              <br>
+
+              <rux-tabs id="compact-tabs" compact>
+                <rux-tab id="ct1" role="tab" selected>Tab 1</rux-tab>
+                <rux-tab id="ct2" role="tab">Tab 2</rux-tab>
+                <rux-tab id="ct3" role="tab" disabled>Tab 3</rux-tab>
+              </rux-tabs>
+
+              <rux-tab-panels role="tablist" aria-labeledby="compact-tabs">
+                <rux-tab-panel aria-labeledby="ct1" role="tabpanel">
+                  <h3>Tab 1</h3>
+                </rux-tab-panel>
+
+                <rux-tab-panel aria-labeledby="ct2" role="tabpanel">
+                  <h3>Tab 2</h3>
+                </rux-tab-panel>
+
+                <rux-tab-panel aria-labeledby="ct3" role="tabpanel">
+                  <h3>Tab 3</h3>
+                </rux-tab-panel>
+              </rux-tab-panels>
+
+              <br>
+
+              <rux-tabs id="interior-tabs" interior>
+                <rux-tab id="i1" role="tab" selected>Tiny 1</rux-tab>
+                <rux-tab id="i2" role="tab">Tiny 2</rux-tab>
+                <rux-tab id="i3" role="tab" disabled>Tiny 3</rux-tab>
+              </rux-tabs>
+
+              <rux-tab-panels role="tablist" aria-labeledby="interior-tabs">
+                <rux-tab-panel aria-labeledby="i1" role="tabpanel">
+                  <h3>Tab 1</h3>
+                </rux-tab-panel>
+
+                <rux-tab-panel aria-labeledby="i2" role="tabpanel">
+                  <h3>Tab 2</h3>
+                </rux-tab-panel>
+
+                <rux-tab-panel aria-labeledby="i3" role="tabpanel">
+                  <h3>Tab 3</h3>
+                </rux-tab-panel>
+              </rux-tab-panels>
 
             </div>
           </section>
@@ -993,7 +1015,7 @@ rux-global-status-bar {
             <div class="rux-card__content">
               <rux-tree data={{treeData}}></rux-tree>
               <!-- Selected Tree Element: [[treeData.selected.label]]
-              <br>Action for Tree Element: [[treeData.selected.payload.action]] //-->
+                  <br>Action for Tree Element: [[treeData.selected.payload.action]] //-->
             </div>
           </section>
 
@@ -1005,20 +1027,17 @@ rux-global-status-bar {
               <h1>Modal</h1>
             </header>
             <div class="rux-card__content">
-              
-                <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
-              
-              <!--
-              <figcaption>
-                <p>I’m just sitting here listening for a modal window event: <span class="look">[[modalMessage]]</span></p>
-              </figcaption>
-              //-->
 
-            <rux-modal
-              message="Release Modem 2 on slice 1000 for deactivation. Releasing this modem cannot be undone." 
-              confirm-text="Release"
-              deny-text="Cancel"
-              opened></rux-modal>
+              <rux-button class="rux-launch-button" on-click="_launchModal">Launch Modal</rux-button>
+
+              <!--
+                  <figcaption>
+                    <p>I’m just sitting here listening for a modal window event: <span class="look">[[modalMessage]]</span></p>
+                  </figcaption>
+                  //-->
+
+              <rux-modal message="Release Modem 2 on slice 1000 for deactivation. Releasing this modem cannot be undone."
+              confirm-text="Release" deny-text="Cancel" opened></rux-modal>
             </div>
           </section>
 
@@ -1031,67 +1050,37 @@ rux-global-status-bar {
             <div class="rux-card__content">
               <rux-button on-click="_showNotification" data-notification="0">Toggle Notification Banner</rux-button>
 
-              
+
             </div>
           </section>
-          
 
-        <!-- 6. ADVANCED STATUS //-->
+
+          <!-- 6. ADVANCED STATUS //-->
           <section class="rux-card advanced-status">
             <header class="rux-card__header">
               <h1>Advanced Status</h1>
             </header>
             <div class="rux-card__content">
-            <ul class="no-list advanced-status-list">
-            <li>
-            <rux-status
-              status="off"
-              label="Mission"
-              icon="monitoring:mission"
-              notifications=0
-              ></rux-status>
-            </li>
-            <li>
-            <rux-status
-              status="standby"
-              label="Equipment"
-              icon="monitoring:equipment"
-              notifications=1
-              ></rux-status>
-            </li>
-            <li>
-            <rux-status
-              status="normal"
-              label="Processor"
-              icon="monitoring:processor"
-              notifications=10
-              ></rux-status>
-            </li>
-            <li>
-            <rux-status
-              status="caution"
-              label="Antenna"
-              icon="monitoring:antenna-off"
-              notifications=100
-              ></rux-status>
-            </li>
-            <li>
-            <rux-status
-              status="serious"
-              label="Ant"
-              icon="monitoring:antenna-transmit"
-              notifications=1000
-              active></rux-status>
-            </li>
-            <li>
-            <rux-status
-              status="critical"
-              label="Ant"
-              icon="monitoring:antenna-receive"
-              notifications=1000000
-              active></rux-status>
-            </li>
-          </ul>
+              <ul class="no-list advanced-status-list">
+                <li>
+                  <rux-status status="off" label="Mission" icon="monitoring:mission" notifications=0></rux-status>
+                </li>
+                <li>
+                  <rux-status status="standby" label="Equipment" icon="monitoring:equipment" notifications=1></rux-status>
+                </li>
+                <li>
+                  <rux-status status="normal" label="Processor" icon="monitoring:processor" notifications=10></rux-status>
+                </li>
+                <li>
+                  <rux-status status="caution" label="Antenna" icon="monitoring:antenna-off" notifications=100></rux-status>
+                </li>
+                <li>
+                  <rux-status status="serious" label="Ant" icon="monitoring:antenna-transmit" notifications=1000 active></rux-status>
+                </li>
+                <li>
+                  <rux-status status="critical" label="Ant" icon="monitoring:antenna-receive" notifications=1000000 active></rux-status>
+                </li>
+              </ul>
             </div>
           </section>
 
@@ -1102,12 +1091,9 @@ rux-global-status-bar {
               <rux-button type="small" style="margin-left: auto" on-click="_updateLog">Update Log</rux-button>
             </header>
             <div class="rux-card__content">
-            
-            <rux-log 
-                max-lines=5
-                formatting=[[logFormatting]]
-                data=[[logData]]>
-            </rux-log>
+
+              <rux-log max-lines=5 formatting=[[logFormatting]] data=[[logData]]>
+              </rux-log>
             </div>
           </section>
 
@@ -1133,32 +1119,225 @@ rux-global-status-bar {
               <rux-clock></rux-clock>
             </div>
           </section>
-
-
-
         </div>
       </rux-tab-panel>
 
 
-      <rux-tab-panel aria-labeledby="t3" role="tabpanel">  
-      <div class="grid">
-        <div class="timeline">
-          <rux-timeline
-            status="caution"
-            id="listenerTimeline"
-            label="Timeline" 
-            type="realtime" 
-            initial-scale=100
-            data={{timeline}}
-            tracks=[[multiTrack]]
-            playback-controls="footer" 
-            zoom-control=true>
-          </rux-timeline>
-        </div>
-      </div>
-    </rux-tab-panel>
 
-      <rux-tab-panel aria-labeledby="t4" role="tabpanel">  
+
+
+      <rux-tab-panel aria-labeledby="t6" role="tabpanel">
+        <div class="grid">
+
+          <section class="rux-card monitoring-icons">
+            <header class="rux-card__header">
+              <h1>Icons</h1>
+            </header>
+            <div class="rux-card__content">
+
+              <ul class="icon-list">
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:altitude"></rux-icon>
+                    <figcaption>altitude</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:antenna"></rux-icon>
+                    <figcaption>antenna</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:antenna-off"></rux-icon>
+                    <figcaption>antenna-off</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:antenna-receive"></rux-icon>
+                    <figcaption>antenna-receive</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:antenna-transmit"></rux-icon>
+                    <figcaption>antenna-transmit</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:equipment"></rux-icon>
+                    <figcaption>equipment</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:mission"></rux-icon>
+                    <figcaption>mission</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:payload"></rux-icon>
+                    <figcaption>payload</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:processor"></rux-icon>
+                    <figcaption>processor</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:processor-alt"></rux-icon>
+                    <figcaption>processor</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:netcom"></rux-icon>
+                    <figcaption>netcom</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:propulsion-power"></rux-icon>
+                    <figcaption>propulsion</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:thermal"></rux-icon>
+                    <figcaption>thermal</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:satellite-off"></rux-icon>
+                    <figcaption>satellite-off</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:satellite-receive"></rux-icon>
+                    <figcaption>satellite-receive</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="monitoring:satellite-transmit"></rux-icon>
+                    <figcaption>satellite-transmit</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="utility:notifications"></rux-icon>
+                    <figcaption>notifications</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="utility:settings"></rux-icon>
+                    <figcaption>settings</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="utility:maintenance"></rux-icon>
+                    <figcaption>maintenance</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="utility:caution"></rux-icon>
+                    <figcaption>caution</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="component:add-large"></rux-icon>
+                    <figcaption>add-large</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="component:add-small"></rux-icon>
+                    <figcaption>add-small</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="component:close-large"></rux-icon>
+                    <figcaption>close-large</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="component:close-small"></rux-icon>
+                    <figcaption>close-small</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="component:collapse"></rux-icon>
+                    <figcaption>collapse</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="component:expand"></rux-icon>
+                    <figcaption>expand</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="component:lock"></rux-icon>
+                    <figcaption>lock</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="component:unlock"></rux-icon>
+                    <figcaption>unlock</figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <rux-icon icon="component:search"></rux-icon>
+                    <figcaption>search</figcaption>
+                  </figure>
+                </li>
+              </ul>
+
+              <ul class="no-list advanced-status-list">
+                <li>
+                  <rux-status status="off" label="Mission" icon="monitoring:mission" notifications=0></rux-status>
+                </li>
+                <li>
+                  <rux-status status="standby" label="Equipment" icon="monitoring:equipment" notifications=1></rux-status>
+                </li>
+                <li>
+                  <rux-status status="normal" label="Processor" icon="monitoring:processor" notifications=10></rux-status>
+                </li>
+                <li>
+                  <rux-status status="caution" label="Antenna" icon="monitoring:antenna-off" notifications=100></rux-status>
+                </li>
+                <li>
+                  <rux-status status="serious" label="Ant" icon="monitoring:antenna-transmit" notifications=1000 active></rux-status>
+                </li>
+                <li>
+                  <rux-status status="critical" label="Ant" icon="monitoring:antenna-receive" notifications=1000000 active></rux-status>
+                </li>
+              </ul>
+          </section>
+        </div>
+      </rux-tab-panel>
+
+
+      <rux-tab-panel aria-labeledby="t4" role="tabpanel">
         <div class="grid">
           <section class="rux-card theme-colors">
             <header class="rux-card__header">
@@ -1169,17 +1348,14 @@ rux-global-status-bar {
                 <template is="dom-repeat" items=[[themeColors]]>
                   <figure class="swatches">
                     <figcaption>[[item.label]]</figcaption>
-
                     <template is="dom-repeat" items=[[item.colors]]>
                       <figure class="swatch-meta">
                         <div class="swatch" style$="background-color: var([[item.color]])">
                       </figure>
                     </template>
-
                   </figure>
                 </template>
               </div>
-
             </div>
           </section>
 
@@ -1189,9 +1365,6 @@ rux-global-status-bar {
               <h1>Status Colors</h1>
             </header>
             <div class="rux-card__content">
-
-              
-
             </div>
           </section>
 
@@ -1201,17 +1374,13 @@ rux-global-status-bar {
               <h1>Civilian Colors</h1>
             </header>
             <div class="rux-card__content">
-
-              
-
             </div>
           </section>
-
         </div>
       </rux-tab-panel>
 
-    
-      <rux-tab-panel aria-labeledby="t5" role="tabpanel">  
+
+      <rux-tab-panel aria-labeledby="t5" role="tabpanel">
         <div class="grid">
           <section class="rux-card headings">
             <header class="rux-card__header">
@@ -1237,26 +1406,35 @@ rux-global-status-bar {
             <div class="rux-card__content">
               <div class="xl-sample" style="max-width: 600px;">
                 <h2 class="h3">Extra Large Text</h2>
-                <p class="xl">Repellendus molestiae corrupti recusandae ut autem ab. Sequi inventore pariatur tempora inventore quo voluptatem quis aut. Nihil ut ullam sequi optio qui est voluptatem et suscipit. Omnis quaerat officiis deserunt ex quo quis fugit eum id.</p>
+                <p class="xl">Repellendus molestiae corrupti recusandae ut autem ab. Sequi inventore pariatur tempora inventore
+                  quo voluptatem quis aut. Nihil ut ullam sequi optio qui est voluptatem et suscipit. Omnis quaerat officiis
+                  deserunt ex quo quis fugit eum id.</p>
               </div>
               <div class="xl-sample" style="max-width: 550px;">
                 <h2 class="h3">Large/Default Text</h2>
-                <p>Enim quam est dolorem officia explicabo incidunt qui. Et rerum et dolorem et vero corrupti delectus pariatur. Quaerat doloribus minima natus quaerat labore sint consequatur aut.</p>
-                <p class="lg">Est molestiae cumque. Perspiciatis eaque occaecati cupiditate rerum accusamus praesentium quasi id at. Modi id nemo in sed. Consequatur iure et distinctio est. Suscipit nesciunt itaque.</p>
+                <p>Enim quam est dolorem officia explicabo incidunt qui. Et rerum et dolorem et vero corrupti delectus pariatur.
+                  Quaerat doloribus minima natus quaerat labore sint consequatur aut.</p>
+                <p class="lg">Est molestiae cumque. Perspiciatis eaque occaecati cupiditate rerum accusamus praesentium quasi id
+                  at. Modi id nemo in sed. Consequatur iure et distinctio est. Suscipit nesciunt itaque.</p>
               </div>
               <div class="xl-sample" style="max-width: 480px;">
                 <h2 class="h3">Medium Text</h2>
-                <p class="md">Amet et ea eos voluptate ut voluptatem temporibus non sit. Dicta quo alias. Quam qui ut nihil dicta vel minima tempora. Atque blanditiis nihil officiis laborum quas quis.</p>
+                <p class="md">Amet et ea eos voluptate ut voluptatem temporibus non sit. Dicta quo alias. Quam qui ut nihil dicta
+                  vel minima tempora. Atque blanditiis nihil officiis laborum quas quis.</p>
               </div>
               <div class="xl-sample" style="max-width: 400px;">
                 <h2 class="h3">Small Text</h2>
-                <p class="sm">Minus blanditiis cumque consequatur quo occaecati possimus est mollitia quae. Corrupti dolor illo voluptas enim ullam quidem mollitia. </p>
-                <p class="sm">Magnam consequatur minus quidem explicabo odio. Aut ut reprehenderit. Optio voluptates officiis fuga pariatur quidem aut occaecati.</p>
+                <p class="sm">Minus blanditiis cumque consequatur quo occaecati possimus est mollitia quae. Corrupti dolor illo
+                  voluptas enim ullam quidem mollitia. </p>
+                <p class="sm">Magnam consequatur minus quidem explicabo odio. Aut ut reprehenderit. Optio voluptates officiis
+                  fuga pariatur quidem aut occaecati.</p>
               </div>
               <div class="xl-sample" style="max-width: 350px;">
                 <h2 class="h3">Extra Small Text</h2>
-                <p class="xs">Accusantium laborum et ipsa sint quo voluptas est pariatur in. Distinctio tempora eum necessitatibus et nam aliquid ut excepturi voluptate. Impedit fuga enim. Exercitationem iusto ipsa.</p>
-                <p class="xs">Facere vero aut consequatur qui asperiores. Distinctio nisi asperiores corrupti dolorem. Suscipit ratione a commodi quisquam consequuntur dolorem ab. Facilis consequuntur enim neque veritatis nihil.</p>
+                <p class="xs">Accusantium laborum et ipsa sint quo voluptas est pariatur in. Distinctio tempora eum
+                  necessitatibus et nam aliquid ut excepturi voluptate. Impedit fuga enim. Exercitationem iusto ipsa.</p>
+                <p class="xs">Facere vero aut consequatur qui asperiores. Distinctio nisi asperiores corrupti dolorem. Suscipit
+                  ratione a commodi quisquam consequuntur dolorem ab. Facilis consequuntur enim neque veritatis nihil.</p>
               </div>
             </div>
           </section>
@@ -1267,129 +1445,33 @@ rux-global-status-bar {
             </header>
 
             <div class="rux-card__content">
-              
               <p class="low-contrast">Low Contrast Text</p>
               <a href>Link Color</a>
               <p class="inverted">Inverted Text</p>
-
               <ul>
                 <li>List Item 1</li>
                 <li>List Item 2</li>
                 <li>List Item 3</li>
               </ul>
-
               <ol>
                 <li>List Item</li>
                 <li>List Item</li>
                 <li>List Item</li>
               </ol>
-
-             
             </div>
           </section>
-
         </div>
       </rux-tab-panel>
 
-      <rux-tab-panel aria-labeledby="t6" role="tabpanel">  
+
+      <rux-tab-panel aria-labeledby="t3" role="tabpanel">
         <div class="grid">
-
-          <section class="rux-card monitoring-icons">
-            <header class="rux-card__header">
-              <h1>Icons</h1>
-            </header>
-            <div class="rux-card__content">
-            
-              <ul class="icon-list">
-                <li><figure><rux-icon icon="monitoring:altitude"></rux-icon><figcaption>altitude</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:antenna"></rux-icon><figcaption>antenna</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:antenna-off"></rux-icon><figcaption>antenna-off</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:antenna-receive"></rux-icon><figcaption>antenna-receive</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:antenna-transmit"></rux-icon><figcaption>antenna-transmit</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:equipment"></rux-icon><figcaption>equipment</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:mission"></rux-icon><figcaption>mission</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:payload"></rux-icon><figcaption>payload</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:processor"></rux-icon><figcaption>processor</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:processor-alt"></rux-icon><figcaption>processor</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:netcom"></rux-icon><figcaption>netcom</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:propulsion-power"></rux-icon><figcaption>propulsion</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:thermal"></rux-icon><figcaption>thermal</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:satellite-off"></rux-icon><figcaption>satellite-off</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:satellite-receive"></rux-icon><figcaption>satellite-receive</figcaption></figure></li>
-                <li><figure><rux-icon icon="monitoring:satellite-transmit"></rux-icon><figcaption>satellite-transmit</figcaption></figure></li>
-                <li><figure><rux-icon icon="utility:notifications"></rux-icon><figcaption>notifications</figcaption></figure></li>
-                <li><figure><rux-icon icon="utility:settings"></rux-icon><figcaption>settings</figcaption></figure></li>
-                <li><figure><rux-icon icon="utility:maintenance"></rux-icon><figcaption>maintenance</figcaption></figure></li>
-                <li><figure><rux-icon icon="utility:caution"></rux-icon><figcaption>caution</figcaption></figure></li>
-                <li><figure><rux-icon icon="component:add-large"></rux-icon><figcaption>add-large</figcaption></figure></li>
-                <li><figure><rux-icon icon="component:add-small"></rux-icon><figcaption>add-small</figcaption></figure></li>
-                <li><figure><rux-icon icon="component:close-large"></rux-icon><figcaption>close-large</figcaption></figure></li>
-                <li><figure><rux-icon icon="component:close-small"></rux-icon><figcaption>close-small</figcaption></figure></li>
-                <li><figure><rux-icon icon="component:collapse"></rux-icon><figcaption>collapse</figcaption></figure></li>
-                <li><figure><rux-icon icon="component:expand"></rux-icon><figcaption>expand</figcaption></figure></li>
-                <li><figure><rux-icon icon="component:lock"></rux-icon><figcaption>lock</figcaption></figure></li>
-                <li><figure><rux-icon icon="component:unlock"></rux-icon><figcaption>unlock</figcaption></figure></li>
-                <li><figure><rux-icon icon="component:search"></rux-icon><figcaption>search</figcaption></figure></li>
-            </ul>
-        </section>
-
-        <!--
-        <section class="rux-card utility-icons">
-          <header class="rux-card__header">
-            <h1>Utility Icons</h1>
-          </header>
-          <div class="rux-card__content">
-            <ul class="no-list icon-list">
-              <li><rux-icon icon="utility:notifications"></li>
-              <li><rux-icon icon="utility:settings"></li>
-              <li><rux-icon icon="utility:maintenance"></li>
-              <li><rux-icon icon="utility:caution"></li>
-            </ul>
+          <div class="timeline">
+            <rux-timeline status="caution" id="listenerTimeline" label="Timeline" data="{{timeline}}" tracks="[[multiTrack]]">
+            </rux-timeline>
           </div>
-        </section>
-
-
-        <section class="rux-card component-icons">
-          <header class="rux-card__header">
-            <h1>Component Icons</h1>
-          </header>
-          <div class="rux-card__body">
-            <ul class="no-list icon-list">
-              <li><rux-icon icon="component:add-large"></li>
-              <li><rux-icon icon="component:add-small"></li>
-              <li><rux-icon icon="component:close-large"></li>
-              <li><rux-icon icon="component:close-small"></li>
-              <li><rux-icon icon="component:collapse"></li>
-              <li><rux-icon icon="component:expand"></li>
-              <li><rux-icon icon="component:lock"></li>
-              <li><rux-icon icon="component:unlock"></li>
-              <li><rux-icon icon="component:search"></li>
-            </ul>
-          </div>
-        </section>
-
-
-        <section class="rux-card status-icons">
-          <header class="rux-card__header status-icons">
-            <h1>Status Symbols</h1>
-          </header>
-          <div class="rux-card__content">
-          <ul class="no-list icon-list">
-            <li><rux-status status="critical"></rux-status></li>
-            <li><rux-status status="caution"></rux-status></li>
-            <li><rux-status status="serious"></rux-status></li>
-            <li><rux-status status="normal"></rux-status></li>
-            <li><rux-status status="standby"></rux-status></li>
-            <li><rux-status status="off"></rux-status></li>
-            
-          </ul>
-          </div>
-        </section>
-        //-->
-          
         </div>
       </rux-tab-panel>
-
     </rux-tab-panels>
 
     `;
