@@ -1544,7 +1544,6 @@ dd {
   display: none;
 }
 
-
 .rux-card {
   background-color: rgb(30, 47, 66);
   background-color: var(--cardBackgroundColor, rgb(30, 47, 66));

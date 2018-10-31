@@ -42,7 +42,7 @@ export class RuxStatus extends PolymerElement {
     return html`
       <style>
         :host {
-          display: inline-block;
+          display: block;
         }
         
         *[hidden] {
@@ -163,6 +163,13 @@ export class RuxStatus extends PolymerElement {
           text-overflow: ellipsis;
           white-space: nowrap;
         }
+
+        /* Tweak for IE */
+        .rux-advanced-status__badge.style-scope {
+          line-height: 0;
+          padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+        }
+
         
         .rux-advanced-status__label {
           text-align: center;
@@ -221,6 +228,7 @@ export class RuxStatus extends PolymerElement {
 
         .rux-status-indicator,
         .rux-status {
+          /*
           font-size: 1rem;
         
           line-height: 1;
@@ -228,11 +236,11 @@ export class RuxStatus extends PolymerElement {
           vertical-align: middle;
           text-align: center;
         
-          height: 16px;
-          width: 16px;
-        
+           height: 16px;
+          width: 16px; 
+  
           margin: 2px;
-          /* outline: 1px solid rgba(127, 127, 127, 0.5); */
+          outline: 1px solid rgba(127, 127, 127, 0.5); */
         }
         
         /* Icon */
@@ -310,17 +318,19 @@ export class RuxStatus extends PolymerElement {
           transform: rotate(180deg);
           background-position: 0 -1px;
         }
+
+        
     </style>      
 
     <!-- Use Advanced Status Template is any property is set //-->
-    <div class$="rux-advanced-status rux-status--[[status]]" title="[[notifications]] [[label]] [[sublabel]]" aria-labelledby="rux-advanced-status-aria-label" hidden=[[!advanced]]>
+    <div class$="rux-advanced-status rux-status--[[status]]" title="[[notifications]] [[label]] [[sublabel]]" hidden=[[!advanced]]>
       <div class="rux-advanced-status__icon-group">
         <!-- <rux-icon icon="status:{{status}}" class$="rux-advanced-status__status-icon rux-icon--status [[status]]"></rux-icon> //-->
         <rux-icon icon="[[icon]]" class$="rux-advanced-status__icon rux-status--[[status]]"></rux-icon>
         <div class="rux-advanced-status__badge" hidden=[[!_notifications]]>[[_notifications]]</div>
       </div>  
 
-      <div id="rux-advanced-status-aria-label" class="rux-advanced-status__label" hidden=[[!label]]>[[label]]<span class="rux-advanced-status__label__sub-label">[[sublabel]]</span></div>
+      <div class="rux-advanced-status__label" hidden=[[!label]]>[[label]]<span class="rux-advanced-status__label__sub-label">[[sublabel]]</span></div>
     </div>
 
     <!-- Use simple status if no other properties are set //-->
