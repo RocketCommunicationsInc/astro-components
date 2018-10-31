@@ -1990,42 +1990,6 @@ rux-global-status-bar {
   ready() {
     super.ready();
   }
-
-  IE BUG UP IN HERE SOMEWHERE
-
-  /* MODAL WINDOW */
-  /* Functions */
-  _launchModal() {
-    const _modal = this.shadowRoot.querySelectorAll("rux-modal")[0];
-    _modal.setAttribute("open", "");
-  }
-
-  /* UPDATE LOG */
-  _updateLog() {
-    this.logData = {
-      timestamp: new Date(),
-      status: this.logStatuses[
-        Math.floor(Math.random() * this.logStatuses.length)
-      ],
-      entry: this.logMessages[
-        Math.floor(Math.random() * this.logMessages.length)
-      ]
-    };
-  }
-
-  /* NOTIFICATIONS */
-
-  _showNotification(e) {
-    const _notification = this.shadowRoot.querySelectorAll("rux-notification")[
-      e.currentTarget.dataset.notification
-    ];
-
-    if (_notification.hasAttribute("opened")) {
-      _notification.removeAttribute("opened");
-    } else {
-      _notification.setAttribute("opened", "");
-    }
-  }
 }
 
 customElements.define("astro-component-viewer", AstroComponentViewer);

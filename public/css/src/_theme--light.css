@@ -23,6 +23,8 @@
   --colorNormal: var(--statusLightNormal, rgb(0, 226, 0));
   --colorStandby: var(--statusLightStandby, rgb(100, 217, 255));
   --colorOff: var(--statusLightOff, rgb(142, 154, 163));
+
+  --iconDefaultColor: var(--colorSecondary, rgb(77, 172, 255));
   /* 
     
     Button Colors 

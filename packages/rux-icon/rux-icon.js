@@ -26,7 +26,7 @@ export class RuxIcon extends PolymerElement {
     :host {
       display: inline-block;
       line-height: 0;
-      fill: var(--default-icon-color, rgb(122, 193, 255));
+      fill: var(--iconDefaultColor, rgb(77, 172, 255));
       height: var(--icon-size--default, 44px);
       /* width: var(--default-icon-width, 44px); */
       /* outline: 1px solid red; */
