@@ -317,31 +317,27 @@ export class RuxStatus extends PolymerElement {
 
         /* Tweaks for IE */
         .rux-advanced-status__badge.style-scope {
-          display: block;
-          padding: 0.15rem 0.25rem;
+          display: inline;
+          padding: 0;
+          width: auto;
           text-align: center;
           line-height: normal;
         }
 
+        /*
         .rux-status-indicator.style-scope::before,
         .rux-status.style-scope::before {
-          content: "";
           display: inline;
-        
-          height: 16px;
-          width: 16px; 
-        
-          background-repeat: no-repeat;
-          background-position: 0 0;
-          background-size: cover;
         }
+        */
 
         .rux-advanced-status__icon.style-scope {
           text-align: center;
+          margin-top: -1rem;
         }
 
-        .rux-advanced-status__icon.style-scope {
-          margin-top: -1rem;
+        .rux-advanced-status__label__sub-label.style-scope {
+          margin-top: -0.5rem;
         }
         /* End Tweaks for IE */
     </style>      
