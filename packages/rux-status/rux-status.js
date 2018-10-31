@@ -164,11 +164,7 @@ export class RuxStatus extends PolymerElement {
           white-space: nowrap;
         }
 
-        /* Tweak for IE */
-        .rux-advanced-status__badge.style-scope {
-          line-height: 0;
-          padding: 0.5rem 0.25rem 0.25rem 0.25rem;
-        }
+        
 
         
         .rux-advanced-status__label {
@@ -225,10 +221,9 @@ export class RuxStatus extends PolymerElement {
           width: 44px !important;
         }
 
-
-        .rux-status-indicator,
-        .rux-status {
-          /*
+        /* .rux-status  */
+        .rux-status-indicator {
+          
           font-size: 1rem;
         
           line-height: 1;
@@ -240,7 +235,7 @@ export class RuxStatus extends PolymerElement {
           width: 16px; 
   
           margin: 2px;
-          outline: 1px solid rgba(127, 127, 127, 0.5); */
+          /* outline: 1px solid rgba(127, 127, 127, 0.5);  */
         }
         
         /* Icon */
@@ -249,8 +244,8 @@ export class RuxStatus extends PolymerElement {
           content: "";
           display: inline-block;
         
-          /* height: 16px;
-          width: 16px; */
+          height: 16px;
+          width: 16px; 
         
           background-repeat: no-repeat;
           background-position: 0 0;
@@ -314,18 +309,47 @@ export class RuxStatus extends PolymerElement {
           background-image: var(
             --statusCritical,
             url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
-          );
+          ); 
           transform: rotate(180deg);
           background-position: 0 -1px;
         }
 
+
+        /* Tweaks for IE */
+        .rux-advanced-status__badge.style-scope {
+          display: block;
+          padding: 0.15rem 0.25rem;
+          text-align: center;
+          line-height: normal;
+        }
+
+        .rux-status-indicator.style-scope::before,
+        .rux-status.style-scope::before {
+          content: "";
+          display: inline;
         
+          height: 16px;
+          width: 16px; 
+        
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          background-size: cover;
+        }
+
+        .rux-advanced-status__icon.style-scope {
+          text-align: center;
+        }
+
+        .rux-advanced-status__icon.style-scope {
+          margin-top: -1rem;
+        }
+        /* End Tweaks for IE */
     </style>      
 
     <!-- Use Advanced Status Template is any property is set //-->
     <div class$="rux-advanced-status rux-status--[[status]]" title="[[notifications]] [[label]] [[sublabel]]" hidden=[[!advanced]]>
       <div class="rux-advanced-status__icon-group">
-        <!-- <rux-icon icon="status:{{status}}" class$="rux-advanced-status__status-icon rux-icon--status [[status]]"></rux-icon> //-->
+        
         <rux-icon icon="[[icon]]" class$="rux-advanced-status__icon rux-status--[[status]]"></rux-icon>
         <div class="rux-advanced-status__badge" hidden=[[!_notifications]]>[[_notifications]]</div>
       </div>  

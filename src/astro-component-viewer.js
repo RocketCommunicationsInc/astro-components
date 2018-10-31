@@ -29,7 +29,7 @@ export class AstroComponentViewer extends PolymerElement {
   static get template() {
     return html`
 
-    
+    <link rel="stylesheet" href="/public/css/astro.css">
     
 
     <style>
@@ -525,8 +525,8 @@ rux-global-status-bar {
     <rux-global-status-bar theme="dark">
 
         <rux-tabs id="main">
-          <rux-tab id="t6" role="tab">Icons</rux-tab>
           <rux-tab id="t2" role="tab">Components</rux-tab>
+          <rux-tab id="t6" role="tab">Icons</rux-tab>
           <rux-tab id="t1" role="tab">Elements</rux-tab>
           <rux-tab id="t3" role="tab">Widgets</rux-tab>
           <rux-tab id="t5" role="tab">Typography</rux-tab>
@@ -1032,7 +1032,7 @@ rux-global-status-bar {
 
                 <!--
                     <figcaption>
-                      <p>I’m just sitting here listening for a modal window event: <span class="look">[[modalMessage]]</span></p>
+                      <p>Iâ€™m just sitting here listening for a modal window event: <span class="look">[[modalMessage]]</span></p>
                     </figcaption>
                     //-->
 
@@ -1527,13 +1527,13 @@ rux-global-status-bar {
       {
         _id: "i1",
         label: "Item 1",
-        payload: { action: "this could be anything …" },
+        payload: { action: "this could be anythingÂ â€¦" },
         children: [
-          { _id: "i1-1", label: "Child 1", payload: { action: "… an id" } },
+          { _id: "i1-1", label: "Child 1", payload: { action: "â€¦Â an id" } },
           {
             _id: "i1-2",
             label: "Child 2",
-            payload: { action: "… a method call to be interpreted" }
+            payload: { action: "â€¦ a method call to be interpreted" }
           }
         ]
       },
@@ -1545,17 +1545,19 @@ rux-global-status-bar {
       {
         _id: "i2",
         label: "Item 3",
-        payload: { action: "Just use the paylod property …" },
+        payload: { action: "Just use the paylod property â€¦" },
         children: [
           {
             _id: "i2-1",
             label: "Child 1.1",
-            payload: { action: "… then use whatever key/value pairs you want" }
+            payload: {
+              action: "â€¦ then use whatever key/value pairs you want"
+            }
           },
           {
             _id: "i2-2",
             label: "Child 1.2",
-            payload: { action: "… it’s just an Object" }
+            payload: { action: "â€¦ itâ€™s just an Object" }
           }
         ]
       }
@@ -1989,6 +1991,44 @@ rux-global-status-bar {
 
   ready() {
     super.ready();
+
+    for (let index = 0; index < 10; index++) {
+      this._updateLog();
+    }
+  }
+
+  /* MODAL WINDOW */
+  /* Functions */
+  _launchModal() {
+    const _modal = this.shadowRoot.querySelectorAll("rux-modal")[0];
+    _modal.setAttribute("open", "");
+  }
+
+  /* UPDATE LOG */
+  _updateLog() {
+    this.logData = {
+      timestamp: new Date(),
+      status: this.logStatuses[
+        Math.floor(Math.random() * this.logStatuses.length)
+      ],
+      entry: this.logMessages[
+        Math.floor(Math.random() * this.logMessages.length)
+      ]
+    };
+  }
+
+  /* NOTIFICATIONS */
+
+  _showNotification(e) {
+    const _notification = this.shadowRoot.querySelectorAll("rux-notification")[
+      e.currentTarget.dataset.notification
+    ];
+
+    if (_notification.hasAttribute("opened")) {
+      _notification.removeAttribute("opened");
+    } else {
+      _notification.setAttribute("opened", "");
+    }
   }
 }
 

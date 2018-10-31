@@ -42,7 +42,9 @@ export class RuxSlider extends PolymerElement {
     return html`
       <link rel="stylesheet" href="/public/css/src/input.css"></link>
       <style>
-      :root {
+      :host {
+        --thumbSize: var(--controlOptionSize, 1.25rem);
+
         --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
           0 1px 3px rgba(0, 0, 0, 0.2);
         --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
@@ -107,8 +109,8 @@ export class RuxSlider extends PolymerElement {
         align-items: center;
 
         /* width: 100%; */
-        height: var(--trackHeight);
-        cursor: var(--trackCursor);
+        height: var(--trackHeight, 2px);
+        cursor: var(--trackCursor, pointer);
 
         background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
         outline: 1px solid var(--sliderTrackBorderColor, transparent);
@@ -131,7 +133,7 @@ export class RuxSlider extends PolymerElement {
 
         /* width: 100%; */
         height: var(--trackHeight);
-        cursor: var(--trackCursor);
+        cursor: var(--trackCursor, pointer);
 
         background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
         outline: 1px solid var(--sliderTrackBorderColor, transparent);
@@ -180,8 +182,8 @@ export class RuxSlider extends PolymerElement {
 
         position: relative;
 
-        height: var(--thumbSize);
-        width: var(--thumbSize);
+        height: var(--thumbSize, 1.25rem);
+        width: var(--thumbSize,  1.25rem);
 
         border-radius: 100%;
         border: 1px solid var(--sliderThumbBorderColor, rgb(255, 255, 255));
@@ -272,7 +274,7 @@ export class RuxSlider extends PolymerElement {
       
       .rux-slider__input {
         margin-right: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
 
         width: 4rem !important;
       }
@@ -314,7 +316,7 @@ export class RuxSlider extends PolymerElement {
           <ol class="rux-slider__control__labels" hidden=[[!axisLabels]]>
             <dom-repeat id="sliderAxisLabels" items=[[_getAxisLabels(axisLabels)]]>
               <template>
-                <li style="font: monospace">|</li>
+                <li style="font: monospace">[[item]]</li>
               </template>
             </dom-repeat>
           </ol>
@@ -352,7 +354,6 @@ export class RuxSlider extends PolymerElement {
     this._updateVisual(e.target);
   }
   _getAxisLabels(values) {
-    console.log(values);
     return values.split(",");
   }
 }
