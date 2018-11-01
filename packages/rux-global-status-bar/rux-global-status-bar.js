@@ -126,7 +126,7 @@ export class RuxGlobalStatusBar extends PolymerElement {
     // would implement an override
     if (this.theme) {
       for (let slot of this.children) {
-        console.log("slot", slot.children.length, slot.children);
+        // console.log("slot", slot.children.length, slot.children);
 
         slot.classList.add(`${this.theme}-theme`);
       }

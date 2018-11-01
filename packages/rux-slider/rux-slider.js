@@ -40,7 +40,7 @@ export class RuxSlider extends PolymerElement {
   }
   static get template() {
     return html`
-      <link rel="stylesheet" href="/public/css/src/input.css"></link>
+      
       <style>
       :host {
         --thumbSize: var(--controlOptionSize, 1.25rem);
