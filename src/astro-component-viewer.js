@@ -29,7 +29,7 @@ export class AstroComponentViewer extends PolymerElement {
   static get template() {
     return html`
 
-    <link rel="stylesheet" href="/public/css/astro.css">
+    <link rel="stylesheet" href="/public/css/astro.core.css">
     
 
     <style>
