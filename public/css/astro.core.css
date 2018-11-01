@@ -573,11 +573,11 @@ body {
   /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153)); */
   --toggleSelectedThumbBorderColor: #fff;
   
-  --toggleSelectedTrackBackgroundColor: rgb(100, 217, 255);
+  --toggleSelectedTrackBackgroundColor: rgb(77, 172, 255);
   
-  --toggleSelectedTrackBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
-  --toggleSelectedTrackBorderColor: rgb(27, 122, 153);
-  --toggleSelectedTrackBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153));
+  --toggleSelectedTrackBackgroundColor: var(--colorSecondary, rgb(77, 172, 255));
+  --toggleSelectedTrackBorderColor: rgb(46, 103, 153);
+  --toggleSelectedTrackBorderColor: var(--colorSecondaryDarken2, rgb(46, 103, 153));
 
   /* Disabled State */
   --toggleDisabledThumbBorderColor: rgb(122, 122, 122);
