@@ -30,11 +30,11 @@ Rux Status supports both [simple status symbols](www.astrouxds.com/library/statu
 ```xml
 <rux-status status="error"></rux-status>
 ```
-
+**Note** Status valid strings have been updated
 ###Properties
 | Property | Type | Description |
 | -------- | ---- | ------------|
-| `status` | `string` | Valid options are `off`, `standby`, `ok`, `caution`, `error` and `emergency`.
+| `status` | `string` | Valid options are `off`, `standby`, `normal`, `caution`, `serious` and `emergency`.
 | `label` | `string` | Primary label for an advanced status symbol. Labels exceeding width of the icon will be truncated with an ellipsis |
 | `sublabel` | `string` | An optional string value appearing underneath the primary label |
 | `notifications` | `number` | Indicates notifications for a give status. Values beyond 9,999 are shorthanded 10K, 100K, 1.5M, 1.5B and ∞ for numbers greater than 999,999,999,999 |

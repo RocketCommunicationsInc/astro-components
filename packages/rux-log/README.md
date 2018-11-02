@@ -1,6 +1,4 @@
 #Log
-The RUX Log component …
-
 RUX Log is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
 RUX Log is available as a preview release and should not be used in production code.
@@ -28,17 +26,11 @@ import { RuxLog } from "@astro-components/rux-log/rux-log.js";
 ###Basic HTML Usage
 
 ```xml
-<rux-log></rux-log>
-```
-
-###Advanced HTML Usage
-
-```xml
-<rux-log></rux-log>
+<rux-log data=[[logData]]></rux-log>
 ```
 
 ###Properties
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-|          |      |             |  |
+| data | json | A json string with the following keys: timestamp: Date, status: (see status for options), entry: log entry |

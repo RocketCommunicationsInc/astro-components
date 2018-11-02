@@ -37,5 +37,7 @@ import { RuxIcon } from "@astro-components/rux-icon/rux-icon.js";
 | `color` | `string` | Changes the icon color. Accepted values can be entered as hex, rgba, hsl and HTML string. **Caution: the `status` icon set cannot and should not be overidden** |
 | `size` | `string` | Allows for large icon variants |
 
+###Standard Icons
+
 ###Events
 RUX Icons do not support events. If you need an Icon button use the RUX Button Icon type

@@ -50,3 +50,8 @@ A corresponding `rux-tab-panels` containing element with an `aria-labeledby` att
 	<rux-tab-panel aria-labeledby="tab-id-3"> ... </rux-tab-panel>
 </rux-tab-panels>
 ```
+
+###Properties
+| Property | Type | Description |
+| -------- | ---- | ------------|
+| `compact` | `attribute` | Smaller tabs for use outside of the global status bar |

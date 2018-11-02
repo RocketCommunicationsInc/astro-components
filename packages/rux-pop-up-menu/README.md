@@ -28,11 +28,3 @@ import { RuxPop Up Menu } from "@astro-components/rux-pop-up-menu/rux-pop-up-men
 ```xml
 <rux-pop-up-menu ></rux-pop-up-menu>
 ```
-
-###Properties
-| Property | Type | Default | Required | Description |
-| --------------- | --------- | ------- | -------- | -----------
-| `prop1` | `string` | value | true | … |
-| `prop2` | `string` | value | true | | … |
-| `prop3` | `string` | value | true | | … | |
-| `prop4` | `string` | value | true | | … |

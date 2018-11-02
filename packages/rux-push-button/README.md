@@ -1,6 +1,4 @@
 #Push Button
-…
-
 RUX Push Button is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
 RUX Push Button is available as a preview release and should not be used in production code.
