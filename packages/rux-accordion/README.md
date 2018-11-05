@@ -1,5 +1,5 @@
 #Tree
-The RUX Tree component â€¦
+The RUX Tree component …
 
 RUX Tree is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
 
@@ -14,7 +14,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 ##Installation
 Install the Astro Component Library.
 `git clone https://bitbucket.org/rocketcom/astro-components.git`
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 
