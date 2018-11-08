@@ -12,23 +12,18 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 * [Astro UXDS: Tree](http://www.astrouxds.com/library/tree)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
+
+`npm i -S @astrouxds/rux-button`
 ###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 
 ##Usage
 ###Import the RUX Tree
 
 ```javascript
 import { RuxTree } from "@astro-components/rux-tree/rux-tree.js";
-```
-
-###Basic HTML Usage
-
-```xml
-<rux-tree></rux-tree>
 ```
 
 ###Advanced HTML Usage

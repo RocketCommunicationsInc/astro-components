@@ -12,12 +12,12 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 * [Astro UXDS: Timeline](http://cms.astrouxds.com/library/timeline)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
+`npm i -S @astrouxds/rux-timeline`
 
-###Dependencies
+###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 * [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-icon/)
 * [Rux Status](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-status/)
 * [Rux Slider](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-slider/)

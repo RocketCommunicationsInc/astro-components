@@ -12,11 +12,12 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 - [Astro UXDS: Clock](http://www.astrouxds.com/library/clock)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
+`npm i -S @astrouxds/rux-clock`
+
 ###Dependancies
 
-- [Polymer 3](https://www.polymer-project.com)
+* [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 
 ##Usage
 ###Import the RUX Clock

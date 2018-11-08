@@ -7,12 +7,12 @@ RUX Spectrum Analyzer leverages both Web Components and the D3 data visualizatio
 * [Astro UXDS: Spectrum Analyzer](http://www.astrouxds.com/library/spectrum-analyzer)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
+`npm i -S @astrouxds/rux-spectrum-analyzer`
 
-###Dependencies
+###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 * [D3](https://d3js.org/)
 
 ##Usage

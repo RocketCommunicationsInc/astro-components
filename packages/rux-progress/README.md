@@ -10,15 +10,15 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 * [Astro UXDS: Progress](http://www.astrouxds.com/library/progress)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
+`npm i -S @astrouxds/rux-progress`
 
-###Dependencies
+###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 
 ##Usage
-###Import the RUX Button
+###Import the RUX Progress
 
 ```javascript
 import { RuxProgress } from "@astro-components/rux-progress/rux-progress.js";

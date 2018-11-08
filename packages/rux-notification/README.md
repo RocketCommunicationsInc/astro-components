@@ -10,13 +10,14 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 * [Astro UXDS: Notification](http://www.astrouxds.com/library/notification)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
-###Dependencies
+`npm i -S @astrouxds/rux-notification`
+
+###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
-* [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-icon/)
-* [Rux Button](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-button/)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
+* [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/packages/rux-icon/)
+* [Rux Button](https://bitbucket.org/rocketcom/astro-components/src/master/packages/rux-button/)
 
 ##Usage
 ###Import RUX Status Indicator

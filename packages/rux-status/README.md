@@ -10,11 +10,12 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 * [Astro UXDS: Status Symbol](http://www.astrouxds.com/library/status-symbols)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
-###Dependencies
+`npm i -S @astrouxds/rux-status`
+
+###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 * [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/src/astro-components/rux-icon/)
 
 ##Usage

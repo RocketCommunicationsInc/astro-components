@@ -7,15 +7,15 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-- [Astro UXDS: Push Button](http://www.astrouxds.com/library/push-button)
+- [Astro UXDS: Push Button](http://www.astrouxds.com/library/toggle)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
+`npm i -S @astrouxds/rux-push-button`
 
-###Dependencies
+###Dependancies
 
-- [Polymer 3](https://www.polymer-project.com)
+* [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 
 ##Usage
 ###Import the RUX Push Button

@@ -10,17 +10,18 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 * [Astro UXDS: Pop Up Menu](http://www.astrouxds.com/library/pop-up-menu)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
+`npm i -S @astrouxds/rux-pop-up-menu`
+
 ###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 
 ##Usage
-###Import RUX Status Indicator
+###Import RUX Pop Up Menu
 
 ```javascript
-import { RuxPop Up Menu } from "@astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
+import { RuxPopUpMenu } from "@astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
 ```
 
 ###Basic HTML Usage

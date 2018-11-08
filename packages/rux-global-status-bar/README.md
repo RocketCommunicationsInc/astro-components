@@ -12,15 +12,15 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 * [Astro UXDS: Global Status Bar](http://www.astrouxds.com/library/global-status-bar)
 
 ##Installation
-Install the Astro Component Library.
-`git clone https://bitbucket.org/rocketcom/astro-components.git`
+`npm i -S @astrouxds/rux-global-status-bar`
 
-###Dependencies
+###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 
 ##Usage
-###Import the RUX Timeline
+###Import the RUX Global Status Bar
 
 ```javascript
 import { RuxGlobalStatusBar } from "@astro-components/rux-global-status-bar/rux-global-status-bar.js";
@@ -32,7 +32,7 @@ Global Status has minimal properties, just an optional app name and version. Sta
 ```xml
  <rux-global-status-bar
  	appname="Astro App"
-	version="2.0a"></rux-global-status-bar>
+	version="3.0"></rux-global-status-bar>
 ```
 
 ###Properties

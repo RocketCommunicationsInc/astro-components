@@ -11,13 +11,15 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 * [RUX Segmented Button Demo](http://www.astrouxds.com/library/segmented-button)
 
 ##Installation
-Install the Astro Component Library
-`npm install --save @astro-components`
+`npm i -S @astrouxds/rux-segmented-button`
+
+###Dependancies
 
 * [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
 
 ##Usage
-###Import RUX Segmented Button Indicator
+###Import RUX Segmented Button
 
 ```javascript
 import { RuxSegmented Button } from "@astro-components/rux-segmented-button/rux-segmented-button.js";
