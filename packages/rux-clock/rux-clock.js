@@ -52,7 +52,6 @@ export class RuxClock extends PolymerElement {
           display: none !important;
         }
 
-
         .light {
           --clockTextColor: red;
         }
@@ -64,32 +63,31 @@ export class RuxClock extends PolymerElement {
         .rux-clock {
           display: flex;
           color: var(--clockTextColor, rgb(255, 255, 255));
-        
+
           font-size: 1.15rem;
         }
-        
+
         .rux-clock__segment {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-        
+
         .rux-clock__segment__value {
           display: flex;
           align-items: center;
           font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
           font-weight: 700;
-        
+
           border: 1px solid var(--clockBorderColor, rgb(40, 63, 88));
-        
+
           background-color: var(--clockBackgroundColor, rgb(20, 32, 44));
           margin-bottom: 0.25rem;
-        
+
           white-space: nowrap;
           overflow-y: hidden;
           text-overflow: ellipsis;
         }
-        
 
         .rux-clock .rux-clock__segment__value {
           font-size: 1.75rem;
@@ -103,7 +101,7 @@ export class RuxClock extends PolymerElement {
           font-size: 1.15rem;
           font-weight: 500;
         }
-        
+
         /* HotFix for IE - needs a better solution */
         :host([compact]) .rux-clock {
           font-size: 1.15rem !important;
@@ -117,39 +115,72 @@ export class RuxClock extends PolymerElement {
         :host([compact]) .rux-clock__segment__label {
           font-size: 0.875rem !important;
         }
-        
+
         .rux-clock__day-of-the-year .rux-clock__segment__value {
           border-right: none;
         }
-        
+
         .rux-clock__aos {
           margin-left: 1em;
         }
-        
+
         .rux-clock__los {
           margin-left: 0.5em;
         }
-        
-      </style>      
+      </style>
       <div class$="rux-clock [[light]]">
-        <div class="rux-clock__segment rux-clock__day-of-the-year" hidden="[[hideDate]]">
-          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__day-of-year-label">{{_getDayOfYear()}}</div>
-          <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label">Date</div>
+        <div
+          class="rux-clock__segment rux-clock__day-of-the-year"
+          hidden="[[hideDate]]"
+        >
+          <div
+            class="rux-clock__segment__value"
+            aria-labeledby="rux-clock__day-of-year-label"
+          >
+            {{_getDayOfYear()}}
+          </div>
+          <div
+            class="rux-clock__segment__label"
+            id="rux-clock__day-of-year-label"
+          >
+            Date
+          </div>
         </div>
         <div class="rux-clock__segment rux-clock__time">
-          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__time-label">[[_currentTime]]</div>
-          <div class="rux-clock__segment__label" id="rux-clock__time-label">Time</div>
+          <div
+            class="rux-clock__segment__value"
+            aria-labeledby="rux-clock__time-label"
+          >
+            [[_currentTime]]
+          </div>
+          <div class="rux-clock__segment__label" id="rux-clock__time-label">
+            Time
+          </div>
         </div>
         <div class="rux-clock__segment rux-clock__aos" hidden="[[!aos]]">
-          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__time-label">[[formatTime(aos)]]</div>
-          <div class="rux-clock__segment__label" id="rux-clock__time-label">AOS</div>
+          <div
+            class="rux-clock__segment__value"
+            aria-labeledby="rux-clock__time-label"
+          >
+            [[formatTime(aos)]]
+          </div>
+          <div class="rux-clock__segment__label" id="rux-clock__time-label">
+            AOS
+          </div>
         </div>
         <div class="rux-clock__segment rux-clock__los" hidden="[[!los]]">
-          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__time-label">[[formatTime(los)]]</div>
-          <div class="rux-clock__segment__label" id="rux-clock__time-label">LOS</div>
+          <div
+            class="rux-clock__segment__value"
+            aria-labeledby="rux-clock__time-label"
+          >
+            [[formatTime(los)]]
+          </div>
+          <div class="rux-clock__segment__label" id="rux-clock__time-label">
+            LOS
+          </div>
         </div>
       </div>
-      `;
+    `;
   }
   constructor() {
     super();
@@ -162,22 +193,17 @@ export class RuxClock extends PolymerElement {
     super.connectedCallback();
 
     // start the time
-    const _timer = setInterval(() => {
+    let _timer = setInterval(() => {
       this._updateTime();
     }, 1000);
 
     // show time immediately instead of waiting for setInterval to call
     this._updateTime();
-
-    window.addEventListener("resize", this._windowListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-
-    _timer = null;
-
-    window.removeEventListener("resize");
+    clearInterval(this._timer);
   }
 
   /*
