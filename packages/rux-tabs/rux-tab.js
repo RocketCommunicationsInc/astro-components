@@ -31,7 +31,7 @@ export class RuxTab extends PolymerElement {
           // flex-shrink: 1;
 
           height: 100%;
-          
+
           display: flex;
           align-items: center;
           justify-content: center;
@@ -39,7 +39,7 @@ export class RuxTab extends PolymerElement {
           margin: 0;
 
           // width: 5rem;
-          
+
           // max-width: 12rem;
           min-width: 5rem;
 
@@ -67,9 +67,8 @@ export class RuxTab extends PolymerElement {
 
         :host([transparent]) {
           background-color: transparent;
-          // border-right: 1px solid var(--tabTransparentBorderColor, rgb(255,255,255,.1));
+          // border-right: 1px solid var(--tabTransparentBorderColor, rgba(255,255,255,.1));
         }
-
 
         :host([interior][selected]) {
           box-shadow: inset 0 -2px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
@@ -84,17 +83,14 @@ export class RuxTab extends PolymerElement {
           box-shadow: inset 0 -5px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
         }
 
-
-        :host(:hover){
+        :host(:hover) {
           color: var(--tabHoverTextColor, rgb(255, 255, 255));
         }
 
         :host([disabled]) {
           opacity: var(--disabledOpacity, 0.4);
           cursor: var(--disabledCursor, not-allowed);
-          
         }
-
       </style>
       <span><slot></slot></span>
     `;

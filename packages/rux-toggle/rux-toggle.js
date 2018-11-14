@@ -27,7 +27,8 @@ export class RuxToggle extends PolymerElement {
 
   static get template() {
     return html`
-      <style>/* 
+      <style>
+      /* 
       :host {
         position: relative;
         display: inline-block;
@@ -57,7 +58,8 @@ export class RuxToggle extends PolymerElement {
       
       :host input {
         display: none !important;
-      } */
+      } 
+      */
 
       .rux-toggle {
         position: relative;

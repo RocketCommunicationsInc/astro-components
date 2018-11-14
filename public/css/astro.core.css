@@ -886,8 +886,8 @@ li.dark-theme {
   */
 
   /* Button */
-  --buttonTextColor: #fff;
-  --buttonTextColor: var(--colorWhite, #fff);
+  --buttonTextColor: rgb(255, 255, 255);
+  --buttonTextColor: var(--colorWhite, rgb(255, 255, 255));
   --buttonBackgroundColor: rgb(0, 90, 143);
   --buttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
   --buttonBorderColor: rgb(0, 90, 143);
@@ -896,8 +896,8 @@ li.dark-theme {
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Hover State */
-  --buttonHoverTextColor: #fff;
-  --buttonHoverTextColor: var(--colorWhite, #fff);
+  --buttonHoverTextColor: rgb(255, 255, 255);
+  --buttonHoverTextColor: var(--colorWhite, rgb(255, 255, 255));
   --buttonHoverBackgroundColor: rgb(58, 129, 191);
   --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
   --buttonHoverBorderColor: rgb(58, 129, 191);
@@ -906,16 +906,16 @@ li.dark-theme {
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: #fff;
-  --buttonActiveControlTextColor: var(--colorWhite, #fff);
+  --buttonActiveControlTextColor: rgb(255, 255, 255);
+  --buttonActiveControlTextColor: var(--colorWhite, rgb(255, 255, 255));
   --buttonActiveBackgroundColor: rgb(0, 90, 143);
   --buttonActiveBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
   --buttonActiveBorderColor: rgb(0, 90, 143);
   --buttonActiveBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
   /* Default Button State */
-  --buttonDefaultBorderColor: #fff;
-  --buttonDefaultBorderColor: var(--colorWhite, #fff);
+  --buttonDefaultBorderColor: rgb(255, 255, 255);
+  --buttonDefaultBorderColor: var(--colorWhite, rgb(255, 255, 255));
 
   /* Outline Button Variant */
   --buttonOutlineTextColor: rgb(0, 90, 143);
@@ -1148,8 +1148,10 @@ li.dark-theme {
     ==========================================================================
 
   */
+  
 
   --pushbuttonBackgroundColor: rgb(255, 255, 255);
+  
 
   --pushbuttonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --pushbuttonBorderColor: rgb(0, 90, 143);
@@ -1727,7 +1729,7 @@ dd {
 
 .rux-button--small {
   font-size: 0.875rem;
-  font-size: var(--smallLabelTextSize, 0.875rem);
+  font-size: var(--smallLabelFontSize, 0.875rem);
   height: 1.625rem;
   padding: 0 1rem;
   line-height: 1;
@@ -1735,7 +1737,7 @@ dd {
 
 .rux-button--large {
   font-size: 1.125rem;
-  font-size: var(--largeLabelTextSize, 1.125rem);
+  font-size: var(--largeLabelFontSize, 1.125rem);
   height: 2.875rem;
   /* min-width: 2.875rem; */
   padding: 0 1.5rem;
