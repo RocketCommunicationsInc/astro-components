@@ -18,6 +18,7 @@ export class RuxTabPanels extends PolymerElement {
   connectedCallback() {
     // set the role to tab
     this.setAttribute("role", "tablist");
+    this.setAttribute("style", "position: relative; width: 100%;");
 
     // console.log(this.getAttribute("aria-labeledby"));
 
