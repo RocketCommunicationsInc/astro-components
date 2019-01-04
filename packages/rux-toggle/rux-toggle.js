@@ -27,37 +27,10 @@ export class RuxToggle extends PolymerElement {
 
   static get template() {
     return html`
-      <style>/* 
+      <style> 
       :host {
-        position: relative;
-        display: inline-block;
-        box-sizing: border-box;
-
-        -webkit-font-smoothing: subpixel-antialiased;
-
-        height: 1.3125rem;
-        width: 4.375rem;
-        border-radius: var(--defaultBorderRadius, 0.1875rem);
-        // border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
-        // box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
-        user-select: none;
-        overflow: hidden;
-        
-      
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        
+        pointer-events: none;
       }
-      
-      :host([disabled]) {
-        opacity: var(--disabledOpacity, 0.4);
-      }
-      
-      :host input {
-        display: none !important;
-      } */
 
       .rux-toggle {
         position: relative;
@@ -70,7 +43,6 @@ export class RuxToggle extends PolymerElement {
         height: 1.375rem;
         width: 2.875rem;
         
-      
         user-select: none;
         overflow: hidden;
       }
@@ -78,13 +50,10 @@ export class RuxToggle extends PolymerElement {
       .rux-toggle__input {
         display: none !important;
       }
-      
 
-            
       .rux-toggle__button {
         display: flex;
-        /* justify-content: center;
-        align-content: center; */
+        pointer-events: auto;
         align-items: center;
       }
 
