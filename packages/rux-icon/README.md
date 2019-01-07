@@ -33,7 +33,7 @@ import { RuxIcon } from "@astro-components/rux-icon/rux-icon.js";
 ###Properties
 | Property | Type | Description |
 | -------- | ---- | ------------|
-| `icon` | `string` | Defines the icon to be used. RUX Icon uses the convention of `namespace:icon-name` to avoid potential namespace collision. RUX ships with the following icon sets: `default`,`advanced-status` and `status`. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](<(https://cms.astrouxds.com/library/buttons)>)
+| `icon` | `string` | Defines the icon to be used. RUX Icon uses the convention of `namespace:icon-name` to avoid potential namespace collision. RUX ships with the following icon sets: `default`,`advanced-status` and `status`. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols)
 | `color` | `string` | Changes the icon color. Accepted values can be entered as hex, rgba, hsl and HTML string. **Caution: the `status` icon set cannot and should not be overidden** |
 | `size` | `string` | Allows for large icon variants |
 
