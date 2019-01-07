@@ -35,50 +35,41 @@ export class RuxTabs extends PolymerElement {
   static get template() {
     return html`
       <style>
-      :host,
-      .rux-tabs {
-        box-sizing: border-box;
-        display: flex;
-        justify-content: flex-start;
-        font-size: 1.5rem;
+        :host,
+        .rux-tabs {
+          box-sizing: border-box;
+          display: flex;
+          justify-content: flex-start;
+          font-size: 1.5rem;
 
-        /* height: 5.625rem; */
-        height: 100%;
-        width: auto;
-        margin: 0;
-        padding: 0;
+          /* height: 5.625rem; */
+          height: 100%;
+          width: auto;
+          margin: 0;
+          padding: 0;
 
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+          -moz-user-select: none;
+          -khtml-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
 
-        contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
-      }
+          contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+        }
 
-      :host([main]) {
-        height: 100%;
-      }
+        :host([main]) {
+          height: 100%;
+        }
 
-      :host([compact]) {
-        height: 3.125rem;
-        font-size: 1rem;
-      }
+        :host([compact]) {
+          height: 3.125rem;
+          font-size: 1rem;
+        }
 
-      :host([interior]) {
-        height: 2.25rem;
-        font-size: 0.875rem;
-      }
-      
-      /* rux-panes */
-      .rux-tabs__panels {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-self: flex-start;
-        contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
-      }
+        :host([interior]) {
+          height: 2.25rem;
+          font-size: 0.875rem;
+        }
       </style>
 
       <slot></slot>
@@ -118,6 +109,13 @@ export class RuxTabs extends PolymerElement {
       e.target.getAttribute("disabled") === null
     ) {
       this._setTab(e.target);
+
+      // Option 2
+      window.dispatchEvent(
+        new CustomEvent("tab-changed", {
+          detail: { tab: e.target }
+        })
+      );
     }
   }
 
@@ -139,14 +137,14 @@ export class RuxTabs extends PolymerElement {
   _reset() {
     // hide everything
     this._tabs.forEach(tab => (tab.selected = false));
-    this._panels.forEach(panel => (panel.hidden = true));
+    this._panels.forEach(panel => panel.classList.add("hidden"));
   }
 
   /*
-  **
-  ** Allow for either id or aria-controls association
-  **
-  */
+   **
+   ** Allow for either id or aria-controls association
+   **
+   */
   _getAssociation() {
     if (tab.getAttribute("id") && !tab.getAttribute("aria-controls")) {
       return tab.getAttribute("id");
@@ -165,7 +163,7 @@ export class RuxTabs extends PolymerElement {
     );
 
     if (selectedTab) selectedTab.selected = true;
-    if (selectedPanel) selectedPanel.hidden = false;
+    if (selectedPanel) selectedPanel.classList.remove("hidden");
   }
 }
 
