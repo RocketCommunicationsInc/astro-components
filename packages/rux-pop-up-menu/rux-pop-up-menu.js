@@ -279,9 +279,6 @@ export class RuxPopUpMenu extends PolymerElement {
         : target; */
     const _targetBounds = target.getBoundingClientRect();
     const _popUpBounds = this.getBoundingClientRect();
-    const _mouse = target.clientX;
-
-    console.log("_mouse", _mouse);
 
     let _left = _targetBounds.left;
     let _top = _targetBounds.bottom;
