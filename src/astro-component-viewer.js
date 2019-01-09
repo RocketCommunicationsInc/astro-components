@@ -527,10 +527,10 @@ rux-global-status-bar {
     <rux-global-status-bar theme="dark">
 
         <rux-tabs id="main">
+          <rux-tab id="t3" role="tab">Widgets</rux-tab>
           <rux-tab id="t2" role="tab">Components</rux-tab>
           <rux-tab id="t6" role="tab">Icons</rux-tab>
           <rux-tab id="t1" role="tab">Elements</rux-tab>
-          <rux-tab id="t3" role="tab">Widgets</rux-tab>
           <rux-tab id="t5" role="tab">Typography</rux-tab>
           <rux-tab id="t4" role="tab">Colors</rux-tab>
         </rux-tabs>

@@ -71,157 +71,159 @@ export class RuxTimeline extends PolymerElement {
 
   static get template() {
     return html`
-      
       <style>
-      
+        :host {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
 
-      :host {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      
-        width: 100%;
-        padding: 0;
+          width: 100%;
+          padding: 0;
 
-        box-sizing: border-box;
-        
-      }
-      
-      *,
-      *:after,
-      *:before {
-        box-sizing: border-box;
-      }
+          box-sizing: border-box;
+        }
 
-      .rux-timeline__header,
-      .rux-timeline__footer {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        padding: 0 1em;
-        
-        background-color: var(--timelineHeaderBackgroundColor, rgb(32, 50, 70));
-        
-        z-index: 10;
-      }
+        *,
+        *:after,
+        *:before {
+          box-sizing: border-box;
+        }
 
-      .rux-timeline__header {
-        // box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      }
-      
-      .rux-timeline__header h1 {
-        font-size: 1.25rem;
-        font-weight: 300;
-        margin-left: 0.5em;
-      }
-      
-      .rux-timeline__header rux-slider {
-        margin-left: auto;
-        margin-right: 0;
-      }
+        .rux-timeline__header,
+        .rux-timeline__footer {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          padding: 0 1em;
 
-      .rux-timeline__footer {
-        display: none;
-      }
-      
-      
-      rux-timeline-track {
-        height: 60px;
-        margin: 2px 0;
-      }
+          background-color: var(
+            --timelineHeaderBackgroundColor,
+            rgb(32, 50, 70)
+          );
 
-      
+          z-index: 10;
+        }
 
-      rux-timeline-track {
-        background-color: var(--timelineTrackBackgroundColor, rgb(40, 63, 88));
-      }
-      
-      #rux-timeline__ruler {
-        display: block;
-        position: relative;
-        margin-top: auto;
-        color: var(--fontColor, rgb(255,255,255));
-        
-        background-color: var(--timelineRulerBackgroundColor, rgb(32, 50, 70));
-        height: 2em;
-        // box-shadow: 0 -2px 6px rgba(0,0,0,0.2)
-      }
-      
-      #rux-timeline__ruler div {
-        font-size: 0.675rem;
-        top: 0;
-        height: 20px;
-        position: absolute;
-        /* border-left: 1px solid rgba(255, 255, 255, 0.1); */
-        padding: 0.35rem 0 0 0.35rem;
-      }
-      
+        .rux-timeline__header {
+          // box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
 
-      #rux-timeline__playhead {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 3px;
-        background-color: rgba(255,255,255,0.4);
-        z-index: 100;
-        display: none;
-      }
+        .rux-timeline__header h1 {
+          font-size: 1.25rem;
+          font-weight: 300;
+          margin-left: 0.5em;
+        }
 
+        .rux-timeline__header rux-slider {
+          margin-left: auto;
+          margin-right: 0;
+        }
 
-      #rux-timeline__current-time {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 1px;
-        background-color: #5cb3ff;
-        z-index: 200;
-        display: none;
-      }
-      #rux-timeline__current-time::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -6px;
-        height: 5px;
-        width: 13px;
-        background-color: #5cb3ff;
-      }
+        .rux-timeline__footer {
+          display: none;
+        }
 
-      #rux-timeline__current-time::after {
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: -6px;
-        height: 5px;
-        width: 13px;
-        border-color: #5cb3ff;
-      
-        border-top: 6px solid #5cb3ff;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-      }
-      
+        rux-timeline-track {
+          height: 60px;
+          margin: 2px 0;
+        }
+
+        rux-timeline-track {
+          background-color: var(
+            --timelineTrackBackgroundColor,
+            rgb(40, 63, 88)
+          );
+        }
+
+        #rux-timeline__ruler {
+          display: block;
+          position: relative;
+          margin-top: auto;
+          color: var(--fontColor, rgb(255, 255, 255));
+
+          background-color: var(
+            --timelineRulerBackgroundColor,
+            rgb(32, 50, 70)
+          );
+          height: 2em;
+          // box-shadow: 0 -2px 6px rgba(0,0,0,0.2)
+        }
+
+        #rux-timeline__ruler div {
+          font-size: 0.675rem;
+          top: 0;
+          height: 20px;
+          position: absolute;
+          /* border-left: 1px solid rgba(255, 255, 255, 0.1); */
+          padding: 0.35rem 0 0 0.35rem;
+        }
+
+        #rux-timeline__playhead {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 3px;
+          background-color: rgba(255, 255, 255, 0.4);
+          z-index: 100;
+          display: none;
+        }
+
+        #rux-timeline__current-time {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 1px;
+          background-color: #5cb3ff;
+          z-index: 200;
+          display: none;
+        }
+        #rux-timeline__current-time::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -6px;
+          height: 5px;
+          width: 13px;
+          background-color: #5cb3ff;
+        }
+
+        #rux-timeline__current-time::after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: -6px;
+          height: 5px;
+          width: 13px;
+          border-color: #5cb3ff;
+
+          border-top: 6px solid #5cb3ff;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+        }
 
         .rux-timeline__viewport {
           position: relative;
           display: flex;
-          
+
           justify-content: flex-start;
           width: 100%;
           z-index: 5;
-          
+
           overflow-y: hidden;
         }
 
         .rux-timeline__track__label {
           padding: 0 0.9875rem;
-          
+
           width: 100%;
           /* background-color: #0e202e; */
-          background-color: var(--timelineTrackLabelBackgroundColor, rgb(40, 63, 88));
+          background-color: var(
+            --timelineTrackLabelBackgroundColor,
+            rgb(40, 63, 88)
+          );
           font-size: 0.875rem;
           display: flex;
           justify-content: flex-start;
@@ -229,7 +231,6 @@ export class RuxTimeline extends PolymerElement {
           height: 60px;
           margin: 2px 1px 2px 0;
           /* border-right: 1px solid #182635; */
-          
         }
 
         .rux-timeline__viewport__labels {
@@ -244,7 +245,6 @@ export class RuxTimeline extends PolymerElement {
         }
 
         #rux-timeline__viewport__tracks {
-          
           height: auto;
           position: relative;
           /* padding-top: 10px; */
@@ -252,7 +252,6 @@ export class RuxTimeline extends PolymerElement {
 
         #rux-timeline__tracks {
           position: relative;
-          
         }
 
         #rux-timeline__viewport__track-container {
@@ -261,53 +260,52 @@ export class RuxTimeline extends PolymerElement {
           z-index: 0;
           width: 100%;
         }
-        </style>
-      
-        <header class="rux-timeline__header" on-click="_setParams">
-          <rux-status status="[[status]]"></rux-status>
-          <h1>[[label]]</h1>
-          <rux-slider
-            min=[[_minScale]]
-            max=[[_maxScale]]
-            hide-input=true
-            val={{_scale}}></rux-slider>
-        </header>
+      </style>
 
-        
-        
-        <section class="rux-timeline__viewport">
+      <header class="rux-timeline__header" on-click="_setParams">
+        <rux-status status="[[status]]"></rux-status>
+        <h1>[[label]]</h1>
+        <rux-slider
+          min="[[_minScale]]"
+          max="[[_maxScale]]"
+          hide-input="true"
+          val="{{_scale}}"
+        ></rux-slider>
+      </header>
 
-          <div class="rux-timeline__viewport__labels">
-            <template is="dom-repeat" id="rux-timeline-tracks" items=[[tracks]]>
-              <div class="rux-timeline__track__label">[[item.label]]</div>
-            </template>
-          </div>
+      <section class="rux-timeline__viewport">
+        <div class="rux-timeline__viewport__labels">
+          <template is="dom-repeat" id="rux-timeline-tracks" items="[[tracks]]">
+            <div class="rux-timeline__track__label">[[item.label]]</div>
+          </template>
+        </div>
 
-
-          
-          <div id="rux-timeline__viewport__track-container">
-            <div id="rux-timeline__viewport__tracks">
+        <div id="rux-timeline__viewport__track-container">
+          <div id="rux-timeline__viewport__tracks">
             <div id="rux-timeline__tracks">
-                <template is="dom-repeat" id="rux-timeline-track-template" items=[[tracks]]>
-                  <rux-timeline-track 
-                    regions=[[item.regions]]
-                    scale=[[_scale]]
-                    duration=[[_duration]]
-                    selected-region={{selectedRegion}}></rux-timeline-track>
-                </template>
-              
-                <div id="rux-timeline__current-time"></div>
-                <div id="rux-timeline__playhead"></div>
-              </div>
-              <div id="rux-timeline__ruler"></div>  
-            </div>
-            
-          </div>  
-          
-        </section>
+              <template
+                is="dom-repeat"
+                id="rux-timeline-track-template"
+                items="[[tracks]]"
+              >
+                <rux-timeline-track
+                  regions="[[item.regions]]"
+                  scale="[[_scale]]"
+                  duration="[[_duration]]"
+                  selected-region="{{selectedRegion}}"
+                ></rux-timeline-track>
+              </template>
 
-        <footer class="rux-timeline__footer">Footer FPO</footer>
-      `;
+              <div id="rux-timeline__current-time"></div>
+              <div id="rux-timeline__playhead"></div>
+            </div>
+            <div id="rux-timeline__ruler"></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="rux-timeline__footer">Footer FPO</footer>
+    `;
   }
   constructor() {
     super();
@@ -318,13 +316,12 @@ export class RuxTimeline extends PolymerElement {
     // bind scroll listener to scroll event
     this._scrollListener = this._scroll.bind(this);
 
-    this._windowListener = this._onWindowResize.bind(this);
+    // debounce for request animation frame
+    this._last = 0;
   }
 
   connectedCallback() {
     super.connectedCallback();
-
-    // console.log("offsetParent", this.offsetParent);
 
     // hard coded min/max scale (for now)
     this._minScale = 100;
@@ -356,12 +353,10 @@ export class RuxTimeline extends PolymerElement {
       "rux-timeline__viewport__tracks"
     );
 
-    // if duration is less than 1000 then assume the
-    // data was in hours.
-    // NOTE: Refactor the underscore _duration is redundant
-    // at this point
-    // NOTE: a future enhancement would be to allow for
-    // some form of passing time in e.g. 12h for 12 hours
+    // if duration is less than 1000 then assume the data was in hours.
+    // NOTE: Refactor the underscore _duration is redundant at this point
+    // NOTE: a future enhancement would be to allow for some form of passing
+    // time in e.g. 12h for 12 hours
     if (this.duration < 1000) {
       this.duration = this.duration * 60 * 60 * 1000;
     }
@@ -372,50 +367,51 @@ export class RuxTimeline extends PolymerElement {
 
     if (this.playheadControl) {
       this._playhead.style.display = "block";
-      const _playheadTimer = setInterval(() => {
-        this._updatePlayhead();
-      }, 10);
     }
 
-    const _currentTimeTimer = setInterval(() => {
-      this._updateCurrentTime();
-    }, 500);
-
-    this._tics = new Array();
     this._setTics();
 
-    /*
-    if the timeline isn't visible, likely because it’s in a tab
-     or similar interface we’ll need to init the timeline physical
-     properties.
-     
-     This is very much a work in progress and quite possibly not
-     the ideal way to handle this, but the demo is coming
-    */
-    if (!this.offsetParent) {
-      // crate a new mutation obvserver
-      this._parentObserver = new MutationObserver(mutations => {
-        mutations.forEach(mutant => {
-          // the target’s offsetParent is not null then the timeline
-          // is visible
-          if (mutant.target.offsetParent) {
-            // effectively do the same thing as a window resize
-            this._setParams();
-
-            // disconnect the observer
-            this._parentObserver.disconnect();
-          }
+    // if the browser supports the resizeObserver (currently Chrome 55+)
+    // use that to handle both window and css transitions of width. This
+    // provides a much smoother resize
+    if ("ResizeObserver" in window) {
+      this.resizeObserver = new ResizeObserver(entries => {
+        entries.forEach(() => {
+          this._setParams();
         });
       });
+      this.resizeObserver.observe(this);
 
-      // observe
-      this._parentObserver.observe(this._track, {
-        subtree: true,
-        attributeOldValue: true
+      // otherwise use a mutation observer to handle resizing via CSS/JS
+      // and a window event listener to handle window resizing.
+    } else {
+      const _track = this.shadowRoot.getElementById(
+        "rux-timeline__viewport__track-container"
+      );
+
+      this.mustationObserver = new MutationObserver(
+        (mutationList, observer) => {
+          mutationList.forEach(mutant => {
+            this._setParams();
+          });
+        }
+      );
+
+      this.mustationObserver.observe(_track, {
+        attributes: true,
+        childList: false,
+        subtree: true
       });
     }
 
-    window.addEventListener("resize", this._windowListener);
+    // Animate the playhead
+    this.currentTimeAnimator = window.requestAnimationFrame(
+      this._updateCurrentTime.bind(this)
+    );
+
+    this.currentPlayheadAnimator = window.requestAnimationFrame(
+      this._updatePlayhead.bind(this)
+    );
   }
 
   disconnectedCallback() {
@@ -423,7 +419,8 @@ export class RuxTimeline extends PolymerElement {
 
     this._track.removeEventListener("wheel", this._scrollListener);
 
-    window.removeEventListener("resize");
+    window.cancelAnimationFrame(this.currentTimeAnimator);
+    window.cancelAnimationFrame(this.currentPlayheadAnimator);
   }
 
   _catchPlayhead() {
@@ -432,40 +429,58 @@ export class RuxTimeline extends PolymerElement {
     // }
   }
 
-  _onWindowResize() {
-    this._updateTimelineScale();
+  _selectedRegionChanged() {}
+
+  _onClick(e) {
+    /*
+     TODO: Needs a refactor, probably use the concept from tabs/tab panels
+     of registering a track to its track label instead of this song and dance
+    */
+
+    const _label = e.currentTarget;
+    const _track = this.shadowRoot.querySelector(
+      `[aria-labelledby="label-${_label.getAttribute("index")}"]`
+    );
+
+    // if you click on the track then do this
+    // if (e.currentTarget.hasAttribute('aria-labelledby')) {
+    //   // _track = e.currentTarget;
+    //   // _label = this.shadowRoot.getElementById('label-' + _track.index);
+    //   // if you click on the label then do this
+    // } else {
+    //   _track =
+    //   );
+    //   _label = e.currentTarget;
+    // }
+
+    _track.selected = !_track.selected;
+    if (_track.selected) {
+      _label.setAttribute("selected", "");
+    } else {
+      _label.removeAttribute("selected");
+    }
   }
 
-  _getLabels() {
-    return [
-      "00:00",
-      "01:00",
-      "02:00",
-      "03:00",
-      "04:00",
-      "05:00",
-      "06:00",
-      "07:00",
-      "08:00",
-      "09:00",
-      "10:00",
-      "11:00",
-      "12:00",
-      "13:00",
-      "14:00",
-      "15:00",
-      "16:00",
-      "17:00",
-      "18:00",
-      "19:00",
-      "20:00",
-      "21:00",
-      "22:00",
-      "23:00"
-    ];
+  _dispatchPlayheadEvent(time) {
+    // TODO: use a while loop to have a more efficient sub-shadowDom inquisition
+    const _t = this.shadowRoot.querySelectorAll("rux-timeline-track");
+    _t.forEach(track => {
+      var _r = track.shadowRoot.querySelectorAll("rux-timeline-region");
+
+      _r.forEach(region => {
+        // handles setting a timeline region to a past state
+        if (time > region.startTime && time < region.endTime) {
+          region.temporality = "present";
+        } else if (time < region.startTime) {
+          region.temporality = "future";
+        } else if (time > region.endTime) {
+          region.temporality = "past";
+        }
+      });
+    });
   }
 
-  _updateCurrentTime(timestamp) {
+  _updateCurrentTime(time) {
     const now = new Date();
     const utc = new Date(
       now.getUTCFullYear(),
@@ -488,27 +503,21 @@ export class RuxTimeline extends PolymerElement {
     const dif = utc.getTime() - then.getTime();
     const loc = (dif * this._ruler.offsetWidth) / this._duration;
 
-    if (loc >= this._ruler.offsetWidth) {
+    if (loc > this._ruler.offsetWidth) {
       this._currentTime.style.display = "none";
     } else {
       this._currentTime.style.display = "block";
       this._currentTime.style.left = loc + "px";
+      this.currentTimeAnimator = window.requestAnimationFrame(
+        this._updateCurrentTime.bind(this)
+      );
     }
 
-    // This is a very ugly way of targeting grandchildren form a parent
-    // but for demo it’ll have to do.
-    const _t = this.shadowRoot.querySelectorAll("rux-timeline-track");
-    _t.forEach(track => {
-      var _r = track.shadowRoot.querySelectorAll("rux-timeline-region");
-
-      _r.forEach(region => {
-        region.dispatchEvent(
-          new CustomEvent("playhead", {
-            detail: { loc: loc }
-          })
-        );
-      });
-    });
+    // throttle dispatching events to regions
+    if (!this._last || time - this._last >= 1 * 5000) {
+      this._last = time;
+      this._dispatchPlayheadEvent(utc);
+    }
   }
 
   _updatePlayhead() {
@@ -519,30 +528,19 @@ export class RuxTimeline extends PolymerElement {
       loc = 0;
     }
     this._playhead.style.left = loc + "px";
+    this.currentPlayheadAnimator = window.requestAnimationFrame(
+      this._updatePlayhead.bind(this)
+    );
   }
 
   _updateTimelineScale() {
     // scale tracks container
-    // console.log("tracks", this._tracks);
-    this._tracks.style.width = Number(this._scale) + "%";
-    this._track.style.width = Number(this._scale) + "%";
-
-    if (!this._tics) return;
-    this._tics.forEach((tic, i) => {
-      tic.style.left =
-        (3600000 * i * this._ruler.offsetWidth) / this._duration + "px";
-    });
+    const scale = `${Number(this._scale)}%`;
+    this._tracks.style.width = scale;
+    this._track.style.width = scale;
   }
 
-  /*
-    This is a quick and dirty hack for hidden timelines on load (e.g., in a tab)
-    It’s duplicating a bunch of stuff from the window resize event and could
-    likely be coupled with that and/or since it’s duplicating a dispatch event
-    that’s getting dispatched for the playhead anyway just do it there -- except
-    of course in instances where no playhead exists 
-  */
   _setParams() {
-    // console.log("set params");
     this._updateTimelineScale();
     // This is a very ugly way of targeting grandchildren form a parent
     // but for demo it’ll have to do.
@@ -557,33 +555,30 @@ export class RuxTimeline extends PolymerElement {
     });
   }
 
+  /*
+    TODO: Consider moving the ruler to its own component entirely and moving
+    all the tic/label logic there
+  */
   _setTics() {
-    if (!this._track) return;
-    let y = this._getLabels();
+    // TODO: Allow for a start time that isn’t midnight of the current day
+    const start = 0;
 
-    // trim the tic marks to match a duration of less than 24 hours
-    // NOTE: this is all good and well for the demo, but makes loads
-    // of assumptions, in fact the whole notion of making the timeline
-    // duration based does.
-    if (this._durationHours < 24) {
-      y.splice(this._durationHours, y.length - 1);
+    // loop through the duration set for the timeline
+    for (let i = start; i < this._durationHours; i++) {
+      // create a new tic
+      const tic = document.createElement("div");
+
+      // generate a readable time label
+      tic.innerHTML = `${i.toString().padStart(2, "0")}:00`;
+
+      // append to child
+      this._ruler.appendChild(tic);
     }
-
-    y.forEach((tic, i) => {
-      let z = document.createElement("div");
-      z.style.left =
-        (3600000 * i * this._tracks.offsetWidth) / this._duration + "px";
-      z.innerHTML = y[i];
-
-      this._ruler.appendChild(z);
-      this._tics[i] = z;
-    });
   }
 
   /*
-  **
-  ** Mostly a dev feature, but maybe useful to end users. Scroll the timeline with the mouse wheel
-  **
+    Mostly a dev feature, but maybe useful to end users.
+    Scroll the timeline with the mouse wheel
   */
   _scroll(e) {
     if (e.altKey) {
@@ -599,6 +594,17 @@ export class RuxTimeline extends PolymerElement {
     } else {
       e.currentTarget.scrollLeft += Math.floor(e.deltaY);
     }
+  }
+
+  notifyParentToCreateContact(e) {
+    this.dispatchEvent(
+      new CustomEvent("createNewContact", {
+        bubbles: true,
+        composed: true
+      })
+    );
+    e.stopPropagation();
+    return false;
   }
 }
 customElements.define("rux-timeline", RuxTimeline);
