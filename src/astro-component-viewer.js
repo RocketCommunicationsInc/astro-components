@@ -942,6 +942,7 @@ rux-global-status-bar {
                   <rux-tab id="a1" role="tab" selected>Tab 1</rux-tab>
                   <rux-tab id="a2" role="tab">Tab with a Long Title</rux-tab>
                   <rux-tab id="a3" role="tab" disabled>Tab 3</rux-tab>
+
                   
                 </rux-tabs> 
           
@@ -1469,7 +1470,12 @@ rux-global-status-bar {
         <rux-tab-panel aria-labeledby="t3" role="tabpanel">
           <div class="grid">
             <div class="timeline">
-              <rux-timeline status="caution" id="listenerTimeline" label="Timeline" data="{{timeline}}" tracks="[[multiTrack]]">
+              <rux-timeline 
+                id="listenerTimeline"  
+                status="caution" 
+                label="Timeline" 
+                tracks="[[multiTrack]]">
+
               </rux-timeline>
             </div>
           </div>
@@ -1787,6 +1793,7 @@ rux-global-status-bar {
     this.multiTrack = [
       {
         label: "LEO",
+        test: "AASDF",
         regions: [
           {
             label: "NROL-11",

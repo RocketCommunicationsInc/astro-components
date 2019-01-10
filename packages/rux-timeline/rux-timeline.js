@@ -1,8 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import "@polymer/polymer/lib/elements/dom-repeat.js";
-// import { RuxIcon } from "../rux-icon/rux-icon.js";
-// import { RuxStatus } from "../rux-status/rux-status.js";
-// import { RuxSlider } from "../rux-slider/rux-slider.js";
 import { RuxTimelineTrack } from "./rux-timeline-track.js";
 import { RuxTimelineRegion } from "./rux-timeline-region.js";
 
@@ -16,9 +13,6 @@ export class RuxTimeline extends PolymerElement {
       label: {
         type: String,
         value: "Timeline"
-      },
-      data: {
-        type: Object
       },
       duration: {
         type: Number,
@@ -64,7 +58,8 @@ export class RuxTimeline extends PolymerElement {
       },
       selectedRegion: {
         type: Object,
-        notify: true
+        notify: true,
+        observer: "_selectedRegionChanged"
       }
     };
   }
@@ -263,8 +258,6 @@ export class RuxTimeline extends PolymerElement {
       </style>
 
       <header class="rux-timeline__header" on-click="_setParams">
-        <rux-status status="[[status]]"></rux-status>
-        <h1>[[label]]</h1>
         <rux-slider
           min="[[_minScale]]"
           max="[[_maxScale]]"
@@ -274,9 +267,22 @@ export class RuxTimeline extends PolymerElement {
       </header>
 
       <section class="rux-timeline__viewport">
+        <!-- 
+          Labels for each timeline track are derived from the tracks property.
+          An alternative method would be to have labels encapsulated within
+          the rux-timeline element, but it creates problems calculating scaling
+          and scrolling the timeline when expanded.
+        -->
         <div class="rux-timeline__viewport__labels">
           <template is="dom-repeat" id="rux-timeline-tracks" items="[[tracks]]">
-            <div class="rux-timeline__track__label">[[item.label]]</div>
+            <div
+              id$="label-[[index]]"
+              label="[[item.label]]"
+              index$="[[index]]"
+              class="rux-timeline__track__label-container"
+            >
+              <div class="rux-timeline__track__label">[[item.label]]</div>
+            </div>
           </template>
         </div>
 
@@ -287,18 +293,21 @@ export class RuxTimeline extends PolymerElement {
                 is="dom-repeat"
                 id="rux-timeline-track-template"
                 items="[[tracks]]"
+                as="track"
               >
                 <rux-timeline-track
-                  regions="[[item.regions]]"
+                  aria-labelledby$="label-[[index]]"
+                  regions="[[track.regions]]"
+                  label="[[track.label]]"
+                  index="[[index]]"
                   scale="[[_scale]]"
                   duration="[[_duration]]"
                   selected-region="{{selectedRegion}}"
                 ></rux-timeline-track>
               </template>
-
-              <div id="rux-timeline__current-time"></div>
-              <div id="rux-timeline__playhead"></div>
             </div>
+            <div id="rux-timeline__current-time"></div>
+            <div id="rux-timeline__playhead"></div>
             <div id="rux-timeline__ruler"></div>
           </div>
         </div>
@@ -412,6 +421,8 @@ export class RuxTimeline extends PolymerElement {
     this.currentPlayheadAnimator = window.requestAnimationFrame(
       this._updatePlayhead.bind(this)
     );
+
+    console.log("tracks", this.tracks);
   }
 
   disconnectedCallback() {
@@ -431,11 +442,12 @@ export class RuxTimeline extends PolymerElement {
 
   _selectedRegionChanged() {}
 
+  /*
   _onClick(e) {
     /*
      TODO: Needs a refactor, probably use the concept from tabs/tab panels
      of registering a track to its track label instead of this song and dance
-    */
+    * /
 
     const _label = e.currentTarget;
     const _track = this.shadowRoot.querySelector(
@@ -460,6 +472,7 @@ export class RuxTimeline extends PolymerElement {
       _label.removeAttribute("selected");
     }
   }
+  */
 
   _dispatchPlayheadEvent(time) {
     // TODO: use a while loop to have a more efficient sub-shadowDom inquisition
@@ -594,17 +607,6 @@ export class RuxTimeline extends PolymerElement {
     } else {
       e.currentTarget.scrollLeft += Math.floor(e.deltaY);
     }
-  }
-
-  notifyParentToCreateContact(e) {
-    this.dispatchEvent(
-      new CustomEvent("createNewContact", {
-        bubbles: true,
-        composed: true
-      })
-    );
-    e.stopPropagation();
-    return false;
   }
 }
 customElements.define("rux-timeline", RuxTimeline);
