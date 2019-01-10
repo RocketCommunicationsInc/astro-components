@@ -76,6 +76,7 @@ export class RuxTimeline extends PolymerElement {
           padding: 0;
 
           box-sizing: border-box;
+          transform: translateZ(0);
         }
 
         *,
@@ -87,9 +88,10 @@ export class RuxTimeline extends PolymerElement {
         .rux-timeline__header,
         .rux-timeline__footer {
           position: relative;
-          z-index: 1;
+
           display: flex;
           align-items: center;
+
           padding: 0 1em;
 
           background-color: var(
@@ -101,7 +103,8 @@ export class RuxTimeline extends PolymerElement {
         }
 
         .rux-timeline__header {
-          // box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+          padding: 1.5rem 1.25rem;
+          justify-content: center;
         }
 
         .rux-timeline__header h1 {
@@ -112,7 +115,14 @@ export class RuxTimeline extends PolymerElement {
 
         .rux-timeline__header rux-slider {
           margin-left: auto;
-          margin-right: 0;
+          margin-right: 1rem;
+        }
+
+        /* the default .rux-button__icon expects you to be using .rux-button--large on the parent */
+        .rux-timeline__header .rux-button .rux-button__icon {
+          height: 1.1rem;
+          width: 1.1rem;
+          margin-left: -0.3125rem;
         }
 
         .rux-timeline__footer {
@@ -120,7 +130,7 @@ export class RuxTimeline extends PolymerElement {
         }
 
         rux-timeline-track {
-          height: 60px;
+          /* height: 60px; */
           margin: 2px 0;
         }
 
@@ -132,7 +142,8 @@ export class RuxTimeline extends PolymerElement {
         }
 
         #rux-timeline__ruler {
-          display: block;
+          display: flex;
+          justify-content: space-between;
           position: relative;
           margin-top: auto;
           color: var(--fontColor, rgb(255, 255, 255));
@@ -142,16 +153,22 @@ export class RuxTimeline extends PolymerElement {
             rgb(32, 50, 70)
           );
           height: 2em;
-          // box-shadow: 0 -2px 6px rgba(0,0,0,0.2)
+          width: 100%;
+
+          /* box-shadow: 0 -2px 6px rgba(0,0,0,0.2) */
         }
 
         #rux-timeline__ruler div {
           font-size: 0.675rem;
-          top: 0;
+          /* top: 0; */
           height: 20px;
-          position: absolute;
-          /* border-left: 1px solid rgba(255, 255, 255, 0.1); */
-          padding: 0.35rem 0 0 0.35rem;
+          width: 100%;
+          /* position: absolute; */
+          border-left: 1px solid rgba(255, 255, 255, 0.1);
+          padding-left: 0.25rem;
+
+          /* border: 1px solid red; */
+          /* padding: 0.35rem 0 0 0.35rem; */
         }
 
         #rux-timeline__playhead {
@@ -210,11 +227,8 @@ export class RuxTimeline extends PolymerElement {
           overflow-y: hidden;
         }
 
-        .rux-timeline__track__label {
-          padding: 0 0.9875rem;
-
+        .rux-timeline__track__label-container {
           width: 100%;
-          /* background-color: #0e202e; */
           background-color: var(
             --timelineTrackLabelBackgroundColor,
             rgb(40, 63, 88)
@@ -222,21 +236,88 @@ export class RuxTimeline extends PolymerElement {
           font-size: 0.875rem;
           display: flex;
           justify-content: flex-start;
-          align-items: center;
+          flex-wrap: wrap;
+
           height: 60px;
           margin: 2px 1px 2px 0;
-          /* border-right: 1px solid #182635; */
         }
+
+        .rux-timeline__track__subtracks {
+          width: 100%;
+          background-color: #203246;
+        }
+
+        .rux-timeline__track__label-container[selected] {
+          height: auto;
+        }
+
+        .rux-timeline__track__label-container[selected]
+          .rux-timeline__track__subtracks {
+          display: block;
+        }
+
+        .rux-timeline__track__label--subtrack {
+          background-color: var(--colorTertiaryDarken2);
+          margin: 2px 0;
+        }
+
+        .rux-timeline__track__label--subtrack:last-of-type {
+          margin: 2px 0 0 0;
+        }
+
+        .rux-timeline__track__label {
+          width: 100%;
+
+          font-size: 0.875rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          height: 60px;
+          padding: 0 0.9875rem;
+
+          flex-grow: 0;
+        }
+
+        /*
+        .rux-timeline__track__label:not(.rux-timeline__track__label--subtrack) {
+          cursor: pointer;
+        }
+        .rux-timeline__track__label:not(.rux-timeline__track__label--subtrack)::before {
+          content: "";
+          display: inline-block;
+          align-self: flex-start;
+          margin: 1rem 0.5rem 0 -0.5rem;
+          width: 6px;
+          height: 6px;
+
+          border-style: solid;
+          border-width: 6px 0 6px 6px;
+
+          border-color: transparent transparent transparent
+            var(--colorSecondary);
+          transition: transform 0.167s ease-in-out;
+        }
+
+        .rux-timeline__track__label-container[selected]
+          .rux-timeline__track__label::before {
+          transform: rotate(90deg);
+        }
+
+        .rux-timeline__track__subtracks {
+          
+          display: none;
+        }
+        */
 
         .rux-timeline__viewport__labels {
           flex-shrink: 0;
           position: relative;
-          width: 7.875rem;
+          width: 12.875rem;
           z-index: 200;
           margin-right: 2px;
 
           /* background-color: var(--timelineHeaderBackgroundColor, rgb(24, 38, 53)); */
-          // box-shadow: 5px 0 2.5px rgba(0,0,0,0.13);
+          /* box-shadow: 5px 0 2.5px rgba(0,0,0,0.13); */
         }
 
         #rux-timeline__viewport__tracks {
@@ -254,6 +335,12 @@ export class RuxTimeline extends PolymerElement {
           overflow-y: hidden;
           z-index: 0;
           width: 100%;
+        }
+
+        .rux-timeline__filter {
+          list-style: none;
+          padding: 0;
+          margin: 0;
         }
       </style>
 

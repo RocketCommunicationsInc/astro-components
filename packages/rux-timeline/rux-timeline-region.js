@@ -6,6 +6,9 @@ import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 export class RuxTimelineRegion extends PolymerElement {
   static get properties() {
     return {
+      id: {
+        type: String
+      },
       label: {
         type: String
       },
@@ -21,14 +24,19 @@ export class RuxTimelineRegion extends PolymerElement {
       trackWidth: {
         type: Number
       },
+      filter: {
+        type: String,
+        observer: "_filterUpdated"
+      },
+      hidden: {
+        type: Boolean,
+        value: false
+      },
       duration: {
         type: Number
       },
       startTime: {
         type: Date
-      },
-      status: {
-        type: String
       },
       endTime: {
         type: Date
@@ -41,6 +49,10 @@ export class RuxTimelineRegion extends PolymerElement {
         value: false,
         reflectToAttribute: true,
         notify: true
+      },
+      temporality: {
+        type: String,
+        reflectToAttribute: true
       },
       _startTime: {
         type: Date,
@@ -269,29 +281,29 @@ export class RuxTimelineRegion extends PolymerElement {
 
     this._setDefaultSize();
 
-    this.addEventListener('update', this._windowListener);
+    this.addEventListener("update", this._windowListener);
 
-    window.addEventListener('resize', this._windowListener);
+    window.addEventListener("resize", this._windowListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    this.removeEventListener('update', this._windowListener);
+    this.removeEventListener("update", this._windowListener);
 
-    window.removeEventListener('resize');
+    window.removeEventListener("resize");
   }
 
   _setDefaultSize() {
     // console.log("set default size");
     const now = new Date();
     const today = new Date(
-        now.getUTCFullYear(),
-        now.getUTCMonth(),
-        now.getUTCDate(),
-        0,
-        0,
-        0
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate(),
+      0,
+      0,
+      0
     );
 
     const left =
@@ -308,7 +320,7 @@ export class RuxTimelineRegion extends PolymerElement {
     this._initialState = {
       width: width,
       left: left,
-      scale: this.scale,
+      scale: this.scale
     };
 
     // console.log("track width", this.trackWidth);
@@ -336,7 +348,7 @@ export class RuxTimelineRegion extends PolymerElement {
     if (isNaN(time)) return false;
 
     return new Date(time).toLocaleTimeString(this.locale, {
-      hour12: false,
+      hour12: false
     });
   }
 
@@ -349,11 +361,11 @@ export class RuxTimelineRegion extends PolymerElement {
   }
 
   _resetSize() {
-    this.classList.remove('small', 'standard', 'compact');
+    this.classList.remove("small", "standard", "compact");
   }
 
   _filterUpdated() {
-    if (this.filter.toLowerCase() === 'none') {
+    if (this.filter.toLowerCase() === "none") {
       this.hidden = false;
     } else if (this.filter.toLowerCase() !== this.status.toLowerCase()) {
       this.hidden = true;
@@ -366,23 +378,23 @@ export class RuxTimelineRegion extends PolymerElement {
     const _width = this._getRegionWidth();
     const _left = this._getRegionLeft();
 
-    this.style.left = _left + 'px';
-    this.style.width = _width + 'px';
+    this.style.left = _left + "px";
+    this.style.width = _width + "px";
 
     this._resetSize();
     if (_width > 180) {
       // this is a normal sized widget
-      this.classList.add('large');
+      this.classList.add("large");
     } else if (_width < 180 && _width > 140) {
       // this is a mid sized widget without its time element
-      this.classList.add('medium');
+      this.classList.add("medium");
     } else if (_width < 140 && _width > 40) {
       // this is a small widget without time or label
-      this.classList.add('small');
+      this.classList.add("small");
     } else if (_width < 40) {
       // this is a small widget without time or label
-      this.classList.add('compact');
+      this.classList.add("compact");
     }
   }
 }
-customElements.define('rux-timeline-region', RuxTimelineRegion);
+customElements.define("rux-timeline-region", RuxTimelineRegion);
