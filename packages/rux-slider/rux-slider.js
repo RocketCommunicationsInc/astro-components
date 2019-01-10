@@ -350,11 +350,7 @@ export class RuxSlider extends PolymerElement {
   }
   connectedCallback() {
     super.connectedCallback();
-
     this._range = this.shadowRoot.querySelector("input[type=range]");
-    this._updateVisual();
-
-    // this._axisLabels = this.axisLabels.split(",");
   }
   disconnectedCallback() {
     super.disconnectedCallback();
@@ -363,18 +359,18 @@ export class RuxSlider extends PolymerElement {
   _updateVisual() {
     const min = this._range.getAttribute("min");
     const max = this._range.getAttribute("max");
-    const val = this._range.value;
+    const val = this.val;
 
-    let dif = ((val - min) / (max - min)) * 100;
+    const dif = ((val - min) / (max - min)) * 100;
 
     this._range.style.setProperty("--value", dif);
   }
 
   _updateValue(e) {
-    this.val = e.target.value;
-    // e.target.style.setProperty("--value", e.target.value);
+    this.val = e.target ? e.target.value : e;
     this._updateVisual(e.target);
   }
+
   _getAxisLabels(values) {
     return values.split(",");
   }
