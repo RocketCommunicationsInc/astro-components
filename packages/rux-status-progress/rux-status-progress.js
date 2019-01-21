@@ -11,6 +11,10 @@ export class RuxStatusProgress extends PolymerElement {
         type: Number,
         value: 100
       },
+      min: {
+        type: Number,
+        value: 0
+      },
       val: {
         type: Number,
         value: 0,
@@ -29,12 +33,10 @@ export class RuxStatusProgress extends PolymerElement {
   static get template() {
     return html`
       <style>
-        /* .progress-ring__circle {
-          stroke-dasharray: 10 20;
-				} */
-
         .progress-container {
+          display: inline-block;
           position: relative;
+          outline: 2px solid red;
         }
 
         circle {
@@ -42,20 +44,30 @@ export class RuxStatusProgress extends PolymerElement {
           transform: rotate(-90deg);
           transform-origin: 50% 50%;
 
+          outline: 1px solid lightblue;
+
           position: absolute;
+          margin: 0;
         }
 
         output {
-          display: block;
-          height: 44px;
-          width: 44px;
+          display: flex;
+
+          height: 100%;
+          width: 100%;
+          line-height: 0;
+
+          justify-content: center;
+          align-items: center;
+
+          outline: 1px solid yellowgreen;
 
           position: absolute;
         }
       </style>
 
       <div class="progress-container">
-        <output>[[_percent]]</output>
+        <output>[[val]]%</output>
         <svg
           class="progress-ring"
           width$="[[dimension]]"
@@ -79,10 +91,6 @@ export class RuxStatusProgress extends PolymerElement {
   }
   constructor() {
     super();
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
 
     this.radius = 40;
     this.dimension = this.radius * 2;
@@ -94,14 +102,16 @@ export class RuxStatusProgress extends PolymerElement {
     this._percent = 0;
     this._progress = 0;
   }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
   disconnectedCallback() {
     super.disconnectedCallback();
   }
 
   setProgress() {
-    this._percent = this.val >= 1 ? Math.floor(this.val / 100) : this.val;
-    console.log("this._percent", this._percent);
-
+    this._percent = this.val / 100;
     this._progress = this._circumference - this._percent * this._circumference;
   }
 

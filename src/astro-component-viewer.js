@@ -1130,7 +1130,7 @@ rux-global-status-bar {
               </header>
               
               <input
-                value="0"
+                value="[[statusProgressValue]]"
                 type="number"
                 step="1"
                 min="0"
@@ -1807,6 +1807,8 @@ rux-global-status-bar {
       }
     ];
 
+    this.statusProgressValue = 50;
+
     /* FAKE TIMELINE */
     const today = new Date();
     this.multiTrack = [
@@ -2025,7 +2027,9 @@ rux-global-status-bar {
   }
 
   _updateStatusProgressValue(e) {
-    const percent = e.target.value / (e.target.max - e.target.min);
+    const percent = Math.floor(
+      (e.target.value / (e.target.max - e.target.min)) * 100
+    );
     this.statusProgressValue = percent;
   }
 
