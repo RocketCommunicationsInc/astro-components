@@ -1128,11 +1128,22 @@ rux-global-status-bar {
               <header class="rux-card__header">
                 <h1>Status Progress</h1>
               </header>
+              
+              <input
+                value="0"
+                type="number"
+                step="1"
+                min="0"
+                max="100"
+                on-input="_updateStatusProgressValue"
+                
+              />
+
               <div class="rux-card__content">
                 <rux-status-progress
                   min=0
                   max=100
-                  val=50></rux-status-progress>
+                  val=[[statusProgressValue]]></rux-status-progress>
               </div>
             </section>
           </div>
@@ -2011,6 +2022,11 @@ rux-global-status-bar {
     for (let index = 0; index < 10; index++) {
       this._updateLog();
     }
+  }
+
+  _updateStatusProgressValue(e) {
+    const percent = e.target.value / (e.target.max - e.target.min);
+    this.statusProgressValue = percent;
   }
 
   /* MODAL WINDOW */
