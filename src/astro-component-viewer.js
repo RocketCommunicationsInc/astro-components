@@ -20,6 +20,7 @@ import { RuxTimeline } from "../packages/rux-timeline/rux-timeline.js";
 import { RuxToggle } from "../packages/rux-toggle/rux-toggle.js";
 import { RuxTabs } from "../packages/rux-tabs/rux-tabs.js";
 import { RuxTree } from "../packages/rux-tree/rux-tree.js";
+import { RuxStatusProgress } from "../packages/rux-status-progress/rux-status-progress.js";
 
 /**
  * @polymer
@@ -1110,7 +1111,7 @@ rux-global-status-bar {
             </section>
 
 
-            <!-- 9. CLOCK //-->
+            <!-- 9. CLOCK 
             <section class="rux-card clock">
               <header class="rux-card__header">
                 <h1>Clock</h1>
@@ -1119,6 +1120,19 @@ rux-global-status-bar {
                 <rux-clock compact></rux-clock>
                 <br>
                 <rux-clock></rux-clock>
+              </div>
+            </section>
+            //-->
+
+            <section class="rux-card clock">
+              <header class="rux-card__header">
+                <h1>Status Progress</h1>
+              </header>
+              <div class="rux-card__content">
+                <rux-status-progress
+                  min=0
+                  max=100
+                  val=50></rux-status-progress>
               </div>
             </section>
           </div>
