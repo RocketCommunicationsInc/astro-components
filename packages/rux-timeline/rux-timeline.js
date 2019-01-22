@@ -103,7 +103,7 @@ export class RuxTimeline extends PolymerElement {
         }
 
         .rux-timeline__header {
-          padding: 1.5rem 1.25rem;
+          padding: unset 1.25rem;
           justify-content: center;
         }
 
@@ -345,6 +345,8 @@ export class RuxTimeline extends PolymerElement {
       </style>
 
       <header class="rux-timeline__header" on-click="_setParams">
+        <rux-status status="[[status]]"></rux-status>
+        <h1>[[label]]</h1>
         <rux-slider
           min="[[_minScale]]"
           max="[[_maxScale]]"
@@ -530,6 +532,8 @@ export class RuxTimeline extends PolymerElement {
   _selectedRegionChanged() {}
 
   /*
+  This is code specifically for a timeline instance where "subtracks" are required. It may
+  or may not eventually work its way back in to Astro
   _onClick(e) {
     /*
      TODO: Needs a refactor, probably use the concept from tabs/tab panels

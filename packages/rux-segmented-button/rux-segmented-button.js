@@ -22,131 +22,140 @@ export class RuxSegmentedButton extends PolymerElement {
   static get template() {
     return html`
       <style>
-      :host {
-        box-sizing: border-box;
-      }
+        :host {
+          box-sizing: border-box;
+        }
 
-      *,
-      *::before,
-      *::after {
-        box-sizing: inherit;
-      }
-      
-      
-.rux-segmented-buttons {
-  display: inline-flex;
-  
-  height: 1.6875rem;
-  overflow: hidden;
+        *,
+        *::before,
+        *::after {
+          box-sizing: inherit;
+        }
 
-  padding: 0;
-  margin: 0;
+        .rux-segmented-buttons {
+          display: inline-flex;
 
-  list-style: none;
+          height: 1.6875rem;
+          overflow: hidden;
 
-  border-radius: var(--controlBorderRadius, 3px);
-  border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
-  background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
-}
+          padding: 0;
+          margin: 0;
 
-.rux-segmented-button {
-  height: 1.6875rem;
-  width: auto;
-  margin: 0;
-  padding: 0;
-}
+          list-style: none;
 
-.rux-segmented-button label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+          border-radius: var(--controlBorderRadius, 3px);
+          border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+          background-color: var(
+            --segmentedButtonBackgroundColor,
+            rgb(0, 90, 143)
+          );
+        }
 
-  width: auto;
-  height: 1.5625rem;
+        .rux-segmented-button {
+          height: 1.6875rem;
+          width: auto;
+          margin: 0;
+          padding: 0;
+        }
 
-  margin: 0;
-  padding: 0 0.75rem;
+        .rux-segmented-button label {
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-  border: none;
-  border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+          width: auto;
+          height: 1.5625rem;
 
-  color: var(--segmentedButtonTextColor, #fff);
-  
+          margin: 0;
+          padding: 0 0.75rem;
 
-  font-size: 0.875rem;
+          border: none;
+          border-right: 1px solid
+            var(--segmentedButtonBorderColor, rgb(30, 47, 66));
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  
-}
+          color: var(--segmentedButtonTextColor, #fff);
 
-.rux-segmented-button:last-of-type label {
-  border-right: none !important;
-}
+          font-size: 0.875rem;
 
-.rux-segmented-button input {
-  display: none !important;
-  
-}
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
 
-.rux-segmented-button label:hover {
-  background-color: var(
-    --segmentedButtonHoverBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: var(--segmentedButtonHoverTextColor, #fff);
-  outline: none;
-}
+        .rux-segmented-button:last-of-type label {
+          border-right: none !important;
+        }
 
-.rux-segmented-button input:checked + label {
-  background-color: var(
-    --segmentedButtonSelectedBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: var(--segmentedButtonSelectedTextColor, #fff);
-  box-shadow: var(
-    --segmentedButtonSelectedBoxShadow,
-    inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12),
-    inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  );
-}
+        .rux-segmented-button input {
+          display: none !important;
+        }
 
+        .rux-segmented-button label:hover {
+          background-color: var(
+            --segmentedButtonHoverBackgroundColor,
+            rgb(58, 129, 191)
+          );
+          color: var(--segmentedButtonHoverTextColor, #fff);
+          outline: none;
+        }
 
-/* 
+        .rux-segmented-button input:checked + label {
+          background-color: var(
+            --segmentedButtonSelectedBackgroundColor,
+            rgb(58, 129, 191)
+          );
+          color: var(--segmentedButtonSelectedTextColor, #fff);
+          box-shadow: var(
+            --segmentedButtonSelectedBoxShadow,
+            inset 0 2px 4px rgba(0, 0, 0, 0.14),
+            inset 0 3px 4px rgba(0, 0, 0, 0.12),
+            inset 0 1px 5px rgba(0, 0, 0, 0.2)
+          );
+        }
+
+        /* 
   OVERRIDE FOR IE 
   Otherwise all segments get rounded corners. Need to override and re-enable
   some style definitions.
 */
 
-.rux-segmented-buttons.style-scope {
-  border-radius: 3px 6px 6px 3px !important;
-}
-.rux-segmented-button.style-scope { 
-  border-radius: 0;   
-  height: auto;       
-  border: none;
-  border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
-}
-/* END OVERRDIDE FOR IE EDGE */
-
-    </style>      
+        .rux-segmented-buttons.style-scope {
+          border-radius: 3px 6px 6px 3px !important;
+        }
+        .rux-segmented-button.style-scope {
+          border-radius: 0;
+          height: auto;
+          border: none;
+          border-right: 1px solid
+            var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+        }
+        /* END OVERRDIDE FOR IE EDGE */
+      </style>
 
       <ul class="rux-segmented-buttons">
         <dom-repeat id="buttonSegments" items="{{data}}">
           <template>
             <li class="rux-segmented-button">
-              <input type="radio" name="rux-group" id="[[item.label]]" on-click="_selectSegment" />
+              <input
+                type="radio"
+                name="rux-group"
+                id="[[item.label]]"
+                checked="[[item.selected]]"
+                on-click="_onClick"
+              />
               <label for$="[[item.label]]">[[item.label]]</label>
             </li>
           </template>
         </dom-repeat>
       </ul>
 
-      <array-selector id="selector" items="{{data}}" selected="{{selected}}"></array-selector>
-      `;
+      <array-selector
+        id="selector"
+        items="{{data}}"
+        selected="{{selected}}"
+      ></array-selector>
+    `;
   }
 
   constructor() {
@@ -156,24 +165,30 @@ export class RuxSegmentedButton extends PolymerElement {
   connectedCallback() {
     super.connectedCallback();
 
-    /* 
-    
-      TODO: accept a default selected item
-    */
-    let selected = this.data.find(element => {
-      return element.selected;
-    });
+    // if selected property is not set then just use the first element
+    // in the array
+    const selectedSegment =
+      this.data.find(segment => segment.selected) || this.data[0];
+
+    // set the initial state of the selected segment
+    selectedSegment.selected = true;
+
+    this._setSegment(selectedSegment);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
   }
 
-  _selectSegment(e) {
-    let item = this.$.buttonSegments.itemForElement(e.target);
-    this.$.selector.select(item);
-    this.data.selected = item;
+  _setSegment(selectedSegment) {
+    this.$.selector.select(selectedSegment);
+    this.data.selected = selectedSegment;
+
     this.notifyPath("data.selected");
+  }
+
+  _onClick(e) {
+    this._setSegment(this.$.buttonSegments.itemForElement(e.target));
   }
 }
 
