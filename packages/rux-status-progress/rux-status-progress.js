@@ -40,7 +40,7 @@ export class RuxStatusProgress extends PolymerElement {
         }
 
         circle {
-          transition: stroke-dashoffset 0.35s;
+          transition: stroke-dashoffset 0.367s, stroke 0.367s;
           transform: rotate(-90deg);
           transform-origin: 50% 50%;
 
@@ -75,7 +75,7 @@ export class RuxStatusProgress extends PolymerElement {
         >
           <circle
             class="progress-ring__circle"
-            stroke="red"
+            stroke$="[[color]]"
             stroke-dasharray$="[[_circumference]] [[_circumference]]"
             style$="stroke-dashoffset: [[_progress]]"
             stroke-width$="[[stroke]]"
@@ -111,6 +111,16 @@ export class RuxStatusProgress extends PolymerElement {
   }
 
   setProgress() {
+    if (this.val > 0 && this.val < 25) {
+      this.color = "var(--colorCritical, #f00)";
+    } else if (this.val >= 25 && this.val < 50) {
+      this.color = "var(--colorSerious)";
+    } else if (this.val >= 50 && this.val < 75) {
+      this.color = "var(--colorCaution)";
+    } else if (this.val >= 75) {
+      this.color = "var(--colorNormal";
+    }
+
     this._percent = this.val / 100;
     this._progress = this._circumference - this._percent * this._circumference;
   }
