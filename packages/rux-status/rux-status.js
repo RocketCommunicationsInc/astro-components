@@ -144,6 +144,32 @@ export class RuxStatus extends PolymerElement {
         }
 
 
+        .progress {
+          transition: stroke-dashoffset 0.367s, stroke 0.367s;
+          // transform: rotate(-90deg);
+          transform-origin: 50% 50%;
+        }
+
+        :host([status="off"]) .progress {
+          stroke: var(--colorOff)
+        }
+        :host([status="standby"])  .progress {
+          stroke: var(--colorStandby)
+        }
+        :host([status="normal"])  .progress {
+          stroke: var(--colorNormal)
+        }
+        :host([status="caution"])  .progress {
+          stroke: var(--colorCaution)
+        }
+        :host([status="serious"])  .progress {
+          stroke: var(--colorSerious)
+        }
+        :host([status="critical"]) .progress {
+          stroke: var(--colorCritical)
+        }
+
+
 
 
 
@@ -356,7 +382,7 @@ export class RuxStatus extends PolymerElement {
         <div class="rux-advanced-status__icon-group">
           <rux-icon
             icon="[[icon]]"
-            class$="rux-advanced-status__icon rux-status--[[status]]"
+            class$="rux-advanced-status__icon rux-status--[[status]] [[_isProgress()]]"
           ></rux-icon>
           <div class="rux-advanced-status__badge" hidden="[[!_notifications]]">
             [[_notifications]]
@@ -396,21 +422,24 @@ export class RuxStatus extends PolymerElement {
     super.ready();
   }
 
+  _isProgress() {
+    return this.val > 1 ? "progress" : "";
+  }
+
   setProgress() {
     if (this.val > 0 && this.val < 25) {
-      this.color = "var(--colorCritical, #f00)";
+      this.status = "critical";
     } else if (this.val >= 25 && this.val < 50) {
-      this.color = "var(--colorSerious)";
+      this.status = "serious";
     } else if (this.val >= 50 && this.val < 75) {
-      this.color = "var(--colorCaution)";
+      this.status = "caution";
     } else if (this.val >= 75) {
-      this.color = "var(--colorNormal";
+      this.status = "normal";
     }
 
+    // move this to constructor/attached
     var x = this.shadowRoot.querySelector(".rux-advanced-status__icon");
     var y = x.shadowRoot.querySelector(".progress-ring__circle");
-
-    console.log(y);
 
     this._percent = this.val / 100;
     this._progress = this._circumference - this._percent * this._circumference;
