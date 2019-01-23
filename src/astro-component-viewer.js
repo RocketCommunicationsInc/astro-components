@@ -1069,7 +1069,8 @@ rux-global-status-bar {
                     <rux-status status="off" label="Mission" icon="monitoring:mission" notifications=0></rux-status>
                   </li>
                   <li>
-                    <rux-status status="standby" label="Equipment" icon="monitoring:equipment" notifications=1></rux-status>
+                    <rux-status label="Equipment" icon="utility:progress" val=[[statusProgressValue]]></rux-status>
+                    <!-- <rux-status status="standby" label="Equipment" icon="monitoring:equipment" notifications=1></rux-status> //-->
                   </li>
                   <li>
                     <rux-status status="normal" label="Processor" icon="monitoring:processor" notifications=10></rux-status>
