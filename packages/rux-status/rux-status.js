@@ -421,6 +421,11 @@ export class RuxStatus extends PolymerElement {
   constructor() {
     super();
 
+    if (this._isAdvanced && !this.icon) {
+      this.icon = "utility:progress";
+    }
+
+    // magic number for progress icon
     this._circumference = 56 * 2 * Math.PI;
   }
 
@@ -475,7 +480,14 @@ export class RuxStatus extends PolymerElement {
   }
 
   _isAdvanced() {
-    if (this.label || this.icon || this.notifications) return true;
+    if (
+      this.label ||
+      this.icon ||
+      this.notifications ||
+      this.progress ||
+      this.icon
+    )
+      return true;
   }
 
   _filterNotifications(n) {
