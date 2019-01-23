@@ -328,7 +328,7 @@ export class RuxStatus extends PolymerElement {
             --statusSerious,
             url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
           );
-          margin-top: 1px;
+          /* margin-top: 1px; */
           transform: rotate(45deg);
         }
 
@@ -352,6 +352,8 @@ export class RuxStatus extends PolymerElement {
           font-size: 0.8rem;
           position: absolute;
           margin-top: 1.5rem;
+          margin-left: -2px;
+          letter-spacing: -1px;
           text-align: center;
         }
 
@@ -420,20 +422,22 @@ export class RuxStatus extends PolymerElement {
     super();
 
     this._circumference = 56 * 2 * Math.PI;
-
-    // move this to constructor/attached
   }
 
   connectedCallback() {
     super.connectedCallback();
 
-    const statusIcon = this.shadowRoot.querySelector(
+    // Find if this is a progress element and if so create
+    // a refernce to the underlying SVG, then set the progress
+    var statusIcon = this.shadowRoot.querySelector(
       ".rux-advanced-status__icon"
     );
-    this.progressIcon = statusIcon.shadowRoot.querySelector(
+    this.progressCircleElement = statusIcon.shadowRoot.querySelector(
       ".progress-ring__circle"
     );
-    console.log(this.progressIcon);
+    if (this.progressCircleElement) {
+      this.setProgress();
+    }
   }
 
   disconnectedCallback() {
@@ -449,7 +453,6 @@ export class RuxStatus extends PolymerElement {
   }
 
   setProgress() {
-    console.log(this.progress);
     if (this.progress > 0 && this.progress < 25) {
       this.status = "critical";
     } else if (this.progress >= 25 && this.progress < 50) {
@@ -460,10 +463,11 @@ export class RuxStatus extends PolymerElement {
       this.status = "normal";
     }
 
-    this._percent = this.progress / 100;
-    this._progress = this._circumference - this._percent * this._circumference;
-    if (this.progressIcon) {
-      this.progressIcon.setAttribute(
+    this._progress =
+      this._circumference - (this.progress / 100) * this._circumference;
+
+    if (this.progressCircleElement) {
+      this.progressCircleElement.setAttribute(
         "style",
         `stroke-dashoffset:${this._progress}`
       );
