@@ -346,6 +346,15 @@ export class RuxStatus extends PolymerElement {
         }
 
 
+        .rux-advanced-status__progress {
+
+          font-family: "Roboto Mono";
+          font-size: 0.8rem;
+          position: absolute;
+          margin-top: 1.5rem;
+          text-align: center;
+        }
+
         /* Tweaks for IE */
         .rux-advanced-status__badge.style-scope {
           display: inline;
@@ -386,6 +395,9 @@ export class RuxStatus extends PolymerElement {
           ></rux-icon>
           <div class="rux-advanced-status__badge" hidden="[[!_notifications]]">
             [[_notifications]]
+          </div>
+          <div class="rux-advanced-status__progress" hidden="[[!val]]">
+            [[val]]%
           </div>
         </div>
 
