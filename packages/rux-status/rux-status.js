@@ -25,7 +25,7 @@ export class RuxStatus extends PolymerElement {
       icon: {
         type: String
       },
-      val: {
+      progress: {
         type: Number,
         value: 0,
         observer: "setProgress"
@@ -396,8 +396,8 @@ export class RuxStatus extends PolymerElement {
           <div class="rux-advanced-status__badge" hidden="[[!_notifications]]">
             [[_notifications]]
           </div>
-          <div class="rux-advanced-status__progress" hidden="[[!val]]">
-            [[val]]%
+          <div class="rux-advanced-status__progress" hidden="[[!progress]]">
+            [[progress]]%
           </div>
         </div>
 
@@ -420,10 +420,20 @@ export class RuxStatus extends PolymerElement {
     super();
 
     this._circumference = 56 * 2 * Math.PI;
+
+    // move this to constructor/attached
   }
 
   connectedCallback() {
     super.connectedCallback();
+
+    const statusIcon = this.shadowRoot.querySelector(
+      ".rux-advanced-status__icon"
+    );
+    this.progressIcon = statusIcon.shadowRoot.querySelector(
+      ".progress-ring__circle"
+    );
+    console.log(this.progressIcon);
   }
 
   disconnectedCallback() {
@@ -435,28 +445,28 @@ export class RuxStatus extends PolymerElement {
   }
 
   _isProgress() {
-    return this.val > 1 ? "progress" : "";
+    return this.progress > 1 ? "progress" : "";
   }
 
   setProgress() {
-    if (this.val > 0 && this.val < 25) {
+    console.log(this.progress);
+    if (this.progress > 0 && this.progress < 25) {
       this.status = "critical";
-    } else if (this.val >= 25 && this.val < 50) {
+    } else if (this.progress >= 25 && this.progress < 50) {
       this.status = "serious";
-    } else if (this.val >= 50 && this.val < 75) {
+    } else if (this.progress >= 50 && this.progress < 75) {
       this.status = "caution";
-    } else if (this.val >= 75) {
+    } else if (this.progress >= 75) {
       this.status = "normal";
     }
 
-    // move this to constructor/attached
-    var x = this.shadowRoot.querySelector(".rux-advanced-status__icon");
-    var y = x.shadowRoot.querySelector(".progress-ring__circle");
-
-    this._percent = this.val / 100;
+    this._percent = this.progress / 100;
     this._progress = this._circumference - this._percent * this._circumference;
-    if (y) {
-      y.setAttribute("style", `stroke-dashoffset:${this._progress}`);
+    if (this.progressIcon) {
+      this.progressIcon.setAttribute(
+        "style",
+        `stroke-dashoffset:${this._progress}`
+      );
     }
   }
 
