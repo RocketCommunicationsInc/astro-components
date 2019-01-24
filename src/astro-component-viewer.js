@@ -20,6 +20,7 @@ import { RuxTimeline } from "../packages/rux-timeline/rux-timeline.js";
 import { RuxToggle } from "../packages/rux-toggle/rux-toggle.js";
 import { RuxTabs } from "../packages/rux-tabs/rux-tabs.js";
 import { RuxTree } from "../packages/rux-tree/rux-tree.js";
+import { RuxStatusProgress } from "../packages/rux-status-progress/rux-status-progress.js";
 
 /**
  * @polymer
@@ -1069,7 +1070,8 @@ rux-global-status-bar {
                     <rux-status status="off" label="Mission" icon="monitoring:mission" notifications=0></rux-status>
                   </li>
                   <li>
-                    <rux-status status="standby" label="Equipment" icon="monitoring:equipment" notifications=1></rux-status>
+                    <rux-status label="Equipment" progress=[[statusProgressValue]]></rux-status>
+                    <!-- <rux-status status="standby" label="Equipment" icon="monitoring:equipment" notifications=1></rux-status> //-->
                   </li>
                   <li>
                     <rux-status status="normal" label="Processor" icon="monitoring:processor" notifications=10></rux-status>
@@ -1111,7 +1113,7 @@ rux-global-status-bar {
             </section>
 
 
-            <!-- 9. CLOCK //-->
+            <!-- 9. CLOCK 
             <section class="rux-card clock">
               <header class="rux-card__header">
                 <h1>Clock</h1>
@@ -1120,6 +1122,30 @@ rux-global-status-bar {
                 <rux-clock compact></rux-clock>
                 <br>
                 <rux-clock></rux-clock>
+              </div>
+            </section>
+            //-->
+
+            <section class="rux-card clock">
+              <header class="rux-card__header">
+                <h1>Status Progress</h1>
+              </header>
+              
+              <input
+                value="[[statusProgressValue]]"
+                type="number"
+                step="1"
+                min="0"
+                max="100"
+                on-input="_updateStatusProgressValue"
+                
+              />
+
+              <div class="rux-card__content">
+                <rux-status-progress
+                  min=0
+                  max=100
+                  val=[[statusProgressValue]]></rux-status-progress>
               </div>
             </section>
           </div>
@@ -1788,6 +1814,8 @@ rux-global-status-bar {
       }
     ];
 
+    this.statusProgressValue = 50;
+
     /* FAKE TIMELINE */
     const today = new Date();
     this.multiTrack = [
@@ -2004,6 +2032,13 @@ rux-global-status-bar {
     for (let index = 0; index < 10; index++) {
       this._updateLog();
     }
+  }
+
+  _updateStatusProgressValue(e) {
+    const percent = Math.floor(
+      (e.target.value / (e.target.max - e.target.min)) * 100
+    );
+    this.statusProgressValue = percent;
   }
 
   /* MODAL WINDOW */
