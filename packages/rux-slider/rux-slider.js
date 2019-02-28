@@ -1,5 +1,6 @@
-import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import "@polymer/polymer/lib/elements/dom-repeat.js";
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/polymer/lib/elements/dom-repeat.js';
+import { updateExpression } from 'babel-types';
 /**
  * @polymer
  * @extends HTMLElement
@@ -9,33 +10,34 @@ export class RuxSlider extends PolymerElement {
     return {
       min: {
         type: Number,
-        value: 0
+        value: 0,
       },
       max: {
         type: Number,
-        value: 100
+        value: 100,
       },
       step: {
         type: Number,
-        value: 1
+        value: 1,
       },
       label: String,
       axisLabels: String,
       disabled: Boolean,
       val: {
         type: Number,
-        notify: true
+        notify: true,
+        observer: '_updateVisual',
       },
       _name: {
         type: String,
         value: () => {
           return `slider-${Math.floor(Math.random() * 1000)}`;
-        }
+        },
       },
       hideInput: {
         type: Boolean,
-        value: false
-      }
+        value: false,
+      },
     };
   }
   static get template() {
@@ -44,17 +46,15 @@ export class RuxSlider extends PolymerElement {
         :host {
           --thumbSize: var(--controlOptionSize, 1.25rem);
 
-          --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14),
-            0 1px 9px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
-          --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
-            0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
-          --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary),
-            0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
-            0 1px 1px rgba(0, 0, 0, 0.2);
+          --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+          --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
+            0 3px 5px rgba(0, 0, 0, 0.2);
+          --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary), 0 1px 3px rgba(0, 0, 0, 0.14),
+            0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.2);
 
           --trackHeight: 2px;
           --trackCursor: pointer;
-          --value: 50%;
+          --value: 50;
         }
 
         *[hidden] {
@@ -96,7 +96,7 @@ export class RuxSlider extends PolymerElement {
           width: 100%;
         }
 
-        input[type="range"]:focus {
+        input[type='range']:focus {
           outline: none;
         }
 
@@ -108,19 +108,14 @@ export class RuxSlider extends PolymerElement {
           height: var(--trackHeight, 2px);
           cursor: var(--trackCursor, pointer);
 
-          background-color: var(
-            --sliderTrackBackgroundColor,
-            rgb(217, 217, 217)
-          );
+          background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
           outline: 1px solid var(--sliderTrackBorderColor, transparent);
 
           background-image: linear-gradient(
             to right,
             var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255)) 0%,
-            var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))
-              calc(1% * var(--value)),
-            var(--sliderTrackBackgroundColor, rgb(217, 217, 217))
-              calc(1% * var(--value)),
+            var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255)) calc(1% * var(--value)),
+            var(--sliderTrackBackgroundColor, rgb(217, 217, 217)) calc(1% * var(--value)),
             var(--sliderTrackBackgroundColor, rgb(217, 217, 217)) 100%
           );
         }
@@ -133,18 +128,12 @@ export class RuxSlider extends PolymerElement {
           height: var(--trackHeight);
           cursor: var(--trackCursor, pointer);
 
-          background-color: var(
-            --sliderTrackBackgroundColor,
-            rgb(217, 217, 217)
-          );
+          background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
           outline: 1px solid var(--sliderTrackBorderColor, transparent);
         }
 
         .rux-range::-moz-range-progress {
-          background-color: var(
-            --sliderSelectedTrackBackgroundColor,
-            rgb(77, 172, 255)
-          );
+          background-color: var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255));
         }
 
         .rux-range:disabled {
@@ -175,10 +164,7 @@ export class RuxSlider extends PolymerElement {
 
         .rux-range::-ms-fill-upper {
           height: 2px;
-          background-color: var(
-            --sliderTrackBackgroundColor,
-            rgb(217, 217, 217)
-          );
+          background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
         }
 
         .rux-range::-webkit-slider-thumb {
@@ -194,8 +180,7 @@ export class RuxSlider extends PolymerElement {
           background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
           cursor: pointer;
-          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-            var(--thumbShadow);
+          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
         }
 
         .rux-range:disabled::-webkit-slider-runnable-track {
@@ -215,10 +200,7 @@ export class RuxSlider extends PolymerElement {
 
         .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
         .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-          background-color: var(
-            --sliderHoverThumbBackgroundColor,
-            rgb(58, 129, 191)
-          );
+          background-color: var(--sliderHoverThumbBackgroundColor, rgb(58, 129, 191));
         }
 
         .rux-range::-moz-range-thumb {
@@ -234,8 +216,7 @@ export class RuxSlider extends PolymerElement {
           background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
           cursor: pointer;
-          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-            var(--thumbShadow);
+          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
         }
 
         input:-moz-focusring {
@@ -257,9 +238,8 @@ export class RuxSlider extends PolymerElement {
           background-color: rgb(0, 90, 143);
 
           cursor: pointer;
-          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-            0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
-            0 1px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14),
+            0 1px 9px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .rux-range:disabled::-ms-thumb {
@@ -295,16 +275,14 @@ export class RuxSlider extends PolymerElement {
         top: -100%;
       } */
 
-        input[type="range"]::-moz-focus-outer {
+        input[type='range']::-moz-focus-outer {
           border: 0;
         }
       </style>
 
       <div class="rux-slider">
         <div class="rux-form-field rux-form-field--small rux-slider__label">
-          <label class="rux-label" id="[[_name]]" hidden="[[!label]]"
-            >[[label]]</label
-          >
+          <label class="rux-label" id="[[_name]]" hidden="[[!label]]">[[label]]</label>
           <input
             class="rux-input rux-slider__input"
             type="number"
@@ -332,10 +310,7 @@ export class RuxSlider extends PolymerElement {
           />
 
           <ol class="rux-slider__control__labels" hidden="[[!axisLabels]]">
-            <dom-repeat
-              id="sliderAxisLabels"
-              items="[[_getAxisLabels(axisLabels)]]"
-            >
+            <dom-repeat id="sliderAxisLabels" items="[[_getAxisLabels(axisLabels)]]">
               <template>
                 <li style="font: monospace">[[item]]</li>
               </template>
@@ -350,29 +325,28 @@ export class RuxSlider extends PolymerElement {
   }
   connectedCallback() {
     super.connectedCallback();
-    this._range = this.shadowRoot.querySelector("input[type=range]");
+    this._range = this.shadowRoot.querySelector('input[type=range]');
   }
   disconnectedCallback() {
     super.disconnectedCallback();
   }
 
   _updateVisual() {
-    const min = this._range.getAttribute("min");
-    const max = this._range.getAttribute("max");
+    const min = this._range.getAttribute('min');
+    const max = this._range.getAttribute('max');
     const val = this.val;
 
     const dif = ((val - min) / (max - min)) * 100;
 
-    this._range.style.setProperty("--value", dif);
+    this._range.style.setProperty('--value', dif);
   }
 
   _updateValue(e) {
     this.val = e.target ? e.target.value : e;
-    this._updateVisual(e.target);
   }
 
   _getAxisLabels(values) {
-    return values.split(",");
+    return values.split(',');
   }
 }
-customElements.define("rux-slider", RuxSlider);
+customElements.define('rux-slider', RuxSlider);
