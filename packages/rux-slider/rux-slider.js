@@ -1,6 +1,6 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
-import { updateExpression } from 'babel-types';
+
 /**
  * @polymer
  * @extends HTMLElement
