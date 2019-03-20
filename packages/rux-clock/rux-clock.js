@@ -1,4 +1,4 @@
-import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 /**
  * @polymer
  * @extends HTMLElement
@@ -8,40 +8,40 @@ export class RuxClock extends PolymerElement {
     return {
       aos: {
         type: Date,
-        value: false
+        value: false,
       },
       los: {
         type: Date,
-        value: false
+        value: false,
       },
       timezone: {
         type: String,
-        value: "UTC"
+        value: 'UTC',
       },
       locale: {
         type: String,
-        value: "us-en"
+        value: 'us-en',
       },
       hideTimezone: {
         type: Boolean,
-        value: false
+        value: false,
       },
       hideDate: {
         type: Boolean,
-        value: false
+        value: false,
       },
       timeOptions: {
         type: Object,
-        computed: "_setTimeOptions(hideTimezone)"
+        computed: '_setTimeOptions(hideTimezone)',
       },
       theme: {
-        type: String
+        type: String,
       },
       compact: {
         type: Boolean,
         value: false,
-        reflectToAttribute: true
-      }
+        reflectToAttribute: true,
+      },
     };
   }
 
@@ -76,7 +76,7 @@ export class RuxClock extends PolymerElement {
         .rux-clock__segment__value {
           display: flex;
           align-items: center;
-          font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+          font-family: var(--fontFamilyMono, 'Roboto Mono', monospace);
           font-weight: 700;
 
           border: 1px solid var(--clockBorderColor, rgb(40, 63, 88));
@@ -129,28 +129,16 @@ export class RuxClock extends PolymerElement {
         }
       </style>
       <div class$="rux-clock [[light]]">
-        <div
-          class="rux-clock__segment rux-clock__day-of-the-year"
-          hidden="[[hideDate]]"
-        >
-          <div
-            class="rux-clock__segment__value"
-            aria-labeledby="rux-clock__day-of-year-label"
-          >
+        <div class="rux-clock__segment rux-clock__day-of-the-year" hidden="[[hideDate]]">
+          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__day-of-year-label">
             {{_getDayOfYear()}}
           </div>
-          <div
-            class="rux-clock__segment__label"
-            id="rux-clock__day-of-year-label"
-          >
+          <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label">
             Date
           </div>
         </div>
         <div class="rux-clock__segment rux-clock__time">
-          <div
-            class="rux-clock__segment__value"
-            aria-labeledby="rux-clock__time-label"
-          >
+          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__time-label">
             [[_currentTime]]
           </div>
           <div class="rux-clock__segment__label" id="rux-clock__time-label">
@@ -158,10 +146,7 @@ export class RuxClock extends PolymerElement {
           </div>
         </div>
         <div class="rux-clock__segment rux-clock__aos" hidden="[[!aos]]">
-          <div
-            class="rux-clock__segment__value"
-            aria-labeledby="rux-clock__time-label"
-          >
+          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__time-label">
             [[formatTime(aos)]]
           </div>
           <div class="rux-clock__segment__label" id="rux-clock__time-label">
@@ -169,10 +154,7 @@ export class RuxClock extends PolymerElement {
           </div>
         </div>
         <div class="rux-clock__segment rux-clock__los" hidden="[[!los]]">
-          <div
-            class="rux-clock__segment__value"
-            aria-labeledby="rux-clock__time-label"
-          >
+          <div class="rux-clock__segment__value" aria-labeledby="rux-clock__time-label">
             [[formatTime(los)]]
           </div>
           <div class="rux-clock__segment__label" id="rux-clock__time-label">
@@ -216,7 +198,7 @@ export class RuxClock extends PolymerElement {
 
     return new Date(time).toLocaleTimeString(this.locale, {
       hour12: false,
-      timeZone: this.timezone
+      timeZone: this.timezone,
     });
   }
 
@@ -229,12 +211,12 @@ export class RuxClock extends PolymerElement {
   _setTimeOptions(hideTimezone) {
     let _timeOptions = {
       hour12: false,
-      timeZone: this.timezone
+      timeZone: this.timezone,
     };
 
     // explicitly optin to hide the timzone label
     if (!hideTimezone) {
-      _timeOptions.timeZoneName = "short";
+      _timeOptions.timeZoneName = 'short';
     }
     return _timeOptions;
   }
@@ -249,15 +231,15 @@ export class RuxClock extends PolymerElement {
     let _year = new Date(_now.getFullYear(), 0, 0);
 
     // reframe _year and _now to UTC
-    if (this.timezone.toLowerCase() === "utc") {
+    if (this.timezone.toLowerCase() === 'utc') {
       _year = new Date(_now.getUTCFullYear(), 0, 0);
       _now = this._getUTCDateFrom(_now);
     }
 
-    let _day = Math.floor((_now - _year) / this._oneDay);
+    let _day = Math.round((_now - _year) / this._oneDay);
 
     // May need to polyfill or find an alternate option for .padStart IE11 doesnâ€™t support
-    return _day.toString().padStart(3, "000");
+    return _day.toString().padStart(3, '000');
   }
 
   _getUTCDateFrom(date) {
@@ -265,13 +247,10 @@ export class RuxClock extends PolymerElement {
   }
 
   _updateTime() {
-    this._currentTime = new Date().toLocaleTimeString(
-      this.locale,
-      this.timeOptions
-    );
+    this._currentTime = new Date().toLocaleTimeString(this.locale, this.timeOptions);
 
     // update the date
     this._getDayOfYear();
   }
 }
-customElements.define("rux-clock", RuxClock);
+customElements.define('rux-clock', RuxClock);
