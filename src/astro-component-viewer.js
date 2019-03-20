@@ -528,6 +528,7 @@ rux-global-status-bar {
     <rux-global-status-bar theme="dark">
 
         <rux-tabs id="main">
+        <rux-clock></rux-clock>
         <rux-tab id="t1" role="tab">Elements</rux-tab>
           <rux-tab id="t2" role="tab">Components</rux-tab>
           <rux-tab id="t6" role="tab">Icons</rux-tab>
