@@ -1,4 +1,4 @@
-import { html, PolymerElement } from "@polymer/polymer/polymer-element.js";
+import { html, PolymerElement } from '@polymer/polymer/polymer-element.js';
 /**
  * @polymer
  * @extends HTMLElement
@@ -8,14 +8,14 @@ export class RuxTab extends PolymerElement {
     return {
       selected: {
         type: Boolean,
-        reflectToAttribute: true
+        reflectToAttribute: true,
       },
       type: {
-        type: String
+        type: String,
       },
       style: {
-        type: String
-      }
+        type: String,
+      },
     };
   }
 
@@ -27,9 +27,6 @@ export class RuxTab extends PolymerElement {
         :host {
           box-sizing: border-box;
 
-          // flex-grow: 1;
-          // flex-shrink: 1;
-
           height: 100%;
 
           display: flex;
@@ -38,26 +35,17 @@ export class RuxTab extends PolymerElement {
           padding: 0 2rem;
           margin: 0;
 
-          // width: 5rem;
-
-          // max-width: 12rem;
           min-width: 5rem;
 
           text-decoration: none;
 
           color: var(--tabTextColor, rgb(77, 172, 255));
-
-          // background-color: var(--tabBackgroundColor, rgb(30, 47, 66));
         }
 
         :host span {
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
-        }
-
-        :host {
-          // border-right: 1px solid var(--tabBorderColor, rgb(20, 32, 44));
         }
 
         :host([compact]),
@@ -104,18 +92,18 @@ export class RuxTab extends PolymerElement {
     super.connectedCallback();
 
     // set the role to tab
-    this.setAttribute("role", "tab");
+    this.setAttribute('role', 'tab');
 
-    if (this.parentElement.getAttributeNode("compact")) {
-      this.setAttribute("compact", "");
+    if (this.parentElement.getAttributeNode('compact')) {
+      this.setAttribute('compact', '');
     }
 
-    if (this.parentElement.getAttributeNode("transparent")) {
-      this.setAttribute("transparent", "");
+    if (this.parentElement.getAttributeNode('transparent')) {
+      this.setAttribute('transparent', '');
     }
 
-    if (this.parentElement.getAttributeNode("interior")) {
-      this.setAttribute("interior", "");
+    if (this.parentElement.getAttributeNode('interior')) {
+      this.setAttribute('interior', '');
     }
   }
 
@@ -124,4 +112,4 @@ export class RuxTab extends PolymerElement {
   }
 }
 
-customElements.define("rux-tab", RuxTab);
+customElements.define('rux-tab', RuxTab);

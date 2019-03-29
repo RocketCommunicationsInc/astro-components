@@ -112,16 +112,6 @@ export class AstroComponentViewer extends PolymerElement {
   margin: 0;
 }
 
-rux-tab-panels {
-  outline: 1px solid orange;
-}
-
-/* ol,
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-} */
 
 
 
