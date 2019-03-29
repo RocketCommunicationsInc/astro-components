@@ -1,26 +1,26 @@
-import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import "@polymer/polymer/lib/elements/dom-repeat.js";
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/polymer/lib/elements/dom-repeat.js';
 
-import { RuxIcon } from "../../packages/rux-icon/rux-icon.js";
-import { RuxAccordion } from "../packages/rux-accordion/rux-accordion.js";
-import { RuxButton } from "../packages/rux-button/rux-button.js";
-import { RuxClock } from "../packages/rux-clock/rux-clock.js";
-import { RuxGlobalStatusBar } from "../packages/rux-global-status-bar/rux-global-status-bar.js";
-import { RuxLog } from "../packages/rux-log/rux-log.js";
-import { RuxModal } from "../packages/rux-modal/rux-modal.js";
-import { RuxNotification } from "../packages/rux-notification/rux-notification.js";
-import { RuxPopUpMenu } from "../packages/rux-pop-up-menu/rux-pop-up-menu.js";
-import { RuxProgress } from "../packages/rux-progress/rux-progress.js";
-import { RuxPushButton } from "../packages/rux-push-button/rux-push-button.js";
-import { RuxSegmentedButton } from "../packages/rux-segmented-button/rux-segmented-button.js";
-import { RuxSlider } from "../packages/rux-slider/rux-slider.js";
-import { RuxSpectrumAnalyzer } from "../packages/rux-spectrum-analyzer/rux-spectrum-analyzer.js";
-import { RuxStatus } from "../packages/rux-status/rux-status.js";
-import { RuxTimeline } from "../packages/rux-timeline/rux-timeline.js";
-import { RuxToggle } from "../packages/rux-toggle/rux-toggle.js";
-import { RuxTabs } from "../packages/rux-tabs/rux-tabs.js";
-import { RuxTree } from "../packages/rux-tree/rux-tree.js";
-import { RuxStatusProgress } from "../packages/rux-status-progress/rux-status-progress.js";
+import { RuxIcon } from '../../packages/rux-icon/rux-icon.js';
+import { RuxAccordion } from '../packages/rux-accordion/rux-accordion.js';
+import { RuxButton } from '../packages/rux-button/rux-button.js';
+import { RuxClock } from '../packages/rux-clock/rux-clock.js';
+import { RuxGlobalStatusBar } from '../packages/rux-global-status-bar/rux-global-status-bar.js';
+import { RuxLog } from '../packages/rux-log/rux-log.js';
+import { RuxModal } from '../packages/rux-modal/rux-modal.js';
+import { RuxNotification } from '../packages/rux-notification/rux-notification.js';
+import { RuxPopUpMenu } from '../packages/rux-pop-up-menu/rux-pop-up-menu.js';
+import { RuxProgress } from '../packages/rux-progress/rux-progress.js';
+import { RuxPushButton } from '../packages/rux-push-button/rux-push-button.js';
+import { RuxSegmentedButton } from '../packages/rux-segmented-button/rux-segmented-button.js';
+import { RuxSlider } from '../packages/rux-slider/rux-slider.js';
+import { RuxSpectrumAnalyzer } from '../packages/rux-spectrum-analyzer/rux-spectrum-analyzer.js';
+import { RuxStatus } from '../packages/rux-status/rux-status.js';
+import { RuxTimeline } from '../packages/rux-timeline/rux-timeline.js';
+import { RuxToggle } from '../packages/rux-toggle/rux-toggle.js';
+import { RuxTabs } from '../packages/rux-tabs/rux-tabs.js';
+import { RuxTree } from '../packages/rux-tree/rux-tree.js';
+import { RuxStatusProgress } from '../packages/rux-status-progress/rux-status-progress.js';
 
 /**
  * @polymer
@@ -928,7 +928,6 @@ rux-global-status-bar {
               <header class="rux-card__header">
                 <h1>Slider</h1>
               </header>
-              <input type="file" accept="image/*">
               <div class="rux-card__content">
                 <rux-slider axis-labels=[[sliderObjThree.labels]] min=0 max=100 val={{sliderObjThree.value}}></rux-slider>
               </div>
@@ -1518,11 +1517,11 @@ rux-global-status-bar {
   }
 
   static get observers() {
-    return ["_themeChanged(theme.*)"];
+    return ['_themeChanged(theme.*)'];
   }
 
   _themeChanged(newValue, oldValue) {
-    const body = document.getElementsByTagName("body")[0];
+    const body = document.getElementsByTagName('body')[0];
 
     body.classList.remove(this.selectedTheme);
     this.selectedTheme = newValue.value.theme;
@@ -1534,286 +1533,279 @@ rux-global-status-bar {
 
     this.selectedTheme = null;
     this.theme = [
-      { label: "None", theme: "no-theme" },
-      { label: "Dark", theme: "dark-theme" },
-      { label: "Light", theme: "light-theme" }
+      { label: 'None', theme: 'no-theme' },
+      { label: 'Dark', theme: 'dark-theme' },
+      { label: 'Light', theme: 'light-theme' },
     ];
 
     /* SEGMENTED BUTTON DATA */
     this.segmentOne = [
       {
-        label: "Hour"
+        label: 'Hour',
       },
       {
-        label: "Day"
+        label: 'Day',
       },
       {
-        label: "Week"
-      }
+        label: 'Week',
+      },
     ];
 
     /* SLIDER OBJECT DATA */
     this.sliderObjThree = {
       value: 10,
-      labels: "min,mid,max"
+      labels: 'min,mid,max',
     };
 
     /* TREE DATA */
     this.treeData = [
       {
-        _id: "i1",
-        label: "Item 1",
-        payload: { action: "this could be anythingÂ â€¦" },
+        _id: 'i1',
+        label: 'Item 1',
+        payload: { action: 'this could be anythingÂ â€¦' },
         children: [
-          { _id: "i1-1", label: "Child 1", payload: { action: "â€¦Â an id" } },
+          { _id: 'i1-1', label: 'Child 1', payload: { action: 'â€¦Â an id' } },
           {
-            _id: "i1-2",
-            label: "Child 2",
-            payload: { action: "â€¦ a method call to be interpreted" }
-          }
-        ]
+            _id: 'i1-2',
+            label: 'Child 2',
+            payload: { action: 'â€¦ a method call to be interpreted' },
+          },
+        ],
       },
       {
-        _id: "i4",
-        label: "Item 4",
-        payload: { action: "Works on items with no children" }
+        _id: 'i4',
+        label: 'Item 4',
+        payload: { action: 'Works on items with no children' },
       },
       {
-        _id: "i2",
-        label: "Item 3",
-        payload: { action: "Just use the paylod property â€¦" },
+        _id: 'i2',
+        label: 'Item 3',
+        payload: { action: 'Just use the paylod property â€¦' },
         children: [
           {
-            _id: "i2-1",
-            label: "Child 1.1",
+            _id: 'i2-1',
+            label: 'Child 1.1',
             payload: {
-              action: "â€¦ then use whatever key/value pairs you want"
-            }
+              action: 'â€¦ then use whatever key/value pairs you want',
+            },
           },
           {
-            _id: "i2-2",
-            label: "Child 1.2",
-            payload: { action: "â€¦ itâ€™s just an Object" }
-          }
-        ]
-      }
+            _id: 'i2-2',
+            label: 'Child 1.2',
+            payload: { action: 'â€¦ itâ€™s just an Object' },
+          },
+        ],
+      },
     ];
 
     /* FAKE LOG DATA */
-    this.logStatuses = [
-      "off",
-      "standby",
-      "normal",
-      "caution",
-      "serious",
-      "critical"
-    ];
+    this.logStatuses = ['off', 'standby', 'normal', 'caution', 'serious', 'critical'];
     this.logMessages = [
-      "Architecto temporibus iusto dolor quisquam",
-      "Reiciendis similique earum qui quas corporis error et",
-      "Necessitatibus magni corporis est nam asperiores est",
-      "occaecati laudantium beatae",
-      "Architecto et quasi. Rerum et quod iste eum aperiam voluptates vel. Blanditiis enim deserunt",
-      "Dolorum expedita assumenda quia nihil omnis. Velit omnis fugit dolore laudantium quam dolor tempora asperiores corporis. Cupiditate quia ipsum"
+      'Architecto temporibus iusto dolor quisquam',
+      'Reiciendis similique earum qui quas corporis error et',
+      'Necessitatibus magni corporis est nam asperiores est',
+      'occaecati laudantium beatae',
+      'Architecto et quasi. Rerum et quod iste eum aperiam voluptates vel. Blanditiis enim deserunt',
+      'Dolorum expedita assumenda quia nihil omnis. Velit omnis fugit dolore laudantium quam dolor tempora asperiores corporis. Cupiditate quia ipsum',
     ];
 
     /* COLORS */
     this.themeColors = [
       {
-        label: "Primary",
+        label: 'Primary',
         colors: [
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorPrimaryLighten3, rgb(191, 214, 227)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorPrimaryLighten3, rgb(191, 214, 227)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorPrimaryLighten2, rgb(128, 173, 199)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorPrimaryLighten2, rgb(128, 173, 199)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorPrimaryLighten1, rgb(64, 131, 171)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorPrimaryLighten1, rgb(64, 131, 171)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorPrimary, rgb(0, 90, 143)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorPrimary, rgb(0, 90, 143)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorPrimaryDarken1, rgb(0, 68, 107)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorPrimaryDarken1, rgb(0, 68, 107)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorPrimaryDarken2, rgb(0, 45, 72)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorPrimaryDarken2, rgb(0, 45, 72)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorPrimaryDarken3, rgb(0, 23, 36)"
-          }
-        ]
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorPrimaryDarken3, rgb(0, 23, 36)',
+          },
+        ],
       },
       {
-        label: "Secondary",
+        label: 'Secondary',
         colors: [
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSecondaryLighten3, rgb(211, 234, 255)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorSecondaryLighten3, rgb(211, 234, 255)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSecondaryLighten2, rgb(166, 214, 255)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorSecondaryLighten2, rgb(166, 214, 255)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSecondaryLighten1, rgb(122, 193, 255)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorSecondaryLighten1, rgb(122, 193, 255)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSecondary, rgb(77, 172, 255)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorSecondary, rgb(77, 172, 255)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSecondaryDarken1, rgb(58, 129, 191)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorSecondaryDarken1, rgb(58, 129, 191)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSecondaryDarken2, rgb(39, 86, 128)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorSecondaryDarken2, rgb(39, 86, 128)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSecondaryDarken3, rgb(19, 43, 64)"
-          }
-        ]
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorSecondaryDarken3, rgb(19, 43, 64)',
+          },
+        ],
       },
       {
-        label: "Tertiary",
+        label: 'Tertiary',
         colors: [
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorTertiaryLighten3, rgb(201, 207, 213)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorTertiaryLighten3, rgb(201, 207, 213)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorTertiaryLighten2, rgb(148, 159, 172)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorTertiaryLighten2, rgb(148, 159, 172)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorTertiaryLighten1, rgb(94, 111, 130)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorTertiaryLighten1, rgb(94, 111, 130)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorTertiary, rgb(40, 63, 88)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorTertiary, rgb(40, 63, 88)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorTertiaryDarken1, rgb(30, 47, 66)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorTertiaryDarken1, rgb(30, 47, 66)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorTertiaryDarken2, rgb(20, 32, 44)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorTertiaryDarken2, rgb(20, 32, 44)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorTertiaryDarken3, rgb(10, 16, 22)"
-          }
-        ]
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorTertiaryDarken3, rgb(10, 16, 22)',
+          },
+        ],
       },
       {
-        label: "Critical",
+        label: 'Critical',
         colors: [
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCritical, rgb(40, 63, 88)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorCritical, rgb(40, 63, 88)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorSerious, rgb(40, 63, 88)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorSerious, rgb(40, 63, 88)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCaution, rgb(40, 63, 88)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorCaution, rgb(40, 63, 88)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorNormal, rgb(40, 63, 88)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorNormal, rgb(40, 63, 88)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorStandby, rgb(40, 63, 88)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorStandby, rgb(40, 63, 88)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorOff, rgb(40, 63, 88)"
-          }
-        ]
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorOff, rgb(40, 63, 88)',
+          },
+        ],
       },
       {
-        label: "Civillian Status",
+        label: 'Civillian Status',
         colors: [
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian1, rgb(40, 63, 88)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorCivilian1, rgb(40, 63, 88)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian2, rgb(40, 63, 88)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorCivilian2, rgb(40, 63, 88)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian3, rgb(40, 63, 88)"
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorCivilian3, rgb(40, 63, 88)',
           },
           {
-            rgb: "rgb(111,111,111)",
-            hex: "#ff0000",
-            color: "--colorCivilian4, rgb(40, 63, 88)"
-          }
-        ]
-      }
+            rgb: 'rgb(111,111,111)',
+            hex: '#ff0000',
+            color: '--colorCivilian4, rgb(40, 63, 88)',
+          },
+        ],
+      },
     ];
 
     this.statusIndicators = [
       {
-        label: "Power",
-        status: "caution",
-        icon: "monitoring:propulsion-power",
-        notifications: 1
+        label: 'Power',
+        status: 'caution',
+        icon: 'monitoring:propulsion-power',
+        notifications: 1,
       },
       {
-        label: "Communications",
-        status: "normal",
-        icon: "monitoring:netcom",
-        notifications: 0
-      }
+        label: 'Communications',
+        status: 'normal',
+        icon: 'monitoring:netcom',
+        notifications: 0,
+      },
     ];
 
     this.statusProgressValue = 50;
@@ -1822,201 +1814,75 @@ rux-global-status-bar {
     const today = new Date();
     this.multiTrack = [
       {
-        label: "LEO",
-        test: "AASDF",
+        label: 'LEO',
+        test: 'AASDF',
         regions: [
           {
-            label: "NROL-11",
-            status: "caution",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              7,
-              30,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              8,
-              30,
-              0
-            )
+            label: 'NROL-11',
+            status: 'caution',
+            startTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 7, 30, 0),
+            endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 8, 30, 0),
           },
           {
-            label: "DSP-1-18 F21",
-            status: "normal",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              10,
-              0,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              13,
-              0,
-              0
-            )
+            label: 'DSP-1-18 F21',
+            status: 'normal',
+            startTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 10, 0, 0),
+            endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 13, 0, 0),
           },
           {
-            label: "NROL-14 (KH-11)",
-            status: "serious",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              15,
-              0,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              20,
-              30,
-              0
-            )
-          }
-        ]
+            label: 'NROL-14 (KH-11)',
+            status: 'serious',
+            startTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 15, 0, 0),
+            endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 20, 30, 0),
+          },
+        ],
       },
       {
-        label: "HEO",
+        label: 'HEO',
         regions: [
           {
-            label: "GPS-IIR-15",
-            status: "caution",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              1,
-              0,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              4,
-              30,
-              0
-            )
+            label: 'GPS-IIR-15',
+            status: 'caution',
+            startTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 1, 0, 0),
+            endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 4, 30, 0),
           },
           {
-            label: "GPS-IIR-16",
-            status: "normal",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              8,
-              0,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              12,
-              0,
-              0
-            )
+            label: 'GPS-IIR-16',
+            status: 'normal',
+            startTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 8, 0, 0),
+            endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 12, 0, 0),
           },
           {
-            label: "GPS-IIR-16",
-            status: "serious",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              17,
-              0,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              20,
-              30,
-              0
-            )
-          }
-        ]
+            label: 'GPS-IIR-16',
+            status: 'serious',
+            startTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 17, 0, 0),
+            endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 20, 30, 0),
+          },
+        ],
       },
       {
-        label: "GEO",
+        label: 'GEO',
         regions: [
           {
-            label: "STSS-Demo",
-            status: "caution",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              7,
-              30,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              8,
-              30,
-              0
-            )
+            label: 'STSS-Demo',
+            status: 'caution',
+            startTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 7, 30, 0),
+            endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 8, 30, 0),
           },
           {
-            label: "WGS-3",
-            status: "normal",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              10,
-              0,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              13,
-              0,
-              0
-            )
+            label: 'WGS-3',
+            status: 'normal',
+            startTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 10, 0, 0),
+            endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 13, 0, 0),
           },
           {
-            label: "GPS IIF-1",
-            status: "serious",
-            startTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              15,
-              0,
-              0
-            ),
-            endTime: new Date(
-              today.getUTCFullYear(),
-              today.getUTCMonth(),
-              today.getUTCDate(),
-              20,
-              30,
-              0
-            )
-          }
-        ]
-      }
+            label: 'GPS IIF-1',
+            status: 'serious',
+            startTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 15, 0, 0),
+            endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 20, 30, 0),
+          },
+        ],
+      },
     ];
   }
 
@@ -2037,45 +1903,37 @@ rux-global-status-bar {
   }
 
   _updateStatusProgressValue(e) {
-    const percent = Math.floor(
-      (e.target.value / (e.target.max - e.target.min)) * 100
-    );
+    const percent = Math.floor((e.target.value / (e.target.max - e.target.min)) * 100);
     this.statusProgressValue = percent;
   }
 
   /* MODAL WINDOW */
   /* Functions */
   _launchModal() {
-    const _modal = this.shadowRoot.querySelectorAll("rux-modal")[0];
-    _modal.setAttribute("open", "");
+    const _modal = this.shadowRoot.querySelectorAll('rux-modal')[0];
+    _modal.setAttribute('open', '');
   }
 
   /* UPDATE LOG */
   _updateLog() {
     this.logData = {
       timestamp: new Date(),
-      status: this.logStatuses[
-        Math.floor(Math.random() * this.logStatuses.length)
-      ],
-      entry: this.logMessages[
-        Math.floor(Math.random() * this.logMessages.length)
-      ]
+      status: this.logStatuses[Math.floor(Math.random() * this.logStatuses.length)],
+      entry: this.logMessages[Math.floor(Math.random() * this.logMessages.length)],
     };
   }
 
   /* NOTIFICATIONS */
 
   _showNotification(e) {
-    const _notification = this.shadowRoot.querySelectorAll("rux-notification")[
-      e.currentTarget.dataset.notification
-    ];
+    const _notification = this.shadowRoot.querySelectorAll('rux-notification')[e.currentTarget.dataset.notification];
 
-    if (_notification.hasAttribute("opened")) {
-      _notification.removeAttribute("opened");
+    if (_notification.hasAttribute('opened')) {
+      _notification.removeAttribute('opened');
     } else {
-      _notification.setAttribute("opened", "");
+      _notification.setAttribute('opened', '');
     }
   }
 }
 
-customElements.define("astro-component-viewer", AstroComponentViewer);
+customElements.define('astro-component-viewer', AstroComponentViewer);
