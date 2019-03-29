@@ -25,8 +25,9 @@ export class RuxSlider extends PolymerElement {
       disabled: Boolean,
       val: {
         type: Number,
-        notify: true,
         observer: '_updateVisual',
+        reflectToAttribute: true,
+        notify: true,
       },
       _name: {
         type: String,
@@ -331,14 +332,14 @@ export class RuxSlider extends PolymerElement {
     super.disconnectedCallback();
   }
 
+  ready() {
+    super.ready();
+  }
+
   _updateVisual() {
-    const min = this._range.getAttribute('min');
-    const max = this._range.getAttribute('max');
-    const val = this.val;
+    const dif = Math.floor(((this.val - this.min) / (this.max - this.min)) * 100);
 
-    const dif = ((val - min) / (max - min)) * 100;
-
-    this._range.style.setProperty('--value', dif);
+    this.style.setProperty('--value', dif);
   }
 
   _updateValue(e) {
