@@ -1981,8 +1981,8 @@ dd {
 
 .rux-radio-button input[type="radio"]:checked + label::after,
 .satcom-radio-button input[type="radio"]:checked + label::after {
-  top: 5px;
-  left: 5px;
+  top: 6px;
+  left: 6px;
 
   height: 10px;
   width: 10px;
