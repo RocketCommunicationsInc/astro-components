@@ -20,7 +20,6 @@ import { RuxTimeline } from '../packages/rux-timeline/rux-timeline.js';
 import { RuxToggle } from '../packages/rux-toggle/rux-toggle.js';
 import { RuxTabs } from '../packages/rux-tabs/rux-tabs.js';
 import { RuxTree } from '../packages/rux-tree/rux-tree.js';
-import { RuxStatusProgress } from '../packages/rux-status-progress/rux-status-progress.js';
 
 /**
  * @polymer
@@ -85,7 +84,7 @@ export class AstroComponentViewer extends PolymerElement {
 		color: var(--textColor);
 	
 		position: -webkit-sticky;
-		position; absolutesticky;
+		position: sticky;
 		top: 0; 
   }
   
@@ -226,9 +225,7 @@ ul {
   grid-column-end: 4;
 }
 
-.tabs {
 
-}
 
 .tree {
   
@@ -388,9 +385,7 @@ ul {
   
 }
 
-.advanced-status-list li {
-  // display: inline-block;
-}
+
 
 .astro-advanced-status-indicators {
   list-style: none;
@@ -493,10 +488,7 @@ ul {
   overflow: hidden;
 }
 
-.toggle-buttons {
-  
-  
-}
+
 .toggle-buttons .rux-form-field {
   width: 100%;
   display: flex;
