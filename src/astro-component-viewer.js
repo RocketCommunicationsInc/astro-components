@@ -928,6 +928,7 @@ rux-global-status-bar {
               <header class="rux-card__header">
                 <h1>Slider</h1>
               </header>
+              <input type="file" accept="image/*">
               <div class="rux-card__content">
                 <rux-slider axis-labels=[[sliderObjThree.labels]] min=0 max=100 val={{sliderObjThree.value}}></rux-slider>
               </div>

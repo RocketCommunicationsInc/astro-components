@@ -27,7 +27,7 @@ export class RuxStatus extends PolymerElement {
       },
       progress: {
         type: Number,
-        value: 0,
+        value: false,
         observer: "setProgress"
       },
       _notifications: {
@@ -348,11 +348,11 @@ export class RuxStatus extends PolymerElement {
 
         .rux-advanced-status__progress {
 
-          font-family: "Roboto Mono";
+          font-family: var(--fontFamilyMono);
           font-size: 0.8rem;
           position: absolute;
           margin-top: 1.5rem;
-          margin-left: -2px;
+          margin-left: -1px;
           letter-spacing: -1px;
           text-align: center;
         }
@@ -421,16 +421,17 @@ export class RuxStatus extends PolymerElement {
   constructor() {
     super();
 
-    if (this._isAdvanced && !this.icon) {
-      this.icon = "utility:progress";
-    }
-
     // magic number for progress icon
     this._circumference = 56 * 2 * Math.PI;
   }
 
   connectedCallback() {
     super.connectedCallback();
+
+    // set a progress icon if the progress value is set
+    if (this.progress >= 0 && !this.icon) {
+      this.icon = "utility:progress";
+    }
 
     // Find if this is a progress element and if so create
     // a refernce to the underlying SVG, then set the progress

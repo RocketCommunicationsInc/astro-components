@@ -57,7 +57,7 @@ $_documentContainer.innerHTML = `
 				<g id="progress"> 
 				<circle
 						transform='rotate(-90 60 60) translate(-1 1)'
-						stroke="rgba(0,0,0,0.2)"
+						stroke="rgba(40, 63, 88, 1)"
 						stroke-width="10"
 						fill="transparent"
 						r="56"
