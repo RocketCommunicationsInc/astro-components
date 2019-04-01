@@ -120,6 +120,7 @@ export class RuxModal extends PolymerElement {
       .rux-modal__titlebar {
         display: flex;
         flex-grow: 0;
+        flex-shrink: 0;
         justify-content: center;
         align-items: center;
       
@@ -141,7 +142,6 @@ export class RuxModal extends PolymerElement {
       }
 
       .rux-modal__content {
-        height: 100%;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
