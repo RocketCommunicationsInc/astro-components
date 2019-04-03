@@ -26,7 +26,7 @@ import { RuxStatus } from "@astro-components/rux-status/rux-status.js";
 ```
 
 ###Basic HTML Usage
-Rux Status supports both [simple status symbols](www.astrouxds.com/library/status-symbols) and [advanced status symbols](www.astrouxds.com/library/icon-and-symbols). RUX Status is assumed to be a simple status symbol if _only_ the status paramter is passed in. If any other param is passed the advanced status pattern is used.
+Rux Status supports both [simple status symbols](https://www.astrouxds.com/ui-components/status-symbol) and [advanced status symbols](https://www.astrouxds.com/ui-components/icons-and-symbols). RUX Status is assumed to be a simple status symbol if _only_ the status paramter is passed in. If any other param is passed the advanced status pattern is used.
 
 ```xml
 <rux-status status="error"></rux-status>
