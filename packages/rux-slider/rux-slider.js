@@ -258,6 +258,7 @@ export class RuxSlider extends PolymerElement {
 
           color: var(--fontColor, #fff);
           font-size: 0.875rem;
+          font-family: var(--fontFamilyMono, 'Roboto Mono', monospace);
         }
 
         .rux-slider__input {
@@ -313,7 +314,7 @@ export class RuxSlider extends PolymerElement {
           <ol class="rux-slider__control__labels" hidden="[[!axisLabels]]">
             <dom-repeat id="sliderAxisLabels" items="[[_getAxisLabels(axisLabels)]]">
               <template>
-                <li style="font: monospace">[[item]]</li>
+                <li>[[item]]</li>
               </template>
             </dom-repeat>
           </ol>
@@ -326,18 +327,15 @@ export class RuxSlider extends PolymerElement {
   }
   connectedCallback() {
     super.connectedCallback();
+
     this._range = this.shadowRoot.querySelector('input[type=range]');
   }
   disconnectedCallback() {
     super.disconnectedCallback();
   }
 
-  ready() {
-    super.ready();
-  }
-
   _updateVisual() {
-    const dif = Math.floor(((this.val - this.min) / (this.max - this.min)) * 100);
+    const dif = ((this.val - this.min) / (this.max - this.min)) * 100;
 
     this.style.setProperty('--value', dif);
   }
