@@ -33,8 +33,8 @@
     "email": "astro@rocketcom.com"
   },
   "dependencies": {
-    "@astrouxds/rux-button": "^1.0.2",
-    "@astrouxds/rux-icon": "^1.0.1",
+    "@astrouxds/rux-button": "^3.0.0",
+    "@astrouxds/rux-icon": "^3.0.2",
     "@polymer/polymer": "^3.0.2",
     "@webcomponents/webcomponentsjs": "^2.0.0"
   },
@@ -45,5 +45,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "3.0.0"
+  "version": "3.0.1"
 }
