@@ -1,25 +1,25 @@
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
 
-import { RuxIcon } from '../../packages/rux-icon/rux-icon.js';
-import { RuxAccordion } from '../packages/rux-accordion/rux-accordion.js';
-import { RuxButton } from '../packages/rux-button/rux-button.js';
-import { RuxClock } from '../packages/rux-clock/rux-clock.js';
-import { RuxGlobalStatusBar } from '../packages/rux-global-status-bar/rux-global-status-bar.js';
-import { RuxLog } from '../packages/rux-log/rux-log.js';
-import { RuxModal } from '../packages/rux-modal/rux-modal.js';
-import { RuxNotification } from '../packages/rux-notification/rux-notification.js';
-import { RuxPopUpMenu } from '../packages/rux-pop-up-menu/rux-pop-up-menu.js';
-import { RuxProgress } from '../packages/rux-progress/rux-progress.js';
-import { RuxPushButton } from '../packages/rux-push-button/rux-push-button.js';
-import { RuxSegmentedButton } from '../packages/rux-segmented-button/rux-segmented-button.js';
-import { RuxSlider } from '../packages/rux-slider/rux-slider.js';
-import { RuxSpectrumAnalyzer } from '../packages/rux-spectrum-analyzer/rux-spectrum-analyzer.js';
-import { RuxStatus } from '../packages/rux-status/rux-status.js';
-import { RuxTimeline } from '../packages/rux-timeline/rux-timeline.js';
-import { RuxToggle } from '../packages/rux-toggle/rux-toggle.js';
-import { RuxTabs } from '../packages/rux-tabs/rux-tabs.js';
-import { RuxTree } from '../packages/rux-tree/rux-tree.js';
+import {RuxIcon} from '../../packages/rux-icon/rux-icon.js';
+import {RuxAccordion} from '../packages/rux-accordion/rux-accordion.js';
+import {RuxButton} from '../packages/rux-button/rux-button.js';
+import {RuxClock} from '../packages/rux-clock/rux-clock.js';
+import {RuxGlobalStatusBar} from '../packages/rux-global-status-bar/rux-global-status-bar.js';
+import {RuxLog} from '../packages/rux-log/rux-log.js';
+import {RuxModal} from '../packages/rux-modal/rux-modal.js';
+import {RuxNotification} from '../packages/rux-notification/rux-notification.js';
+import {RuxPopUpMenu} from '../packages/rux-pop-up-menu/rux-pop-up-menu.js';
+import {RuxProgress} from '../packages/rux-progress/rux-progress.js';
+import {RuxPushButton} from '../packages/rux-push-button/rux-push-button.js';
+import {RuxSegmentedButton} from '../packages/rux-segmented-button/rux-segmented-button.js';
+import {RuxSlider} from '../packages/rux-slider/rux-slider.js';
+import {RuxSpectrumAnalyzer} from '../packages/rux-spectrum-analyzer/rux-spectrum-analyzer.js';
+import {RuxStatus} from '../packages/rux-status/rux-status.js';
+import {RuxTimeline} from '../packages/rux-timeline/rux-timeline.js';
+import {RuxToggle} from '../packages/rux-toggle/rux-toggle.js';
+import {RuxTabs} from '../packages/rux-tabs/rux-tabs.js';
+import {RuxTree} from '../packages/rux-tree/rux-tree.js';
 
 /**
  * @polymer
@@ -1515,9 +1515,9 @@ rux-global-status-bar {
 
     this.selectedTheme = null;
     this.theme = [
-      { label: 'None', theme: 'no-theme' },
-      { label: 'Dark', theme: 'dark-theme' },
-      { label: 'Light', theme: 'light-theme' },
+      {label: 'None', theme: 'no-theme'},
+      {label: 'Dark', theme: 'dark-theme'},
+      {label: 'Light', theme: 'light-theme'},
     ];
 
     /* SEGMENTED BUTTON DATA */
@@ -1544,37 +1544,37 @@ rux-global-status-bar {
       {
         _id: 'i1',
         label: 'Item 1',
-        payload: { action: 'this could be anythingÂ â€¦' },
+        payload: {action: 'this could be anythingÂ â€¦'},
         children: [
-          { _id: 'i1-1', label: 'Child 1', payload: { action: 'â€¦Â an id' } },
+          {_id: 'i1-1', label: 'Child 1', payload: {action: 'â€¦Â an id'}},
           {
             _id: 'i1-2',
             label: 'Child 2',
-            payload: { action: 'â€¦ a method call to be interpreted' },
+            payload: {action: 'â€¦ a method call to be interpreted'},
           },
         ],
       },
       {
         _id: 'i4',
         label: 'Item 4',
-        payload: { action: 'Works on items with no children' },
+        payload: {action: 'Works on items with no children'},
       },
       {
         _id: 'i2',
         label: 'Item 3',
-        payload: { action: 'Just use the paylod property â€¦' },
+        payload: {action: 'Just use the paylod property'},
         children: [
           {
             _id: 'i2-1',
             label: 'Child 1.1',
             payload: {
-              action: 'â€¦ then use whatever key/value pairs you want',
+              action: 'then use whatever key/value pairs you want',
             },
           },
           {
             _id: 'i2-2',
             label: 'Child 1.2',
-            payload: { action: 'â€¦ itâ€™s just an Object' },
+            payload: {action: 'It\'s just an Object'},
           },
         ],
       },
