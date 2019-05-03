@@ -1,12 +1,22 @@
 import { configure, addDecorator, addParameters } from '@storybook/polymer';
 import { withA11y } from '@storybook/addon-a11y';
+import astroTheme from './theme';
 
 import '../static/css/astro.core.css';
 
 addParameters({
   options: {
     hierarchyRootSeparator: /\|/,
+    addonPanelInRight: true,
   },
+});
+
+
+addParameters({
+  darkMode: {
+    dark: { ...astroTheme.dark },
+    light: { ...astroTheme.light }
+  }
 });
 addDecorator(withA11y);
 
@@ -16,13 +26,5 @@ function loadStories() {
   const req = require.context('../stories', true, /\.stories\.js$/);
   req.keys().forEach(filename => req(filename));
 }
-
-addParameters({
-  options: {
-    name: "Astro UXDS",
-    addonPanelInRight: true,
-    theme: undefined,
-  },
-});
 
 configure(loadStories, module);
