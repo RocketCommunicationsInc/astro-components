@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/polymer';
 
-storiesOf('Addon|Backgrounds', module)
+storiesOf('Demo|Addon|Backgrounds', module)
   .addParameters({
     backgrounds: [
       { name: 'light', value: '#eeeeee' },

@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const defaultConfig = require('@open-wc/demoing-storybook/default-storybook-webpack-config.js');
 
 module.exports = async ({ config }) => {
   config.module.rules.push({
@@ -9,5 +10,5 @@ module.exports = async ({ config }) => {
     enforce: 'pre',
   });
   config.plugins.push(new webpack.IgnorePlugin(/vertx/));
-  return config;
+  return defaultConfig({ config, transpilePackages: ['lit-html', 'lit-element', '@open-wc'] });
 };

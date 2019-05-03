@@ -2,9 +2,9 @@ import { storiesOf } from '@storybook/polymer';
 import { action } from '@storybook/addon-actions';
 import { document } from 'global';
 
-import '../src/simple-button.html';
+import '../src/polymer-demo/simple-button.html';
 
-storiesOf('Addon|Actions', module)
+storiesOf('Demo|Addon|Actions', module)
   .add('Action only', () => {
     const el = document.createElement('simple-button');
     el.addEventListener('click', action('log1'));

@@ -1,0 +1,50 @@
+{
+  "_args": [
+    [
+      "@astrouxds/rux-toggle@1.0.2",
+      "/private/var/www/astro/05-components.astrouxds.com"
+    ]
+  ],
+  "_from": "@astrouxds/rux-toggle@^2.0.0",
+  "_id": "@astrouxds/rux-toggle@2.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-WL+poWAYse9D2zniZ11xZ13cY4t2ReX3Q8rUaSFRATTcNcwBEjCcqu4moUEhkdYhdu27MyETUUtbtSo9P0SVOg==",
+  "_location": "/@astrouxds/rux-toggle",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@astrouxds/rux-toggle@^2.0.0",
+    "name": "@astrouxds/rux-toggle",
+    "escapedName": "@astrouxds%2frux-toggle",
+    "scope": "@astrouxds",
+    "rawSpec": "^2.0.0",
+    "saveSpec": null,
+    "fetchSpec": "^2.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-toggle/-/rux-toggle-2.0.1.tgz",
+  "_shasum": "48011cb47a66d913f043d466711415820f4ca83f",
+  "_spec": "@astrouxds/rux-toggle@^2.0.0",
+  "_where": "/Users/sarah/Sites/astro-sample-app",
+  "author": {
+    "name": "Rocket Communications",
+    "email": "astro@rocketcom.com"
+  },
+  "dependencies": {
+		"lit-element": "^2.1.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0", 
+    "@storybook/addon-knobs": "^5.0.0"
+  },
+  "deprecated": false,
+  "description": "Astro Web Component for toggles",
+  "license": "GPL-3.0",
+  "main": "rux-toggle.js",
+  "name": "@astrouxds/rux-toggle",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.1"
+}

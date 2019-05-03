@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/polymer';
 import { document } from 'global';
 import { html } from 'lit-html';
-import { StringTemplateButton } from '../src/string-template-button';
+import { StringTemplateButton } from '../src/polymer-demo/string-template-button';
 
-import '../src/separated-button/separated-button.html';
+import '../src/polymer-demo/separated-button/separated-button.html';
 
-storiesOf('Custom|Methods for rendering', module)
+storiesOf('Demo|Custom|Methods for rendering', module)
   .add('html string', () => '<div>Rendered with string</div>')
   .add('html with custom elements', () => '<separated-button title="Click me!"></separated-button>')
   .add('document.createElement', () => {

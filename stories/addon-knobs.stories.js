@@ -15,7 +15,7 @@ import {
   boolean,
 } from '@storybook/addon-knobs';
 
-storiesOf('Addon|Knobs', module)
+storiesOf('Demo|Addon|Knobs', module)
   .addDecorator(withKnobs)
   .add('simple', () => {
     const title = text('Button title', 'Hello');
