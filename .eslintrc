@@ -1,0 +1,40 @@
+{
+  "extends": "google",
+  "rules": {
+    "require-jsdoc": 0,
+    "object-curly-spacing": 0,
+    "no-unused-vars": ["error", { "vars": "local" }],
+    "no-console": 1,
+    "max-len": [
+      1,
+      120,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreStrings": true
+      }
+    ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": ["html"],
+  "globals": {
+    "customEvent": true,
+    "customElements": true,
+    "HTMLImports": true,
+    "Polymer": true,
+    "ShadyDOM": true,
+    "ShadyCSS": true,
+    "JSCompiler_renameProperty": true
+  }
+}

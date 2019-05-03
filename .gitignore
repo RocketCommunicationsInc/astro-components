@@ -102,4 +102,5 @@ Thumbs.db
 !.gitignore
 !.editorconfig
 !.eslintrc.js
+!.eslintrc
 !.storybook
