@@ -7,7 +7,7 @@ let light = create({
   colorSecondary: 'rgb(77, 172, 255)',
 
   // UI
-  appBg: 'rgb(243, 245, 248)',
+  appBg: 'rgb(226, 230, 238)',
   appContentBg: 'white',
   appBorderColor: '#DDD',
   appBorderRadius: 3,
