@@ -61,11 +61,11 @@ let dark = create({
   barSelectedColor:  'rgb(77, 172, 255)',
   barBg: 'rgb(24, 38, 53)',
 
-  // // Form colors
-  // inputBg: 'white',
-  // inputBorder: '#DDD',
-  // inputTextColor: 'black',
-  // inputBorderRadius: 3,
+  // Form colors
+  inputBg: 'white',
+  inputBorder: '#DDD',
+  inputTextColor: 'black',
+  inputBorderRadius: 3,
 
   brandTitle: 'AstroUXDS',
   brandUrl: 'https://astrouxds.com',
