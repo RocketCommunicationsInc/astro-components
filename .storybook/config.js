@@ -7,7 +7,7 @@ import astroTheme from './theme';
 addParameters({
   options: {
     hierarchyRootSeparator: /\|/,
-    addonPanelInRight: true,
+    panelPosition: 'bottom',
   },
   darkMode: {
     dark: { ...astroTheme.dark },
