@@ -9,6 +9,7 @@ addParameters({
     hierarchyRootSeparator: /\|/,
     panelPosition: 'bottom',
   },
+  theme: astroTheme.dark,
   darkMode: {
     dark: { ...astroTheme.dark },
     light: { ...astroTheme.light }
