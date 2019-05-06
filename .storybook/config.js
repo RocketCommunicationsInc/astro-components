@@ -15,7 +15,7 @@ addParameters({
   }
 });
 
-let isDark = false;
+let isDark = true;
 const channel = addons.getChannel();
 
 addDecorator(withA11y);
@@ -24,13 +24,13 @@ addDecorator((storyFn) => {
   const el = storyFn();
   let body = document.getElementsByTagName('body')[0];
   body.classList.remove('light-theme', 'dark-theme');
-  body.classList.add(isDark ? 'dark-theme' : 'light-theme');
+  body.classList.add(!isDark ?  'light-theme' : 'dark-theme');
 
   channel.on('DARK_MODE', (newIsDark) => {
     isDark = newIsDark;
     let body = document.getElementsByTagName('body')[0];
     body.classList.remove('light-theme', 'dark-theme');
-    body.classList.add(isDark ? 'dark-theme' : 'light-theme');
+    body.classList.add(!isDark ?  'light-theme' : 'dark-theme');
   });
 
   return el;
