@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/polymer';
 import { html, render } from 'lit-html';
 import { boolean, withKnobs } from '@storybook/addon-knobs';
 import { RuxToggle } from '../src/components/rux-toggle/rux-toggle.js';
-
+import Readme from '../src/components/rux-toggle/README.md';
 /* eslint-enable no-unused-vars */
 
 storiesOf('Components|Toggle', module)
@@ -25,50 +25,7 @@ storiesOf('Components|Toggle', module)
         html,
       },
       notes: {
-        // this will also use a .md file, but just trying it out for now
-        /* eslint-disable no-useless-escape */
-        markdown: `
-## When to use a Toggle Element
-A Toggle describes a state or value. Similar to a checkbox toggles allow users to change a setting between two states such as “On" or "Off.” Unlike a checkbox, a toggle button initiates an action with immediate effect.
-
-
-### Component Registration
-\`\`\`js
-import { RuxToggle } from '@astrouxds/rux-toggle/rux-toggle.js';
-\`\`\`
-
-### Component Usage
-\`\`\`html
-<rux-toggle disabled="false" checked="false"></rux-toggle>
-\`\`\`
-
-### Component Options
-| Property | Type | Required | Default | Description |
-|---|---|---|---|---|
-| disabled | Boolean | no | false | | 
-| checked | Boolean | no | false | | 
-
-## Revision History
-
-##### **3.0**
-
-- Breaking change to markup of toggle button
-
-##### **2.1**
-
-- Moved Pushbuttons to its own style sheet
-
-##### **1.4**
-
-- Added \`rux\_\` prefixes and BEM-compatible classes to all \`satcom\_\`-prefixed elements. NOTE: \`satcom\_\` will be removed in a future version
-- Removed prefixed linear gradients
-- Removed prefixed transition
-- Fixed added colon to checked pseudo class (e.g., checked became :checked)
-- Alignment issue fixed on toggle button label
-- Updated to WCAG colors
-- Updated transition speed
-
-        `,
+        markdown: Readme,
       },
     },
   );

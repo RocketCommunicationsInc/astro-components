@@ -14,7 +14,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 ##Installation
 `npm i -S @astrouxds/rux-clock`
 
-###Dependancies
+###Dependencies
 
 * [Polymer 3](https://www.polymer-project.com)
 * [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)

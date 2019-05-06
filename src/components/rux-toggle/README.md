@@ -30,11 +30,11 @@ import { RuxToggle } from "@astro-components/rux-toggle/rux-toggle.js";
 RUX Toggle …
 
 ```xml
-<rux-toggle></rux-toggle>
+<rux-toggle disabled="false" checked="false"></rux-toggle>
 ```
 
 ```xml
-<rux-toggle></rux-toggle>
+<rux-toggle disabled="false" checked="false"></rux-toggle>
 ```
 
 ###Event Listener
@@ -44,7 +44,27 @@ RUX Toggle …
 
 | Property          | Type      | Default | Required | Description                                             |
 | ----------------- | --------- | ------- | -------- | ------------------------------------------------------- |
-| `pushbutton`      | `Boolean` | false   | false    | Renders the button as a pushbutton rather than a toggle |
-| `checked-label`   | `string`  | On      | false    |                                                         | … |
-| `unchecked-label` | `string`  | Off     | false    | …                                                       |  |
-| `checked`         | `Boolean` | false   | false    |                                                         | Checked status of the toggle button |
+| `disabled`        | `Boolean` | false      | no    | |
+| `checked`         | `Boolean` | false      | no    | |
+
+
+
+## Revision History
+
+##### **3.0**
+
+- Breaking change to markup of toggle button
+
+##### **2.1**
+
+- Moved Pushbuttons to its own style sheet
+
+##### **1.4**
+
+- Added `rux_` prefixes and BEM-compatible classes to all `satcom_`-prefixed elements. NOTE: `satcom_` will be removed in a future version
+- Removed prefixed linear gradients
+- Removed prefixed transition
+- Fixed added colon to checked pseudo class (e.g., checked became :checked)
+- Alignment issue fixed on toggle button label
+- Updated to WCAG colors
+- Updated transition speed
