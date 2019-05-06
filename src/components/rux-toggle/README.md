@@ -27,18 +27,15 @@ import { RuxToggle } from "@astro-components/rux-toggle/rux-toggle.js";
 ```
 
 ###Basic HTML Usage
-RUX Toggle …
+```xml
+<rux-toggle></rux-toggle>
+```
 
+###Advanced HTML Usage
 ```xml
 <rux-toggle disabled="false" checked="false"></rux-toggle>
 ```
 
-```xml
-<rux-toggle disabled="false" checked="false"></rux-toggle>
-```
-
-###Event Listener
-RUX Toggle …
 
 ###Properties
 
