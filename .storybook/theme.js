@@ -44,7 +44,7 @@ let dark = create({
 
   // // UI
   appBg: 'rgb(20, 31, 44)',
-  appContentBg: 'rgb(24, 38, 53)',
+  appContentBg: 'rgb(32, 50, 70)',
   appBorderColor: 'rgba(255,255,255, .125)',
   appBorderRadius: 0,
 
@@ -59,7 +59,7 @@ let dark = create({
   // // Toolbar default and active colors
   barTextColor: 'white',
   barSelectedColor:  'rgb(77, 172, 255)',
-  barBg: 'rgb(24, 38, 53)',
+  barBg: 'rgb(32, 50, 70)',
 
   // Form colors
   inputBg: 'white',
