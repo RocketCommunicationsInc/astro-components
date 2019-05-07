@@ -154,9 +154,29 @@ import { RuxToggle } from '@astrouxds/rux-toggle/rux-toggle.js';
   .add(
     'Percentage Icon',
     () => {
+      const groupId = 'Options';
+
+      const labelLabel = 'Label';
+      const labelDefaultValue = 'Progress';
+      const label = text(labelLabel, labelDefaultValue, groupId);
+
+      const sublabelLabel = 'Sub-Label';
+      const sublabelDefaultValue = '';
+      const sublabel = text(sublabelLabel, sublabelDefaultValue, groupId);
+
+      const progressLabel = 'Progress';
+      const progressDefaultValue = 0;
+      const progressOptions = {
+        range: true,
+        min: 0,
+        max: 100,
+        step: 1,
+      };
+      const progress = number(progressLabel, progressDefaultValue, progressOptions, groupId);
+
       return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-          <rux-monitoring-icon progress="10" label="Label" sublabel="Sub Label"></rux-monitoring-icon>
+          <rux-monitoring-icon progress="${progress}" label="${label}" sublabel="${sublabel}"></rux-monitoring-icon>
         </div>
       `;
     },
