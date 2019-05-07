@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/polymer';
 import { html, render } from 'lit-html';
 // import { boolean, withKnobs } from '@storybook/addon-knobs';
 import { RuxClock } from '../src/components/rux-clock/rux-clock.js';
+import Readme from '../src/components/rux-clock/README.md';
 
 /* eslint-enable no-unused-vars */
 
@@ -20,6 +21,9 @@ storiesOf('Components|Clock', module)
       exports: {
         render,
         html,
+      },
+      notes: {
+        markdown: Readme,
       },
     },
 );
