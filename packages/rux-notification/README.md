@@ -37,6 +37,6 @@ At its most basica the `rux-notification` can work with just a value paramater.
 | Property | Type | Default | Required | Description  
 | --------------- | --------- | ------- | -------- | -----------
 | `message` | `string` | none | yes | The message displayed to the user |
-| `status` | `string` | none | no | Allows for setting the background color of the message to match the Astro Status Colors. Valid options are: `critical`,`serious`,`caution`,`normal`,`standby` and `off`
+| `status` | `string` | none | no | Allows for setting the background color of the message to match the Astro Status Colors. Valid options are: `critical`,`caution`,`normal` and `info`
 | `target` | `string` | local | no | Defines whether the notification should target its immediate parent element or the window
 | `close-after` | `number` | 2 | no | Defines an auto-close behavior. Time is defined in standard seconds or millisecond. A minimum of 2 and maximum of 10 seconds are allowable
