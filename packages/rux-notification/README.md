@@ -7,23 +7,23 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Notification](http://www.astrouxds.com/library/notification)
+- [Astro UXDS: Notification](http://www.astrouxds.com/library/notification)
 
 ##Installation
 `npm i -S @astrouxds/rux-notification`
 
 ###Dependancies
 
-* [Polymer 3](https://www.polymer-project.com)
-* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
-* [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/packages/rux-icon/)
-* [Rux Button](https://bitbucket.org/rocketcom/astro-components/src/master/packages/rux-button/)
+- [Polymer 3](https://www.polymer-project.com)
+- [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
+- [Rux Icon](https://bitbucket.org/rocketcom/astro-components/src/master/packages/rux-icon/)
+- [Rux Button](https://bitbucket.org/rocketcom/astro-components/src/master/packages/rux-button/)
 
 ##Usage
 ###Import RUX Status Indicator
 
 ```javascript
-import { RuxNotification } from "@astro-components/rux-notification/rux-notification.js";
+import { RuxNotification } from '@astro-components/rux-notification/rux-notification.js';
 ```
 
 ###Basic HTML Usage
@@ -37,6 +37,6 @@ At its most basica the `rux-notification` can work with just a value paramater.
 | Property | Type | Default | Required | Description  
 | --------------- | --------- | ------- | -------- | -----------
 | `message` | `string` | none | yes | The message displayed to the user |
-| `status` | `string` | none | no | Allows for setting the background color of the message to match the Astro Status Colors. Valid options are: `emergency`,`alert`,`caution`,`ok`,`standby` and `off`
+| `status` | `string` | none | no | Allows for setting the background color of the message to match the Astro Status Colors. Valid options are: `critical`,`serious`,`caution`,`normal`,`standby` and `off`
 | `target` | `string` | local | no | Defines whether the notification should target its immediate parent element or the window
 | `close-after` | `number` | 2 | no | Defines an auto-close behavior. Time is defined in standard seconds or millisecond. A minimum of 2 and maximum of 10 seconds are allowable
