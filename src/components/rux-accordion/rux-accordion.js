@@ -1,16 +1,26 @@
+import { LitElement, html } from 'lit-element';
 
-export class RuxAccordion extends Polymer.Element {
+/** Class representing a single Accordion instance. */
+/**
+ * @polymer
+ * @extends HTMLElement
+ */
+export class RuxAccordion extends LitElement {
   static get properties() {
     return {
       open: {
         type: Boolean,
-        notify: true,
+        reflect: true,
       },
     };
   }
+  constructor() {
+    super();
+    this.open = false;
+  }
 
-  static get template() {
-    return `
+  render() {
+    return html`
       <style>
 
       :host,
@@ -80,11 +90,9 @@ export class RuxAccordion extends Polymer.Element {
       [open] .rux-accordion__label {
         background: var(--accordionOpenLabelBackground, rgb(40, 63, 88));
       }
-      
-      
       </style>
-
-      <details open$="[[ open ]]" class="rux-accordion__item">
+      
+      <details ?open="${this.open}" class="rux-accordion__item">
         <summary class="rux-accordion__label">
           <slot name="label"></slot>
         </summary>
@@ -93,18 +101,7 @@ export class RuxAccordion extends Polymer.Element {
         </div>
       </details>
         
-      `;
-  }
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
+    `;
   }
 }
 customElements.define('rux-accordion', RuxAccordion);

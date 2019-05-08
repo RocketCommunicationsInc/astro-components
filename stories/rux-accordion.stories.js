@@ -11,7 +11,7 @@ storiesOf('Components|Accordion', module)
   .add(
     'Accordion',
     () => {
-      const firstOpen = boolean('Accordion 1 open', false);
+      const firstOpen = boolean('Accordion 1 open', true);
       const secondOpen = boolean('Accordion 2 open', false);
       const thirdOpen = boolean('Accordion 3 open', false);
       return html`
