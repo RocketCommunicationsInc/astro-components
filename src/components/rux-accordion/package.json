@@ -1,0 +1,47 @@
+{
+  "_args": [
+    [
+      "@astrouxds/rux-accordion@1.0.6",
+      "/private/var/www/astro/05-components.astrouxds.com"
+    ]
+  ],
+  "_from": "@astrouxds/rux-accordion@1.0.6",
+  "_id": "@astrouxds/rux-accordion@1.0.6",
+  "_inBundle": false,
+  "_integrity": "sha512-OfatzQAjELAMzi7dNk8/1Ub2jpmN+WU39GQ/uXSTBO9qO/KIS3w9/d12lObKCVJP/t5yn5QMaprcKoi3XvRcCw==",
+  "_location": "/@astrouxds/rux-accordion",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@astrouxds/rux-accordion@1.0.6",
+    "name": "@astrouxds/rux-accordion",
+    "escapedName": "@astrouxds%2frux-accordion",
+    "scope": "@astrouxds",
+    "rawSpec": "1.0.6",
+    "saveSpec": null,
+    "fetchSpec": "1.0.6"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-accordion/-/rux-accordion-1.0.6.tgz",
+  "_spec": "1.0.6",
+  "_where": "/private/var/www/astro/05-components.astrouxds.com",
+  "author": {
+    "name": "Rocket Communications",
+    "email": "info@rocketcom.com"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  },
+  "description": "Astro Web Component for accordions",
+  "license": "GPL-3.0",
+  "main": "rux-accordion.js",
+  "name": "@astrouxds/rux-accordion",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.0"
+}

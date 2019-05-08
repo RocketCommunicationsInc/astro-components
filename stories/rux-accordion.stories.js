@@ -1,0 +1,43 @@
+/* eslint-disable no-unused-vars */
+import { storiesOf } from '@storybook/polymer';
+import { html, render } from 'lit-html';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { RuxAccordion } from '../src/components/rux-accordion/rux-accordion.js';
+import Readme from '../src/components/rux-accordion/README.md';
+/* eslint-enable no-unused-vars */
+
+storiesOf('Components|Accordion', module)
+  .addDecorator(withKnobs)
+  .add(
+    'Accordion',
+    () => {
+      const firstOpen = boolean('Accordion 1 open', false);
+      const secondOpen = boolean('Accordion 2 open', false);
+      const thirdOpen = boolean('Accordion 3 open', false);
+      return html`
+        <div>
+          <rux-accordion .open=${firstOpen}>
+            <span slot="label">USA-151 - Solar panel misalignment</span>
+            <span slot="content">USA-151 experienced solar panel misalignment at 16:57:45.</span>
+          </rux-accordion>
+          <rux-accordion .open=${secondOpen}>
+            <span slot="label">USA-180 - Power degradation</span>
+            <span slot="content">USA-180 suffered power degradation at 16:58:01.</span>
+          </rux-accordion>
+          <rux-accordion .open=${thirdOpen}>
+            <span slot="label">Antenna DGS 2 - Weak signal</span>
+            <span slot="content">Antenna DGS 2 has weak signal at 16:38:37.</span>
+          </rux-accordion>
+        </div>
+      `;
+    },
+    {
+      exports: {
+        render,
+        html,
+      },
+      notes: {
+        markdown: Readme,
+      },
+    },
+  );
