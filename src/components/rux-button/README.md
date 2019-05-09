@@ -68,6 +68,13 @@ Apply properties as attributes on the component:
 </rux-button>
 
 ```
+The component auto-imports the Rux Icon Component for icons:
+
+```xml
+<rux-button icon="utility:caution">
+  Button with Icon using Rux Icon Web Component
+</rux-button>
+```
 
 ---
 
