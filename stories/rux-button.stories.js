@@ -47,7 +47,7 @@ storiesOf('Components|Buttons', module)
     },
   )
   .add(
-    'Button Groups',
+    'Grouped Buttons',
     () => {
     
       return html`
@@ -88,7 +88,7 @@ storiesOf('Components|Buttons', module)
         html,
       },
       notes: {
-        markdown: Readme,
+        markdown: '# Grouped Buttons\n\nCommon button groupings follow these conventions: \n\n- Cancel buttons are always presented to the left of actions such as “Submit.”\n\n- Always group together “Ok/Cancel” buttons. Do not justify them apart, but keep a reasonable margin between the buttons.\n\n- Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width. \n\nRead the [Rux-Buttons Readme](/?path=/info/components-buttons--standard-button) for more information.',
       },
     },
   )
@@ -213,7 +213,7 @@ storiesOf('Components|Buttons', module)
         html,
       },
       notes: {
-        markdown: Readme,
+        markdown: '_Readme content copied from [Rux-Buttons](/?path=/info/components-buttons--standard-button) below for your convenience._\n\n' + Readme,
       },
     },
   );

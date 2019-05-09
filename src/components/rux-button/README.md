@@ -2,21 +2,23 @@
 
 Buttons allow users to trigger actions.
 
-Common button groupings follow these conventions:
-- Cancel buttons are always presented to the left of actions such as “Submit.”
-- Always group together “Ok/Cancel” buttons.
 
 ### Rules of Thumb
 - Use only predefined button colors, sizes and fonts — don’t customize or alter them.
 - Don’t design elements which look similar to buttons but act differently. Buttons are actionable elements.
 - Don’t activate [Pop Up Menus](https://www.astrouxds.com/ui-components/pop-up) from buttons.
-- Buttons within the same group should be the same size. Use the width of the widest button.
 - Space buttons evenly.
 - Clearly title buttons by choosing a verb that describes the action the user performs at precisely the moment the button is clicked: “Save, Close, Print, Delete, Change Password,” etc. 
-- Resize button width to accommodate the title; do not abbreviate or truncate button titles. 
 - Don’t use an outside label to introduce a button. Instead, clearly title the button.
+- Resize button width to accommodate the title; do not abbreviate or truncate button titles. 
 - Add an ellipsis (…) to the button title if it opens another window, Dialog Box or app.
 - Within [Dialog Boxes](https://www.astrouxds.com/ui-components/dialog-box), right-justify buttons.
+
+Common button groupings follow these conventions:
+
+- Cancel buttons are always presented to the left of actions such as “Submit.”
+- Always group together “Ok/Cancel” buttons. Do not justify them apart, but keep a reasonable margin between the buttons.
+- Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width.
 
 ### Outline Button
 Outline Buttons are an alternative button style to be used in situations where a de-emphasized button is beneficial in guiding the user to a preferred option. For example, use an outline button for the less preferred option in Ok/Cancel button pairings.
