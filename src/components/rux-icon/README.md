@@ -30,7 +30,7 @@ import { RuxIcon } from "@astro-components/rux-icon/rux-icon.js";
 <rux-icon icon="default:settings"></rux-icon>
 ```
 
-###Properties
+## Properties
 | Property | Type | Description |
 | -------- | ---- | ------------|
 | `icon` | `string` | Defines the icon to be used. RUX Icon uses the convention of `namespace:icon-name` to avoid potential namespace collision. RUX ships with the following icon sets: `default`,`advanced-status` and `status`. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols)

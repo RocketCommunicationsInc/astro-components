@@ -45,7 +45,7 @@ The following example shows a more advanced RUX Clock instance with data-bound *
 	compact></rux-clock>
 ```
 
-###Properties
+## Properties
 
 | Property        | Type      | Description                                                                                                                                                                      |
 | --------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

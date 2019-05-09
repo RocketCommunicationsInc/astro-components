@@ -74,7 +74,7 @@ Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketc
 For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
 
-###Properties
+##Properties
 
 | Property          | Type      | Default | Required | Description                                             |
 | ----------------- | --------- | ------- | -------- | ------------------------------------------------------- |
