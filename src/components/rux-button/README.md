@@ -119,10 +119,10 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 | Property          | Type      | Default | Required | Description                                             |
 | ----------------- | --------- | ------- | -------- | ------------------------------------------------------- |
-| `disabled` | `boolean` | `false` | no | Disables the button. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored |
+| `disabled` | `boolean` | `false` | no | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
 | `outline` | `boolean` | `false` | no | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. |
 | `icon-only` | `boolean` | `false` | no | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. |
-| `icon` | `string` | `''` | yes, if  `icon-only=true` | Defines the icon to be used. Adheres to the RUX Icon convention of `'namespace:icon-name'`. Note: Icons are only avaiable when using the Web Component usage pattern, which imports the `<rux-icon>` component.|
+| `icon` | `string` | `''` | yes, if  `icon-only=true` | Defines the icon to be used. Adheres to the RUX Icon convention of `'namespace:icon-name'`. Note: Rux icons are only available when using the Web Component usage pattern, which imports the `<rux-icon>` component.|
 | `size` | `string` |  `''` | no | Defines a size other than the Standard button. Currently accepts `'small'` and `'large'` as values. |
 
 
