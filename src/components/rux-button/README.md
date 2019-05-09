@@ -84,11 +84,31 @@ Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketc
 ```xml
 <button class="rux-button">Submit</button>
 ```
-Apply properties as [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-button--` or as native HTML attributes, where appropriate: 
+Apply properties as [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-button--` or as native HTML attributes, where appropriate. 
 
 ```xml
 <button class="rux-button rux-button--large rux-button--outline" disabled>
   Large Disabled Outline Button
+</button>
+```
+
+The basic HTML/CSS usage supports icons if using Web Components (and importing the Rux Icon Component):
+
+```xml
+<button class="rux-button rux-button--icon">
+  <rux-icon class="rux-icon rux-button__icon" icon="utility:caution" color="white"></rux-icon>
+  Button with Icon using Rux Icon Web Component
+</button>
+```
+
+Otherwise, wrap your icon SVG in an HTML element with the [BEM-style](http://getbem.com/introduction/) class `"rux-button__icon"`:
+
+```xml
+<button class="rux-button rux-button--icon">
+  <div class="rux-button__icon">
+    <svg ... ></svg>
+  </div>
+  Button with Local Icon
 </button>
 ```
 
@@ -102,7 +122,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `disabled` | `boolean` | `false` | no | Disables the button. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored |
 | `outline` | `boolean` | `false` | no | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. |
 | `icon-only` | `boolean` | `false` | no | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. |
-| `icon` | `string` | `''` | yes, if  `icon-only=true` | Defines the icon to be used. Adheres to the RUX Icon convention of `'namespace:icon-name'`. |
+| `icon` | `string` | `''` | yes, if  `icon-only=true` | Defines the icon to be used. Adheres to the RUX Icon convention of `'namespace:icon-name'`. Note: Icons are only avaiable when using the Web Component usage pattern, which imports the `<rux-icon>` component.|
 | `size` | `string` |  `''` | no | Defines a size other than the Standard button. Currently accepts `'small'` and `'large'` as values. |
 
 
