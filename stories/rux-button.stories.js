@@ -204,6 +204,20 @@ storiesOf('Components|Buttons', module)
               <rux-button size="large" outline disabled icon="utility:caution">Large Disabled Outline Button with Icon</rux-button>
             </li>
           </ul>
+          <!-- <ul class="button-list">
+            <li>
+              <input class="rux-button" type="submit" value="input type=submit">
+            </li>
+            <li>
+              <input class="rux-button" type="button" value="input type=button">
+            </li>
+            <li>
+              <input class="rux-button" type="reset" value="input type=reset">
+            </li>
+            <li>
+              <input class="rux-button" type="submit" value="input disabled" disabled>
+            </li>
+          </ul> -->
         </div>
       `;
     },

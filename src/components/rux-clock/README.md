@@ -42,7 +42,7 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 import { RuxClock } from "@astro-components/rux-clock/rux-clock.js";
 ```
 
-### 3. Render the RUX Button Web Component
+### 3. Render the RUX Clock Web Component
 
 ```xml
 <rux-clock></rux-clock>
