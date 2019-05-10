@@ -87,3 +87,12 @@ render() {
 ##### **4.1**
 - Fixed duplicated `aria-labelledby` value when using AOS and/or LOS.
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+
+
+##### **Notes**
+RUX Clock is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html).
+
+**Note:** RUX Clock is available as a preview release and should not be used in production code.
+
+
+
