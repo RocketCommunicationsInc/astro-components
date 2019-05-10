@@ -1,4 +1,11 @@
-export class RuxGlobalStatusBar extends Polymer.Element {
+import { LitElement, html } from 'lit-element';
+
+/** Class representing a single Global Status Bar instance. */
+/**
+ * @polymer
+ * @extends HTMLElement
+ */
+export class RuxGlobalStatusBar extends LitElement {
   static get properties() {
     return {
       appname: String,
@@ -8,8 +15,8 @@ export class RuxGlobalStatusBar extends Polymer.Element {
       },
     };
   }
-  static get template() {
-    return `
+  render() {
+    return html`
       <style>
         :host {
           display: block;
@@ -81,8 +88,8 @@ export class RuxGlobalStatusBar extends Polymer.Element {
       </style>
 
       <header>
-        <div class="app-meta" hidden="[[!appname]]">
-          <h1>[[appname]]<span class="app-version">[[version]]</span></h1>
+        <div class="app-meta" ?hidden="${!this.appname}">
+          <h1>${this.appname}<span class="app-version">${this.version}</span></h1>
         </div>
 
         <slot></slot>

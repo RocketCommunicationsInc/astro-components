@@ -48,26 +48,14 @@ storiesOf('Components|Global Status Bar', module)
       const appnameKnob = text('App Name', 'Astro Global Status Bar');
       const versionKnob = text('Version', '4.1.0 alpha');
 
-      const aosKnob = dateWrapper('AOS', new Date(1557503698781));
-      const losKnob = dateWrapper('LOS', new Date('2019-05-10T16:21:12.000Z'));
-      const hideTimezoneKnob = boolean('Hide Timezone', false);
-      const hideDateKnob = boolean('Hide DOY', false);
-      const compactKnob = boolean('Compact Version', false);
-
-
-
-
       return html`
         <div style="display: flex; justify-content: center;">
-          <rux-global-status-bar 
+          <rux-global-status-bar class="dark-theme"
             .appname="${appnameKnob}" 
             .version="${versionKnob}">
-            <rux-clock class="dark-theme"
-              aos="${aosKnob}"
-              los="${losKnob}"
-              ?hide-timezone="${hideTimezoneKnob}"
-              ?hide-date="${hideDateKnob}"
-              ?compact="${compactKnob}"></rux-clock>
+            <rux-clock></rux-clock>
+            <div><!--Any HTML here --></div>
+            <rux-button>Master Off</rux-button>
           </rux-global-status-bar>
         </div>
       `
