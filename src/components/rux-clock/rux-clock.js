@@ -193,10 +193,10 @@ export class RuxClock extends LitElement {
       ${this.aos ?
         html`
           <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__aos">
-            <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label">
+            <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--aos">
               ${RuxUtils.formatTime(this.aos, this.locale, this.timeOptions, this.hideTimezone)}
             </div>
-            <div class="rux-clock__segment__label" id="rux-clock__time-label">
+            <div class="rux-clock__segment__label" id="rux-clock__time-label--aos">
               AOS
             </div>
           </div>
@@ -204,10 +204,10 @@ export class RuxClock extends LitElement {
       ${this.los ?
         html`
           <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__los">
-            <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label">
+            <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--los">
               ${RuxUtils.formatTime(this.los, this.locale, this.timeOptions, this.hideTimezone)}
             </div>
-            <div class="rux-clock__segment__label" id="rux-clock__time-label">
+            <div class="rux-clock__segment__label" id="rux-clock__time-label--los">
               LOS
             </div>
           </div>
