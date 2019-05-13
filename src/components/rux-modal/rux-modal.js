@@ -1,35 +1,42 @@
-import '../../../node_modules/@polymer/polymer/polymer-element.html';
 
-export class RuxModal extends Polymer.Element {
+import { LitElement, html } from 'lit-element';
+/* eslint-disable no-unused-vars */
+import { RuxButton } from '../rux-button/rux-button.js';
+import { RuxIcon } from '../rux-icon/rux-icon.js';
+/* eslint-enable no-unused-vars */
+
+/**
+ * @polymer
+ * @extends HTMLElement
+ */
+export class RuxModal extends LitElement {
   static get properties() {
     return {
       open: {
         type: Boolean,
-        value: false,
-        reflectToAttribute: true,
+        reflect: true,
         notify: true,
       },
       message: {
         type: String,
       },
+      title: {
+        type: String,
+      },
       confirmText: {
         type: String,
-        value: false,
+        attribute: 'confirm-text',
       },
       denyText: {
         type: String,
-        value: false,
+        attribute: 'deny-text',
       },
       customEvent: {
         type: String,
+        attribute: 'custom-event',
       },
       icon: {
         type: String,
-        value: 'default:caution',
-      },
-      shadowBox: {
-        type: Boolean,
-        value: false,
       },
       _choice: {
         type: Boolean,
@@ -40,29 +47,36 @@ export class RuxModal extends Polymer.Element {
 
   constructor() {
     super();
+    this.open = false;
+    this.message = '';
+    this.title = '';
+    this.confirmText = '';
+    this.denyText = '';
+    this.icon = 'default:caution';
+    this.customEvent = 'modal-event';
   }
   connectedCallback() {
     super.connectedCallback();
 
-    // if no custom listener event is passed in then emit a standard
-    // modal-event event
-    this._event = !this.customEvent ? 'modal-event' : this.customEvent;
-
     // in the event neither Confirm/Deny text is supplied provide
-    // a default cancel button to get out of the
+    // a default cancel button to get out of the modal
     if (!this.denyText && !this.confirmText) {
       this.denyText = 'Cancel';
       console.warn(
           'No confirm or deny actions have been passed to the modal dialog box. User has been presented with a Cancel button'
       );
     }
-
+  }
+  updated() {
     // get the total button set and set the last button as default
-    // and add focus … but it doesn’t work (no focus on Web Components?)
-    const buttonSet = this.shadowRoot.querySelectorAll('rux-button');
-    const defaultButton = buttonSet[buttonSet.length - 1];
-    defaultButton.setAttribute('default', '');
-    defaultButton.focus();
+    // and add focus
+    const buttonSet = this.shadowRoot.querySelectorAll('rux-button:not([hidden])');
+    if (buttonSet.length > 0 ) {
+      const defaultButton = buttonSet[buttonSet.length - 1];
+      defaultButton.setAttribute('tabindex', 0);
+      defaultButton.focus();
+    } else {
+    }
   }
 
   disconnectedCallback() {
@@ -75,7 +89,7 @@ export class RuxModal extends Polymer.Element {
 
     // dispatch event
     window.dispatchEvent(
-        new CustomEvent(this._event, {
+        new CustomEvent(this.customEvent, {
           detail: { confirm: choice },
         })
     );
@@ -83,16 +97,15 @@ export class RuxModal extends Polymer.Element {
     // close dialog
     this.open = false;
   }
-  static get template() {
-    return `
+
+
+  render() {
+    return html`
       <style>
-
-
 
       :host {
         display: none;
         box-sizing: border-box;
-
       }
 
       :host([open]) {
@@ -108,7 +121,6 @@ export class RuxModal extends Polymer.Element {
       *[hidden] {
         display: none !important;
       }
-
 
       .rux-button-group {
         margin-top: auto;
@@ -154,9 +166,7 @@ export class RuxModal extends Polymer.Element {
 
         box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
           0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
-
       }
-
 
       .rux-modal__titlebar {
         display: flex;
@@ -190,11 +200,9 @@ export class RuxModal extends Polymer.Element {
         color: var(--fontColor, #fff);
       }
 
-
       rux-icon {
         margin-right: 0.75rem;
       }
-
 
       .rux-modal__message {
         margin: 0.5rem 1.875rem 2.5rem 1.875rem;
@@ -215,19 +223,24 @@ export class RuxModal extends Polymer.Element {
         z-index: -1;
       }
 
-
       </style>
 
       <div class="rux-modal-container">
-        <dialog class="rux-modal" aria-role="modal" {{open}}>
+        <dialog class="rux-modal" role="dialog" ?open="${this.open}">
           <header class="rux-modal__titlebar">
-            <h1>Modal Title</h1>
+            <h1>${this.title}</h1>
           </header>
           <div class="rux-modal__content">
-            <div class="rux-modal__message">[[message]]</div>
+            <div class="rux-modal__message">
+              ${this.message}
+            </div>
             <div class="rux-button-group">
-              <rux-button on-click="_handleModalChoice" data-value="false" hidden$="[[!denyText]]" type="outline">[[denyText]]</rux-button>
-              <rux-button on-click="_handleModalChoice" data-value="true" hidden$="[[!confirmText]]">[[confirmText]]</rux-button>
+              <rux-button ?outline="${this.confirmText.length > 0}" @click="${this._handleModalChoice}" data-value="false" ?hidden="${!this.denyText}" tabindex="1">
+                ${this.denyText}
+              </rux-button>
+              <rux-button @click="${this._handleModalChoice}" data-value="true" ?hidden="${!this.confirmText}" tabindex="1">
+                ${this.confirmText}
+            </rux-button>
             </div>
           </div>
         </dialog>

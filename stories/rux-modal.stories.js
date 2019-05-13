@@ -2,17 +2,18 @@
 import { storiesOf } from '@storybook/polymer';
 import { html, render } from 'lit-html';
 import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+import { document } from 'global';
+
 import { RuxModal } from '../src/components/rux-modal/rux-modal.js';
 import Readme from '../src/components/rux-modal/README.md';
 /* eslint-enable no-unused-vars */
 
-storiesOf('Components|Modal', module)
+storiesOf('Components|Dialog Box', module)
   .addDecorator(withKnobs)
   .add(
-    'Modal',
+    'Dialog Box',
     () => {
-
-      const toggleModal = boolean('Toggle Modal', true);
+      const toggleModal = boolean('Enable Modal', true);
       const message = text('Modal Message', 'Modal Message');
       const title = text('Modal Title', 'Modal Title');
       const confirmText = text('Confirm Button Text', 'Release');
