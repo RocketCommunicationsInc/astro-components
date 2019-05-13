@@ -1,0 +1,37 @@
+#Log
+RUX Log is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
+
+RUX Log is available as a preview release and should not be used in production code.
+
+For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
+
+##Guidelines
+
+* [Astro UXDS: Log](http://www.astrouxds.com/library/log)
+
+##Installation
+`npm i -S @astrouxds/rux-clock`
+
+###Dependancies
+
+* [Polymer 3](https://www.polymer-project.com)
+* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
+
+##Usage
+###Import the RUX Log
+
+```javascript
+import { RuxLog } from "@astro-components/rux-log/rux-log.js";
+```
+
+###Basic HTML Usage
+
+```xml
+<rux-log data=[[logData]]></rux-log>
+```
+
+###Properties
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| data | json | A json string with the following keys: timestamp: Date, status: (see status for options), entry: log entry |
