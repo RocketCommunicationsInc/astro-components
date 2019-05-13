@@ -110,11 +110,11 @@ The basic HTML/CSS usage supports icons if using Web Components (and importing t
 </button>
 ```
 
-Otherwise, wrap your icon SVG in an HTML element with the [BEM-style](http://getbem.com/introduction/) class `"rux-button__icon"`:
+Otherwise, wrap your icon SVG in an HTML element with the [BEM-style](http://getbem.com/introduction/) classes `"rux-icon rux-button__icon"`:
 
 ```xml
 <button class="rux-button rux-button--icon">
-  <div class="rux-button__icon">
+  <div class="rux-icon rux-button__icon">
     <svg ... ></svg>
   </div>
   Button with Local Icon
