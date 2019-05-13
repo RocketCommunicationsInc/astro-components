@@ -40,19 +40,19 @@ import { RuxLog } from "@astro-components/rux-log/rux-log.js";
 ```
 
 ### 3. Render the RUX Log Web Component
-Pass an array of log entries via the `data` attribute. Log entries must be objects with a `timestamp` in JS Date Object format, a `status` matching one of the specified Rux Status values, and a `message` string:
+Pass an array of log entries via the `data` attribute. Log entries must be objects with a `timestamp` in JS Date Object format, a `status` matching one of the specified [Rux Status](https://astrouxds.com/design-guidelines/status-system) values, and a `message` string:
 
 ```javascript
 import { RuxLog } from "@astro-components/rux-log/rux-log.js";
 
 const myLogData = [
   {
-    timestamp: new Date(1557503698781),
+    timestamp: new Date(1557503698781), // date from Unix Time Stamp number
     status: "off",
     message: "Antenna DGS 1 went offline."
   },
   {
-    timestamp: new Date(1557503698781),
+    timestamp: new Date('2019-05-10T16:21:12.000Z'), // date from ISO 8601 string format
     status: "serious",
     message: "USA-177 experienced solar panel misalignment."
   },
@@ -79,12 +79,12 @@ render() {
 ```js
 [
   {
-    timestamp: new Date(1557503698781),
+    timestamp: new Date(1557503698781), // date from Unix Time Stamp number
     status: "off",
     message: "Antenna DGS 1 went offline."
   },
   {
-    timestamp: new Date(1557503698781),
+    timestamp: new Date('2019-05-10T16:21:12.000Z'), // date from ISO 8601 string format
     status: "serious",
     message: "USA-177 experienced solar panel misalignment."
   },
@@ -109,8 +109,8 @@ render() {
 
 | Property        | Type      | Default | Required | Description  |
 | --------------- | --------- | ------- | -------- | ------------ |
-| `timestamp`     | Date    | — | Yes | A JavaScript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object which displays a timestamp in the log entry's row. Displays in UTC, 24-hour time by default, configurable in the `data` Array properties. |
-| `status`     | String    | — | Yes | A string corresponding to an available [Rux Status](http://www.astrouxds.com/library/status-symbols) value, which displays the associated status icon in the log entry's row. |
+| `timestamp`     | Date    | — | Yes | A JavaScript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object which displays a timestamp in the log entry's row. Displays in UTC, 24-hour time by default, configurable in the `timezone` and `locale` Rux Log component properties. |
+| `status`     | String    | — | Yes | A string corresponding to an available [Rux Status](https://astrouxds.com/design-guidelines/status-system) value, which displays the associated status icon in the log entry's row.  Possible values include `'off'`, `'standby'`, `'normal'`, `'caution'`, `'serious'`, and `'critical'`|
 | `message`     | String    | — | Yes | A message which displays in the log entry's row. When a filter is applied to the log, the filter is a case-insensitive substring match against this string. |
 
 
