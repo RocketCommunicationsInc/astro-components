@@ -59,7 +59,7 @@ export class RuxClock extends LitElement {
     super();
 
     this.timezone = 'UTC';
-    this.locale = 'us-en';
+    this.locale = 'us-EN';
     this.hideTimezone = false;
     this.hideDate = false;
 
