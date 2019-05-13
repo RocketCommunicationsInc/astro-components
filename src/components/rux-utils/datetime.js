@@ -28,9 +28,17 @@ export default class {
 
   static formatTime(
     time = new Date(),
-    locale = 'us-en',
+    locale = 'us-EN',
     options = { hour12: false, timeZone: 'UTC', timeZoneName: 'short' },
   ) {
     return new Date(time).toLocaleTimeString(locale, options);
   }
+
+  static formatMachineTime(time, timezone = 'UTC') {
+    const utc = `${time.getUTCFullYear()}-${time.getUTCMonth()}-${time.getUTCDate()} ${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}:${time.getUTCMilliseconds()}`;
+    const local = `${time.getFullYear()}-${time.getMonth()}-${time.getDate()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}:${time.getMilliseconds()}`;
+
+    return timezone.toLowerCase() === 'utc' ? utc : local;
+  }
+   
 }

@@ -34,27 +34,52 @@ storiesOf('Components|Log', module)
         {
           "timestamp": new Date(1557503698781),
           "status": "off",
-          "entry": "Antenna DGS 1 went offline."
+          "message": "Antenna DGS 1 went offline."
         },
         {
           "timestamp": new Date(1557503698781),
           "status": "serious",
-          "entry": "USA-177 experienced solar panel misalignment."
+          "message": "USA-177 experienced solar panel misalignment."
         },
         {
           "timestamp": new Date(1557503698781),
           "status": "caution",
-          "entry": "USA-168 suffered power degradation."
+          "message": "USA-168 suffered power degradation."
         },
         {
           "timestamp": new Date(1557503698781),
           "status": "standby",
-          "entry": "Antenna DGS 2 has weak signal."
+          "message": "Antenna DGS 2 has weak signal."
         },
         {
           "timestamp": new Date(1557503698781),
           "status": "off",
-          "entry": "Black FEP 121 is offline."
+          "message": "Black FEP 121 is offline."
+        },
+        {
+          "timestamp": new Date(1557503698781),
+          "status": "off",
+          "message": "Antenna DGS 1 went offline."
+        },
+        {
+          "timestamp": new Date(1557503698781),
+          "status": "serious",
+          "message": "USA-177 experienced solar panel misalignment."
+        },
+        {
+          "timestamp": new Date(1557503698781),
+          "status": "caution",
+          "message": "USA-168 suffered power degradation."
+        },
+        {
+          "timestamp": new Date(1557503698781),
+          "status": "standby",
+          "message": "Antenna DGS 2 has weak signal."
+        },
+        {
+          "timestamp": new Date(1557503698781),
+          "status": "off",
+          "message": "Black FEP 121 is offline."
         }
       ];
       function _createLogItem() {
@@ -63,7 +88,7 @@ storiesOf('Components|Log', module)
           status: logStatuses[
             Math.floor(Math.random() * logStatuses.length)
           ],
-          entry: logMessages[
+          message: logMessages[
             Math.floor(Math.random() * logMessages.length)
           ]
         };
@@ -73,19 +98,17 @@ storiesOf('Components|Log', module)
       // button causes unintention re-render, don't use til fixed https://github.com/storybooks/storybook/issues/6675
       // button('Add log item', () => { _updateLog(); })
 
-      let filter = text('Filter log', null)
+      let filter = text('Filter log', '')
 
       let JSONdebug = html`<pre>${JSON.stringify(logData, null, 2)}</pre>`;
 
       return html`
         <div style="display: flex; flex-flow: column; justify-content: center;">
           <rux-log 
-            max-lines=50
             ._filterValue="${filter}"
             .data="${logData}">
           </rux-log>
         </div> 
-        ${JSONdebug}       
       `;
     },
     {

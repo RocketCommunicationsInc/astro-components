@@ -1,48 +1,102 @@
+
+import { LitElement, html } from 'lit-element';
+import RuxUtils from '../rux-utils/datetime.js';
 /* eslint-disable no-unused-vars */
-import '@polymer/polymer/lib/elements/dom-repeat.html';
-import { afterNextRender } from '@polymer/polymer/lib/utils/render-status.html';
 import { RuxStatus } from '../rux-status/rux-status.js';
-import { RuxIcon } from '../rux-icon/rux-icon.js';
 /* eslint-enable no-unused-vars */
 
 /**
  * @polymer
  * @extends HTMLElement
  */
-export class RuxLog extends Polymer.Element {
+export class RuxLog extends LitElement {
   static get properties() {
     return {
       data: {
         type: Array,
-        value: [],
-      },
-      maxLines: {
-        type: Number,
-        value: 10,
       },
       timezone: {
         type: String,
-        value: 'UTC',
       },
-      renderedItemCount: {
-        type: Number,
-        observer: '_getVisibleItems',
-      },
-      _visibleItems: {
-        type: Number,
+      locale: {
+        type: String,
       },
       _filterValue: {
         type: String,
-        value: null,
-      },
-      _height: {
-        type: Number,
       },
     };
   }
 
-  static get template() {
-    return `
+  constructor() {
+    super();
+    this._filterValue = '';
+    this.data = [];
+    this.timezone = 'UTC';
+    this.locale = 'us-EN';
+
+    if (this.data.length < 1) {
+      this.data = [{
+        timestamp: new Date(),
+        status: '',
+        message: 'Log initialized with no data…',
+      }];
+    }
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+  }
+
+  _filter(filterValue) {
+    // return every item if no filter is set
+    if (!filterValue) {
+      return () => {
+        return true;
+      };
+    }
+
+    // returns the item if the message property includes the search term
+    // NOTE: using String.prototype.includes which is unavailable
+    // in IE11
+    return (item) => {
+      return item.message.toLowerCase().includes(filterValue.toLowerCase())
+        ? true
+        : false;
+    };
+  }
+
+  get filteredLog() {
+    return this.data.filter(this._filter(this._filterValue));
+  }
+
+  get visibleItems() {
+    if (this.data.length && this.filteredLog.length > -1) {
+      return this._visibleItems = this.data.length - this.filteredLog.length;
+    }
+    return this.data.length;
+  }
+  get timeOptions() {
+    return {
+      hour12: false,
+    };
+  }
+  filterChanged(event) {
+    const newFilterValue = event.target.value;
+
+    if (this._filterValue === newFilterValue && this._filterValue !== event.target.value) {
+      event.target.value = this._filterValue;
+    } else {
+      this._filterValue = newFilterValue;
+    }
+  }
+
+
+  render() {
+    return html`
 
     <style>
 
@@ -50,7 +104,7 @@ export class RuxLog extends Polymer.Element {
         display: block;
         font-size: 0.875rem;
         color: var(--fontColor, rgb(255,255,255));
-        background-color: var(--logBackgroundColor, rgb(30, 47, 66));
+        background-color: var(--logBackgroundColor,  rgb(32, 50, 70));
       }
 
       *[hidden] {
@@ -62,7 +116,7 @@ export class RuxLog extends Polymer.Element {
         flex-wrap: wrap;
         position: relative;
         justify-content: space-between;
-      
+        background-color: var(--logHeaderBackgroundColor, rgb(24, 38, 53));
         padding: 0.5rem;
         
       }
@@ -96,19 +150,16 @@ export class RuxLog extends Polymer.Element {
       
       .rux-log__events {
         height: 100%;
-        overflow-y: scroll;
-        background-color: var(--logHeaderBackgroundColor, rgb(20, 32, 44));
+        overflow-y: auto;
+        background-color: var(--logBackgroundColor,  rgb(32, 50, 70));
       }
       
       .log-event__timestamp {
         flex-shrink: 0;
-      
         text-align: right;
         width: 5rem;
       }
-      
-      
-      
+            
       .rux-log__log-event {
         display: flex;
         flex-shrink: 0;
@@ -168,123 +219,77 @@ export class RuxLog extends Polymer.Element {
         background-color: var(--logFilterBackgroundColor, rgb(192, 240, 255));
         padding: 0.5rem;
       }
+
       
-      .rux-log__filter-enabled rux-icon {
-        margin-right: 0.5rem;
-      }
-      
-      input[type="search"] {
+      /* input[type="search"] {
         border: none;
         border-radius: 3px;
         font-size: 1rem;
         background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg'/><path d='M6.33 5.67l1 1-3.66 3.66-1-1'/></g></svg>");
+      } */
+
+      .rux-form-field--small input {
+        box-sizing: border-box;
+        -webkit-order: 2;
+                order: 2;
+
+        height: 1.25rem;
+        width: 100%;
+        padding: 0.3rem;
+
+        border: 1px solid transparent;
+
+        border: 1px solid var(--inputBorderColor, transparent);
+        border-radius: 3px;
+
+        font-size: 0.75rem;
+        font-size: var(--fontSizeSM, 0.75rem);
+
+        color: rgb(0, 0, 0);
+        color: var(--inputTextColor, rgb(0, 0, 0));
       }
-      
+    
+  </style>
 
-    </style>
-
-  
-	<header class="rux-log-header">
+  <header class="rux-log-header">
     <h1 class="rux-log-header-title">Event Logs</h1>
     <ul class="rux-log__header-labels rux-row">
       <li class="log-event__timestamp">Time</li>
       <li class="log-event__status"></li>
-      <li class="log-event__message log-header__message">Event
-      <div class="rux-form-field rux-form-field--small">
-        <input class="rux-form-field__text-input" placeholder="Filter Log …" type="search" value={{_filterValue::input}}></li>
-        
-      </div>
-      
-    </ul>
-	</header>
-
-  <!-- 
-  Renable when a proper method for determing height/width can be determined
-  <ol class="rux-log__events" style$="max-height: [[_height]]px"> 
-  //-->
-  <ol class="rux-log__events">
-    
-    <li class="rux-log__filter-enabled" hidden=[[!_filterValue]]>
-    A filter with&nbsp;<b>[[_filterValue]]</b>&nbsp;is enabled. [[_visibleItems]] of [[data.length]] records are currently hidden.
-    </li>
-    
-    <template is="dom-repeat" id="rux-log-data" items={{data}} filter="{{_filter(_filterValue)}}" rendered-item-count="{{renderedItemCount::dom-change}}" notify-dom-change>
-      <li class="rux-log__log-event">
-        <div class="log-event__timestamp">
-          <time datetime$=[[_formatMachineTime(item.timestamp)]]>[[_formatReadableTime(item.timestamp)]]</time>
-        </div>
-        <div class="log-event__status">
-          <rux-status status=[[item.status]]></rux-status>
-        </div>
-        <div class="log-event__message">
-          <div>[[item.entry]]</div>
+      <li class="log-event__message log-header__message">Event</li>
+      <li>
+        <div class="rux-form-field rux-form-field--small">
+          <input class="rux-input" placeholder="Filter Log…" type="search" 
+            .value="${this._filterValue}" @input="${this.filterChanged}">
         </div>
       </li>
-    </template>
-    
-  </ol>
+    </ul>
+  </header>
+
+  <ol class="rux-log__events">
+    <li class="rux-log__filter-enabled" ?hidden=${!this._filterValue}>
+      A filter with&nbsp;"<b>${this._filterValue}</b>"&nbsp;is enabled. 
+      ${this.visibleItems} of ${this.data.length} records are currently hidden.
+    </li>
+
+    ${this.filteredLog.map((item) => html`
+      <li class="rux-log__log-event">
+        <div class="log-event__timestamp">
+          <time datetime=${RuxUtils.formatMachineTime(item.timestamp)}>
+            ${RuxUtils.formatTime(item.timestamp, this.locale, this.timeOptions)}
+          </time>
+        </div>
+        <div class="log-event__status">
+          <rux-status status=${item.status}></rux-status>
+        </div>
+        <div class="log-event__message">
+          <div>${item.message}</div>
+        </div>
+      </li>
+    `)} 
+
+   </ol>
   `;
-  }
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-
-    if (this.data.length < 1) {
-      this.data = [{
-        timestamp: new Date(),
-        status: '',
-        entry: 'Log initialized with no data…',
-      }];
-    }
-
-    // set the max height for the
-    // afterNextRender(this, () => {
-    //   const logLine = this.shadowRoot.querySelector('.rux-log__log-event');
-    //   this._height = logLine.offsetHeight * this.maxLines;
-    // });
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-  }
-
-  _filter(filterValue) {
-    // don't run the filter if there is no search param
-    console.log(filterValue);
-    if (!filterValue) return null;
-
-    // returns the log entry if it includes the search term
-    // NOTE: using String.prototype.includes which is unavailable
-    // in IE11
-    return (data) => {
-      return data.entry.toLowerCase().includes(filterValue.toLowerCase())
-        ? true
-        : false;
-    };
-  }
-
-  _getVisibleItems() {
-    if (this.data.length && this.renderedItemCount > -1) {
-      this._visibleItems = this.data.length - this.renderedItemCount;
-    }
-  }
-
-  // return an HTML5 datetime string
-  _formatMachineTime(time) {
-    const utc = `${time.getUTCFullYear()}-${time.getUTCMonth()}-${time.getUTCDate()} ${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}:${time.getUTCMilliseconds()}`;
-    const local = `${time.getFullYear()}-${time.getMonth()}-${time.getDate()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}:${time.getMilliseconds()}`;
-
-    return this.timezone.toLowerCase() === 'utc' ? utc : local;
-  }
-
-  _formatReadableTime(time) {
-    return new Date(time).toLocaleTimeString(this.locale, {
-      hour12: false,
-      timeZone: this.timezone,
-    });
   }
 }
 customElements.define('rux-log', RuxLog);
