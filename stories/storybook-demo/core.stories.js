@@ -6,7 +6,7 @@ const storyParameter = 'storyParameter';
 
 addParameters({ globalParameter });
 
-storiesOf('Demo|Core|Parameters', module)
+storiesOf('Storybook Demo|Core|Parameters', module)
   .addParameters({ chapterParameter })
   .add(
     'passed to story',
