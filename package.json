@@ -34,6 +34,20 @@
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
     "html-webpack-plugin": "^4.0.0-beta.2",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.6",
+    "prettier": "^1.17.1",
     "webpack-dev-server": "^3.1.14"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
