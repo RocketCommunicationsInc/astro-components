@@ -14,24 +14,120 @@
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn('unable to connect to parent frame for connecting dev tools');
-  }</script><style>/* .css-10ro1m is auto-generated class for light mode */
-/* .css-b4x9s0 is auto-generated class for dark mode */
-#root .addon-notes-container code,
-#root .addon-notes-container table {
-  color: rgb(16,25,35);
+  }</script><style>#root .addon-notes-container pre, 
+#root .addon-notes-container code, 
+#root .addon-notes-container table, 
+#root .addon-notes-container p, 
+#root .addon-notes-container li {
+  font-size: 16px;
 }
+
+#root .addon-notes-container code,
+#root .addon-notes-container pre div[class^="lang-"] {
+  border: rgba(200,200,200, .3) 1px solid;
+}
+
+#root .addon-notes-container code,
+#root .addon-notes-container table,
+#root .addon-notes-container table tr td,
+#root .addon-notes-container table tr th,
+#root .addon-notes-container table tr,
+#root .addon-notes-container pre code, 
+#root .addon-notes-container pre pre, 
+#root .addon-notes-container pre.hljs,
+#root .addon-notes-container pre pre code, 
+#root .addon-notes-container pre.hljs code  {
+  color: inherit;
+}
+
+#root .addon-notes-container pre,
+#root .addon-notes-container code,
+#root .addon-notes-container table,
+#root .addon-notes-container table tr {
+  background: rgba(200,200,200, .075);
+}
+#root .addon-notes-container table thead tr,
+#root .addon-notes-container table tr:nth-of-type(2n) {
+  background: rgba(200,200,200, .15);
+}
+#root .addon-notes-container pre code, 
 #root .addon-notes-container pre pre, 
 #root .addon-notes-container pre.hljs,
 #root .addon-notes-container pre pre code, 
 #root .addon-notes-container pre.hljs code {
-  color: inherit;
+  background: transparent;
+  border: 0;
 }
-#root .addon-notes-container pre {
-  background: rgba(255,255,255, .05);
+#root .addon-notes-container table {
+  background: transparent;
 }
 
 #root .addon-notes-container table tr td,
 #root .addon-notes-container table tr th,
 #root .addon-notes-container table tr {
-  border-color: #DDD;
+  border-color: rgba(200,200,200, .4);
+}</style><style>/* .css-1d2iskc  is the auto-generated class name for the storybook container element. */
+/* .css-sqdry3 is the auto-generated class name for the storybook canvas/addons element, and others. */
+/* .css-1q7pov5 is the auto-generated class name for the sidebar element. */
+
+.css-1d2iskc > .css-sqdry3 {
+  border: 1px solid rgba(255,255,255, .125);
+}
+/* has no light/dark toggle. Only use if not using toggled themes.
+.css-1q7pov5 {
+  background: url('https://www.astrouxds.com/img/astro2.0/astro-leftnav-bkgnd.jpg') no-repeat #000;
+} */
+
+/* nav bar restyle */
+
+/* component list */
+
+nav .css-0 section a > div {
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(140, 142, 145, 0.15);
+  align-items: baseline;
+}
+
+/* only the outermost children */
+nav .css-0 section > a > div {
+  padding-left: 12px;
+}
+nav .css-0 section > a > div > span:first-child {
+  border-left-color: rgb(77, 172, 255);
+  border-top-width: 5px;
+  border-bottom-width: 5px;
+  border-left-width: 5px;
+  margin-right: 10px;
+}
+/* group icons */
+nav .css-0 section > a > div > svg {
+  display: none;
+}
+/* only the innermost children */
+nav .css-0 section .css-0 > a > div { 
+  padding-left: 18px;
+}
+
+nav .css-0 section .css-0 > a > div > svg {
+  margin-right: 10px;
+}
+
+nav .css-0 section .css-0 > a > div > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+nav .css-0 section > div[type="section"] {
+  font-weight: bold;
+  margin: 0;
+  padding: 0px 20px 5px;
+  border-bottom: 1px solid rgba(140, 142, 145, 0.15);
+}
+/* addons panel */
+#root .addon-notes-container a,
+#storybook-panel-root .css-0 a,
+#storybook-panel-root .css-0 a span {
+  color: rgb(77,172,255);
 }</style></head><body><div id="root"></div><script src="runtime~main.6ac4c33d73ae9704bbb9.bundle.js"></script><script src="vendors~main.406b39fbb9235ae6f793.bundle.js"></script><script src="main.77f9892513a1f5642d48.bundle.js"></script></body></html>
