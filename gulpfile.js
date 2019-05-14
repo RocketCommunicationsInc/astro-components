@@ -1,0 +1,82 @@
+const gulp = require("gulp");
+const cssimport = require("gulp-cssimport");
+const rename = require("gulp-rename");
+const sourcemaps = require("gulp-sourcemaps");
+const csso = require("gulp-csso");
+const postcss = require("gulp-postcss");
+const postcssColor = require("postcss-color-mod-function");
+const del = require("del");
+const gulpif = require("gulp-if");
+const properties = require("postcss-custom-properties");
+const autoprefixer = require("gulp-autoprefixer");
+
+/*
+ * * The color method handles the generation of the tint/shade
+ * * color palettes using the CSS4 color-mod function (no longer)
+ * * part of the spec. It takes a base color and increases the
+ * * tint or shade by 20% increments
+ */
+function color() {
+  return gulp
+    .src("./static/css/src/common/__variables.css")
+    .pipe(postcss([postcssColor()]))
+    .pipe(rename("_variables.css"))
+    .pipe(gulp.dest("./static/css/src/common"));
+}
+
+function css() {
+  const condition = file => file !== "astro.css";
+
+  return gulp
+    .src("./static/css/src/*.css")
+    .pipe(sourcemaps.init())
+    .pipe(cssimport())
+    .pipe(gulpif(condition, postcss([properties()])))
+    .pipe(gulpif(condition, autoprefixer({ browsers: "last 2 versions" })))
+    .pipe(gulp.dest("src/css"))
+    .pipe(gulp.dest("./dist/css"))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(csso())
+    .pipe(gulp.dest("src/css"))
+    .pipe(sourcemaps.write("./"))
+    .pipe(gulp.dest("./dist/css"));
+}
+
+/*
+ * * Cleans the distribution folder before building
+ */
+function clean() {
+  return del(["./dist/"]);
+}
+
+/*
+ * * Handles watching for file changes and triggering a browser reload
+ */
+function watch() {
+  // watch for color changes and generate palette
+  gulp.watch("./static/css/src/common/__variables.css", gulp.series("color"));
+
+  // compile and minify css
+  gulp.watch(
+    "./static/css/src/**/*.css",
+    {
+      ignored: [
+        "./static/css/src/common/__variables.css",
+        "./static/css/src/astro.core.css",
+        "./static/css/src/astro.css"
+      ]
+    },
+    gulp.series(css)
+  );
+}
+
+const defaultTasks = gulp.series(clean, watch);
+gulp.task("default", defaultTasks);
+
+exports.css = css;
+exports.color = color;
+exports.watch = watch;
+// exports.build = build;
+// exports.start = start;
+// exports.dev = dev;
+exports.clean = clean;
