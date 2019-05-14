@@ -12,6 +12,6 @@ This project started as a clone of the 5.0.11 Storybook Release - [Polymer examp
 
 ## About Development Files
 
-### Husky
+###Husky
 
 [Husky](https://github.com/typicode/husky) runs pre-commit checks on the Astro Component Library. Current checks include javascript, json, markdown and css. Configuration is defined by [Lint Staged](https://github.com/okonet/lint-staged) and can be reviwed in `package.json`
