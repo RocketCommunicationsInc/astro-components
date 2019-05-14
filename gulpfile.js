@@ -18,35 +18,33 @@ const autoprefixer = require("gulp-autoprefixer");
  */
 function color() {
   return gulp
-    .src("./static/css/src/common/__variables.css")
+    .src("./src/css/common/__variables.css")
     .pipe(postcss([postcssColor()]))
     .pipe(rename("_variables.css"))
-    .pipe(gulp.dest("./static/css/src/common"));
+    .pipe(gulp.dest("./src/css/common"));
 }
 
 function css() {
   const condition = file => file !== "astro.css";
 
   return gulp
-    .src("./static/css/src/*.css")
+    .src("./src/css/*.css")
     .pipe(sourcemaps.init())
     .pipe(cssimport())
     .pipe(gulpif(condition, postcss([properties()])))
     .pipe(gulpif(condition, autoprefixer({ browsers: "last 2 versions" })))
-    .pipe(gulp.dest("src/css"))
-    .pipe(gulp.dest("./dist/css"))
+    .pipe(gulp.dest("./static/css"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(csso())
-    .pipe(gulp.dest("src/css"))
-    .pipe(sourcemaps.write("./"))
-    .pipe(gulp.dest("./dist/css"));
+    .pipe(gulp.dest("./static/css"))
+    .pipe(sourcemaps.write("./"));
 }
 
 /*
  * * Cleans the distribution folder before building
  */
 function clean() {
-  return del(["./dist/"]);
+  return del(["./static/css/dist/"]);
 }
 
 /*
@@ -72,6 +70,7 @@ function watch() {
 
 const defaultTasks = gulp.series(clean, watch);
 gulp.task("default", defaultTasks);
+gulp.task("css:colors", gulp.series(color, css));
 
 exports.css = css;
 exports.color = color;
