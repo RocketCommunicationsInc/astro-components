@@ -448,6 +448,12 @@
     --colorSecondaryDarken3,
     rgb(77, 172, 255)
   );
+  --accordionBorderColor: rgb(207, 214, 227);
+  --accordionContentBackground: rgb(226, 230, 238);
+  --accordionClosedLabelBackground: rgb(255, 255, 255);
+  --accordionOpenLabelBackground: rgb(245, 247, 249);
+  --accordionHoverLabelBackground: rgb(236, 239, 244);
+  --accordionColor: rgb(0, 0, 0);
 }
 li.dark-theme,
 li.light-theme {
@@ -592,6 +598,12 @@ li.light-theme {
   --timelineRegionBackgroundColor: var(--colorPrimaryDarken3, rgb(0, 36, 57));
   --timelineRegionBorderColor: var(--colorPrimary, rgb(0, 90, 143));
   --timelineRegionSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
+  --accordionBorderColor: rgb(40, 63, 88);
+  --accordionContentBackground: rgb(20, 32, 44);
+  --accordionClosedLabelBackground: rgb(32, 50, 70);
+  --accordionOpenLabelBackground: rgb(40, 63, 88);
+  --accordionHoverLabelBackground: rgb(46, 103, 153);
+  --accordionColor: rgb(255, 255, 255);
 }
 h1,
 h2,
@@ -1184,13 +1196,13 @@ label {
   -ms-user-select: none;
   user-select: none;
 }
-.rux-form-field input {
+.rux-form-field input,
+.rux-form-field textarea {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
   order: 2;
-  height: 2.25rem;
   width: 100%;
   padding: 0.5rem;
   border: 1px solid transparent;
@@ -1200,6 +1212,14 @@ label {
   font-size: var(--fontSize, 1rem);
   color: #000;
   color: var(--inputTextColor, rgb(0, 0, 0));
+}
+.rux-form-field input {
+  height: 2.25rem;
+}
+.rux-form-field textarea {
+  min-height: 4.25rem;
+  font-family: "Open Sans", sans-serif;
+  font-family: var(--fontFamily, "Open Sans", sans-serif);
 }
 .rux-form-field input[type="date"]::-webkit-calendar-picker-indicator,
 .rux-form-field input[type="date"]::-webkit-inner-spin-button,
