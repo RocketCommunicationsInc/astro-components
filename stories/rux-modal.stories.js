@@ -3,15 +3,14 @@ import { storiesOf } from '@storybook/polymer';
 import { html, render } from 'lit-html';
 import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { withActions, configureActions } from '@storybook/addon-actions';
-import { document } from 'global';
 
 import { RuxModal } from '../src/components/rux-modal/rux-modal.js';
 import Readme from '../src/components/rux-modal/README.md';
 /* eslint-enable no-unused-vars */
 
-window.addEventListener('modalClosed', e => {
+/* window.addEventListener('modalClosed', e => {
   console.log(e);
-});
+}); */
 
 storiesOf('Components|Dialog Box', module)
   .addDecorator(withActions('modalClosed', { depth: 100 }))
