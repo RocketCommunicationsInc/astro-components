@@ -34,6 +34,8 @@
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
     "del": "^4.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-wc": "^1.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-cssimport": "^7.0.0",
