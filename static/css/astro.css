@@ -1044,6 +1044,24 @@ li.dark-theme {
   display: none;
 }
 
+.dark-theme {
+  --accordionBorderColor: rgb(40, 63, 88);
+  --accordionContentBackground: rgb(20, 32, 44);
+  --accordionClosedLabelBackground: rgb(32, 50, 70);
+  --accordionOpenLabelBackground: rgb(40, 63, 88);
+  --accordionHoverLabelBackground: rgb(46, 103, 153);
+  --accordionColor: rgb(255, 255, 255);
+}
+
+.light-theme {
+  --accordionBorderColor: rgb(207, 214, 227);
+  --accordionContentBackground: rgb(226, 230, 238);
+  --accordionClosedLabelBackground: rgb(255, 255, 255);
+  --accordionOpenLabelBackground: rgb(245, 247, 249);
+  --accordionHoverLabelBackground: rgb(236, 239, 244);
+  --accordionColor: rgb(0, 0, 0);
+}
+
 h1,
 h2,
 h3 {

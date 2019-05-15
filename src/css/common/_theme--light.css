@@ -401,6 +401,19 @@
     rgb(62, 138, 204)
   );
   --timelineRegionSelectedTextColor: var(--fontColor, rgb(255, 255, 255));
+
+  /* 
+    
+    ACCORDION COLORS
+    ==========================================================================
+      
+  */
+  --accordionBorderColor: rgb(207, 214, 227);
+  --accordionContentBackground: rgb(226, 230, 238);
+  --accordionClosedLabelBackground: rgb(255, 255, 255);
+  --accordionOpenLabelBackground: rgb(245, 247, 249);
+  --accordionHoverLabelBackground: rgb(236, 239, 244);
+  --accordionColor: rgb(0, 0, 0);
 }
 
 li.light-theme {
