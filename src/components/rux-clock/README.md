@@ -77,7 +77,7 @@ render() {
 | `los`           | Date    | — | no | When supplied with a JavaScript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object, displays a timestamp labeled "LOS" next to the standard clock. |
 | `timezone`      | String  | `'UTC'` | no | Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as ``America/Los_Angeles``. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.                                                  |
 | `locale`        | String  | `'en-US'` | no | Formats time in local time format, such as `'en-US'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details. <br>**Note:** 24-hour time is always enforced. |
-| `hide-timezone` | Boolean | `false` | no | Hides the timezone in the main 24-hour clock and in AOS/LOS secctions. Defaults to `false` |
+| `hide-timezone` | Boolean | `false` | no | Hides the timezone in the main 24-hour clock. |
 | `hide-date`     | Boolean | `false` | no |  Hides the day of the year. |
 | `compact`       | Boolean | `false` | no |  Applies a smaller clock style. |
 

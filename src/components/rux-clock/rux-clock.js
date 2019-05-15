@@ -42,7 +42,12 @@ export class RuxClock extends LitElement {
       },
     };
   }
-  get timeOptions() {
+  get passPeriodOptions() {
+    return {
+      hour12: false,
+    };
+  }
+  get clockOptions() {
     if (!this.hideTimezone) {
       return {
         hour12: false,
@@ -91,7 +96,7 @@ export class RuxClock extends LitElement {
     Private functions should occur after public functions
   */
   updateTime() {
-    this.time = RuxUtils.formatTime(new Date(), this.locale, this.timeOptions, this.hideTimezone);
+    this.time = RuxUtils.formatTime(new Date(), this.locale, this.clockOptions);
     this.dayOfYear = RuxUtils.dayOfYear();
   }
 
@@ -194,7 +199,7 @@ export class RuxClock extends LitElement {
         html`
           <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__aos">
             <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--aos">
-              ${RuxUtils.formatTime(this.aos, this.locale, this.timeOptions, this.hideTimezone)}
+              ${RuxUtils.formatTime(this.aos, this.locale, this.passPeriodOptions)}
             </div>
             <div class="rux-clock__segment__label" id="rux-clock__time-label--aos">
               AOS
@@ -205,7 +210,7 @@ export class RuxClock extends LitElement {
         html`
           <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__los">
             <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--los">
-              ${RuxUtils.formatTime(this.los, this.locale, this.timeOptions, this.hideTimezone)}
+              ${RuxUtils.formatTime(this.los, this.locale, this.passPeriodOptions)}
             </div>
             <div class="rux-clock__segment__label" id="rux-clock__time-label--los">
               LOS
