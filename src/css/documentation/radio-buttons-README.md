@@ -3,6 +3,7 @@
 Radio Buttons allow users to mutually select an option from a predefined set of options. When one selection is made, the previous selection becomes deselected. One option should always be selected.
 
 ### Rules of Thumb
+
 - Use Radio Buttons for mutually exclusive choices. If user can make more than one choice, use [Checkboxes](https://www.astrouxds.com/ui-components/checkbox).
 - Radio Buttons appear in groups of two or more.
 - One option should always be selected.
@@ -15,21 +16,23 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 
 **If a user is required to make a choice between items without a default, consider a [Drop Down Menu](https://www.astrouxds.com/ui-components/drop-down).**
 
-
 ## Guidelines
 
-* [Astro UXDS: Radio Buttons](https://www.astrouxds.com/ui-components/radio-button)
-* [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
-
+- [Astro UXDS: Radio Buttons](https://www.astrouxds.com/ui-components/radio-button)
+- [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
 ## Basic HTML Usage
+
 ### 1. Include the Astro UXDS CSS file
-Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/). 
+
+Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
 ```
+
 ### 2. Markup using HTML5/CSS3
+
 Wrap an input field and its associated label in an element with the `rux-radio-button` class, ensuring the `for` and `id` attribute values match:
 
 ```xml
