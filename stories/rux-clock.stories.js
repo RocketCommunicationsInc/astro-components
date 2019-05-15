@@ -24,24 +24,15 @@ storiesOf('Components|Clock', module)
         UTC: 'UTC',
       };
  
-      const locales = {
-        enUS: 'en-US',
-        arEG: 'ar-EG',
-        koKR: 'ko-KR',
-
-      };
- 
       const timezoneKnob = select('Timezone', timezones, 'UTC');
       const hideTimezoneKnob = boolean('Hide Timezone', false);
       const hideDateKnob = boolean('Hide DOY', false);
       const compactKnob = boolean('Compact Version', false);
-      const localeKnob = select('Locale', locales, 'en-US');
 
       return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
         <rux-clock
           .timezone="${timezoneKnob}" 
-          .locale="${localeKnob}" 
           ?hide-timezone="${hideTimezoneKnob}"
           ?hide-date="${hideDateKnob}"
           ?compact="${compactKnob}"></rux-clock>

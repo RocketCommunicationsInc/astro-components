@@ -7,7 +7,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Buttons](http://www.astrouxds.com/library/icons)
+* [Astro UXDS: Icons](https://astrouxds.com/ui-components/icons-and-symbols)
 
 ##Installation
 `npm i -S @astrouxds/rux-icon`

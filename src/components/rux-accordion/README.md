@@ -38,11 +38,20 @@ import { RuxAccordion } from "@astro-components/rux-accordion/rux-accordion.js";
 ```
 
 ### 3. Render the RUX Accordion Web Component
+You may render any HTML or string within a [slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).
 
 ```xml
 <rux-accordion open="true">
   <span slot="label">Accordion Title</span>
   <span slot="content">Accordion Content</span>
+</rux-accordion>
+<rux-accordion open="true">
+  <span slot="label">
+    Another Accordion Title, with <b>HTML</b>
+  </span>
+  <span slot="content">
+    <div>Accordion <b>HTML</b> Here</div>
+  </span>
 </rux-accordion>
 ```
 
