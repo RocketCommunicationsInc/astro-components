@@ -15,6 +15,11 @@ storiesOf('Components|Accordion', module)
       const secondOpen = boolean('Accordion 2 open', false);
       const thirdOpen = boolean('Accordion 3 open', false);
       return html`
+        <style>
+        [slot="content"]{
+          display: contents; // allows parent flexbox styling to affect slot content
+        }
+        </style>
         <div>
           <rux-accordion .open=${firstOpen}>
             <span slot="label">USA-151 - Solar panel misalignment</span>
@@ -26,7 +31,10 @@ storiesOf('Components|Accordion', module)
           </rux-accordion>
           <rux-accordion .open=${thirdOpen}>
             <span slot="label">Antenna DGS 2 - Weak signal</span>
-            <span slot="content">Antenna DGS 2 has weak signal at 16:38:37.</span>
+            <span slot="content">
+              Antenna DGS 2 has weak signal at 16:38:37.
+              <div class="rux-button-group"><button class="rux-button">Investigate</button></div>
+            </span>
           </rux-accordion>
         </div>
       `;

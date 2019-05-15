@@ -81,6 +81,8 @@ export class RuxAccordion extends LitElement {
         white-space: normal;
         overflow: hidden;
         background: var(--accordionContentBackground, rgb(20, 32, 44));
+        display: flex;
+        align-items: center;
       }
       
       .rux-accordion__label:hover {
