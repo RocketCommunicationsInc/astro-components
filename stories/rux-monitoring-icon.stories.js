@@ -166,22 +166,4 @@ import { RuxToggle } from '@astrouxds/rux-toggle/rux-toggle.js';
         html,
       },
     },
-  )
-  .add(
-    'All Icons',
-    () => {
-      return html`
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-          {elements.map((value, index) => { return
-          <li>{value}</li>
-          })}
-        </div>
-      `;
-    },
-    {
-      exports: {
-        render,
-        html,
-      },
-    },
   );
