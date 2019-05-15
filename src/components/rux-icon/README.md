@@ -7,7 +7,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Buttons](http://www.astrouxds.com/library/icons)
+* [Astro UXDS: Icons](https://astrouxds.com/ui-components/icons-and-symbols)
 
 ##Installation
 `npm i -S @astrouxds/rux-icon`
@@ -30,7 +30,7 @@ import { RuxIcon } from "@astro-components/rux-icon/rux-icon.js";
 <rux-icon icon="default:settings"></rux-icon>
 ```
 
-###Properties
+## Properties
 | Property | Type | Description |
 | -------- | ---- | ------------|
 | `icon` | `string` | Defines the icon to be used. RUX Icon uses the convention of `namespace:icon-name` to avoid potential namespace collision. RUX ships with the following icon sets: `default`,`advanced-status` and `status`. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols)

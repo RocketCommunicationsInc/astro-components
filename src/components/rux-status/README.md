@@ -32,7 +32,7 @@ Rux Status supports both [simple status symbols](https://www.astrouxds.com/ui-co
 <rux-status status="error"></rux-status>
 ```
 **Note** Status valid strings have been updated
-###Properties
+## Properties
 | Property | Type | Description |
 | -------- | ---- | ------------|
 | `status` | `string` | Valid options are `off`, `standby`, `normal`, `caution`, `serious` and `critical`.

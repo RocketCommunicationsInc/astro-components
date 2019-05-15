@@ -1,58 +1,98 @@
 #Clock
-The RUX Clock component is a custom clock instance relavant to SATCOM/SATOPS operations running a constant 24 hour clock set to UTC along with the day of the year. RUX Clock also supports displaying AOS (Acquisition of Signal), LOS (Loss of Signal) and timezone support.
 
-RUX Clock is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
+Clock shows the current date and time, and optional AOS and LOS timers. It will typically be positioned on the Global Status Bar.
 
-RUX Clock is available as a preview release and should not be used in production code.
+### Appearance and Behavior
+The clock is not an interactive component. Date and Time are always present. AOS, and LOS are optional. The time is UTC by default, but can be configured for any time zone.
 
-For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
+All digits should be displayed in the Roboto Mono font. This font's monospace number characters ensure that the display will not jitter as it changes. The font is already built into the Clock web component, but may be downloaded for design use.
+
 
 ##Guidelines
 
-- [Astro UXDS: Clock](http://www.astrouxds.com/library/clock)
+* [Astro UXDS: Clock](https://www.astrouxds.com/ui-components/clock)
 
-##Installation
-`npm i -S @astrouxds/rux-clock`
 
-###Dependencies
+## Web Components Usage
 
-* [Polymer 3](https://www.polymer-project.com)
-* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
+### 1. Installation
+#### ** Install the Astro RUX Clock package via Command Line** (Preferred Method)
 
-##Usage
-###Import the RUX Clock
+```sh
+npm i --save @astrouxds/rux-clock
+```
+
+You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
+
+
+#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+Via CLI: 
+
+```sh
+git clone https://bitbucket.org/rocketcom/astro-components.git
+```
+
+Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+
+
+### 2. Import the RUX Clock Web Component
+This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
 import { RuxClock } from "@astro-components/rux-clock/rux-clock.js";
 ```
 
-###Basic HTML Usage
-RUX Clock can be used without any properties and will display a 24-hour clock in HH:MM:SS UTC format along with the day of the year.
+### 3. Render the RUX Clock Web Component
 
 ```xml
 <rux-clock></rux-clock>
 ```
-
-###Advanced HTML Usage
-The following example shows a more advanced RUX Clock instance with data-bound **aos** and **los** values as well as hiding the timezone and day of year display.
+Apply properties as attributes on the component: 
 
 ```xml
-<rux-clock
-	aos=[[sat1.aos]]
-	los=[[sat1.los]]
-	hide-timezone=true
-	hide-date=true
-	compact></rux-clock>
+<rux-clock timezone="Pacific/Guam" hide-timezone hide-date compact></rux-clock>
 ```
 
-###Properties
+Define AOS and LOS via [JavaScript Date objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#Several_ways_to_create_a_Date_object) and apply via `aos` and `los` attributes on the component:
 
-| Property        | Type      | Description                                                                                                                                                                      |
-| --------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `aos`           | `date`    | If a valid JavaScript Date object is passed in the AOS time will display next to the standard 24-hour clock. Updates to the passed in date object will be displayed immediately. |
-| `los`           | `date`    | If a valid JavaScript Date object is passed in the LOS time will display next to the standard 24-hour clock. Updates to the passed in date object will be displayed immediately. |
-| `timezone`      | `string`  | Optional timzone setting. Accepted format is `Country/City` e.g., `America/San_Francisco`. Default timezone is UTC.                                                              |
-| `locale`        | `string`  | Optional locale setting to format time in local time format. e.g., `us-en`. Default locale is us-en.                                                                             |
-| `hide-timezone` | `boolean` | Hides the timezone in the main 24-hour clock. Defaults to `false`                                                                                                                |
-| `hide-date`     | `boolean` | Hides the day of the year. Defaults to `false`.                                                                                                                                  |
-| `compact`       | `boolean` | Uses a compact clock similar.                                                                                                                                                    |
+
+```javascript
+import { RuxClock } from "@astro-components/rux-clock/rux-clock.js";
+
+const myAos = new Date(1557503698781); // date from Unix Time Stamp number
+const myLos = new Date('2019-05-10T16:21:12.000Z'); // date from ISO 8601 string format
+
+// ...
+
+render() {
+	return `<rux-clock aos="${myAos}" los="${myLos}" compact></rux-clock>`;
+}
+```
+
+## Properties
+
+| Property        | Type      | Default | Required | Description  |
+| --------------- | --------- | ------- | -------- | ------------ |
+| `aos`           | Date    | — | no | When supplied with a JavaScript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object, displays a timestamp labeled "AOS" next to the standard clock. |
+| `los`           | Date    | — | no | When supplied with a JavaScript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object, displays a timestamp labeled "LOS" next to the standard clock. |
+| `timezone`      | String  | `'UTC'` | no | Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as ``America/Los_Angeles``. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.                                                  |
+| `hide-timezone` | Boolean | `false` | no | Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS. |
+| `hide-date`     | Boolean | `false` | no |  Hides the day of the year. |
+| `compact`       | Boolean | `false` | no |  Applies a smaller clock style. |
+
+
+
+## Revision History
+##### **4.1**
+- Fixed duplicated `aria-labelledby` value when using AOS and/or LOS.
+- Removed `locale` property. All time displays assume `us-EN` locale.
+- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+
+
+##### **Notes**
+RUX Clock is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html).
+
+**Note:** RUX Clock is available as a preview release and should not be used in production code.
+
+
+

@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/polymer';
 
-storiesOf('Demo|Addon|Notes', module)
+storiesOf('Storybook Demo|Addon|Notes', module)
   .add(
     'Simple note',
     () =>

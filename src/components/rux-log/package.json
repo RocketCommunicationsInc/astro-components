@@ -1,0 +1,47 @@
+{
+  "_args": [
+    [
+      "@astrouxds/rux-log@1.0.3",
+      "/private/var/www/astro/05-components.astrouxds.com"
+    ]
+  ],
+  "_from": "@astrouxds/rux-log@1.0.3",
+  "_id": "@astrouxds/rux-log@1.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-4UY6+iHaie6AZuHo44+dbus+0eDVD3+uLMJ2KR0bcJtkxVUl449nRujt3uulFE3TyNAeEltxhWqyfdsJJtWYEQ==",
+  "_location": "/@astrouxds/rux-log",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@astrouxds/rux-log@1.0.3",
+    "name": "@astrouxds/rux-log",
+    "escapedName": "@astrouxds%2frux-log",
+    "scope": "@astrouxds",
+    "rawSpec": "1.0.3",
+    "saveSpec": null,
+    "fetchSpec": "1.0.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-log/-/rux-log-1.0.3.tgz",
+  "_spec": "1.0.3",
+  "_where": "/private/var/www/astro/05-components.astrouxds.com",
+  "author": {
+    "name": "Rocket Communications",
+    "email": "astro@rocketcom.com"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  },
+  "description": "Astro Web Component for logs",
+  "license": "GPL-3.0",
+  "main": "rux-log.js",
+  "name": "@astrouxds/rux-log",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "3.0.0"
+}

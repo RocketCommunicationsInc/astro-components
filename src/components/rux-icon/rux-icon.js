@@ -10,7 +10,7 @@ export class RuxIcon extends LitElement {
         type: Number,
       },
       color: {
-        type: Number,
+        type: String,
       },
       library: {
         type: String,

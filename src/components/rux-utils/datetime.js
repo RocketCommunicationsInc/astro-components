@@ -26,11 +26,16 @@ export default class {
     );
   }
 
-  static formatTime(
-    time = new Date(),
-    locale = 'us-en',
-    options = { hour12: false, timeZone: 'UTC', timeZoneName: 'short' },
-  ) {
-    return new Date(time).toLocaleTimeString(locale, options);
+  static formatClockTimeUTC(time = new Date(), timezone = 'UTC', hideTimezone = false) {
+    if (hideTimezone) {
+      return new Date(time).toLocaleTimeString('us-EN', { hour12: false, timeZone: timezone });
+    }
+    return new Date(time).toLocaleTimeString('us-EN', { hour12: false, timeZone: timezone, timeZoneName: 'short' });
   }
+
+  static formatMachineTimeUTC(time = new Date()) {
+    return `${time.getUTCFullYear()}-${time.getUTCMonth()}-${time.getUTCDate()} 
+            ${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}:${time.getUTCMilliseconds()}`;
+  }
+   
 }

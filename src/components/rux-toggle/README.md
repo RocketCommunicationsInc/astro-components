@@ -36,11 +36,13 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 ```javascript
 import { RuxToggle } from "@astro-components/rux-toggle/rux-toggle.js";
 ```
-### 3. Use the RUX Toggle Web Component
+### 3. Render the RUX Toggle Web Component
 
 ```xml
 <rux-toggle disabled="false" checked="false"></rux-toggle>
 ```
+
+---
 
 
 ## Basic HTML Usage
@@ -62,7 +64,7 @@ Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketc
 For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
 
-###Properties
+## Properties
 
 | Property          | Type      | Default | Required | Description                                             |
 | ----------------- | --------- | ------- | -------- | ------------------------------------------------------- |
@@ -93,7 +95,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 - Updated to WCAG colors
 - Updated transition speed
 
-##### Notes
+##### **Notes**
 RUX Toggle is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html).
 
 **Note:** RUX Toggle is available as a preview release and should not be used in production code.
