@@ -76,8 +76,7 @@ render() {
 | `aos`           | Date    | — | no | When supplied with a JavaScript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object, displays a timestamp labeled "AOS" next to the standard clock. |
 | `los`           | Date    | — | no | When supplied with a JavaScript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object, displays a timestamp labeled "LOS" next to the standard clock. |
 | `timezone`      | String  | `'UTC'` | no | Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as ``America/Los_Angeles``. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.                                                  |
-| `locale`        | String  | `'en-US'` | no | Formats time in local time format, such as `'en-US'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details. <br>**Note:** 24-hour time is always enforced. |
-| `hide-timezone` | Boolean | `false` | no | Hides the timezone in the main 24-hour clock. |
+| `hide-timezone` | Boolean | `false` | no | Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS. |
 | `hide-date`     | Boolean | `false` | no |  Hides the day of the year. |
 | `compact`       | Boolean | `false` | no |  Applies a smaller clock style. |
 
@@ -86,6 +85,7 @@ render() {
 ## Revision History
 ##### **4.1**
 - Fixed duplicated `aria-labelledby` value when using AOS and/or LOS.
+- Removed `locale` property. All time displays assume `us-EN` locale.
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
 

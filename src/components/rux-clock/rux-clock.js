@@ -20,9 +20,6 @@ export class RuxClock extends LitElement {
         type: String,
         reflect: true,
       },
-      locale: {
-        type: String,
-      },
       hideTimezone: {
         type: Boolean,
         attribute: 'hide-timezone',
@@ -42,29 +39,12 @@ export class RuxClock extends LitElement {
       },
     };
   }
-  get passPeriodOptions() {
-    return {
-      hour12: false,
-    };
-  }
-  get clockOptions() {
-    if (!this.hideTimezone) {
-      return {
-        hour12: false,
-        timeZone: this.timezone,
-        timeZoneName: 'short',
-      };
-    }
-    return {
-      hour12: false,
-    };
-  }
+
 
   constructor() {
     super();
 
     this.timezone = 'UTC';
-    this.locale = 'us-EN';
     this.hideTimezone = false;
     this.hideDate = false;
 
@@ -96,7 +76,7 @@ export class RuxClock extends LitElement {
     Private functions should occur after public functions
   */
   updateTime() {
-    this.time = RuxUtils.formatTime(new Date(), this.locale, this.clockOptions);
+    this.time = RuxUtils.formatClockTimeUTC(new Date(), this.timezone, this.hideTimezone);
     this.dayOfYear = RuxUtils.dayOfYear();
   }
 
@@ -199,7 +179,7 @@ export class RuxClock extends LitElement {
         html`
           <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__aos">
             <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--aos">
-              ${RuxUtils.formatTime(this.aos, this.locale, this.passPeriodOptions)}
+              ${RuxUtils.formatClockTimeUTC(this.aos, this.timezone, true)}
             </div>
             <div class="rux-clock__segment__label" id="rux-clock__time-label--aos">
               AOS
@@ -210,7 +190,7 @@ export class RuxClock extends LitElement {
         html`
           <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__los">
             <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--los">
-              ${RuxUtils.formatTime(this.los, this.locale, this.passPeriodOptions)}
+              ${RuxUtils.formatClockTimeUTC(this.los, this.timezone, true)}
             </div>
             <div class="rux-clock__segment__label" id="rux-clock__time-label--los">
               LOS

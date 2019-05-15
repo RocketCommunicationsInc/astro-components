@@ -18,9 +18,6 @@ export class RuxLog extends LitElement {
       timezone: {
         type: String,
       },
-      locale: {
-        type: String,
-      },
       _filterValue: {
         type: String,
       },
@@ -32,7 +29,6 @@ export class RuxLog extends LitElement {
     this._filterValue = '';
     this.data = [];
     this.timezone = 'UTC';
-    this.locale = 'us-EN';
 
     if (this.data.length < 1) {
       this.data = [{
@@ -78,11 +74,6 @@ export class RuxLog extends LitElement {
       return this._visibleItems = this.data.length - this.filteredLog.length;
     }
     return this.data.length;
-  }
-  get timeOptions() {
-    return {
-      hour12: false,
-    };
   }
   filterChanged(event) {
     const newFilterValue = event.target.value;
@@ -275,8 +266,8 @@ export class RuxLog extends LitElement {
     ${this.filteredLog.map((item) => html`
       <li class="rux-log__log-event">
         <div class="log-event__timestamp">
-          <time datetime=${RuxUtils.formatMachineTime(item.timestamp)}>
-            ${RuxUtils.formatTime(item.timestamp, this.locale, this.timeOptions)}
+          <time datetime=${RuxUtils.formatMachineTimeUTC(item.timestamp, this.timezone)}>
+            ${RuxUtils.formatClockTimeUTC(item.timestamp, this.timezone, true)}
           </time>
         </div>
         <div class="log-event__status">
