@@ -30,10 +30,6 @@ export class RuxModal extends LitElement {
         type: String,
         attribute: 'deny-text',
       },
-      customEvent: {
-        type: String,
-        attribute: 'custom-event',
-      },
       icon: {
         type: String,
       },
@@ -48,7 +44,6 @@ export class RuxModal extends LitElement {
     this.confirmText = '';
     this.denyText = '';
     this.icon = 'default:caution';
-    this.customEvent = 'modal-event';
   }
   connectedCallback() {
     super.connectedCallback();
@@ -83,9 +78,11 @@ export class RuxModal extends LitElement {
     const choice = e.currentTarget.dataset.value === 'true';
 
     // dispatch event
-    window.dispatchEvent(
-      new CustomEvent(this.customEvent, {
+    this.dispatchEvent(
+      new CustomEvent('modalClosed', {
         detail: { confirm: choice },
+        bubbles: true,
+        composed: true,
       }),
     );
 
