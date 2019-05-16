@@ -37,13 +37,13 @@ export class RuxMonitoringIcon extends LitElement {
     this._circumference = 56 * 2 * Math.PI;
 
     this.status = 'null';
+    this.icon = 'progress';
   }
 
   firstUpdated() {
     super.connectedCallback();
 
     if (Number.isInteger(parseInt(this.progress, 10))) {
-      this.icon = 'progress';
       if (!this.range) {
         this.range = [
           {
