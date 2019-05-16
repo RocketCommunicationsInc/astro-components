@@ -114,110 +114,100 @@ storiesOf('Components|Buttons', module)
         <div style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;">
           <ul class="button-list">
             <li>
-              <rux-button size="small" icon-only icon="utility:caution">Small Icon-only Button</rux-button>
+              <rux-button size="small" icon-only icon="caution">Small Icon-only Button</rux-button>
               <rux-button size="small">Small Button</rux-button>
             </li>
             <li>
-              <rux-button size="small" icon="utility:caution">Small Button with Icon</rux-button>
+              <rux-button size="small" icon="caution">Small Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="small" icon-only disabled icon="utility:caution"
-                >Small Disabled Icon-only Button</rux-button
-              >
+              <rux-button size="small" icon-only disabled icon="caution">Small Disabled Icon-only Button</rux-button>
               <rux-button size="small" disabled>Small Disabled Button</rux-button>
             </li>
             <li>
-              <rux-button size="small" disabled icon="utility:caution">Small Disabled Button with Icon</rux-button>
+              <rux-button size="small" disabled icon="caution">Small Disabled Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="small" icon-only outline icon="utility:caution"
-                >Small Outline Icon-only Button</rux-button
-              >
+              <rux-button size="small" icon-only outline icon="caution">Small Outline Icon-only Button</rux-button>
               <rux-button size="small" outline>Small Outline Button</rux-button>
             </li>
             <li>
-              <rux-button size="small" outline icon="utility:caution">Small Outline Button with Icon</rux-button>
+              <rux-button size="small" outline icon="caution">Small Outline Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="small" icon-only disabled outline icon="utility:caution"
+              <rux-button size="small" icon-only disabled outline icon="caution"
                 >Small Disabled Outline Icon-only Button</rux-button
               >
               <rux-button size="small" outline disabled>Small Disabled Outline Button</rux-button>
             </li>
             <li>
-              <rux-button size="small" outline disabled icon="utility:caution"
+              <rux-button size="small" outline disabled icon="caution"
                 >Small Disabled Outline Button with Icon</rux-button
               >
             </li>
           </ul>
           <ul class="button-list">
             <li>
-              <rux-button icon-only icon="utility:caution">Standard Icon-only Button</rux-button>
+              <rux-button icon-only icon="caution">Standard Icon-only Button</rux-button>
               <rux-button>Standard Button</rux-button>
             </li>
             <li>
-              <rux-button icon="utility:caution">Standard Button with Icon</rux-button>
+              <rux-button icon="caution">Standard Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button icon-only disabled icon="utility:caution">Standard Disabled Icon-only Button</rux-button>
+              <rux-button icon-only disabled icon="caution">Standard Disabled Icon-only Button</rux-button>
               <rux-button disabled>Standard Disabled Button</rux-button>
             </li>
             <li>
-              <rux-button disabled icon="utility:caution">Standard Disabled Button with Icon</rux-button>
+              <rux-button disabled icon="caution">Standard Disabled Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button icon-only outline icon="utility:caution">Standard Outline Icon-only Button</rux-button>
+              <rux-button icon-only outline icon="caution">Standard Outline Icon-only Button</rux-button>
               <rux-button outline>Standard Outline Button</rux-button>
             </li>
             <li>
-              <rux-button outline icon="utility:caution">Standard Outline Button with Icon</rux-button>
+              <rux-button outline icon="caution">Standard Outline Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button icon-only disabled outline icon="utility:caution"
+              <rux-button icon-only disabled outline icon="caution"
                 >Standard Disabled Outline Icon-only Button</rux-button
               >
               <rux-button outline disabled>Standard Disabled Outline Button</rux-button>
             </li>
             <li>
-              <rux-button outline disabled icon="utility:caution"
-                >Standard Disabled Outline Button with Icon</rux-button
-              >
+              <rux-button outline disabled icon="caution">Standard Disabled Outline Button with Icon</rux-button>
             </li>
           </ul>
           <ul class="button-list">
             <li>
-              <rux-button size="large" icon-only icon="utility:caution">Large Icon-only Button</rux-button>
+              <rux-button size="large" icon-only icon="caution">Large Icon-only Button</rux-button>
               <rux-button size="large">Large Button</rux-button>
             </li>
             <li>
-              <rux-button size="large" icon="utility:caution">Large Button with Icon</rux-button>
+              <rux-button size="large" icon="caution">Large Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="large" icon-only disabled icon="utility:caution"
-                >Large Disabled Icon-only Button</rux-button
-              >
+              <rux-button size="large" icon-only disabled icon="caution">Large Disabled Icon-only Button</rux-button>
               <rux-button size="large" disabled>Large Disabled Button</rux-button>
             </li>
             <li>
-              <rux-button size="large" disabled icon="utility:caution">Large Disabled Button with Icon</rux-button>
+              <rux-button size="large" disabled icon="caution">Large Disabled Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="large" icon-only outline icon="utility:caution"
-                >Large Outline Icon-only Button</rux-button
-              >
+              <rux-button size="large" icon-only outline icon="caution">Large Outline Icon-only Button</rux-button>
               <rux-button size="large" outline>Large Outline Button</rux-button>
             </li>
             <li>
-              <rux-button size="large" outline icon="utility:caution">Large Outline Button with Icon</rux-button>
+              <rux-button size="large" outline icon="caution">Large Outline Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="large" icon-only disabled outline icon="utility:caution"
+              <rux-button size="large" icon-only disabled outline icon="caution"
                 >Large Disabled Outline Icon-only Button</rux-button
               >
               <rux-button size="large" outline disabled>Large Disabled Outline Button</rux-button>
             </li>
             <li>
-              <rux-button size="large" outline disabled icon="utility:caution"
+              <rux-button size="large" outline disabled icon="caution"
                 >Large Disabled Outline Button with Icon</rux-button
               >
             </li>
