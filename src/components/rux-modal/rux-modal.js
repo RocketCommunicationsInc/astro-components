@@ -1,4 +1,3 @@
-
 import { LitElement, html } from 'lit-element';
 /* eslint-disable no-unused-vars */
 import { RuxButton } from '../rux-button/rux-button.js';
@@ -31,16 +30,8 @@ export class RuxModal extends LitElement {
         type: String,
         attribute: 'deny-text',
       },
-      customEvent: {
-        type: String,
-        attribute: 'custom-event',
-      },
       icon: {
         type: String,
-      },
-      _choice: {
-        type: Boolean,
-        observer: '_handleModalChoice',
       },
     };
   }
@@ -53,7 +44,6 @@ export class RuxModal extends LitElement {
     this.confirmText = '';
     this.denyText = '';
     this.icon = 'default:caution';
-    this.customEvent = 'modal-event';
   }
   connectedCallback() {
     super.connectedCallback();
@@ -63,7 +53,7 @@ export class RuxModal extends LitElement {
     if (!this.denyText && !this.confirmText) {
       this.denyText = 'Cancel';
       console.warn(
-          'No confirm or deny actions have been passed to the modal dialog box. User has been presented with a Cancel button'
+        'No confirm or deny actions have been passed to the modal dialog box. User has been presented with a Cancel button',
       );
     }
   }
@@ -71,7 +61,7 @@ export class RuxModal extends LitElement {
     // get the total button set and set the last button as default
     // and add focus
     const buttonSet = this.shadowRoot.querySelectorAll('rux-button:not([hidden])');
-    if (buttonSet.length > 0 ) {
+    if (buttonSet.length > 0) {
       const defaultButton = buttonSet[buttonSet.length - 1];
       defaultButton.setAttribute('tabindex', 0);
       defaultButton.focus();
@@ -88,141 +78,139 @@ export class RuxModal extends LitElement {
     const choice = e.currentTarget.dataset.value === 'true';
 
     // dispatch event
-    window.dispatchEvent(
-        new CustomEvent(this.customEvent, {
-          detail: { confirm: choice },
-        })
+    this.dispatchEvent(
+      new CustomEvent('modalClosed', {
+        detail: { confirm: choice },
+        bubbles: true,
+        composed: true,
+      }),
     );
 
     // close dialog
     this.open = false;
   }
 
-
   render() {
     return html`
       <style>
+        :host {
+          display: none;
+          box-sizing: border-box;
+        }
 
-      :host {
-        display: none;
-        box-sizing: border-box;
-      }
+        :host([open]) {
+          display: block;
+        }
 
-      :host([open]) {
-        display: block;
-      }
-
-      *,
-      *:before,
-      *:after {
+        *,
+        *:before,
+        *:after {
           box-sizing: inherit;
-      }
+        }
 
-      *[hidden] {
-        display: none !important;
-      }
+        *[hidden] {
+          display: none !important;
+        }
 
-      .rux-button-group {
-        margin-top: auto;
-        margin-left: auto;
-        align-self: flex-end;
-      }
+        .rux-button-group {
+          margin-top: auto;
+          margin-left: auto;
+          align-self: flex-end;
+        }
 
-      .rux-button-group rux-button:not(:last-child) {
-        margin-right: 0.375rem;
-      }
+        .rux-button-group rux-button:not(:last-child) {
+          margin-right: 0.375rem;
+        }
 
-      .rux-modal-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
+        .rux-modal-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          width: 100vw;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 11001;
-      }
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 11001;
+        }
 
+        .rux-modal {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
 
-      .rux-modal {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+          background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
 
-        background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
+          width: 28rem;
+          height: 13.5rem;
+          border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
 
-        width: 28rem;
-        height: 13.5rem;
-        border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
+          border-radius: 4px;
+          margin: auto;
+          padding: 0;
 
-        border-radius: 4px;
-        margin: auto;
-        padding: 0;
+          user-select: none;
 
-        user-select: none;
+          box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 3px rgba(0, 0, 0, 0.12),
+            0 4px 5px 0 rgba(0, 0, 0, 0.2);
+        }
 
-        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-          0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
-      }
+        .rux-modal__titlebar {
+          display: flex;
+          flex-grow: 0;
+          flex-shrink: 0;
+          justify-content: center;
+          align-items: center;
 
-      .rux-modal__titlebar {
-        display: flex;
-        flex-grow: 0;
-        flex-shrink: 0;
-        justify-content: center;
-        align-items: center;
+          width: 100%;
+          height: 2rem;
 
-        width: 100%;
-        height: 2rem;
+          background-color: var(--modalBorderColor, rgb(0, 90, 143));
+          user-select: none;
+          cursor: move;
+        }
 
-        background-color: var(--modalBorderColor, rgb(0, 90, 143));
-        user-select: none;
-        cursor: move;
-      }
+        .rux-modal__titlebar h1 {
+          font-size: 1rem;
+          font-weight: 600;
+          line-height: 1.2;
+          padding: 0;
+          margin: 0;
+          color: #fff !important;
+        }
 
-      .rux-modal__titlebar h1 {
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 1.2;
-        padding: 0;
-        margin: 0;
-        color: #fff !important;
-      }
+        .rux-modal__content {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          padding: 1rem;
+          color: var(--fontColor, #fff);
+        }
 
-      .rux-modal__content {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        padding: 1rem;
-        color: var(--fontColor, #fff);
-      }
+        rux-icon {
+          margin-right: 0.75rem;
+        }
 
-      rux-icon {
-        margin-right: 0.75rem;
-      }
+        .rux-modal__message {
+          margin: 0.5rem 1.875rem 2.5rem 1.875rem;
+        }
 
-      .rux-modal__message {
-        margin: 0.5rem 1.875rem 2.5rem 1.875rem;
-      }
+        .rux-modal .rux-button {
+          box-shadow: none !important;
+        }
 
-      .rux-modal .rux-button {
-        box-shadow: none !important;
-      }
-
-     .rux-modal::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: rgba(0,0,0,0.5);
-        z-index: -1;
-      }
-
+        .rux-modal::before {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          width: 100vw;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: -1;
+        }
       </style>
 
       <div class="rux-modal-container">
@@ -235,12 +223,23 @@ export class RuxModal extends LitElement {
               ${this.message}
             </div>
             <div class="rux-button-group">
-              <rux-button ?outline="${this.confirmText.length > 0}" @click="${this._handleModalChoice}" data-value="false" ?hidden="${!this.denyText}" tabindex="1">
+              <rux-button
+                ?outline="${this.confirmText.length > 0}"
+                @click="${this._handleModalChoice}"
+                data-value="false"
+                ?hidden="${!this.denyText}"
+                tabindex="-1"
+              >
                 ${this.denyText}
               </rux-button>
-              <rux-button @click="${this._handleModalChoice}" data-value="true" ?hidden="${!this.confirmText}" tabindex="1">
+              <rux-button
+                @click="${this._handleModalChoice}"
+                data-value="true"
+                ?hidden="${!this.confirmText}"
+                tabindex="0"
+              >
                 ${this.confirmText}
-            </rux-button>
+              </rux-button>
             </div>
           </div>
         </dialog>

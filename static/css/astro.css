@@ -1,4 +1,32 @@
 :root {
+  --disabledControlOpacity: 0.4;
+  --disabledControlCursor: not-allowed;
+
+  --disabledOpacity: 0.4;
+  --disabledCursor: not-allowed;
+
+  --buttonBorderRadius: 3px;
+  --defaultBorderRadius: 3px;
+
+  --controlOptionSize: 1.25rem;
+  --controlBorderRadius: 3px;
+
+  --labelFontSize: 1rem;
+  --smallLabelFontSize: 0.875rem;
+  --largeLabelFontSize: 1.125rem;
+
+  /* Typography */
+  --fontFamily: "Open Sans", sans-serif;
+  --fontSize: 1rem; /* 16px */
+  --fontSizeXL: 1.125rem;
+  --fontSizeLG: 1rem;
+  --fontSizeMD: 0.875rem;
+  --fontSizeSM: 0.75rem;
+  --fontSizeXS: 0.65rem;
+
+  --fontFamilyLight: "Open Sans Light", sans-serif;
+  --fontFamilyMono: "Roboto Mono", monospace;
+
   --colorBlack: rgb(0, 0, 0);
   --colorWhite: rgb(255, 255, 255);
   --colorGray: rgb(204, 204, 204);
@@ -27,6 +55,7 @@
   --colorTag3: rgb(160, 13, 190);
   --colorTag4: rgb(216, 83, 30);
 
+  --colorPrimaryLighten5: rgb(51, 123, 165);
   --colorPrimaryLighten1: rgb(51, 123, 165);
   --colorPrimaryLighten2: rgb(102, 156, 188);
   --colorPrimaryLighten3: rgb(153, 189, 210);
@@ -192,596 +221,31 @@
 
 @font-face {
   font-family: "Open Sans";
-  src: url("../fonts/opensans-bold-webfont.woff2") format("woff2"),
-    url("../fonts/opensans-bold-webfont.woff") format("woff");
+  src: url("/fonts/opensans-bold-webfont.woff2") format("woff2"),
+    url("/fonts/opensans-bold-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Open Sans";
-  src: url("../fonts/opensans-light-webfont.woff2") format("woff2"),
-    url("../fonts/opensans-light-webfont.woff") format("woff");
+  src: url("/fonts/opensans-light-webfont.woff2") format("woff2"),
+    url("/fonts/opensans-light-webfont.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Open Sans";
-  src: url("../fonts/opensans-regular-webfont.woff2") format("woff2"),
-    url("../fonts/opensans-regular-webfont.woff") format("woff");
+  src: url("/fonts/opensans-regular-webfont.woff2") format("woff2"),
+    url("/fonts/opensans-regular-webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Roboto Mono";
-  src: url("../fonts/roboto-mono-regular.woff2") format("woff2"),
-    url("../fonts/roboto-mono-regular.woff") format("woff");
+  src: url("/fonts/roboto-mono-regular.woff2") format("woff2"),
+    url("/fonts/roboto-mono-regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
-}
-
-/*
-**	This is as close as we get to a CSS reset in Astro, moving everything to
-**	the old IE border-box model of including padding in the overall size.
-*/
-html {
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-/*
-**
-**
-**
-*/
-body {
-  margin: 0;
-  padding: 0;
-
-  font-family: "Open Sans", sans-serif;
-
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
-  font-size: 1rem;
-  color: rgb(255, 255, 255);
-  color: var(--fontColor, rgb(255, 255, 255));
-
-  background-color: rgb(24, 38, 53);
-
-  background-color: var(--backgroundColor, rgb(24, 38, 53));
-
-  scrollbar-color: rgb(58, 129, 191)
-    rgb(32, 50, 70);
-
-  scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
-    var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
-}
-
-label {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-/*
-** CSS-styled Scrollbars for IE & Webkit browsers
-** Dark theme by default.
-**
-*/
-
-::-webkit-scrollbar {
-  width: 18px;
-  height: 18px;
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(46, 103, 153);
-  background-color: var(--scrollBarThumbBackgroundColor, rgb(46, 103, 153));
-  border-radius: 10px;
-  border: 3px solid transparent;
-  background-clip: padding-box;
-}
-/* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
-::-webkit-scrollbar-thumb:vertical {
-  border-left-width: 4px;
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-  border-top-width: 4px;
-}
-
-::-webkit-scrollbar-thumb:active,
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(58, 129, 191);
-  background-color: var(--scrollBarThumbBackgroundHoverColor, rgb(58, 129, 191));
-}
-
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner {
-  background-color: rgb(32, 50, 70);
-  background-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
-}
-::-webkit-scrollbar-track:vertical {
-  box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
-}
-::-webkit-scrollbar-track:horizontal {
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-}
-
-.dark-theme {
-  /* 
-    
-    Global Colors
-    ==========================================================================
-
-  */
-  --backgroundColor: rgb(46, 103, 153);
-  --backgroundColor: var(--colorTertiaryDarken2, rgb(46, 103, 153));
-  --fontColor: rgb(255, 255, 255);
-  --fontColor: var(--colorWhite, rgb(255, 255, 255));
-  --fontLowContrastColor: rgb(204, 204, 204);
-  --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
-  --fontInvertedColor: rgb(0, 0, 0);
-  --fontInvertedColor: var(--colorBlack, rgb(0, 0, 0));
-  --fontInvertedBackgroundColor: rgb(255, 255, 255);
-  --fontInvertedBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --fontLinkColor: rgb(77, 172, 255);
-
-  --fontLinkColor: var(--colorSecondary, rgb(77, 172, 255));
-  --fontLinkHoverColor: rgb(113, 189, 255);
-  --fontLinkHoverColor: var(--colorSecondaryLighten1, rgb(113, 189, 255));
-
-  /* Status Custom */
-  --wcagCompliance: rgba(255, 255, 255, 0);
-  --criticalBorder: rgb(255, 56, 56);
-  --criticalBorder: var(--colorCritical, rgb(255, 56, 56));
-
-  --colorCritical: rgb(255, 42, 4);
-
-  --colorCritical: var(--statusDarkCritical, rgb(255, 42, 4));
-  --colorSerious: rgb(255, 175, 61);
-  --colorSerious: var(--statusDarkSerious, rgb(255, 175, 61));
-  --colorCaution: rgb(250, 216, 0);
-  --colorCaution: var(--statusDarkCaution, rgb(250, 216, 0));
-  --colorNormal: rgb(0, 226, 0);
-  --colorNormal: var(--statusDarkNormal, rgb(0, 226, 0));
-  --colorStandby: rgb(77, 172, 255);
-  --colorStandby: var(--statusDarkStandby, rgb(77, 172, 255));
-  --colorOff: rgb(142, 154, 163);
-  --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
-
-  /* 
-    
-    Button Colors 
-    ==========================================================================
-    For standard and outline buttons
-
-  */
-
-  /* Button */
-  --buttonTextColor: #fff;
-  --buttonTextColor: var(--colorWhite, #fff);
-  --buttonBackgroundColor: rgb(0, 90, 143);
-  --buttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonBorderColor: rgb(0, 90, 143);
-  --buttonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
-
-  /* Button Hover State */
-  --buttonHoverTextColor: #fff;
-  --buttonHoverTextColor: var(--colorWhite, #fff);
-  --buttonHoverBackgroundColor: rgb(58, 129, 191);
-  --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBorderColor: rgb(58, 129, 191);
-  --buttonHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 3px rgba(0, 0, 0, 0.12),
-    0 4px 5px rgba(0, 0, 0, 0.2);
-
-  /* Button Active State */
-  --buttonActiveControlTextColor: #fff;
-  --buttonActiveControlTextColor: var(--colorWhite, #fff);
-  --buttonActiveBackgroundColor: rgb(0, 90, 143);
-  --buttonActiveBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonActiveBorderColor: rgb(0, 90, 143);
-  --buttonActiveBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-
-  /* Default Button State */
-  --buttonDefaultBorderColor: #fff;
-  --buttonDefaultBorderColor: var(--colorWhite, #fff);
-
-  /* Outline Button Variant */
-  --buttonOutlineTextColor: rgb(255, 255, 255);
-  --buttonOutlineTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: rgb(0, 90, 143);
-  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-
-  /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: rgb(0, 90, 143);
-  --buttonOutlineHoverTextColor: var(--colorSecondary, rgb(0, 90, 143));
-  --buttonOutlineHoverBackgroundColor: rgba(30, 47, 66, 0.75);
-  --buttonOutlineHoverBorderColor: rgb(58, 129, 191);
-  --buttonOutlineHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-
-  /* 
-    
-    Control Colors 
-    ==========================================================================
-    For checkboxes, radio buttons etc …
-
-  */
-  --controlTextColor: #fff;
-  --controlTextColor: var(--colorWhite, #fff);
-  --controlLabelColor: rgb(255, 255, 255);
-  --controlLabelColor: var(--colorWhite, rgb(255, 255, 255));
-  --controlBackgroundColor: rgb(0, 90, 143);
-  --controlBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --controlBorderColor: rgb(77, 172, 255);
-  --controlBorderColor: var(--colorSecondaryLighten1, rgb(77, 172, 255));
-  --controlAccentColor: rgb(77, 172, 255);
-  --controlAccentColor: var(--colorSecondaryLighten1, rgb(77, 172, 255));
-
-  --controlSelectedTextColor: #fff;
-
-  --controlSelectedTextColor: var(--colorWhite, #fff);
-  --controlSelectedBackgroundColor: rgb(58, 129, 191);
-  --controlSelectedBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --controlSelectedBorderColor: rgb(255, 255, 255);
-  --controlSelectedBorderColor: var(--colorWhite, rgb(255, 255, 255));
-
-  /* 
-    
-    Progress Colors 
-    ==========================================================================
-
-  */
-  --progressDeterminateBarBackgroundColor: rgb(77, 172, 255);
-  --progressDeterminateBarBackgroundColor: var(--colorSecondary, rgb(77, 172, 255));
-  --progressDeterminateTrackBackgroundColor: rgba(0, 0, 0, 0.3);
-  --progressDeterminateTrackBorderColor: rgb(20, 32, 44);
-  --progressDeterminateTrackBorderColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
-
-  --progressIndeterminate: url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E %3ClinearGradient x1='65.479%25' y1='-8.436%25' x2='50%25' y2='100%25' id='a'%3E %3Cstop stop-color='%234dacff' offset='0%25'/%3E %3Cstop stop-color='%234dacff' stop-opacity='0' offset='100%25'/%3E %3C/linearGradient%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M32 64C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32zm0-6c14.36 0 26-11.64 26-26S46.36 6 32 6 6 17.64 6 32s11.64 26 26 26z' fill='rgba(0,0,0,.3)'/%3E %3Cpath d='M51.908 8.236l-2.358 3.245A26.894 26.894 0 0 0 32 5C17.088 5 5 17.088 5 32s12.088 27 27 27c1.129 0 2.242-.07 3.334-.204l4.435 3.222C37.286 62.66 34.683 63 32 63 14.88 63 1 49.12 1 32 1 14.88 14.88 1 32 1c7.579 0 14.522 2.72 19.908 7.236z' fill='url(%23a)'/%3E %3Cpath d='M47.564 12c1.92 0 3.557-.64 4.075-2.367.112-.375.361-.67.361-1.08C52 6.248 50.572 4 48.234 4S44 5.867 44 8.17c0 2.304 1.225 3.83 3.564 3.83z' fill='%234dacff'/%3E %3C/g%3E %3C/svg%3E ");
-
-  /* 
-    
-    Slider Colors 
-    ==========================================================================
-
-  */
-  --sliderThumbBackgroundColor: rgb(0, 90, 143);
-  --sliderThumbBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --sliderThumbBorderColor: rgb(255, 255, 255);
-  --sliderThumbBorderColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --sliderTrackBorderColor: transparent;
-  --sliderTrackBackgroundColor: rgb(204, 204, 204);
-  --sliderTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
-
-  --sliderHoverThumbBackgroundColor: rgb(58, 129, 191);
-
-  --sliderHoverThumbBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-
-  --sliderSelectedTrackBackgroundColor: rgb(77, 172, 255);
-
-  --sliderSelectedTrackBackgroundColor: var(--colorSecondary, rgb(77, 172, 255));
-
-  /* 
-    
-    Segmented Button Colors 
-    ==========================================================================
-
-  */
-  --segmentedButtonBorderColor: rgb(30, 47, 66);
-  --segmentedButtonBorderColor: var(--colorTertiaryDarken1, rgb(30, 47, 66));
-  --segmentedButtonBackgroundColor: rgb(0, 90, 143);
-  --segmentedButtonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --segmentedButtonTextColor: rgb(255, 255, 255);
-  --segmentedButtonTextColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --segmentedButtonHoverBackgroundColor: rgb(58, 129, 191);
-
-  --segmentedButtonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --segmentedButtonHoverTextColor: rgb(255, 255, 255);
-  --segmentedButtonHoverTextColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --segmentedButtonSelectedBackgroundColor: rgb(58, 129, 191);
-
-  --segmentedButtonSelectedBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-
-  --segmentedButtonSelectedBoxShadow: inset 0 2px 4px rgba(0, 0, 0, 0.14), inset 0 3px 4px rgba(0, 0, 0, 0.12),
-    inset 0 1px 5px rgba(0, 0, 0, 0.2);
-
-  --segmentedButtonSelectedTextColor: rgb(255, 255, 255);
-
-  --segmentedButtonSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
-
-  /* 
-    
-    Drop Down/Select Colors 
-    ==========================================================================
-    
-  */
-  --selectBackgroundColor: rgb(0, 90, 143);
-  --selectBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --selectBorderColor: rgb(0, 90, 143);
-  --selectBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --selectTextColor: rgb(255, 255, 255);
-  --selectTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --selectCaret: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
-
-  /* 
-    
-    Toggle Colors 
-    ==========================================================================
-
-  */
-
-  --toggleButtonBackgroundColor: rgb(0, 90, 143);
-
-  --toggleButtonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --toggleBaseBackgroundColor: #000;
-  --toggleBaseBackgroundColor: var(--colorBlack, #000);
-  --toggleBaseBorderColor: rgb(0, 0, 0);
-  --toggleBaseBorderColor: var(--colorBlack, rgb(0, 0, 0));
-  --toggleBaseTextColor: rgb(255, 255, 255);
-  --toggleBaseTextColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --toggleBaseSelectedTextColor: rgb(86, 240, 0);
-
-  --toggleBaseSelectedTextColor: var(--colorNormal, rgb(86, 240, 0));
-
-  /* Alt Toggle */
-  /* --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122)); */
-  --toggleThumbBorderColor: #fff;
-  --toggleThumbBackgroundColor: rgb(255, 255, 255);
-  --toggleThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --toggleTrackBorderColor: rgb(122, 122, 122);
-
-  --toggleTrackBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
-  --toggleTrackBackgroundColor: rgb(204, 204, 204);
-  --toggleTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
-
-  /* Selected State */
-  /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153)); */
-  --toggleSelectedThumbBorderColor: #fff;
-
-  --toggleSelectedTrackBackgroundColor: rgb(77, 172, 255);
-
-  --toggleSelectedTrackBackgroundColor: var(--colorSecondary, rgb(77, 172, 255));
-  --toggleSelectedTrackBorderColor: rgb(46, 103, 153);
-  --toggleSelectedTrackBorderColor: var(--colorSecondaryDarken2, rgb(46, 103, 153));
-
-  /* Disabled State */
-  --toggleDisabledThumbBorderColor: rgb(122, 122, 122);
-  --toggleDisabledThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
-  --toggleDisabledThumbBackgroundColor: rgb(163, 163, 163);
-  --toggleDisabledThumbBackgroundColor: var(--colorGrayDarken1, rgb(163, 163, 163));
-  --toggleDisabledSelectedThumbBorderColor: rgb(122, 122, 122);
-  --toggleDisabledSelectedThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
-
-  /* 
-    
-    Pushbutton Colors 
-    ==========================================================================
-
-  */
-  --pushbuttonBackgroundColor: rgb(0, 90, 143);
-  --pushbuttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --pushbuttonBorderColor: rgb(0, 0, 0);
-  --pushbuttonBorderColor: var(--colorBlack, rgb(0, 0, 0));
-  --pushbuttonTextColor: rgb(255, 255, 255);
-  --pushbuttonTextColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --pushbuttonSelectedBackgroundColor: rgb(0, 0, 0);
-
-  --pushbuttonSelectedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
-  --pushbuttonSelectedBorderColor: rgb(0, 0, 0);
-  --pushbuttonSelectedBorderColor: var(--colorBlack, rgb(0, 0, 0));
-  --pushbuttonSelectedTextColor: rgb(86, 240, 0);
-  --pushbuttonSelectedTextColor: var(--colorNormal, rgb(86, 240, 0));
-
-  /* 
-    
-    Clock Colors 
-    ==========================================================================
-
-  */
-  --clockTextColor: rgb(255, 255, 255);
-  --clockTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --clockBackgroundColor: rgb(20, 32, 44);
-  --clockBackgroundColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
-  --clockBorderColor: rgb(39, 86, 128);
-  --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
-
-  /* 
-    
-    Log Colors 
-    ==========================================================================
-
-  */
-  --logTextColor: rgb(255, 255, 255);
-  --logTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --logBackgroundColor: var(--colorTertiaryDarken1);
-  --logBackgroundColor: var(--colorTertiaryDarken1);
-  --logBorderColor: var(--colorTertiary);
-  --logBorderColor: var(--colorTertiary);
-
-  --logHeaderTextColor: var(--colorWhiteDarken2);
-
-  --logHeaderTextColor: var(--colorWhiteDarken2);
-  --logHeaderBackgroundColor: var(--colorTertiaryDarken2);
-  --logHeaderBackgroundColor: var(--colorTertiaryDarken2);
-
-  --logFilterBackgroundColor: var(--colorStandbyLighten1);
-
-  --logFilterBackgroundColor: var(--colorStandbyLighten1);
-  --logFilterTextColor: var(--colorStandbyDarken3);
-  --logFilterTextColor: var(--colorStandbyDarken3);
-
-  /* 
-    
-    Tree Colors 
-    ==========================================================================
-
-  */
-  --treeTextColor: rgb(255, 255, 255);
-  --treeTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --treeBackgroundColor: var(--colorTertiaryDarken1);
-  --treeBackgroundColor: var(--colorTertiaryDarken1);
-  --treeBorderColor: var(--colorBlack);
-  --treeBorderColor: var(--colorBlack);
-  --treeItemBorderColor: var(--colorTertiary);
-  --treeItemBorderColor: var(--colorTertiary);
-
-  --treeSelectedBackgroundColor: rgb(58, 129, 191);
-
-  --treeSelectedBackgroundColor: var(--colorPrimaryDarken1, rgb(58, 129, 191));
-
-  /* 
-    
-    Tab Colors 
-    ==========================================================================
-
-  */
-  --tabTextColor: rgb(77, 172, 255);
-  --tabTextColor: var(--colorSecondary, rgb(77, 172, 255));
-  --tabBackgroundColor: rgb(30, 47, 66);
-  --tabBackgroundColor: var(--colorTertiaryDarken1, rgb(30, 47, 66));
-  --tabBorderColor: rgb(20, 32, 44);
-  --tabBorderColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
-
-  --tabSelectedTextColor: rgb(255, 255, 255);
-
-  --tabSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --tabSelectedBorderColor: rgb(77, 172, 355);
-  --tabSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 355));
-
-  /* 
-    
-    Card Colors 
-    ==========================================================================
-
-  */
-
-  --cardBackgroundColor: var(--colorTertiaryDarken1);
-
-  --cardBackgroundColor: var(--colorTertiaryDarken1);
-
-  --cardHeaderBackgroundColor: var(--colorTertiaryDarken3);
-
-  --cardHeaderBackgroundColor: var(--colorTertiaryDarken3);
-  --cardHeaderTextColor: #fff;
-  --cardHeaderTextColor: var(--colorWhite, #fff);
-  /* 
-    
-    Input/Text Field Colors 
-    ==========================================================================
-    
-  */
-
-  --inputBackgroundColor: rgb(255, 255, 255);
-
-  --inputBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --inputBorderColor: transparent;
-  --inputTextColor: rgb(14, 11, 11);
-  --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
-
-  --inputFocusBorderColor: var(--colorSecondary);
-
-  --inputFocusBorderColor: var(--colorSecondary);
-  /* --inputFocusBoxShadow: 0 0 4px var(--colorSecondaryLighten3); */
-  --inputFocusBoxShadow: inset 0 0 0 1px white, inset 0 0 0 2px var(--colorPrimary);
-  --inputFocusBoxShadow: inset 0 0 0 1px white, inset 0 0 0 2px var(--colorPrimary);
-
-  --inputInvalidBorderColor: rgb(255, 48, 48);
-
-  --inputInvalidBorderColor: var(--colorCritical, rgb(255, 48, 48));
-
-  /* 
-    
-    Status Symbols
-    ==========================================================================
-    
-  */
-  --statusOff: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A');
-  --statusStandby: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A');
-  --statusNormal: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A');
-  --statusCaution: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A');
-  --statusSerious: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A');
-  --statusCritical: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A');
-
-  /* 
-    
-    Scrollbar Colors -- Dark
-    ==========================================================================
-    
-  */
-
-  --scrollBarThumbBackgroundColor: rgb(46, 103, 153);
-
-  --scrollBarThumbBackgroundColor: var(--colorSecondaryDarken2, rgb(46, 103, 153));
-  --scrollBarThumbBackgroundHoverColor: rgb(58, 129, 191);
-  --scrollBarThumbBackgroundHoverColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --scrollBarTrackBackgroundColor: rgb(32, 50, 70);
-  --scrollBarTrackBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
-  --scrollBarTrackCornerBackgroundColor: rgb(32, 50, 70);
-  --scrollBarTrackCornerBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
-
-  /* 
-    
-    Timeline Colors -- Dark
-    ==========================================================================
-      
-  */
-
-  --timelineHeaderBackgroundColor: rgb(32, 50, 70);
-
-  --timelineHeaderBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
-  --timelineHeaderTextColor: rgb(255, 255, 255);
-  --timelineHeaderTextColor: var(--fontColor, rgb(255, 255, 255));
-
-  --timelineRulerBackgroundColor: rgb(32, 50, 70);
-
-  --timelineRulerBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
-  --timelineRulerTextColor: rgb(255, 255, 255);
-  --timelineRulerTextColor: var(--fontColor, rgb(255, 255, 255));
-
-  --timelineTrackLabelBackgroundColor: rgb(40, 63, 88);
-
-  --timelineTrackLabelBackgroundColor: var(--colorTertiary, rgb(40, 63, 88));
-  --timelineTrackBackgroundColor: rgb(40, 63, 88);
-  --timelineTrackBackgroundColor: var(--colorTertiary, rgb(40, 63, 88));
-
-  --timelineRegionBackgroundColor: rgb(0, 36, 57);
-
-  --timelineRegionBackgroundColor: var(--colorPrimaryDarken3, rgb(0, 36, 57));
-  --timelineRegionTextColor: rgb(255, 255, 255);
-  --timelineRegionTextColor: var(--fontColor, rgb(255, 255, 255));
-  --timelineRegionBorderColor: rgb(0, 90, 143);
-  --timelineRegionBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-
-  --timelineRegionSelectedBorderColor: rgb(77, 172, 255);
-
-  --timelineRegionSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
-  --timelineRegionSelectedBackgroundColor: rgb(62, 138, 204);
-  --timelineRegionSelectedBackgroundColor: var(--colorSecondaryDarken1, rgb(62, 138, 204));
-  --timelineRegionSelectedTextColor: rgb(255, 255, 255);
-  --timelineRegionSelectedTextColor: var(--fontColor, rgb(255, 255, 255));
-}
-
-li.dark-theme {
-  display: none;
 }
 
 .light-theme {
@@ -791,38 +255,23 @@ li.dark-theme {
     ==========================================================================
 
   */
-  --backgroundColor: rgb(243, 245, 248);
   --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
-  --fontColor: rgb(0, 0, 0);
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
-  --fontLowContrastColor: rgb(204, 204, 204);
   --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
-  --fontInvertedColor: rgb(255, 255, 255);
   --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
-  --fontInvertedBackgroundColor: rgb(0, 0, 0);
   --fontInvertedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
 
-  --fontLinkColor: rgb(62, 138, 204);
-
   --fontLinkColor: var(--colorSecondaryDarken1, rgb(62, 138, 204));
-  --fontLinkHoverColor: rgb(77, 172, 255);
   --fontLinkHoverColor: var(--colorSecondary, rgb(77, 172, 255));
 
   --wcagCompliance: rgba(0, 0, 0, 0.5);
   --criticalBorder: #7f1c1c;
 
-  --colorCritical: rgb(255, 42, 4);
-
   --colorCritical: var(--statusLightCritical, rgb(255, 42, 4));
-  --colorSerious: rgb(255, 175, 61);
   --colorSerious: var(--statusLightSerious, rgb(255, 175, 61));
-  --colorCaution: rgb(250, 216, 0);
   --colorCaution: var(--statusLightCaution, rgb(250, 216, 0));
-  --colorNormal: rgb(0, 226, 0);
   --colorNormal: var(--statusLightNormal, rgb(0, 226, 0));
-  --colorStandby: rgb(100, 217, 255);
   --colorStandby: var(--statusLightStandby, rgb(100, 217, 255));
-  --colorOff: rgb(142, 154, 163);
   --colorOff: var(--statusLightOff, rgb(142, 154, 163));
   /* 
     
@@ -833,50 +282,35 @@ li.dark-theme {
   */
 
   /* Button */
-  --buttonTextColor: rgb(255, 255, 255);
   --buttonTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonBackgroundColor: rgb(0, 90, 143);
   --buttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonBorderColor: rgb(0, 90, 143);
   --buttonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
   --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Hover State */
-  --buttonHoverTextColor: rgb(255, 255, 255);
   --buttonHoverTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonHoverBackgroundColor: rgb(58, 129, 191);
   --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBorderColor: rgb(58, 129, 191);
   --buttonHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
   --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: rgb(255, 255, 255);
   --buttonActiveControlTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonActiveBackgroundColor: rgb(0, 90, 143);
   --buttonActiveBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonActiveBorderColor: rgb(0, 90, 143);
   --buttonActiveBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
   /* Default Button State */
-  --buttonDefaultBorderColor: rgb(255, 255, 255);
   --buttonDefaultBorderColor: var(--colorWhite, rgb(255, 255, 255));
 
   /* Outline Button Variant */
-  --buttonOutlineTextColor: rgb(0, 90, 143);
   --buttonOutlineTextColor: var(--colorPrimary, rgb(0, 90, 143));
   --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: rgb(0, 90, 143);
   --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
   /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: rgb(0, 90, 143);
   --buttonOutlineHoverTextColor: var(--colorPrimary, rgb(0, 90, 143));
   --buttonOutlineHoverBackgroundColor: rgba(0, 90, 143, 0.05);
-  --buttonOutlineHoverBorderColor: rgb(58, 129, 191)
-  ;
   --buttonOutlineHoverBorderColor: var(
     --colorSecondaryDarken1,
     rgb(58, 129, 191)
@@ -889,34 +323,21 @@ li.dark-theme {
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: rgb(255, 255, 255);
   --controlTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --controlLabelColor: rgb(0, 0, 0);
   --controlLabelColor: var(--colorBlack, rgb(0, 0, 0));
-  --controlBackgroundColor: rgb(0, 90, 143);
   --controlBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --controlBorderColor: rgb(0, 90, 143);
   --controlBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --controlAccentColor: rgb(77, 172, 255);
   --controlAccentColor: var(--colorSecondary, rgb(77, 172, 255));
 
-  --controlSelectedTextColor: rgb(0, 0, 0);
-
   --controlSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --controlSelectedBackgroundColor: rgb(58, 129, 191)
-  ;
   --controlSelectedBackgroundColor: var(
     --colorSecondaryDarken1,
     rgb(58, 129, 191)
   );
-  --controlSelectedBorderColor: rgb(0, 90, 143);
   --controlSelectedBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
   --controlHoverOutlineBackgroundColor: none;
-  --controlSelectedOutlineBorderColor: rgb(0, 90, 143);
   --controlSelectedOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --controlSelectedOutlineBackgroundColor: rgb(58, 129, 191)
-  ;
   --controlSelectedOutlineBackgroundColor: var(
     --colorSecondaryDarken1,
     rgb(58, 129, 191)
@@ -928,20 +349,14 @@ li.dark-theme {
     ==========================================================================
 
   */
-  --progressDeterminateBarBackgroundColor: rgb(77, 172, 255)
-  ;
   --progressDeterminateBarBackgroundColor: var(
     --colorSecondary,
     rgb(77, 172, 255)
   );
-  --progressDeterminateTrackBackgroundColor: rgb(255, 255, 255)
-  ;
   --progressDeterminateTrackBackgroundColor: var(
     --colorWhite,
     rgb(255, 255, 255)
   );
-  --progressDeterminateTrackBorderColor: rgb(207, 214, 227)
-  ;
   --progressDeterminateTrackBorderColor: var(
     --colorQuaternary,
     rgb(207, 214, 227)
@@ -954,19 +369,11 @@ li.dark-theme {
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: rgb(0, 90, 143);
   --sliderThumbBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --sliderThumbBorderColor: rgb(255, 255, 255);
   --sliderThumbBorderColor: var(--colorWhite, rgb(255, 255, 255));
 
-  --sliderTrackBorderColor: rgb(207, 214, 227);
-
   --sliderTrackBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
-  --sliderTrackBackgroundColor: rgb(255, 255, 255);
   --sliderTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --sliderSelectedTrackBackgroundColor: rgb(77, 172, 255)
-  ;
 
   --sliderSelectedTrackBackgroundColor: var(
     --colorSecondary,
@@ -979,19 +386,12 @@ li.dark-theme {
     ==========================================================================
 
   */
-  --segmentedButtonBorderColor: rgb(0, 90, 143);
   --segmentedButtonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --segmentedButtonBackgroundColor: rgb(255, 255, 255);
   --segmentedButtonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --segmentedButtonTextColor: rgb(0, 90, 143);
   --segmentedButtonTextColor: var(--colorPrimary, rgb(0, 90, 143));
 
   --segmentedButtonHoverBackgroundColor: rgb(0, 90, 143, 0.05);
-  --segmentedButtonHoverTextColor: rgb(0, 90, 143);
   --segmentedButtonHoverTextColor: var(--colorPrimary, rgb(0, 90, 143));
-
-  --segmentedButtonSelectedBackgroundColor: rgb(58, 129, 191)
-  ;
 
   --segmentedButtonSelectedBackgroundColor: var(
     --colorSecondaryDarken1,
@@ -1000,9 +400,10 @@ li.dark-theme {
 
   --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1),
     inset 0 1px 5px rgba(0, 0, 0, 0.06);
+  -webkit-transition: -webkit-box-shadow 0.067s ease-out;
+  transition: -webkit-box-shadow 0.067s ease-out;
   transition: box-shadow 0.067s ease-out;
-
-  --segmentedButtonSelectedTextColor: rgb(255, 255, 255);
+  transition: box-shadow 0.067s ease-out, -webkit-box-shadow 0.067s ease-out;
 
   --segmentedButtonSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
 
@@ -1012,11 +413,8 @@ li.dark-theme {
     ==========================================================================
     
   */
-  --selectBackgroundColor: rgb(255, 255, 255);
   --selectBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --selectBorderColor: rgb(0, 90, 143);
   --selectBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --selectTextColor: rgb(0, 90, 143);
   --selectTextColor: var(--colorPrimary, rgb(0, 90, 143));
   --selectCaret: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
 
@@ -1027,8 +425,6 @@ li.dark-theme {
 
   */
 
-  --toggleButtonBackgroundColor: rgb(255, 255, 255);
-
   --toggleButtonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25),
     1px 0 2px rgba(0, 0, 0, 0.3);
@@ -1038,15 +434,7 @@ li.dark-theme {
     var(--colorNormal) 50%,
     var(--colorPrimaryLighten4) 50.1%
   );
-
-  --toggleBaseBackgroundColor: linear-gradient(
-    to right,
-    var(--colorNormal) 50%,
-    var(--colorPrimaryLighten4) 50.1%
-  );
-  --toggleBaseBorderColor: rgb(0, 90, 143);
   --toggleBaseBorderColor: var(--colorPrimaryLighten1, rgb(0, 90, 143));
-  --toggleBaseTextColor: rgb(255, 255, 255);
   --toggleBaseTextColor: var(--colorPrimary, rgb(255, 255, 255));
 
   --toggleBaseSelectedTextColor: #007300;
@@ -1054,44 +442,26 @@ li.dark-theme {
     -1px 0 2px rgba(0, 0, 0, 0.3);
 
   /* Alt Toggle */
-  --toggleThumbBorderColor: rgb(122, 122, 122);
   --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
-  --toggleThumbBackgroundColor: rgb(255, 255, 255);
   --toggleThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-
-  --toggleSelectedThumbBorderColor: rgb(27, 122, 153)
-  ;
 
   --toggleSelectedThumbBorderColor: var(
     --colorStandbyDarken2,
     rgb(27, 122, 153)
   );
-  --toggleSelectedThumbBackgroundColor: rgb(100, 217, 255);
   --toggleSelectedThumbBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
 
-  --toggleTrackBorderColor: rgb(122, 122, 122);
-
   --toggleTrackBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
-  --toggleTrackBackgroundColor: rgb(204, 204, 204);
   --toggleTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
-
-  --toggleSelectedTrackBorderColor: rgb(27, 122, 153)
-  ;
 
   --toggleSelectedTrackBorderColor: var(
     --colorStandbyDarken2,
     rgb(27, 122, 153)
   );
-  --toggleSelectedTrackBackgroundColor: rgb(100, 217, 255);
   --toggleSelectedTrackBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
 
-  --toggleDisabledThumbBorderColor: rgb(122, 122, 122);
-
   --toggleDisabledThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
-  --toggleDisabledThumbBackgroundColor: rgb(255, 255, 255);
   --toggleDisabledThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --toggleDisabledSelectedThumbBorderColor: rgb(153, 189, 210)
-  ;
   --toggleDisabledSelectedThumbBorderColor: var(
     --colorPrimaryLighten3,
     rgb(153, 189, 210)
@@ -1104,15 +474,9 @@ li.dark-theme {
 
   */
 
-  --pushbuttonBackgroundColor: rgb(255, 255, 255);
-
   --pushbuttonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --pushbuttonBorderColor: rgb(0, 90, 143);
   --pushbuttonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --pushbuttonTextColor: rgb(0, 90, 143);
   --pushbuttonTextColor: var(--colorPrimary, rgb(0, 90, 143));
-
-  --pushbuttonSelectedBackgroundColor: rgb(91, 255, 0);
 
   --pushbuttonSelectedBackgroundColor: var(--colorNormal, rgb(91, 255, 0));
   --pushbuttonSelectedBorderColor: #3dc100;
@@ -1127,12 +491,8 @@ li.dark-theme {
 
   */
 
-  --clockTextColor: rgb(0, 0, 0);
-
   --clockTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --clockBackgroundColor: rgb(255, 255, 255);
   --clockBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --clockBorderColor: rgb(39, 86, 128);
   --clockBorderColor: var(--colorQuaternary, rgb(39, 86, 128));
 
   /* 
@@ -1142,12 +502,8 @@ li.dark-theme {
 
   */
 
-  --modalTextColor: rgb(0, 0, 0);
-
   --modalTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --modalBackgroundColor: rgb(255, 255, 255);
   --modalBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --modalBorderColor: rgb(0, 90, 143);
   --modalBorderColor: var(--colorPrimary, rgb(0, 90, 143));
   /* 
     
@@ -1156,22 +512,13 @@ li.dark-theme {
 
   */
   --logTextColor: var(--colorBlack);
-  --logTextColor: var(--colorBlack);
   --logBackgroundColor: var(--colorWhite);
-  --logBackgroundColor: var(--colorWhite);
-  --logBorderColor: var(--colorQuaternaryLighten2);
   --logBorderColor: var(--colorQuaternaryLighten2);
 
   --logHeaderTextColor: var(--colorBlack);
-
-  --logHeaderTextColor: var(--colorBlack);
-  --logHeaderBackgroundColor: var(--colorQuaternary);
   --logHeaderBackgroundColor: var(--colorQuaternary);
 
   --logFilterBackgroundColor: var(--colorStandbyLighten3);
-
-  --logFilterBackgroundColor: var(--colorStandbyLighten3);
-  --logFilterTextColor: var(--colorStandbyDarken2);
   --logFilterTextColor: var(--colorStandbyDarken2);
 
   /* 
@@ -1180,30 +527,26 @@ li.dark-theme {
     ==========================================================================
 
   */
-  --treeTextColor: rgb(0, 0, 0);
   --treeTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --treeBackgroundColor: var(--colorWhite);
-  --treeBackgroundColor: var(--colorWhite);
-  --treeBorderColor: var(--colorQuaternary);
-  --treeBorderColor: var(--colorQuaternary);
-  --treeItemBorderColor: var(--colorQuaternary);
-  --treeItemBorderColor: var(--colorQuaternary);
+  --treeBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --treeBorderColor: var(--colorQuaternary, 207, 214, 227);
+  --treeItemBorderColor: var(--colorQuaternary, 207, 214, 227);
+  --treeAccentColor: var(--colorSecondary, rgb(77, 172, 255));
 
-  --treeAccentColor: var(--colorSecondary);
-
-  --treeAccentColor: var(--colorSecondary);
-
-  --treeSelectedBackgroundColor: rgb(58, 129, 191)
-  ;
+  --treeHoverBackgroundColor: var(--colorSecondaryLighten4, rgb(219, 238, 255));
+  --treeHoverAccentColor: var(--colorSecondaryLighten3, rgb(184, 222, 255));
 
   --treeSelectedBackgroundColor: var(
-    --colorSecondaryDarken1,
-    rgb(58, 129, 191)
+    --colorSecondaryLighten3,
+    rgb(184, 222, 255)
   );
-  --treeSelectedAccentColor: var(--colorSecondaryLighten1);
-  --treeSelectedAccentColor: var(--colorSecondaryLighten1);
-  --treeSelectedTextColor: var(--colorWhite);
-  --treeSelectedTextColor: var(--colorWhite);
+  --treeSelectedAccentColor: var(--colorSecondaryLighten1, rgb(113, 189, 255));
+  --treeSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
+
+  --treeChildrenBackgroundColor: var(
+    --colorQuaternaryLighten3,
+    rgb(236, 239, 244)
+  );
 
   /* 
     
@@ -1211,21 +554,13 @@ li.dark-theme {
     ==========================================================================
 
   */
-  --tabTextColor: rgb(0, 90, 143);
   --tabTextColor: var(--colorPrimary, rgb(0, 90, 143));
-  --tabBackgroundColor: rgb(255, 255, 255);
   --tabBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --tabBorderColor: rgb(219, 224, 234);
   --tabBorderColor: var(--colorQuaternaryLighten1, rgb(219, 224, 234));
-
-  --tabHoverTextColor: rgb(77, 172, 255);
 
   --tabHoverTextColor: var(--colorSecondary, rgb(77, 172, 255));
 
-  --tabSelectedTextColor: rgb(0, 0, 0);
-
   --tabSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --tabSelectedBorderColor: rgb(77, 172, 255);
   --tabSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
 
   /* 
@@ -1235,12 +570,8 @@ li.dark-theme {
 
   */
   --cardBackgroundColor: var(--colorQuaternaryLighten2);
-  --cardBackgroundColor: var(--colorQuaternaryLighten2);
 
   --cardHeaderBackgroundColor: var(--colorQuaternaryLighten1);
-
-  --cardHeaderBackgroundColor: var(--colorQuaternaryLighten1);
-  --cardHeaderTextColor: #fff;
   --cardHeaderTextColor: var(--colorWhite, #fff);
 
   /* 
@@ -1250,20 +581,12 @@ li.dark-theme {
     
   */
 
-  --inputBackgroundColor: rgb(255, 255, 255);
-
   --inputBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --inputBorderColor: rgb(255, 255, 255);
   --inputBorderColor: var(--colorQuaternaryDarken1, rgb(255, 255, 255));
-  --inputTextColor: rgb(14, 11, 11);
   --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
 
   --inputFocusBorderColor: var(--colorSecondary);
-
-  --inputFocusBorderColor: var(--colorSecondary);
   --inputFocusBoxShadow: none;
-
-  --inputInvalidBorderColor: rgb(255, 48, 48);
 
   --inputInvalidBorderColor: var(--colorCritical, rgb(255, 48, 48));
 
@@ -1288,14 +611,9 @@ li.dark-theme {
     
   */
 
-  --scrollBarThumbBackgroundColor: #9ba0aa;
-
   --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1, #9ba0aa);
-  --scrollBarThumbBackgroundHoverColor: #676a71;
   --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2, #676a71);
   --scrollBarTrackBackgroundColor: transparent;
-  --scrollBarTrackCornerBackgroundColor: #f2f4f7
-  ;
   --scrollBarTrackCornerBackgroundColor: var(
     --colorQuaternaryLighten4,
     #f2f4f7
@@ -1308,59 +626,440 @@ li.dark-theme {
       
   */
 
-  --timelineHeaderBackgroundColor: rgb(16, 25, 35);
-
   --timelineHeaderBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
-  --timelineHeaderTextColor: rgb(0, 0, 0);
   --timelineHeaderTextColor: var(--fontColor, rgb(0, 0, 0));
 
-  --timelineRulerBackgroundColor: rgb(16, 25, 35);
-
   --timelineRulerBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
-  --timelineRulerTextColor: rgb(0, 0, 0);
   --timelineRulerTextColor: var(--fontColor, rgb(0, 0, 0));
-
-  --timelineTrackLabelBackgroundColor: rgb(40, 63, 88)
-  ;
 
   --timelineTrackLabelBackgroundColor: var(
     --colorQuaternaryLighten2,
     rgb(40, 63, 88)
   );
-  --timelineTrackBackgroundColor: rgb(40, 63, 88)
-  ;
   --timelineTrackBackgroundColor: var(
     --colorQuaternaryLighten2,
     rgb(40, 63, 88)
   );
 
-  --timelineRegionBackgroundColor: rgb(24, 38, 53);
-
   --timelineRegionBackgroundColor: var(--colorPrimaryLighten4, rgb(24, 38, 53));
-  --timelineRegionTextColor: rgb(255, 255, 255);
   --timelineRegionTextColor: var(--fontColor, rgb(255, 255, 255));
   --timelineRegionBorderColor: var(--colorPrimaryLighten3);
-  --timelineRegionBorderColor: var(--colorPrimaryLighten3);
-
-  --timelineRegionSelectedBorderColor: rgb(77, 172, 255)
-  ;
 
   --timelineRegionSelectedBorderColor: var(
     --colorSecondaryDarken3,
     rgb(77, 172, 255)
   );
-  --timelineRegionSelectedBackgroundColor: rgb(62, 138, 204)
-  ;
   --timelineRegionSelectedBackgroundColor: var(
     --colorSecondaryDarken1,
     rgb(62, 138, 204)
   );
-  --timelineRegionSelectedTextColor: rgb(255, 255, 255);
   --timelineRegionSelectedTextColor: var(--fontColor, rgb(255, 255, 255));
 }
 
 li.light-theme {
   display: none;
+}
+
+.dark-theme {
+  /* 
+    
+    Global Colors
+    ==========================================================================
+
+  */
+  --backgroundColor: var(--colorTertiaryDarken2, rgb(46, 103, 153));
+  --fontColor: var(--colorWhite, rgb(255, 255, 255));
+  --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
+  --fontInvertedColor: var(--colorBlack, rgb(0, 0, 0));
+  --fontInvertedBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --fontLinkColor: var(--colorSecondary, rgb(77, 172, 255));
+  --fontLinkHoverColor: var(--colorSecondaryLighten1, rgb(113, 189, 255));
+
+  /* Status Custom */
+  --wcagCompliance: rgba(255, 255, 255, 0);
+  --criticalBorder: var(--colorCritical, rgb(255, 56, 56));
+
+  --colorCritical: var(--statusDarkCritical, rgb(255, 42, 4));
+  --colorSerious: var(--statusDarkSerious, rgb(255, 175, 61));
+  --colorCaution: var(--statusDarkCaution, rgb(250, 216, 0));
+  --colorNormal: var(--statusDarkNormal, rgb(0, 226, 0));
+  --colorStandby: var(--statusDarkStandby, rgb(77, 172, 255));
+  --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
+
+  /* 
+    
+    Button Colors 
+    ==========================================================================
+    For standard and outline buttons
+
+  */
+
+  /* Button */
+  --buttonTextColor: var(--colorWhite, #fff);
+  --buttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
+    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+
+  /* Button Hover State */
+  --buttonHoverTextColor: var(--colorWhite, #fff);
+  --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+  --buttonHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+  --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
+
+  /* Button Active State */
+  --buttonActiveControlTextColor: var(--colorWhite, #fff);
+  --buttonActiveBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonActiveBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  /* Default Button State */
+  --buttonDefaultBorderColor: var(--colorWhite, #fff);
+
+  /* Outline Button Variant */
+  --buttonOutlineTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --buttonOutlineBackgroundColor: transparent;
+  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  /* Outline Button Variant Hover State */
+  --buttonOutlineHoverTextColor: var(--colorSecondary, rgb(0, 90, 143));
+  --buttonOutlineHoverBackgroundColor: rgba(30, 47, 66, 0.75);
+  --buttonOutlineHoverBorderColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+
+  /* 
+    
+    Control Colors 
+    ==========================================================================
+    For checkboxes, radio buttons etc …
+
+  */
+  --controlTextColor: var(--colorWhite, #fff);
+  --controlLabelColor: var(--colorWhite, rgb(255, 255, 255));
+  --controlBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --controlBorderColor: var(--colorSecondaryLighten1, rgb(77, 172, 255));
+  --controlAccentColor: var(--colorSecondaryLighten1, rgb(77, 172, 255));
+
+  --controlSelectedTextColor: var(--colorWhite, #fff);
+  --controlSelectedBackgroundColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+  --controlSelectedBorderColor: var(--colorWhite, rgb(255, 255, 255));
+
+  /* 
+    
+    Progress Colors 
+    ==========================================================================
+
+  */
+  --progressDeterminateBarBackgroundColor: var(
+    --colorSecondary,
+    rgb(77, 172, 255)
+  );
+  --progressDeterminateTrackBackgroundColor: rgba(0, 0, 0, 0.3);
+  --progressDeterminateTrackBorderColor: var(
+    --colorTertiaryDarken2,
+    rgb(20, 32, 44)
+  );
+
+  --progressIndeterminate: url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E %3ClinearGradient x1='65.479%25' y1='-8.436%25' x2='50%25' y2='100%25' id='a'%3E %3Cstop stop-color='%234dacff' offset='0%25'/%3E %3Cstop stop-color='%234dacff' stop-opacity='0' offset='100%25'/%3E %3C/linearGradient%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M32 64C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32zm0-6c14.36 0 26-11.64 26-26S46.36 6 32 6 6 17.64 6 32s11.64 26 26 26z' fill='rgba(0,0,0,.3)'/%3E %3Cpath d='M51.908 8.236l-2.358 3.245A26.894 26.894 0 0 0 32 5C17.088 5 5 17.088 5 32s12.088 27 27 27c1.129 0 2.242-.07 3.334-.204l4.435 3.222C37.286 62.66 34.683 63 32 63 14.88 63 1 49.12 1 32 1 14.88 14.88 1 32 1c7.579 0 14.522 2.72 19.908 7.236z' fill='url(%23a)'/%3E %3Cpath d='M47.564 12c1.92 0 3.557-.64 4.075-2.367.112-.375.361-.67.361-1.08C52 6.248 50.572 4 48.234 4S44 5.867 44 8.17c0 2.304 1.225 3.83 3.564 3.83z' fill='%234dacff'/%3E %3C/g%3E %3C/svg%3E ");
+
+  /* 
+    
+    Slider Colors 
+    ==========================================================================
+
+  */
+  --sliderThumbBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --sliderThumbBorderColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --sliderTrackBorderColor: transparent;
+  --sliderTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
+
+  --sliderHoverThumbBackgroundColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+
+  --sliderSelectedTrackBackgroundColor: var(
+    --colorSecondary,
+    rgb(77, 172, 255)
+  );
+
+  /* 
+    
+    Segmented Button Colors 
+    ==========================================================================
+
+  */
+  --segmentedButtonBorderColor: var(--colorTertiaryDarken1, rgb(30, 47, 66));
+  --segmentedButtonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --segmentedButtonTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --segmentedButtonHoverBackgroundColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+  --segmentedButtonHoverTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --segmentedButtonSelectedBackgroundColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+
+  --segmentedButtonSelectedBoxShadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
+    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
+
+  --segmentedButtonSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  /* 
+    
+    Drop Down/Select Colors 
+    ==========================================================================
+    
+  */
+  --selectBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --selectBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --selectTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --selectCaret: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+
+  /* 
+    
+    Toggle Colors 
+    ==========================================================================
+
+  */
+
+  --toggleButtonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --toggleBaseBackgroundColor: var(--colorBlack, #000);
+  --toggleBaseBorderColor: var(--colorBlack, rgb(0, 0, 0));
+  --toggleBaseTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --toggleBaseSelectedTextColor: var(--colorNormal, rgb(86, 240, 0));
+
+  /* Alt Toggle */
+  /* --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122)); */
+  --toggleThumbBorderColor: #fff;
+  --toggleThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --toggleTrackBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
+  --toggleTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
+
+  /* Selected State */
+  /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153)); */
+  --toggleSelectedThumbBorderColor: #fff;
+
+  --toggleSelectedTrackBackgroundColor: var(
+    --colorSecondary,
+    rgb(77, 172, 255)
+  );
+  --toggleSelectedTrackBorderColor: var(
+    --colorSecondaryDarken2,
+    rgb(46, 103, 153)
+  );
+
+  /* Disabled State */
+  --toggleDisabledThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
+  --toggleDisabledThumbBackgroundColor: var(
+    --colorGrayDarken1,
+    rgb(163, 163, 163)
+  );
+  --toggleDisabledSelectedThumbBorderColor: var(
+    --colorGrayDarken1,
+    rgb(122, 122, 122)
+  );
+
+  /* 
+    
+    Pushbutton Colors 
+    ==========================================================================
+
+  */
+  --pushbuttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --pushbuttonBorderColor: var(--colorBlack, rgb(0, 0, 0));
+  --pushbuttonTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --pushbuttonSelectedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
+  --pushbuttonSelectedBorderColor: var(--colorBlack, rgb(0, 0, 0));
+  --pushbuttonSelectedTextColor: var(--colorNormal, rgb(86, 240, 0));
+
+  /* 
+    
+    Clock Colors 
+    ==========================================================================
+
+  */
+  --clockTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --clockBackgroundColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
+  --clockBorderColor: var(--colorTertiary, rgb(39, 86, 128));
+
+  /* 
+    
+    Log Colors 
+    ==========================================================================
+
+  */
+  --logTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --logBackgroundColor: var(--colorTertiaryDarken1);
+  --logBorderColor: var(--colorTertiary);
+
+  --logHeaderTextColor: var(--colorWhiteDarken2);
+  --logHeaderBackgroundColor: var(--colorTertiaryDarken2);
+
+  --logFilterBackgroundColor: var(--colorStandbyLighten1);
+  --logFilterTextColor: var(--colorStandbyDarken3);
+
+  /* 
+    
+    Tree Colors 
+    ==========================================================================
+
+  */
+  --treeTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --treeBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
+  --treeBorderColor: var(--colorSecondaryDarken2, rgb(46, 103, 153));
+  --treeItemBorderColor: var(--colorTertiaryDarken2, rgb(24, 38, 53));
+  --treeAccentColor: var(--colorSecondary, rgb(77, 172, 255));
+
+  /* --treeFocusedBackgroundColor: var(--colorTertiaryLighten1, green);
+  --treeFocusedAccentColor: var(--colorTertiaryLighten3, green); */
+
+  --treeHoverBackgroundColor: var(--colorPrimaryDarken2, rgb(0, 54, 86));
+  --treeHoverAccentColor: var(--colorPrimaryLighten1, rgb(0, 72, 114));
+
+  --treeSelectedBackgroundColor: var(--colorPrimaryDarken1, rgb(0, 72, 114));
+  --treeSelectedAccentColor: var(--colorSecondary, rgb(77, 172, 255));
+  --treeSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --treeChildrenBackgroundColor: var(--colorTertiaryDarken2, rgb(24, 38, 53));
+  /* 
+    
+    Tab Colors 
+    ==========================================================================
+
+  */
+  --tabTextColor: var(--colorSecondary, rgb(77, 172, 255));
+  --tabBackgroundColor: var(--colorTertiaryDarken1, rgb(30, 47, 66));
+  --tabBorderColor: var(--colorTertiaryDarken2, rgb(20, 32, 44));
+
+  --tabSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --tabSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 355));
+
+  /* 
+    
+    Card Colors 
+    ==========================================================================
+
+  */
+
+  --cardBackgroundColor: var(--colorTertiaryDarken1);
+
+  --cardHeaderBackgroundColor: var(--colorTertiaryDarken3);
+  --cardHeaderTextColor: var(--colorWhite, #fff);
+  /* 
+    
+    Input/Text Field Colors 
+    ==========================================================================
+    
+  */
+
+  --inputBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --inputBorderColor: transparent;
+  --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
+
+  --inputFocusBorderColor: var(--colorSecondary);
+  /* --inputFocusBoxShadow: 0 0 4px var(--colorSecondaryLighten3); */
+  --inputFocusBoxShadow: inset 0 0 0 1px white,
+    inset 0 0 0 2px var(--colorPrimary);
+
+  --inputInvalidBorderColor: var(--colorCritical, rgb(255, 48, 48));
+
+  /* 
+    
+    Status Symbols
+    ==========================================================================
+    
+  */
+  --statusOff: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusStandby: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusNormal: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusCaution: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusSerious: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --statusCritical: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+
+  /* 
+    
+    Scrollbar Colors -- Dark
+    ==========================================================================
+    
+  */
+
+  --scrollBarThumbBackgroundColor: var(
+    --colorSecondaryDarken2,
+    rgb(46, 103, 153)
+  );
+  --scrollBarThumbBackgroundHoverColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+  --scrollBarTrackBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
+  --scrollBarTrackCornerBackgroundColor: var(
+    --colorTertiaryDarken1,
+    rgb(32, 50, 70)
+  );
+
+  /* 
+    
+    Timeline Colors -- Dark
+    ==========================================================================
+      
+  */
+
+  --timelineHeaderBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
+  --timelineHeaderTextColor: var(--fontColor, rgb(255, 255, 255));
+
+  --timelineRulerBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
+  --timelineRulerTextColor: var(--fontColor, rgb(255, 255, 255));
+
+  --timelineTrackLabelBackgroundColor: var(--colorTertiary, rgb(40, 63, 88));
+  --timelineTrackBackgroundColor: var(--colorTertiary, rgb(40, 63, 88));
+
+  --timelineRegionBackgroundColor: var(--colorPrimaryDarken3, rgb(0, 36, 57));
+  --timelineRegionTextColor: var(--fontColor, rgb(255, 255, 255));
+  --timelineRegionBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  --timelineRegionSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
+  --timelineRegionSelectedBackgroundColor: var(
+    --colorSecondaryDarken1,
+    rgb(62, 138, 204)
+  );
+  --timelineRegionSelectedTextColor: var(--fontColor, rgb(255, 255, 255));
+}
+
+li.dark-theme {
+  display: none;
+}
+
+.dark-theme {
+  --accordionBorderColor: rgb(40, 63, 88);
+  --accordionContentBackground: rgb(20, 32, 44);
+  --accordionClosedLabelBackground: rgb(32, 50, 70);
+  --accordionOpenLabelBackground: rgb(40, 63, 88);
+  --accordionHoverLabelBackground: rgb(46, 103, 153);
+  --accordionColor: rgb(255, 255, 255);
+}
+
+.light-theme {
+  --accordionBorderColor: rgb(207, 214, 227);
+  --accordionContentBackground: rgb(226, 230, 238);
+  --accordionClosedLabelBackground: rgb(255, 255, 255);
+  --accordionOpenLabelBackground: rgb(245, 247, 249);
+  --accordionHoverLabelBackground: rgb(236, 239, 244);
+  --accordionColor: rgb(0, 0, 0);
 }
 
 h1,
@@ -1477,38 +1176,932 @@ dd {
   font-size: var(--fontSizeXS, 0.65rem);
 }
 
-:root {
-  --disabledControlOpacity: 0.4;
-  --disabledControlCursor: not-allowed;
-
-  --disabledOpacity: 0.4;
-  --disabledCursor: not-allowed;
-
-  --buttonBorderRadius: 3px;
-  --defaultBorderRadius: 3px;
-
-  --controlOptionSize: 1.25rem;
-  --controlBorderRadius: 3px;
-
-  --labelFontSize: 1rem;
-  --smallLabelFontSize: 0.875rem;
-  --largeLabelFontSize: 1.125rem;
-
-  /* Typography */
-  --fontFamily: "Open Sans", sans-serif;
-  --fontSize: 1rem; /* 16px */
-  --fontSizeXL: 1.125rem;
-  --fontSizeLG: 1rem;
-  --fontSizeMD: 0.875rem;
-  --fontSizeSM: 0.75rem;
-  --fontSizeXS: 0.65rem;
-
-  --fontFamilyLight: "Open Sans Light", sans-serif;
-  --fontFamilyMono: "Roboto Mono", monospace;
+/*
+**	This is as close as we get to a CSS reset in Astro, moving everything to
+**	the old IE border-box model of including padding in the overall size.
+*/
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.any-theme {
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/*
+**
+**
+**
+*/
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Open Sans", sans-serif;
+
+  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  color: var(--fontColor, rgb(255, 255, 255));
+
+  background-color: rgb(24, 38, 53);
+
+  background-color: var(--backgroundColor, rgb(24, 38, 53));
+
+  scrollbar-color: rgb(58, 129, 191) rgb(32, 50, 70);
+
+  scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
+    var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
+}
+
+label {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*
+** CSS-styled Scrollbars for IE & Webkit browsers
+** Dark theme by default.
+**
+*/
+
+::-webkit-scrollbar {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(46, 103, 153);
+  background-color: var(--scrollBarThumbBackgroundColor, rgb(46, 103, 153));
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+/* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+::-webkit-scrollbar-thumb:vertical {
+  border-left-width: 4px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  border-top-width: 4px;
+}
+
+::-webkit-scrollbar-thumb:active,
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(58, 129, 191);
+  background-color: var(
+    --scrollBarThumbBackgroundHoverColor,
+    rgb(58, 129, 191)
+  );
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: rgb(32, 50, 70);
+  background-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
+}
+::-webkit-scrollbar-track:vertical {
+  -webkit-box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
+}
+::-webkit-scrollbar-track:horizontal {
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/*
+**
+** 	ASTRO BUTTON
+** 	==========================================================================
+**  3.0 Notes
+**  - Removed Master Off Button Style
+**  - Replaced various properties with css custom properties to support
+**  - Removed .satcom class definition
+**  - Removed narrow/short definitions
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Disabled user selection of text on all buttons
+**	- Removed redundant background hover from 'disabled' state by using :not() on the :hover state
+** 	- Removed redundant background hover from 'master off' by using :not() on the :hover state // deprecate after 1.4
+**  - Fixed Firefox alignment issue where text was misaligned vertically
+**  - Renamed half-height to short and half-width to narrow (Note: rux_ only, satcom_ retains old syntax)
+**  - Removed user-select and placed it in astro.css to apply to all input types
+**  - Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
+*/
+
+.rux-button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rux-button-group .rux-button:not(:last-child) {
+  margin-right: 0.625rem;
+}
+
+/* Global Button Styles */
+.rux-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+
+  margin: 0;
+  padding: 0 1rem;
+
+  height: 2.125rem;
+  min-width: 2.25rem;
+  /* max-width: 10.125rem; */
+
+  border-radius: 3px;
+
+  border-radius: var(--buttonBorderRadius, 3px);
+
+  color: rgb(255, 255, 255);
+
+  color: var(--buttonTextColor, rgb(255, 255, 255));
+  font-family: "Open Sans", sans-serif;
+  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-size: 1rem;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  -webkit-box-pack: center;
+
+  -ms-flex-pack: center;
+
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  -webkit-user-select: none;
+
+  -moz-user-select: none;
+
+  -ms-user-select: none;
+
+  user-select: none;
+}
+
+/* 
+  
+  Disabled States
+
+*/
+/* disabled state */
+.rux-button:disabled {
+  opacity: 0.4;
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: not-allowed;
+  cursor: var(--disabledCursor, not-allowed);
+}
+
+.rux-button:focus {
+  outline: none;
+}
+.rux-button:not(.rux-button--outline) {
+  border: 1px solid rgb(0, 90, 143);
+  border: 1px solid var(--buttonBackgroundColor, rgb(0, 90, 143));
+  background-color: rgb(0, 90, 143);
+  background-color: var(--buttonBorderColor, rgb(0, 90, 143));
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14),
+    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12),
+    0 1px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: var(
+    --controlBoxShadow,
+    0 2px 4px rgba(0, 0, 0, 0.14),
+    0 3px 4px rgba(0, 0, 0, 0.12),
+    0 1px 5px rgba(0, 0, 0, 0.2)
+  );
+  box-shadow: var(
+    --controlBoxShadow,
+    0 2px 4px rgba(0, 0, 0, 0.14),
+    0 3px 4px rgba(0, 0, 0, 0.12),
+    0 1px 5px rgba(0, 0, 0, 0.2)
+  );
+}
+
+/* Outline Button Specific Styles */
+.rux-button--outline {
+  color: rgb(255, 255, 255);
+  color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
+  background-color: transparent;
+  background-color: var(--buttonOutlineBackgroundColor, transparent);
+  border: 1px solid rgb(0, 90, 143);
+  border: 1px solid var(--buttonOutlineBorderColor, rgb(0, 90, 143));
+}
+
+/* 
+  
+  Press/Active States
+
+*/
+.rux-button:active:not([hover]):not([disabled]) {
+  border-color: rgb(0, 90, 143) !important;
+  border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
+  background-color: rgb(0, 90, 143) !important;
+  background-color: var(
+    --buttonActiveBackgroundColor,
+    rgb(0, 90, 143)
+  ) !important;
+}
+
+.rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
+}
+
+/* 
+  
+  Hover States
+
+*/
+.rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
+  border-color: rgb(58, 129, 191);
+  border-color: var(--buttonHoverBorderColor, rgb(58, 129, 191));
+  background-color: rgb(58, 129, 191);
+  background-color: var(--buttonHoverBackgroundColor, rgb(58, 129, 191));
+  -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: var(
+    --buttonHoverBoxShadow,
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12),
+    0 4px 5px rgba(0, 0, 0, 0.2)
+  );
+  box-shadow: var(
+    --buttonHoverBoxShadow,
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12),
+    0 4px 5px rgba(0, 0, 0, 0.2)
+  );
+}
+
+.rux-button--outline:hover:not([disabled]) {
+  color: rgb(255, 255, 255);
+  color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
+  background-color: rgba(30, 47, 66, 0.75);
+  background-color: var(
+    --buttonOutlineHoverBackgroundColor,
+    rgba(30, 47, 66, 0.75)
+  );
+  border-color: rgb(58, 129, 191);
+  border-color: var(--buttonOutlineHoverBorderColor, rgb(58, 129, 191));
+}
+
+/* 
+  
+  Icons
+
+*/
+
+.rux-button--small {
+  font-size: 0.875rem;
+  font-size: var(--smallLabelFontSize, 0.875rem);
+  height: 1.625rem;
+  padding: 0 1rem;
+  line-height: 1;
+}
+
+.rux-button--large {
+  font-size: 1.125rem;
+  font-size: var(--largeLabelFontSize, 1.125rem);
+  height: 2.875rem;
+  /* min-width: 2.875rem; */
+  padding: 0 1.5rem;
+}
+
+.rux-button__icon {
+  height: 1.5rem;
+  width: 1.5rem;
+
+  margin-right: 0.625rem;
+  margin-left: -0.625rem;
+}
+
+.rux-button--icon-only .rux-button__icon {
+  margin-left: -0.625rem;
+  margin-right: -0.625rem;
+}
+
+.rux-button--large.rux-button--icon-only .rux-button__icon {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.rux-button--small .rux-button__icon {
+  height: 0.875rem;
+  width: 0.875rem;
+}
+
+.rux-button--large .rux-button__icon {
+  height: 1.75rem;
+  width: 1.75rem;
+  margin-left: -0.8rem;
+  /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
+}
+
+.rux-button__icon .rux-icon {
+  height: auto;
+  width: 100%;
+  fill: rgb(255, 255, 255);
+  fill: var(--buttonTextColor, rgb(255, 255, 255));
+}
+
+.rux-button.rux-button--critical,
+.rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+  background-color: rgb(204, 45, 45) !important;
+  background-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
+  border-color: rgb(204, 45, 45) !important;
+  border-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
+}
+
+.rux-button.rux-button--critical:hover:not([active]):not([disabled]) {
+  background-color: rgb(255, 48, 48);
+  background-color: var(--colorCritical, rgb(255, 48, 48));
+  border-color: rgb(255, 48, 48);
+  border-color: var(--colorCritical, rgb(255, 48, 48));
+}
+
+.rux-card {
+  background-color: rgb(30, 47, 66);
+  background-color: var(--cardBackgroundColor, rgb(30, 47, 66));
+  padding: 1px;
+  overflow: hidden;
+}
+
+.rux-card__header {
+  color: rgb(255, 255, 255);
+  color: var(--cardHeaderTextColor, rgb(255, 255, 255));
+  background-color: rgb(20, 32, 44);
+  background-color: var(--cardHeaderBackgroundColor, rgb(20, 32, 44));
+  margin: 0;
+  padding: 0.325rem 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.rux-card__header h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.rux-card__content {
+  padding: 0.625rem;
+}
+
+/*
+**
+** 	ASTRO CHECKBOX & RADIO BUTTONS
+** 	==========================================================================
+**  3.0 Notes
+**  Added Custom CSS Properties to support light/dark theming
+**  Added fallback properties for IE11
+**  2.0 Notes
+**  - Removed hand cursor on checkbox
+**  - Updated styles to Astro 2.0
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed linear gradients
+**  - Added line-height to label to fix minor alignment issue
+**  - Moved user-select to parent element
+**  - Removed user-select and placed it in astro.css to apply to all input types
+*/
+
+.rux-checkbox,
+.satcom-checkbox,
+.rux-radio-button,
+.satcom-radio-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 0 0 1rem 0;
+
+  line-height: 1.2;
+
+  /* DEBUG */
+  /* padding: 1rem; */
+  /* outline: 1px solid red;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 0) 49.5%,
+    rgba(255, 0, 0, 1) 50%,
+    rgba(255, 0, 0, 1) 51.5%,
+    rgba(255, 0, 0, 0) 51%,
+    rgba(255, 0, 0, 0)
+  ); */
+}
+
+.rux-checkbox input[type="checkbox"],
+.satcom-checkbox input[type="checkbox"],
+.rux-radio-button input[type="radio"],
+.satcom-radio-button input[type="radio"] {
+  -webkit-appearance: none;
   display: none;
+}
+
+.rux-checkbox input[type="checkbox"] + label,
+.satcom-checkbox input[type="checkbox"] + label,
+.rux-radio-button input[type="radio"] + label,
+.satcom-radio-button input[type="radio"] + label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-align: center;
+
+  -ms-flex-align: center;
+
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+
+  color: rgb(255, 255, 255);
+
+  color: var(--controlLabelColor, rgb(255, 255, 255));
+}
+
+.rux-checkbox input[type="checkbox"] + label::before,
+.satcom-checkbox input[type="checkbox"] + label::before,
+.rux-radio-button input[type="radio"] + label::before,
+.satcom-radio-button input[type="radio"] + label::before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  content: "";
+
+  height: 1.25rem;
+
+  height: var(--controlOptionSize, 1.25rem);
+  width: 1.25rem;
+  width: var(--controlOptionSize, 1.25rem);
+
+  margin: 0 0.625rem 0 0;
+
+  border: 1px solid rgb(122, 193, 255);
+
+  border: 1px solid var(--controlBorderColor, rgb(122, 193, 255));
+}
+
+.rux-checkbox input[type="checkbox"] + label::before,
+.satcom-checkbox input[type="checkbox"] + label::before {
+  border-radius: 2px;
+}
+
+.rux-radio-button input[type="radio"] + label::before,
+.satcom-radio-button input[type="radio"] + label::before {
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+.rux-checkbox input[type="checkbox"]:checked + label::before,
+.satcom-checkbox input[type="checkbox"]:checked + label::before,
+.rux-radio-button input[type="radio"]:checked + label::before,
+.satcom-radio-button input[type="radio"]:checked + label::before {
+  background-color: rgb(58, 129, 191);
+  background-color: var(
+    --controlSelectedOutlineBackgroundColor,
+    rgb(58, 129, 191)
+  );
+  border-color: rgb(255, 255, 255);
+  border-color: var(--controlSelectedOutlineBorderColor, rgb(255, 255, 255));
+}
+
+.rux-checkbox input[type="checkbox"]:checked + label::after,
+.satcom-checkbox input[type="checkbox"]:checked + label::after,
+.rux-radio-button input[type="radio"]:checked + label::after,
+.satcom-radio-button input[type="radio"]:checked + label::after {
+  position: absolute;
+  display: block;
+
+  content: "";
+}
+
+.rux-checkbox input[type="checkbox"]:checked + label::after,
+.satcom-checkbox input[type="checkbox"]:checked + label::after {
+  height: 6px;
+  width: 12px;
+  top: 5px;
+  left: 4px;
+  border-right: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid var(--controlTextColor, rgb(255, 255, 255));
+  border-top: 2px solid rgb(255, 255, 255);
+  border-top: 2px solid var(--controlTextColor, rgb(255, 255, 255));
+
+  -webkit-transform: rotate(125deg);
+
+  transform: rotate(125deg);
+}
+
+.rux-radio-button input[type="radio"]:checked + label::after,
+.satcom-radio-button input[type="radio"]:checked + label::after {
+  top: 5px;
+  left: 5px;
+
+  height: 10px;
+  width: 10px;
+
+  border-radius: 100%;
+  /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
+
+  background-color: rgb(255, 255, 255);
+
+  background-color: var(--controlTextColor, rgb(255, 255, 255));
+}
+
+.rux-checkbox input[type="checkbox"]:disabled + label,
+.satcom-checkbox input[type="checkbox"]:disabled + label,
+.rux-radio-button input[type="radio"]:disabled + label,
+.satcom-radio-button input[type="radio"]:disabled + label {
+  cursor: not-allowed;
+  cursor: var(--disabledCursor, not-allowed);
+  opacity: 0.4;
+  opacity: var(--disabledOpacity, 0.4);
+}
+
+/*
+**
+** 	ASTRO DROP DOWN
+** 	==========================================================================
+**	2.0.1 Notes
+*/
+
+.rux-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border: 1px solid rgb(0, 90, 143);
+
+  border: 1px solid var(--selectBorderColor, rgb(0, 90, 143));
+  border-radius: 3px;
+  border-radius: var(--buttonBorderRadius, 3px);
+
+  color: rgb(255, 255, 255);
+
+  color: var(--selectTextColor, rgb(255, 255, 255));
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  height: 2rem;
+  padding: 0 1.2rem 0 0.625rem;
+
+  background-color: rgb(0, 90, 143);
+
+  background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-image: var(
+    --selectCaret,
+    url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+  );
+  background-position: center right 0.625rem;
+  background-repeat: no-repeat;
+}
+
+.rux-select .rux-select optgroup,
+.rux-select option {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+.rux-select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rux-select::-ms-expand {
+  display: none;
+}
+
+.rux-select:focus::-ms-value {
+  background: transparent;
+}
+
+.rux-form-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+.rux-form-element label {
+  color: rgb(255, 255, 255);
+}
+
+/*
+**
+** 	ASTRO INPUT TEXT FIELDS
+** 	==========================================================================
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed linear gradients
+**  - Updated text entry field to WCAG
+*/
+
+/*
+**
+** 	INPUT TEXT
+** 	==========================================================================
+*/
+
+/* 	REQUIRED CLASSES */
+
+:root {
+  --padding: 0.5rem;
+  --paddingLeft: 0.5rem;
+  --paddingRight: 0.5rem;
+  --paddingTop: 0.25rem;
+  --paddingBottom: 0.25rem;
+}
+
+.rux-form-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+
+  font-family: "Open Sans", sans-serif;
+
+  font-family: var(--fontFamilty, "Open Sans", sans-serif);
+  font-size: 1rem;
+  font-size: var(--fontSize, 1rem);
+  color: rgb(255, 255, 255);
+  color: var(--fontColor, rgb(255, 255, 255));
+}
+
+.rux-form-field input:required + label::after {
+  content: "*";
+  margin-left: 0.25rem;
+}
+
+.rux-form-field__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  margin: 0 0 0.15rem 0;
+  width: 100%;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  color: rgb(255, 255, 255);
+
+  color: var(--fontColor, rgb(255, 255, 255));
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.rux-form-field input {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+
+  height: 2.25rem;
+  width: 100%;
+  padding: 0.5rem;
+
+  border: 1px solid transparent;
+
+  border: 1px solid var(--inputBorderColor, transparent);
+  border-radius: 3px;
+
+  font-size: 1rem;
+
+  font-size: var(--fontSize, 1rem);
+  color: rgb(0, 0, 0);
+  color: var(--inputTextColor, rgb(0, 0, 0));
+}
+
+.rux-form-field input[type="number"]::-webkit-inner-spin-button,
+.rux-form-field input[type="number"]::-webkit-outer-spin-button,
+.rux-form-field input[type="date"]::-webkit-inner-spin-button,
+.rux-form-field input[type="date"]::-webkit-outer-spin-button,
+.rux-form-field input[type="date"]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+  display: none;
+}
+
+/* VALIDATION */
+
+.rux-form-field input:invalid {
+  border: 1px solid var(--inputInvalidBorderColor);
+
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: 1.125rem;
+  background-position: center right 0.5rem;
+}
+
+/* FOCUS RULES */
+.rux-form-field input:focus,
+.rux-form-field input:invalid:focus {
+  /* outline: none; */
+}
+
+.rux-form-field input:not([type="search"]):focus,
+.rux-form-field input:not([type="search"]):invalid:focus {
+  border: 1px solid var(--inputFocusBorderColor);
+  /* border-left: 4px solid var(--inputFocusBorderColor); */
+  /* padding-left: calc(0.5rem - 3px); */
+}
+
+.rux-form-field input::-moz-selection {
+  background-color: rgb(184, 222, 255);
+  background-color: var(--colorSecondaryLighten3);
+}
+
+.rux-form-field input::selection {
+  background-color: rgb(184, 222, 255);
+  background-color: var(--colorSecondaryLighten3);
+}
+/* 
+.rux-form-field input:invalid + label::before {
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1.25rem;
+  margin-right: 0.25rem;
+  
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: center center;
+} */
+
+.rux-form-field__validation-message {
+  display: none;
+  position: absolute;
+  max-width: 16rem;
+  background-color: var(--colorCritical);
+  width: 100%;
+  padding: 0.25rem;
+  right: 0;
+  font-size: 0.875rem;
+  font-size: var(--fontSizeMD);
+}
+
+.rux-form-field input:invalid .rux-form-field__validation-message {
+  display: block;
+}
+
+/* .rux-form-field
+  input:not([type="search"]):not([type="checkbox"]):not([type="radio"]):optional
+  + label::after {
+  display: block;
+  content: "(optional)";
+  font-size: 0.875rem;
+  margin: 0.1rem auto 0 0.25rem;
+
+  opacity: 0.4;
+} */
+
+.rux-form-field input:disabled {
+  opacity: 0.4;
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: not-allowed;
+  cursor: var(--disabledCursor, not-allowed);
+}
+
+.rux-form-field--large,
+.rux-form-field--large label,
+.rux-form-field--large input,
+.rux-form-field--large textarea {
+  font-size: 1.125rem;
+  font-size: var(--fontSizeXL, 1.125rem);
+}
+
+.rux-form-field--small,
+.rux-form-field--small label,
+.rux-form-field--small input,
+.rux-form-field--small textarea {
+  font-size: 0.875rem;
+  font-size: var(--fontSizeMD, 0.875rem);
+}
+
+.rux-form-field--large input,
+.rux-form-field--large textarea {
+  padding: 0.5rem;
+}
+
+.rux-form-field--large input {
+  height: 2.5rem;
+}
+
+.rux-form-field--small input,
+.rux-form-field--small textarea {
+  padding: 0.3rem;
+}
+
+.rux-form-field--small input {
+  height: 1.625rem;
+}
+
+.rux-form-field--large input:invalid {
+  background-size: 1.375rem;
+  background-position: center right 0.5rem;
+  padding: 0.5rem 1.875rem 0.5rem 0.5rem;
+}
+
+.rux-form-field input:focus .rux-form-field input:invalid:focus {
+  -webkit-box-shadow: inset 0 0 3px rgb(204, 204, 204);
+  box-shadow: inset 0 0 3px rgb(204, 204, 204);
+  -webkit-box-shadow: inset 0 0 3px var(--colorGray);
+  box-shadow: inset 0 0 3px var(--colorGray);
+  border-color: var(--inputFocusBorderColor);
+  outline: none;
+  color: black;
+}
+
+.rux-form-field input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: textfield;
+}
+
+/* SEARCH VARIANT */
+.rux-form-field input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+
+  background: no-repeat center left 0.3rem/1.1em
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
+    rgb(255, 255, 255);
+
+  background: no-repeat center left 0.3rem/1.1em
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
+    var(--inputBackgroundColor, rgb(255, 255, 255));
+}
+
+.rux-form-field--large input[type="search"] {
+  padding: 0.5rem 0 0.5rem 2rem;
+}
+
+.rux-form-field--small input[type="search"] {
+  padding: 0.3rem 0 0.3rem 1.5rem;
+}
+
+.rux-form-field input[type="search"]::-webkit-search-cancel-button {
+  position: relative;
+
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22rgb(0%2C%2090%2C%20143)%22%20fill-rule%3D%22evenodd%22%20d%3D%22M69.028%2064l22.628%2022.627-5.029%205.029L64%2069.028%2041.373%2091.656l-5.029-5.029L58.972%2064%2036.344%2041.373l5.029-5.029L64%2058.972l22.627-22.628%205.029%205.029L69.028%2064z%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.rux-form-field input[type="search"]::-ms-clear {
+  position: relative;
+  right: 0.25rem;
+  width: 20px;
+  height: 20px;
+  background-color: red;
 }
 
 .rux-advanced-status {
@@ -1524,10 +2117,12 @@ dd {
 
 .rux-advanced-status__icon-group {
   position: relative;
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   max-width: 6.25rem;
   min-width: 4rem;
 
@@ -1547,13 +2142,15 @@ dd {
 
 .rux-advanced-status__status-icon {
   margin: 0 2px 0 auto;
-  -webkit-order: 1;
-          order: 1;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 .rux-advanced-status__icon {
-  -webkit-order: 2;
-          order: 2;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
   margin: 0 auto;
 }
 
@@ -1574,8 +2171,9 @@ dd {
 .rux-advanced-status__badge {
   display: block;
   z-index: 2;
-  -webkit-order: 3;
-          order: 3;
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
 
   position: absolute;
   bottom: -0.75rem;
@@ -1613,34 +2211,9 @@ dd {
   display: block;
 }
 
-/*
-**
-** ADVANCED STATUS
-** =======================================================================
-** Defines the implementation of an advanced status system that expands 
-** the generic status icons to custom symbols and badges indicating counts
-** 
-**
-** NOTE: 	This is not a sub-class of the satcom-status class, but an 
-**			entirely self-contained library
-**			
-*/
-
-/*
-** SVG utilities
-** -----------------------------------------------------------------------
-** These handle some basic rendering and inheritance for the SVG icons
-**
-*/
-
-/* svg path,
-svg circle {
-  fill: inherit;
-}
- */
-
 .rux-clock {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: rgb(255, 255, 255);
   color: var(--clockTextColor, rgb(255, 255, 255));
@@ -1649,19 +2222,25 @@ svg circle {
 }
 
 .rux-clock__segment {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .rux-clock__segment__value {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-family: "Roboto Mono", monospace;
   font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
   font-weight: 700;
@@ -1741,13 +2320,15 @@ i.rux-icon {
 }
 
 .rux-log-header {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   position: relative;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 
   padding: 0.5rem;
   background-color: rgb(20, 32, 44);
@@ -1763,7 +2344,8 @@ i.rux-icon {
 }
 
 .rux-log__header-labels {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   color: rgb(255, 255, 255);
@@ -1779,10 +2361,11 @@ i.rux-icon {
 
 .rux-log__header-labels,
 .rux-log__log-event {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-align-content: flex-start;
-          align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
 }
 
 .rux-log__events {
@@ -1791,20 +2374,22 @@ i.rux-icon {
 }
 
 .log-event__timestamp {
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 
   text-align: right;
   width: 5rem;
 }
 
 .rux-log__log-event {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-  -webkit-align-items: flex-start;
-          align-items: flex-start;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgb(40, 63, 88);
   border-bottom: 1px solid var(--logBorderColor, rgb(40, 63, 88));
@@ -1829,26 +2414,30 @@ i.rux-icon {
 }
 
 .log-event__status {
-  -webkit-flex-grow: 0;
-          flex-grow: 0;
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   text-align: center;
   width: 1rem;
   overflow: hidden;
 }
 
 .log-event__message {
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   text-align: left;
 }
 
 .log-header__message {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 /* ol li:nth-child(even) {
@@ -1861,9 +2450,9 @@ i.rux-icon {
   top: 0;
   left: 0;
 
-  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
 
-          align-content: center;
+  align-content: center;
 
   color: rgb(0, 0, 0);
 
@@ -1879,12 +2468,16 @@ i.rux-icon {
 
 .rux-modal {
   position: relative;
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 
   background-color: rgb(0, 0, 0);
 
@@ -1901,27 +2494,34 @@ i.rux-icon {
 
   -webkit-user-select: none;
 
-     -moz-user-select: none;
+  -moz-user-select: none;
 
-      -ms-user-select: none;
+  -ms-user-select: none;
 
-          user-select: none;
+  user-select: none;
+
+  -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
 
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .rux-modal__titlebar {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-grow: 0;
-          flex-grow: 0;
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 
   width: 100%;
   height: 2rem;
@@ -1930,9 +2530,9 @@ i.rux-icon {
 
   background-color: var(--modalBorderColor, rgb(0, 90, 143));
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: move;
 }
 
@@ -1948,22 +2548,25 @@ i.rux-icon {
 
 .rux-modal__content {
   height: 100%;
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   padding: 1rem;
   color: rgb(255, 255, 255);
   color: var(--fontColor, rgb(255, 255, 255));
 }
 
 .rux-button-group {
-  
   margin-left: auto;
-  -webkit-align-self: flex-end;
-          align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
 }
 
 .rux-modal__message {
@@ -1971,6 +2574,7 @@ i.rux-icon {
 }
 
 .rux-modal .rux-button {
+  -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
 
@@ -1982,18 +2586,22 @@ i.rux-icon {
 **
 */
 .rux-notification {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  -webkit-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-align-content: center;
-          align-content: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
 
   top: -4.25rem;
   left: 0;
@@ -2002,9 +2610,12 @@ i.rux-icon {
   width: 100%;
 
   padding: 0.7rem 1.25rem;
-  background-color: rgb(160, 232, 255);
+  background-color: rgb(113, 189, 255);
   background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+
+  -webkit-box-sizing: border-box;
 
   box-sizing: border-box;
   color: rgb(0, 0, 0);
@@ -2034,9 +2645,9 @@ i.rux-icon {
 }
 
 .rux-notification_close-button {
-  border: 3px solid rgb(96, 168, 191);
+  border: 3px solid rgb(62, 138, 204);
   border: 3px solid var(--colorStandbyDarken1, rgb(96, 168, 191));
-  color: rgb(96, 168, 191);
+  color: rgb(62, 138, 204);
   color: var(--colorStandbyDarken1, rgb(96, 168, 191));
 
   background-color: transparent;
@@ -2049,13 +2660,17 @@ i.rux-icon {
 
   margin-left: auto;
 
-  display: -webkit-flex;
+  display: -webkit-box;
+
+  display: -ms-flexbox;
 
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .rux-notification_close-button::after,
@@ -2070,7 +2685,7 @@ i.rux-icon {
 
   content: "";
 
-  background-color: rgb(96, 168, 191);
+  background-color: rgb(62, 138, 204);
 
   background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
 }
@@ -2084,77 +2699,77 @@ i.rux-icon {
 
 .rux-notification_close-button::after {
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .rux-notification_close-button::before {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 /* Critical Variant */
 .rux-notification--critical {
-  background-color: rgb(255, 100, 100);
+  background-color: rgb(255, 96, 96);
   background-color: var(--colorCriticalLighten1, rgb(255, 100, 100));
 }
 
 .rux-notification--critical .rux-notification_close-button {
-  border-color: rgb(191, 36, 36);
+  border-color: rgb(204, 45, 45);
   border-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
 }
 
 .rux-notification--critical .rux-notification_close-button::after,
 .rux-notification--critical .rux-notification_close-button::before {
-  background-color: rgb(191, 36, 36);
+  background-color: rgb(204, 45, 45);
   background-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
 }
 
 /* Caution Variant */
 .rux-notification--caution {
-  background-color: rgb(250, 237, 86);
+  background-color: rgb(253, 237, 97);
   background-color: var(--colorCautionLighten1, rgb(250, 237, 86));
 }
 .rux-notification--caution .rux-notification_close-button {
-  border-color: rgb(186, 173, 22);
+  border-color: rgb(202, 186, 46);
   border-color: var(--colorCautionDarken1, rgb(186, 173, 22));
 }
 
 .rux-notification--caution .rux-notification_close-button::after,
 .rux-notification--caution .rux-notification_close-button::before {
-  background-color: rgb(186, 173, 22);
+  background-color: rgb(202, 186, 46);
   background-color: var(--colorCautionDarken1, rgb(186, 173, 22));
 }
 
 /* Normal Variant */
 .rux-notification--normal {
-  background-color: rgb(173, 255, 128);
+  background-color: rgb(154, 246, 102);
   background-color: var(--colorNormalLighten2, rgb(173, 255, 128));
 }
 
 .rux-notification--normal .rux-notification_close-button {
-  border-color: rgb(68, 191, 0);
+  border-color: rgb(69, 192, 0);
   border-color: var(--colorNormalDarken1, rgb(68, 191, 0));
 }
 
 .rux-notification--normal .rux-notification_close-button::after,
 .rux-notification--normal .rux-notification_close-button::before {
-  background-color: rgb(68, 191, 0);
+  background-color: rgb(69, 192, 0);
   background-color: var(--colorNormalDarken1, rgb(68, 191, 0));
 }
 
 /* Info Variant */
 .rux-notification--info {
-  background-color: rgb(160, 232, 255);
+  background-color: rgb(113, 189, 255);
   background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
 }
 .rux-notification--info .rux-notification_close-button {
-  border-color: rgb(96, 168, 191);
+  border-color: rgb(62, 138, 204);
   border-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
 }
 
 .rux-notification--info .rux-notification_close-button::after,
 .rux-notification--info .rux-notification_close-button::before {
-  background-color: rgb(96, 168, 191);
+  background-color: rgb(62, 138, 204);
   background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
 }
 
@@ -2218,7 +2833,7 @@ i.rux-icon {
 
 .rux-pop-up a:hover,
 .satcom-pop-up a:hover {
-  background-color: rgb(211, 234, 255);
+  background-color: rgb(184, 222, 255);
   background-color: var(--colorSecondaryLighten3, rgb(211, 234, 255));
 }
 
@@ -2257,7 +2872,7 @@ i.rux-icon {
 
   margin: -12px 0 0 16px;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .rux-pop-up--bottom,
@@ -2284,7 +2899,7 @@ i.rux-icon {
 
   margin: -7px 0 0 16px;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .rux-pop-up--left,
@@ -2311,7 +2926,7 @@ i.rux-icon {
 
   margin: 16px 0 0 -12px;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .rux-pop-up--right,
@@ -2339,7 +2954,7 @@ i.rux-icon {
   right: 0;
   margin: 16px -12px 0 0;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 /*
@@ -2373,27 +2988,30 @@ i.rux-icon {
   --progressWidth: calc(100% - 4px);
 }
 .rux-progress {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
 
-  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
 
-          justify-content: space-between;
-  -webkit-align-items: center;
-          align-items: center;
+  -ms-flex-pack: justify;
+
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 
   height: 2rem;
 }
 
 .rux-progress progress[value] {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
   /* background: #21384f; */
-  background-color: rgba(0, 0, 0, 0.3)
-  ;
+  background-color: rgba(0, 0, 0, 0.3);
   background-color: var(
     --progressDeterminateTrackBackgroundColor,
     rgba(0, 0, 0, 0.3)
@@ -2433,8 +3051,7 @@ i.rux-icon {
   max-width: calc(100% - 4px);
   max-width: var(--progressWidth);
 
-  background-color: rgb(77, 172, 255)
-  ;
+  background-color: rgb(77, 172, 255);
 
   background-color: var(
     --progressDeterminateBarBackgroundColor,
@@ -2450,8 +3067,7 @@ i.rux-icon {
   margin: 2px;
   max-width: calc(100% - 6px); /* var(--progressWidth);*/
 
-  background-color: rgb(77, 172, 255)
-  ;
+  background-color: rgb(77, 172, 255);
 
   background-color: var(
     --progressDeterminateBarBackgroundColor,
@@ -2469,8 +3085,7 @@ i.rux-icon {
   max-width: calc(100% - 4px);
   max-width: var(--progressWidth);
 
-  background-color: rgb(77, 172, 255)
-  ;
+  background-color: rgb(77, 172, 255);
 
   background-color: var(
     --progressDeterminateBarBackgroundColor,
@@ -2482,14 +3097,14 @@ i.rux-icon {
 .rux-progress progress:indeterminate {
   -webkit-appearance: none;
   -moz-appearance: none;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
 
   height: 5rem;
   width: 5rem;
 
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23000000%22%20fill-opacity%3D%22.3%22%20stroke%3D%22%2314202c%22%20d%3D%22M32%2C63.5%20C49.3969696%2C63.5%2063.5%2C49.3969696%2063.5%2C32%20C63.5%2C14.6030304%2049.3969696%2C0.5%2032%2C0.5%20C14.6030304%2C0.5%200.5%2C14.6030304%200.5%2C32%20C0.5%2C49.3969696%2014.6030304%2C63.5%2032%2C63.5%20Z%20M32%2C56.5%20C18.4690236%2C56.5%207.5%2C45.5309764%207.5%2C32%20C7.5%2C18.4690236%2018.4690236%2C7.5%2032%2C7.5%20C45.5309764%2C7.5%2056.5%2C18.4690236%2056.5%2C32%20C56.5%2C45.5309764%2045.5309764%2C56.5%2032%2C56.5%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%234dacff%22%20fill-rule%3D%22nonzero%22%20d%3D%22M32%2C61.9354839%20C30.9333606%2C61.9354839%2030.0686785%2C61.0708018%2030.0686785%2C60.0041623%20C30.0686785%2C58.9375229%2030.9333606%2C58.0728408%2032%2C58.0728408%20C40.1954904%2C58.0728408%2047.7578267%2C54.2689176%2052.6662672%2C47.8987622%20C56.1526582%2C43.3741373%2058.0728408%2C37.8356396%2058.0728408%2C32%20C58.0728408%2C17.6003676%2046.3996324%2C5.92715921%2032%2C5.92715921%20C17.6003676%2C5.92715921%205.92715921%2C17.6003676%205.92715921%2C32%20C5.92715921%2C33.0666394%205.0624771%2C33.9313215%203.99583767%2C33.9313215%20C2.92919824%2C33.9313215%202.06451613%2C33.0666394%202.06451613%2C32%20C2.06451613%2C15.4670888%2015.4670888%2C2.06451613%2032%2C2.06451613%20C48.5329112%2C2.06451613%2061.9354839%2C15.4670888%2061.9354839%2C32%20C61.9354839%2C38.6961574%2059.7285058%2C45.0618765%2055.7259583%2C50.2563674%20C50.0938506%2C57.5656952%2041.4065535%2C61.9354839%2032%2C61.9354839%20Z%22%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
-  ;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23000000%22%20fill-opacity%3D%22.3%22%20stroke%3D%22%2314202c%22%20d%3D%22M32%2C63.5%20C49.3969696%2C63.5%2063.5%2C49.3969696%2063.5%2C32%20C63.5%2C14.6030304%2049.3969696%2C0.5%2032%2C0.5%20C14.6030304%2C0.5%200.5%2C14.6030304%200.5%2C32%20C0.5%2C49.3969696%2014.6030304%2C63.5%2032%2C63.5%20Z%20M32%2C56.5%20C18.4690236%2C56.5%207.5%2C45.5309764%207.5%2C32%20C7.5%2C18.4690236%2018.4690236%2C7.5%2032%2C7.5%20C45.5309764%2C7.5%2056.5%2C18.4690236%2056.5%2C32%20C56.5%2C45.5309764%2045.5309764%2C56.5%2032%2C56.5%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%234dacff%22%20fill-rule%3D%22nonzero%22%20d%3D%22M32%2C61.9354839%20C30.9333606%2C61.9354839%2030.0686785%2C61.0708018%2030.0686785%2C60.0041623%20C30.0686785%2C58.9375229%2030.9333606%2C58.0728408%2032%2C58.0728408%20C40.1954904%2C58.0728408%2047.7578267%2C54.2689176%2052.6662672%2C47.8987622%20C56.1526582%2C43.3741373%2058.0728408%2C37.8356396%2058.0728408%2C32%20C58.0728408%2C17.6003676%2046.3996324%2C5.92715921%2032%2C5.92715921%20C17.6003676%2C5.92715921%205.92715921%2C17.6003676%205.92715921%2C32%20C5.92715921%2C33.0666394%205.0624771%2C33.9313215%203.99583767%2C33.9313215%20C2.92919824%2C33.9313215%202.06451613%2C33.0666394%202.06451613%2C32%20C2.06451613%2C15.4670888%2015.4670888%2C2.06451613%2032%2C2.06451613%20C48.5329112%2C2.06451613%2061.9354839%2C15.4670888%2061.9354839%2C32%20C61.9354839%2C38.6961574%2059.7285058%2C45.0618765%2055.7259583%2C50.2563674%20C50.0938506%2C57.5656952%2041.4065535%2C61.9354839%2032%2C61.9354839%20Z%22%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
 
   background-image: var(
     --progressIndeterminate,
@@ -2502,13 +3117,13 @@ i.rux-icon {
 
   -webkit-animation-name: spin;
 
-          animation-name: spin;
+  animation-name: spin;
   -webkit-animation-duration: 1.367s;
-          animation-duration: 1.367s;
+  animation-duration: 1.367s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-timing-function: linear;
 
   background-color: transparent;
   border: none;
@@ -2531,22 +3146,22 @@ i.rux-icon {
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -2585,14 +3200,18 @@ i.rux-icon {
 
 .rux-pushbutton__button,
 .satcom-pushbutton-button {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 
-  -webkit-justify-content: center;
+  -webkit-box-pack: center;
 
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  -ms-flex-pack: center;
+
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 
   height: 1.375rem;
   font-size: 0.75rem !important;
@@ -2622,7 +3241,8 @@ i.rux-icon {
 
 .rux-pushbutton__input:checked + .rux-pushbutton__button,
 .satcom-pushbutton-input:checked + .satcom-pushbutton-button {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: rgb(91, 255, 0);
   color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
@@ -2630,6 +3250,8 @@ i.rux-icon {
   background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
   border-color: rgb(0, 0, 0);
   border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
+
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
 
   box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
 }
@@ -2657,7 +3279,8 @@ i.rux-icon {
 */
 
 .rux-segmented-button {
-  display: -webkit-inline-flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   height: 1.6875rem;
 
@@ -2683,12 +3306,15 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment label {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 
   width: auto;
   height: 1.5625rem;
@@ -2710,11 +3336,11 @@ i.rux-icon {
 
   -webkit-user-select: none;
 
-     -moz-user-select: none;
+  -moz-user-select: none;
 
-      -ms-user-select: none;
+  -ms-user-select: none;
 
-          user-select: none;
+  user-select: none;
 }
 
 .rux-segmented-button__segment:last-child label {
@@ -2726,8 +3352,7 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment label:hover {
-  background-color: rgb(58, 129, 191)
-  ;
+  background-color: rgb(58, 129, 191);
   background-color: var(
     --segmentedButtonHoverBackgroundColor,
     rgb(58, 129, 191)
@@ -2738,25 +3363,33 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment input:checked + label {
-  background-color: rgb(58, 129, 191)
-  ;
+  background-color: rgb(58, 129, 191);
   background-color: var(
     --segmentedButtonSelectedBackgroundColor,
     rgb(58, 129, 191)
   );
   color: rgb(255, 255, 255);
   color: var(--segmentedButtonSelectedTextColor, rgb(255, 255, 255));
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
+    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
+    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: var(
+    --segmentedButtonSelectedBoxShadow,
+    inset 0 2px 4px rgba(0, 0, 0, 0.14),
     inset 0 3px 4px rgba(0, 0, 0, 0.12),
     inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  ;
+  );
   box-shadow: var(
     --segmentedButtonSelectedBoxShadow,
     inset 0 2px 4px rgba(0, 0, 0, 0.14),
     inset 0 3px 4px rgba(0, 0, 0, 0.12),
     inset 0 1px 5px rgba(0, 0, 0, 0.2)
   );
+  -webkit-transition: -webkit-box-shadow 0.067 ease-out;
+  transition: -webkit-box-shadow 0.067 ease-out;
   transition: box-shadow 0.067 ease-out;
+  transition: box-shadow 0.067 ease-out, -webkit-box-shadow 0.067 ease-out;
 }
 
 /*
@@ -2784,16 +3417,12 @@ i.rux-icon {
   */
 
 :root {
-  --thumbSize: 1.25rem;
   --thumbSize: var(--controlOptionSize, 1.25rem);
 
   --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
   --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
     0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
-  --thumbShadowActive: inset 0 0 0 4px rgb(0, 90, 143),
-    0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
-    0 1px 1px rgba(0, 0, 0, 0.2);
   --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary, rgb(0, 90, 143)),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
     0 1px 1px rgba(0, 0, 0, 0.2);
@@ -2810,8 +3439,8 @@ i.rux-icon {
 .rux-range,
 .satcom-range {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
   background: none;
 
@@ -2824,10 +3453,10 @@ input[type="range"]:focus {
 
 .rux-range::-webkit-slider-runnable-track,
 .satcom-range::-webkit-slider-runnable-track {
-  display: -webkit-flex;
+  display: -webkit-box;
   display: flex;
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
 
   /* width: 100%; */
   height: 2px;
@@ -2841,14 +3470,32 @@ input[type="range"]:focus {
   outline: 1px solid transparent;
   outline: 1px solid var(--sliderTrackBorderColor, transparent);
 
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgb(77, 172, 255)),
+    color-stop(rgb(77, 172, 255)),
+    color-stop(rgb(217, 217, 217)),
+    to(rgb(217, 217, 217))
+  );
+
   background-image: linear-gradient(
     to right,
     rgb(77, 172, 255) 0%,
-    rgb(77, 172, 255)
-      calc(1% * var(--value)),
-    rgb(217, 217, 217)
-      calc(1% * var(--value)),
+    rgb(77, 172, 255) calc(1% * var(--value)),
+    rgb(217, 217, 217) calc(1% * var(--value)),
     rgb(217, 217, 217) 100%
+  );
+
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))),
+    color-stop(var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))),
+    color-stop(var(--sliderTrackBackgroundColor, rgb(217, 217, 217))),
+    to(var(--sliderTrackBackgroundColor, rgb(217, 217, 217)))
   );
 
   background-image: linear-gradient(
@@ -2880,8 +3527,7 @@ input[type="range"]:focus {
 }
 
 .rux-range::-moz-range-progress {
-  background-color: rgb(77, 172, 255)
-  ;
+  background-color: rgb(77, 172, 255);
   background-color: var(
     --sliderSelectedTrackBackgroundColor,
     rgb(77, 172, 255)
@@ -2896,7 +3542,9 @@ input[type="range"]:focus {
 }
 
 .rux-range::-ms-track {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
   align-items: center;
 
   /* width: 100%; */
@@ -2940,8 +3588,14 @@ input[type="range"]:focus {
   background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
   cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+  -webkit-box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
+    var(--thumbShadow);
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 
   outline: none !important;
@@ -2969,7 +3623,8 @@ input:-moz-focusring {
   background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
   cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 }
@@ -3019,9 +3674,12 @@ input:-moz-focusring {
   border-color: rgb(77, 172, 255);
   border-color: var(--colorSecondary, rgb(77, 172, 255));
   background-color: rgb(255, 255, 255);
-  box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
+  -webkit-box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
     0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 4px rgb(0, 90, 143), 0 1px 3px rgba(0, 0, 0, 0.14),
+    0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: var(--thumbShadowActive);
   box-shadow: var(--thumbShadowActive);
 }
 
@@ -3031,8 +3689,11 @@ input:-moz-focusring {
 .satcom-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
   background-color: rgb(58, 129, 191);
   background-color: var(--sliderHoverThumbBackgroundColor, rgb(58, 129, 191));
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
+  -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
     0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
+    0 3px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: var(--thumbShadowHover);
   box-shadow: var(--thumbShadowHover);
 }
 
@@ -3068,7 +3729,7 @@ input:-moz-focusring {
 .rux-status-indicator::before,
 .rux-status::before,
 .satcom-status::before {
-  content: '';
+  content: "";
   display: inline-block;
 
   height: 16px;
@@ -3085,22 +3746,20 @@ input:-moz-focusring {
 .rux-status-indicator.rux-status--off::before,
 .rux-status--off .rux-advanced-status__icon::before,
 .satcom-status-off::before {
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A')
-  ;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   background-image: var(
     --statusOff,
-    url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A')
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   );
 }
 
 .rux-status-indicator.rux-status--standby::before,
 .rux-status--standby .rux-advanced-status__icon::before,
 .satcom-status-standby::before {
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A')
-  ;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   background-image: var(
     --statusStandby,
-    url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A')
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   );
 }
 
@@ -3109,11 +3768,10 @@ input:-moz-focusring {
 .rux-status--normal .rux-advanced-status__icon::before,
 .rux-status--ok .rux-advanced-status__icon::before,
 .satcom-status-ok::before {
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A')
-  ;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   background-image: var(
     --statusNormal,
-    url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A')
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   );
   /* background-position: 1px 1px; */
 }
@@ -3121,11 +3779,10 @@ input:-moz-focusring {
 .rux-status-indicator.rux-status--caution::before,
 .rux-status--caution .rux-advanced-status__icon::before,
 .satcom-status-caution::before {
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A')
-  ;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   background-image: var(
     --statusCaution,
-    url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A')
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   );
   /* background-position: 1px 1px; */
 }
@@ -3135,15 +3792,14 @@ input:-moz-focusring {
 .rux-status--serious .rux-advanced-status__icon::before,
 .rux-status--error .rux-advanced-status__icon::before,
 .satcom-status-error::before {
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A')
-  ;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   background-image: var(
     --statusSerious,
-    url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A')
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   );
   margin-top: 1px;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .rux-status-indicator.rux-status--critical::before,
@@ -3152,15 +3808,14 @@ input:-moz-focusring {
 .rux-status--alert .rux-advanced-status__icon::before,
 .rux-status--emergency .rux-advanced-status__icon::before,
 .satcom-status-alert::before {
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A')
-  ;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   background-image: var(
     --statusCritical,
-    url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A')
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   );
   background-position: 0 -1px;
   -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Specific Color */
@@ -3253,11 +3908,11 @@ input:-moz-focusring {
 
   -webkit-user-select: none;
 
-     -moz-user-select: none;
+  -moz-user-select: none;
 
-      -ms-user-select: none;
+  -ms-user-select: none;
 
-          user-select: none;
+  user-select: none;
 }
 
 .rux-tabs--compact {
@@ -3271,7 +3926,9 @@ input:-moz-focusring {
   margin: 0;
   height: 100%;
 
-  display: -webkit-flex;
+  display: -webkit-box;
+
+  display: -ms-flexbox;
 
   display: flex;
   list-style: none;
@@ -3299,10 +3956,12 @@ input:-moz-focusring {
 .rux-tabs a,
 .satcom-tabs a {
   height: 100%;
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 3px 2rem 0;
 
   text-decoration: none;
@@ -3324,7 +3983,9 @@ input:-moz-focusring {
 .satcom-tabs .selected a {
   color: rgb(255, 255, 255);
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
+  -webkit-box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
   box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
+  -webkit-box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
   box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
@@ -3332,7 +3993,9 @@ input:-moz-focusring {
 .rux-tabs--compact .selected a:hover {
   color: rgb(255, 255, 255);
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
+  -webkit-box-shadow: inset 0 -3px 0 rgb(77, 172, 255);
   box-shadow: inset 0 -3px 0 rgb(77, 172, 255);
+  -webkit-box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
   box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
@@ -3340,7 +4003,9 @@ input:-moz-focusring {
 .satcom-tabs .selected a:hover {
   color: rgb(255, 255, 255);
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
+  -webkit-box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
   box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
+  -webkit-box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
   box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
@@ -3372,21 +4037,22 @@ input:-moz-focusring {
 .satcom-toggle--legacy {
   position: relative;
   display: inline-block;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
   -webkit-font-smoothing: subpixel-antialiased;
 
   height: 1.3125rem;
   width: 4.375rem;
-  border-radius: 0.1875rem;
+  border-radius: 3px;
   border-radius: var(--defaultBorderRadius, 0.1875rem);
   border: 1px solid rgb(0, 0, 0);
   border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
   /* box-shadow: inset 0 0 2px rgba(0, 0, 0, 1); */
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   overflow: hidden;
 }
 
@@ -3397,16 +4063,18 @@ input:-moz-focusring {
 
 .rux-toggle--legacy__button {
   position: absolute;
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 
-  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
 
-          justify-content: space-around;
-  -webkit-align-content: center;
-          align-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: space-around;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 
   top: 0;
   left: 0;
@@ -3418,16 +4086,19 @@ input:-moz-focusring {
 }
 
 .rux-toggle--legacy__button span {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 
-  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
 
-          align-content: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 
   width: 50%;
   height: 100%;
@@ -3458,12 +4129,16 @@ input:-moz-focusring {
 
   position: absolute;
 
+  -webkit-box-sizing: border-box;
+
   box-sizing: border-box;
 
   top: 0;
   left: 0;
 
   z-index: 10;
+
+  -webkit-transition: left 0.1s ease-out;
 
   transition: left 0.1s ease-out;
 
@@ -3480,9 +4155,15 @@ input:-moz-focusring {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E %3Cdefs%3E %3ClinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3E %3Cstop offset='0%25' stop-color='%23000'/%3E %3Cstop offset='100%25' stop-color='%23023861' stop-opacity='0'/%3E %3C/linearGradient%3E %3C/defs%3E %3Ccircle cx='3' cy='3' r='3' fill='url(%23a)' fill-rule='evenodd'/%3E %3C/svg%3E")
     center center no-repeat;
 
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 1px 0 2px rgba(0, 0, 0, 0.6);
+
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 1px 0 2px rgba(0, 0, 0, 0.6);
+
+  -webkit-box-shadow: var(
+    --toggleButtonBoxShadow,
+    0 0 3px rgba(0, 0, 0, 0.5),
     1px 0 2px rgba(0, 0, 0, 0.6)
-  ;
+  );
 
   box-shadow: var(
     --toggleButtonBoxShadow,
@@ -3510,9 +4191,13 @@ input:-moz-focusring {
 
 .rux-toggle--legacy__input:checked + .rux-toggle--legacy__button::after {
   left: 50%;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), -1px 0 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), -1px 0 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: var(
+    --toggleButtonSelectedBoxShadow,
+    0 0 3px rgba(0, 0, 0, 0.5),
     -1px 0 2px rgba(0, 0, 0, 0.6)
-  ;
+  );
   box-shadow: var(
     --toggleButtonSelectedBoxShadow,
     0 0 3px rgba(0, 0, 0, 0.5),
@@ -3540,12 +4225,16 @@ input:-moz-focusring {
 
 .rux-toggle {
   position: relative;
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
   /* height: 1.175rem; */
@@ -3555,11 +4244,11 @@ input:-moz-focusring {
 
   -webkit-user-select: none;
 
-     -moz-user-select: none;
+  -moz-user-select: none;
 
-      -ms-user-select: none;
+  -ms-user-select: none;
 
-          user-select: none;
+  user-select: none;
   overflow: hidden;
 }
 
@@ -3568,18 +4257,22 @@ input:-moz-focusring {
 }
 
 .rux-toggle__button {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   /* justify-content: center;
   align-content: center; */
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .rux-toggle__button::before {
   position: relative;
 
-  display: -webkit-flex;
+  display: -webkit-box;
+
+  display: -ms-flexbox;
 
   display: flex;
   content: "";
@@ -3593,13 +4286,14 @@ input:-moz-focusring {
   height: 11px;
   width: 32px;
 
+  -webkit-transition: 0.167s background-color ease-in-out;
+
   transition: 0.167s background-color ease-in-out;
 }
 
 /* Track */
 .rux-toggle__input:checked + .rux-toggle__button::before {
-  background-color: rgb(77, 172, 255)
-  ;
+  background-color: rgb(77, 172, 255);
   background-color: var(
     --toggleSelectedTrackBackgroundColor,
     rgb(77, 172, 255)
@@ -3623,12 +4317,13 @@ input:-moz-focusring {
   background-color: rgb(255, 255, 255);
   background-color: var(--toggleThumbBackgroundColor, rgb(255, 255, 255));
 
+  -webkit-transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
+
   transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
 }
 
 .rux-toggle__input:disabled + .rux-toggle__button::after {
-  background-color: rgb(163, 163, 163)
-  ;
+  background-color: rgb(163, 163, 163);
   background-color: var(
     --toggleDisabledThumbBackgroundColor,
     rgb(163, 163, 163)
@@ -3644,8 +4339,7 @@ input:-moz-focusring {
 }
 
 .rux-toggle__input:checked:disabled + .rux-toggle__button::after {
-  border-color: rgb(163, 163, 163)
-  ;
+  border-color: rgb(163, 163, 163);
   border-color: var(
     --toggleDisabledSelectedThumbBorderColor,
     rgb(163, 163, 163)
@@ -3661,6 +4355,7 @@ input:-moz-focusring {
 
 .rux-tree {
   display: inline-block;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
   width: 100%;
@@ -3686,6 +4381,7 @@ input:-moz-focusring {
 *,
 *:before,
 *:after {
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -3702,21 +4398,24 @@ input:-moz-focusring {
 
 /* Parent Elements */
 .rux-tree__parent-container {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-align-content: stretch;
-          align-content: stretch;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
   padding: 0 0 0 1.25rem;
   margin: 0;
 }
 
 .rux-tree__label {
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   padding: 0.5rem;
 
   white-space: nowrap;
@@ -3743,8 +4442,7 @@ input:-moz-focusring {
   height: 0;
   border-style: solid;
   border-width: 7px 0 7px 7px;
-  border-color: transparent transparent transparent
-    rgb(77, 172, 255);
+  border-color: transparent transparent transparent rgb(77, 172, 255);
   border-color: transparent transparent transparent
     var(--treeAccentColor, rgb(77, 172, 255));
   display: inline-block;
@@ -3770,7 +4468,7 @@ input:-moz-focusring {
 /* Expanded */
 .expanded .rux-tree__arrow::after {
   -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .expanded .rux-tree__children {
@@ -3781,7 +4479,10 @@ input:-moz-focusring {
 .rux-tree .selected {
   background-color: rgb(0, 68, 107);
   background-color: var(--treeSelectedBackgroundColor, rgb(0, 68, 107));
+  -webkit-box-shadow: inset 5px 0 rgb(77, 172, 255);
   box-shadow: inset 5px 0 rgb(77, 172, 255);
+  -webkit-box-shadow: inset 5px 0
+    var(--treeSelectedAccentColor, rgb(77, 172, 255));
   box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
 
   color: rgb(255, 255, 255);
@@ -3790,873 +4491,7 @@ input:-moz-focusring {
 }
 
 .rux-tree .selected .rux-tree__arrow::after {
-  border-color: transparent transparent transparent
-    rgb(77, 172, 255);
+  border-color: transparent transparent transparent rgb(77, 172, 255);
   border-color: transparent transparent transparent
     var(--treeSelectedAccentColor, rgb(77, 172, 255));
-}
-
-/*
-**
-** 	ASTRO BUTTON
-** 	==========================================================================
-**  3.0 Notes
-**  - Removed Master Off Button Style
-**  - Replaced various properties with css custom properties to support
-**  - Removed .satcom class definition
-**  - Removed narrow/short definitions
-**	1.4 Notes
-**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
-**	- Disabled user selection of text on all buttons
-**	- Removed redundant background hover from 'disabled' state by using :not() on the :hover state
-** 	- Removed redundant background hover from 'master off' by using :not() on the :hover state // deprecate after 1.4
-**  - Fixed Firefox alignment issue where text was misaligned vertically
-**  - Renamed half-height to short and half-width to narrow (Note: rux_ only, satcom_ retains old syntax)
-**  - Removed user-select and placed it in astro.css to apply to all input types
-**  - Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
-*/
-
-.rux-button-group {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.rux-button-group .rux-button:not(:last-child) {
-  margin-right: 0.625rem;
-}
-
-/* Global Button Styles */
-.rux-button {
-  display: -webkit-flex;
-  display: flex;
-  position: relative;
-
-  margin: 0;
-  padding: 0 1rem;
-
-  height: 2.125rem;
-  min-width: 2.25rem;
-  /* max-width: 10.125rem; */
-
-  border-radius: 3px;
-
-  border-radius: var(--buttonBorderRadius, 3px);
-
-  color: rgb(255, 255, 255);
-
-  color: var(--buttonTextColor, rgb(255, 255, 255));
-  font-family: "Open Sans", sans-serif;
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
-  font-size: 1rem;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  -webkit-justify-content: center;
-
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
-
-  -webkit-user-select: none;
-
-     -moz-user-select: none;
-
-      -ms-user-select: none;
-
-          user-select: none;
-}
-
-/* 
-  
-  Disabled States
-
-*/
-/* disabled state */
-.rux-button:disabled {
-  opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
-  cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
-}
-
-.rux-button:focus {
-  outline: none;
-}
-.rux-button:not(.rux-button--outline) {
-  border: 1px solid rgb(0, 90, 143);
-  border: 1px solid var(--buttonBackgroundColor, rgb(0, 90, 143));
-  background-color: rgb(0, 90, 143);
-  background-color: var(--buttonBorderColor, rgb(0, 90, 143));
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12),
-    0 1px 5px rgba(0, 0, 0, 0.2)
-  ;
-  box-shadow: var(
-    --controlBoxShadow,
-    0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12),
-    0 1px 5px rgba(0, 0, 0, 0.2)
-  );
-}
-
-/* Outline Button Specific Styles */
-.rux-button--outline {
-  color: rgb(255, 255, 255);
-  color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-  background-color: transparent;
-  background-color: var(--buttonOutlineBackgroundColor, transparent);
-  border: 1px solid rgb(0, 90, 143);
-  border: 1px solid var(--buttonOutlineBorderColor, rgb(0, 90, 143));
-}
-
-/* 
-  
-  Press/Active States
-
-*/
-.rux-button:active:not([hover]):not([disabled]) {
-  border-color: rgb(0, 90, 143) !important;
-  border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
-  background-color: rgb(0, 90, 143)
-   !important;
-  background-color: var(
-    --buttonActiveBackgroundColor,
-    rgb(0, 90, 143)
-  ) !important;
-}
-
-.rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
-}
-
-/* 
-  
-  Hover States
-
-*/
-.rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
-  border-color: rgb(58, 129, 191);
-  border-color: var(--buttonHoverBorderColor, rgb(58, 129, 191));
-  background-color: rgb(58, 129, 191);
-  background-color: var(--buttonHoverBackgroundColor, rgb(58, 129, 191));
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12),
-    0 4px 5px rgba(0, 0, 0, 0.2)
-  ;
-  box-shadow: var(
-    --buttonHoverBoxShadow,
-    0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12),
-    0 4px 5px rgba(0, 0, 0, 0.2)
-  );
-}
-
-.rux-button--outline:hover:not([disabled]) {
-  color: rgb(255, 255, 255);
-  color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-  background-color: rgba(30, 47, 66, 0.75)
-  ;
-  background-color: var(
-    --buttonOutlineHoverBackgroundColor,
-    rgba(30, 47, 66, 0.75)
-  );
-  border-color: rgb(58, 129, 191);
-  border-color: var(--buttonOutlineHoverBorderColor, rgb(58, 129, 191));
-}
-
-/* 
-  
-  Icons
-
-*/
-
-.rux-button--small {
-  font-size: 0.875rem;
-  font-size: var(--smallLabelFontSize, 0.875rem);
-  height: 1.625rem;
-  padding: 0 1rem;
-  line-height: 1;
-}
-
-.rux-button--large {
-  font-size: 1.125rem;
-  font-size: var(--largeLabelFontSize, 1.125rem);
-  height: 2.875rem;
-  /* min-width: 2.875rem; */
-  padding: 0 1.5rem;
-}
-
-.rux-button__icon {
-  height: 1.5rem;
-  width: 1.5rem;
-
-  margin-right: 0.625rem;
-  margin-left: -0.625rem;
-}
-
-.rux-button--icon-only .rux-button__icon {
-  margin-left: -0.625rem;
-  margin-right: -0.625rem;
-}
-
-.rux-button--large.rux-button--icon-only .rux-button__icon {
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
-
-.rux-button--small .rux-button__icon {
-  height: 0.875rem;
-  width: 0.875rem;
-}
-
-.rux-button--large .rux-button__icon {
-  height: 1.75rem;
-  width: 1.75rem;
-  margin-left: -0.8rem;
-  /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
-}
-
-.rux-button__icon .rux-icon {
-  height: auto;
-  width: 100%;
-  fill: rgb(255, 255, 255);
-  fill: var(--buttonTextColor, rgb(255, 255, 255));
-}
-
-.rux-button.rux-button--critical,
-.rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
-  background-color: rgb(191, 36, 36) !important;
-  background-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
-  border-color: rgb(191, 36, 36) !important;
-  border-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
-}
-
-.rux-button.rux-button--critical:hover:not([active]):not([disabled]) {
-  background-color: rgb(255, 48, 48);
-  background-color: var(--colorCritical, rgb(255, 48, 48));
-  border-color: rgb(255, 48, 48);
-  border-color: var(--colorCritical, rgb(255, 48, 48));
-}
-
-.rux-card {
-  background-color: rgb(30, 47, 66);
-  background-color: var(--cardBackgroundColor, rgb(30, 47, 66));
-  padding: 1px;
-  overflow: hidden;
-}
-
-.rux-card__header {
-  color: rgb(255, 255, 255);
-  color: var(--cardHeaderTextColor, rgb(255, 255, 255));
-  background-color: rgb(20, 32, 44);
-  background-color: var(--cardHeaderBackgroundColor, rgb(20, 32, 44));
-  margin: 0;
-  padding: 0.325rem 0.625rem;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-          align-items: center;
-}
-
-.rux-card__header h1 {
-  padding: 0;
-  margin: 0;
-  font-size: 1.75rem;
-}
-
-.rux-card__content {
-  padding: 0.625rem;
-}
-
-/*
-**
-** 	ASTRO CHECKBOX & RADIO BUTTONS
-** 	==========================================================================
-**  3.0 Notes
-**  Added Custom CSS Properties to support light/dark theming
-**  Added fallback properties for IE11
-**  2.0 Notes
-**  - Removed hand cursor on checkbox
-**  - Updated styles to Astro 2.0
-**	1.4 Notes
-**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
-**	- Removed prefixed linear gradients
-**  - Added line-height to label to fix minor alignment issue
-**  - Moved user-select to parent element
-**  - Removed user-select and placed it in astro.css to apply to all input types
-*/
-
-.rux-checkbox,
-.satcom-checkbox,
-.rux-radio-button,
-.satcom-radio-button {
-  display: -webkit-flex;
-  display: flex;
-  position: relative;
-  margin: 0 0 1rem 0;
-
-  line-height: 1.2;
-
-  /* DEBUG */
-  /* padding: 1rem; */
-  /* outline: 1px solid red;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 0, 0, 0),
-    rgba(255, 0, 0, 0) 49.5%,
-    rgba(255, 0, 0, 1) 50%,
-    rgba(255, 0, 0, 1) 51.5%,
-    rgba(255, 0, 0, 0) 51%,
-    rgba(255, 0, 0, 0)
-  ); */
-}
-
-.rux-checkbox input[type="checkbox"],
-.satcom-checkbox input[type="checkbox"],
-.rux-radio-button input[type="radio"],
-.satcom-radio-button input[type="radio"] {
-  -webkit-appearance: none;
-  display: none;
-}
-
-.rux-checkbox input[type="checkbox"] + label,
-.satcom-checkbox input[type="checkbox"] + label,
-.rux-radio-button input[type="radio"] + label,
-.satcom-radio-button input[type="radio"] + label {
-  position: relative;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-align-items: center;
-
-          align-items: center;
-  -webkit-justify-content: flex-start;
-          justify-content: flex-start;
-
-  color: rgb(255, 255, 255);
-
-  color: var(--controlLabelColor, rgb(255, 255, 255));
-}
-
-.rux-checkbox input[type="checkbox"] + label::before,
-.satcom-checkbox input[type="checkbox"] + label::before,
-.rux-radio-button input[type="radio"] + label::before,
-.satcom-radio-button input[type="radio"] + label::before {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-  -webkit-flex-grow: 0;
-          flex-grow: 0;
-  content: "";
-
-  height: 1.25rem;
-
-  height: var(--controlOptionSize, 1.25rem);
-  width: 1.25rem;
-  width: var(--controlOptionSize, 1.25rem);
-
-  margin: 0 0.625rem 0 0;
-
-  border: 1px solid rgb(122, 193, 255);
-
-  border: 1px solid var(--controlBorderColor, rgb(122, 193, 255));
-}
-
-.rux-checkbox input[type="checkbox"] + label::before,
-.satcom-checkbox input[type="checkbox"] + label::before {
-  border-radius: 2px;
-}
-
-.rux-radio-button input[type="radio"] + label::before,
-.satcom-radio-button input[type="radio"] + label::before {
-  border-radius: 100%;
-  background-color: transparent;
-}
-
-.rux-checkbox input[type="checkbox"]:checked + label::before,
-.satcom-checkbox input[type="checkbox"]:checked + label::before,
-.rux-radio-button input[type="radio"]:checked + label::before,
-.satcom-radio-button input[type="radio"]:checked + label::before {
-  background-color: rgb(58, 129, 191)
-  ;
-  background-color: var(
-    --controlSelectedOutlineBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  border-color: rgb(255, 255, 255);
-  border-color: var(--controlSelectedOutlineBorderColor, rgb(255, 255, 255));
-}
-
-.rux-checkbox input[type="checkbox"]:checked + label::after,
-.satcom-checkbox input[type="checkbox"]:checked + label::after,
-.rux-radio-button input[type="radio"]:checked + label::after,
-.satcom-radio-button input[type="radio"]:checked + label::after {
-  position: absolute;
-  display: block;
-
-  content: "";
-}
-
-.rux-checkbox input[type="checkbox"]:checked + label::after,
-.satcom-checkbox input[type="checkbox"]:checked + label::after {
-  height: 6px;
-  width: 12px;
-  top: 5px;
-  left: 4px;
-  border-right: 2px solid rgb(255, 255, 255);
-  border-right: 2px solid var(--controlTextColor, rgb(255, 255, 255));
-  border-top: 2px solid rgb(255, 255, 255);
-  border-top: 2px solid var(--controlTextColor, rgb(255, 255, 255));
-
-  -webkit-transform: rotate(125deg);
-
-          transform: rotate(125deg);
-}
-
-.rux-radio-button input[type="radio"]:checked + label::after,
-.satcom-radio-button input[type="radio"]:checked + label::after {
-  top: 5px;
-  left: 5px;
-
-  height: 10px;
-  width: 10px;
-
-  border-radius: 100%;
-  /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
-
-  background-color: rgb(255, 255, 255);
-
-  background-color: var(--controlTextColor, rgb(255, 255, 255));
-}
-
-.rux-checkbox input[type="checkbox"]:disabled + label,
-.satcom-checkbox input[type="checkbox"]:disabled + label,
-.rux-radio-button input[type="radio"]:disabled + label,
-.satcom-radio-button input[type="radio"]:disabled + label {
-  cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
-  opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
-}
-
-/*
-**
-** 	ASTRO DROP DOWN
-** 	==========================================================================
-**	2.0.1 Notes
-*/
-
-.rux-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  border: 1px solid rgb(0, 90, 143);
-
-  border: 1px solid var(--selectBorderColor, rgb(0, 90, 143));
-  border-radius: 3px;
-  border-radius: var(--buttonBorderRadius, 3px);
-
-  color: rgb(255, 255, 255);
-
-  color: var(--selectTextColor, rgb(255, 255, 255));
-  font-family: "Open Sans", sans-serif;
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  height: 2rem;
-  padding: 0 1.2rem 0 0.625rem;
-
-  background-color: rgb(0, 90, 143);
-
-  background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
-  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
-  ;
-  background-image: var(
-    --selectCaret,
-    url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
-  );
-  background-position: center right 0.625rem;
-  background-repeat: no-repeat;
-}
-
-.rux-select .rux-select optgroup,
-.rux-select option {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-}
-
-.rux-select:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.rux-select::-ms-expand {
-  display: none;
-}
-
-.rux-select:focus::-ms-value {
-  background: transparent;
-}
-
-.rux-form-element {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: baseline;
-          align-items: baseline;
-}
-
-.rux-form-element label {
-  color: rgb(255, 255, 255);
-}
-
-/*
-**
-** 	ASTRO INPUT TEXT FIELDS
-** 	==========================================================================
-**	1.4 Notes
-**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
-**	- Removed prefixed linear gradients
-**  - Updated text entry field to WCAG
-*/
-
-/*
-**
-** 	INPUT TEXT
-** 	==========================================================================
-*/
-
-/* 	REQUIRED CLASSES */
-
-:root {
-  --padding: 0.5rem;
-  --paddingLeft: 0.5rem;
-  --paddingRight: 0.5rem;
-  --paddingTop: 0.25rem;
-  --paddingBottom: 0.25rem;
-}
-
-.rux-form-field {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-          flex-direction: row;
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-align-items: flex-start;
-          align-items: flex-start;
-
-  font-family: "Open Sans", sans-serif;
-
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
-  font-size: 1rem;
-  font-size: var(--fontSize, 1rem);
-  color: rgb(255, 255, 255);
-  color: var(--fontColor, rgb(255, 255, 255));
-}
-
-.rux-form-field input:required + label::after {
-  content: "*";
-  margin-left: 0.25rem;
-}
-
-.rux-form-field__label {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-order: 1;
-          order: 1;
-  margin: 0 0 0.15rem 0;
-  width: 100%;
-  -webkit-align-content: center;
-          align-content: center;
-  -webkit-align-items: center;
-          align-items: center;
-
-  color: rgb(255, 255, 255);
-
-  color: var(--fontColor, rgb(255, 255, 255));
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.rux-form-field input {
-  box-sizing: border-box;
-  -webkit-order: 2;
-          order: 2;
-
-  height: 2.25rem;
-  width: 100%;
-  padding: 0.5rem;
-
-  border: 1px solid transparent;
-
-  border: 1px solid var(--inputBorderColor, transparent);
-  border-radius: 3px;
-
-  font-size: 1rem;
-
-  font-size: var(--fontSize, 1rem);
-  color: rgb(0, 0, 0);
-  color: var(--inputTextColor, rgb(0, 0, 0));
-}
-
-.rux-form-field textarea {
-  box-sizing: border-box;
-  -webkit-order: 2;
-          order: 2;
-
-  min-height: 4.25rem;
-  width: 100%;
-  padding: 0.5rem;
-
-  border: 1px solid transparent;
-
-  border: 1px solid var(--inputBorderColor, transparent);
-  border-radius: 3px;
-
-  font-family: "Open Sans", sans-serif;
-
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
-  font-size: 1rem;
-  font-size: var(--fontSize, 1rem);
-  color: rgb(0, 0, 0);
-  color: var(--inputTextColor, rgb(0, 0, 0));
-}
-
-.rux-form-field input[type="number"]::-webkit-inner-spin-button,
-.rux-form-field input[type="number"]::-webkit-outer-spin-button,
-.rux-form-field input[type="date"]::-webkit-inner-spin-button,
-.rux-form-field input[type="date"]::-webkit-outer-spin-button,
-.rux-form-field input[type="date"]::-webkit-calendar-picker-indicator {
-  -webkit-appearance: none;
-  display: none;
-}
-
-/* VALIDATION */
-
-.rux-form-field input:invalid {
-  border: 1px solid var(--inputInvalidBorderColor);
-  border: 1px solid var(--inputInvalidBorderColor);
-
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
-  background-repeat: no-repeat;
-  background-size: 1.125rem;
-  background-position: center right 0.5rem;
-}
-
-/* FOCUS RULES */
-.rux-form-field input:focus,
-.rux-form-field input:invalid:focus {
-  /* outline: none; */
-}
-
-.rux-form-field input:not([type="search"]):focus,
-.rux-form-field input:not([type="search"]):invalid:focus {
-  border: 1px solid var(--inputFocusBorderColor);
-  border: 1px solid var(--inputFocusBorderColor);
-  /* border-left: 4px solid var(--inputFocusBorderColor); */
-  /* padding-left: calc(0.5rem - 3px); */
-}
-
-.rux-form-field input::-moz-selection {
-  background-color: var(--colorSecondaryLighten3);
-  background-color: var(--colorSecondaryLighten3);
-}
-
-.rux-form-field input::selection {
-  background-color: var(--colorSecondaryLighten3);
-  background-color: var(--colorSecondaryLighten3);
-}
-/* 
-.rux-form-field input:invalid + label::before {
-  content: "";
-  display: block;
-  height: 1rem;
-  width: 1.25rem;
-  margin-right: 0.25rem;
-  
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
-  background-repeat: no-repeat;
-  background-size: 1rem;
-  background-position: center center;
-} */
-
-.rux-form-field__validation-message {
-  display: none;
-  position: absolute;
-  max-width: 16rem;
-  background-color: var(--colorCritical);
-  background-color: var(--colorCritical);
-  width: 100%;
-  padding: 0.25rem;
-  right: 0;
-  font-size: var(--fontSizeMD);
-  font-size: var(--fontSizeMD);
-}
-
-.rux-form-field input:invalid .rux-form-field__validation-message {
-  display: block;
-}
-
-/* .rux-form-field
-  input:not([type="search"]):not([type="checkbox"]):not([type="radio"]):optional
-  + label::after {
-  display: block;
-  content: "(optional)";
-  font-size: 0.875rem;
-  margin: 0.1rem auto 0 0.25rem;
-
-  opacity: 0.4;
-} */
-
-.rux-form-field input:disabled {
-  opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
-  cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
-}
-
-.rux-form-field--large,
-.rux-form-field--large label,
-.rux-form-field--large input,
-.rux-form-field--large textarea {
-  font-size: 1.125rem;
-  font-size: var(--fontSizeXL, 1.125rem);
-}
-
-.rux-form-field--small,
-.rux-form-field--small label,
-.rux-form-field--small input,
-.rux-form-field--small textarea {
-  font-size: 0.875rem;
-  font-size: var(--fontSizeMD, 0.875rem);
-}
-
-.rux-form-field--large input,
-.rux-form-field--large textarea {
-  padding: 0.5rem;
-}
-
-.rux-form-field--large input {
-  height: 2.5rem;
-}
-
-.rux-form-field--small input,
-.rux-form-field--small textarea {
-  padding: 0.3rem;
-}
-
-.rux-form-field--small input {
-  height: 1.625rem;
-}
-
-.rux-form-field--large input:invalid {
-  background-size: 1.375rem;
-  background-position: center right 0.5rem;
-  padding: 0.5rem 1.875rem 0.5rem 0.5rem;
-}
-
-.rux-form-field input:focus .rux-form-field input:invalid:focus {
-  box-shadow: inset 0 0 3px var(--colorGray);
-  box-shadow: inset 0 0 3px var(--colorGray);
-  border-color: var(--inputFocusBorderColor);
-  border-color: var(--inputFocusBorderColor);
-  outline: none;
-  color: black;
-}
-
-.rux-form-field input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: textfield;
-}
-
-/* SEARCH VARIANT */
-.rux-form-field input[type="search"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding: 0.5rem 0.5rem 0.5rem 1.75rem;
-
-  background: no-repeat center left 0.3rem/1.1em
-    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
-    rgb(255, 255, 255);
-
-  background: no-repeat center left 0.3rem/1.1em
-    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
-    var(--inputBackgroundColor, rgb(255, 255, 255));
-}
-
-.rux-form-field--large input[type="search"] {
-  padding: 0.5rem 0 0.5rem 2rem;
-}
-
-.rux-form-field--small input[type="search"] {
-  padding: 0.3rem 0 0.3rem 1.5rem;
-}
-
-.rux-form-field input[type="search"]::-webkit-search-cancel-button {
-  position: relative;
-
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22rgb(0%2C%2090%2C%20143)%22%20fill-rule%3D%22evenodd%22%20d%3D%22M69.028%2064l22.628%2022.627-5.029%205.029L64%2069.028%2041.373%2091.656l-5.029-5.029L58.972%2064%2036.344%2041.373l5.029-5.029L64%2058.972l22.627-22.628%205.029%205.029L69.028%2064z%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.rux-form-field input[type="search"]::-ms-clear {
-  position: relative;
-  right: 0.25rem;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-}
-
-/*
-**
-** 	TABLE
-** 	==========================================================================
-*/
-
-/* 	REQUIRED CLASSES */
-.rux-table,
-.satcom-table {
-  border-collapse: separate;
-  border-spacing: 5px;
-
-  color: #fff;
-}
-
-.rux-table th,
-.satcom-table th {
-  font-stretch: condensed;
-  font-weight: 300;
-  text-align: left;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.rux-table td,
-.rux-table th,
-.satcom-table td,
-.satcom-table th {
-  padding: 0.5em 1em 1em 0.75em;
-
-  border-top: 1px solid rgba(216, 216, 216, 0.1);
-  background-color: rgba(216, 216, 216, 0.1);
-}
-
-.rux-table__column-head th,
-.satcom-table-column-head th {
-  padding-bottom: 0.5em;
-}
-
-.rux-table tfoot,
-.satcom-table tfoot {
-  font-size: 0.7rem;
-}
-
-.rux-table .selected,
-.satcom-table .selected {
-  background: #36557a;
 }

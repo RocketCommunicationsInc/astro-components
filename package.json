@@ -3,9 +3,9 @@
   "version": "5.0.11",
   "private": true,
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -c .storybook -s ./static",
     "start": "webpack-dev-server",
-    "storybook": "start-storybook -p 9001 -c .storybook -s ./static"
+    "storybook": "start-storybook -p 9001 -c .storybook -s ./static && gulp"
   },
   "dependencies": {
     "@babel/core": "^7.4.4",
@@ -33,7 +33,34 @@
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
+    "del": "^4.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-wc": "^1.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cssimport": "^7.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
     "html-webpack-plugin": "^4.0.0-beta.2",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.6",
+    "postcss-color-mod-function": "^3.0.3",
+    "postcss-custom-properties": "^8.0.10",
+    "prettier": "^1.17.1",
     "webpack-dev-server": "^3.1.14"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

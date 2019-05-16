@@ -71,7 +71,6 @@ render() {
 | --------------- | --------- | ------- | -------- | ------------ |
 | `data`           | Array    | `[]` | Yes | An array of objects to display as log entries. |
 | `timezone`      | String  | `'UTC'` | no | Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as ``America/Los_Angeles``. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.                                                  |
-| `locale`        | String  | `'en-US'` | no | Formats time in local time format, such as `'en-US'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details. <br>**Note:** 24-hour time is always enforced. |
 | `_filterValue`     | String    | `''` | No | A string to filter the array to return only the children whose `message` property contains a case-insensitive substring match. |
 
 ### Sample Rux Log `data` Array
@@ -117,7 +116,8 @@ render() {
 
 ## Revision History
 ##### **4.1**
-- Removed max-lines property. Suggest using flexbox and overflow to control visible lines and scrollable areas of components.
+- Removed `max-lines` property. Suggest using flexbox and overflow to control visible lines and scrollable areas of components.
+- Removed `locale` property. All time displays assume `us-EN` locale.
 - Renamed `entry` property to `message` for `data` array items.
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
