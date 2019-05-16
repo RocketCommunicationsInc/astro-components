@@ -108,6 +108,9 @@ export class RuxIcon extends LitElement {
           fill: var(--iconDefaultColor, rgb(77, 172, 255));
           height: var(--icon-size--default, 44px);
           width: var(--icon-size--default, 44px);
+
+          height: 44px;
+          width: 44px;
         }
 
         :host svg {
@@ -143,17 +146,15 @@ export class RuxIcon extends LitElement {
         }
       </style>
 
-      <i class="rux-icon" title="${this.label}">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 128 128"
-          preserveAspectRatio="xMidYMid meet"
-          focusable="false"
-        >
-          <use fill="${this.color}" href="${this.icon}"></use>
-        </svg>
-        <slot></slot>
-      </i>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 128 128"
+        preserveAspectRatio="xMidYMid meet"
+        focusable="false"
+      >
+        <use href="${this.icon}"></use>
+      </svg>
+      <slot></slot>
     `;
   }
 

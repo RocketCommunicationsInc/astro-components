@@ -289,10 +289,7 @@ export class RuxMonitoringIcon extends LitElement {
         <div class="rux-advanced-status__icon-group">
           <rux-status status="${this.status}"></rux-status>
 
-          <rux-icon
-            icon="${this.icon}"
-            class="rux-advanced-status__icon progress rux-status--${this.status}"
-          >
+          <rux-icon icon="${this.icon}" class="rux-advanced-status__icon progress rux-status--${this.status}">
             <div class="rux-advanced-status__progress" ?hidden="${!this.progress}">
               ${this.progress}%
             </div>
@@ -305,9 +302,7 @@ export class RuxMonitoringIcon extends LitElement {
 
         <div class="rux-advanced-status__label">
           ${this.label}
-          <span class="rux-advanced-status__sublabel" ?hidden="${!this.sublabel}"
-            >${this.sublabel}</span
-          >
+          <span class="rux-advanced-status__sublabel" ?hidden="${!this.sublabel}">${this.sublabel}</span>
         </div>
       </div>
     `;
