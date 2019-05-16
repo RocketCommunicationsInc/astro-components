@@ -76,18 +76,21 @@ export class RuxMonitoringIcon extends LitElement {
     }
 
     this.range = this.range.sort((a, b) => (a.threshold > b.threshold ? 1 : -1));
-
-    console.log(this.range);
+    this.updateProgress();
   }
 
   updated(changedProperties) {
     if (changedProperties.get('progress')) {
-      this.status = this.range.find(range => this.progress < range.threshold).status;
-
-      const graphProgress = this._circumference - (this.progress / 100) * this._circumference;
-
-      this.style.setProperty('--monitoring-progress', graphProgress);
+      this.updateProgress();
     }
+  }
+
+  updateProgress() {
+    this.status = this.range.find(range => this.progress < range.threshold).status;
+
+    const graphProgress = this._circumference - (this.progress / 100) * this._circumference;
+
+    this.style.setProperty('--monitoring-progress', graphProgress);
   }
 
   _filterNotifications() {
