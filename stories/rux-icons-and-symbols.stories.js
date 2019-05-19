@@ -5,6 +5,7 @@ import { boolean, text, number, select, array, object, withKnobs } from '@storyb
 import { RuxIcon } from '../src/components/rux-icon/rux-icon.js';
 import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-icon.js';
+import { RuxMonitoringProgressIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-progress-icon.js';
 import Readme from '../src/components/rux-icon/README.md';
 
 /* eslint-enable no-unused-vars */
@@ -221,6 +222,12 @@ storiesOf('Components|Icons & Symbols', module)
       };
       const progress = number(progressLabel, progressDefaultValue, progressOptions, groupId);
 
+      /* Notifications */
+      const notificationLabel = 'Notifications';
+      const notificationDefaultValue = null;
+
+      const notifications = number(notificationLabel, notificationDefaultValue, {}, groupId);
+
       const configLabel = 'Configuration';
       const configDefaultValue = [
         {
@@ -254,7 +261,12 @@ storiesOf('Components|Icons & Symbols', module)
 
       return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-          <rux-monitoring-icon progress="${progress}" label="${label}" sublabel="${sublabel}"></rux-monitoring-icon>
+          <rux-monitoring-progress-icon
+            progress="${progress}"
+            label="${label}"
+            sublabel="${sublabel}"
+            notifications="${notifications}"
+          ></rux-monitoring-progress-icon>
         </div>
       `;
     },

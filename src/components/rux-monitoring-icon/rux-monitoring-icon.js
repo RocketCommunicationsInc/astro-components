@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 /* eslint-disable no-unused-vars */
 import { RuxIcon } from '../rux-icon/rux-icon.js';
 import { RuxStatus } from '../rux-status/rux-status.js';
@@ -9,6 +9,7 @@ export class RuxMonitoringIcon extends LitElement {
     return {
       status: {
         type: String,
+        reflect: true,
       },
       label: {
         type: String,
@@ -22,75 +23,13 @@ export class RuxMonitoringIcon extends LitElement {
       icon: {
         type: String,
       },
-      progress: {
-        type: Number,
-      },
-      range: {
-        type: Array,
-      },
     };
   }
 
   constructor() {
     super();
 
-    this._circumference = 56 * 2 * Math.PI;
-
     this.status = 'null';
-    this.icon = 'progress';
-  }
-
-  firstUpdated() {
-    super.connectedCallback();
-
-    if (Number.isInteger(parseInt(this.progress, 10))) {
-      if (!this.range) {
-        this.range = [
-          {
-            threshold: 17,
-            status: 'off',
-          },
-          {
-            threshold: 33,
-            status: 'standby',
-          },
-          {
-            threshold: 81,
-            status: 'serious',
-          },
-          {
-            threshold: 49,
-            status: 'normal',
-          },
-          {
-            threshold: 65,
-            status: 'caution',
-          },
-
-          {
-            threshold: 100,
-            status: 'critical',
-          },
-        ];
-      }
-    }
-
-    this.range = this.range.sort((a, b) => (a.threshold > b.threshold ? 1 : -1));
-    this.updateProgress();
-  }
-
-  updated(changedProperties) {
-    if (changedProperties.get('progress')) {
-      this.updateProgress();
-    }
-  }
-
-  updateProgress() {
-    this.status = this.range.find(range => this.progress < range.threshold).status;
-
-    const graphProgress = this._circumference - (this.progress / 100) * this._circumference;
-
-    this.style.setProperty('--monitoring-progress', graphProgress);
   }
 
   _filterNotifications() {
@@ -123,48 +62,86 @@ export class RuxMonitoringIcon extends LitElement {
 
   render() {
     return html`
-      <style>
-        :host {
-          display: inline-block;
-          padding: 0;
+      <div
+        id="rux-advanced-status__icon"
+        class="rux-advanced-status rux-status--${this.status}"
+        title="${this.notifications} ${this.label} ${this.sublabel}"
+      >
+        <div class="rux-advanced-status__icon-group">
+          <rux-status status="${this.status}"></rux-status>
 
-          --monitoring-progress: 0;
-        }
+          ${this.iconTemplate} ${this.badgeTemplate}
+        </div>
 
-        *[hidden] {
-          display: none !important;
-        }
+        ${this.labelTemplate}
+      </div>
+    `;
+  }
 
-        *,
-        *:before,
-        *:after {
-          box-sizing: border-box;
-        }
+  get iconTemplate() {
+    return html`
+      <rux-icon icon="${this.icon}" class="rux-status--${this.status}"></rux-icon>
+    `;
+  }
 
-        .rux-advanced-status {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          position: relative;
+  get badgeTemplate() {
+    return html`
+      <div class="rux-advanced-status__badge" ?hidden="${!this.notifications}">
+        ${this._filterNotifications()}
+      </div>
+    `;
+  }
 
-          margin: 0;
+  get labelTemplate() {
+    return html`
+      <div class="rux-advanced-status__label">
+        ${this.label}
+        <span class="rux-advanced-status__sublabel" ?hidden="${!this.sublabel}">${this.sublabel}</span>
+      </div>
+    `;
+  }
 
-          line-height: 0;
+  static get styles() {
+    return css`
+      :host {
+        display: inline-block;
+        padding: 0;
+      }
 
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-        }
+      *[hidden] {
+        display: none !important;
+      }
 
-        .rux-advanced-status__icon-group {
-          display: flex;
-          position: relative;
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
 
-          margin: 0 auto;
-          width: 4.5rem;
+      .rux-advanced-status {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
 
-          /*
+        margin: 0;
+
+        line-height: 0;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .rux-advanced-status__icon-group {
+        display: flex;
+        position: relative;
+
+        margin: 0 auto;
+        width: 4.5rem;
+
+        /*
             Faux icon grid. Usefull for gross alignment
           border: 1px solid red;
 
@@ -178,136 +155,95 @@ export class RuxMonitoringIcon extends LitElement {
             rgba(0, 255, 0, 0) 100%
           );
            */
-        }
+      }
 
-        .rux-advanced-status__icon {
-          order: 2;
-          margin: 0 auto;
-        }
+      rux-icon {
+        order: 2;
+        margin: 0 auto;
+      }
 
-        rux-status {
-          position: absolute;
-          top: -0.4rem;
-          left: -0.4rem;
-          margin: 0;
-        }
+      rux-status {
+        position: absolute;
+        top: -0.4rem;
+        left: -0.4rem;
+        margin: 0;
+      }
 
-        .rux-advanced-status__badge {
-          display: block;
-          z-index: 2;
-          order: 3;
+      .rux-advanced-status__badge {
+        display: block;
+        z-index: 2;
+        order: 3;
 
-          position: absolute;
-          bottom: -0.75rem;
-          right: -0.4rem;
+        position: absolute;
+        bottom: -0.75rem;
+        right: -0.4rem;
 
-          border: 1px solid rgba(255, 255, 255, 0.6);
-          border-radius: 3px;
-          padding: 0.65rem 0.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 3px;
+        padding: 0.65rem 0.25rem;
 
-          color: var(--fontColor, #fff);
-          font-size: 0.775rem;
-          text-align: center;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+        color: var(--fontColor, #fff);
+        font-size: 0.775rem;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
-          background-color: #000;
-        }
+        background-color: #000;
+      }
 
-        .rux-advanced-status__label {
-          color: var(--fontColor, #fff);
-          font-size: 0.875rem;
-          text-align: center;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          line-height: 1.2;
-          overflow: hidden;
+      .rux-advanced-status__label {
+        color: var(--fontColor, #fff);
+        font-size: 0.875rem;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 1.2;
+        overflow: hidden;
 
-          margin-top: 1rem;
+        margin-top: 1rem;
 
-          width: 100%;
-          max-width: 6.25rem;
-        }
+        width: 100%;
+        max-width: 6.25rem;
+      }
 
-        .rux-advanced-status__sublabel {
-          font-size: 0.65em;
-          color: var(--fontColor, #fff);
-          opacity: 0.6;
-          display: block;
-        }
+      .rux-advanced-status__sublabel {
+        font-size: 0.65em;
+        color: var(--fontColor, #fff);
+        opacity: 0.6;
+        display: block;
+      }
 
-        .rux-status--off {
-          stroke: var(--colorOff, rgb(158, 167, 173));
-          fill: var(--colorOff, rgb(158, 167, 173));
-        }
+      :host([status='off']) {
+        stroke: var(--colorOff, rgb(158, 167, 173));
+        fill: var(--colorOff, rgb(158, 167, 173));
+      }
 
-        .rux-status--standby {
-          stroke: var(--colorStandby, rgb(45, 204, 255));
-          fill: var(--colorStandby, rgb(45, 204, 255));
-        }
+      :host([status='standby']) {
+        stroke: var(--colorStandby, rgb(45, 204, 255));
+        fill: var(--colorStandby, rgb(45, 204, 255));
+      }
 
-        .rux-status--normal {
-          stroke: var(--colorNormal, rgb(86, 240, 0));
-          fill: var(--colorNormal, rgb(86, 240, 0));
-        }
+      /* .rux-status--normal { */
+      :host([status='normal']) {
+        stroke: var(--colorNormal, rgb(86, 240, 0));
+        fill: var(--colorNormal, rgb(86, 240, 0));
+      }
 
-        .rux-status--caution {
-          stroke: var(--colorCaution, rgb(252, 232, 58));
-          fill: var(--colorCaution, rgb(252, 232, 58));
-        }
+      :host([status='caution']) {
+        stroke: var(--colorCaution, rgb(252, 232, 58));
+        fill: var(--colorCaution, rgb(252, 232, 58));
+      }
 
-        .rux-status--serious {
-          stroke: var(--colorSerious, rgb(255, 179, 0));
-          fill: var(--colorSerious, rgb(255, 179, 0));
-        }
+      :host([status='serious']) {
+        stroke: var(--colorSerious, rgb(255, 179, 0));
+        fill: var(--colorSerious, rgb(255, 179, 0));
+      }
 
-        .rux-status--critical {
-          stroke: var(--colorCritical, rgb(255, 56, 56));
-          fill: var(--colorCritical, rgb(255, 56, 56));
-        }
-
-        [data-progress] rux-icon {
-          transition: stroke-dashoffset 0.367s, stroke 0.367s;
-          transform-origin: 50% 50%;
-        }
-
-        .rux-advanced-status__progress {
-          font-family: var(--fontFamilyMono);
-          font-size: 0.8rem;
-          line-height: 0.25;
-          align-self: center;
-
-          letter-spacing: -1px;
-          text-align: center;
-        }
-      </style>
-
-      <div
-        id="rux-advanced-status__icon"
-        class="rux-advanced-status rux-status--${this.status}"
-        title="${this.notifications} ${this.label} ${this.sublabel}"
-        ?data-progress="${this.progress}"
-      >
-        <div class="rux-advanced-status__icon-group">
-          <rux-status status="${this.status}"></rux-status>
-
-          <rux-icon icon="${this.icon}" class="rux-advanced-status__icon progress rux-status--${this.status}">
-            <div class="rux-advanced-status__progress" ?hidden="${!this.progress}">
-              ${this.progress}%
-            </div>
-          </rux-icon>
-
-          <div class="rux-advanced-status__badge" ?hidden="${!this.notifications}">
-            ${this._filterNotifications()}
-          </div>
-        </div>
-
-        <div class="rux-advanced-status__label">
-          ${this.label}
-          <span class="rux-advanced-status__sublabel" ?hidden="${!this.sublabel}">${this.sublabel}</span>
-        </div>
-      </div>
+      :host([status='critical']) {
+        stroke: var(--colorCritical, rgb(255, 56, 56));
+        fill: var(--colorCritical, rgb(255, 56, 56));
+      }
     `;
   }
 }
