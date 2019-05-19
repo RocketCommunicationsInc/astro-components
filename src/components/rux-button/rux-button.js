@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-
+import { RuxIcon } from '../rux-icon/rux-icon.js';
 export class RuxButton extends LitElement {
   static get properties() {
     return {
@@ -23,8 +23,6 @@ export class RuxButton extends LitElement {
       <style>
         :host {
           display: inline-flex;
-
-          /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
         }
 
         *[hidden] {
@@ -159,7 +157,7 @@ export class RuxButton extends LitElement {
           padding: 0 1.5rem;
         }
 
-        .rux-button__icon {
+        rux-icon {
           height: 1.5rem;
           width: 1.5rem;
 
@@ -169,12 +167,12 @@ export class RuxButton extends LitElement {
         .rux-button--icon-only {
           font-size: 0;
         }
-        .rux-button--icon-only .rux-button__icon {
+        .rux-button--icon-only rux-icon {
           margin-left: -0.625rem;
           margin-right: -0.625rem;
         }
 
-        .rux-button--large.rux-button--icon-only .rux-button__icon {
+        .rux-button--large.rux-button--icon-only rux-icon {
           margin-left: -1rem;
           margin-right: -1rem;
         }
@@ -183,23 +181,23 @@ export class RuxButton extends LitElement {
           padding: 0 0.75rem;
         }
 
-        .rux-button--small .rux-button__icon {
+        .rux-button--small rux-icon {
           height: 0.875rem;
           width: 0.875rem;
         }
 
-        .rux-button--large .rux-button__icon {
+        .rux-button--large rux-icon {
           height: 1.75rem;
           width: 1.75rem;
           margin-left: -0.8rem;
           /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
         }
 
-        .rux-button__icon .rux-icon {
+        /* .rux-button__icon .rux-icon {
           height: auto;
           width: 100%;
           fill: var(--buttonTextColor, rgb(255, 255, 255));
-        }
+        } */
       </style>
 
       <button
@@ -211,8 +209,7 @@ export class RuxButton extends LitElement {
       >
         <rux-icon
           icon="${this.icon}"
-          color="${this.outline ? 'rgb(0, 90, 143)' : 'white'}"
-          class="rux-icon rux-button__icon"
+          color="${this.outline ? 'rgb(0, 90, 143)' : '#ffffff'}"
           ?hidden="${!this.icon}"
         ></rux-icon>
         <slot></slot>

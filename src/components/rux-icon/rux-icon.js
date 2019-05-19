@@ -8,7 +8,7 @@ export class RuxIcon extends LitElement {
         type: String,
       },
       size: {
-        type: Number,
+        type: String,
       },
       color: {
         type: String,
@@ -24,8 +24,6 @@ export class RuxIcon extends LitElement {
 
   constructor() {
     super();
-
-    this.size = 128;
 
     this.library = '';
 
@@ -75,12 +73,33 @@ export class RuxIcon extends LitElement {
       const icon = this.shadowRoot.getElementById('rux-icon');
 
       icon.prepend(template);
+      this.dispatchEvent(
+        new CustomEvent('defaultIconsLoaded', {
+          bubbles: true,
+          composed: true,
+        }),
+      );
     }
+    this.style.setProperty('--iconDefaultColor', this.color);
   }
 
   updated(changedProperties) {
     if (changedProperties.get('color')) {
       this.style.setProperty('--iconDefaultColor', this.color);
+    } else if (changedProperties.get('size')) {
+      if (this.size === 'large') {
+        this._size = '4rem';
+      } else if (this.size === 'extra-small') {
+        this._size = '1rem';
+      } else if (this.size === 'small') {
+        this._size = '2rem';
+      } else if (this.size === 'normal') {
+        this._size = '2.75rem';
+      } else {
+        this._size = this.size;
+      }
+
+      this.style.setProperty('--iconDefaultSize', this._size);
     }
   }
 
@@ -91,19 +110,23 @@ export class RuxIcon extends LitElement {
     return _template.content.firstChild;
   }
 
-  connectedCallback() {
-    super.connectedCallback();
+  getIcon() {
+    return `${this.library}#${this.icon}`;
   }
 
   render() {
     return html`
       <style>
         :host {
+          --iconDefaultSize: 2.7rem;
+          --iconDefaultColor: rgb(77, 172, 255);
+
           display: inline-block;
           line-height: 0;
           fill: var(--iconDefaultColor, rgb(77, 172, 255));
-          height: var(--icon-size--default, 44px);
-          width: var(--icon-size--default, 44px);
+
+          height: var(--iconDefaultSize, 2.75rem);
+          width: var(--iconDefaultSize, 2.75rem);
         }
 
         :host svg {
@@ -111,29 +134,14 @@ export class RuxIcon extends LitElement {
           width: auto;
         }
 
-        /* small variant */
-        :host(.rux-icon--small) {
-          height: var(--icon-size--small, 32px);
-          width: var(--icon-size--small, 32px);
-        }
+        /* 
+          for the progress icon internal progres indicator 
+          TODO: Consider making the progress icon a sub-class of the monitoring icon
 
-        /* status symbol icon size */
-        :host(.rux-icon--status) {
-          height: var(--icon-size--status, 12px);
-          width: var(--icon-size--status, 12px);
-        }
+          <rux-monitoring-icon>
+          <rux-monitoring-progress-icon>?
 
-        :host(.rux-icon--button) {
-          height: var(--icon-size--button, 19px);
-          width: var(--icon-size--button, 19px);
-          fill: var(--icon-color--button);
-        }
-
-        :host(.rux-icon--button--large) {
-          height: var(--icon-size--button-large, 24px);
-          width: var(--icon-size--button-large, 24px);
-        }
-
+        */
         ::slotted(div) {
           margin-top: -54%;
         }
@@ -147,9 +155,8 @@ export class RuxIcon extends LitElement {
           preserveAspectRatio="xMidYMid meet"
           focusable="false"
         >
-          <use href="${this.library}#${this.icon}"></use>
+          <use href="${this.getIcon()}"></use>
         </svg>
-        <slot></slot>
       </i>
     `;
   }

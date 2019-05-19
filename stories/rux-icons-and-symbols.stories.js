@@ -5,6 +5,7 @@ import { boolean, text, number, select, array, object, withKnobs } from '@storyb
 import { RuxIcon } from '../src/components/rux-icon/rux-icon.js';
 import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-icon.js';
+import Readme from '../src/components/rux-icon/README.md';
 
 /* eslint-enable no-unused-vars */
 
@@ -20,11 +21,19 @@ storiesOf('Components|Icons & Symbols', module)
         Secondary: '#4dacff',
         Tertiary: '#52667a',
         Quaternary: '#ced6e4',
+        White: '#ffffff',
       };
 
-      const colorKnob = select('Color', colors, 'Secondary');
+      const sizes = {
+        'Extra Small': 'extra-small',
+        Small: 'small',
+        Normal: 'normal',
+        Large: 'large',
+      };
 
-      const icons = [
+      const colorKnob = select('Color', colors, '#4dacff');
+      const sizeKnob = select('Size', sizes, 'normal');
+      let icons = [
         'altitude',
         'antenna',
         'antenna-off',
@@ -41,7 +50,22 @@ storiesOf('Components|Icons & Symbols', module)
         'satellite-off',
         'satellite-receive',
         'satellite-transmit',
+        'add-large',
+        'add-small',
+        'close-large',
+        'close-small',
+        'collapse',
+        'expand',
+        'lock',
+        'unlock',
+        'search',
+        'notifications',
+        'settings',
+        'caution',
+        'maintenance',
       ];
+
+      const tempSize = '3rem';
 
       return html`
         <style>
@@ -66,14 +90,12 @@ storiesOf('Components|Icons & Symbols', module)
           }
         </style>
         <div style="margin: 3rem auto; text-align: center;">
-          <rux-icon library="icons/astro.svg" icon="altitude" label="processor"></rux-icon>
-
           <ul class="icon-container">
             ${icons.map(
               icon =>
                 html`
                   <li>
-                    <rux-icon icon="${icon}" color="${colorKnob}"></rux-icon>
+                    <rux-icon icon="${icon}" color="${colorKnob}" size="${sizeKnob}"></rux-icon>
                     <div class="icon-name">${icon}</div>
                   </li>
                 `,
@@ -87,30 +109,17 @@ storiesOf('Components|Icons & Symbols', module)
         render,
         html,
       },
+      notes: {
+        // this will also use a .md file, but just trying it out for now
+        /* eslint-disable no-useless-escape */
+        markdown: Readme,
+      },
     },
   )
   .add(
     'Monitoring Icons',
     () => {
       const groupId = 'Options';
-      const icons = [
-        'altitude',
-        'antenna',
-        'antenna-off',
-        'antenna-receive',
-        'antenna-transmit',
-        'equipment',
-        'mission',
-        'payload',
-        'processor',
-        'processor-alt',
-        'netcom',
-        'propulsion-power',
-        'thermal',
-        'satellite-off',
-        'satellite-receive',
-        'satellite-transmit',
-      ];
 
       /* Select Status */
       const statusLabel = 'Status';
@@ -185,48 +194,7 @@ storiesOf('Components|Icons & Symbols', module)
       notes: {
         // this will also use a .md file, but just trying it out for now
         /* eslint-disable no-useless-escape */
-        markdown: `
-## When to use a Monitoring Icon
-A Toggle describes a state or value. Similar to a checkbox toggles allow users to change a setting between two states such as “On" or "Off.” Unlike a checkbox, a toggle button initiates an action with immediate effect.
-
-
-### Component Registration
-\`\`\`js
-import { RuxToggle } from '@astrouxds/rux-toggle/rux-toggle.js';
-\`\`\`
-
-### Component Usage
-\`\`\`html
-<rux-toggle disabled="false" checked="false"></rux-toggle>
-\`\`\`
-
-### Component Options
-| Property | Type | Required | Default | Description |
-|---|---|---|---|---|
-| icon | string | yes | n/a | Set which icon  | 
-| status | string | yes | off | | 
-
-## Revision History
-
-##### **3.0**
-
-- Breaking change to markup of toggle button
-
-##### **2.1**
-
-- Moved Pushbuttons to its own style sheet
-
-##### **1.4**
-
-- Added \`rux\_\` prefixes and BEM-compatible classes to all \`satcom\_\`-prefixed elements. NOTE: \`satcom\_\` will be removed in a future version
-- Removed prefixed linear gradients
-- Removed prefixed transition
-- Fixed added colon to checked pseudo class (e.g., checked became :checked)
-- Alignment issue fixed on toggle button label
-- Updated to WCAG colors
-- Updated transition speed
-
-        `,
+        markdown: Readme,
       },
     },
   )
@@ -294,6 +262,11 @@ import { RuxToggle } from '@astrouxds/rux-toggle/rux-toggle.js';
       exports: {
         render,
         html,
+      },
+      notes: {
+        // this will also use a .md file, but just trying it out for now
+        /* eslint-disable no-useless-escape */
+        markdown: Readme,
       },
     },
   );
