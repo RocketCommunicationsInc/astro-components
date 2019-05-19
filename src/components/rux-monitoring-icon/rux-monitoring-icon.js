@@ -1,7 +1,9 @@
 import { LitElement, html, css } from 'lit-element';
+
 /* eslint-disable no-unused-vars */
 import { RuxIcon } from '../rux-icon/rux-icon.js';
 import { RuxStatus } from '../rux-status/rux-status.js';
+import { filterNotifications } from './filterNotifications.js';
 /* eslint-enable no-unused-vars */
 
 export class RuxMonitoringIcon extends LitElement {
@@ -32,34 +34,6 @@ export class RuxMonitoringIcon extends LitElement {
     this.status = 'null';
   }
 
-  _filterNotifications() {
-    const n = Math.floor(this.notifications);
-
-    // don't show any values less than 0
-    if (n <= 0) return null;
-
-    // get the place value
-    const thousand = Math.floor((n / 1000) % 1000); // only return a whole number
-    const million = (n / 1000000) % 1000000; // return a decimal value for numbers like 1.2m
-    const billion = (n / 1000000000) % 1000000000; // return a decimal value for numbers like 1.2b
-    const trillion = (n / 1000000000000) % 1000000000000; // trillion is just to offer an overflow instance
-
-    // set the display to its original state
-    let _message = n;
-
-    if (trillion >= 1) {
-      _message = '∞';
-    } else if (billion >= 1) {
-      _message = `${billion.toFixed(1).toString()}b`;
-    } else if (million >= 1) {
-      _message = `${million.toFixed(1).toString()}m`;
-    } else if (thousand >= 1) {
-      _message = `${thousand}k`;
-    }
-
-    return _message;
-  }
-
   render() {
     return html`
       <div
@@ -87,7 +61,7 @@ export class RuxMonitoringIcon extends LitElement {
   get badgeTemplate() {
     return html`
       <div class="rux-advanced-status__badge" ?hidden="${!this.notifications}">
-        ${this._filterNotifications()}
+        ${filterNotifications(this.notifications)}
       </div>
     `;
   }
