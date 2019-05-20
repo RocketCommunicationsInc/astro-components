@@ -35,7 +35,7 @@
   "dependencies": {
     "@astrouxds/rux-icon": "^3.0.1",
     "lit-element": "^2.1.0",
-    "@webcomponents/webcomponentsjs": "^2.2.10"
+    "@webcomponents/webcomponentsjs": "^2.0.0"
   },
   "description": "Astro Web Component for status indicator",
   "license": "GPL-3.0",

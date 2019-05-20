@@ -40,7 +40,7 @@
   --statusDarkSerious: rgb(255, 179, 0);
   --statusDarkCaution: rgb(252, 232, 58);
   --statusDarkNormal: rgb(86, 240, 0);
-  --statusDarkStandby: rgb(77, 172, 255);
+  --statusDarkStandby: rgb(45, 204, 255);
   --statusDarkOff: rgb(158, 167, 173);
 
   --statusLightCritical: rgb(255, 42, 4);
@@ -137,14 +137,14 @@
   --colorNormalDarken3: rgb(34, 96, 0);
   --colorNormalDarken4: rgb(17, 48, 0);
 
-  --colorStandbyLighten1: rgb(113, 189, 255);
-  --colorStandbyLighten2: rgb(148, 205, 255);
-  --colorStandbyLighten3: rgb(184, 222, 255);
-  --colorStandbyLighten4: rgb(219, 238, 255);
-  --colorStandbyDarken1: rgb(62, 138, 204);
-  --colorStandbyDarken2: rgb(46, 103, 153);
-  --colorStandbyDarken3: rgb(31, 69, 102);
-  --colorStandbyDarken4: rgb(15, 34, 51);
+  --colorStandbyLighten1: rgb(87, 214, 255);
+  --colorStandbyLighten2: rgb(129, 224, 255);
+  --colorStandbyLighten3: rgb(171, 235, 255);
+  --colorStandbyLighten4: rgb(213, 245, 255);
+  --colorStandbyDarken1: rgb(36, 163, 204);
+  --colorStandbyDarken2: rgb(27, 122, 153);
+  --colorStandbyDarken3: rgb(18, 82, 102);
+  --colorStandbyDarken4: rgb(9, 41, 51);
 
   --colorOffLighten1: rgb(177, 185, 189);
   --colorOffLighten2: rgb(197, 202, 206);
@@ -603,6 +603,8 @@
   --statusCaution: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M2.5%204.5H13.5V11.5H2.5z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusSerious: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M3.5%203.5H11.5V11.5H3.5z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusCritical: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M14.1294815%2C13.5%20L8%2C2.99231743%20L1.8705185%2C13.5%20L14.1294815%2C13.5%20Z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+
+  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAA7VBMVEUAAAAAAAB6EwFICwAdEwQ2doozb4QAUABBjaQAEwBcPxYiGglcPxVbPxZcPxU9hZsAXQAAVwBh0/hHTVE2c4gAUgBGTFE4eY5FS09UtNMAUQA6fZMAUAA8gZYVLjYOHiIECgw9QUY/iJ4ARgAAAAAAOgArMDAAAABOVVkAAAAARgBZPBRcPxb62AAA4gD/rz3/KgNk2f9VSQCOmqORFwJ/FAHPIgNg0/h8h4+aaSTHiC/BhC6UZSNcx+tZwuRTttZJn7tElK+KlZ5ianEA2gAA2QAAygAAwgAAswAAkwAAhABezfEA0gCCWR5uSxp/5PNPAAAALXRSTlMAB7ouI/349ScTwR7v68qL/fzy8unf3dDMxby5n56EgYBxaWZORjAc/XNqmtnYGcW9AAACeElEQVRYw+yT11LCQBhGd4EkBMeh996bBimSOErvRd//cSSZTJaFz8Edr5jx3CVX5+TLT/65L2j7gdwz1Pf5eM8F1PfReQcFvR8gPGo5FVWUaKqsEojXH4/IciTu94qKuV4hLuDfQQW9ZwgfoGaC++16uVxv98GMCvTT0mwy0vXRZCalBRPcgxfAwA38WYFgQFXZrTSb1U6pXjqU5KnetdGncklwguG1/9AF/FmBYEArsNHO2ARahMMvjbtnjCW/4ARoAODPCsQCqoGjxnEMcBuUpEOX4yCV/jjB0IX8WYFQgKpstAs2inr2/8vW9w9lc4VCLhuyNpCv74AWE+FwokjhBGAA5M8KRAIyO+2KXYY4pKemczJfqVNar+ST5tM0fSlZiy2M+dxYxGpwAjAA8AcFtwPU4Oo6YBVUnQEk3fRveoiFp2kW6JL3wr9h9C2MRg1NAAYA/qDgdkB5rwH2ZeeCZ+b/k7f8rYK8+RfN+DumMcvfKohRPAEegPnjgtsBqS0K2KaITXxy8s1WiEMle3oxiXOCxUXfYVHEE+ABmD8uuB0QXaOAdZTYREYn31ydONRzpxejCCeYMFiAkcBXgAdof3Uwb0+/DFCWKGCpEBvZPIECPftmBfMIZM4vPGcB8zDBE+AL+G7HXE4AhIEoKJij2I/2YP/tqKDMHh7kOoSkghnGz272I/KfW1MJkIAAGGR+1SNEAgJgEPlVLzEJCBAN4Hd9RklAgGQAv+tHRgICJAP4ZaMECQgQDOCXDXMkIEAwgN82TpOAAMng57ctNCUBAZLBx69bKUsCAmSDl1+31NcEBIgG18Pvu1apCdbOzVBb5plnqHMDhzeGIdPAwtcAAAAASUVORK5CYII=");
   /* 
    
     
@@ -654,6 +656,19 @@
     rgb(62, 138, 204)
   );
   --timelineRegionSelectedTextColor: var(--fontColor, rgb(255, 255, 255));
+
+  /* 
+    
+    ACCORDION COLORS
+    ==========================================================================
+      
+  */
+  --accordionBorderColor: rgb(207, 214, 227);
+  --accordionContentBackground: rgb(226, 230, 238);
+  --accordionClosedLabelBackground: rgb(255, 255, 255);
+  --accordionOpenLabelBackground: rgb(245, 247, 249);
+  --accordionHoverLabelBackground: rgb(236, 239, 244);
+  --accordionColor: rgb(0, 0, 0);
 }
 
 li.light-theme {
@@ -684,7 +699,7 @@ li.light-theme {
   --colorSerious: var(--statusDarkSerious, rgb(255, 175, 61));
   --colorCaution: var(--statusDarkCaution, rgb(250, 216, 0));
   --colorNormal: var(--statusDarkNormal, rgb(0, 226, 0));
-  --colorStandby: var(--statusDarkStandby, rgb(77, 172, 255));
+  --colorStandby: var(--statusDarkStandby, rgb(45, 204, 255));
   --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
 
   /* 
@@ -991,6 +1006,7 @@ li.light-theme {
   --statusSerious: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusCritical: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
 
+  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC");
   /* 
     
     Scrollbar Colors -- Dark
@@ -1038,6 +1054,19 @@ li.light-theme {
     rgb(62, 138, 204)
   );
   --timelineRegionSelectedTextColor: var(--fontColor, rgb(255, 255, 255));
+
+  /* 
+    
+    ACCORDION COLORS
+    ==========================================================================
+      
+  */
+  --accordionBorderColor: rgb(40, 63, 88);
+  --accordionContentBackground: rgb(20, 32, 44);
+  --accordionClosedLabelBackground: rgb(32, 50, 70);
+  --accordionOpenLabelBackground: rgb(40, 63, 88);
+  --accordionHoverLabelBackground: rgb(46, 103, 153);
+  --accordionColor: rgb(255, 255, 255);
 }
 
 li.dark-theme {
