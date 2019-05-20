@@ -95,7 +95,12 @@ storiesOf('Components|Icons & Symbols', module)
               icon =>
                 html`
                   <li>
-                    <rux-icon icon="${icon}" color="${colorKnob}" size="${sizeKnob}"></rux-icon>
+                    <rux-icon
+                      library="/icons/astro.svg"
+                      icon="${icon}"
+                      color="${colorKnob}"
+                      size="${sizeKnob}"
+                    ></rux-icon>
                     <div class="icon-name">${icon}</div>
                   </li>
                 `,
