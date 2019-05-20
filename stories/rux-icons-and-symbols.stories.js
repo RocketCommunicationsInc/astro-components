@@ -206,7 +206,7 @@ storiesOf('Components|Icons & Symbols', module)
     },
   )
   .add(
-    'Percentage Icon',
+    'Progress Icon',
     () => {
       const groupId = 'Options';
 
