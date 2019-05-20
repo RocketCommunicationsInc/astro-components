@@ -28,7 +28,7 @@ export class RuxNotification extends LitElement {
     this.message = "";
     this.status = "standby";
     this.target = "local";
-    this.closeAfter = 3000;
+    this.closeAfter = null;
     this.open = false;
   }
 
@@ -57,12 +57,17 @@ export class RuxNotification extends LitElement {
   get _closeAfter() {
     if (this.closeAfter && this.closeAfter <= 10) {
       // if the number is 10 or less, it must be ms
-      this.closeAfter *= 1000;
+      console.log(this.closeAfter, "2");
     }
-    if (this.closeAfter > 10000 || this.closeAfter < 2000) {
+
+    if (
+      (this.closeAfter && this.closeAfter > 10000) ||
+      (this.closeAfter && this.closeAfter < 2000)
+    ) {
       // if this numner is larger than 10s or smaller than 2s, enforce minimum 2s delay
       this.closeAfter = 2000;
     }
+
     return this.closeAfter;
   }
 

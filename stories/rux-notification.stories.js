@@ -65,7 +65,6 @@ storiesOf("Components|Notification", module)
           >
             <rux-notification
               open
-              close-after="${undefined}"
               status="standby"
               message="Standby Notification Banner"
             ></rux-notification>
@@ -75,7 +74,6 @@ storiesOf("Components|Notification", module)
           >
             <rux-notification
               open
-              close-after="${undefined}"
               status="normal"
               message="Normal Notification Banner"
             ></rux-notification>
@@ -85,7 +83,6 @@ storiesOf("Components|Notification", module)
           >
             <rux-notification
               open
-              close-after="${undefined}"
               status="caution"
               message="Caution Notification Banner"
             ></rux-notification>
@@ -95,7 +92,6 @@ storiesOf("Components|Notification", module)
           >
             <rux-notification
               open
-              close-after="null"
               status="critical"
               message="Critical Notification Banner"
             ></rux-notification>
