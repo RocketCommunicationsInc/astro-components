@@ -61,7 +61,7 @@ import { RuxMonitoringIcon } from '@astro-components/rux-monitoring-icon/rux-mon
 | `icon`          | `string` | `true`   | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols) |
 | `label`         | `string` | `true`   | A descriptive label of the icon, **Required for ARIA/Accessibility**                                                                                           |
 | `status`        | `string` | `true`   | Valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off`                                                                              |
-| `sublabel`      | `string` | `false`  | An optional string value appearing underneath the primary label                                                                                                |  |
+| `sublabel`      | `string` | `false`  | An optional string value appearing underneath the primary label                                                                                                |
 | `notifications` | `number` | `false`  | Indicates notifications for a give status. Values beyond 9,999 are shorthanded 10K, 100K, 1.5M, 1.5B and ∞ for numbers greater than 999,999,999,999            |
 
 # Monitoring Progress Icon
