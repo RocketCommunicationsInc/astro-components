@@ -67,7 +67,7 @@ Icons support color and size overrides. The color property supports any CSS3 val
 | Property  | Type     | Required | Description                                                                                                                                                     |
 | --------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `icon`    | `string` | `true`   | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols)  |
-| `label`   | `string` | `true`   | A desscriptive label of the icon, **Required for ARIA/Accessibility**                                                                                           |
+| `label`   | `string` | `true`   | A descriptive label of the icon, **Required for ARIA/Accessibility**                                                                                            |
 | `library` | `string` | `false`  | Load an external icon set. Icons must be an SVG with individual icons having their own unique `id` attribute.                                                   |
 | `color`   | `string` | `false`  | Changes the icon color. Accepted values can be entered as hex, rgba, hsl and HTML string. **Caution: the `status` icon set cannot and should not be overidden** |
 | `size`    | `string` | `false`  | Allows for large icon variants                                                                                                                                  |
