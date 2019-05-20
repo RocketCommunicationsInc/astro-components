@@ -7,6 +7,7 @@ import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-icon.js';
 import { RuxMonitoringProgressIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-progress-icon.js';
 import Readme from '../src/components/rux-icon/README.md';
+import ReadmeMonitoring from '../src/components/rux-monitoring-icon/README.md';
 
 /* eslint-enable no-unused-vars */
 
@@ -200,7 +201,7 @@ storiesOf('Components|Icons & Symbols', module)
       notes: {
         // this will also use a .md file, but just trying it out for now
         /* eslint-disable no-useless-escape */
-        markdown: Readme,
+        markdown: ReadmeMonitoring,
       },
     },
   )
@@ -283,7 +284,7 @@ storiesOf('Components|Icons & Symbols', module)
       notes: {
         // this will also use a .md file, but just trying it out for now
         /* eslint-disable no-useless-escape */
-        markdown: Readme,
+        markdown: ReadmeMonitoring,
       },
     },
   );

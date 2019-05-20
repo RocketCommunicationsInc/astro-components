@@ -38,7 +38,7 @@ export class RuxMonitoringIcon extends LitElement {
     return html`
       <div
         id="rux-advanced-status__icon"
-        class="rux-advanced-status rux-status--${this.status}"
+        class="rux-advanced-status"
         title="${this.notifications} ${this.label} ${this.sublabel}"
       >
         <div class="rux-advanced-status__icon-group">
@@ -54,7 +54,7 @@ export class RuxMonitoringIcon extends LitElement {
 
   get iconTemplate() {
     return html`
-      <rux-icon icon="${this.icon}" class="rux-status--${this.status}"></rux-icon>
+      <rux-icon icon="${this.icon}"></rux-icon>
     `;
   }
 
@@ -128,7 +128,7 @@ export class RuxMonitoringIcon extends LitElement {
             rgba(0, 255, 0, 0) 52%,
             rgba(0, 255, 0, 0) 100%
           );
-           */
+        */
       }
 
       rux-icon {
