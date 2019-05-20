@@ -39,7 +39,7 @@ Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxModal } from "@astro-components/rux-notification/rux-notification.js";
+import { RuxNotification } from "@astro-components/rux-notification/rux-notification.js";
 ```
 
 ### 3. Render the RUX Notification Banner Web Component
