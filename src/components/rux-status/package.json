@@ -4,9 +4,16 @@
     "email": "astrouxds@rocketcom.com"
   },
   "dependencies": {
-    "@astrouxds/rux-icon": "^4.0.0-0",
     "lit-element": "^2.1.0",
     "@webcomponents/webcomponentsjs": "^2.2.10"
+  },
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "support@astrouxds.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
   },
   "description": "Astro Web Component for status indicator",
   "license": "CC0-1.0",
@@ -15,5 +22,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "4.0.0-2"
+  "version": "4.0.0-3"
 }
