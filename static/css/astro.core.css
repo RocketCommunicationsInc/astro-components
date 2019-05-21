@@ -604,7 +604,7 @@
   --statusSerious: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M3.5%203.5H11.5V11.5H3.5z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusCritical: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M14.1294815%2C13.5%20L8%2C2.99231743%20L1.8705185%2C13.5%20L14.1294815%2C13.5%20Z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
 
-  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAA7VBMVEUAAAAAAAB6EwFICwAdEwQ2doozb4QAUABBjaQAEwBcPxYiGglcPxVbPxZcPxU9hZsAXQAAVwBh0/hHTVE2c4gAUgBGTFE4eY5FS09UtNMAUQA6fZMAUAA8gZYVLjYOHiIECgw9QUY/iJ4ARgAAAAAAOgArMDAAAABOVVkAAAAARgBZPBRcPxb62AAA4gD/rz3/KgNk2f9VSQCOmqORFwJ/FAHPIgNg0/h8h4+aaSTHiC/BhC6UZSNcx+tZwuRTttZJn7tElK+KlZ5ianEA2gAA2QAAygAAwgAAswAAkwAAhABezfEA0gCCWR5uSxp/5PNPAAAALXRSTlMAB7ouI/349ScTwR7v68qL/fzy8unf3dDMxby5n56EgYBxaWZORjAc/XNqmtnYGcW9AAACeElEQVRYw+yT11LCQBhGd4EkBMeh996bBimSOErvRd//cSSZTJaFz8Edr5jx3CVX5+TLT/65L2j7gdwz1Pf5eM8F1PfReQcFvR8gPGo5FVWUaKqsEojXH4/IciTu94qKuV4hLuDfQQW9ZwgfoGaC++16uVxv98GMCvTT0mwy0vXRZCalBRPcgxfAwA38WYFgQFXZrTSb1U6pXjqU5KnetdGncklwguG1/9AF/FmBYEArsNHO2ARahMMvjbtnjCW/4ARoAODPCsQCqoGjxnEMcBuUpEOX4yCV/jjB0IX8WYFQgKpstAs2inr2/8vW9w9lc4VCLhuyNpCv74AWE+FwokjhBGAA5M8KRAIyO+2KXYY4pKemczJfqVNar+ST5tM0fSlZiy2M+dxYxGpwAjAA8AcFtwPU4Oo6YBVUnQEk3fRveoiFp2kW6JL3wr9h9C2MRg1NAAYA/qDgdkB5rwH2ZeeCZ+b/k7f8rYK8+RfN+DumMcvfKohRPAEegPnjgtsBqS0K2KaITXxy8s1WiEMle3oxiXOCxUXfYVHEE+ABmD8uuB0QXaOAdZTYREYn31ydONRzpxejCCeYMFiAkcBXgAdof3Uwb0+/DFCWKGCpEBvZPIECPftmBfMIZM4vPGcB8zDBE+AL+G7HXE4AhIEoKJij2I/2YP/tqKDMHh7kOoSkghnGz272I/KfW1MJkIAAGGR+1SNEAgJgEPlVLzEJCBAN4Hd9RklAgGQAv+tHRgICJAP4ZaMECQgQDOCXDXMkIEAwgN82TpOAAMng57ctNCUBAZLBx69bKUsCAmSDl1+31NcEBIgG18Pvu1apCdbOzVBb5plnqHMDhzeGIdPAwtcAAAAASUVORK5CYII=");
+  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAA81BMVEUAAABaPhVcDwE7CQA6gJIAAAAATQAkTlsATgBcPxYrHAciGgkAAABcPxU0coUARgAxNTgnU2IoV2YzNjoAUgAtYXEzODovZngAUQAAUAAwNDg0dIk2d4sAOgAjKCgAGAAADQA+hJVZPBRcPxb62AAA4gD/rz1VSQBk2f//KgQiSldXDgEATQCOmqNXOxQwNDdoRhiGWx+tHAJiEAFZw+b1KAMAywDlnTb5qjv7rDzpnzdMpcNJn7xFlrGMmKGEj5g4eY82d4xxe4IyboIwaHskT15GTFEA2gAArAAAnAAAfgAAfABg0vddyu5cZGpg0fbOjTE6oyFAAAAAJHRSTlMA7cc4Kgj9+vbBJB4GypVn9vPu5t/Y18O8n4B/ckY6FRMdmtlkVn4PAAACq0lEQVRYw+2YaVPaUBSGqWbTWsK+b9pC6ek1lypGW1T2RUDb//9rmpsm3Nyc1DQfOhMc3k/cyUzmfeY5BxISh+xXzi7eJ/Y5ZyfGu30msPobQQSf/5KEmKZeymlarqQ3g28vJfMZVc3kk1LUYkdfA3OE+/duv3GCaACtskKcKOVWQP0i7FKMiHAcDHAc0L9zxwgQwKeAiAB1jZD1ylwuzdWaEK3u71BTAUaD/nbbH4wA1FpUBVdffLliAnD/DieIBKArZGO2nZgboujiLZIA437XSX8MkIyo4PpG7H9zzQTg/pwgEkBdIU9tT56IIjioATx0PXkAqEVWgAXg/pwgEkBLY/1FAq3lmX+V9RcJVLwHcqWQShUqcpgCLgD35wRRAMpk0/ZlQ8r8BkUY27XvZ/P57N7+OIaiv2QjS+1kG2EKuADcHxOEAzQVYvoBTKI0dwIA2Pw/T8HO9JntAYDk60/pYjIcThaUNkIUcAG4PyYIB9DJuo2yJjrf4FHXyhTSVUmqpmHKTiPfHstZ+vJ4aeXxhWblYAVYAO6PCcIBSmSFAVak5F7Pw4DND6TP2ek8DWyKBpAXClbogvVnBAtaCVaABeD+mCAcIMcmCM9Qzr2esSdoBtU/xyrM7BnKCAULdHLpZEILr2wBEnBhGL86OHc94+M/AmhkiQGWRHOvq7C1Gs/doZdgbh23oAr9UnToAgxp6pUvIrQB8gej9wP1/24ZOP2fAD+jAHAFXAAmwP1jNUK2Ai4AE+D+sVpiRwEXgAhQ/3h9jboKuABMIPaP1w8ZV8AFIAKhf8weJXYKBAGIgPeP2cMcVyAIwARu/7g9TnMFggBM4PSP2wuNR4EgABPc2v1j90rpUSAIwAQG6x+7l3qvAkEAJmD94/e3ileBIAATnJwmDjnkTeU3PTFjExFNx+YAAAAASUVORK5CYII=");
   /* 
    
     
@@ -1193,7 +1193,7 @@ dd {
 */
 html {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1203,7 +1203,7 @@ html {
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 /*
@@ -1226,7 +1226,8 @@ body {
 
   background-color: var(--backgroundColor, rgb(24, 38, 53));
 
-  scrollbar-color: rgb(58, 129, 191) rgb(32, 50, 70);
+  scrollbar-color: rgb(58, 129, 191)
+    rgb(32, 50, 70);
 
   scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
     var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
@@ -1234,9 +1235,9 @@ body {
 
 label {
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 /*
@@ -1269,7 +1270,8 @@ label {
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --scrollBarThumbBackgroundHoverColor,
     rgb(58, 129, 191)
@@ -1283,11 +1285,11 @@ label {
 }
 ::-webkit-scrollbar-track:vertical {
   -webkit-box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
-  box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
 }
 ::-webkit-scrollbar-track:horizontal {
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 /*
@@ -1351,20 +1353,20 @@ label {
 
   -webkit-box-pack: center;
 
-  -ms-flex-pack: center;
+      -ms-flex-pack: center;
 
-  justify-content: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   -webkit-user-select: none;
 
-  -moz-user-select: none;
+     -moz-user-select: none;
 
-  -ms-user-select: none;
+      -ms-user-select: none;
 
-  user-select: none;
+          user-select: none;
 }
 
 /* 
@@ -1389,16 +1391,20 @@ label {
   background-color: rgb(0, 90, 143);
   background-color: var(--buttonBorderColor, rgb(0, 90, 143));
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12),
-    0 1px 5px rgba(0, 0, 0, 0.2);
+    0 3px 4px rgba(0, 0, 0, 0.12),
+    0 1px 5px rgba(0, 0, 0, 0.2)
+  ;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14),
+    0 3px 4px rgba(0, 0, 0, 0.12),
+    0 1px 5px rgba(0, 0, 0, 0.2)
+  ;
   -webkit-box-shadow: var(
     --controlBoxShadow,
     0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12),
     0 1px 5px rgba(0, 0, 0, 0.2)
   );
-  box-shadow: var(
+          box-shadow: var(
     --controlBoxShadow,
     0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12),
@@ -1424,7 +1430,8 @@ label {
 .rux-button:active:not([hover]):not([disabled]) {
   border-color: rgb(0, 90, 143) !important;
   border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
-  background-color: rgb(0, 90, 143) !important;
+  background-color: rgb(0, 90, 143)
+   !important;
   background-color: var(
     --buttonActiveBackgroundColor,
     rgb(0, 90, 143)
@@ -1433,7 +1440,7 @@ label {
 
 .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
+          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
 }
 
 /* 
@@ -1447,16 +1454,20 @@ label {
   background-color: rgb(58, 129, 191);
   background-color: var(--buttonHoverBackgroundColor, rgb(58, 129, 191));
   -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
+    0 3px 14px 3px rgba(0, 0, 0, 0.12),
+    0 4px 5px rgba(0, 0, 0, 0.2)
+  ;
+          box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12),
+    0 4px 5px rgba(0, 0, 0, 0.2)
+  ;
   -webkit-box-shadow: var(
     --buttonHoverBoxShadow,
     0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12),
     0 4px 5px rgba(0, 0, 0, 0.2)
   );
-  box-shadow: var(
+          box-shadow: var(
     --buttonHoverBoxShadow,
     0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12),
@@ -1467,7 +1478,8 @@ label {
 .rux-button--outline:hover:not([disabled]) {
   color: rgb(255, 255, 255);
   color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-  background-color: rgba(30, 47, 66, 0.75);
+  background-color: rgba(30, 47, 66, 0.75)
+  ;
   background-color: var(
     --buttonOutlineHoverBackgroundColor,
     rgba(30, 47, 66, 0.75)
@@ -1568,8 +1580,8 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .rux-card__header h1 {
@@ -1645,12 +1657,12 @@ label {
 
   -webkit-box-align: center;
 
-  -ms-flex-align: center;
+      -ms-flex-align: center;
 
-  align-items: center;
+          align-items: center;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 
   color: rgb(255, 255, 255);
 
@@ -1665,10 +1677,10 @@ label {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   content: "";
 
   height: 1.25rem;
@@ -1699,7 +1711,8 @@ label {
 .satcom-checkbox input[type="checkbox"]:checked + label::before,
 .rux-radio-button input[type="radio"]:checked + label::before,
 .satcom-radio-button input[type="radio"]:checked + label::before {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --controlSelectedOutlineBackgroundColor,
     rgb(58, 129, 191)
@@ -1731,7 +1744,7 @@ label {
 
   -webkit-transform: rotate(125deg);
 
-  transform: rotate(125deg);
+          transform: rotate(125deg);
 }
 
 .rux-radio-button input[type="radio"]:checked + label::after,
@@ -1789,7 +1802,8 @@ label {
   background-color: rgb(0, 90, 143);
 
   background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
-  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+  ;
   background-image: var(
     --selectCaret,
     url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
@@ -1822,8 +1836,8 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 .rux-form-element label {
@@ -1862,13 +1876,13 @@ label {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 
   font-family: "Open Sans", sans-serif;
 
@@ -1889,31 +1903,31 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
+      -ms-flex-order: 1;
+          order: 1;
   margin: 0 0 0.15rem 0;
   width: 100%;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   color: rgb(255, 255, 255);
 
   color: var(--fontColor, rgb(255, 255, 255));
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .rux-form-field input {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
+      -ms-flex-order: 2;
+          order: 2;
 
   height: 2.25rem;
   width: 100%;
@@ -2063,9 +2077,9 @@ label {
 
 .rux-form-field input:focus .rux-form-field input:invalid:focus {
   -webkit-box-shadow: inset 0 0 3px rgb(204, 204, 204);
-  box-shadow: inset 0 0 3px rgb(204, 204, 204);
+          box-shadow: inset 0 0 3px rgb(204, 204, 204);
   -webkit-box-shadow: inset 0 0 3px var(--colorGray);
-  box-shadow: inset 0 0 3px var(--colorGray);
+          box-shadow: inset 0 0 3px var(--colorGray);
   border-color: var(--inputFocusBorderColor);
   outline: none;
   color: black;
@@ -2162,3 +2176,4 @@ label {
 .satcom-table .selected {
   background: #36557a;
 }
+

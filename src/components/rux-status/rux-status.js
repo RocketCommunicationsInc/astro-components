@@ -15,14 +15,6 @@ export class RuxStatus extends LitElement {
       <style>
         :host {
           display: block;
-          padding: 0;
-
-          font-size: 1rem;
-
-          line-height: 1;
-          padding: 0;
-
-          text-align: center;
 
           height: 1rem;
           width: 1rem;

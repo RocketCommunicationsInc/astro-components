@@ -604,7 +604,7 @@
   --statusSerious: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M3.5%203.5H11.5V11.5H3.5z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --statusCritical: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.5%22%20d%3D%22M14.1294815%2C13.5%20L8%2C2.99231743%20L1.8705185%2C13.5%20L14.1294815%2C13.5%20Z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
 
-  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAA7VBMVEUAAAAAAAB6EwFICwAdEwQ2doozb4QAUABBjaQAEwBcPxYiGglcPxVbPxZcPxU9hZsAXQAAVwBh0/hHTVE2c4gAUgBGTFE4eY5FS09UtNMAUQA6fZMAUAA8gZYVLjYOHiIECgw9QUY/iJ4ARgAAAAAAOgArMDAAAABOVVkAAAAARgBZPBRcPxb62AAA4gD/rz3/KgNk2f9VSQCOmqORFwJ/FAHPIgNg0/h8h4+aaSTHiC/BhC6UZSNcx+tZwuRTttZJn7tElK+KlZ5ianEA2gAA2QAAygAAwgAAswAAkwAAhABezfEA0gCCWR5uSxp/5PNPAAAALXRSTlMAB7ouI/349ScTwR7v68qL/fzy8unf3dDMxby5n56EgYBxaWZORjAc/XNqmtnYGcW9AAACeElEQVRYw+yT11LCQBhGd4EkBMeh996bBimSOErvRd//cSSZTJaFz8Edr5jx3CVX5+TLT/65L2j7gdwz1Pf5eM8F1PfReQcFvR8gPGo5FVWUaKqsEojXH4/IciTu94qKuV4hLuDfQQW9ZwgfoGaC++16uVxv98GMCvTT0mwy0vXRZCalBRPcgxfAwA38WYFgQFXZrTSb1U6pXjqU5KnetdGncklwguG1/9AF/FmBYEArsNHO2ARahMMvjbtnjCW/4ARoAODPCsQCqoGjxnEMcBuUpEOX4yCV/jjB0IX8WYFQgKpstAs2inr2/8vW9w9lc4VCLhuyNpCv74AWE+FwokjhBGAA5M8KRAIyO+2KXYY4pKemczJfqVNar+ST5tM0fSlZiy2M+dxYxGpwAjAA8AcFtwPU4Oo6YBVUnQEk3fRveoiFp2kW6JL3wr9h9C2MRg1NAAYA/qDgdkB5rwH2ZeeCZ+b/k7f8rYK8+RfN+DumMcvfKohRPAEegPnjgtsBqS0K2KaITXxy8s1WiEMle3oxiXOCxUXfYVHEE+ABmD8uuB0QXaOAdZTYREYn31ydONRzpxejCCeYMFiAkcBXgAdof3Uwb0+/DFCWKGCpEBvZPIECPftmBfMIZM4vPGcB8zDBE+AL+G7HXE4AhIEoKJij2I/2YP/tqKDMHh7kOoSkghnGz272I/KfW1MJkIAAGGR+1SNEAgJgEPlVLzEJCBAN4Hd9RklAgGQAv+tHRgICJAP4ZaMECQgQDOCXDXMkIEAwgN82TpOAAMng57ctNCUBAZLBx69bKUsCAmSDl1+31NcEBIgG18Pvu1apCdbOzVBb5plnqHMDhzeGIdPAwtcAAAAASUVORK5CYII=");
+  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAA81BMVEUAAABaPhVcDwE7CQA6gJIAAAAATQAkTlsATgBcPxYrHAciGgkAAABcPxU0coUARgAxNTgnU2IoV2YzNjoAUgAtYXEzODovZngAUQAAUAAwNDg0dIk2d4sAOgAjKCgAGAAADQA+hJVZPBRcPxb62AAA4gD/rz1VSQBk2f//KgQiSldXDgEATQCOmqNXOxQwNDdoRhiGWx+tHAJiEAFZw+b1KAMAywDlnTb5qjv7rDzpnzdMpcNJn7xFlrGMmKGEj5g4eY82d4xxe4IyboIwaHskT15GTFEA2gAArAAAnAAAfgAAfABg0vddyu5cZGpg0fbOjTE6oyFAAAAAJHRSTlMA7cc4Kgj9+vbBJB4GypVn9vPu5t/Y18O8n4B/ckY6FRMdmtlkVn4PAAACq0lEQVRYw+2YaVPaUBSGqWbTWsK+b9pC6ek1lypGW1T2RUDb//9rmpsm3Nyc1DQfOhMc3k/cyUzmfeY5BxISh+xXzi7eJ/Y5ZyfGu30msPobQQSf/5KEmKZeymlarqQ3g28vJfMZVc3kk1LUYkdfA3OE+/duv3GCaACtskKcKOVWQP0i7FKMiHAcDHAc0L9zxwgQwKeAiAB1jZD1ylwuzdWaEK3u71BTAUaD/nbbH4wA1FpUBVdffLliAnD/DieIBKArZGO2nZgboujiLZIA437XSX8MkIyo4PpG7H9zzQTg/pwgEkBdIU9tT56IIjioATx0PXkAqEVWgAXg/pwgEkBLY/1FAq3lmX+V9RcJVLwHcqWQShUqcpgCLgD35wRRAMpk0/ZlQ8r8BkUY27XvZ/P57N7+OIaiv2QjS+1kG2EKuADcHxOEAzQVYvoBTKI0dwIA2Pw/T8HO9JntAYDk60/pYjIcThaUNkIUcAG4PyYIB9DJuo2yJjrf4FHXyhTSVUmqpmHKTiPfHstZ+vJ4aeXxhWblYAVYAO6PCcIBSmSFAVak5F7Pw4DND6TP2ek8DWyKBpAXClbogvVnBAtaCVaABeD+mCAcIMcmCM9Qzr2esSdoBtU/xyrM7BnKCAULdHLpZEILr2wBEnBhGL86OHc94+M/AmhkiQGWRHOvq7C1Gs/doZdgbh23oAr9UnToAgxp6pUvIrQB8gej9wP1/24ZOP2fAD+jAHAFXAAmwP1jNUK2Ai4AE+D+sVpiRwEXgAhQ/3h9jboKuABMIPaP1w8ZV8AFIAKhf8weJXYKBAGIgPeP2cMcVyAIwARu/7g9TnMFggBM4PSP2wuNR4EgABPc2v1j90rpUSAIwAQG6x+7l3qvAkEAJmD94/e3ileBIAATnJwmDjnkTeU3PTFjExFNx+YAAAAASUVORK5CYII=");
   /* 
    
     
@@ -1193,7 +1193,7 @@ dd {
 */
 html {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1203,7 +1203,7 @@ html {
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 /*
@@ -1226,7 +1226,8 @@ body {
 
   background-color: var(--backgroundColor, rgb(24, 38, 53));
 
-  scrollbar-color: rgb(58, 129, 191) rgb(32, 50, 70);
+  scrollbar-color: rgb(58, 129, 191)
+    rgb(32, 50, 70);
 
   scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
     var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
@@ -1234,9 +1235,9 @@ body {
 
 label {
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 /*
@@ -1269,7 +1270,8 @@ label {
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --scrollBarThumbBackgroundHoverColor,
     rgb(58, 129, 191)
@@ -1283,11 +1285,11 @@ label {
 }
 ::-webkit-scrollbar-track:vertical {
   -webkit-box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
-  box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
 }
 ::-webkit-scrollbar-track:horizontal {
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 /*
@@ -1351,20 +1353,20 @@ label {
 
   -webkit-box-pack: center;
 
-  -ms-flex-pack: center;
+      -ms-flex-pack: center;
 
-  justify-content: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   -webkit-user-select: none;
 
-  -moz-user-select: none;
+     -moz-user-select: none;
 
-  -ms-user-select: none;
+      -ms-user-select: none;
 
-  user-select: none;
+          user-select: none;
 }
 
 /* 
@@ -1389,16 +1391,20 @@ label {
   background-color: rgb(0, 90, 143);
   background-color: var(--buttonBorderColor, rgb(0, 90, 143));
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12),
-    0 1px 5px rgba(0, 0, 0, 0.2);
+    0 3px 4px rgba(0, 0, 0, 0.12),
+    0 1px 5px rgba(0, 0, 0, 0.2)
+  ;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14),
+    0 3px 4px rgba(0, 0, 0, 0.12),
+    0 1px 5px rgba(0, 0, 0, 0.2)
+  ;
   -webkit-box-shadow: var(
     --controlBoxShadow,
     0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12),
     0 1px 5px rgba(0, 0, 0, 0.2)
   );
-  box-shadow: var(
+          box-shadow: var(
     --controlBoxShadow,
     0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12),
@@ -1424,7 +1430,8 @@ label {
 .rux-button:active:not([hover]):not([disabled]) {
   border-color: rgb(0, 90, 143) !important;
   border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
-  background-color: rgb(0, 90, 143) !important;
+  background-color: rgb(0, 90, 143)
+   !important;
   background-color: var(
     --buttonActiveBackgroundColor,
     rgb(0, 90, 143)
@@ -1433,7 +1440,7 @@ label {
 
 .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
+          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
 }
 
 /* 
@@ -1447,16 +1454,20 @@ label {
   background-color: rgb(58, 129, 191);
   background-color: var(--buttonHoverBackgroundColor, rgb(58, 129, 191));
   -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
+    0 3px 14px 3px rgba(0, 0, 0, 0.12),
+    0 4px 5px rgba(0, 0, 0, 0.2)
+  ;
+          box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12),
+    0 4px 5px rgba(0, 0, 0, 0.2)
+  ;
   -webkit-box-shadow: var(
     --buttonHoverBoxShadow,
     0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12),
     0 4px 5px rgba(0, 0, 0, 0.2)
   );
-  box-shadow: var(
+          box-shadow: var(
     --buttonHoverBoxShadow,
     0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12),
@@ -1467,7 +1478,8 @@ label {
 .rux-button--outline:hover:not([disabled]) {
   color: rgb(255, 255, 255);
   color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-  background-color: rgba(30, 47, 66, 0.75);
+  background-color: rgba(30, 47, 66, 0.75)
+  ;
   background-color: var(
     --buttonOutlineHoverBackgroundColor,
     rgba(30, 47, 66, 0.75)
@@ -1568,8 +1580,8 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .rux-card__header h1 {
@@ -1645,12 +1657,12 @@ label {
 
   -webkit-box-align: center;
 
-  -ms-flex-align: center;
+      -ms-flex-align: center;
 
-  align-items: center;
+          align-items: center;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 
   color: rgb(255, 255, 255);
 
@@ -1665,10 +1677,10 @@ label {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   content: "";
 
   height: 1.25rem;
@@ -1699,7 +1711,8 @@ label {
 .satcom-checkbox input[type="checkbox"]:checked + label::before,
 .rux-radio-button input[type="radio"]:checked + label::before,
 .satcom-radio-button input[type="radio"]:checked + label::before {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --controlSelectedOutlineBackgroundColor,
     rgb(58, 129, 191)
@@ -1731,7 +1744,7 @@ label {
 
   -webkit-transform: rotate(125deg);
 
-  transform: rotate(125deg);
+          transform: rotate(125deg);
 }
 
 .rux-radio-button input[type="radio"]:checked + label::after,
@@ -1789,7 +1802,8 @@ label {
   background-color: rgb(0, 90, 143);
 
   background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
-  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+  ;
   background-image: var(
     --selectCaret,
     url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
@@ -1822,8 +1836,8 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 .rux-form-element label {
@@ -1862,13 +1876,13 @@ label {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 
   font-family: "Open Sans", sans-serif;
 
@@ -1889,31 +1903,31 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
+      -ms-flex-order: 1;
+          order: 1;
   margin: 0 0 0.15rem 0;
   width: 100%;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   color: rgb(255, 255, 255);
 
   color: var(--fontColor, rgb(255, 255, 255));
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .rux-form-field input {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
+      -ms-flex-order: 2;
+          order: 2;
 
   height: 2.25rem;
   width: 100%;
@@ -2063,9 +2077,9 @@ label {
 
 .rux-form-field input:focus .rux-form-field input:invalid:focus {
   -webkit-box-shadow: inset 0 0 3px rgb(204, 204, 204);
-  box-shadow: inset 0 0 3px rgb(204, 204, 204);
+          box-shadow: inset 0 0 3px rgb(204, 204, 204);
   -webkit-box-shadow: inset 0 0 3px var(--colorGray);
-  box-shadow: inset 0 0 3px var(--colorGray);
+          box-shadow: inset 0 0 3px var(--colorGray);
   border-color: var(--inputFocusBorderColor);
   outline: none;
   color: black;
@@ -2132,8 +2146,8 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   max-width: 6.25rem;
   min-width: 4rem;
 
@@ -2154,14 +2168,14 @@ label {
 .rux-advanced-status__status-icon {
   margin: 0 2px 0 auto;
   -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 .rux-advanced-status__icon {
   -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
+      -ms-flex-order: 2;
+          order: 2;
   margin: 0 auto;
 }
 
@@ -2183,8 +2197,8 @@ label {
   display: block;
   z-index: 2;
   -webkit-box-ordinal-group: 4;
-  -ms-flex-order: 3;
-  order: 3;
+      -ms-flex-order: 3;
+          order: 3;
 
   position: absolute;
   bottom: -0.75rem;
@@ -2238,11 +2252,11 @@ label {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .rux-clock__segment__value {
@@ -2250,8 +2264,8 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "Roboto Mono", monospace;
   font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
   font-weight: 700;
@@ -2335,11 +2349,11 @@ i.rux-icon {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   position: relative;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 
   padding: 0.5rem;
   background-color: rgb(20, 32, 44);
@@ -2376,7 +2390,7 @@ i.rux-icon {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-line-pack: start;
-  align-content: flex-start;
+      align-content: flex-start;
 }
 
 .rux-log__events {
@@ -2386,7 +2400,7 @@ i.rux-icon {
 
 .log-event__timestamp {
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
 
   text-align: right;
   width: 5rem;
@@ -2397,10 +2411,10 @@ i.rux-icon {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgb(40, 63, 88);
   border-bottom: 1px solid var(--logBorderColor, rgb(40, 63, 88));
@@ -2426,10 +2440,10 @@ i.rux-icon {
 
 .log-event__status {
   -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   text-align: center;
   width: 1rem;
   overflow: hidden;
@@ -2437,8 +2451,8 @@ i.rux-icon {
 
 .log-event__message {
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   text-align: left;
 }
 
@@ -2447,8 +2461,8 @@ i.rux-icon {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 /* ol li:nth-child(even) {
@@ -2463,7 +2477,7 @@ i.rux-icon {
 
   -ms-flex-line-pack: center;
 
-  align-content: center;
+      align-content: center;
 
   color: rgb(0, 0, 0);
 
@@ -2484,11 +2498,11 @@ i.rux-icon {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 
   background-color: rgb(0, 0, 0);
 
@@ -2505,16 +2519,16 @@ i.rux-icon {
 
   -webkit-user-select: none;
 
-  -moz-user-select: none;
+     -moz-user-select: none;
 
-  -ms-user-select: none;
+      -ms-user-select: none;
 
-  user-select: none;
+          user-select: none;
 
   -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
 
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+          box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -2523,16 +2537,16 @@ i.rux-icon {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   width: 100%;
   height: 2rem;
@@ -2541,9 +2555,9 @@ i.rux-icon {
 
   background-color: var(--modalBorderColor, rgb(0, 90, 143));
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: move;
 }
 
@@ -2564,11 +2578,11 @@ i.rux-icon {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 1rem;
   color: rgb(255, 255, 255);
   color: var(--fontColor, rgb(255, 255, 255));
@@ -2577,7 +2591,7 @@ i.rux-icon {
 .rux-button-group {
   margin-left: auto;
   -ms-flex-item-align: end;
-  align-self: flex-end;
+      align-self: flex-end;
 }
 
 .rux-modal__message {
@@ -2586,7 +2600,7 @@ i.rux-icon {
 
 .rux-modal .rux-button {
   -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 /*
@@ -2601,18 +2615,18 @@ i.rux-icon {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
 
   top: -4.25rem;
   left: 0;
@@ -2628,7 +2642,7 @@ i.rux-icon {
 
   -webkit-box-sizing: border-box;
 
-  box-sizing: border-box;
+          box-sizing: border-box;
   color: rgb(0, 0, 0);
   color: var(--colorBlack, rgb(0, 0, 0));
 }
@@ -2677,11 +2691,11 @@ i.rux-icon {
 
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .rux-notification_close-button::after,
@@ -2710,12 +2724,12 @@ i.rux-icon {
 
 .rux-notification_close-button::after {
   -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .rux-notification_close-button::before {
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 /* Critical Variant */
@@ -2883,7 +2897,7 @@ i.rux-icon {
 
   margin: -12px 0 0 16px;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .rux-pop-up--bottom,
@@ -2910,7 +2924,7 @@ i.rux-icon {
 
   margin: -7px 0 0 16px;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .rux-pop-up--left,
@@ -2937,7 +2951,7 @@ i.rux-icon {
 
   margin: 16px 0 0 -12px;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .rux-pop-up--right,
@@ -2965,7 +2979,7 @@ i.rux-icon {
   right: 0;
   margin: 16px -12px 0 0;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 /*
@@ -3006,23 +3020,24 @@ i.rux-icon {
 
   -webkit-box-pack: justify;
 
-  -ms-flex-pack: justify;
+      -ms-flex-pack: justify;
 
-  justify-content: space-between;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   height: 2rem;
 }
 
 .rux-progress progress[value] {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 
   /* background: #21384f; */
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3)
+  ;
   background-color: var(
     --progressDeterminateTrackBackgroundColor,
     rgba(0, 0, 0, 0.3)
@@ -3062,7 +3077,8 @@ i.rux-icon {
   max-width: calc(100% - 4px);
   max-width: var(--progressWidth);
 
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
 
   background-color: var(
     --progressDeterminateBarBackgroundColor,
@@ -3078,7 +3094,8 @@ i.rux-icon {
   margin: 2px;
   max-width: calc(100% - 6px); /* var(--progressWidth);*/
 
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
 
   background-color: var(
     --progressDeterminateBarBackgroundColor,
@@ -3096,7 +3113,8 @@ i.rux-icon {
   max-width: calc(100% - 4px);
   max-width: var(--progressWidth);
 
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
 
   background-color: var(
     --progressDeterminateBarBackgroundColor,
@@ -3109,13 +3127,14 @@ i.rux-icon {
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
 
   height: 5rem;
   width: 5rem;
 
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23000000%22%20fill-opacity%3D%22.3%22%20stroke%3D%22%2314202c%22%20d%3D%22M32%2C63.5%20C49.3969696%2C63.5%2063.5%2C49.3969696%2063.5%2C32%20C63.5%2C14.6030304%2049.3969696%2C0.5%2032%2C0.5%20C14.6030304%2C0.5%200.5%2C14.6030304%200.5%2C32%20C0.5%2C49.3969696%2014.6030304%2C63.5%2032%2C63.5%20Z%20M32%2C56.5%20C18.4690236%2C56.5%207.5%2C45.5309764%207.5%2C32%20C7.5%2C18.4690236%2018.4690236%2C7.5%2032%2C7.5%20C45.5309764%2C7.5%2056.5%2C18.4690236%2056.5%2C32%20C56.5%2C45.5309764%2045.5309764%2C56.5%2032%2C56.5%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%234dacff%22%20fill-rule%3D%22nonzero%22%20d%3D%22M32%2C61.9354839%20C30.9333606%2C61.9354839%2030.0686785%2C61.0708018%2030.0686785%2C60.0041623%20C30.0686785%2C58.9375229%2030.9333606%2C58.0728408%2032%2C58.0728408%20C40.1954904%2C58.0728408%2047.7578267%2C54.2689176%2052.6662672%2C47.8987622%20C56.1526582%2C43.3741373%2058.0728408%2C37.8356396%2058.0728408%2C32%20C58.0728408%2C17.6003676%2046.3996324%2C5.92715921%2032%2C5.92715921%20C17.6003676%2C5.92715921%205.92715921%2C17.6003676%205.92715921%2C32%20C5.92715921%2C33.0666394%205.0624771%2C33.9313215%203.99583767%2C33.9313215%20C2.92919824%2C33.9313215%202.06451613%2C33.0666394%202.06451613%2C32%20C2.06451613%2C15.4670888%2015.4670888%2C2.06451613%2032%2C2.06451613%20C48.5329112%2C2.06451613%2061.9354839%2C15.4670888%2061.9354839%2C32%20C61.9354839%2C38.6961574%2059.7285058%2C45.0618765%2055.7259583%2C50.2563674%20C50.0938506%2C57.5656952%2041.4065535%2C61.9354839%2032%2C61.9354839%20Z%22%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23000000%22%20fill-opacity%3D%22.3%22%20stroke%3D%22%2314202c%22%20d%3D%22M32%2C63.5%20C49.3969696%2C63.5%2063.5%2C49.3969696%2063.5%2C32%20C63.5%2C14.6030304%2049.3969696%2C0.5%2032%2C0.5%20C14.6030304%2C0.5%200.5%2C14.6030304%200.5%2C32%20C0.5%2C49.3969696%2014.6030304%2C63.5%2032%2C63.5%20Z%20M32%2C56.5%20C18.4690236%2C56.5%207.5%2C45.5309764%207.5%2C32%20C7.5%2C18.4690236%2018.4690236%2C7.5%2032%2C7.5%20C45.5309764%2C7.5%2056.5%2C18.4690236%2056.5%2C32%20C56.5%2C45.5309764%2045.5309764%2C56.5%2032%2C56.5%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%234dacff%22%20fill-rule%3D%22nonzero%22%20d%3D%22M32%2C61.9354839%20C30.9333606%2C61.9354839%2030.0686785%2C61.0708018%2030.0686785%2C60.0041623%20C30.0686785%2C58.9375229%2030.9333606%2C58.0728408%2032%2C58.0728408%20C40.1954904%2C58.0728408%2047.7578267%2C54.2689176%2052.6662672%2C47.8987622%20C56.1526582%2C43.3741373%2058.0728408%2C37.8356396%2058.0728408%2C32%20C58.0728408%2C17.6003676%2046.3996324%2C5.92715921%2032%2C5.92715921%20C17.6003676%2C5.92715921%205.92715921%2C17.6003676%205.92715921%2C32%20C5.92715921%2C33.0666394%205.0624771%2C33.9313215%203.99583767%2C33.9313215%20C2.92919824%2C33.9313215%202.06451613%2C33.0666394%202.06451613%2C32%20C2.06451613%2C15.4670888%2015.4670888%2C2.06451613%2032%2C2.06451613%20C48.5329112%2C2.06451613%2061.9354839%2C15.4670888%2061.9354839%2C32%20C61.9354839%2C38.6961574%2059.7285058%2C45.0618765%2055.7259583%2C50.2563674%20C50.0938506%2C57.5656952%2041.4065535%2C61.9354839%2032%2C61.9354839%20Z%22%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+  ;
 
   background-image: var(
     --progressIndeterminate,
@@ -3128,13 +3147,13 @@ i.rux-icon {
 
   -webkit-animation-name: spin;
 
-  animation-name: spin;
+          animation-name: spin;
   -webkit-animation-duration: 1.367s;
-  animation-duration: 1.367s;
+          animation-duration: 1.367s;
   -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
+          animation-timing-function: linear;
 
   background-color: transparent;
   border: none;
@@ -3157,22 +3176,22 @@ i.rux-icon {
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -3217,12 +3236,12 @@ i.rux-icon {
 
   -webkit-box-pack: center;
 
-  -ms-flex-pack: center;
+      -ms-flex-pack: center;
 
-  justify-content: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   height: 1.375rem;
   font-size: 0.75rem !important;
@@ -3264,7 +3283,7 @@ i.rux-icon {
 
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
 
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
+          box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
 }
 
 .rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on,
@@ -3321,11 +3340,11 @@ i.rux-icon {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   width: auto;
   height: 1.5625rem;
@@ -3347,11 +3366,11 @@ i.rux-icon {
 
   -webkit-user-select: none;
 
-  -moz-user-select: none;
+     -moz-user-select: none;
 
-  -ms-user-select: none;
+      -ms-user-select: none;
 
-  user-select: none;
+          user-select: none;
 }
 
 .rux-segmented-button__segment:last-child label {
@@ -3363,7 +3382,8 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment label:hover {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --segmentedButtonHoverBackgroundColor,
     rgb(58, 129, 191)
@@ -3374,7 +3394,8 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment input:checked + label {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --segmentedButtonSelectedBackgroundColor,
     rgb(58, 129, 191)
@@ -3382,16 +3403,20 @@ i.rux-icon {
   color: rgb(255, 255, 255);
   color: var(--segmentedButtonSelectedTextColor, rgb(255, 255, 255));
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
+    inset 0 3px 4px rgba(0, 0, 0, 0.12),
+    inset 0 1px 5px rgba(0, 0, 0, 0.2)
+  ;
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
+    inset 0 3px 4px rgba(0, 0, 0, 0.12),
+    inset 0 1px 5px rgba(0, 0, 0, 0.2)
+  ;
   -webkit-box-shadow: var(
     --segmentedButtonSelectedBoxShadow,
     inset 0 2px 4px rgba(0, 0, 0, 0.14),
     inset 0 3px 4px rgba(0, 0, 0, 0.12),
     inset 0 1px 5px rgba(0, 0, 0, 0.2)
   );
-  box-shadow: var(
+          box-shadow: var(
     --segmentedButtonSelectedBoxShadow,
     inset 0 2px 4px rgba(0, 0, 0, 0.14),
     inset 0 3px 4px rgba(0, 0, 0, 0.12),
@@ -3450,8 +3475,8 @@ i.rux-icon {
 .rux-range,
 .satcom-range {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 
   background: none;
 
@@ -3467,7 +3492,7 @@ input[type="range"]:focus {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
-  align-items: center;
+          align-items: center;
 
   /* width: 100%; */
   height: 2px;
@@ -3483,8 +3508,7 @@ input[type="range"]:focus {
 
   background-image: -webkit-gradient(
     linear,
-    left top,
-    right top,
+    left top, right top,
     from(rgb(77, 172, 255)),
     color-stop(rgb(77, 172, 255)),
     color-stop(rgb(217, 217, 217)),
@@ -3494,15 +3518,16 @@ input[type="range"]:focus {
   background-image: linear-gradient(
     to right,
     rgb(77, 172, 255) 0%,
-    rgb(77, 172, 255) calc(1% * var(--value)),
-    rgb(217, 217, 217) calc(1% * var(--value)),
+    rgb(77, 172, 255)
+      calc(1% * var(--value)),
+    rgb(217, 217, 217)
+      calc(1% * var(--value)),
     rgb(217, 217, 217) 100%
   );
 
   background-image: -webkit-gradient(
     linear,
-    left top,
-    right top,
+    left top, right top,
     from(var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))),
     color-stop(var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))),
     color-stop(var(--sliderTrackBackgroundColor, rgb(217, 217, 217))),
@@ -3538,7 +3563,8 @@ input[type="range"]:focus {
 }
 
 .rux-range::-moz-range-progress {
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
   background-color: var(
     --sliderSelectedTrackBackgroundColor,
     rgb(77, 172, 255)
@@ -3556,7 +3582,7 @@ input[type="range"]:focus {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center;
+      align-items: center;
 
   /* width: 100%; */
   height: 1.25rem;
@@ -3599,15 +3625,12 @@ input[type="range"]:focus {
   background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
   cursor: pointer;
-  -webkit-box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+  -webkit-box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-    var(--thumbShadow);
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
+  -webkit-box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
+          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 
   outline: none !important;
 }
@@ -3634,8 +3657,7 @@ input:-moz-focusring {
   background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
   cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 }
@@ -3688,10 +3710,11 @@ input:-moz-focusring {
   -webkit-box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
     0 1px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 0 0 4px rgb(0, 90, 143), 0 1px 3px rgba(0, 0, 0, 0.14),
-    0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
+    0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
+    0 1px 1px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: var(--thumbShadowActive);
-  box-shadow: var(--thumbShadowActive);
+          box-shadow: var(--thumbShadowActive);
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
@@ -3702,10 +3725,10 @@ input:-moz-focusring {
   background-color: var(--sliderHoverThumbBackgroundColor, rgb(58, 129, 191));
   -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
     0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
-    0 3px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
+    0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: var(--thumbShadowHover);
-  box-shadow: var(--thumbShadowHover);
+          box-shadow: var(--thumbShadowHover);
 }
 
 /*
@@ -3757,7 +3780,8 @@ input:-moz-focusring {
 .rux-status-indicator.rux-status--off::before,
 .rux-status--off .rux-advanced-status__icon::before,
 .satcom-status-off::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
   background-image: var(
     --statusOff,
     url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
@@ -3767,7 +3791,8 @@ input:-moz-focusring {
 .rux-status-indicator.rux-status--standby::before,
 .rux-status--standby .rux-advanced-status__icon::before,
 .satcom-status-standby::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
   background-image: var(
     --statusStandby,
     url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A")
@@ -3779,7 +3804,8 @@ input:-moz-focusring {
 .rux-status--normal .rux-advanced-status__icon::before,
 .rux-status--ok .rux-advanced-status__icon::before,
 .satcom-status-ok::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
   background-image: var(
     --statusNormal,
     url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
@@ -3790,7 +3816,8 @@ input:-moz-focusring {
 .rux-status-indicator.rux-status--caution::before,
 .rux-status--caution .rux-advanced-status__icon::before,
 .satcom-status-caution::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
   background-image: var(
     --statusCaution,
     url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
@@ -3803,14 +3830,15 @@ input:-moz-focusring {
 .rux-status--serious .rux-advanced-status__icon::before,
 .rux-status--error .rux-advanced-status__icon::before,
 .satcom-status-error::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
   background-image: var(
     --statusSerious,
     url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   );
   margin-top: 1px;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .rux-status-indicator.rux-status--critical::before,
@@ -3819,14 +3847,15 @@ input:-moz-focusring {
 .rux-status--alert .rux-advanced-status__icon::before,
 .rux-status--emergency .rux-advanced-status__icon::before,
 .satcom-status-alert::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+  ;
   background-image: var(
     --statusCritical,
     url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
   );
   background-position: 0 -1px;
   -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 /* Specific Color */
@@ -3919,11 +3948,11 @@ input:-moz-focusring {
 
   -webkit-user-select: none;
 
-  -moz-user-select: none;
+     -moz-user-select: none;
 
-  -ms-user-select: none;
+      -ms-user-select: none;
 
-  user-select: none;
+          user-select: none;
 }
 
 .rux-tabs--compact {
@@ -3971,8 +4000,8 @@ input:-moz-focusring {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 3px 2rem 0;
 
   text-decoration: none;
@@ -3995,9 +4024,9 @@ input:-moz-focusring {
   color: rgb(255, 255, 255);
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
   -webkit-box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
-  box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
+          box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
   -webkit-box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
-  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+          box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
 .rux-tabs--compact .selected a,
@@ -4005,9 +4034,9 @@ input:-moz-focusring {
   color: rgb(255, 255, 255);
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
   -webkit-box-shadow: inset 0 -3px 0 rgb(77, 172, 255);
-  box-shadow: inset 0 -3px 0 rgb(77, 172, 255);
+          box-shadow: inset 0 -3px 0 rgb(77, 172, 255);
   -webkit-box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
-  box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+          box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
 .rux-tabs .selected a:hover,
@@ -4015,9 +4044,9 @@ input:-moz-focusring {
   color: rgb(255, 255, 255);
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
   -webkit-box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
-  box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
+          box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
   -webkit-box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
-  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+          box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
 .rux-tabs a:hover:not([disabled]),
@@ -4049,7 +4078,7 @@ input:-moz-focusring {
   position: relative;
   display: inline-block;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 
   -webkit-font-smoothing: subpixel-antialiased;
 
@@ -4061,9 +4090,9 @@ input:-moz-focusring {
   border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
   /* box-shadow: inset 0 0 2px rgba(0, 0, 0, 1); */
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   overflow: hidden;
 }
 
@@ -4080,12 +4109,12 @@ input:-moz-focusring {
 
   -ms-flex-pack: distribute;
 
-  justify-content: space-around;
+      justify-content: space-around;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   top: 0;
   left: 0;
@@ -4103,13 +4132,13 @@ input:-moz-focusring {
 
   -ms-flex-line-pack: center;
 
-  align-content: center;
+      align-content: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   width: 50%;
   height: 100%;
@@ -4142,7 +4171,7 @@ input:-moz-focusring {
 
   -webkit-box-sizing: border-box;
 
-  box-sizing: border-box;
+          box-sizing: border-box;
 
   top: 0;
   left: 0;
@@ -4166,9 +4195,13 @@ input:-moz-focusring {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E %3Cdefs%3E %3ClinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3E %3Cstop offset='0%25' stop-color='%23000'/%3E %3Cstop offset='100%25' stop-color='%23023861' stop-opacity='0'/%3E %3C/linearGradient%3E %3C/defs%3E %3Ccircle cx='3' cy='3' r='3' fill='url(%23a)' fill-rule='evenodd'/%3E %3C/svg%3E")
     center center no-repeat;
 
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 1px 0 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
+    1px 0 2px rgba(0, 0, 0, 0.6)
+  ;
 
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 1px 0 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
+    1px 0 2px rgba(0, 0, 0, 0.6)
+  ;
 
   -webkit-box-shadow: var(
     --toggleButtonBoxShadow,
@@ -4176,7 +4209,7 @@ input:-moz-focusring {
     1px 0 2px rgba(0, 0, 0, 0.6)
   );
 
-  box-shadow: var(
+          box-shadow: var(
     --toggleButtonBoxShadow,
     0 0 3px rgba(0, 0, 0, 0.5),
     1px 0 2px rgba(0, 0, 0, 0.6)
@@ -4202,14 +4235,18 @@ input:-moz-focusring {
 
 .rux-toggle--legacy__input:checked + .rux-toggle--legacy__button::after {
   left: 50%;
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), -1px 0 2px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), -1px 0 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
+    -1px 0 2px rgba(0, 0, 0, 0.6)
+  ;
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
+    -1px 0 2px rgba(0, 0, 0, 0.6)
+  ;
   -webkit-box-shadow: var(
     --toggleButtonSelectedBoxShadow,
     0 0 3px rgba(0, 0, 0, 0.5),
     -1px 0 2px rgba(0, 0, 0, 0.6)
   );
-  box-shadow: var(
+          box-shadow: var(
     --toggleButtonSelectedBoxShadow,
     0 0 3px rgba(0, 0, 0, 0.5),
     -1px 0 2px rgba(0, 0, 0, 0.6)
@@ -4240,13 +4277,13 @@ input:-moz-focusring {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 
   /* height: 1.175rem; */
   /* width: 2.3875rem; */
@@ -4255,11 +4292,11 @@ input:-moz-focusring {
 
   -webkit-user-select: none;
 
-  -moz-user-select: none;
+     -moz-user-select: none;
 
-  -ms-user-select: none;
+      -ms-user-select: none;
 
-  user-select: none;
+          user-select: none;
   overflow: hidden;
 }
 
@@ -4274,8 +4311,8 @@ input:-moz-focusring {
   /* justify-content: center;
   align-content: center; */
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .rux-toggle__button::before {
@@ -4304,7 +4341,8 @@ input:-moz-focusring {
 
 /* Track */
 .rux-toggle__input:checked + .rux-toggle__button::before {
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
   background-color: var(
     --toggleSelectedTrackBackgroundColor,
     rgb(77, 172, 255)
@@ -4334,7 +4372,8 @@ input:-moz-focusring {
 }
 
 .rux-toggle__input:disabled + .rux-toggle__button::after {
-  background-color: rgb(163, 163, 163);
+  background-color: rgb(163, 163, 163)
+  ;
   background-color: var(
     --toggleDisabledThumbBackgroundColor,
     rgb(163, 163, 163)
@@ -4350,7 +4389,8 @@ input:-moz-focusring {
 }
 
 .rux-toggle__input:checked:disabled + .rux-toggle__button::after {
-  border-color: rgb(163, 163, 163);
+  border-color: rgb(163, 163, 163)
+  ;
   border-color: var(
     --toggleDisabledSelectedThumbBorderColor,
     rgb(163, 163, 163)
@@ -4367,7 +4407,7 @@ input:-moz-focusring {
 .rux-tree {
   display: inline-block;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 
   width: 100%;
   padding: 0;
@@ -4393,7 +4433,7 @@ input:-moz-focusring {
 *:before,
 *:after {
   -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .rux-tree ul {
@@ -4413,20 +4453,20 @@ input:-moz-focusring {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-line-pack: stretch;
-  align-content: stretch;
+      align-content: stretch;
   padding: 0 0 0 1.25rem;
   margin: 0;
 }
 
 .rux-tree__label {
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 0.5rem;
 
   white-space: nowrap;
@@ -4453,7 +4493,8 @@ input:-moz-focusring {
   height: 0;
   border-style: solid;
   border-width: 7px 0 7px 7px;
-  border-color: transparent transparent transparent rgb(77, 172, 255);
+  border-color: transparent transparent transparent
+    rgb(77, 172, 255);
   border-color: transparent transparent transparent
     var(--treeAccentColor, rgb(77, 172, 255));
   display: inline-block;
@@ -4479,7 +4520,7 @@ input:-moz-focusring {
 /* Expanded */
 .expanded .rux-tree__arrow::after {
   -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .expanded .rux-tree__children {
@@ -4491,10 +4532,9 @@ input:-moz-focusring {
   background-color: rgb(0, 68, 107);
   background-color: var(--treeSelectedBackgroundColor, rgb(0, 68, 107));
   -webkit-box-shadow: inset 5px 0 rgb(77, 172, 255);
-  box-shadow: inset 5px 0 rgb(77, 172, 255);
-  -webkit-box-shadow: inset 5px 0
-    var(--treeSelectedAccentColor, rgb(77, 172, 255));
-  box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
+          box-shadow: inset 5px 0 rgb(77, 172, 255);
+  -webkit-box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
+          box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
 
   color: rgb(255, 255, 255);
 
@@ -4502,7 +4542,9 @@ input:-moz-focusring {
 }
 
 .rux-tree .selected .rux-tree__arrow::after {
-  border-color: transparent transparent transparent rgb(77, 172, 255);
+  border-color: transparent transparent transparent
+    rgb(77, 172, 255);
   border-color: transparent transparent transparent
     var(--treeSelectedAccentColor, rgb(77, 172, 255));
 }
+
