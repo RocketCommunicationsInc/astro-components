@@ -1,48 +1,19 @@
 {
-  "_args": [
-    [
-      "@astrouxds/rux-status@1.0.3",
-      "/private/var/www/astro/05-components.astrouxds.com"
-    ]
-  ],
-  "_from": "@astrouxds/rux-status@1.0.3",
-  "_id": "@astrouxds/rux-status@1.0.3",
-  "_inBundle": false,
-  "_integrity": "sha512-HBoYNPkkwibkbanY0Cvwwy/UeDjeq7nR/xALeiGmocNjcVB2vJj+KX6HI7lJhHfqeag5qjX4oMpMVXyfLx3xHA==",
-  "_location": "/@astrouxds/rux-status",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "@astrouxds/rux-status@1.0.3",
-    "name": "@astrouxds/rux-status",
-    "escapedName": "@astrouxds%2frux-status",
-    "scope": "@astrouxds",
-    "rawSpec": "1.0.3",
-    "saveSpec": null,
-    "fetchSpec": "1.0.3"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-status/-/rux-status-1.0.3.tgz",
-  "_spec": "1.0.3",
-  "_where": "/private/var/www/astro/05-components.astrouxds.com",
   "author": {
     "name": "Rocket Communications",
-    "email": "astro@rocketcom.com"
+    "email": "astrouxds@rocketcom.com"
   },
   "dependencies": {
-    "@astrouxds/rux-icon": "^3.0.1",
+    "@astrouxds/rux-icon": "^4.0.0-0",
     "lit-element": "^2.1.0",
     "@webcomponents/webcomponentsjs": "^2.2.10"
   },
   "description": "Astro Web Component for status indicator",
-  "license": "GPL-3.0",
+  "license": "CC0-1.0",
   "main": "rux-status.js",
   "name": "@astrouxds/rux-status",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "3.1.1"
+  "version": "4.0.0-2"
 }
