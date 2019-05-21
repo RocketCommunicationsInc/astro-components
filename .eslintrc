@@ -19,7 +19,8 @@
       2,
       {
         "ignoreUrls": true,
-        "ignoreStrings": true
+        "ignoreStrings": true,
+        "ignorePattern": "data:image\/|\\s*require\\s*\\(|^\\s*loader\\.lazy|-\\*-"
       }
     ]
   },
@@ -35,9 +36,6 @@
     "browser": true,
     "node": true
   },
-  "plugins": [
-    "html"
-  ],
   "globals": {
     "customEvent": true,
     "customElements": true,
