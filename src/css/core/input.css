@@ -67,6 +67,29 @@
   color: var(--inputTextColor, rgb(0, 0, 0));
 }
 
+.rux-form-field textarea {
+  box-sizing: border-box;
+  -webkit-order: 2;
+  order: 2;
+
+  min-height: 4.25rem;
+  width: 100%;
+  padding: 0.5rem;
+
+  border: 1px solid transparent;
+
+  border: 1px solid var(--inputBorderColor, transparent);
+  border-radius: 3px;
+
+  font-family: "Open Sans", sans-serif;
+
+  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-size: 1rem;
+  font-size: var(--fontSize, 1rem);
+  color: rgb(0, 0, 0);
+  color: var(--inputTextColor, rgb(0, 0, 0));
+}
+
 .rux-form-field input[type="number"]::-webkit-inner-spin-button,
 .rux-form-field input[type="number"]::-webkit-outer-spin-button,
 .rux-form-field input[type="date"]::-webkit-inner-spin-button,
