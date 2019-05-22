@@ -4,13 +4,13 @@ Pushbuttons are a variant of the toggle button that incorporate label and action
 
 ## Guidelines
 
-- [Astro UXDS: Toggle](http://www.astrouxds.com/library/toggle)
+- [Astro UXDS: Toggle & Push Button](http://www.astrouxds.com/library/toggle)
 
 ## Web Components Usage
 
 ### 1. Installation
 
-#### ** Install the Astro RUX Toggle package via Command Line** (Preferred Method)
+#### ** Install the Astro RUX Push Button package via Command Line** (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-push-button
@@ -28,7 +28,7 @@ git clone https://bitbucket.org/rocketcom/astro-components.git
 
 Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
-### 2. Import the RUX Toggle Web Component
+### 2. Import the RUX Push Button Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
@@ -36,7 +36,7 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 import { RuxPushButton } from "@astro-components/rux-push-button/rux-push-button.js";
 ```
 
-### 3. Render the RUX Toggle Web Component
+### 3. Render the RUX Push Button Web Component
 
 This component allows for a label to be passed through via a [slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) inside the component node.
 
