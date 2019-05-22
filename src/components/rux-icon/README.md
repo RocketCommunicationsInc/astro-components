@@ -37,7 +37,7 @@ Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxIcon } from '@astro-components/rux-icon/rux-icon.js';
+import { RuxIcon } from "@astro-components/rux-icon/rux-icon.js";
 ```
 
 ### 3. Render the RUX Icon Web Component
@@ -49,28 +49,27 @@ import { RuxIcon } from '@astro-components/rux-icon/rux-icon.js';
 External icon sets are supported via the `library` attribute. External icon libraries must be SVGs and each icon must have its own unique id. Icon library properties should be the root relative path to your icons
 
 ```xml
-<rux-icon library="icons/my-custom-icons.svg" icon="my-icon"></rux-icon>
+<rux-icon library="/icons/my-custom-icons.svg" icon="my-icon"></rux-icon>
 
 ```
 
 Icons support color and size overrides. The color property supports any CSS3 valid color value.
 
 ```xml
-<rux-icon icon="caution" color="#fff" >
-</rux-icon>
+<rux-icon icon="caution" color="#fff" ></rux-icon>
 ```
 
 ---
 
 ## Properties
 
-| Property  | Type     | Required | Description                                                                                                                                                     |
-| --------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`    | `string` | `true`   | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols)  |
-| `label`   | `string` | `true`   | A descriptive label of the icon, **Required for ARIA/Accessibility**                                                                                            |
-| `library` | `string` | `false`  | Load an external icon set. Icons must be an SVG with individual icons having their own unique `id` attribute.                                                   |
-| `color`   | `string` | `false`  | Changes the icon color. Accepted values can be entered as hex, rgba, hsl and HTML string. **Caution: the `status` icon set cannot and should not be overidden** |
-| `size`    | `string` | `false`  | Allows for large icon variants                                                                                                                                  |
+| Property  | Type   | Defaukt           | Required | Description                                                                                                                                                                              |
+| --------- | ------ | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `icon`    | string | none              | yes      | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols)                           |
+| `label`   | string | none              | yes      | A descriptive label of the icon, **Required for ARIA/Accessibility**                                                                                                                     |
+| `library` | string | astro.svg         | no       | Load an external icon set. Icons must be an SVG with individual icons having their own unique `id` attribute. Icon library properties should be the root relative path to your icons.    |
+| `color`   | string | rgb(77, 172, 255) | no       | Applie a custom fill color. Accepted values can be entered as any valid HTML color string, e.g., hex, rgba or hsl. **Caution: the `status` icon set cannot and should not be overidden** |
+| `size`    | string | normal            | no       | Adjusts icon size, supported values are `exxtra-small` (16px), `small` (32px) and `large` (64px)                                                                                         |
 
 ### Standard Icons
 
@@ -83,7 +82,7 @@ Icons support color and size overrides. The color property supports any CSS3 val
 
 ##### **4.1**
 
-- Added support for external icon libraries viat the `library` property
+- Added support for external icon libraries via the `library` property
 - Replaced the DOM manipulation library for loading icons in favor of an HTML5 template TODO: add support for template outside of WebComponents when browser’s support shadowDOM piercing
 - Removed status indicators
 - Added a default libaray via template method
