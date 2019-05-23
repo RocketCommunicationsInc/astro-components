@@ -1,5 +1,5 @@
-import { directive } from 'lit-html';
-export const filterNotifications = directive(val => part => {
+import { directive } from "lit-html";
+export const collapseNumber = directive(val => part => {
   try {
     const n = Math.floor(val);
     if (n.isNaN) return;
@@ -14,18 +14,18 @@ export const filterNotifications = directive(val => part => {
     const trillion = (n / 1000000000000) % 1000000000000; // trillion is just to offer an overflow instance
 
     // set the display to its original state
-    let _message = n;
+    let _shorthand = n;
 
     if (trillion >= 1) {
-      _message = '∞';
+      _shorthand = "∞";
     } else if (billion >= 1) {
-      _message = `${billion.toFixed(1).toString()}b`;
+      _shorthand = `${billion.toFixed(1).toString()}B`;
     } else if (million >= 1) {
-      _message = `${million.toFixed(1).toString()}m`;
+      _shorthand = `${million.toFixed(1).toString()}M`;
     } else if (thousand >= 1) {
-      _message = `${thousand}k`;
+      _shorthand = `${thousand}K`;
     }
-    part.setValue(_message);
+    part.setValue(_shorthand);
   } catch (error) {
     console.error(error);
   }
