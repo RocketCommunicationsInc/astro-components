@@ -1,73 +1,81 @@
 /* eslint-disable no-unused-vars */
-import { storiesOf } from '@storybook/polymer';
-import { html, render } from 'lit-html';
-import { boolean, text, number, select, array, object, withKnobs } from '@storybook/addon-knobs';
-import { RuxIcon } from '../src/components/rux-icon/rux-icon.js';
-import { RuxStatus } from '../src/components/rux-status/rux-status.js';
-import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-icon.js';
-import { RuxMonitoringProgressIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-progress-icon.js';
-import Readme from '../src/components/rux-icon/README.md';
-import ReadmeMonitoring from '../src/components/rux-monitoring-icon/README.md';
+import { storiesOf } from "@storybook/polymer";
+import { html, render } from "lit-html";
+import {
+  boolean,
+  text,
+  number,
+  select,
+  array,
+  object,
+  withKnobs
+} from "@storybook/addon-knobs";
+import { RuxIcon } from "../src/components/rux-icon/rux-icon.js";
+import { RuxStatus } from "../src/components/rux-status/rux-status.js";
+import { RuxMonitoringIcon } from "../src/components/rux-monitoring-icon/rux-monitoring-icon.js";
+import { RuxMonitoringProgressIcon } from "../src/components/rux-monitoring-icon/rux-monitoring-progress-icon.js";
+import Readme from "../src/components/rux-icon/README.md";
+import ReadmeMonitoring from "../src/components/rux-monitoring-icon/README.md";
 
 /* eslint-enable no-unused-vars */
 
-storiesOf('Components|Icons & Symbols', module)
+storiesOf("Components|Icons & Symbols", module)
   .addDecorator(withKnobs)
   .add(
-    'All Icons',
+    "All Icons",
     () => {
-      const groupId = 'Options';
+      const groupId = "Options";
 
       const colors = {
-        Primary: '#005a8f',
-        Secondary: '#4dacff',
-        Tertiary: '#52667a',
-        Quaternary: '#ced6e4',
-        White: '#ffffff',
+        Primary: "#005a8f",
+        Secondary: "#4dacff",
+        Tertiary: "#52667a",
+        Quaternary: "#ced6e4",
+        White: "#ffffff"
       };
 
       const sizes = {
-        'Extra Small': 'extra-small',
-        Small: 'small',
-        Normal: 'normal',
-        Large: 'large',
+        "Extra Small": "extra-small",
+        Small: "small",
+        Normal: "normal",
+        Large: "large"
       };
 
-      const colorKnob = select('Color', colors, '#4dacff');
-      const sizeKnob = select('Size', sizes, 'normal');
+      const colorKnob = select("Color", colors, "#4dacff");
+      const sizeKnob = select("Size", sizes, "normal");
       let icons = [
-        'altitude',
-        'antenna',
-        'antenna-off',
-        'antenna-receive',
-        'antenna-transmit',
-        'equipment',
-        'mission',
-        'payload',
-        'processor',
-        'processor-alt',
-        'netcom',
-        'propulsion-power',
-        'thermal',
-        'satellite-off',
-        'satellite-receive',
-        'satellite-transmit',
-        'add-large',
-        'add-small',
-        'close-large',
-        'close-small',
-        'collapse',
-        'expand',
-        'lock',
-        'unlock',
-        'search',
-        'notifications',
-        'settings',
-        'caution',
-        'maintenance',
+        "altitude",
+        "antenna",
+        "antenna-off",
+        "antenna-receive",
+        "antenna-transmit",
+        "equipment",
+        "mission",
+        "payload",
+        "processor",
+        "processor-alt",
+        "netcom",
+        "propulsion-power",
+        "thermal",
+        "satellite-off",
+        "satellite-receive",
+        "satellite-transmit",
+        "add-large",
+        "add-small",
+        "close-large",
+        "close-small",
+        "collapse",
+        "expand",
+        "lock",
+        "unlock",
+        "search",
+        "notifications",
+        "settings",
+        "caution",
+        "maintenance"
       ];
 
-      const tempSize = '3rem';
+      const tempSize = "3rem";
 
       return html`
         <style>
@@ -105,7 +113,7 @@ storiesOf('Components|Icons & Symbols', module)
                     ></rux-icon>
                     <div class="icon-name">${icon}</div>
                   </li>
-                `,
+                `
             )}
           </ul>
         </div>
@@ -114,72 +122,82 @@ storiesOf('Components|Icons & Symbols', module)
     {
       exports: {
         render,
-        html,
+        html
       },
       notes: {
         // this will also use a .md file, but just trying it out for now
         /* eslint-disable no-useless-escape */
-        markdown: Readme,
-      },
-    },
+        markdown: Readme
+      }
+    }
   )
   .add(
-    'Monitoring Icons',
+    "Monitoring Icons",
     () => {
-      const groupId = 'Options';
+      const groupId = "Options";
 
       /* Select Status */
-      const statusLabel = 'Status';
+      const statusLabel = "Status";
       const statusOptions = {
-        Critical: 'critical',
-        Serious: 'serious',
-        Caution: 'caution',
-        Normal: 'normal',
-        Standby: 'standby',
-        Off: 'off',
-        None: null,
+        Critical: "critical",
+        Serious: "serious",
+        Caution: "caution",
+        Normal: "normal",
+        Standby: "standby",
+        Off: "off",
+        None: null
       };
-      const defaultStatusValue = 'normal';
-      const status = select(statusLabel, statusOptions, defaultStatusValue, groupId);
+      const defaultStatusValue = "normal";
+      const status = select(
+        statusLabel,
+        statusOptions,
+        defaultStatusValue,
+        groupId
+      );
 
       /* Select Icons */
-      const iconLabel = 'Icon';
+      const iconLabel = "Icon";
       const iconOptions = {
-        Altitude: 'altitude',
-        Antenna: 'antenna',
-        'Antenna (Off)': 'antenna-off',
-        'Antenna (Receive)': 'antenna-receive',
-        'Antenna (Transmit)': 'antenna-transmit',
-        Equipment: 'equipment',
-        Mission: 'mission',
-        Payload: 'payload',
-        Processor: 'processor',
-        'Processor (Alt)': 'processor-alt',
-        Netcom: 'netcom',
-        'Propulsion Power': 'propulsion-power',
-        Thermal: 'thermal',
-        'Satellite (Off)': 'satellite-off',
-        'Satellite (Receive)': 'satellite-receive',
-        'Satellite (Transmit)': 'satellite-transmit',
-        None: null,
+        Altitude: "altitude",
+        Antenna: "antenna",
+        "Antenna (Off)": "antenna-off",
+        "Antenna (Receive)": "antenna-receive",
+        "Antenna (Transmit)": "antenna-transmit",
+        Equipment: "equipment",
+        Mission: "mission",
+        Payload: "payload",
+        Processor: "processor",
+        "Processor (Alt)": "processor-alt",
+        Netcom: "netcom",
+        "Propulsion Power": "propulsion-power",
+        Thermal: "thermal",
+        "Satellite (Off)": "satellite-off",
+        "Satellite (Receive)": "satellite-receive",
+        "Satellite (Transmit)": "satellite-transmit",
+        None: null
       };
-      const defaultIconValue = 'altitude';
+      const defaultIconValue = "altitude";
       const icon = select(iconLabel, iconOptions, defaultIconValue, groupId);
 
       /* Icon Labels and Sublabels */
-      const labelLabel = 'Label';
-      const labelDefaultValue = 'Monitoring';
+      const labelLabel = "Label";
+      const labelDefaultValue = "Monitoring";
       const label = text(labelLabel, labelDefaultValue, groupId);
 
-      const sublabelLabel = 'Sub-Label';
-      const sublabelDefaultValue = '';
+      const sublabelLabel = "Sub-Label";
+      const sublabelDefaultValue = "";
       const sublabel = text(sublabelLabel, sublabelDefaultValue, groupId);
 
       /* Notifications */
-      const notificationLabel = 'Notifications';
+      const notificationLabel = "Notifications";
       const notificationDefaultValue = null;
 
-      const notifications = number(notificationLabel, notificationDefaultValue, {}, groupId);
+      const notifications = number(
+        notificationLabel,
+        notificationDefaultValue,
+        {},
+        groupId
+      );
 
       return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
@@ -196,74 +214,82 @@ storiesOf('Components|Icons & Symbols', module)
     {
       exports: {
         render,
-        html,
+        html
       },
       notes: {
         // this will also use a .md file, but just trying it out for now
         /* eslint-disable no-useless-escape */
-        markdown: ReadmeMonitoring,
-      },
-    },
+        markdown: ReadmeMonitoring
+      }
+    }
   )
   .add(
-    'Progress Icon',
+    "Progress Icon",
     () => {
-      const groupId = 'Options';
+      const groupId = "Options";
 
-      const labelLabel = 'Label';
-      const labelDefaultValue = 'Progress';
+      const labelLabel = "Label";
+      const labelDefaultValue = "Progress";
       const label = text(labelLabel, labelDefaultValue, groupId);
 
-      const sublabelLabel = 'Sub-Label';
-      const sublabelDefaultValue = '';
+      const sublabelLabel = "Sub-Label";
+      const sublabelDefaultValue = "";
       const sublabel = text(sublabelLabel, sublabelDefaultValue, groupId);
 
-      const progressLabel = 'Progress';
+      const progressLabel = "Progress";
       const progressDefaultValue = 50;
       const progressOptions = {
         range: true,
         min: 0,
         max: 100,
-        step: 1,
+        step: 1
       };
-      const progress = number(progressLabel, progressDefaultValue, progressOptions, groupId);
+      const progress = number(
+        progressLabel,
+        progressDefaultValue,
+        progressOptions,
+        groupId
+      );
 
       /* Notifications */
-      const notificationLabel = 'Notifications';
+      const notificationLabel = "Notifications";
       const notificationDefaultValue = null;
 
-      const notifications = number(notificationLabel, notificationDefaultValue, {}, groupId);
+      const notifications = number(
+        notificationLabel,
+        notificationDefaultValue,
+        {},
+        groupId
+      );
 
-      const configLabel = 'Configuration';
+      const configLabel = "Configuration";
       const configDefaultValue = [
         {
           threshold: 17,
-          status: 'off',
+          status: "off"
         },
         {
           threshold: 33,
-          status: 'standby',
+          status: "standby"
         },
         {
           threshold: 81,
-          status: 'serious',
+          status: "serious"
         },
         {
           threshold: 49,
-          status: 'normal',
+          status: "normal"
         },
         {
           threshold: 65,
-          status: 'caution',
+          status: "caution"
         },
 
         {
           threshold: 100,
-          status: 'critical',
-        },
+          status: "critical"
+        }
       ];
-
-      // const config = object(configLabel, configDefaultValue, {}, groupId);
 
       return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
@@ -279,12 +305,12 @@ storiesOf('Components|Icons & Symbols', module)
     {
       exports: {
         render,
-        html,
+        html
       },
       notes: {
         // this will also use a .md file, but just trying it out for now
         /* eslint-disable no-useless-escape */
-        markdown: ReadmeMonitoring,
-      },
-    },
+        markdown: ReadmeMonitoring
+      }
+    }
   );

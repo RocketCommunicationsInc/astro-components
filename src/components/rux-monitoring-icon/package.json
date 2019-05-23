@@ -15,10 +15,10 @@
     "type": "git",
     "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
   },
-  "description": "Astro Web Component for Icons",
+  "description": "Astro Web Component for Monitoring Icons",
   "license": "CC0-1.0",
-  "main": "rux-icon.js",
-  "name": "@astrouxds/rux-icon",
+  "main": "rux-monitoring-icon.js",
+  "name": "@astrouxds/rux-monitoring-icon",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
