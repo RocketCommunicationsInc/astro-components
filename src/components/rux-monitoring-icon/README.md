@@ -4,29 +4,29 @@ These icons represent objects, equipment, and concepts that are being administer
 
 ## Important Astro 4 Migration Note:
 
-Prior to Astro 4 the Rux Monitoring Icon and Rux Status Components were included in the same component (Rux Status). Rux Status is now used solely for the [small status indicators](https://astrouxds.com/ui-components/status-symbol). To upgrade to Astro 4 any instance of `<rux-status>` used as an "Advanced Status" or "Monitoring Icon" should replace `<rux-status>` with `<rux-monitoring-icon>`. For example:
+Prior to Astro 4 the Rux Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 seperates these two use cases in to distinct components. The [Rux Status Component](../rux-status/) is solely responsible for the status indicators. This component, Rux Monitoring Icon, replaces the previous "Advanced Status" features of Rux Status.
 
-```html
+To upgrade to Astro 4 any instance of `<rux-status>` used as an "Advanced Status" or "Monitoring Icon" should replace `<rux-status>` with `<rux-monitoring-icon>`. For example:
+
+```xml
 <rux-status
   icon="some-icon"
   status="critical"
   label="Icon Label"
   sublabel="Sub Lobel"
-  notifications="10"
->
+  notifications="10">
 </rux-status>
 ```
 
 Would become this
 
-```html
+```xml
 <rux-monitoring-icon
   icon="some-icon"
   status="critical"
   label="Icon Label"
   sublabel="Sub Lobel"
-  notifications="10"
->
+  notifications="10">
 </rux-monitoring-icon>
 ```
 
