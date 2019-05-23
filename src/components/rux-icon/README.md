@@ -63,13 +63,13 @@ Icons support color and size overrides. The color property supports any CSS3 val
 
 ## Properties
 
-| Property  | Type   | Defaukt           | Required | Description                                                                                                                                                                              |
+| Property  | Type   | Default           | Required | Description                                                                                                                                                                              |
 | --------- | ------ | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `icon`    | string | none              | yes      | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols)                           |
 | `label`   | string | none              | yes      | A descriptive label of the icon, **Required for ARIA/Accessibility**                                                                                                                     |
-| `library` | string | astro.svg         | no       | Load an external icon set. Icons must be an SVG with individual icons having their own unique `id` attribute. Icon library properties should be the root relative path to your icons.    |
+| `library` | string | /icons/astro.svg  | no       | Load an external icon set. Icons must be an SVG with individual icons having their own unique `id` attribute. Icon library properties should be the root relative path to your icons.    |
 | `color`   | string | rgb(77, 172, 255) | no       | Applie a custom fill color. Accepted values can be entered as any valid HTML color string, e.g., hex, rgba or hsl. **Caution: the `status` icon set cannot and should not be overidden** |
-| `size`    | string | normal            | no       | Adjusts icon size, supported values are `exxtra-small` (16px), `small` (32px) and `large` (64px)                                                                                         |
+| `size`    | string | normal            | no       | Adjusts icon size, supported values are `extra-small` (16px), `small` (32px) and `large` (64px)                                                                                          |
 
 ### Standard Icons
 
