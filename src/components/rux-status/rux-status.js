@@ -64,9 +64,6 @@ export class RuxStatus extends LitElement {
           background-position-x: 0;
         }
       </style>
-
-      <!-- Use Advanced Status Template is any property is set //-->
-      <div class="rux-status" aria-label="${status}"></div>
     `;
   }
 }

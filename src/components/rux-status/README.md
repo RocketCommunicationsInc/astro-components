@@ -2,7 +2,9 @@
 
 The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature.
 
-**Note**: Starting with Astro 4.1 Rux Status only includes the simple status indicators. The previously included Advanced Status Icons are now available in the [Rux Monitoring Icon component](https://bitbucket.org/rocketcom/astro-components/src/master/src/packages/rux-monitoring-icon).
+## Important Astro 4 Migration Note:
+
+Prior to Astro 4 the Rux Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 seperates these two use cases in to distinct components. The Rux Status Component is solely responsible for the status indicators. This component, [Rux Monitoring Icon Component](../rux-monitoring-icon/), replaces the previous "Advanced Status" features of Rux Status.
 
 ## Guidelines
 
@@ -35,10 +37,10 @@ Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxStatus } from '@astro-components/rux-status/rux-status.js';
+import { RuxStatus } from "@astro-components/rux-status/rux-status.js";
 ```
 
-### 3. Render the RUX Button Web Component
+### 3. Render the RUX Status Web Component
 
 ```xml
 <rux-status status="critical"></rux-status>
@@ -66,9 +68,9 @@ Status is determined via [BEM-style](http://getbem.com/introduction/) class suff
 
 ## Web Component Properties
 
-| Property | Type     | Default | Required | Description                                                                                               |
-| -------- | -------- | ------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| `status` | `string` | `n/a`   | yes      | Sets the status symbol, valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off` |
+| Property | Type   | Default | Required | Description                                                                                               |
+| -------- | ------ | ------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| `status` | string | -       | yes      | Sets the status symbol, valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off` |
 
 ## Revision History
 
@@ -101,6 +103,6 @@ Status is determined via [BEM-style](http://getbem.com/introduction/) class suff
 
 ##### **Notes**
 
-RUX Button is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html).
+RUX Status is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html).
 
-**Note:** RUX Button is available as a preview release and should not be used in production code.
+**Note:** RUX Status is available as a preview release and should not be used in production code.
