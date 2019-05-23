@@ -14,7 +14,7 @@ These icons represent objects, equipment, and concepts that are being administer
 
 ### 1. Installation
 
-#### ** Install the Astro RUX Icon package via Command Line** (Preferred Method)
+#### ** Install the Astro RUX Monitoring Icon package via Command Line** (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux--monitoring-icon
@@ -32,15 +32,15 @@ git clone https://bitbucket.org/rocketcom/astro-components.git
 
 Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
-### 2. Import the RUX Icon Web Component
+### 2. Import the RUX Monitoring Icon Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxMonitoringIcon } from '@astro-components/rux-monitoring-icon/rux-monitoring-icon.js';
+import { RuxMonitoringIcon } from "@astro-components/rux-monitoring-icon/rux-monitoring-icon.js";
 ```
 
-### 3. Render the RUX Icon Web Component
+### 3. Render the RUX Monitoring Icon Web Component
 
 ```xml
 <rux-monitoring-icon
@@ -56,13 +56,13 @@ import { RuxMonitoringIcon } from '@astro-components/rux-monitoring-icon/rux-mon
 
 ## Properties
 
-| Property        | Type     | Required | Description                                                                                                                                                    |
-| --------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`          | `string` | `true`   | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols) |
-| `label`         | `string` | `true`   | A descriptive label of the icon, **Required for ARIA/Accessibility**                                                                                           |
-| `status`        | `string` | `true`   | Valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off`                                                                              |
-| `sublabel`      | `string` | `false`  | An optional string value appearing underneath the primary label                                                                                                |
-| `notifications` | `number` | `false`  | Indicates notifications for a give status. Values beyond 9,999 are shorthanded 10K, 100K, 1.5M, 1.5B and ∞ for numbers greater than 999,999,999,999            |
+| Property        | Type   | Default | Required | Description                                                                                                                                                    |
+| --------------- | ------ | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `icon`          | string | -       | true     | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols) |
+| `label`         | string | "icon"  | true     | A descriptive label of the icon, **Required for ARIA/Accessibility**                                                                                           |
+| `status`        | string | -       | true     | Valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off`                                                                              |
+| `sublabel`      | string | -       | false    | An optional string value appearing underneath the primary label                                                                                                |
+| `notifications` | number | -       | false    | Indicates notifications for a give status. Values beyond 9,999 are shorthanded 10K, 100K, 1.5M, 1.5B and ∞ for numbers greater than 999,999,999,999            |
 
 # Monitoring Progress Icon
 
@@ -80,15 +80,15 @@ The Monitoring Progress Icon is a unique instance of the Monitoring Icon display
 
 Note: The Rux Monitoring Progress Icon variant is installed alongside the standard Rux Monitoring Icon. For installation instructions see above.
 
-### 1. Import the RUX Icon Web Component
+### 1. Import the RUX Monitoring Icon Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project. Status is assigned via a range object.
 
 ```javascript
-import { RuxMonitoringProgressIcon } from '@astro-components/rux-monitoring-progress-icon/rux-monitoring-progress-icon.js';
+import { RuxMonitoringProgressIcon } from "@astro-components/rux-monitoring-progress-icon/rux-monitoring-progress-icon.js";
 ```
 
-### 2. Render the RUX Icon Web Component
+### 2. Render the RUX Monitoring Icon Web Component
 
 ```xml
 <rux-monitoring-progress-icon
@@ -101,11 +101,11 @@ import { RuxMonitoringProgressIcon } from '@astro-components/rux-monitoring-prog
 
 ## Properties
 
-| Property   | Type     | Required   | Description                                                                                                                                                    |
-| ---------- | -------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `label`    | `string` | `true`     | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols) |
-| `progress` | `number` | `true`     | Progress of the monitored item as a percentage. increment. Note: progress may be a positive or negative integer                                                |
-| `range`    | `array`  | `optional` | An optional array of objects defining the number of statuses and threshold each should execute                                                                 |
+| Property   | Type   | Default                  | Required | Description                                                                                                                                                    |
+| ---------- | ------ | ------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`    | string | "icon"                   | yes      | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols) |
+| `progress` | number | 0                        | yes      | Progress of the monitored item. Valid range 0-99 or 1-100. Note: progress may be a positive or negative integer                                                |
+| `range`    | array  | (see sample array below) | no       | An optional array of objects defining the number of statuses and threshold each should execute                                                                 |
 
 ### Sample `range` Array
 
@@ -152,5 +152,4 @@ A sample of a range array. This sample is also the default range of a Monitoring
 ##### **4.1**
 
 - Added the Monitoring Progress Icon variant
-- Originally part of Rux Status
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
