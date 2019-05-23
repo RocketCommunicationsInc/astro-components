@@ -1,4 +1,13 @@
 import { LitElement, html } from 'lit-element';
+import { directive } from 'lit-html';
+
+const getIcon = directive((library, icon) => part => {
+  try {
+    part.setValue(`${library}#${icon}`);
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 export class RuxIcon extends LitElement {
   static get properties() {
@@ -7,12 +16,15 @@ export class RuxIcon extends LitElement {
         type: String,
       },
       size: {
-        type: Number,
+        type: String,
       },
       color: {
         type: String,
       },
       library: {
+        type: String,
+      },
+      label: {
         type: String,
       },
     };
@@ -21,19 +33,31 @@ export class RuxIcon extends LitElement {
   constructor() {
     super();
 
-    this.size = 128;
-    this.library = '/icons/rux-icons.svg';
+    this.library = '/icons/astro.svg';
+  }
+
+  firstUpdated() {
+    this.style.setProperty('--iconDefaultColor', this.color);
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.get('color')) {
+      this.style.setProperty('--iconDefaultColor', this.color);
+    }
   }
 
   render() {
     return html`
       <style>
         :host {
+          --iconDefaultSize: 2.7rem;
+          --iconDefaultColor: rgb(77, 172, 255);
+
           display: inline-block;
-          line-height: 0;
           fill: var(--iconDefaultColor, rgb(77, 172, 255));
-          height: var(--icon-size--default, 44px);
-          width: var(--icon-size--default, 44px);
+
+          height: var(--iconDefaultSize, 2.75rem);
+          width: var(--iconDefaultSize, 2.75rem);
         }
 
         :host svg {
@@ -41,43 +65,32 @@ export class RuxIcon extends LitElement {
           width: auto;
         }
 
-        /* small variant */
-        :host(.rux-icon--small) {
-          height: var(--icon-size--small, 32px);
-          width: var(--icon-size--small, 32px);
+        :host([size='extra-small']) {
+          height: 1rem;
+          width: 1rem;
         }
 
-        /* status symbol icon size */
-        :host(.rux-icon--status) {
-          height: var(--icon-size--status, 12px);
-          width: var(--icon-size--status, 12px);
+        :host([size='small']) {
+          height: 2rem;
+          width: 2rem;
         }
 
-        :host(.rux-icon--button) {
-          height: var(--icon-size--button, 19px);
-          width: var(--icon-size--button, 19px);
-          fill: var(--icon-color--button);
-        }
-
-        :host(.rux-icon--button--large) {
-          height: var(--icon-size--button-large, 24px);
-          width: var(--icon-size--button-large, 24px);
-        }
-
-        ::slotted(div) {
-          margin-top: -54%;
+        :host([size='large']) {
+          height: 4rem;
+          width: 4rem;
         }
       </style>
 
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 128 128"
-        preserveAspectRatio="xMidYMid meet"
-        focusable="false"
-      >
-        <use href="/icons/monitoring.svg#${this.icon}"></use>
-      </svg>
-      <slot></slot>
+      <i id="rux-icon" title="${this.label}">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 128 128"
+          preserveAspectRatio="xMidYMid meet"
+          focusable="false"
+        >
+          <use href="${getIcon(this.library, this.icon)}"></use>
+        </svg>
+      </i>
     `;
   }
 }
