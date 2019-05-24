@@ -1,9 +1,9 @@
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html, css } from 'lit-element';
 
 /* eslint-disable no-unused-vars */
-import { RuxIcon } from "../rux-icon/rux-icon.js";
-import { RuxStatus } from "../rux-status/rux-status.js";
-import { collapseNumber } from "../rux-utils/number.js";
+import { RuxIcon } from '../rux-icon/rux-icon.js';
+import { RuxStatus } from '../rux-status/rux-status.js';
+import { collapseNumber } from '../rux-utils/number.js';
 /* eslint-enable no-unused-vars */
 
 export class RuxMonitoringIcon extends LitElement {
@@ -11,27 +11,27 @@ export class RuxMonitoringIcon extends LitElement {
     return {
       status: {
         type: String,
-        reflect: true
+        reflect: true,
       },
       label: {
-        type: String
+        type: String,
       },
       sublabel: {
-        type: String
+        type: String,
       },
       notifications: {
-        type: Number
+        type: Number,
       },
       icon: {
-        type: String
-      }
+        type: String,
+      },
     };
   }
 
   constructor() {
     super();
 
-    this.status = "null";
+    this.status = 'null';
   }
 
   render() {
@@ -70,9 +70,7 @@ export class RuxMonitoringIcon extends LitElement {
     return html`
       <div class="rux-advanced-status__label">
         ${this.label}
-        <span class="rux-advanced-status__sublabel" ?hidden="${!this.sublabel}"
-          >${this.sublabel}</span
-        >
+        <span class="rux-advanced-status__sublabel" ?hidden="${!this.sublabel}">${this.sublabel}</span>
       </div>
     `;
   }
@@ -190,33 +188,33 @@ export class RuxMonitoringIcon extends LitElement {
         display: block;
       }
 
-      :host([status="off"]) {
+      :host([status='off']) {
         stroke: var(--colorOff, rgb(158, 167, 173));
         fill: var(--colorOff, rgb(158, 167, 173));
       }
 
-      :host([status="standby"]) {
+      :host([status='standby']) {
         stroke: var(--colorStandby, rgb(45, 204, 255));
         fill: var(--colorStandby, rgb(45, 204, 255));
       }
 
       /* .rux-status--normal { */
-      :host([status="normal"]) {
+      :host([status='normal']) {
         stroke: var(--colorNormal, rgb(86, 240, 0));
         fill: var(--colorNormal, rgb(86, 240, 0));
       }
 
-      :host([status="caution"]) {
+      :host([status='caution']) {
         stroke: var(--colorCaution, rgb(252, 232, 58));
         fill: var(--colorCaution, rgb(252, 232, 58));
       }
 
-      :host([status="serious"]) {
+      :host([status='serious']) {
         stroke: var(--colorSerious, rgb(255, 179, 0));
         fill: var(--colorSerious, rgb(255, 179, 0));
       }
 
-      :host([status="critical"]) {
+      :host([status='critical']) {
         stroke: var(--colorCritical, rgb(255, 56, 56));
         fill: var(--colorCritical, rgb(255, 56, 56));
       }
@@ -224,4 +222,4 @@ export class RuxMonitoringIcon extends LitElement {
   }
 }
 
-customElements.define("rux-monitoring-icon", RuxMonitoringIcon);
+customElements.define('rux-monitoring-icon', RuxMonitoringIcon);
