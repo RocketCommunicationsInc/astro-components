@@ -1,10 +1,5 @@
 # Progress
 
-##Installation
-`npm i --save-dev @astrouxds/rux-progress`
-
-## Guidelines
-
 - [Astro UXDS: Progress](https://astrouxds.com/ui-components/progress)
 
 ## Web Components Usage
