@@ -52,9 +52,9 @@ export class RuxProgress extends LitElement {
   static get styles() {
     return css`
       :host {
-        --progressPadding: 2px 0 0 2px;
-        --progressRadius: 10px;
-        --progressHeight: 14px;
+        --progressPadding: 0.125rem 0 0 0.125rem;
+        --progressRadius: 0.625rem;
+        --progressHeight: 0.875rem;
         --progressWidth: calc(100% - 4px);
 
         height: 1.375rem;
@@ -68,7 +68,6 @@ export class RuxProgress extends LitElement {
       .rux-progress[value] {
         appearance: none;
 
-        /* background: #21384f; */
         background-color: var(--progressDeterminateTrackBackgroundColor, rgba(0, 0, 0, 0.3));
         border: 1px solid var(--progressDeterminateTrackBorderColor, rgb(20, 32, 44));
         border-radius: var(--progressRadius);
@@ -99,12 +98,12 @@ export class RuxProgress extends LitElement {
       }
 
       .rux-progress[value]::-ms-fill {
-        border-radius: 10px; /*  var(--progressRadius, 10px);*/
+        border-radius: var(--progressRadius, 0.625rem);
 
         border: none;
-        height: 14px; /* var(--progressHeight), 14px); */
-        margin: 2px;
-        max-width: calc(100% - 6px); /* var(--progressWidth);*/
+        height: var(--progressHeight, 0.875rem);
+        margin: 0.125rem;
+        max-width: calc(100% - 0.375rem);
 
         background-color: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
       }
@@ -112,7 +111,7 @@ export class RuxProgress extends LitElement {
       .rux-progress[value]::-moz-progress-bar {
         border-radius: var(--progressRadius);
 
-        margin: 2px 2px 0 2px;
+        margin: 0.125rem 0.125rem 0 0.125rem;
         height: var(--progressHeight);
         max-width: var(--progressWidth);
 
