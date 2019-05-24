@@ -42,7 +42,7 @@ storiesOf('Components|Progress', module)
         () => {
           return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-          <rux-progress indeterminate></rux-progress>
+          <rux-progress></rux-progress>
         </div>
       `;
         },

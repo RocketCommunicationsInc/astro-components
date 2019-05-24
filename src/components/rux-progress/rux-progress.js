@@ -21,6 +21,10 @@ export class RuxProgress extends LitElement {
     this.label = false;
   }
 
+  getValue() {
+    return this.max === 100 ? `${this.value}%` : `${this.value}/${this.max}`;
+  }
+
   get progressTemplate() {
     return this.value
       ? html`
@@ -37,7 +41,7 @@ export class RuxProgress extends LitElement {
       ${this.value
         ? html`
             <progress class="rux-progress" value="${this.value}" max="${this.max}"></progress>
-            <output class="rux-progress__value" ?hidden="${!this.label}">${this.value}</output>
+            <output class="rux-progress__value" ?hidden="${!this.label}">${this.getValue()}</output>
           `
         : html`
             <progress class="rux-progress"></progress>
@@ -78,10 +82,6 @@ export class RuxProgress extends LitElement {
         text-align: right;
 
         color: var(--controlLabelColor, #fff);
-      }
-
-      .rux-progress__value::after {
-        content: '%';
       }
 
       .rux-progress[value]::-webkit-progress-bar {
