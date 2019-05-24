@@ -10,9 +10,7 @@ export default class {
 
     return string;
   }
-}
 
-export default class {
   static capitalize(val) {
     if (!val) return;
     console.log(val);
