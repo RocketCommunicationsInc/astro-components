@@ -1,52 +1,122 @@
-#Progress
-The RUX Progress component is based on the progress concepts in Astro UXDS. There are several variants to be used. RUX Button is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
-
-RUX Button is supplied as-is and …
-
-For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
-
-##Guidelines
-
-* [Astro UXDS: Progress](http://www.astrouxds.com/library/progress)
+# Progress
 
 ##Installation
-`npm i -S @astrouxds/rux-progress`
+`npm i --save-dev @astrouxds/rux-progress`
 
-###Dependancies
+## Guidelines
 
-* [Polymer 3](https://www.polymer-project.com)
-* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
+- [Astro UXDS: Progress](https://astrouxds.com/ui-components/progress)
 
-##Usage
-###Import the RUX Progress
+## Web Components Usage
 
-```javascript
-import { RuxProgress } from "@astro-components/rux-progress/rux-progress.js";
+### 1. Installation
+
+#### ** Install the Astro RUX Progress package via Command Line** (Preferred Method)
+
+```sh
+npm i --save @astrouxds/rux-progress
 ```
 
-###Basic HTML Usage
+You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-Indeterminate
+#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+
+Via CLI:
+
+```sh
+git clone https://bitbucket.org/rocketcom/astro-components.git
+```
+
+Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+
+### 2. Import the RUX Progress Web Component
+
+This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
+
+```javascript
+import { RuxProgress } from '@astro-components/rux-progress/rux-progress.js';
+```
+
+### 3. Render the RUX Progress Web Component
+
+Indeterminate progress
 
 ```xml
 <rux-progress></rux-progress>
 ```
 
-Determinate with a value off 55
+Determinate progress
 
 ```xml
-<rux-progress value=55></rux-progress>
+<rux-progress value="50" max="150" label></rux-progress>
 ```
 
-Deterimnate with a value, max value and lable
+### Properties
+
+| Property | Type    | Default | Required | Description                                                                                                               |
+| -------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `value`  | Number  | -       | no       | Value of the progress bar. Note: if this paramater isn’t present it is assumed the progress bar is of indterminate value. |
+| `max`    | Number  | 100     | no       | Allows for progress bars with ranges greater than 100.                                                                    |
+| `label`  | Boolean | false   | no       | Displays a text based representation of progress as a percentage. Progress is between 0 and 99 or 1 and 100.              |
+
+## Basic HTML Usage
+
+### 1. Include the Astro UXDS CSS file
+
+Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
 
 ```xml
-<rux-progress value=55 max=300 label=true></rux-progress>
+<link rel="stylesheet" href="/your-project/path/astro.css" />
 ```
 
-###Properties
-| Property | Type | Description |
-| -------- | ---- | ------------|
-| `value` | `number` | Value of the progress bar. Note: if this paramater isn’t present it is assumed the progress bar is of indterminate value.
-| `max` | `number` | Allows for progress bars with ranges greater than 100. |
-| `label` | `boolean` | Displays the value of progress as a percentage value |
+### 2. Markup using HTML5/CSS3
+
+Determinate progress
+
+```xml
+<div class="rux-progress">
+ <progress value="50"></progress>
+ <output class="rux-progress__value">50</output>
+</div>
+```
+
+Indeterminate progress
+
+```xml
+<div class="rux-progress">
+ <progress></progress>
+</div>
+```
+
+## Attributes
+
+| Property | Type   | Default | Required | Description                                            |
+| -------- | ------ | ------- | -------- | ------------------------------------------------------ |
+| `value`  | Number | -       | yes      | Current progress                                       |
+| `max`    | Number | 100     | no       | Allows for progress bars with ranges greater than 100. |
+
+## Revision History
+
+##### **4.1**
+
+- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+
+##### 2.0 Notes
+
+- Updated indeterminate progress to use animated SVG and the :indeterminate pseudo class
+
+##### 1.4 Notes
+
+- Added rux* and BEM compatible classes to all satcom* NOTE: satcom\_ will be removed in a future version
+- In addition to rux\_ added the correct spelling of indeterminate as an additional selector
+- Combined indeterminate and determinate progress styles
+- Made container a flex element
+- Made percentage readout have an appropriate margin (NOTE: without a text rep the progress bar will scale to full width. Flexbox is neat.
+- Fixed alignment issue in Safari/Chrome where the progress bar was 2-3 pixels too low
+- Fixed width (on Chrome/Safari) of 100% width progress bar expanding past the border of the track
+- Removed prefixed animation. Safari 8 was the last browser that required it
+- [REMOVED] Embeded SVG graphics embeded SVG graphic stopped working
+
+```
+
+```
