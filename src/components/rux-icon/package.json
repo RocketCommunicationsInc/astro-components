@@ -1,51 +1,26 @@
 {
-  "_args": [
-    [
-      "@astrouxds/rux-icon@1.0.3",
-      "/private/var/www/astro/05-components.astrouxds.com"
-    ]
-  ],
-  "_from": "@astrouxds/rux-icon@1.0.3",
-  "_id": "@astrouxds/rux-icon@1.0.3",
-  "_inBundle": false,
-  "_integrity": "sha512-KehmJZFSPgBBbEu1rEDGLzaA+HLsiwhdRr1GjbD8PKc3aMkr3DO3dZ7doj1qwG6WmGQ6dN7uZjKXioMW4NNfQg==",
-  "_location": "/@astrouxds/rux-icon",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "@astrouxds/rux-icon@1.0.3",
-    "name": "@astrouxds/rux-icon",
-    "escapedName": "@astrouxds%2frux-icon",
-    "scope": "@astrouxds",
-    "rawSpec": "1.0.3",
-    "saveSpec": null,
-    "fetchSpec": "1.0.3"
-  },
-  "_requiredBy": [
-    "/",
-    "/@astrouxds/rux-button",
-    "/@astrouxds/rux-modal",
-    "/@astrouxds/rux-notification",
-    "/@astrouxds/rux-status"
-  ],
-  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-icon/-/rux-icon-1.0.3.tgz",
-  "_spec": "1.0.3",
-  "_where": "/private/var/www/astro/05-components.astrouxds.com",
   "author": {
     "name": "Rocket Communications",
-    "email": "astro@rocketcom.com"
+    "email": "astrouxds@rocketcom.com"
   },
   "dependencies": {
     "lit-element": "^2.1.0",
     "@webcomponents/webcomponentsjs": "^2.2.10"
   },
-  "description": "Astro Web Component for icons",
-  "license": "GPL-3.0",
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "support@astrouxds.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
+  },
+  "description": "Astro Web Component for Icons",
+  "license": "CC0-1.0",
   "main": "rux-icon.js",
   "name": "@astrouxds/rux-icon",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "3.0.2"
+  "version": "4.0.0-0"
 }

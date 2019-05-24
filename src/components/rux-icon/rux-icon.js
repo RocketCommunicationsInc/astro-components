@@ -34,6 +34,8 @@ export class RuxIcon extends LitElement {
     super();
 
     this.library = '/icons/astro.svg';
+    /* TODO: a non-presumptive way to assign a better default label if the user doesn’t provide one */
+    this.label = 'icon';
   }
 
   firstUpdated() {
