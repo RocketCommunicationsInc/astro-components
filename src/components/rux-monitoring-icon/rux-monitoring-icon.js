@@ -3,7 +3,7 @@ import { LitElement, html, css } from "lit-element";
 /* eslint-disable no-unused-vars */
 import { RuxIcon } from "../rux-icon/rux-icon.js";
 import { RuxStatus } from "../rux-status/rux-status.js";
-import { number, collapseNumber } from "../rux-utils/number.js";
+import { collapseNumber } from "../rux-utils/number.js";
 /* eslint-enable no-unused-vars */
 
 export class RuxMonitoringIcon extends LitElement {
