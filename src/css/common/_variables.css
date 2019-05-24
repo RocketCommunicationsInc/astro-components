@@ -40,7 +40,7 @@
   --statusDarkSerious: rgb(255, 179, 0);
   --statusDarkCaution: rgb(252, 232, 58);
   --statusDarkNormal: rgb(86, 240, 0);
-  --statusDarkStandby: rgb(77, 172, 255);
+  --statusDarkStandby: rgb(45, 204, 255);
   --statusDarkOff: rgb(158, 167, 173);
 
   --statusLightCritical: rgb(255, 42, 4);
@@ -137,14 +137,14 @@
   --colorNormalDarken3: rgb(34, 96, 0);
   --colorNormalDarken4: rgb(17, 48, 0);
 
-  --colorStandbyLighten1: rgb(113, 189, 255);
-  --colorStandbyLighten2: rgb(148, 205, 255);
-  --colorStandbyLighten3: rgb(184, 222, 255);
-  --colorStandbyLighten4: rgb(219, 238, 255);
-  --colorStandbyDarken1: rgb(62, 138, 204);
-  --colorStandbyDarken2: rgb(46, 103, 153);
-  --colorStandbyDarken3: rgb(31, 69, 102);
-  --colorStandbyDarken4: rgb(15, 34, 51);
+  --colorStandbyLighten1: rgb(87, 214, 255);
+  --colorStandbyLighten2: rgb(129, 224, 255);
+  --colorStandbyLighten3: rgb(171, 235, 255);
+  --colorStandbyLighten4: rgb(213, 245, 255);
+  --colorStandbyDarken1: rgb(36, 163, 204);
+  --colorStandbyDarken2: rgb(27, 122, 153);
+  --colorStandbyDarken3: rgb(18, 82, 102);
+  --colorStandbyDarken4: rgb(9, 41, 51);
 
   --colorOffLighten1: rgb(177, 185, 189);
   --colorOffLighten2: rgb(197, 202, 206);

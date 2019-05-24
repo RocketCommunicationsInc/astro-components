@@ -2,6 +2,12 @@
 **
 ** 	ASTRO STATUS INDICATOR
 ** 	==========================================================================
+**  4.1 Notes
+**  Removed satcom prefix
+**  Replaced SVGs with a single PNG and used sprite pattern to improve performance
+**  Removed ::before psuedo element in favor of simpler background on the div
+**  Removed undocumented and unused small status variant
+**  General clean up
 **  3.0 Notes
 **  Removed margin on status symbols
 **	1.4 Notes
@@ -10,105 +16,67 @@
 */
 
 .rux-status-indicator,
-.rux-status,
-.satcom-status {
-  font-size: 1rem;
+.rux-status {
+  display: block;
 
-  line-height: 1;
-  padding: 0;
-  vertical-align: middle;
-  text-align: center;
+  height: 1rem;
+  width: 1rem;
 
-  height: 16px;
-  width: 16px;
-
-  margin: 2px;
-  /* outline: 1px solid rgba(127, 127, 127, 0.5); */
-}
-
-/* Icon */
-.rux-status-indicator::before,
-.rux-status::before,
-.satcom-status::before {
-  content: "";
-  display: inline-block;
-
-  height: 16px;
-  width: 16px;
-
-  background-repeat: no-repeat;
-  background-position: 0 0;
+  margin: 0.125rem;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 1rem;
+
+  background-image: var(--statusSymbols, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC"));
 }
 
-/* Advanced Status */
+
+
+
 
 /* Specific Status Iconography */
-.rux-status-indicator.rux-status--off::before,
-.rux-status--off .rux-advanced-status__icon::before,
-.satcom-status-off::before {
-  background-image: var(
-    --statusOff,
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%223%22%20fill%3D%22%238C9AA3%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
-  );
+.rux-status--off,
+.rux-status-indicator.rux-status--off,
+.rux-status--off .rux-advanced-status__icon {
+  background-position-x: -5rem;
 }
 
-.rux-status-indicator.rux-status--standby::before,
-.rux-status--standby .rux-advanced-status__icon::before,
-.satcom-status-standby::before {
-  background-image: var(
-    --statusStandby,
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224.5%22%20fill%3D%22none%22%20stroke%3D%22%234DACFF%22%20stroke-width%3D%223%22%2F%3E%0A%3C%2Fsvg%3E%0A")
-  );
+
+.rux-status--standby,
+.rux-status-indicator.rux-status--standby,
+.rux-status--standby .rux-advanced-status__icon {
+  background-position-x: -4rem;
 }
 
-.rux-status-indicator.rux-status--normal::before,
-.rux-status-indicator.rux-status--ok::before,
-.rux-status--normal .rux-advanced-status__icon::before,
-.rux-status--ok .rux-advanced-status__icon::before,
-.satcom-status-ok::before {
-  background-image: var(
-    --statusNormal,
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%226%22%20fill%3D%22%2300E600%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A")
-  );
-  /* background-position: 1px 1px; */
+.rux-status--normal,
+.rux-status-indicator.rux-status--normal,
+.rux-status-indicator.rux-status--ok,
+.rux-status--normal .rux-advanced-status__icon,
+.rux-status--ok .rux-advanced-status__icon {
+  background-position-x: -3rem;
 }
 
-.rux-status-indicator.rux-status--caution::before,
-.rux-status--caution .rux-advanced-status__icon::before,
-.satcom-status-caution::before {
-  background-image: var(
-    --statusCaution,
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFD800%22%20fill-rule%3D%22evenodd%22%20d%3D%22M2%204H14V12H2z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
-  );
-  /* background-position: 1px 1px; */
+.rux-status--caution,
+.rux-status-indicator.rux-status--caution,
+.rux-status--caution .rux-advanced-status__icon {
+  background-position-x: -2rem;
 }
 
-.rux-status-indicator.rux-status--serious::before,
-.rux-status-indicator.rux-status--error::before,
-.rux-status--serious .rux-advanced-status__icon::before,
-.rux-status--error .rux-advanced-status__icon::before,
-.satcom-status-error::before {
-  background-image: var(
-    --statusSerious,
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFAB00%22%20fill-rule%3D%22evenodd%22%20d%3D%22M3%203H12V12H3z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
-  );
-  margin-top: 1px;
-  transform: rotate(45deg);
+.rux-status--serious,
+.rux-status-indicator.rux-status--serious,
+.rux-status-indicator.rux-status--error,
+.rux-status--serious .rux-advanced-status__icon,
+.rux-status--error .rux-advanced-status__icon {
+  background-position-x: -1rem;
 }
 
-.rux-status-indicator.rux-status--critical::before,
-.rux-status-indicator.rux-status--alert::before,
-.rux-status--critical .rux-advanced-status__icon::before,
-.rux-status--alert .rux-advanced-status__icon::before,
-.rux-status--emergency .rux-advanced-status__icon::before,
-.satcom-status-alert::before {
-  background-image: var(
-    --statusCritical,
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22red%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15%2013.667L1%2013.667%208%202z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
-  );
-  background-position: 0 -1px;
-  transform: rotate(180deg);
+.rux-status--critical,
+.rux-status-indicator.rux-status--critical,
+.rux-status-indicator.rux-status--alert,
+.rux-status--critical .rux-advanced-status__icon,
+.rux-status--alert .rux-advanced-status__icon,
+.rux-status--emergency .rux-advanced-status__icon {
+  background-position-x: 0;
 }
 
 /* Specific Color */
@@ -147,17 +115,4 @@
 .rux-icon.rux-status--emergency {
   fill: var(--colorCritical, rgb(255, 48, 48));
   color: var(--colorCritical, rgb(255, 48, 48));
-}
-
-/* Small Status Modifiers */
-.rux-status--small,
-.satcom-status-small {
-  font-size: 0.8rem;
-  margin: 0 0 1rem 0;
-}
-
-.rux-status--small::before,
-.satcom-status-small::before {
-  height: 18px;
-  width: 18px;
 }
