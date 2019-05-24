@@ -1,6 +1,6 @@
 {
-  "name": "polymer-cli",
-  "version": "5.0.11",
+  "name": "astro-components",
+  "version": "4.0.0-0",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -c .storybook -s ./static",
@@ -35,6 +35,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "del": "^4.1.1",
     "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
     "eslint-plugin-wc": "^1.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
@@ -58,9 +59,17 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,json,md}": [
-      "prettier --write",
-      "git add"
+    "linters": {
+      "*.{js}": [
+        "eslint --fix",
+        "prettier --write",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "static/**/*,",
+      "package.json",
+      "package-lock.json"
     ]
   }
 }

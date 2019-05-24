@@ -43,7 +43,7 @@ export class RuxModal extends LitElement {
     this.title = '';
     this.confirmText = '';
     this.denyText = '';
-    this.icon = 'default:caution';
+    this.icon = 'caution';
   }
   connectedCallback() {
     super.connectedCallback();
