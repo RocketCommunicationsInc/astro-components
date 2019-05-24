@@ -3,7 +3,7 @@ import { LitElement, html, css } from "lit-element";
 /* eslint-disable no-unused-vars */
 import { RuxIcon } from "../rux-icon/rux-icon.js";
 import { RuxStatus } from "../rux-status/rux-status.js";
-import { number } from "../rux-utils/number.js";
+import { number, collapseNumber } from "../rux-utils/number.js";
 /* eslint-enable no-unused-vars */
 
 export class RuxMonitoringIcon extends LitElement {
@@ -61,7 +61,7 @@ export class RuxMonitoringIcon extends LitElement {
   get badgeTemplate() {
     return html`
       <div class="rux-advanced-status__badge" ?hidden="${!this.notifications}">
-        ${filterNotifications(this.notifications)}
+        ${collapseNumber(this.notifications)}
       </div>
     `;
   }
