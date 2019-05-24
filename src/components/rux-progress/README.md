@@ -1,5 +1,7 @@
 # Progress
 
+A visual indicator of a tasks progress. When indicating progress with a finite duration use determinate progress. When indicating progress with an indefinite duration use indeterminate progress.
+
 - [Astro UXDS: Progress](https://astrouxds.com/ui-components/progress)
 
 ## Web Components Usage
