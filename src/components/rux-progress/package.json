@@ -1,0 +1,14 @@
+{
+  "author": {
+    "name": "Rocket Communications",
+    "email": "astro@rocketcom.com"
+  },
+  "description": "Astro Web Component for both determinate and indeterminate progress indicators",
+  "license": "GPL-3.0",
+  "main": "rux-progress.js",
+  "name": "@astrouxds/rux-progress",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "4.0.0-0"
+}
