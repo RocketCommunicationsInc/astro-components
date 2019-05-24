@@ -1,5 +1,5 @@
-import { directive } from "lit-html";
-export const collapseNumber = directive(val => part => {
+import { directive } from 'lit-html';
+export const collapseNumber = directive((val) => (part) => {
   try {
     const n = Math.floor(val);
     if (n.isNaN) return;
@@ -17,7 +17,7 @@ export const collapseNumber = directive(val => part => {
     let _shorthand = n;
 
     if (trillion >= 1) {
-      _shorthand = "∞";
+      _shorthand = '∞';
     } else if (billion >= 1) {
       _shorthand = `${billion.toFixed(1).toString()}B`;
     } else if (million >= 1) {
