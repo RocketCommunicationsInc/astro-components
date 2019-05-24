@@ -50,11 +50,11 @@ Determinate progress
 
 ### Properties
 
-| Property | Type    | Default | Required | Description                                                                                                               |
-| -------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `value`  | Number  | -       | no       | Value of the progress bar. Note: if this paramater isn’t present it is assumed the progress bar is of indterminate value. |
-| `max`    | Number  | 100     | no       | Allows for progress bars with ranges greater than 100.                                                                    |
-| `label`  | Boolean | false   | no       | Displays a text based representation of progress as a percentage. Progress is between 0 and 99 or 1 and 100.              |
+| Property | Type    | Default | Required | Description                                                                                                                                  |
+| -------- | ------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `value`  | Number  | -       | no       | Value of the progress bar. Note: if this paramater isn’t present or if it is set to 0 the progress bar will display its indeterminate state. |
+| `max`    | Number  | 100     | no       | Allows for progress bars with ranges greater than 100.                                                                                       |
+| `label`  | Boolean | false   | no       | Displays a text based representation of progress as a percentage. Progress values should be between 1 and 100.                               |
 
 ## Basic HTML Usage
 
