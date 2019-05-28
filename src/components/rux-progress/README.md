@@ -57,6 +57,7 @@ Determinate progress
 | `label`  | Boolean | false   | no       | Displays a text based representation of progress as a percentage. Progress values should be between 1 and 100.                               |
 
 ## Basic HTML Usage
+Progress styling is also included in the standard Astro CSS library for use in projects that don’t support Web Components.
 
 ### 1. Include the Astro UXDS CSS file
 
