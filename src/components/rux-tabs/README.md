@@ -101,4 +101,10 @@ RUX Tab properties are passed as simple attributes on the individual tabs themse
 - Removed/deprecated undocumented `interior` and `transparent` tab styles.
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
+##### **1.4**
+- Added `rux_` and BEM compatible classes to all `satcom_` NOTE: `satcom_` will be removed in a future version
+- Removed prefixed transitions
+- Removed prefixed gradients
+- Updated colors for WCAG compliance
+- Swapped condensed font for standard
 
