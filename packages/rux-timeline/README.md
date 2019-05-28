@@ -9,7 +9,7 @@ For stylesheet usage outside of a WebComponent environment, please see [Astro UX
 
 ##Guidelines
 
-* [Astro UXDS: Timeline](http://cms.astrouxds.com/library/timeline)
+* [Astro UXDS: Timeline](http://www.astrouxds.com/library/timeline)
 
 ##Installation
 `npm i -S @astrouxds/rux-timeline`
@@ -54,7 +54,7 @@ RUX Timeline will display a horizontal timeline with multiple tracks and multipl
 | `initial-scale`   | `number`  | Defines the initial scale of the timeline. Default is 100 and extends the visible width of the timeline’s containing element                                                                                                                                       |
 | `tracks`          | `array`   | An array of track data. Timeline supports multiple tracks and multiple regions per track. See object detail below                                                                                                                                                  |
 | `zoom-control`    | `boolean` | Shows a slider that scales the zoom level of the timeline. Minimum is 100, maximum is 500                                                                                                                                                                          |
-| `selected-region` | `object`  | A selected region will bubble that object back to the containing element. A Polymer observer to check change value with two-way data binding could be used to act on the selected region. See the [Astro App Demo](https://astro-app.rocketcom.com) for an example |
+| `selected-region` | `object`  | A selected region will bubble that object back to the containing element. A Polymer observer to check change value with two-way data binding could be used to act on the selected region. See the [Astro App Demo](https://astro-app.astrouxds.com) for an example |
 
 ###Track Array
 The `tracks` is the primary data source in defining the number of tracks and the number of regions on each track. The array can be manually populated or updated via a web service. The following is an example of the expected format for a single track timeline with one region.
