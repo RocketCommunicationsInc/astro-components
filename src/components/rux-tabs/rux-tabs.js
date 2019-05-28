@@ -99,7 +99,6 @@ export class RuxTabs extends LitElement {
   }
 
   _setTab(selectedTab) {
-    console.log('inside _setTab, selectedTab is', selectedTab.getAttribute('id'))
     this._reset();
 
     // find the panel whose aria-labeldby attribute matches the tab’s id
