@@ -9,8 +9,9 @@ export class RuxProgress extends LitElement {
       value: {
         type: Number,
       },
-      label: {
+      hideLabel: {
         type: Boolean,
+        attribute: 'hide-label',
       },
     };
   }
@@ -21,19 +22,8 @@ export class RuxProgress extends LitElement {
     this.label = false;
   }
 
-  getValue() {
+  getProgressAsString() {
     return this.max === 100 ? `${this.value}%` : `${this.value}/${this.max}`;
-  }
-
-  get progressTemplate() {
-    return this.value
-      ? html`
-          <progress class="rux-progress" value="${this.value}" max="${this.max}"></progress>
-          <output class="rux-progress__value" ?hidden="${!this.label}">${this.value}</output>
-        `
-      : html`
-          <progress class="rux-progress"></progress>
-        `;
   }
 
   render() {
@@ -41,7 +31,9 @@ export class RuxProgress extends LitElement {
       ${this.value
         ? html`
             <progress class="rux-progress" value="${this.value}" max="${this.max}"></progress>
-            <output class="rux-progress__value" ?hidden="${!this.label}">${this.getValue()}</output>
+            <output class="rux-progress__value" ?hidden="${!this.hideLabel}"
+              >${this.getProgressAsString()}</output
+            >
           `
         : html`
             <progress class="rux-progress"></progress>

@@ -15,15 +15,53 @@ storiesOf('Components|Progress', module)
           const progressDefaultValue = 50;
           const progressOptions = {
             range: true,
-            min: 0,
+            min: 1,
             max: 100,
             step: 1,
           };
           const progress = number(progressLabel, progressDefaultValue, progressOptions);
-          const showLabel = boolean('Label', false);
+          const hideLabel = boolean('Label', true);
           return html`
         <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-          <rux-progress value="${progress}" ?label="${showLabel}"></rux-progress>
+          <rux-progress value="${progress}" ?hide-label="${hideLabel}"></rux-progress>
+        </div>
+      `;
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    )
+    .add(
+        'Determinate Progress (Max)',
+        () => {
+          const maxValueLabel = 'Max';
+          const maxValueDefaultValue = 10;
+
+          const progressLabel = 'Progress';
+          const progressDefaultValue = 1;
+          const progressOptions = {
+            range: true,
+            min: 1,
+            max: maxValueDefaultValue,
+            step: 1,
+          };
+
+          const progress = number(progressLabel, progressDefaultValue, progressOptions);
+          const maxLimit = number(maxValueLabel, maxValueDefaultValue);
+          const hideLabel = boolean('Label', false);
+          return html`
+        <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
+          <rux-progress
+            value="${progress}"
+            max="${maxLimit}"
+            ?hide-label="${hideLabel}"
+          ></rux-progress>
         </div>
       `;
         },
