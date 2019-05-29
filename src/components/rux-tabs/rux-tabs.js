@@ -49,19 +49,11 @@ export class RuxTabs extends LitElement {
   }
 
   _onClick(e) {
-    // fire click event if the target is a tab and it hasn’t been disabled
     if (
       e.target.getAttribute("role") === "tab" &&
       e.target.getAttribute("disabled") === null
     ) {
       this._setTab(e.target);
-
-      // Option 2
-      window.dispatchEvent(
-        new CustomEvent("tab-changed", {
-          detail: { tab: e.target }
-        })
-      );
     }
   }
 
@@ -83,19 +75,6 @@ export class RuxTabs extends LitElement {
     // hide everything
     this._tabs.forEach(tab => (tab.selected = false));
     this._panels.forEach(panel => panel.classList.add("hidden"));
-  }
-
-  /*
-   **
-   ** Allow for either id or aria-controls association
-   **
-   */
-  _getAssociation() {
-    if (tab.getAttribute("id") && !tab.getAttribute("aria-controls")) {
-      return tab.getAttribute("id");
-    } else if (!tab.getAttribute("id") && tab.getAttribute("aria-controls")) {
-      return tab.getAttribute("aria-controls");
-    }
   }
 
   _setTab(selectedTab) {

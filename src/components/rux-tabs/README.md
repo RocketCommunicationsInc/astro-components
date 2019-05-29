@@ -1,4 +1,4 @@
-#Tabs
+# Tabs
 Tabs  are used to divide major areas of content and to indicate work process.
 
 ### Rules of Thumb
@@ -54,42 +54,55 @@ The RUX Tabs pattern makes use of four components via [slots](https://developer.
 
 Note that you only need to import the first component (RUX Tabs) in your application. The other three are automatically imported by the RUX Tabs component.
 
-Make sure that you set unique id's for `<rux-tabs>` and it's children `<rux-tab>`, and associate each with corresponding `aria-labelledby` attributes, as indicated below:
+Make sure that you set unique id's for `<rux-tabs>` and its children `<rux-tab>`, and associate each with corresponding `aria-labelledby` attributes ([W3C spec](https://www.w3.org/WAI/PF/aria-1.1/states_and_properties#aria-labelledby)), as indicated below:
 
 ```xml
 <rux-tabs id="tab-set-id-1">
-	<rux-tab id="tab-id-1">Tab 1</rux-tab>
-	<rux-tab id="tab-id-2">Tab 2</rux-tab>
-	<rux-tab id="tab-id-3">Tab 3</rux-tab>
+  <rux-tab id="tab-id-1">Tab 1 Title</rux-tab>
+  <rux-tab id="tab-id-2">Tab 2 Title</rux-tab>
+  <rux-tab id="tab-id-3">Tab 3 Title</rux-tab>
 </rux-tabs>
 
 <rux-tab-panels aria-labelledby="tab-set-id-1">
-	<rux-tab-panel aria-labelledby="tab-id-1">Tab 1 HTML Content</rux-tab-panel>
-	<rux-tab-panel aria-labelledby="tab-id-2">Tab 2 HTML Content</rux-tab-panel>
-	<rux-tab-panel aria-labelledby="tab-id-3">Tab 3 HTML Content</rux-tab-panel>
+  <rux-tab-panel aria-labelledby="tab-id-1">Tab 1 HTML Content</rux-tab-panel>
+  <rux-tab-panel aria-labelledby="tab-id-2">Tab 2 HTML Content</rux-tab-panel>
+  <rux-tab-panel aria-labelledby="tab-id-3">Tab 3 HTML Content</rux-tab-panel>
 </rux-tab-panels>
 ```
+
 
 The RUX Tabs pattern can be further configured using attributes passed into the custom elements at either the top level or at the child level.
 
 ## RUX Tabs Properties
+The RUX Tabs property `small` may passed as a simple attribute on the RUX Tabs container component:
 
-| Property          | Type      | Default | Required | Description                                             |
-| ----------------- | --------- | ------- | -------- | ------------------------------------------------------- |
-| `small`        | String | ''      | no    | If passed, displays the tabs in a smaller style, suitable for limited-space uses. Previously `compact`. |
-
-## RUX Tab (child) Properties
-RUX Tab properties are passed as simple attributes on the individual tabs themselves.
 ```xml
-<rux-tabs id="tab-set-id-1">
-	<rux-tab id="tab-id-1">Tab 1</rux-tab>
-	<rux-tab id="tab-id-2" selected>Tab 2</rux-tab>
-	<rux-tab id="tab-id-3" disabled>Tab 3</rux-tab>
+<rux-tabs small id="tab-set-id-1">
+  ...
 </rux-tabs>
 ...
 ```
+
 | Property          | Type      | Default | Required | Description                                             |
 | ----------------- | --------- | ------- | -------- | ------------------------------------------------------- |
+| `id`        | String | —      | yes    | Must match the `aria-labelledby` attribute on a `<rux-tabs-panels>` container element elsewhere within the HTML document. |
+| `small`        | Boolean | `false`      | no    | If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses. Previously `compact`. |
+
+## RUX Tab (child) Properties
+RUX Tab properties are passed as simple attributes on the individual tabs themselves.
+
+```xml
+<rux-tabs id="tab-set-id-1">
+  <rux-tab id="tab-id-1">Tab 1 Title</rux-tab>
+  <rux-tab id="tab-id-2" selected>Tab 2 Title</rux-tab>
+  <rux-tab id="tab-id-3" disabled>Tab 3 Title</rux-tab>
+</rux-tabs>
+...
+```
+
+| Property          | Type      | Default | Required | Description                                             |
+| ----------------- | --------- | ------- | -------- | ------------------------------------------------------- |
+| `id`      | String | —      | yes    | Must match the `aria-labelledby` attribute on a `<rux-tabs-panel>` element elsewhere within the HTML document, within a `<rux-tab-panels>` container |
 | `selected`        | Boolean | `false`   | no    | If present, overrides which tab is selected on load / mount. By default, the first `<rux-tab>` item is selected. |
 | `disabled`        | Boolean | `false`   | no    | If present, sets a disabled state on this tab item, indicating it cannot be selected by user action. |
 
