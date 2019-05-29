@@ -41,6 +41,8 @@ export class RuxTabs extends LitElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener("register-panels", this._registerPanelsListener);
+    this.removeEventListener("click", this._onClick);
+
   }
 
   _onClick(e) {
