@@ -2587,7 +2587,7 @@ input:-moz-focusring {
   -ms-user-select: none;
   user-select: none;
 }
-.rux-tabs--compact {
+.rux-tabs--small {
   height: 3.125rem;
   font-size: 1rem;
 }
@@ -2637,8 +2637,8 @@ input:-moz-focusring {
   -webkit-box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
   box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
-.rux-tabs--compact .selected a,
-.rux-tabs--compact .selected a:hover {
+.rux-tabs--small .selected a,
+.rux-tabs--small .selected a:hover {
   color: #fff;
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
   -webkit-box-shadow: inset 0 -3px 0 #4dacff;
