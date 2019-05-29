@@ -42,11 +42,6 @@ export class RuxTabs extends LitElement {
     super.disconnectedCallback();
     window.removeEventListener("register-panels", this._registerPanelsListener);
   }
-  updated(changedProperties) {
-    if (changedProperties.get("progress")) {
-      this.updateProgress();
-    }
-  }
 
   _onClick(e) {
     if (
