@@ -21,28 +21,49 @@ addDecorator(withA11y);
 
 
 
-// set theme to dark by default, on load
+// set theme to dark by default, on load, the first time. Doesn't overwrite if you've visited before.
 let isDark = true;
-window.localStorage.setItem('sb-addon-themes-3', JSON.stringify({
-  current: 'dark',
-  dark: { ...astroTheme.dark },
-  light: { ...astroTheme.light }
-}));
 
-// set up theme toggle and channel listener
+// localStorate item name 'sb-addon-themes-3' set by storybook-dark-mode addon
+if (!window.localStorage.getItem('sb-addon-themes-3')) {
+  let body = document.getElementsByTagName("body")[0];
+  body.classList.add("dark-theme");
+
+  window.localStorage.setItem('sb-addon-themes-3', JSON.stringify({
+    current: 'dark',
+    dark: { ...astroTheme.dark },
+    light: { ...astroTheme.light }
+  }));
+
+  // matches Storybook message events pattern, tells manager that theme has changed 
+  // (see listener in manager-head.html)
+  window.parent.postMessage( 
+    JSON.stringify( 
+      {key: "storybook-channel", event: { type: "DARK_MODE", args: [true]} }
+    ), 
+  '*');
+}
+
+// set up theme toggle for preview and channel listener for manager
 const channel = addons.getChannel();
 channel.emit("DARK_MODE");
 addDecorator(storyFn => {
   const el = storyFn();
-  let body = document.getElementsByTagName("body")[0];
-  body.classList.remove("light-theme", "dark-theme");
-  body.classList.add(!isDark ? "light-theme" : "dark-theme");
 
   channel.on("DARK_MODE", newIsDark => {
     isDark = newIsDark;
     let body = document.getElementsByTagName("body")[0];
     body.classList.remove("light-theme", "dark-theme");
-    body.classList.add(!isDark ? "light-theme" : "dark-theme");
+    body.classList.add(isDark ? "dark-theme" : "light-theme");
+
+    // matches Storybook message events pattern, tells manager that theme has changed 
+    // (see listener in manager-head.html)
+    window.parent.postMessage( 
+      JSON.stringify( 
+        {key: "storybook-channel", event: { type: "DARK_MODE", args: [isDark]} }
+      ), 
+    '*');
+
   });
 
   return el;
