@@ -17,11 +17,21 @@ addParameters({
   }
 });
 
-let isDark = true;
-const channel = addons.getChannel();
-
 addDecorator(withA11y);
 
+
+
+// set theme to dark by default, on load
+let isDark = true;
+window.localStorage.setItem('sb-addon-themes-3', JSON.stringify({
+  current: 'dark',
+  dark: { ...astroTheme.dark },
+  light: { ...astroTheme.light }
+}));
+
+// set up theme toggle and channel listener
+const channel = addons.getChannel();
+channel.emit("DARK_MODE");
 addDecorator(storyFn => {
   const el = storyFn();
   let body = document.getElementsByTagName("body")[0];
