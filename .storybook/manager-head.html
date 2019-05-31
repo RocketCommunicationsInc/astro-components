@@ -230,7 +230,8 @@ window.addEventListener('message', (e) => {
     let parsed = JSON.parse(e.data);
     if (parsed && 
         parsed.event && 
-        parsed.event.type === "DARK_MODE"
+        parsed.event.type === "DARK_MODE" &&
+        parsed.event.args
       ) {
       const isDark = parsed.event.args[0] || false;
       toggleScrollbarStyles(isDark);
