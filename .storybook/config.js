@@ -54,20 +54,31 @@ function isStoredThemeDark() {
   return parsedThemeObject.current === "dark" ? true : false;
 }
 
-if (!window.localStorage.getItem('sb-addon-themes-3')) {
-  let isDark = true;
-
-  setPreviewCanvasToTheme(isDark)
-  setLocalStorageForTheme(isDark);
-  postMessageToStorybookChannel(isDark)
-}
-
 addDecorator(storyFn => {
   const el = storyFn();
+
+  if (!window.localStorage.getItem('sb-addon-themes-3')) {
+    let isDark = true;
+  
+    setPreviewCanvasToTheme(isDark)
+    setLocalStorageForTheme(isDark);
+    postMessageToStorybookChannel(isDark)
+  
+  } else {
+  
+    // uses theme set in localStorage on first load
+    let shouldBeDark = isStoredThemeDark();
+    setPreviewCanvasToTheme(shouldBeDark);
+    setLocalStorageForTheme(shouldBeDark);
+    postMessageToStorybookChannel(shouldBeDark);
+  
+  }
+  
+  // keep manager, preview, and localStorage in sync whenever theme is toggled
   channel.on("DARK_MODE", isDark => {
     let shouldBeDark = isStoredThemeDark();
     if (isDark !== shouldBeDark) {
-      // this happens when the theme is changed in another tab
+      // this executes when the theme is changed in another tab
       channel.emit("DARK_MODE", shouldBeDark);
       return;
     }
