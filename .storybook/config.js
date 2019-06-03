@@ -17,25 +17,78 @@ addParameters({
   }
 });
 
-let isDark = true;
+addDecorator(withA11y);
+
+
+
+// set theme to dark by default, on load, the first time. Doesn't overwrite if you've visited before.
 const channel = addons.getChannel();
 
-addDecorator(withA11y);
+// matches Storybook message events pattern, tells manager that theme has changed 
+// (see listener in manager-head.html)
+function postMessageToStorybookChannel(isDark) {
+  window.parent.postMessage( 
+    JSON.stringify( 
+      {key: "storybook-channel", event: { type: "DARK_MODE", args: [isDark]} }
+    ), 
+  '*');
+}
+
+function setLocalStorageForTheme(isDark) {
+  // localStorage item name 'sb-addon-themes-3' set by storybook-dark-mode addon
+  window.localStorage.setItem('sb-addon-themes-3', JSON.stringify({
+    current: isDark ? 'dark' : 'light',
+    dark: { ...astroTheme.dark },
+    light: { ...astroTheme.light }
+  }));
+}
+
+function setPreviewCanvasToTheme(isDark) {
+  const body = document.getElementsByTagName("body")[0];
+  body.classList.remove("light-theme", "dark-theme");
+  body.classList.add(isDark ? "dark-theme" : "light-theme");
+}
+
+function isStoredThemeDark() {
+  const parsedThemeObject = JSON.parse(window.localStorage.getItem('sb-addon-themes-3'));
+  return parsedThemeObject.current === "dark" ? true : false;
+}
 
 addDecorator(storyFn => {
   const el = storyFn();
-  let body = document.getElementsByTagName("body")[0];
-  body.classList.remove("light-theme", "dark-theme");
-  body.classList.add(!isDark ? "light-theme" : "dark-theme");
 
-  channel.on("DARK_MODE", newIsDark => {
-    isDark = newIsDark;
-    let body = document.getElementsByTagName("body")[0];
-    body.classList.remove("light-theme", "dark-theme");
-    body.classList.add(!isDark ? "light-theme" : "dark-theme");
+  if (!window.localStorage.getItem('sb-addon-themes-3')) {
+    const isDark = true;
+  
+    setPreviewCanvasToTheme(isDark)
+    setLocalStorageForTheme(isDark);
+    postMessageToStorybookChannel(isDark)
+  
+  } else {
+  
+    // uses theme set in localStorage on first load
+    const shouldBeDark = isStoredThemeDark();
+    setPreviewCanvasToTheme(shouldBeDark);
+    setLocalStorageForTheme(shouldBeDark);
+    postMessageToStorybookChannel(shouldBeDark);
+  
+  }
+  
+  // keep manager, preview, and localStorage in sync whenever theme is toggled
+  channel.on("DARK_MODE", isDark => {
+    const shouldBeDark = isStoredThemeDark();
+    if (isDark !== shouldBeDark) {
+      // this executes when the theme is changed in another tab
+      channel.emit("DARK_MODE", shouldBeDark);
+      return;
+    }
+    setPreviewCanvasToTheme(isDark);
+    setLocalStorageForTheme(isDark);
+    postMessageToStorybookChannel(isDark);
   });
 
   return el;
+
 });
 
 function loadStories() {
