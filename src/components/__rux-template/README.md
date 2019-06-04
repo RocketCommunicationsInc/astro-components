@@ -1,0 +1,100 @@
+# Template 
+[Describe the component purpose. Include UX description and Rules of Thumb.]
+
+### Rules of Thumb
+- ...
+
+## Guidelines
+
+* [Astro UXDS: Template](https://www.astrouxds.com/ui-components/template)
+
+
+## Web Components Usage
+
+### 1. Installation
+#### ** Install the Astro UXDS Template package via Command Line** (Preferred Method)
+
+```sh
+npm i --save @astrouxds/rux-template
+```
+
+You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
+
+
+#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+Via CLI: 
+
+```sh
+git clone https://bitbucket.org/rocketcom/astro-components.git
+```
+
+Or, [download Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+
+
+### 2. Import the Web Component
+This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro UXDS Components directory in your project.
+
+```javascript
+import { RuxTemplate } from "@astro-components/rux-template/rux-template.js";
+```
+
+### 3. Render the Web Component
+
+```xml
+<rux-template></rux-template>
+```
+
+### 4. Configure the Web Component using Properties
+Pass properties as attributes of the Astro UXDS Template custom element:
+
+```xml
+<rux-template propertyOne propertyTwo="value"></rux-template>
+```
+
+### Properties
+| Property | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `propertyOne` | Boolean | `false` | No | When set, what does this property do? |
+| `propertyTwo` | String | `''` | No | When set, what does this property do? |
+
+---
+
+## Basic HTML Usage
+
+### 1. Include the Astro UXDS CSS file
+Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/). 
+
+```xml
+<link rel="stylesheet" href="/your-project/path/astro.css" />
+```
+
+### 2. Markup the element using HTML and the Astro CSS classes
+
+```xml
+<div class="rux-template">Template</div>
+```
+
+### 3. Configure the element using Attributes
+Apply attribues as [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-template--` or as native HTML attributes, where appropriate. 
+
+```xml
+<div class="rux-template rux-template--attribute" disabled>
+   Disabled Template
+</div>
+```
+### Attributes
+| HTML Attribute | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `disabled` | Boolean | `false` | No | When set, what does this property do? |
+| `rux-template--attribute` | Class | `''` | No | When set, what does this property do? |
+
+
+For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
+
+
+## Revision History
+##### **4.1**
+- [List any changes made here]
+- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+
+
