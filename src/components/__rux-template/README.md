@@ -1,9 +1,6 @@
 # Template 
 [Describe the component purpose. Include UX description and Rules of Thumb.]
 
-### Rules of Thumb
-- ...
-
 ## Guidelines
 
 * [Astro UXDS: Template](https://www.astrouxds.com/ui-components/template)
