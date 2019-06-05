@@ -12,13 +12,22 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
       range: {
         type: Array,
       },
+      min: {
+        type: Number,
+      },
+      max: {
+        type: Number,
+      },
     };
   }
 
   constructor() {
     super();
-    this._circumference = 56 * 2 * Math.PI;
+
     this.progress = 0;
+    this.max = 100;
+    this.min = 0;
+    this._circumference = 56 * 2 * Math.PI;
   }
 
   firstUpdated() {
@@ -28,19 +37,19 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
       if (!this.range) {
         this.range = [
           {
-            threshold: 17,
+            threshold: 0,
             status: 'off',
           },
           {
-            threshold: 33,
+            threshold: 17,
             status: 'standby',
           },
           {
-            threshold: 81,
+            threshold: 51,
             status: 'serious',
           },
           {
-            threshold: 49,
+            threshold: 33,
             status: 'normal',
           },
           {
@@ -49,12 +58,41 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
           },
 
           {
-            threshold: 100,
+            threshold: 81,
             status: 'critical',
           },
         ];
+
+        /* this.range = [
+          {
+            threshold: 0,
+            status: 'off',
+          },
+          {
+            threshold: 45,
+            status: 'standby',
+          },
+          {
+            threshold: 202,
+            status: 'serious',
+          },
+          {
+            threshold: 133,
+            status: 'normal',
+          },
+          {
+            threshold: 450,
+            status: 'caution',
+          },
+
+          {
+            threshold: 650,
+            status: 'critical',
+          },
+        ]; */
       }
-      this.range = this.range.sort((a, b) => (a.threshold > b.threshold ? 1 : -1));
+      this.range = this.range.sort((a, b) => (b.threshold > a.threshold ? 1 : -1));
+
       this.updateProgress();
     }
   }
@@ -66,9 +104,9 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
   }
 
   updateProgress() {
-    this.status = this.range.find((range) => this.progress < range.threshold).status;
+    this.status = this.range.find((range) => this.progress > range.threshold).status || this.range[0];
 
-    const graphProgress = this._circumference - (this.progress / 100) * this._circumference;
+    const graphProgress = this._circumference - (this.progress / this.max) * this._circumference;
 
     this.style.setProperty('--monitoring-progress', graphProgress);
   }
@@ -77,7 +115,7 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
     return html`
       <rux-icon icon="progress" class="rux-status--${this.status}"></rux-icon>
       <div class="rux-advanced-status__progress">
-        ${this.progress}%
+        ${Math.ceil((this.progress / this.max) * 100)}%
       </div>
     `;
   }
