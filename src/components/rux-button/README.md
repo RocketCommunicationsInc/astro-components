@@ -1,37 +1,15 @@
-#Buttons
+# Buttons
 
 Buttons allow users to trigger actions.
 
-
-### Rules of Thumb
-- Use only predefined button colors, sizes and fonts — don’t customize or alter them.
-- Don’t design elements which look similar to buttons but act differently. Buttons are actionable elements.
-- Don’t activate [Pop Up Menus](https://www.astrouxds.com/ui-components/pop-up) from buttons.
-- Space buttons evenly.
-- Clearly title buttons by choosing a verb that describes the action the user performs at precisely the moment the button is clicked: “Save, Close, Print, Delete, Change Password,” etc. 
-- Don’t use an outside label to introduce a button. Instead, clearly title the button.
-- Resize button width to accommodate the title; do not abbreviate or truncate button titles. 
-- Add an ellipsis (…) to the button title if it opens another window, Dialog Box or app.
-- Within [Dialog Boxes](https://www.astrouxds.com/ui-components/dialog-box), right-justify buttons.
-
-Common button groupings follow these conventions:
-
-- Cancel buttons are always presented to the left of actions such as “Submit.”
-- Always group together “Ok/Cancel” buttons. Do not justify them apart, but keep a reasonable margin between the buttons.
-- Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width.
-
-### Outline Button
-Outline Buttons are an alternative button style to be used in situations where a de-emphasized button is beneficial in guiding the user to a preferred option. For example, use an outline button for the less preferred option in Ok/Cancel button pairings.
-
 ##Guidelines
 
-* [Astro UXDS: Buttons](http://www.astrouxds.com/library/buttons)
-
+* [Astro UXDS: Buttons](http://www.astrouxds.com/ui-components/buttons)
 
 ## Web Components Usage
 
 ### 1. Installation
-#### ** Install the Astro RUX Button package via Command Line** (Preferred Method)
+#### ** Install the Astro UXDS Button package via Command Line** (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-button
@@ -40,29 +18,25 @@ npm i --save @astrouxds/rux-button
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
 
-#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
 Via CLI: 
 
 ```sh
 git clone https://bitbucket.org/rocketcom/astro-components.git
 ```
 
-Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
 
-### 2. Import the RUX Button Web Component
+### 2. Import the Astro Button Web Component
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
 import { RuxButton } from "@astro-components/rux-button/rux-button.js";
 ```
 
-### 3. Render the RUX Button Web Component
-
-```xml
-<rux-button>Submit</rux-button>
-```
-Apply properties as attributes on the component: 
+### 3. Render the Astro Button Web Component
+Pass properties as attributes of the Astro Button custom element:
 
 ```xml
 <rux-button size="large" disabled outline>
@@ -70,43 +44,52 @@ Apply properties as attributes on the component:
 </rux-button>
 
 ```
-The component auto-imports the Rux Icon Component for icons:
+The component auto-imports the Astro Icon Web Component for icons, if you specify one:
 
 ```xml
 <rux-button icon="utility:caution">
-  Button with Icon using Rux Icon Web Component
+  Button with Icon using Astro UXDS Icon Web Component
 </rux-button>
 ```
 
+
+### Properties
+| Property | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
+| `outline` | Boolean | `false` | No | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use an outline button for the less preferred option in Ok/Cancel button pairings. |
+| `icon-only` | Boolean | `false` | No | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Requires the `icon` attribute to be set as well. |
+| `icon` | String | `''` | No | Displays an Astro icon matching this string to the left of the button text.  For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols).  Required when the `icon-only` attribute is `true`. |
+| `size` | String |  `''` | No | Displays the button as a `'small'` or `'large'` variant. |
 ---
 
 
 ## Basic HTML Usage
 ### 1. Include the Astro UXDS CSS file
-Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/). 
+Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/). 
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
 ```
-### 2. Markup using HTML5/CSS3
+### 2. Markup the component using HTML and the Astro CSS classes
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. 
+
+Configure the component using native HTML attributes or [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-button--`.
 
 ```xml
 <button class="rux-button">Submit</button>
-```
-Apply properties as [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-button--` or as native HTML attributes, where appropriate. 
 
-```xml
 <button class="rux-button rux-button--large rux-button--outline" disabled>
   Large Disabled Outline Button
 </button>
 ```
 
-The basic HTML/CSS usage supports icons if using Web Components (and importing the Rux Icon Component):
+The basic HTML/CSS usage supports icons if using Web Components (and importing the Astro Icon Component):
 
 ```xml
 <button class="rux-button rux-button--icon">
   <rux-icon class="rux-icon rux-button__icon" icon="utility:caution" color="white"></rux-icon>
-  Button with Icon using Rux Icon Web Component
+  Button with Icon using Astro UXDS Icon Web Component
 </button>
 ```
 
@@ -121,18 +104,19 @@ Otherwise, wrap your icon SVG in an HTML element with the [BEM-style](http://get
 </button>
 ```
 
+### Attributes
+| Attribute | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
+| `outline` | Boolean | `false` | No | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use an outline button for the less preferred option in Ok/Cancel button pairings. |
+| `rux-button--icon-only` | Class | — | No | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Must be used with the `rux-button--icon` class. |
+| `rux-button--icon` | Class | — | No | Displays an Astro icon matching this string to the left of the button text.  Required when element also has the class `rux-button--icon-only`. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) Note: Astro UXDS icons are only available when using the Web Component usage pattern, which imports the `<rux-icon>` component.|
+| `rux-button--size` | Class | — | No | Displays the button as a `'small'` or `'large'` variant. |
+
+
 For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
-
-## Properties
-
-| Property          | Type      | Default | Required | Description                                             |
-| ----------------- | --------- | ------- | -------- | ------------------------------------------------------- |
-| `disabled` | `boolean` | `false` | no | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
-| `outline` | `boolean` | `false` | no | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. |
-| `icon-only` | `boolean` | `false` | no | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. |
-| `icon` | `string` | `''` | yes, if  `icon-only=true` | Defines the icon to be used. Adheres to the RUX Icon convention of `'namespace:icon-name'`. Note: Rux icons are only available when using the Web Component usage pattern, which imports the `<rux-icon>` component.|
-| `size` | `string` |  `''` | no | Defines a size other than the Standard button. Currently accepts `'small'` and `'large'` as values. |
+---
 
 
 ## Revision History
@@ -144,8 +128,8 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 - Should `size` property have a default value of `'standard'` for the button size? we don't have classes for it
 
 ##### **4.1**
-- Deprecated `type` attribute in favor of separate `size`, `icon-only`, and `outline` attributes. `default` type is no longer supoprted.
-- Fixed the width of the small icon-only button and ensured icon-only buttons show no text, even if text is provided
+- Deprecated `type` attribute in favor of separate `size`, `icon-only`, and `outline` attributes. `default` type is No longer supoprted.
+- Fixed the width of the small icon-only button and ensured icon-only buttons show No text, even if text is provided
 - Fixed outline button icon color
 - Re-enabled missing focus styles on buttons.
 - Removed undocumented critical button style.
@@ -166,11 +150,5 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 - Renamed `half-height` to `short` and `half-width` to `narrow` (Note: `rux_` only, `satcom_` retains old syntax)
 - Removed `user-select` and placed it in astro.css to apply to all input types
 - Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
-
-##### **Notes**
-RUX Button is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html).
-
-**Note:** RUX Button is available as a preview release and should not be used in production code.
-
 
 

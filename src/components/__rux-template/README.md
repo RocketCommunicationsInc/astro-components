@@ -1,5 +1,5 @@
 # Template 
-[Describe the component purpose. Include UX description and Rules of Thumb.]
+[Describe the component purpose. Include UX description.]
 
 ## Guidelines
 
@@ -18,7 +18,7 @@ npm i --save @astrouxds/rux-template
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
 
-#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
 Via CLI: 
 
 ```sh
@@ -28,21 +28,15 @@ git clone https://bitbucket.org/rocketcom/astro-components.git
 Or, [download Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
 
-### 2. Import the Web Component
+### 2. Import the Astro Astro Template Web Component
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro UXDS Components directory in your project.
 
 ```javascript
 import { RuxTemplate } from "@astro-components/rux-template/rux-template.js";
 ```
 
-### 3. Render the Web Component
-
-```xml
-<rux-template></rux-template>
-```
-
-### 4. Configure the Web Component using Properties
-Pass properties as attributes of the Astro UXDS Template custom element:
+### 3. Render the Astro Template Web Component
+Pass properties as attributes of the Astro Template custom element:
 
 ```xml
 <rux-template propertyOne propertyTwo="value"></rux-template>
@@ -59,20 +53,16 @@ Pass properties as attributes of the Astro UXDS Template custom element:
 ## Basic HTML Usage
 
 ### 1. Include the Astro UXDS CSS file
-Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/). 
+Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/). 
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
 ```
 
-### 2. Markup the element using HTML and the Astro CSS classes
+### 2. Markup the component using HTML and the Astro CSS classes
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. 
 
-```xml
-<div class="rux-template">Template</div>
-```
-
-### 3. Configure the element using Attributes
-Apply attribues as [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-template--` or as native HTML attributes, where appropriate. 
+Configure the component using native HTML attributes or [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-template--`.
 
 ```xml
 <div class="rux-template rux-template--attribute" disabled>
@@ -80,7 +70,7 @@ Apply attribues as [BEM-style](http://getbem.com/introduction/) class suffixes a
 </div>
 ```
 ### Attributes
-| HTML Attribute | Type | Default | Required | Description |
+| Attribute | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | `disabled` | Boolean | `false` | No | When set, what does this property do? |
 | `rux-template--attribute` | Class | `''` | No | When set, what does this property do? |

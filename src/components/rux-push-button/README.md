@@ -1,16 +1,16 @@
 # Push Button
 
-Pushbuttons are a variant of the toggle button that incorporate label and action in to a single user interface element. Pushbuttons may provide a useful interface element where screen real-estate is at a premium.
+Pushbuttons are a variant of the toggle button which incorporate label and action into a single user interface element. Pushbuttons may provide a useful interface element where screen real estate is at a premium.
 
 ## Guidelines
 
-- [Astro UXDS: Toggle & Push Button](http://www.astrouxds.com/library/toggle)
+- [Astro UXDS: Toggle & Push Button](http://www.astrouxds.com/ui-components/toggle)
 
 ## Web Components Usage
 
 ### 1. Installation
 
-#### ** Install the Astro RUX Push Button package via Command Line** (Preferred Method)
+#### ** Install the Astro UXDS Push Button package via Command Line** (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-push-button
@@ -18,7 +18,7 @@ npm i --save @astrouxds/rux-push-button
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
 
 Via CLI:
 
@@ -26,9 +26,9 @@ Via CLI:
 git clone https://bitbucket.org/rocketcom/astro-components.git
 ```
 
-Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
-### 2. Import the RUX Push Button Web Component
+### 2. Import the Astro Push Button Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
@@ -36,35 +36,44 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 import { RuxPushButton } from "@astro-components/rux-push-button/rux-push-button.js";
 ```
 
-### 3. Render the RUX Push Button Web Component
+### 3. Render the Astro Push Button Web Component
+Pass properties as attributes of the Astro Push Button custom element.
 
-This component allows for a label to be passed through via a [slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) inside the component node.
-
-```xml
-<rux-push-button>Push Button Label</rux-push-button>
-```
-
-Apply properties as attributes on the component:
+Provide a label for the Push Button inside the component node using the component’s [slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).
 
 ```xml
-<rux-push-button disabled checked>Push Button Label</rux-push-button>
+<rux-push-button checked>Push Button Label</rux-push-button>
 ```
 
+### Properties
+| Property | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
+| `checked` | Boolean | `false` | No | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.  
 ---
 
 ## Basic HTML Usage
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
+Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
 ```
 
-### 2. Markup using HTML5/CSS3
+### 2. Markup the component using HTML and the Astro CSS classes
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. 
 
-Apply properties such as `disabled` and/or `checked` as native HTML attributes, where appropriate.
+
+```xml
+ <div class="rux-push-button">
+  <input class="rux-push-button__input" id="pb1" type="checkbox"></input>
+  <label class="rux-push-button__button" for="pb1">Push Button Label</label>
+</div>
+```
+
+Apply attributes such as `disabled` and/or `checked` on the `<input>` element.
 
 ```xml
  <div class="rux-push-button">
@@ -73,14 +82,13 @@ Apply properties such as `disabled` and/or `checked` as native HTML attributes, 
 </div>
 ```
 
+### Attributes
+| Attribute | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
+| `checked`  | Boolean | `false` | No | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state. |
+
 For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
-
-## Properties
-
-| Property   | Type    | Default | Required | Description                                                                                                                                                                                 |
-| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `disabled` | Boolean | `false` | no       | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
-| `checked`  | Boolean | `false` | no       | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.                                                                            |
 
 ## Revision History
 
@@ -101,9 +109,3 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 - Alignment issue fixed on toggle button label
 - Updated to WCAG colors
 - Updated transition speed
-
-##### **Notes**
-
-RUX Push Button is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html).
-
-**Note:** RUX Push Button is available as a preview release and should not be used in production code.

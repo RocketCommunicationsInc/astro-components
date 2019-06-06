@@ -2,9 +2,168 @@
 
 These icons represent objects, equipment, and concepts that are being administered or monitored. The purpose of these icons is to easily, concisely, and clearly visually communicate their status to be to users.
 
-## Important Astro 4 Migration Note:
+## Guidelines
 
-Prior to Astro 4 the Rux Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 seperates these two use cases in to distinct components. The [Rux Status Component](../rux-status/) is solely responsible for the status indicators. This component, Rux Monitoring Icon, replaces the previous "Advanced Status" features of Rux Status.
+- [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
+
+
+## Web Components Usage
+
+### 1. Installation
+
+#### ** Install the Astro UXDS Monitoring Icon package via Command Line** (Preferred Method)
+
+```sh
+npm i --save @astrouxds/rux--monitoring-icon
+```
+
+You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
+
+#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+
+Via CLI:
+
+```sh
+git clone https://bitbucket.org/rocketcom/astro-components.git
+```
+
+Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+
+### 2. Import the Astro Monitoring Icon Web Component
+
+This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
+
+```javascript
+import { RuxMonitoringIcon } from "@astro-components/rux-monitoring-icon/rux-monitoring-icon.js";
+```
+
+### 3. Render the Astro Monitoring Icon Web Component
+Pass properties as attributes of the Astro Monitoring Icon custom element:
+
+```xml
+<rux-monitoring-icon
+ icon="altitude"
+ label="Altitude for Satellite X"
+ sublabel="10000m"
+ status="normal"
+ notifications="10">
+</rux-monitoring-icon>
+```
+
+### Properties
+| Property | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `icon` | String | `''` | Yes | Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) |
+| `label`         | String | `'icon'`  | Yes     | Displays a label below the icon  |
+| `status` | String | `'normal'` | Yes | Styles the icon according to the Astro Status colors. Valid options are the Astro statuses `critical`, `serious`, `caution`, `normal`, `standby` and `off` |
+| `sublabel` | String | `''` | No | Displays a smaller label underneath the icon label |
+| `notifications` | Number | `0` | No | If provided and greater than `0`, displays an outlined number badge at the bottom right of the icon. Numbers above `9999` are abbreviated to `'10K'` or `'100K'` for numbers in the thousands, `'1.5M'` for millions, and `'1.5B'` for billions. The badge uses `'∞'` for one trillion or higher. |
+
+# Monitoring Progress Icon
+
+The Monitoring Progress Icon is a unique instance of the Monitoring Icon for displaying live progress of a monitored item. The Monitoring Progress Icon uses a "donut"-style progress meter rather than a specific icon.
+
+## Guidelines
+
+- [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
+
+## Web Components Usage
+
+### 1. Installation
+#### ** Install the Astro UXDS Monitoring Icon package via Command Line** (Preferred Method)
+
+```sh
+npm i --save @astrouxds/rux--monitoring-icon
+```
+
+You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
+
+#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+Via CLI: 
+
+```sh
+git clone https://bitbucket.org/rocketcom/astro-components.git
+```
+
+Or, [download Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+
+
+### 2. Import the Astro Monitoring Progress Icon Web Component
+
+This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project. Status is assigned via a range object.
+
+```javascript
+import { RuxMonitoringProgressIcon } from "@astro-components/rux-monitoring-icon/rux-monitoring-progress-icon.js";
+```
+
+### 3. Render the Astro Monitoring Progress Icon Web Component
+Pass properties as attributes of the Astro Monitoring Progress Icon custom element:
+
+```xml
+<rux-monitoring-progress-icon
+ label="Battery Level"
+ progress="50">
+</rux-monitoring-progress-icon>
+```
+### Properties (for the Monitoring Progress Icon)
+| Property | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `label` | String | `'icon'` | Yes | Displays a label below the icon  |
+| `progress` | Number | `0` | Yes | Displays this value as a percentage in the center of the donut graph, and styles a proportional segment of the graph. Progress can be positive or negative (the later useful for countdowns). The progress value must exist within the thresholds specified in the `range` property below. |
+| `range`    | Array  | (see default array below) | No | Items in this Array define thresholds for changing the status style of the progress icon. For each item in the Array, the icon will be styled with the given status while the `progress` value is less than the Array item’s `threshold` and equal to or greater than the next largest item‘s `threshold`. Both `progress` and the Array items’ `threshold` values can be positive or negative, so long as they are consistent and the `threshold` values span no more than 100 numbers. The component assumes the Array's first status threshold begins at `0`. |
+| `sublabel` | String | `''` | No | Displays a smaller label underneath the icon label |
+| `notifications` | Number | `0` | No | If provided and greater than `0`, displays an outlined number badge at the bottom right of the icon. Numbers above `9999` are abbreviated to `'10K'` or `'100K'` for numbers in the thousands, `'1.5M'` for millions, and `'1.5B'` for billions. The badge uses `'∞'` for one trillion or higher. |
+
+
+### Sample `range` Array
+
+A sample of a `range` Array. This sample is also the default value for `range`. Note: `range` Arrays can have as few as one threshold for items that may need progress observation, but won't have an associated status.
+
+```json
+[
+  {  // for progress values from 0 to 16:
+    "threshold": 17,
+    "status": "off"
+  },
+  {  // for progress values from 17 to 32:
+    "threshold": 33,
+    "status": "standby"
+  },
+  {  // for progress values from 33 to 48:
+    "threshold": 49,
+    "status": "normal"
+  },
+  {  // for progress values from 49 to 64:
+    "threshold": 65,
+    "status": "caution"
+  },
+  {  // for progress values from 64 to 80:
+    "threshold": 81,
+    "status": "serious"
+  },
+  {  // for progress values from 81 to 99:
+    "threshold": 100,
+    "status": "critical"
+  }
+]
+```
+
+### `range` Array Item Properties
+| Property | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `threshold` | Number | — | Yes | This value is the upper limit, exclusive, of the range for which the `status` below will style the progress icon. |
+| `status` | String | `normal` | Yes | Styles the icon according to the Astro Status colors. Valid options are the Astro statuses `critical`, `serious`, `caution`, `normal`, `standby`, and `off` |
+
+## Revision History
+
+##### **4.1**
+- Moved Advanced Status to its own component, Astro UXDS Monitoring Icon (see [Astro 4 migration note](#astro-4-migration) below)
+- Added the Monitoring Progress Icon variant
+- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+
+<a name="astro-4-migration">
+## Important Astro 4 Migration Note:
+Prior to Astro 4, the Astro UXDS Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 seperates these two use cases in to distinct components. The [Astro UXDS Status Component](../rux-status/) is solely responsible for the status indicators. This component, Astro UXDS Monitoring Icon, replaces the previous "Advanced Status" features of Astro UXDS Status.
 
 To upgrade to Astro 4 any instance of `<rux-status>` used as an "Advanced Status" or "Monitoring Icon" should replace `<rux-status>` with `<rux-monitoring-icon>`. For example:
 
@@ -29,155 +188,3 @@ Would become this
   notifications="10">
 </rux-monitoring-icon>
 ```
-
-## Guidelines
-
-- [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
-
-## Installation
-
-`npm i -save @astrouxds/rux-monitoring-icon`
-
-## Web Components Usage
-
-### 1. Installation
-
-#### ** Install the Astro RUX Monitoring Icon package via Command Line** (Preferred Method)
-
-```sh
-npm i --save @astrouxds/rux--monitoring-icon
-```
-
-You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
-
-#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
-
-Via CLI:
-
-```sh
-git clone https://bitbucket.org/rocketcom/astro-components.git
-```
-
-Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
-
-### 2. Import the RUX Monitoring Icon Web Component
-
-This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
-
-```javascript
-import { RuxMonitoringIcon } from "@astro-components/rux-monitoring-icon/rux-monitoring-icon.js";
-```
-
-### 3. Render the RUX Monitoring Icon Web Component
-
-```xml
-<rux-monitoring-icon
- icon="altitude"
- label="Altitude for Satellite X"
- sublabel="10000m"
- status="normal"
- notifications="10">
-</rux-monitoring-icon>
-```
-
----
-
-## Properties
-
-| Property        | Type   | Default | Required | Description                                                                                                                                                    |
-| --------------- | ------ | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`          | string | -       | true     | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols) |
-| `label`         | string | "icon"  | true     | A descriptive label of the icon, **Required for ARIA/Accessibility**                                                                                           |
-| `status`        | string | -       | true     | Valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off`                                                                              |
-| `sublabel`      | string | -       | false    | An optional string value appearing underneath the primary label                                                                                                |
-| `notifications` | number | -       | false    | Indicates notifications for a give status. Values beyond 9,999 are shorthanded 10K, 100K, 1.5M, 1.5B and ∞ for numbers greater than 999,999,999,999            |
-
-# Monitoring Progress Icon
-
-The Monitoring Progress Icon is a unique instance of the Monitoring Icon displaying live progress of a monitored item. The Monitoring Progress Icon uses a "donut" style progress meter rather than specific icons.
-
-## Guidelines
-
-- [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
-
-## Installation
-
-`npm i -save @astrouxds/rux-monitoring-icon`
-
-## Web Components Usage
-
-Note: The Rux Monitoring Progress Icon variant is installed alongside the standard Rux Monitoring Icon. For installation instructions see above.
-
-### 1. Import the RUX Monitoring Icon Web Component
-
-This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project. Status is assigned via a range object.
-
-```javascript
-import { RuxMonitoringProgressIcon } from "@astro-components/rux-monitoring-progress-icon/rux-monitoring-progress-icon.js";
-```
-
-### 2. Render the RUX Monitoring Icon Web Component
-
-```xml
-<rux-monitoring-progress-icon
- label="Battery Level"
- progress="50">
-</rux-monitoring-progress-icon>
-```
-
----
-
-## Properties
-
-| Property   | Type   | Default                  | Required | Description                                                                                                                                                    |
-| ---------- | ------ | ------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `label`    | string | "icon"                   | yes      | Defines the icon to be used. For a [full list of icon symbols see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/library/icons-and-symbols) |
-| `progress` | number | 0                        | yes      | Progress of the monitored item. Valid range 0-99 or 1-100. Note: progress may be a positive or negative integer                                                |
-| `range`    | array  | (see sample array below) | no       | An optional array of objects defining the number of statuses and threshold each should execute                                                                 |
-
-### Sample `range` Array
-
-A sample of a range array. This sample is also the default range of a Monitoring Progress Icon. Note: range objects can have as few as one threshold for items that may need progress observation, but not have an associated status.
-
-```json
-[
-  {
-    "threshold": 17,
-    "status": "off"
-  },
-  {
-    "threshold": 33,
-    "status": "standby"
-  },
-  {
-    "threshold": 81,
-    "status": "serious"
-  },
-  {
-    "threshold": 49,
-    "status": "normal"
-  },
-  {
-    "threshold": 65,
-    "status": "caution"
-  },
-  {
-    "threshold": 100,
-    "status": "critical"
-  }
-]
-```
-
-## `range` Object Properties
-
-| Property    | Type     | Required | Description                                                                               |
-| ----------- | -------- | -------- | ----------------------------------------------------------------------------------------- |
-| `threshold` | `number` | `true`   | Status applied to component until progress exceeds threshold                              |
-| `status`    | `number` | `true`   | Valid options are `critical`, `serious`, `caution`, `normal`, `standby`, `off` and `null` |
-
-## Revision History
-
-##### **4.1**
-
-- Added the Monitoring Progress Icon variant
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

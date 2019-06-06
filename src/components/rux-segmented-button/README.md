@@ -2,11 +2,6 @@
 
 Segmented Buttons allow users to select one item at a time from two to four options. Selecting one option automatically turns off the last selection made. Segmented Buttons are mutually exclusive.
 
-### Rules of Thumb
-
-- Use Segmented Buttons to **filter a grid or table**, or to **switch a view's display mode**.
-- One option must always be selected.
-
 ##Guidelines
 
 - [Astro UXDS: Segmented Button](https://astrouxds.com/ui-components/segmented-button)
@@ -15,7 +10,7 @@ Segmented Buttons allow users to select one item at a time from two to four opti
 
 ### 1. Installation
 
-#### ** Install the Astro RUX Segmented Button package via Command Line** (Preferred Method)
+#### ** Install the Astro UXDS Segmented Button package via Command Line** (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-segmented-button
@@ -23,7 +18,7 @@ npm i --save @astrouxds/rux-segmented-button
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
 
 Via CLI:
 
@@ -31,9 +26,9 @@ Via CLI:
 git clone https://bitbucket.org/rocketcom/astro-components.git
 ```
 
-Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
-### 2. Import the RUX Segmented Button Web Component
+### 2. Import the Astro Segmented Button Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
@@ -41,48 +36,47 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 import { RuxSegmentedButton } from "@astro-components/rux-segmented-button/rux-segmented-button.js";
 ```
 
-### 3. Render the RUX Segmented Button Web Component
+### 3. Render the Astro Segmented Button Web Component
 
-Pass an array of choices via the `data` attribute. Log entries must be objects with a `label` string. The first option will be auto-selected unless another item has `selected: true`:
+Pass an Array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` Array must be objects with a `label` string. The first item in the Array will be auto-selected unless another segment item has a `selected` property with a truthy value:
 
 ```javascript
 import { RuxSegmentedButton } from "@astro-components/rux-segmented-button/rux-segmented-button.js";
 
-const myButtonArray = [
-	{ label: "First Item" },
-	{ label: "Second Item" },
-	{ label: "Third Item" }
+const myButtonSegments = [
+	{ label: "First Segment" },
+  { label: "Second Segment", selected: true },
+	{ label: "Third Segment" }
 ];
 
 // ...
 
 render() {
-	return `<rux-segmented-button data="${myButtonArray}"></rux-segmented-button>`;
+	return `<rux-segmented-button data="${myButtonSegments}"></rux-segmented-button>`;
 }
 ```
 
-## Rux Segmented Button Component Properties
 
-| Property | Type  | Default | Required | Description                                       |
-| -------- | ----- | ------- | -------- | ------------------------------------------------- |
-| `data`   | Array | `[]`    | Yes      | An array of choices to display as button options. |
+### Properties (for the Segmented Button component)
+| Property | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `data` | Array | `[]` | Yes | Items in this Array are the individual button segments. |
 
-### Sample Rux Segmented Button `data` Array
+### Sample Astro UXDS Segmented Button `data` Array
 
 ```js
 [
-  { label: "First Item" },
-  { label: "Second Item", selected: true },
-  { label: "Third Item" }
+  { label: "First Segment" },
+  { label: "Second Segment", selected: true },
+  { label: "Third Segment" }
 ];
 ```
 
-### Rux Segmented Button `data` Array Object Properties
-
-| Property   | Type    | Default | Required | Description                                                                                                                                                                                          |
-| ---------- | ------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `label`    | String  | —       | Yes      | The label for the button segment.                                                                                                                                                                    |
-| `selected` | Boolean | —       | No       | If true, selects this item rather than the first item in the component's `data` array on mount. If true on more than one item in the array, the earliest one will register and the rest are ignored. |
+### Properties for items within the `data` Array
+| Property | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `label`    | String  | — | Yes | Defines the label for the button segment. |
+| `selected` | Boolean | — | No | If true, selects this segment rather than the first segment in the `data` Array on mount. If more than one segment has a truthy `selected` value, the earliest one in the Array will register and the rest are ignored. |
 
 ---
 
@@ -90,41 +84,46 @@ render() {
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
+Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
 ```
 
-### 2. Markup using HTML5/CSS3
+### 2. Markup the component using HTML and the Astro CSS classes
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. Using Astro's CSS classes `rux-segmented-button`, `rux-segmented-button__segment`, compose your segmented button using styled HTML radio input elements. 
 
-Using Astro's CSS classes `rux-segmented-button`, `rux-segmented-button__segment`, and `rux-group`, compose your segmented button using styled HTML radio buttons.
+Configure the component using native HTML attributes. For each group of radio buttons, the input elements representing choices must have the same value for their `name` attributes. Each `<input>` needs unique a `id` that matches the `for` attribute of a `<label>`.
+
 
 ```xml
 <ul class="rux-segmented-button">
   <li class="rux-segmented-button__segment">
-    <input type="radio" name="rux-group" id="segment1" />
+    <input type="radio" id="segment1" name="rux-group" />
     <label for="segment1">Segment 1</label>
   </li>
   <li class="rux-segmented-button__segment">
-    <input type="radio" name="rux-group" id="segment2" />
+    <input type="radio" id="segment2" name="rux-group" />
     <label for="segment2">Segment 2</label>
   </li>
   <li class="rux-segmented-button__segment">
-    <input type="radio" name="rux-group" id="segment3" />
+    <input type="radio" id="segment3" name="rux-group" />
     <label for="segment3">Segment 3</label>
   </li>
 </ul>
 ```
+
+### Attributes
+| Attribute | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `selected` | Boolean | `false` | No | If present on the `<input>` element, selects this segment rather than the first radio input element in the group. |
+| `name` | String | — | Yes | Associates a group of Radio Button choices. All `<input>` elements in the group must have identical `name` values. |
+| `required` | Boolean | `false` | No | Follows native form element `required` behavior, preventing submission of the form until a valid value has been entered. |
+
+
 
 ## Revision History
 
 ##### **4.1**
 
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
-
-##### **Notes**
-
-RUX Segmented Button is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html).
-
-**Note:** RUX Segmented Button is available as a preview release and should not be used in production code.
