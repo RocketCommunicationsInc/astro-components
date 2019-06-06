@@ -235,9 +235,7 @@ storiesOf('Components|Buttons', module)
         html,
       },
       notes: {
-        markdown:
-          '_Readme content copied from [Rux-Buttons](/?path=/info/components-buttons--standard-button) below for your convenience._\n\n' +
-          Readme,
+        markdown: Readme,
       },
     },
   );
