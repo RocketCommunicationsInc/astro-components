@@ -33,8 +33,8 @@ storiesOf('Components|Clock', module)
         <div style="padding: 10%; display: flex; justify-content: center;">
         <rux-clock
           .timezone="${timezoneKnob}" 
-          ?hide-timezone="${hideTimezoneKnob}"
-          ?hide-date="${hideDateKnob}"
+          ?hideTimezone="${hideTimezoneKnob}"
+          ?hideDate="${hideDateKnob}"
           ?compact="${compactKnob}"></rux-clock>
         </div>
       `
@@ -79,8 +79,8 @@ storiesOf('Components|Clock', module)
           .timezone="${timezoneKnob}" 
           aos="${aosKnob}"
           los="${losKnob}"
-          ?hide-timezone="${hideTimezoneKnob}"
-          ?hide-date="${hideDateKnob}"
+          ?hideTimezone="${hideTimezoneKnob}"
+          ?hideDate="${hideDateKnob}"
           ?compact="${compactKnob}"></rux-clock>
         </div>
       `

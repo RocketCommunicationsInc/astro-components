@@ -22,11 +22,9 @@ export class RuxClock extends LitElement {
       },
       hideTimezone: {
         type: Boolean,
-        attribute: 'hide-timezone',
       },
       hideDate: {
         type: Boolean,
-        attribute: 'hide-date',
       },
       compact: {
         type: Boolean,

@@ -58,8 +58,8 @@ The component auto-imports the Astro Icon Web Component for icons, if you specif
 | --- | --- | --- | --- | --- |
 | `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
 | `outline` | Boolean | `false` | No | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use an outline button for the less preferred option in Ok/Cancel button pairings. |
-| `icon-only` | Boolean | `false` | No | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Requires the `icon` attribute to be set as well. |
-| `icon` | String | `''` | No | Displays an Astro icon matching this string to the left of the button text.  For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols).  Required when the `icon-only` attribute is `true`. |
+| `iconOnly` | Boolean | `false` | No | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Requires the `icon` attribute to be set as well. |
+| `icon` | String | `''` | No | Displays an Astro icon matching this string to the left of the button text.  For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols).  Required when the `iconOnly` attribute is `true`. |
 | `size` | String |  `''` | No | Displays the button as a `'small'` or `'large'` variant. |
 ---
 
@@ -128,7 +128,8 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 - Should `size` property have a default value of `'standard'` for the button size? we don't have classes for it
 
 ##### **4.1**
-- Deprecated `type` attribute in favor of separate `size`, `icon-only`, and `outline` attributes. `default` type is No longer supoprted.
+- Swapped kebab-cased `icon-only` attribute for standard camelCase `iconOnly`
+- Deprecated `type` attribute in favor of separate `size`, `iconOnly`, and `outline` attributes. `default` type is No longer supoprted.
 - Fixed the width of the small icon-only button and ensured icon-only buttons show No text, even if text is provided
 - Fixed outline button icon color
 - Re-enabled missing focus styles on buttons.

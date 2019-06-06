@@ -50,10 +50,10 @@ Pass properties as attributes of the Astro Dialog Box custom element:
 <rux-modal
   title="Modal title"
   message="Modal message"
-  confirm-text="Ok"
-  deny-text="Cancel"
+  confirmText="Ok"
+  denyText="Cancel"
   icon="default:settings"
-  custom-event="listen-for-me">
+  customEvent="listen-for-me">
 </rux-modal>
 ```
 
@@ -63,16 +63,16 @@ Pass properties as attributes of the Astro Dialog Box custom element:
 | --- | --- | --- | --- | --- |
 | `message` | String | `''` | Yes | Displays a text for the message area of the dialog box. |
 | `title` | String | `''` |  No | Displays a title for the top of the dialog box. |
-| `confirm-text` | String | `''` | No | Displays a confirmation button with the given text. If both `confirm-text` and `deny-text` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirm-text` or `deny-text` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event. |
-| `deny-text`    | String | `''` |  No | Displays a deny button with the given text. If both `confirm-text` and `deny-text` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirm-text` or `deny-text` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event. |
+| `confirmText` | String | `''` | No | Displays a confirmation button with the given text. If both `confirmText` and `denyText` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirmText` or `denyText` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event. |
+| `denyText`    | String | `''` |  No | Displays a deny button with the given text. If both `confirmText` and `denyText` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirmText` or `denyText` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event. |
 | `icon`         | String | `'default:caution'` |  No |  Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)  |
-| `custom-event` | String |  `'modal-event'` |  No | Overrides the default event name with a custom event name. Useful if you have more than one dialog. Note: As dialog boxes can be dynamically set, consider using a single instance of `rux-modal` and assigning values via an object, rather than creating multiple instances of `rux-modal`. |
 
 ### Event Listener
-When closed, the Dialog Box Web Component will emit a message using `modal-event` event name and a detail message of `confirm` with a value of `true` (confirm) or `false` (deny) depending on whether the user clicks the confirm or deny button.
+When closed, the Dialog Box Web Component will emit a message using the `'modal-event'` event name and a detail message of `confirm` with a value of `true` (confirm) or `false` (deny) depending on whether the user clicks the confirm or deny button.
 
 
 ## Revision History
 ##### **4.1**
+- Swapped kebab-cased `comfirm-text` and `deny-text` attributes for standard camelCase `confirmText` and `denyText`
 - Added `title` property
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

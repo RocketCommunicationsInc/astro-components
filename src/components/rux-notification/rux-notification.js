@@ -1,33 +1,32 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html } from 'lit-element';
 export class RuxNotification extends LitElement {
   static get properties() {
     return {
       message: {
-        type: String
+        type: String,
       },
       status: {
-        type: String
+        type: String,
       },
       target: {
         type: String,
-        reflect: true
+        reflect: true,
       },
       closeAfter: {
         type: Number,
-        attribute: "close-after"
       },
       open: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
   constructor() {
     super();
-    this.message = "";
-    this.status = "standby";
-    this.target = "local";
+    this.message = '';
+    this.status = 'standby';
+    this.target = 'local';
     this.closeAfter = null;
     this.open = false;
   }
@@ -57,7 +56,7 @@ export class RuxNotification extends LitElement {
   get _closeAfter() {
     if (this.closeAfter && this.closeAfter <= 10) {
       // if the number is 10 or less, it must be ms
-      console.log(this.closeAfter, "2");
+      console.log(this.closeAfter, '2');
     }
 
     if (
@@ -205,4 +204,4 @@ export class RuxNotification extends LitElement {
     `;
   }
 }
-customElements.define("rux-notification", RuxNotification);
+customElements.define('rux-notification', RuxNotification);
