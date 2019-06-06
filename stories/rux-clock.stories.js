@@ -27,7 +27,7 @@ storiesOf('Components|Clock', module)
       const timezoneKnob = select('Timezone', timezones, 'UTC');
       const hideTimezoneKnob = boolean('Hide Timezone', false);
       const hideDateKnob = boolean('Hide DOY', false);
-      const compactKnob = boolean('Compact Version', false);
+      const smallKnob = boolean('Small Version', false);
 
       return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
@@ -35,7 +35,7 @@ storiesOf('Components|Clock', module)
           .timezone="${timezoneKnob}" 
           ?hideTimezone="${hideTimezoneKnob}"
           ?hideDate="${hideDateKnob}"
-          ?compact="${compactKnob}"></rux-clock>
+          ?small="${smallKnob}"></rux-clock>
         </div>
       `
     },{
@@ -72,7 +72,7 @@ storiesOf('Components|Clock', module)
       const losKnob = dateWrapper('LOS', new Date('2019-05-10T16:21:12.000Z'));
       const hideTimezoneKnob = boolean('Hide Timezone', false);
       const hideDateKnob = boolean('Hide DOY', false);
-      const compactKnob = boolean('Compact Version', false);
+      const smallKnob = boolean('Small Version', false);
       return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
         <rux-clock
@@ -81,7 +81,7 @@ storiesOf('Components|Clock', module)
           los="${losKnob}"
           ?hideTimezone="${hideTimezoneKnob}"
           ?hideDate="${hideDateKnob}"
-          ?compact="${compactKnob}"></rux-clock>
+          ?small="${smallKnob}"></rux-clock>
         </div>
       `
     },{

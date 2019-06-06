@@ -41,7 +41,7 @@ import { RuxClock } from "@astro-components/rux-clock/rux-clock.js";
 Apply properties as attributes of the Astro Clock custom element: 
 
 ```xml
-<rux-clock timezone="Pacific/Guam" hideTimezone hideDate compact></rux-clock>
+<rux-clock timezone="Pacific/Guam" hideTimezone hideDate small></rux-clock>
 ```
 
 Define AOS and LOS via [JavaScript Date objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#Several_ways_to_create_a_Date_object) and apply via `aos` and `los` attributes on the component:
@@ -56,7 +56,7 @@ const myLos = new Date('2019-05-10T16:21:12.000Z'); // date from ISO 8601 string
 // ...
 
 render() {
-	return `<rux-clock aos="${myAos}" los="${myLos}" compact></rux-clock>`;
+	return `<rux-clock aos="${myAos}" los="${myLos}" small></rux-clock>`;
 }
 ```
 
@@ -69,12 +69,13 @@ render() {
 | `timezone`      | String  | `'UTC'` | No | Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as ``America/Los_Angeles``. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.                                                  |
 | `hideTimezone` | Boolean | `false` | No | Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS. |
 | `hideDate`     | Boolean | `false` | No |  Hides the day of the year. |
-| `compact`       | Boolean | `false` | No |  Applies a smaller clock style. |
+| `small`       | Boolean | `false` | No |  Applies a smaller clock style. Previously `compact` |
 
 
 
 ## Revision History
 ##### **4.1**
+- Renamed `compact` property to `small`
 - Swapped kebab-cased `hide-timezone` and `hide-date` attributes for standard camelCase `hideTimezone` and `hideDate`
 - Fixed duplicated `aria-labelledby` value when using AOS and/or LOS.
 - Removed `locale` property. All time displays assume `us-EN` locale.
