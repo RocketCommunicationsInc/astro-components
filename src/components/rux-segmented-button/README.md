@@ -44,9 +44,9 @@ Pass an Array of segments via the `data` attribute on the Segmented Button custo
 import { RuxSegmentedButton } from "@astro-components/rux-segmented-button/rux-segmented-button.js";
 
 const myButtonSegments = [
-	{ label: "First Segment" },
+  { label: "First Segment" },
   { label: "Second Segment", selected: true },
-	{ label: "Third Segment" }
+  { label: "Third Segment" }
 ];
 
 // ...
