@@ -47,7 +47,7 @@ Pass properties as attributes of the Astro Button custom element:
 The component auto-imports the Astro Icon Web Component for icons, if you specify one:
 
 ```xml
-<rux-button icon="utility:caution">
+<rux-button icon="caution">
   Button with Icon using Astro UXDS Icon Web Component
 </rux-button>
 ```
@@ -88,7 +88,7 @@ The basic HTML/CSS usage supports icons if using Web Components (and importing t
 
 ```xml
 <button class="rux-button rux-button--icon">
-  <rux-icon class="rux-icon rux-button__icon" icon="utility:caution" color="white"></rux-icon>
+  <rux-icon class="rux-icon rux-button__icon" icon="caution" color="white"></rux-icon>
   Button with Icon using Astro UXDS Icon Web Component
 </button>
 ```

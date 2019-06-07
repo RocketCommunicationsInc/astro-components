@@ -52,7 +52,7 @@ Pass properties as attributes of the Astro Dialog Box custom element:
   message="Modal message"
   confirmText="Ok"
   denyText="Cancel"
-  icon="default:settings"
+  icon="settings"
   customEvent="listen-for-me">
 </rux-modal>
 ```
@@ -65,7 +65,7 @@ Pass properties as attributes of the Astro Dialog Box custom element:
 | `title` | String | `''` |  No | Displays a title for the top of the dialog box. |
 | `confirmText` | String | `''` | No | Displays a confirmation button with the given text. If both `confirmText` and `denyText` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirmText` or `denyText` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event. |
 | `denyText`    | String | `''` |  No | Displays a deny button with the given text. If both `confirmText` and `denyText` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirmText` or `denyText` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event. |
-| `icon`         | String | `'default:caution'` |  No |  Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)  |
+| `icon`         | String | `'caution'` |  No |  Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)  |
 
 ### Event Listener
 When closed, the Dialog Box Web Component will emit a message using the `'modal-event'` event name and a detail message of `confirm` with a value of `true` (confirm) or `false` (deny) depending on whether the user clicks the confirm or deny button.
