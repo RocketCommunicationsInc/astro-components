@@ -39,14 +39,6 @@ export class RuxLog extends LitElement {
     }
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-  }
-
   _filter(filterValue) {
     // return every item if no filter is set
     if (!filterValue) {

@@ -62,8 +62,8 @@ export class RuxClock extends LitElement {
   }
 
   disconnectedCallback() {
-    super.disconnectedCallback();
     clearTimeout(this._timer);
+    super.disconnectedCallback();
   }
 
   /*

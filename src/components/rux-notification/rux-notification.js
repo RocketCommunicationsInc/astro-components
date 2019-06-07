@@ -31,14 +31,6 @@ export class RuxNotification extends LitElement {
     this.open = false;
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-  }
-
   updated() {
     if (this._closeAfter && this.open) {
       this._closeAfter = setTimeout(() => {

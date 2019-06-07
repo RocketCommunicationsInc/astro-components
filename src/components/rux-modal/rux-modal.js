@@ -67,10 +67,6 @@ export class RuxModal extends LitElement {
     }
   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-  }
-
   _handleModalChoice(e) {
     // convert string value to boolean
     const choice = e.currentTarget.dataset.value === 'true';

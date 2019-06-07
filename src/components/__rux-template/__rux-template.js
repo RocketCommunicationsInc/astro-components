@@ -38,8 +38,8 @@ export class RuxTemplate extends LitElement {
   // }
 
   // disconnectedCallback() {
-  //   super.disconnectedCallback();
   //   remove any event listeners here
+  //   super.disconnectedCallback();
   // }
 
   // custom methods, getters, and setters go here
