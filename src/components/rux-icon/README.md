@@ -73,16 +73,35 @@ In the SVG icon library file:
 
 ## Revision History
 
-##### **TODO BEFORE RELEASE**
-
-- Look at ditching class string manipulation happening in the template render function and replace with `:host`-level attributes. Keep existing class-based styles working for users of previous versions
-
 ##### **4.1**
 
-- Added support for external icon libraries via the `library` property
+- Removed the `namespace:icon` pattern in favor of supporting multiple libraries, both default (Astro) and external, adding the `library` property  (see [Astro 4 migration note](#astro-4-migration) below)
 - Replaced the DOM manipulation library for loading icons in favor of an HTML5 template TODO: add support for template outside of WebComponents when browser’s support shadowDOM piercing
-- Removed status indicators
-- Added a default libaray via template method
-- Removed the namespace:icon pattern in favor of supporting
-
+- Moved Astro Status Icons to their own package, `rux-status`
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+
+
+<a name="astro-4-migration">
+## Important Astro 4 Migration Note:
+
+Prior to Astro 4.1, the Astro UXDS Icon Component imported icons from a single SVG file where icons were identified by `id` under specific groups. In that method, icons were accessed via a namespaced value for the `icon` property, such as `"group-id:icon-id"`.
+
+### Prior to Astro 4.1:
+
+```xml
+<rux-icon icon="default:settings"></rux-icon>
+
+```
+
+In Astro 4.1, these groups have been flattened, and each icon is now imported directly without any group prefix. If you would like to load another icon library SVG file, use the `library` property. You can easily namespace your own custom icons (e.g., `my-namespaced-prefix_settings`) and access those icons via the `icon` attribute.
+
+### Astro 4.1 with default Astro icons:
+
+```xml
+<rux-icon icon="settings"></rux-icon>
+```
+### Astro 4.1 with custom icons:
+
+```xml
+<rux-icon library="/icons/my-namespaced-custom-icons.svg" icon="my-namespaced-prefix_settings"></rux-icon>
+```
