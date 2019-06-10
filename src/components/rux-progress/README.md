@@ -50,15 +50,15 @@ Determinate progress
 
 ### Properties
 
-| Property     | Type    | Default                                                                                                                                                                                              | Required | Description                                                                                                                                      |
-| ------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `value`      | Number  | `` | no | Current progress value between 1 and 100 (or the max, if defined below). Note: if this paramater isn’t present or if it is set to 0 the progress bar will display its indeterminate state. |
-| `max`        | Number  | `100`                                                                                                                                                                                                | no       | For use with progress bars that have maximum value greater or less than 100.                                                                     |
-| `hide-label` | Boolean | `false`                                                                                                                                                                                              | no       | Displays text output of progress as a percentage. Note: when using a max value other than 100 output is displated as value/max (e.g., 1450/2000) |
+| Property    | Type    | Default                                                                                                                                                                                                       | Required | Description                                                                                                                                      |
+| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `value`     | Number  | `` | no | Displays current progress value between 1 and 100 (or the max, if defined below). Note: if this paramater isn’t present or if it is set to 0 the progress bar will display its indeterminate state. |
+| `max`       | Number  | `100`                                                                                                                                                                                                         | no       | For use with progress bars that have maximum value greater or less than 100.                                                                     |
+| `hideLabel` | Boolean | `false`                                                                                                                                                                                                       | no       | Displays text output of progress as a percentage. Note: when using a max value other than 100 output is displated as value/max (e.g., 1450/2000) |
 
 ## Basic HTML Usage
 
-For projects where Web Components are not a viable option, standard HTML/CSS can be used to create an Astro styled progress bar. The Astro CSS library styles the native [HTML Progress Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress).
+For projects where Web Components are not a viable option use the Astro CSS and standard [HTML Progress Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress) to create an Astro styled progress bar.
 
 ### 1. Include the Astro UXDS CSS file
 
