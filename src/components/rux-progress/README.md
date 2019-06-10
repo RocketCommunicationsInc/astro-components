@@ -26,7 +26,7 @@ git clone https://bitbucket.org/rocketcom/astro-components.git
 
 Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
-### 2. Import the RUX Progress Web Component
+### 2. Import the Astro Astro Template Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
@@ -34,7 +34,7 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 import { RuxProgress } from '@astro-components/rux-progress/rux-progress.js';
 ```
 
-### 3. Render the RUX Progress Web Component
+### 3. Render the Astro Template Web Component
 
 Indeterminate progress
 
@@ -68,7 +68,7 @@ Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketc
 <link rel="stylesheet" href="/your-project/path/astro.css" />
 ```
 
-### 2. Markup using HTML5/CSS3
+### 2. Markup the component using HTML and the Astro CSS classes
 
 Determinate progress
 
