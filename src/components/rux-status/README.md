@@ -1,10 +1,10 @@
 # Status
+
 The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature.
 
 ## Guidelines
 
 - [Astro UXDS: Status Symbols](http://www.astrouxds.com/ui-components/status-symbol)
-
 
 ## Web Components Usage
 
@@ -33,10 +33,11 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxStatus } from "@astro-components/rux-status/rux-status.js";
+import { RuxStatus } from '@astro-components/rux-status/rux-status.js';
 ```
 
 ### 3. Render the Astro Status Web Component
+
 Pass properties as attributes of the Astro Status custom element:
 
 ```xml
@@ -44,9 +45,11 @@ Pass properties as attributes of the Astro Status custom element:
 ```
 
 ### Properties
-| Property | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `status` | String | `''` | Yes | Sets the status symbol, valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off` |
+
+| Property | Type   | Default | Required | Description                                                                                               |
+| -------- | ------ | ------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| `status` | String | `''`    | Yes      | Sets the status symbol, valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off` |
+
 ---
 
 ## Basic HTML Usage
@@ -61,20 +64,21 @@ Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/ro
 
 ### 2. Markup the component using HTML and the Astro CSS classes
 
-Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention.  Apply attribues as [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-status--`. 
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. Apply attribues as [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-status--`.
 
 ```xml
 <div class="rux-status rux-status--critical"></div>
 ```
 
 ### Attributes
-| Attribute | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
+
+| Attribute      | Type  | Default | Required | Description                                                                                                                                                                       |
+| -------------- | ----- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `rux-status--` | Class | -       | Yes      | Sets the status symbol, valid options are `rux-status--critical`, `rux-status--serious`, `rux-status--caution`, `rux-status--normal`, `rux-status--standby` and `rux-status--off` |
 
 ## Revision History
 
-##### **4.1**
+##### **4.0**
 
 - Replaced SVG status elements with PNG sprite for improved performance
 - Moved Advanced Status to its own component, Astro UXDS Monitoring Icon (see [Astro 4 migration note](#astro-4-migration) below)
@@ -104,4 +108,3 @@ Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming
 <a name="astro-4-migration">
 ## Important Astro 4 Migration Note:
 Prior to Astro 4, the Astro UXDS Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 separates these two use cases into distinct components. The Astro UXDS Status Component is solely responsible for the status indicators. This component, [Astro UXDS Monitoring Icon Component](../rux-monitoring-icon/), replaces the previous "Advanced Status" features of Astro UXDS Status.
-

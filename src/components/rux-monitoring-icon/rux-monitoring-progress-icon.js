@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { css } from 'lit-element';
 import { RuxMonitoringIcon } from './rux-monitoring-icon.js';
 /* eslint-enable no-unused-vars */
 

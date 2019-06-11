@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxSegmentedButton } from "@astro-components/rux-segmented-button/rux-segmented-button.js";
+import { RuxSegmentedButton } from '@astro-components/rux-segmented-button/rux-segmented-button.js';
 ```
 
 ### 3. Render the Astro Segmented Button Web Component
@@ -56,27 +56,24 @@ render() {
 }
 ```
 
-
 ### Properties (for the Segmented Button component)
-| Property | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `data` | Array | `[]` | Yes | Items in this Array are the individual button segments. |
+
+| Property | Type  | Default | Required | Description                                             |
+| -------- | ----- | ------- | -------- | ------------------------------------------------------- |
+| `data`   | Array | `[]`    | Yes      | Items in this Array are the individual button segments. |
 
 ### Sample Astro UXDS Segmented Button `data` Array
 
 ```js
-[
-  { label: "First Segment" },
-  { label: "Second Segment", selected: true },
-  { label: "Third Segment" }
-];
+[{ label: 'First Segment' }, { label: 'Second Segment', selected: true }, { label: 'Third Segment' }];
 ```
 
 ### Properties for items within the `data` Array
-| Property | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `label`    | String  | — | Yes | Defines the label for the button segment. |
-| `selected` | Boolean | — | No | If true, selects this segment rather than the first segment in the `data` Array on mount. If more than one segment has a truthy `selected` value, the earliest one in the Array will register and the rest are ignored. |
+
+| Property   | Type    | Default | Required | Description                                                                                                                                                                                                             |
+| ---------- | ------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`    | String  | —       | Yes      | Defines the label for the button segment.                                                                                                                                                                               |
+| `selected` | Boolean | —       | No       | If true, selects this segment rather than the first segment in the `data` Array on mount. If more than one segment has a truthy `selected` value, the earliest one in the Array will register and the rest are ignored. |
 
 ---
 
@@ -91,10 +88,10 @@ Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/ro
 ```
 
 ### 2. Markup the component using HTML and the Astro CSS classes
-Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. Using Astro's CSS classes `rux-segmented-button`, `rux-segmented-button__segment`, compose your segmented button using styled HTML radio input elements. 
+
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. Using Astro's CSS classes `rux-segmented-button`, `rux-segmented-button__segment`, compose your segmented button using styled HTML radio input elements.
 
 Configure the component using native HTML attributes. For each group of radio buttons, the input elements representing choices must have the same value for their `name` attributes. Each `<input>` needs unique a `id` that matches the `for` attribute of a `<label>`.
-
 
 ```xml
 <ul class="rux-segmented-button">
@@ -114,16 +111,15 @@ Configure the component using native HTML attributes. For each group of radio bu
 ```
 
 ### Attributes
-| Attribute | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `selected` | Boolean | `false` | No | If present on the `<input>` element, selects this segment rather than the first radio input element in the group. |
-| `name` | String | — | Yes | Associates a group of Radio Button choices. All `<input>` elements in the group must have identical `name` values. |
-| `required` | Boolean | `false` | No | Follows native form element `required` behavior, preventing submission of the form until a valid value has been entered. |
 
-
+| Attribute  | Type    | Default | Required | Description                                                                                                              |
+| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `selected` | Boolean | `false` | No       | If present on the `<input>` element, selects this segment rather than the first radio input element in the group.        |
+| `name`     | String  | —       | Yes      | Associates a group of Radio Button choices. All `<input>` elements in the group must have identical `name` values.       |
+| `required` | Boolean | `false` | No       | Follows native form element `required` behavior, preventing submission of the form until a valid value has been entered. |
 
 ## Revision History
 
-##### **4.1**
+##### **4.0**
 
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

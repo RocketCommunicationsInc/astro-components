@@ -16,7 +16,7 @@
     "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
   },
   "description": "Astro Web Component for status indicator",
-  "license": "CC0-1.0",
+  "license": "",
   "main": "rux-status.js",
   "name": "@astrouxds/rux-status",
   "scripts": {

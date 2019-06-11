@@ -96,7 +96,7 @@ Indeterminate progress
 
 ## Revision History
 
-##### **4.1**
+##### **4.0**
 
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 

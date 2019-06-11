@@ -1,14 +1,15 @@
 # Tabs
+
 Tabs are used to divide major areas of content and to indicate work process.
 
 ## Guidelines
 
-* [Astro UXDS: Tabs](https://www.astrouxds.com/ui-components/tabs)
-
+- [Astro UXDS: Tabs](https://www.astrouxds.com/ui-components/tabs)
 
 ## Web Components Usage
 
 ### 1. Installation
+
 #### ** Install the Astro UXDS Tabs package via Command Line** (Preferred Method)
 
 ```sh
@@ -17,9 +18,9 @@ npm i --save @astrouxds/rux-tabs
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-
 #### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
-Via CLI: 
+
+Via CLI:
 
 ```sh
 git clone https://bitbucket.org/rocketcom/astro-components.git
@@ -27,12 +28,12 @@ git clone https://bitbucket.org/rocketcom/astro-components.git
 
 Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
-
 ### 2. Import the Astro Tabs Web Component
+
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxTabs } from "@astro-components/rux-tabs/rux-tabs.js";
+import { RuxTabs } from '@astro-components/rux-tabs/rux-tabs.js';
 ```
 
 ### 3. Render the Astro Tabs Web Component
@@ -83,31 +84,32 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 ```
 
 ### Tabs Container Attributes
-| Attribute | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `id` | String | — | Yes | Associates this tab container with a Tabs Panel container element. Must match the `aria-labelledby` attribute on a `<rux-tabs-panels>` container element elsewhere within the HTML document. |
-| `small` | Boolean | `false` | No | If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses. Previously `compact`. |
 
+| Attribute | Type    | Default | Required | Description                                                                                                                                                                                  |
+| --------- | ------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`      | String  | —       | Yes      | Associates this tab container with a Tabs Panel container element. Must match the `aria-labelledby` attribute on a `<rux-tabs-panels>` container element elsewhere within the HTML document. |
+| `small`   | Boolean | `false` | No       | If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses. Previously `compact`.                                                                       |
 
 ### Tab Child Attributes
-| Attribute | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `id` | String | — | Yes | Associates this tab with the tab content in a Tab Panel content element. Must match the `aria-labelledby` attribute on a `<rux-tabs-panel>` element elsewhere within the HTML document, within a `<rux-tab-panels>` container. |
-| `selected` | Boolean | `false` | No | If present, overrides which tab is selected on load / mount. By default, the first `<rux-tab>` item is selected. |
-| `disabled` | Boolean | `false` | No | If present, sets a disabled state on this tab item, indicating it cannot be selected by user action. |
 
-
+| Attribute  | Type    | Default | Required | Description                                                                                                                                                                                                                    |
+| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`       | String  | —       | Yes      | Associates this tab with the tab content in a Tab Panel content element. Must match the `aria-labelledby` attribute on a `<rux-tabs-panel>` element elsewhere within the HTML document, within a `<rux-tab-panels>` container. |
+| `selected` | Boolean | `false` | No       | If present, overrides which tab is selected on load / mount. By default, the first `<rux-tab>` item is selected.                                                                                                               |
+| `disabled` | Boolean | `false` | No       | If present, sets a disabled state on this tab item, indicating it cannot be selected by user action.                                                                                                                           |
 
 ## Revision History
-##### **4.1**
+
+##### **4.0**
+
 - Renamed `compact` property to `small`.
 - Removed/deprecated undocumented `interior` and `transparent` tab styles.
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
 ##### **1.4**
+
 - Added `rux_` and BEM compatible classes to all `satcom_` NOTE: `satcom_` will be removed in a future version
 - Removed prefixed transitions
 - Removed prefixed gradients
 - Updated colors for WCAG compliance
 - Swapped condensed font for standard
-

@@ -64,7 +64,7 @@ storiesOf('Components|Global Status Bar', module)
         'Global Status Bar with Tabs',
         () => {
           const appnameKnob = text('App Name', 'Astro Global Status Bar');
-          const versionKnob = text('Version', '4.1.0 alpha');
+          const versionKnob = text('Version', '4.0 alpha');
 
           return html`
         <div style="display: flex; flex-flow: column; justify-content: center;">
