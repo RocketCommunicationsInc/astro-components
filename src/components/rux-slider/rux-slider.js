@@ -41,13 +41,11 @@ export class RuxSlider extends LitElement {
     this.hideInput = false;
   }
 
-  updated() {
+  _updateValue(e) {
+    console.log('updating value');
+    this.val = e.target ? e.target.value : e;
     const dif = ((this.val - this.min) / (this.max - this.min)) * 100;
     this.style.setProperty('--value', dif);
-  }
-
-  _updateValue(e) {
-    this.val = e.target ? e.target.value : e;
   }
 
   render() {
@@ -300,11 +298,11 @@ export class RuxSlider extends LitElement {
           <input
             class="rux-input rux-slider__input"
             type="number"
-            @change="${this._updateValue}"
-            .min="${this.min}"
-            .max="${this.max}"
-            .step="${this.step}"
-            .value="${this.val}"
+            @input="${this._updateValue}"
+            .min="${this.min.toString()}"
+            .max="${this.max.toString()}"
+            .step="${this.step.toString()}"
+            .value="${this.val.toString()}"
             aria-labelledby="ruxSlider"
             ?hidden="${this.hideInput}"
           />
@@ -312,13 +310,13 @@ export class RuxSlider extends LitElement {
         <div class="rux-slider__control">
           <input
             type="range"
-            @change="${this._updateValue}"
+            @input="${this._updateValue}"
             class="rux-range"
             type="range"
-            .min="${this.min}"
-            .max="${this.max}"
-            .step="${this.step}"
-            .value="${this.val}"
+            .min="${this.min.toString()}"
+            .max="${this.max.toString()}"
+            .step="${this.step.toString()}"
+            .value="${this.val.toString()}"
             aria-labelledby="ruxSlider"
             ?disabled="${this.disabled}"
           />
