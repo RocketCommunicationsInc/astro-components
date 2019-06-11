@@ -133,7 +133,6 @@ storiesOf('Components|Icons & Symbols', module)
             Normal: 'normal',
             Standby: 'standby',
             Off: 'off',
-            None: null,
           };
           const defaultStatusValue = 'normal';
           const status = select(statusLabel, statusOptions, defaultStatusValue, groupId);
@@ -157,7 +156,6 @@ storiesOf('Components|Icons & Symbols', module)
             'Satellite (Off)': 'satellite-off',
             'Satellite (Receive)': 'satellite-receive',
             'Satellite (Transmit)': 'satellite-transmit',
-            'None': null,
           };
           const defaultIconValue = 'altitude';
           const icon = select(iconLabel, iconOptions, defaultIconValue, groupId);
@@ -218,7 +216,7 @@ storiesOf('Components|Icons & Symbols', module)
           const progressDefaultValue = 50;
           const progressOptions = {
             range: true,
-            min: 0,
+            min: 1,
             max: 100,
             step: 1,
           };
@@ -226,7 +224,7 @@ storiesOf('Components|Icons & Symbols', module)
 
           /* Notifications */
           const notificationLabel = 'Notifications';
-          const notificationDefaultValue = null;
+          const notificationDefaultValue = 0;
 
           const notifications = number(notificationLabel, notificationDefaultValue, {}, groupId);
 
@@ -234,6 +232,7 @@ storiesOf('Components|Icons & Symbols', module)
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
           <rux-monitoring-progress-icon
             progress="${progress}"
+            max="${progressOptions.max}"
             label="${label}"
             sublabel="${sublabel}"
             notifications="${notifications}"

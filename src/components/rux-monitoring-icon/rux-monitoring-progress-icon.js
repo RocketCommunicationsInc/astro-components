@@ -37,61 +37,32 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
       if (!this.range) {
         this.range = [
           {
-            threshold: 0,
+            threshold: 17,
             status: 'off',
           },
           {
-            threshold: 17,
+            threshold: 33,
             status: 'standby',
           },
           {
-            threshold: 51,
-            status: 'serious',
-          },
-          {
-            threshold: 33,
+            threshold: 49,
             status: 'normal',
           },
           {
             threshold: 65,
             status: 'caution',
           },
-
           {
             threshold: 81,
-            status: 'critical',
-          },
-        ];
-
-        /* this.range = [
-          {
-            threshold: 0,
-            status: 'off',
-          },
-          {
-            threshold: 45,
-            status: 'standby',
-          },
-          {
-            threshold: 202,
             status: 'serious',
           },
           {
-            threshold: 133,
-            status: 'normal',
-          },
-          {
-            threshold: 450,
-            status: 'caution',
-          },
-
-          {
-            threshold: 650,
+            threshold: 100,
             status: 'critical',
           },
-        ]; */
+        ];
       }
-      this.range = this.range.sort((a, b) => (b.threshold > a.threshold ? 1 : -1));
+      this.range = this.range.sort((a, b) => (a.threshold > b.threshold ? 1 : -1));
 
       this.updateProgress();
     }
@@ -104,7 +75,7 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
   }
 
   updateProgress() {
-    this.status = this.range.find((range) => this.progress > range.threshold).status || this.range[0];
+    this.status = this.range.find((range) => this.progress < range.threshold).status || this.range[0];
 
     const graphProgress = this._circumference - (this.progress / this.max) * this._circumference;
 
