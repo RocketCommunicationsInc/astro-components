@@ -28,7 +28,7 @@ git clone https://bitbucket.org/rocketcom/astro-components.git
 Or, [download Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
 
-### 2. Import the Astro Astro Template Web Component
+### 2. Import the Astro Template Web Component
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro UXDS Components directory in your project.
 
 ```javascript
