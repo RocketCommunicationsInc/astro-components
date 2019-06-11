@@ -16,7 +16,7 @@
     "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
   },
   "description": "Astro Web Component for logs",
-  "license": "GPL-3.0",
+  "license": "",
   "main": "rux-log.js",
   "name": "@astrouxds/rux-log",
   "scripts": {

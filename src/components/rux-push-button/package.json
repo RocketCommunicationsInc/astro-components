@@ -16,7 +16,7 @@
     "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
   },
   "description": "Astro Web Component for push buttons",
-  "license": "GPL-3.0",
+  "license": "",
   "main": "rux-push-button.js",
   "name": "@astrouxds/rux-push-button",
   "scripts": {
