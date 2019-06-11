@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
-import { storiesOf } from "@storybook/polymer";
-import { html, render } from "lit-html";
-import { RuxStatus } from "../src/components/rux-status/rux-status.js";
-import Readme from "../src/components/rux-status/README.md";
+import { storiesOf } from '@storybook/polymer';
+import { html, render } from 'lit-html';
+import { RuxStatus } from '../src/components/rux-status/rux-status.js';
+import Readme from '../src/components/rux-status/README.md';
 /* eslint-enable no-unused-vars */
 
-storiesOf("Components|Status", module)
-  .add(
-    "Status",
-    () => {
-      return html`
+storiesOf('Components|Status', module)
+    .add(
+        'Status',
+        () => {
+          return html`
         <style>
           ul {
             display: flex;
@@ -49,21 +49,21 @@ storiesOf("Components|Status", module)
           </ul>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html
-      },
-      notes: {
-        markdown: Readme
-      }
-    }
-  )
-  .add(
-    "Status (HTML)",
-    () => {
-      return html`
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    )
+    .add(
+        'Status (HTML)',
+        () => {
+          return html`
         <style>
           ul {
             display: flex;
@@ -103,14 +103,14 @@ storiesOf("Components|Status", module)
           </ul>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html
-      },
-      notes: {
-        markdown: Readme
-      }
-    }
-  );
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    );

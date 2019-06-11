@@ -7,18 +7,18 @@ import Readme from '../src/components/rux-accordion/README.md';
 /* eslint-enable no-unused-vars */
 
 storiesOf('Components|Accordion', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Accordion',
-    () => {
-      const firstOpen = boolean('Accordion 1 open', true);
-      const secondOpen = boolean('Accordion 2 open', false);
-      const thirdOpen = boolean('Accordion 3 open', false);
-      return html`
+    .addDecorator(withKnobs)
+    .add(
+        'Accordion',
+        () => {
+          const firstOpen = boolean('Accordion 1 open', true);
+          const secondOpen = boolean('Accordion 2 open', false);
+          const thirdOpen = boolean('Accordion 3 open', false);
+          return html`
         <style>
-        [slot="content"]{
-          display: contents; // allows parent flexbox styling to affect slot content
-        }
+          [slot='content'] {
+            display: contents; // allows parent flexbox styling to affect slot content
+          }
         </style>
         <div>
           <rux-accordion .open=${firstOpen}>
@@ -38,14 +38,14 @@ storiesOf('Components|Accordion', module)
           </rux-accordion>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html,
-      },
-      notes: {
-        markdown: Readme,
-      },
-    },
-  );
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    );
