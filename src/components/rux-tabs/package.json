@@ -1,47 +1,26 @@
 {
-  "_args": [
-    [
-      "@astrouxds/rux-tabs@1.0.4",
-      "/private/var/www/astro/05-components.astrouxds.com"
-    ]
-  ],
-  "_from": "@astrouxds/rux-tabs@1.0.4",
-  "_id": "@astrouxds/rux-tabs@1.0.4",
-  "_inBundle": false,
-  "_integrity": "sha512-+a/aHlles0u9tQEa/ZT37c+cxrXAnCLq0fhgLl+gateYYwTI2dBmEkQnvRoa8fOkW8ryfTbNClcmcWQG3l/Qlw==",
-  "_location": "/@astrouxds/rux-tabs",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "@astrouxds/rux-tabs@1.0.4",
-    "name": "@astrouxds/rux-tabs",
-    "escapedName": "@astrouxds%2frux-tabs",
-    "scope": "@astrouxds",
-    "rawSpec": "1.0.4",
-    "saveSpec": null,
-    "fetchSpec": "1.0.4"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-tabs/-/rux-tabs-1.0.4.tgz",
-  "_spec": "1.0.4",
-  "_where": "/private/var/www/astro/05-components.astrouxds.com",
   "author": {
     "name": "Rocket Communications",
-    "email": "astro@rocketcom.com"
+    "email": "astrouxds@rocketcom.com"
   },
   "dependencies": {
-    "@polymer/polymer": "^3.0.2",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "lit-element": "^2.1.0",
+    "@webcomponents/webcomponentsjs": "^2.2.10"
+  },
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "support@astrouxds.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
   },
   "description": "Astro Web Component for tabs",
-  "license": "GPL-3.0",
+  "license": "",
   "main": "rux-tabs.js",
   "name": "@astrouxds/rux-tabs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "3.0.0"
+  "version": "4.0.0-0"
 }

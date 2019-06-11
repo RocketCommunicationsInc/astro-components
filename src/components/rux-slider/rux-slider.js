@@ -1,8 +1,5 @@
-import { LitElement, html } from "lit-element";
-/**
- * @polymer
- * @extends HTMLElement
- */
+import { LitElement, html } from 'lit-element';
+
 export class RuxSlider extends LitElement {
   static get properties() {
     return {
@@ -26,7 +23,7 @@ export class RuxSlider extends LitElement {
         type: Array,
       },
       disabled: {
-        type: Boolean, 
+        type: Boolean,
       },
       hideInput: {
         type: Boolean,
@@ -40,8 +37,7 @@ export class RuxSlider extends LitElement {
     this.step = 1;
     this.val = 0;
     this.label = '';
-    this.axisLabels = [],
-    this.disabled = false;
+    (this.axisLabels = []), (this.disabled = false);
     this.hideInput = false;
   }
 
@@ -53,7 +49,6 @@ export class RuxSlider extends LitElement {
   _updateValue(e) {
     this.val = e.target ? e.target.value : e;
   }
-
 
   render() {
     return html`
@@ -328,9 +323,11 @@ export class RuxSlider extends LitElement {
             ?disabled="${this.disabled}"
           />
           <ol class="rux-slider__control__labels" ?hidden="${this.axisLabels.length < 1}">
-            ${this.axisLabels.map(item => html`
-              <li>${item}</li>
-            `)}
+            ${this.axisLabels.map(
+      (item) => html`
+                <li>${item}</li>
+              `
+  )}
           </ol>
         </div>
       </div>

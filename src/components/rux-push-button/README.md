@@ -33,10 +33,11 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxPushButton } from "@astro-components/rux-push-button/rux-push-button.js";
+import { RuxPushButton } from '@astro-components/rux-push-button/rux-push-button.js';
 ```
 
 ### 3. Render the Astro Push Button Web Component
+
 Pass properties as attributes of the Astro Push Button custom element.
 
 Provide a label for the Push Button inside the component node using the component’s [slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).
@@ -46,10 +47,12 @@ Provide a label for the Push Button inside the component node using the componen
 ```
 
 ### Properties
-| Property | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
-| `checked` | Boolean | `false` | No | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.  
+
+| Property   | Type    | Default | Required | Description                                                                                                                                                                                 |
+| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
+| `checked`  | Boolean | `false` | No       | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.                                                                            |
+
 ---
 
 ## Basic HTML Usage
@@ -63,8 +66,8 @@ Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/ro
 ```
 
 ### 2. Markup the component using HTML and the Astro CSS classes
-Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. 
 
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention.
 
 ```xml
  <div class="rux-push-button">
@@ -83,16 +86,17 @@ Apply attributes such as `disabled` and/or `checked` on the `<input>` element.
 ```
 
 ### Attributes
-| Attribute | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
-| `checked`  | Boolean | `false` | No | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state. |
+
+| Attribute  | Type    | Default | Required | Description                                                                                                                                                                                 |
+| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
+| `checked`  | Boolean | `false` | No       | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.                                                                            |
 
 For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
 
 ## Revision History
 
-##### **4.1**
+##### **4.0**
 
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 

@@ -8,22 +8,22 @@ import Readme from '../src/components/rux-button/README.md';
 /* eslint-enable no-unused-vars */
 
 storiesOf('Components|Buttons', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Standard Button',
-    () => {
-      const sizeOptions = {
-        Small: 'small',
-        Standard: '',
-        Large: 'large',
-      };
+    .addDecorator(withKnobs)
+    .add(
+        'Standard Button',
+        () => {
+          const sizeOptions = {
+            Small: 'small',
+            Standard: '',
+            Large: 'large',
+          };
 
-      const size = select('Size', sizeOptions, '');
-      const disabled = boolean('Disabled', false);
-      const outline = boolean('Outline', false);
-      const withIcon = boolean('With Icon', false);
-      const iconOnly = boolean('Icon Only', false);
-      return html`
+          const size = select('Size', sizeOptions, '');
+          const disabled = boolean('Disabled', false);
+          const outline = boolean('Outline', false);
+          const withIcon = boolean('With Icon', false);
+          const iconOnly = boolean('Icon Only', false);
+          return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
           <rux-button
             .size="${size}"
@@ -35,21 +35,21 @@ storiesOf('Components|Buttons', module)
           >
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html,
-      },
-      notes: {
-        markdown: Readme,
-      },
-    },
-  )
-  .add(
-    'Grouped Buttons',
-    () => {
-      return html`
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    )
+    .add(
+        'Grouped Buttons',
+        () => {
+          return html`
         <style>
           .rux-button-group rux-button:not(:last-child) {
             margin-right: 0.625rem;
@@ -79,22 +79,22 @@ storiesOf('Components|Buttons', module)
           </div>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html,
-      },
-      notes: {
-        markdown:
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown:
           '# Grouped Buttons\n\nCommon button groupings follow these conventions: \n\n- Cancel buttons are always presented to the left of actions such as “Submit.”\n\n- Always group together “Ok/Cancel” buttons. Do not justify them apart, but keep a reasonable margin between the buttons.\n\n- Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width. \n\nRead the [Rux-Buttons Readme](/?path=/info/components-buttons--standard-button) for more information.',
-      },
-    },
-  )
-  .add(
-    'All Button Variants',
-    () => {
-      return html`
+          },
+        }
+    )
+    .add(
+        'All Button Variants',
+        () => {
+          return html`
         <style>
           .button-list {
             list-style-type: none;
@@ -228,14 +228,14 @@ storiesOf('Components|Buttons', module)
           </ul> -->
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html,
-      },
-      notes: {
-        markdown: Readme,
-      },
-    },
-  );
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    );

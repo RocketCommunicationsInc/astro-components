@@ -1,4 +1,9 @@
 import { LitElement, html } from 'lit-element';
+
+/* eslint-disable-next-line no-unused-vars */
+import { RuxIcon } from '../rux-icon/rux-icon';
+/* eslint-enable-next-line no-unused-vars */
+
 export class RuxNotification extends LitElement {
   static get properties() {
     return {
@@ -39,7 +44,7 @@ export class RuxNotification extends LitElement {
     }
   }
 
-  _onClick(e) {
+  _onClick() {
     clearTimeout(this._closeAfter);
     this.open = false;
   }
@@ -48,13 +53,9 @@ export class RuxNotification extends LitElement {
   get _closeAfter() {
     if (this.closeAfter && this.closeAfter <= 10) {
       // if the number is 10 or less, it must be ms
-      console.log(this.closeAfter, '2');
     }
 
-    if (
-      (this.closeAfter && this.closeAfter > 10000) ||
-      (this.closeAfter && this.closeAfter < 2000)
-    ) {
+    if ((this.closeAfter && this.closeAfter > 10000) || (this.closeAfter && this.closeAfter < 2000)) {
       // if this numner is larger than 10s or smaller than 2s, enforce minimum 2s delay
       this.closeAfter = 2000;
     }
@@ -91,108 +92,39 @@ export class RuxNotification extends LitElement {
           top: 0;
         }
 
-        .rux-notification_close-button {
-          border: 3px solid var(--colorStandbyDarken1, rgb(96, 168, 191));
-          color: var(--colorStandbyDarken1, rgb(96, 168, 191));
-
-          background-color: transparent;
-
-          height: 2.2rem;
-          width: 2.2rem;
-          border-radius: 100%;
-
-          position: relative;
-
-          margin-left: auto;
-          margin-right: 2rem;
-
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .rux-notification_close-button::after,
-        .rux-notification_close-button::before {
-          display: block;
-          position: absolute;
-
-          height: 2px;
-          width: 66%;
-
-          margin-left: -32%;
-          margin-top: -1px;
-
-          content: "";
-
-          background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
-        }
-
-        @supports (--css: variables) {
-          .rux-notification_close-button::after,
-          .rux-notification_close-button::before {
-            margin: 0;
-          }
-        }
-
-        .rux-notification_close-button::after {
-          transform: rotate(-45deg);
-        }
-
-        .rux-notification_close-button::before {
-          transform: rotate(45deg);
-        }
-
-        :host([status="critical"]) {
-          background-color: var(--colorCriticalLighten1, rgb(255, 100, 100));
-        }
-        :host([status="critical"]) .rux-notification_close-button {
-          border-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
-        }
-        :host([status="critical"]) .rux-notification_close-button::after,
-        :host([status="critical"]) .rux-notification_close-button::before {
-          background-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
-        }
-
-        :host([status="caution"]) {
-          background-color: var(--colorCautionLighten1, rgb(250, 237, 86));
-        }
-        :host([status="caution"]) .rux-notification_close-button {
-          border-color: var(--colorCautionDarken1, rgb(186, 173, 22));
-        }
-        :host([status="caution"]) .rux-notification_close-button::after,
-        :host([status="caution"]) .rux-notification_close-button::before {
-          background-color: var(--colorCautionDarken1, rgb(186, 173, 22));
-        }
-
-        :host([status="normal"]) {
-          background-color: var(--colorNormalLighten2, rgb(173, 255, 128));
-        }
-        :host([status="normal"]) .rux-notification_close-button {
-          border-color: var(--colorNormalDarken1, rgb(68, 191, 0));
-        }
-        :host([status="normal"]) .rux-notification_close-button::after,
-        :host([status="normal"]) .rux-notification_close-button::before {
-          background-color: var(--colorNormalDarken1, rgb(68, 191, 0));
-        }
-
-        :host([status="standby"]) {
+        :host([status='standby']) {
           background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
+          stroke: var(--colorStandbyDarken1, rgb(96, 168, 191));
+          fill: var(--colorStandbyDarken1, rgb(96, 168, 191));
         }
-        :host([status="standby"]) .rux-notification_close-button {
-          border-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+
+        :host([status='normal']) {
+          background-color: var(--colorNormalLighten2, rgb(173, 255, 128));
+          stroke: var(--colorNormalDarken1, rgb(68, 191, 0));
+          fill: var(--colorNormalDarken1, rgb(68, 191, 0));
         }
-        :host([status="standby"]) .rux-notification_close-button::after,
-        :host([status="standby"]) .rux-notification_close-button::before {
-          background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+
+        :host([status='caution']) {
+          background-color: var(--colorCautionLighten1, rgb(250, 237, 86));
+          stroke: var(--colorCautionDarken1, rgb(186, 173, 22));
+          fill: var(--colorCautionDarken1, rgb(186, 173, 22));
+        }
+
+        :host([status='critical']) {
+          background-color: var(--colorCriticalLighten1, rgb(255, 100, 100));
+          stroke: var(--colorCriticalDarken1, rgb(191, 36, 36));
+          fill: var(--colorCriticalDarken1, rgb(191, 36, 36));
         }
       </style>
 
       <div class="rux-notification__message">${this.message}</div>
-      <button
+      <rux-icon
+        role="button"
+        label="Close notification"
         @click="${this._onClick}"
-        class="rux-notification_close-button"
-        title="Close"
-      ></button>
+        icon="close-large"
+        size="small"
+      ></rux-icon>
     `;
   }
 }

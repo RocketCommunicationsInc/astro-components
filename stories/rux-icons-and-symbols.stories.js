@@ -1,15 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { storiesOf } from '@storybook/polymer';
 import { html, render } from 'lit-html';
-import {
-  boolean,
-  text,
-  number,
-  select,
-  array,
-  object,
-  withKnobs,
-} from '@storybook/addon-knobs';
+import { boolean, text, number, select, withKnobs } from '@storybook/addon-knobs';
 import { RuxIcon } from '../src/components/rux-icon/rux-icon.js';
 import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-icon.js';
@@ -24,8 +16,6 @@ storiesOf('Components|Icons & Symbols', module)
     .add(
         'All Icons',
         () => {
-          const groupId = 'Options';
-
           const colors = {
             Primary: '#005a8f',
             Secondary: '#4dacff',
@@ -75,8 +65,6 @@ storiesOf('Components|Icons & Symbols', module)
             'maintenance',
           ];
 
-          const tempSize = '3rem';
-
           return html`
         <style>
           .icon-container {
@@ -99,21 +87,21 @@ storiesOf('Components|Icons & Symbols', module)
             font-size: 0.75rem;
           }
         </style>
+
         <div style="margin: 3rem auto; text-align: center;">
           <ul class="icon-container">
             ${icons.map(
-      (icon) =>
-        html`
-                  <li>
-                    <rux-icon
-                      library="/icons/astro.svg"
-                      icon="${icon}"
-                      color="${colorKnob}"
-                      size="${sizeKnob}"
-                    ></rux-icon>
-                    <div class="icon-name">${icon}</div>
-                  </li>
-                `
+      (icon) => html`
+                <li>
+                  <rux-icon
+                    library="/icons/astro.svg"
+                    icon="${icon}"
+                    color="${colorKnob}"
+                    size="${sizeKnob}"
+                  ></rux-icon>
+                  <div class="icon-name">${icon}</div>
+                </li>
+              `
   )}
           </ul>
         </div>
@@ -147,12 +135,7 @@ storiesOf('Components|Icons & Symbols', module)
             Off: 'off',
           };
           const defaultStatusValue = 'normal';
-          const status = select(
-              statusLabel,
-              statusOptions,
-              defaultStatusValue,
-              groupId
-          );
+          const status = select(statusLabel, statusOptions, defaultStatusValue, groupId);
 
           /* Select Icons */
           const iconLabel = 'Icon';
@@ -190,12 +173,7 @@ storiesOf('Components|Icons & Symbols', module)
           const notificationLabel = 'Notifications';
           const notificationDefaultValue = null;
 
-          const notifications = number(
-              notificationLabel,
-              notificationDefaultValue,
-              {},
-              groupId
-          );
+          const notifications = number(notificationLabel, notificationDefaultValue, {}, groupId);
 
           return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
@@ -238,61 +216,23 @@ storiesOf('Components|Icons & Symbols', module)
           const progressDefaultValue = 50;
           const progressOptions = {
             range: true,
-            min: 0,
+            min: 1,
             max: 100,
             step: 1,
           };
-          const progress = number(
-              progressLabel,
-              progressDefaultValue,
-              progressOptions,
-              groupId
-          );
+          const progress = number(progressLabel, progressDefaultValue, progressOptions, groupId);
 
           /* Notifications */
           const notificationLabel = 'Notifications';
-          const notificationDefaultValue = null;
+          const notificationDefaultValue = 0;
 
-          const notifications = number(
-              notificationLabel,
-              notificationDefaultValue,
-              {},
-              groupId
-          );
-
-          const configLabel = 'Configuration';
-          const configDefaultValue = [
-            {
-              threshold: 17,
-              status: 'off',
-            },
-            {
-              threshold: 33,
-              status: 'standby',
-            },
-            {
-              threshold: 81,
-              status: 'serious',
-            },
-            {
-              threshold: 49,
-              status: 'normal',
-            },
-            {
-              threshold: 65,
-              status: 'caution',
-            },
-
-            {
-              threshold: 100,
-              status: 'critical',
-            },
-          ];
+          const notifications = number(notificationLabel, notificationDefaultValue, {}, groupId);
 
           return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
           <rux-monitoring-progress-icon
             progress="${progress}"
+            max="${progressOptions.max}"
             label="${label}"
             sublabel="${sublabel}"
             notifications="${notifications}"

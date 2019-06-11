@@ -13,17 +13,17 @@ import Readme from '../src/components/rux-modal/README.md';
 }); */
 
 storiesOf('Components|Dialog Box', module)
-  .addDecorator(withActions('modalClosed', { depth: 100 }))
-  .addDecorator(withKnobs)
-  .add(
-    'Dialog Box',
-    () => {
-      const toggleModal = boolean('Enable Modal', true);
-      const message = text('Modal Message', 'Modal Message');
-      const title = text('Modal Title', 'Modal Title');
-      const confirmText = text('Confirm Button Text', 'Release');
-      const denyText = text('Deny Button Text', 'Cancel');
-      return html`
+    .addDecorator(withActions('modalClosed', { depth: 100 }))
+    .addDecorator(withKnobs)
+    .add(
+        'Dialog Box',
+        () => {
+          const toggleModal = boolean('Enable Modal', true);
+          const message = text('Modal Message', 'Modal Message');
+          const title = text('Modal Title', 'Modal Title');
+          const confirmText = text('Confirm Button Text', 'Release');
+          const denyText = text('Deny Button Text', 'Cancel');
+          return html`
         <div style="display: flex; flex-flow: column; justify-content: center;">
           <rux-modal
             message="${message}"
@@ -34,14 +34,14 @@ storiesOf('Components|Dialog Box', module)
           ></rux-modal>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html,
-      },
-      notes: {
-        markdown: Readme,
-      },
-    },
-  );
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    );

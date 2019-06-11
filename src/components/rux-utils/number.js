@@ -25,8 +25,8 @@ export const collapseNumber = directive((val) => (part) => {
     } else if (thousand >= 1) {
       _shorthand = `${thousand}K`;
     }
+
     part.setValue(_shorthand);
-  } catch (error) {
-    console.error(error);
-  }
+    return _shorthand;
+  } catch (error) {}
 });

@@ -1,10 +1,7 @@
 import { LitElement, html } from 'lit-element';
 
 /** Class representing a single Toggle instance. */
-/**
- * @polymer
- * @extends HTMLElement
- */
+
 export class RuxTemplate extends LitElement {
   static get properties() {
     return {
@@ -29,7 +26,6 @@ export class RuxTemplate extends LitElement {
     this._privateProperty = 'Private Property';
   }
 
-
   // if any of these contain only the super callback, you can safely remove them
 
   // connectedCallback() {
@@ -53,7 +49,7 @@ export class RuxTemplate extends LitElement {
   */
   render() {
     return html`
-      <span ?hidden="${this.propertyOne}" .data-property-two="${this.propertyTwo}" >${this.computedProperty}</span>
+      <span ?hidden="${this.propertyOne}" .data-property-two="${this.propertyTwo}">${this.computedProperty}</span>
       <span>${this._privateProperty}</span>
     `;
   }

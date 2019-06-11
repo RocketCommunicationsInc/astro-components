@@ -1,11 +1,11 @@
-import { LitElement, html } from "lit-element";
-import { directive } from "lit-html";
+import { LitElement, html } from 'lit-element';
+import { directive } from 'lit-html';
 
-const getIcon = directive((library, icon) => part => {
+const getIcon = directive((library, icon) => (part) => {
   try {
     part.setValue(`${library}#${icon}`);
   } catch (error) {
-    console.error(error);
+    throw error;
   }
 });
 
@@ -13,38 +13,38 @@ export class RuxIcon extends LitElement {
   static get properties() {
     return {
       icon: {
-        type: String
+        type: String,
       },
       size: {
-        type: String
+        type: String,
       },
       color: {
-        type: String
+        type: String,
       },
       library: {
-        type: String
+        type: String,
       },
       label: {
-        type: String
-      }
+        type: String,
+      },
     };
   }
 
   constructor() {
     super();
 
-    this.library = "/icons/astro.svg";
+    this.library = '/icons/astro.svg';
     /* TODO: a non-presumptive way to assign a better default label if the user doesn’t provide one */
-    this.label = "icon";
+    this.label = 'icon';
   }
 
   firstUpdated() {
-    this.style.setProperty("--iconDefaultColor", this.color);
+    this.style.setProperty('--iconDefaultColor', this.color);
   }
 
   updated(changedProperties) {
-    if (changedProperties.get("color")) {
-      this.style.setProperty("--iconDefaultColor", this.color);
+    if (changedProperties.get('color')) {
+      this.style.setProperty('--iconDefaultColor', this.color);
     }
   }
 
@@ -67,23 +67,23 @@ export class RuxIcon extends LitElement {
           width: auto;
         }
 
-        :host([size="extra-small"]) {
+        :host([size='extra-small']) {
           height: 1rem;
           width: 1rem;
         }
 
-        :host([size="small"]) {
+        :host([size='small']) {
           height: 2rem;
           width: 2rem;
         }
 
-        :host([size="large"]) {
+        :host([size='large']) {
           height: 4rem;
           width: 4rem;
         }
       </style>
 
-      <span title="${this.label}">
+      <span id="rux-icon" title="${this.label}">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 128 128"
@@ -96,4 +96,4 @@ export class RuxIcon extends LitElement {
     `;
   }
 }
-customElements.define("rux-icon", RuxIcon);
+customElements.define('rux-icon', RuxIcon);

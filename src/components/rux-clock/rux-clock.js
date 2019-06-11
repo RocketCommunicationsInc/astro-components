@@ -2,19 +2,14 @@ import { LitElement, html } from 'lit-element';
 // import style from './rux-clock.css';
 import RuxUtils from '../rux-utils/datetime.js';
 
-/** Class representing a single Clock instance. */
-/**
- * @polymer
- * @extends HTMLElement
- */
 export class RuxClock extends LitElement {
   static get properties() {
     return {
       aos: {
-        type: Date,
+        type: String,
       },
       los: {
-        type: Date,
+        type: String,
       },
       timezone: {
         type: String,
@@ -38,14 +33,12 @@ export class RuxClock extends LitElement {
     };
   }
 
-
   constructor() {
     super();
 
     this.timezone = 'UTC';
     this.hideTimezone = false;
     this.hideDate = false;
-
 
     this.updateTime();
   }
@@ -154,15 +147,16 @@ export class RuxClock extends LitElement {
         }
       </style>
 
-      ${!this.hideDate ?
-        html`
-          <div class="rux-clock__segment rux-clock__day-of-the-year">
-            <div class="rux-clock__segment__value" aria-labelledby="rux-clock__day-of-year-label">
-              ${this.dayOfYear}
+      ${!this.hideDate
+        ? html`
+            <div class="rux-clock__segment rux-clock__day-of-the-year">
+              <div class="rux-clock__segment__value" aria-labelledby="rux-clock__day-of-year-label">
+                ${this.dayOfYear}
+              </div>
+              <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label">Date</div>
             </div>
-            <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label">Date</div>
-          </div>
-        ` : ''}
+          `
+        : ''}
 
       <div class="rux-clock__segment rux-clock__time">
         <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label">
@@ -173,28 +167,30 @@ export class RuxClock extends LitElement {
         </div>
       </div>
 
-      ${this.aos ?
-        html`
-          <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__aos">
-            <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--aos">
-              ${RuxUtils.formatClockTimeUTC(this.aos, this.timezone, true)}
+      ${this.aos
+        ? html`
+            <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__aos">
+              <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--aos">
+                ${RuxUtils.formatClockTimeUTC(this.aos, this.timezone, true)}
+              </div>
+              <div class="rux-clock__segment__label" id="rux-clock__time-label--aos">
+                AOS
+              </div>
             </div>
-            <div class="rux-clock__segment__label" id="rux-clock__time-label--aos">
-              AOS
+          `
+        : ''}
+      ${this.los
+        ? html`
+            <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__los">
+              <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--los">
+                ${RuxUtils.formatClockTimeUTC(this.los, this.timezone, true)}
+              </div>
+              <div class="rux-clock__segment__label" id="rux-clock__time-label--los">
+                LOS
+              </div>
             </div>
-          </div>
-        `: ''}
-      ${this.los ?
-        html`
-          <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__los">
-            <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--los">
-              ${RuxUtils.formatClockTimeUTC(this.los, this.timezone, true)}
-            </div>
-            <div class="rux-clock__segment__label" id="rux-clock__time-label--los">
-              LOS
-            </div>
-          </div>
-        ` : ''}
+          `
+        : ''}
     `;
   }
 

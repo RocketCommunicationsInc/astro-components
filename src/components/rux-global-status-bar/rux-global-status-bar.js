@@ -1,10 +1,5 @@
 import { LitElement, html } from 'lit-element';
 
-/** Class representing a single Global Status Bar instance. */
-/**
- * @polymer
- * @extends HTMLElement
- */
 export class RuxGlobalStatusBar extends LitElement {
   static get properties() {
     return {

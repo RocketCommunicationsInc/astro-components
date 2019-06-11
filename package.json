@@ -23,6 +23,7 @@
     "@storybook/polymer": "5.0.11",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "babel-loader": "^8.0.0",
+    "eslint-config-google": "^0.13.0",
     "global": "^4.3.2",
     "lit-element": "^2.1.0",
     "lit-html": "^1.0.0",
@@ -35,7 +36,6 @@
     "copy-webpack-plugin": "^4.6.0",
     "del": "^4.1.1",
     "eslint": "^5.16.0",
-    "eslint-config-google": "^0.13.0",
     "eslint-plugin-wc": "^1.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
@@ -60,9 +60,8 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js}": [
+      "*.js": [
         "eslint --fix",
-        "prettier --write",
         "git add"
       ]
     },

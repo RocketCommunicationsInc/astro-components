@@ -1,17 +1,12 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html } from 'lit-element';
 
-/** Class representing a single Accordion instance. */
-/**
- * @polymer
- * @extends HTMLElement
- */
 export class RuxAccordion extends LitElement {
   static get properties() {
     return {
       open: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
   constructor() {
@@ -101,4 +96,4 @@ export class RuxAccordion extends LitElement {
     `;
   }
 }
-customElements.define("rux-accordion", RuxAccordion);
+customElements.define('rux-accordion', RuxAccordion);

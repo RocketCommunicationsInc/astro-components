@@ -1,24 +1,21 @@
-import { LitElement, html } from "lit-element";
-/**
- * @polymer
- * @extends HTMLElement
- */
+import { LitElement, html } from 'lit-element';
+
 export class RuxPushButton extends LitElement {
   static get properties() {
     return {
       disabled: {
-        type: Boolean
+        type: Boolean,
       },
       checkedLabel: {
-        type: String
+        type: String,
       },
       uncheckedLabel: {
-        type: String
+        type: String,
       },
       checked: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
@@ -26,9 +23,9 @@ export class RuxPushButton extends LitElement {
     super();
     this.disabled = false;
     this.checked = false;
-    this.checkedLabel = "Enabled";
-    this.uncheckedLabel = "Disabled";
-    this._label = "";
+    this.checkedLabel = 'Enabled';
+    this.uncheckedLabel = 'Disabled';
+    this._label = '';
   }
 
   render() {
@@ -73,10 +70,7 @@ export class RuxPushButton extends LitElement {
         .rux-push-button__input:checked + .rux-push-button__button {
           display: flex;
           color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
-          background-color: var(
-            --pushbuttonSelectedBackgroundColor,
-            rgb(0, 0, 0)
-          );
+          background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
           border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
 
           box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.33);
@@ -100,11 +94,9 @@ export class RuxPushButton extends LitElement {
         ?disabled=${this.disabled}
         ?checked="${this.checked}"
       />
-      <label class="rux-push-button__button" for="ruxToggle"
-        ><slot></slot
-      ></label>
+      <label class="rux-push-button__button" for="ruxToggle"><slot></slot></label>
     `;
   }
 }
 
-customElements.define("rux-push-button", RuxPushButton);
+customElements.define('rux-push-button', RuxPushButton);

@@ -57,11 +57,7 @@ storiesOf('Components|Progress', module)
           const hideLabel = boolean('Label', false);
           return html`
         <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-          <rux-progress
-            value="${progress}"
-            max="${maxLimit}"
-            ?hide-label="${hideLabel}"
-          ></rux-progress>
+          <rux-progress value="${progress}" max="${maxLimit}" ?hide-label="${hideLabel}"></rux-progress>
         </div>
       `;
         },

@@ -1,11 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import RuxUtils from '../rux-utils/string.js';
 
-/** Class representing a single Toggle instance. */
-/**
- * @polymer
- * @extends HTMLElement
- */
 export class RuxSegmentedButton extends LitElement {
   static get properties() {
     return {
@@ -23,11 +18,9 @@ export class RuxSegmentedButton extends LitElement {
   connectedCallback() {
     super.connectedCallback();
 
-    const selectedSegment =
-      this.data.find((segment) => segment.selected) || this.data[0];
+    const selectedSegment = this.data.find((segment) => segment.selected) || this.data[0];
     selectedSegment.selected = true;
   }
-
 
   _slugify(label) {
     return `${RuxUtils.stringToSlug(label)}`;
@@ -59,10 +52,7 @@ export class RuxSegmentedButton extends LitElement {
 
           border-radius: var(--controlBorderRadius, 3px);
           border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
-          background-color: var(
-            --segmentedButtonBackgroundColor,
-            rgb(0, 90, 143)
-          );
+          background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
         }
 
         .rux-segmented-button {
@@ -84,8 +74,7 @@ export class RuxSegmentedButton extends LitElement {
           padding: 0 0.75rem;
 
           border: none;
-          border-right: 1px solid
-            var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+          border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
 
           color: var(--segmentedButtonTextColor, #fff);
 
@@ -106,19 +95,13 @@ export class RuxSegmentedButton extends LitElement {
         }
 
         .rux-segmented-button label:hover {
-          background-color: var(
-            --segmentedButtonHoverBackgroundColor,
-            rgb(58, 129, 191)
-          );
+          background-color: var(--segmentedButtonHoverBackgroundColor, rgb(58, 129, 191));
           color: var(--segmentedButtonHoverTextColor, #fff);
           outline: none;
         }
 
         .rux-segmented-button input:checked + label {
-          background-color: var(
-            --segmentedButtonSelectedBackgroundColor,
-            rgb(58, 129, 191)
-          );
+          background-color: var(--segmentedButtonSelectedBackgroundColor, rgb(58, 129, 191));
           color: var(--segmentedButtonSelectedTextColor, #fff);
           box-shadow: var(
             --segmentedButtonSelectedBoxShadow,
@@ -141,8 +124,7 @@ export class RuxSegmentedButton extends LitElement {
           border-radius: 0;
           height: auto;
           border: none;
-          border-right: 1px solid
-            var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+          border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
         }
         /* END OVERRDIDE FOR IE EDGE */
       </style>
