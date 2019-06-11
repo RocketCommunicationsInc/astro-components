@@ -1,62 +1,62 @@
 /* eslint-disable no-unused-vars */
-import { storiesOf } from "@storybook/polymer";
-import { html, render } from "lit-html";
+import { storiesOf } from '@storybook/polymer';
+import { html, render } from 'lit-html';
 import {
   boolean,
   text,
   select,
   number,
-  withKnobs
-} from "@storybook/addon-knobs";
+  withKnobs,
+} from '@storybook/addon-knobs';
 
-import { RuxNotification } from "../src/components/rux-notification/rux-notification.js";
-import Readme from "../src/components/rux-notification/README.md";
+import { RuxNotification } from '../src/components/rux-notification/rux-notification.js';
+import Readme from '../src/components/rux-notification/README.md';
 /* eslint-enable no-unused-vars */
 
-storiesOf("Components|Notification", module)
-  .addDecorator(withKnobs)
-  .add(
-    "Notification",
-    () => {
-      const toggleBanner = boolean("Enable Banner", true);
-      const statusOptions = ["standby", "normal", "caution", "critical"];
-      const statusKnob = select("Status", statusOptions, "standby");
-      const closeDelay = number("Close Delay", 3, {
-        range: true,
-        min: 2,
-        max: 10,
-        step: 1
-      });
-      const messageKnob = text(
-        "Banner Message",
-        `This is a notification banner. It will disappear in ${closeDelay}000ms.`
-      );
-      return html`
+storiesOf('Components|Notification', module)
+    .addDecorator(withKnobs)
+    .add(
+        'Notification',
+        () => {
+          const toggleBanner = boolean('Enable Banner', true);
+          const statusOptions = ['standby', 'normal', 'caution', 'critical'];
+          const statusKnob = select('Status', statusOptions, 'standby');
+          const closeDelay = number('Close Delay', 3, {
+            range: true,
+            min: 2,
+            max: 10,
+            step: 1,
+          });
+          const messageKnob = text(
+              'Banner Message',
+              `This is a notification banner. It will disappear in ${closeDelay}000ms.`
+          );
+          return html`
         <div style="display: flex; flex-flow: column; justify-content: center;">
           <rux-notification
             ?open="${toggleBanner}"
-            close-after="${closeDelay}"
+            closeAfter="${closeDelay}"
             status="${statusKnob}"
             message="${messageKnob}"
           >
           </rux-notification>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html
-      },
-      notes: {
-        markdown: Readme
-      }
-    }
-  )
-  .add(
-    "All Notification Banners",
-    () => {
-      return html`
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    )
+    .add(
+        'All Notification Banners',
+        () => {
+          return html`
         <div
           style="display: flex; flex-flow: column; justify-content: center; margin:20px;"
         >
@@ -98,14 +98,14 @@ storiesOf("Components|Notification", module)
           </div>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html
-      },
-      notes: {
-        markdown: Readme
-      }
-    }
-  );
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    );

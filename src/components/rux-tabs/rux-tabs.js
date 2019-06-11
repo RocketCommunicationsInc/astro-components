@@ -1,7 +1,7 @@
-import { LitElement, html } from "lit-element";
-import { RuxTab } from "./rux-tab.js";
-import { RuxTabPanels } from "./rux-tab-panels.js";
-import { RuxTabPanel } from "./rux-tab-panel.js";
+import { LitElement, html } from 'lit-element';
+import { RuxTab } from './rux-tab.js';
+import { RuxTabPanels } from './rux-tab-panels.js';
+import { RuxTabPanel } from './rux-tab-panel.js';
 
 /**
  * @polymer
@@ -9,13 +9,13 @@ import { RuxTabPanel } from "./rux-tab-panel.js";
  */
 export class RuxTabs extends LitElement {
   static get is() {
-    return "rux-tabs";
+    return 'rux-tabs';
   }
   static get properties() {
     return {
       small: {
-        type: Boolean
-      }
+        type: Boolean,
+      },
     };
   }
 
@@ -31,47 +31,46 @@ export class RuxTabs extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    window.addEventListener("register-panels", this._registerPanelsListener);
-    this.addEventListener("click", this._onClick);
+    window.addEventListener('register-panels', this._registerPanelsListener);
+    this.addEventListener('click', this._onClick);
 
     // set the role to tab
-    this.setAttribute("role", "tablist");
+    this.setAttribute('role', 'tablist');
   }
 
   disconnectedCallback() {
+    window.removeEventListener('register-panels', this._registerPanelsListener);
+    this.removeEventListener('click', this._onClick);
     super.disconnectedCallback();
-    window.removeEventListener("register-panels", this._registerPanelsListener);
-    this.removeEventListener("click", this._onClick);
-
   }
 
   _onClick(e) {
     if (
-      e.target.getAttribute("role") === "tab" &&
-      e.target.getAttribute("disabled") === null
+      e.target.getAttribute('role') === 'tab' &&
+      e.target.getAttribute('disabled') === null
     ) {
       this._setTab(e.target);
     }
   }
 
   get _tabs() {
-    return Array.from(this.querySelectorAll("rux-tab"));
+    return Array.from(this.querySelectorAll('rux-tab'));
   }
 
   _registerPanels(e) {
-    if (e.detail.for === this.getAttribute("id")) {
+    if (e.detail.for === this.getAttribute('id')) {
       this._panels = Array.from(e.detail.panels);
     }
 
     // if a tab isn’t selected in markup then default to first tab in the list
-    const selectedTab = this._tabs.find(tab => tab.selected) || this._tabs[0];
+    const selectedTab = this._tabs.find((tab) => tab.selected) || this._tabs[0];
     this._setTab(selectedTab);
   }
 
   _reset() {
     // hide everything
-    this._tabs.forEach(tab => (tab.selected = false));
-    this._panels.forEach(panel => panel.classList.add("hidden"));
+    this._tabs.forEach((tab) => (tab.selected = false));
+    this._panels.forEach((panel) => panel.classList.add('hidden'));
   }
 
   _setTab(selectedTab) {
@@ -79,12 +78,12 @@ export class RuxTabs extends LitElement {
 
     // find the panel whose aria-labeldby attribute matches the tab’s id
     const selectedPanel = this._panels.find(
-      panel =>
-        panel.getAttribute("aria-labelledby") === selectedTab.getAttribute("id")
+        (panel) =>
+          panel.getAttribute('aria-labelledby') === selectedTab.getAttribute('id')
     );
 
     if (selectedTab) selectedTab.selected = true;
-    if (selectedPanel) selectedPanel.classList.remove("hidden");
+    if (selectedPanel) selectedPanel.classList.remove('hidden');
   }
 
   render() {
@@ -123,4 +122,4 @@ export class RuxTabs extends LitElement {
   }
 }
 
-customElements.define("rux-tabs", RuxTabs);
+customElements.define('rux-tabs', RuxTabs);

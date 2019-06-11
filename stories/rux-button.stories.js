@@ -29,7 +29,7 @@ storiesOf('Components|Buttons', module)
             .size="${size}"
             ?disabled="${disabled}"
             ?outline="${outline}"
-            ?icon-only="${iconOnly}"
+            ?iconOnly="${iconOnly}"
             .icon="${withIcon ? 'caution' : null}"
             >Button</rux-button
           >
@@ -114,28 +114,28 @@ storiesOf('Components|Buttons', module)
         <div style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;">
           <ul class="button-list">
             <li>
-              <rux-button size="small" icon-only icon="caution">Small Icon-only Button</rux-button>
+              <rux-button size="small" iconOnly icon="caution">Small Icon-only Button</rux-button>
               <rux-button size="small">Small Button</rux-button>
             </li>
             <li>
               <rux-button size="small" icon="caution">Small Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="small" icon-only disabled icon="caution">Small Disabled Icon-only Button</rux-button>
+              <rux-button size="small" iconOnly disabled icon="caution">Small Disabled Icon-only Button</rux-button>
               <rux-button size="small" disabled>Small Disabled Button</rux-button>
             </li>
             <li>
               <rux-button size="small" disabled icon="caution">Small Disabled Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="small" icon-only outline icon="caution">Small Outline Icon-only Button</rux-button>
+              <rux-button size="small" iconOnly outline icon="caution">Small Outline Icon-only Button</rux-button>
               <rux-button size="small" outline>Small Outline Button</rux-button>
             </li>
             <li>
               <rux-button size="small" outline icon="caution">Small Outline Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="small" icon-only disabled outline icon="caution"
+              <rux-button size="small" iconOnly disabled outline icon="caution"
                 >Small Disabled Outline Icon-only Button</rux-button
               >
               <rux-button size="small" outline disabled>Small Disabled Outline Button</rux-button>
@@ -148,28 +148,28 @@ storiesOf('Components|Buttons', module)
           </ul>
           <ul class="button-list">
             <li>
-              <rux-button icon-only icon="caution">Standard Icon-only Button</rux-button>
+              <rux-button iconOnly icon="caution">Standard Icon-only Button</rux-button>
               <rux-button>Standard Button</rux-button>
             </li>
             <li>
               <rux-button icon="caution">Standard Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button icon-only disabled icon="caution">Standard Disabled Icon-only Button</rux-button>
+              <rux-button iconOnly disabled icon="caution">Standard Disabled Icon-only Button</rux-button>
               <rux-button disabled>Standard Disabled Button</rux-button>
             </li>
             <li>
               <rux-button disabled icon="caution">Standard Disabled Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button icon-only outline icon="caution">Standard Outline Icon-only Button</rux-button>
+              <rux-button iconOnly outline icon="caution">Standard Outline Icon-only Button</rux-button>
               <rux-button outline>Standard Outline Button</rux-button>
             </li>
             <li>
               <rux-button outline icon="caution">Standard Outline Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button icon-only disabled outline icon="caution"
+              <rux-button iconOnly disabled outline icon="caution"
                 >Standard Disabled Outline Icon-only Button</rux-button
               >
               <rux-button outline disabled>Standard Disabled Outline Button</rux-button>
@@ -180,28 +180,28 @@ storiesOf('Components|Buttons', module)
           </ul>
           <ul class="button-list">
             <li>
-              <rux-button size="large" icon-only icon="caution">Large Icon-only Button</rux-button>
+              <rux-button size="large" iconOnly icon="caution">Large Icon-only Button</rux-button>
               <rux-button size="large">Large Button</rux-button>
             </li>
             <li>
               <rux-button size="large" icon="caution">Large Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="large" icon-only disabled icon="caution">Large Disabled Icon-only Button</rux-button>
+              <rux-button size="large" iconOnly disabled icon="caution">Large Disabled Icon-only Button</rux-button>
               <rux-button size="large" disabled>Large Disabled Button</rux-button>
             </li>
             <li>
               <rux-button size="large" disabled icon="caution">Large Disabled Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="large" icon-only outline icon="caution">Large Outline Icon-only Button</rux-button>
+              <rux-button size="large" iconOnly outline icon="caution">Large Outline Icon-only Button</rux-button>
               <rux-button size="large" outline>Large Outline Button</rux-button>
             </li>
             <li>
               <rux-button size="large" outline icon="caution">Large Outline Button with Icon</rux-button>
             </li>
             <li>
-              <rux-button size="large" icon-only disabled outline icon="caution"
+              <rux-button size="large" iconOnly disabled outline icon="caution"
                 >Large Disabled Outline Icon-only Button</rux-button
               >
               <rux-button size="large" outline disabled>Large Disabled Outline Button</rux-button>
@@ -235,9 +235,7 @@ storiesOf('Components|Buttons', module)
         html,
       },
       notes: {
-        markdown:
-          '_Readme content copied from [Rux-Buttons](/?path=/info/components-buttons--standard-button) below for your convenience._\n\n' +
-          Readme,
+        markdown: Readme,
       },
     },
   );

@@ -1,20 +1,16 @@
 # Status
-
 The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature.
-
-## Important Astro 4 Migration Note:
-
-Prior to Astro 4 the Rux Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 seperates these two use cases in to distinct components. The Rux Status Component is solely responsible for the status indicators. This component, [Rux Monitoring Icon Component](../rux-monitoring-icon/), replaces the previous "Advanced Status" features of Rux Status.
 
 ## Guidelines
 
-- [Astro UXDS: Status Symbols](http://www.astrouxds.com/library/status-symbol)
+- [Astro UXDS: Status Symbols](http://www.astrouxds.com/ui-components/status-symbol)
+
 
 ## Web Components Usage
 
 ### 1. Installation
 
-#### ** Install the Astro RUX Status package via Command Line** (Preferred Method)
+#### ** Install the Astro UXDS Status package via Command Line** (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-status
@@ -22,7 +18,7 @@ npm i --save @astrouxds/rux-status
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
 
 Via CLI:
 
@@ -30,9 +26,9 @@ Via CLI:
 git clone https://bitbucket.org/rocketcom/astro-components.git
 ```
 
-Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
-### 2. Import the RUX Status Web Component
+### 2. Import the Astro Status Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
@@ -40,46 +36,50 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 import { RuxStatus } from "@astro-components/rux-status/rux-status.js";
 ```
 
-### 3. Render the RUX Status Web Component
+### 3. Render the Astro Status Web Component
+Pass properties as attributes of the Astro Status custom element:
 
 ```xml
 <rux-status status="critical"></rux-status>
 ```
 
+### Properties
+| Property | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `status` | String | `''` | Yes | Sets the status symbol, valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off` |
 ---
 
 ## Basic HTML Usage
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
+Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
 ```
 
-### 2. Markup using HTML5/CSS3
+### 2. Markup the component using HTML and the Astro CSS classes
+
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention.  Apply attribues as [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-status--`. 
 
 ```xml
 <div class="rux-status rux-status--critical"></div>
 ```
 
-Status is determined via [BEM-style](http://getbem.com/introduction/) class suffixes after `rux-status--`. Valid options for status are `critical`, `serious`, `caution`, `normal`, `standby` and `off`
-
-## Web Component Properties
-
-| Property | Type   | Default | Required | Description                                                                                               |
-| -------- | ------ | ------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| `status` | string | -       | yes      | Sets the status symbol, valid options are `critical`, `serious`, `caution`, `normal`, `standby` and `off` |
+### Attributes
+| Attribute | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `rux-status--` | Class | -       | Yes      | Sets the status symbol, valid options are `rux-status--critical`, `rux-status--serious`, `rux-status--caution`, `rux-status--normal`, `rux-status--standby` and `rux-status--off` |
 
 ## Revision History
 
 ##### **4.1**
 
 - Replaced SVG status elements with PNG sprite for improved performance
-- Moved Advanced Status to its own component Rux Monitoring ICon
-- Removed satcom prefix from HTML/CSS versions
-- Removed ::after psuedo class in HTML/CSS version in favor of simpler background image
+- Moved Advanced Status to its own component, Astro UXDS Monitoring Icon (see [Astro 4 migration note](#astro-4-migration) below)
+- Removed `satcom_` prefix from HTML/CSS versions
+- Removed `::after` psuedo class in HTML/CSS version in favor of simpler background image
 - Removed undocumented small status variant
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
@@ -101,8 +101,7 @@ Status is determined via [BEM-style](http://getbem.com/introduction/) class suff
 - Removed `user-select` and placed it in astro.css to apply to all input types
 - Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
 
-##### **Notes**
+<a name="astro-4-migration">
+## Important Astro 4 Migration Note:
+Prior to Astro 4, the Astro UXDS Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 separates these two use cases into distinct components. The Astro UXDS Status Component is solely responsible for the status indicators. This component, [Astro UXDS Monitoring Icon Component](../rux-monitoring-icon/), replaces the previous "Advanced Status" features of Astro UXDS Status.
 
-RUX Status is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html).
-
-**Note:** RUX Status is available as a preview release and should not be used in production code.
