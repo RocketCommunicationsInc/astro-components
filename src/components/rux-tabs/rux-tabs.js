@@ -1,12 +1,10 @@
 import { LitElement, html } from 'lit-element';
+/* eslint-disable no-unused-vars */
 import { RuxTab } from './rux-tab.js';
 import { RuxTabPanels } from './rux-tab-panels.js';
 import { RuxTabPanel } from './rux-tab-panel.js';
+/* eslint-enable no-unused-vars */
 
-/**
- * @polymer
- * @extends HTMLElement
- */
 export class RuxTabs extends LitElement {
   static get is() {
     return 'rux-tabs';
@@ -18,7 +16,6 @@ export class RuxTabs extends LitElement {
       },
     };
   }
-
 
   constructor() {
     super();
@@ -45,10 +42,7 @@ export class RuxTabs extends LitElement {
   }
 
   _onClick(e) {
-    if (
-      e.target.getAttribute('role') === 'tab' &&
-      e.target.getAttribute('disabled') === null
-    ) {
+    if (e.target.getAttribute('role') === 'tab' && e.target.getAttribute('disabled') === null) {
       this._setTab(e.target);
     }
   }
@@ -78,8 +72,7 @@ export class RuxTabs extends LitElement {
 
     // find the panel whose aria-labeldby attribute matches the tab’s id
     const selectedPanel = this._panels.find(
-        (panel) =>
-          panel.getAttribute('aria-labelledby') === selectedTab.getAttribute('id')
+        (panel) => panel.getAttribute('aria-labelledby') === selectedTab.getAttribute('id')
     );
 
     if (selectedTab) selectedTab.selected = true;
@@ -110,7 +103,7 @@ export class RuxTabs extends LitElement {
 
           contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
         }
-    
+
         :host([small]) {
           min-height: 3.125rem;
           font-size: 1rem;

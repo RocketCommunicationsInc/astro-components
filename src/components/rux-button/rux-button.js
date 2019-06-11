@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit-element';
+// eslint-disable-next-line no-unused-vars
 import { RuxIcon } from '../rux-icon/rux-icon.js';
 export class RuxButton extends LitElement {
   static get properties() {

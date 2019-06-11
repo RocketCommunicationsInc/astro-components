@@ -4,10 +4,6 @@ import { RuxButton } from '../rux-button/rux-button.js';
 import { RuxIcon } from '../rux-icon/rux-icon.js';
 /* eslint-enable no-unused-vars */
 
-/**
- * @polymer
- * @extends HTMLElement
- */
 export class RuxModal extends LitElement {
   static get properties() {
     return {
@@ -51,7 +47,7 @@ export class RuxModal extends LitElement {
     if (!this.denyText && !this.confirmText) {
       this.denyText = 'Cancel';
       console.warn(
-        'No confirm or deny actions have been passed to the modal dialog box. User has been presented with a Cancel button',
+          'No confirm or deny actions have been passed to the modal dialog box. User has been presented with a Cancel button'
       );
     }
   }
@@ -73,11 +69,11 @@ export class RuxModal extends LitElement {
 
     // dispatch event
     this.dispatchEvent(
-      new CustomEvent('modalClosed', {
-        detail: { confirm: choice },
-        bubbles: true,
-        composed: true,
-      }),
+        new CustomEvent('modalClosed', {
+          detail: { confirm: choice },
+          bubbles: true,
+          composed: true,
+        })
     );
 
     // close dialog

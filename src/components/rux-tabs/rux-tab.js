@@ -1,8 +1,5 @@
-import { LitElement, html } from "lit-element";
-/**
- * @polymer
- * @extends HTMLElement
- */
+import { LitElement, html } from 'lit-element';
+
 export class RuxTab extends LitElement {
   static get properties() {
     return {
@@ -13,7 +10,7 @@ export class RuxTab extends LitElement {
       disabled: {
         type: Boolean,
         reflect: true,
-      }
+      },
     };
   }
 
@@ -32,13 +29,11 @@ export class RuxTab extends LitElement {
     if (this.parentElement.getAttributeNode('small')) {
       this.setAttribute('small', '');
     }
-
   }
 
   render() {
     return html`
       <style>
-
         :host {
           box-sizing: border-box;
 
@@ -64,7 +59,6 @@ export class RuxTab extends LitElement {
         :host([small]) {
           min-width: 2rem;
         }
-
 
         :host([small][selected]) {
           box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));

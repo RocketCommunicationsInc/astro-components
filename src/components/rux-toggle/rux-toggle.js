@@ -1,21 +1,18 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html } from 'lit-element';
 
 /** Class representing a single Toggle instance. */
-/**
- * @polymer
- * @extends HTMLElement
- */
+
 export class RuxToggle extends LitElement {
   static get properties() {
     return {
       disabled: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       checked: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
@@ -131,12 +128,10 @@ export class RuxToggle extends LitElement {
           ?disabled="${this.disabled}"
           ?checked="${this.checked}"
         ></input>
-        <label class="rux-toggle__button" for="${
-          this._id
-        }" class="rux-toggle__button"></label> 
+        <label class="rux-toggle__button" for="${this._id}" class="rux-toggle__button"></label> 
       </div>
     `;
   }
 }
 
-customElements.define("rux-toggle", RuxToggle);
+customElements.define('rux-toggle', RuxToggle);
