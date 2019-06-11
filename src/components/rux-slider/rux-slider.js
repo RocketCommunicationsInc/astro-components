@@ -147,7 +147,7 @@ export class RuxSlider extends LitElement {
           background-color: var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255));
         }
 
-        .rux-range:disabled {
+        .rux-input:disabled {
           opacity: var(--disabledOpacity, 0.4);
           cursor: var(--disabledCursor, not-allowed);
         }
@@ -305,6 +305,7 @@ export class RuxSlider extends LitElement {
             .value="${this.val.toString()}"
             aria-labelledby="ruxSlider"
             ?hidden="${this.hideInput}"
+            ?disabled="${this.disabled}"
           />
         </div>
         <div class="rux-slider__control">
