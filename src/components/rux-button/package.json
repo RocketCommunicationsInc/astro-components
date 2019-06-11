@@ -1,50 +1,26 @@
 {
-  "_args": [
-    [
-      "@astrouxds/rux-button@1.0.5",
-      "/private/var/www/astro/05-components.astrouxds.com"
-    ]
-  ],
-  "_from": "@astrouxds/rux-button@1.0.5",
-  "_id": "@astrouxds/rux-button@1.0.5",
-  "_inBundle": false,
-  "_integrity": "sha512-PF3puXTdymI6RMI/wpCRo40UTxaeo1v0ck+HXaym6GUupln0j64NCZpV7++/Us/2Mgg0r+JNSq+JDKSuyR0sgA==",
-  "_location": "/@astrouxds/rux-button",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "@astrouxds/rux-button@1.0.5",
-    "name": "@astrouxds/rux-button",
-    "escapedName": "@astrouxds%2frux-button",
-    "scope": "@astrouxds",
-    "rawSpec": "1.0.5",
-    "saveSpec": null,
-    "fetchSpec": "1.0.5"
-  },
-  "_requiredBy": [
-    "/",
-    "/@astrouxds/rux-modal",
-    "/@astrouxds/rux-notification"
-  ],
-  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-button/-/rux-button-1.0.5.tgz",
-  "_spec": "1.0.5",
-  "_where": "/private/var/www/astro/05-components.astrouxds.com",
   "author": {
     "name": "Rocket Communications",
-    "email": "astro@rocketcom.com"
+    "email": "astrouxds@rocketcom.com"
   },
   "dependencies": {
-    "@astrouxds/rux-icon": "^1.0.0",
-    "@polymer/polymer": "^3.0.2",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "lit-element": "^2.1.0",
+    "@webcomponents/webcomponentsjs": "^2.2.10"
+  },
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "support@astrouxds.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
   },
   "description": "Astro Web Component for buttons",
-  "license": "GPL-3.0",
+  "license": "",
   "main": "rux-button.js",
   "name": "@astrouxds/rux-button",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "3.0.0"
+  "version": "4.0.0-0"
 }

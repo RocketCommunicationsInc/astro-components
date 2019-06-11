@@ -1,49 +1,26 @@
 {
-  "_args": [
-    [
-      "@astrouxds/rux-modal@1.0.4",
-      "/private/var/www/astro/05-components.astrouxds.com"
-    ]
-  ],
-  "_from": "@astrouxds/rux-modal@1.0.4",
-  "_id": "@astrouxds/rux-modal@1.0.4",
-  "_inBundle": false,
-  "_integrity": "sha512-WQkbWqrClcyZd2F+Z/exObjDGKuZNXYCLTyms0OLA2K8ksqdF+qGXbtGdLuzyeklA9C9mRDeOpzN+hBTVAwt4A==",
-  "_location": "/@astrouxds/rux-modal",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "@astrouxds/rux-modal@1.0.4",
-    "name": "@astrouxds/rux-modal",
-    "escapedName": "@astrouxds%2frux-modal",
-    "scope": "@astrouxds",
-    "rawSpec": "1.0.4",
-    "saveSpec": null,
-    "fetchSpec": "1.0.4"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-modal/-/rux-modal-1.0.4.tgz",
-  "_spec": "1.0.4",
-  "_where": "/private/var/www/astro/05-components.astrouxds.com",
   "author": {
     "name": "Rocket Communications",
-    "email": "astro@rocketcom.com"
+    "email": "astrouxds@rocketcom.com"
   },
   "dependencies": {
-    "@astrouxds/rux-button": "^3.0.0",
-    "@astrouxds/rux-icon": "^3.0.2",
-    "@polymer/polymer": "^3.0.2",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "lit-element": "^2.1.0",
+    "@webcomponents/webcomponentsjs": "^2.2.10"
+  },
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "support@astrouxds.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
   },
   "description": "Astro Web Component for modal dialogue",
-  "license": "GPL-3.0",
+  "license": "",
   "main": "rux-modal.js",
   "name": "@astrouxds/rux-modal",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "3.0.0"
+  "version": "4.0.0-0"
 }

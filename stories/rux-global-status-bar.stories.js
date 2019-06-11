@@ -11,36 +11,36 @@ import Readme from '../src/components/rux-global-status-bar/README.md';
 /* eslint-enable no-unused-vars */
 
 storiesOf('Components|Global Status Bar', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Global Status Bar',
-    () => {
-      const appnameKnob = text('App Name', 'Astro Global Status Bar');
-      const versionKnob = text('Version', '4.1.0 alpha');
+    .addDecorator(withKnobs)
+    .add(
+        'Global Status Bar',
+        () => {
+          const appnameKnob = text('App Name', 'Astro Global Status Bar');
+          const versionKnob = text('Version', '4.1.0 alpha');
 
-      return html`
+          return html`
         <div style="display: flex; justify-content: center;">
           <rux-global-status-bar .appname="${appnameKnob}" .version="${versionKnob}"></rux-global-status-bar>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html,
-      },
-      notes: {
-        markdown: Readme,
-      },
-    }
-  )
-  .add(
-    'Global Status Bar with Slot Content',
-    () => {
-      const appnameKnob = text('App Name', 'Astro Global Status Bar');
-      const versionKnob = text('Version', '4.1.0 alpha');
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    )
+    .add(
+        'Global Status Bar with Slot Content',
+        () => {
+          const appnameKnob = text('App Name', 'Astro Global Status Bar');
+          const versionKnob = text('Version', '4.1.0 alpha');
 
-      return html`
+          return html`
         <div style="display: flex; justify-content: center;">
           <rux-global-status-bar class="dark-theme" .appname="${appnameKnob}" .version="${versionKnob}">
             <rux-clock></rux-clock>
@@ -49,24 +49,24 @@ storiesOf('Components|Global Status Bar', module)
           </rux-global-status-bar>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html,
-      },
-      notes: {
-        markdown: Readme,
-      },
-    }
-  )
-  .add(
-    'Global Status Bar with Tabs',
-    () => {
-      const appnameKnob = text('App Name', 'Astro Global Status Bar');
-      const versionKnob = text('Version', '4.1.0 alpha');
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    )
+    .add(
+        'Global Status Bar with Tabs',
+        () => {
+          const appnameKnob = text('App Name', 'Astro Global Status Bar');
+          const versionKnob = text('Version', '4.1.0 alpha');
 
-      return html`
+          return html`
         <div style="display: flex; flex-flow: column; justify-content: center;">
           <rux-global-status-bar class="dark-theme" .appname="${appnameKnob}" .version="${versionKnob}">
             <rux-tabs id="tab-set-id-1">
@@ -95,14 +95,14 @@ storiesOf('Components|Global Status Bar', module)
           </rux-tab-panels>
         </div>
       `;
-    },
-    {
-      exports: {
-        render,
-        html,
-      },
-      notes: {
-        markdown: Readme,
-      },
-    }
-  );
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            markdown: Readme,
+          },
+        }
+    );

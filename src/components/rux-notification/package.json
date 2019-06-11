@@ -1,42 +1,19 @@
 {
-  "_args": [
-    [
-      "@astrouxds/rux-notification@1.0.3",
-      "/private/var/www/astro/05-components.astrouxds.com"
-    ]
-  ],
-  "_from": "@astrouxds/rux-notification@1.0.3",
-  "_id": "@astrouxds/rux-notification@1.0.3",
-  "_inBundle": false,
-  "_integrity": "sha512-CLwXSHBlZ5jyhyZgCjCJJh7ClKtvVpASftA4XoMdVLoEzq2Vnz5WZxrgHvmItAtigZUXyQBLmfMZCsr2hfbEgg==",
-  "_location": "/@astrouxds/rux-notification",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "@astrouxds/rux-notification@1.0.3",
-    "name": "@astrouxds/rux-notification",
-    "escapedName": "@astrouxds%2frux-notification",
-    "scope": "@astrouxds",
-    "rawSpec": "1.0.3",
-    "saveSpec": null,
-    "fetchSpec": "1.0.3"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/@astrouxds/rux-notification/-/rux-notification-1.0.3.tgz",
-  "_spec": "1.0.3",
-  "_where": "/private/var/www/astro/05-components.astrouxds.com",
   "author": {
     "name": "Rocket Communications",
-    "email": "astro@rocketcom.com"
+    "email": "astrouxds@rocketcom.com"
   },
   "dependencies": {
-    "@astrouxds/rux-button": "^3.0.0",
-    "@astrouxds/rux-icon": "^3.0.2",
-    "@polymer/polymer": "^3.0.2",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "lit-element": "^2.1.0",
+    "@webcomponents/webcomponentsjs": "^2.2.10"
+  },
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "support@astrouxds.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
   },
   "description": "Astro Web Component for notification banners",
   "license": "GPL-3.0",
@@ -45,5 +22,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "3.0.0"
+  "version": "4.0.0-0"
 }
