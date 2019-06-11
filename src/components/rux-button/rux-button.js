@@ -5,7 +5,7 @@ export class RuxButton extends LitElement {
     return {
       size: { type: String },
       icon: { type: String },
-      iconOnly: { type: Boolean, attribute: 'icon-only' },
+      iconOnly: { type: Boolean },
       disabled: { type: Boolean },
       outline: { type: Boolean },
     };

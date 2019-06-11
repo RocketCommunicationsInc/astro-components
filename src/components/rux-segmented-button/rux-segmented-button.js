@@ -1,5 +1,5 @@
-import { LitElement, html } from "lit-element";
-import RuxUtils from "../rux-utils/string.js";
+import { LitElement, html } from 'lit-element';
+import RuxUtils from '../rux-utils/string.js';
 
 /** Class representing a single Toggle instance. */
 /**
@@ -10,27 +10,25 @@ export class RuxSegmentedButton extends LitElement {
   static get properties() {
     return {
       data: {
-        type: Array
-      }
+        type: Array,
+      },
     };
   }
 
   constructor() {
     super();
-    this.data = [{ label: "No data passed" }];
+    this.data = [{ label: 'No data passed' }];
   }
 
   connectedCallback() {
     super.connectedCallback();
 
     const selectedSegment =
-      this.data.find(segment => segment.selected) || this.data[0];
+      this.data.find((segment) => segment.selected) || this.data[0];
     selectedSegment.selected = true;
   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-  }
+
   _slugify(label) {
     return `${RuxUtils.stringToSlug(label)}`;
   }
@@ -151,7 +149,7 @@ export class RuxSegmentedButton extends LitElement {
 
       <ul class="rux-segmented-buttons">
         ${this.data.map(
-          item => html`
+      (item) => html`
             <li class="rux-segmented-button">
               <input
                 type="radio"
@@ -165,10 +163,10 @@ export class RuxSegmentedButton extends LitElement {
               </label>
             </li>
           `
-        )}
+  )}
       </ul>
     `;
   }
 }
 
-customElements.define("rux-segmented-button", RuxSegmentedButton);
+customElements.define('rux-segmented-button', RuxSegmentedButton);

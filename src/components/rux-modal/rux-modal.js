@@ -24,11 +24,9 @@ export class RuxModal extends LitElement {
       },
       confirmText: {
         type: String,
-        attribute: 'confirm-text',
       },
       denyText: {
         type: String,
-        attribute: 'deny-text',
       },
       icon: {
         type: String,
@@ -67,10 +65,6 @@ export class RuxModal extends LitElement {
       defaultButton.focus();
     } else {
     }
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
   }
 
   _handleModalChoice(e) {
