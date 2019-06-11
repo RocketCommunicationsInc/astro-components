@@ -114,8 +114,4 @@ Indeterminate progress
 - Fixed alignment issue in Safari/Chrome where the progress bar was 2-3 pixels too low
 - Fixed width (on Chrome/Safari) of 100% width progress bar expanding past the border of the track
 - Removed prefixed animation. Safari 8 was the last browser that required it
-- [REMOVED] Embeded SVG graphics embeded SVG graphic stopped working
-
-```
-
-```
+- Removed Embeded SVG graphics embeded SVG graphic stopped working
