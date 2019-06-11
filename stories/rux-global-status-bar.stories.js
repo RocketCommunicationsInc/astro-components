@@ -4,8 +4,8 @@ import { html, render } from 'lit-html';
 import { text, boolean, date, withKnobs } from '@storybook/addon-knobs';
 import { RuxGlobalStatusBar } from '../src/components/rux-global-status-bar/rux-global-status-bar.js';
 import { RuxClock } from '../src/components/rux-clock/rux-clock.js';
-import { RuxTabs } from '../src/components/rux-tabs/rux-tabs.js';
 import { RuxButton } from '../src/components/rux-button/rux-button.js';
+import { RuxTabs } from '../src/components/rux-tabs/rux-tabs.js';
 import Readme from '../src/components/rux-global-status-bar/README.md';
 
 /* eslint-enable no-unused-vars */

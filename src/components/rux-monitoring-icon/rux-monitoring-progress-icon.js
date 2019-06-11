@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { css } from 'lit-element';
+import { html, css } from 'lit-element';
 import { RuxMonitoringIcon } from './rux-monitoring-icon.js';
 /* eslint-enable no-unused-vars */
 
@@ -12,13 +12,22 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
       range: {
         type: Array,
       },
+      min: {
+        type: Number,
+      },
+      max: {
+        type: Number,
+      },
     };
   }
 
   constructor() {
     super();
-    this._circumference = 56 * 2 * Math.PI;
+
     this.progress = 0;
+    this.max = 100;
+    this.min = 0;
+    this._circumference = 56 * 2 * Math.PI;
   }
 
   firstUpdated() {
@@ -36,10 +45,6 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
             status: 'standby',
           },
           {
-            threshold: 81,
-            status: 'serious',
-          },
-          {
             threshold: 49,
             status: 'normal',
           },
@@ -47,7 +52,10 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
             threshold: 65,
             status: 'caution',
           },
-
+          {
+            threshold: 81,
+            status: 'serious',
+          },
           {
             threshold: 100,
             status: 'critical',
@@ -55,6 +63,7 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
         ];
       }
       this.range = this.range.sort((a, b) => (a.threshold > b.threshold ? 1 : -1));
+
       this.updateProgress();
     }
   }
@@ -66,9 +75,9 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
   }
 
   updateProgress() {
-    this.status = this.range.find((range) => this.progress < range.threshold).status;
+    this.status = this.range.find((range) => this.progress < range.threshold).status || this.range[0];
 
-    const graphProgress = this._circumference - (this.progress / 100) * this._circumference;
+    const graphProgress = this._circumference - (this.progress / this.max) * this._circumference;
 
     this.style.setProperty('--monitoring-progress', graphProgress);
   }
@@ -77,7 +86,7 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
     return html`
       <rux-icon icon="progress" class="rux-status--${this.status}"></rux-icon>
       <div class="rux-advanced-status__progress">
-        ${this.progress}%
+        ${Math.ceil((this.progress / this.max) * 100)}%
       </div>
     `;
   }
