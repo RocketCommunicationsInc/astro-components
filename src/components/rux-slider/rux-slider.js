@@ -41,8 +41,13 @@ export class RuxSlider extends LitElement {
     this.hideInput = false;
   }
 
+  firstUpdated() {
+    const dif = ((this.val - this.min) / (this.max - this.min)) * 100;
+    this.style.setProperty('--value', dif);
+  }
+
   _updateValue(e) {
-    console.log('updating value');
+    console.log('updating valie');
     this.val = e.target ? e.target.value : e;
     const dif = ((this.val - this.min) / (this.max - this.min)) * 100;
     this.style.setProperty('--value', dif);
