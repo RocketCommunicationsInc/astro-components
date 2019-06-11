@@ -2288,7 +2288,7 @@ label {
   text-overflow: ellipsis;
 }
 
-.rux-clock--compact .rux-clock__segment__value {
+.rux-clock--small .rux-clock__segment__value {
   height: 2.75rem;
   padding: 0 0.75rem;
   font-size: 1.15rem;
@@ -2299,7 +2299,7 @@ label {
   border-right: none;
 }
 
-.rux-clock:not(.rux-clock--compact) .rux-clock__segment__value {
+.rux-clock:not(.rux-clock--small) .rux-clock__segment__value {
   font-size: 1.75rem;
   height: 2.75rem;
   padding: 0 0.75rem;

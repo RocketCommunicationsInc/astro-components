@@ -31,7 +31,11 @@ export class RuxMonitoringIcon extends LitElement {
   constructor() {
     super();
 
-    this.status = 'null';
+    this.status = 'normal';
+    this.label = '';
+    this.sublabel = '';
+    this.icon = '';
+    this.notifications = 0;
   }
 
   render() {

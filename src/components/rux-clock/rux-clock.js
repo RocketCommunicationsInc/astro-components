@@ -22,13 +22,11 @@ export class RuxClock extends LitElement {
       },
       hideTimezone: {
         type: Boolean,
-        attribute: 'hide-timezone',
       },
       hideDate: {
         type: Boolean,
-        attribute: 'hide-date',
       },
-      compact: {
+      small: {
         type: Boolean,
       },
       time: {
@@ -64,8 +62,8 @@ export class RuxClock extends LitElement {
   }
 
   disconnectedCallback() {
-    super.disconnectedCallback();
     clearTimeout(this._timer);
+    super.disconnectedCallback();
   }
 
   /*
@@ -128,7 +126,7 @@ export class RuxClock extends LitElement {
           padding: 0 0.75rem;
         }
 
-        :host([compact]) .rux-clock__segment__value {
+        :host([small]) .rux-clock__segment__value {
           height: 2.75rem;
           padding: 0 0.75rem;
           font-size: 1.15rem;

@@ -28,8 +28,8 @@ storiesOf('Components|Dialog Box', module)
           <rux-modal
             message="${message}"
             title="${title}"
-            confirm-text="${confirmText}"
-            deny-text="${denyText}"
+            confirmText="${confirmText}"
+            denyText="${denyText}"
             ?open="${toggleModal}"
           ></rux-modal>
         </div>
