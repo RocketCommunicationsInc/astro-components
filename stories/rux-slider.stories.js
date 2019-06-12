@@ -52,7 +52,7 @@ storiesOf('Components|Slider', module)
         () => {
           const value1 = 50;
           const step1 = 10;
-          const axisLabels1 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+          const axisLabels1 = ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'];
 
           const value2 = 70;
           const axisLabels2 = ['min', 'middle', 'max'];
@@ -60,9 +60,9 @@ storiesOf('Components|Slider', module)
 
           const value3 = 42;
 
-          const value4 = 99;
+          const value4 = 50;
           const label4 = 'Disabled Slider Label ';
-          const axisLabels4 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+          const axisLabels4 = ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'];
 
           return html`
         <div style="display: flex; padding: 10vh 5vw; justify-content: center;">

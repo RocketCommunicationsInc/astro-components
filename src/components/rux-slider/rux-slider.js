@@ -42,13 +42,11 @@ export class RuxSlider extends LitElement {
   }
 
   firstUpdated() {
-    const dif = ((this.val - this.min) / (this.max - this.min)) * 100;
-    this.style.setProperty('--value', dif);
+    this._updateValue();
   }
 
   _updateValue(e) {
-    console.log('updating valie');
-    this.val = e.target ? e.target.value : e;
+    this.val = e ? e.target.value : this.val;
     const dif = ((this.val - this.min) / (this.max - this.min)) * 100;
     this.style.setProperty('--value', dif);
   }
@@ -267,6 +265,7 @@ export class RuxSlider extends LitElement {
           position: relative;
           display: flex;
           justify-content: space-between;
+
           list-style: none;
           padding: 0 0.1rem;
           margin: 0.5em 0 0 0;
@@ -276,6 +275,10 @@ export class RuxSlider extends LitElement {
           font-family: var(--fontFamilyMono, 'Roboto Mono', monospace);
         }
 
+        .rux-slider__control__labels li {
+          text-align: left;
+        }
+
         .rux-slider__input {
           margin-right: 0;
           margin-bottom: 0.75rem;
@@ -283,14 +286,14 @@ export class RuxSlider extends LitElement {
           width: 4rem !important;
         }
 
-        /* 
-      Fake tick marks, sort of works, but label using flex are imprecise
-      .rux-slider__control__labels li::before {
-        position: absolute;
-        content: "|";
-        font-size: 0.5rem;
-        top: -100%;
-      } */
+        /*
+        Fake tick marks, sort of works, but label using flex are imprecise
+        .rux-slider__control__labels li::before {
+          position: absolute;
+          content: "|";
+          font-size: 0.5rem;
+          top: -100%;
+        } */
 
         input[type='range']::-moz-focus-outer {
           border: 0;
@@ -326,7 +329,11 @@ export class RuxSlider extends LitElement {
             aria-labelledby="ruxSlider"
             ?disabled="${this.disabled}"
           />
-          <ol class="rux-slider__control__labels" ?hidden="${this.axisLabels.length < 1}">
+          <ol
+            class="rux-slider__control__labels"
+            data-count="${this.axisLabels.length}"
+            ?hidden="${!this.axisLabels.length}"
+          >
             ${this.axisLabels.map(
       (item) => html`
                 <li>${item}</li>
