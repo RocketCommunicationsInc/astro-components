@@ -41,13 +41,14 @@ export class RuxSlider extends LitElement {
     this.hideInput = false;
   }
 
-  updated() {
-    const dif = ((this.val - this.min) / (this.max - this.min)) * 100;
-    this.style.setProperty('--value', dif);
+  firstUpdated() {
+    this._updateValue();
   }
 
   _updateValue(e) {
-    this.val = e.target ? e.target.value : e;
+    this.val = e ? e.target.value : this.val;
+    const dif = ((this.val - this.min) / (this.max - this.min)) * 100;
+    this.style.setProperty('--value', dif);
   }
 
   render() {
@@ -149,7 +150,7 @@ export class RuxSlider extends LitElement {
           background-color: var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255));
         }
 
-        .rux-range:disabled {
+        .rux-input:disabled {
           opacity: var(--disabledOpacity, 0.4);
           cursor: var(--disabledCursor, not-allowed);
         }
@@ -264,6 +265,7 @@ export class RuxSlider extends LitElement {
           position: relative;
           display: flex;
           justify-content: space-between;
+
           list-style: none;
           padding: 0 0.1rem;
           margin: 0.5em 0 0 0;
@@ -273,6 +275,10 @@ export class RuxSlider extends LitElement {
           font-family: var(--fontFamilyMono, 'Roboto Mono', monospace);
         }
 
+        .rux-slider__control__labels li {
+          text-align: left;
+        }
+
         .rux-slider__input {
           margin-right: 0;
           margin-bottom: 0.75rem;
@@ -280,14 +286,14 @@ export class RuxSlider extends LitElement {
           width: 4rem !important;
         }
 
-        /* 
-      Fake tick marks, sort of works, but label using flex are imprecise
-      .rux-slider__control__labels li::before {
-        position: absolute;
-        content: "|";
-        font-size: 0.5rem;
-        top: -100%;
-      } */
+        /*
+        Fake tick marks, sort of works, but label using flex are imprecise
+        .rux-slider__control__labels li::before {
+          position: absolute;
+          content: "|";
+          font-size: 0.5rem;
+          top: -100%;
+        } */
 
         input[type='range']::-moz-focus-outer {
           border: 0;
@@ -300,29 +306,34 @@ export class RuxSlider extends LitElement {
           <input
             class="rux-input rux-slider__input"
             type="number"
-            @change="${this._updateValue}"
-            .min="${this.min}"
-            .max="${this.max}"
-            .step="${this.step}"
-            .value="${this.val}"
+            @input="${this._updateValue}"
+            .min="${this.min.toString()}"
+            .max="${this.max.toString()}"
+            .step="${this.step.toString()}"
+            .value="${this.val.toString()}"
             aria-labelledby="ruxSlider"
             ?hidden="${this.hideInput}"
+            ?disabled="${this.disabled}"
           />
         </div>
         <div class="rux-slider__control">
           <input
             type="range"
-            @change="${this._updateValue}"
+            @input="${this._updateValue}"
             class="rux-range"
             type="range"
-            .min="${this.min}"
-            .max="${this.max}"
-            .step="${this.step}"
-            .value="${this.val}"
+            .min="${this.min.toString()}"
+            .max="${this.max.toString()}"
+            .step="${this.step.toString()}"
+            .value="${this.val.toString()}"
             aria-labelledby="ruxSlider"
             ?disabled="${this.disabled}"
           />
-          <ol class="rux-slider__control__labels" ?hidden="${this.axisLabels.length < 1}">
+          <ol
+            class="rux-slider__control__labels"
+            data-count="${this.axisLabels.length}"
+            ?hidden="${!this.axisLabels.length}"
+          >
             ${this.axisLabels.map(
       (item) => html`
                 <li>${item}</li>
