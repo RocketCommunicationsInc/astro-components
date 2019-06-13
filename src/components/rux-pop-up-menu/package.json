@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "lit-element": "^2.1.0",
+    "@webcomponents/webcomponentsjs": "^2.2.10"
+  },
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "support@astrouxds.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
+  },
+  "description": "Astro Web Component for pop-up menus",
+  "license": "GPL-3.0",
+  "main": "rux-pop-up-menu.js",
+  "name": "@astrouxds/rux-pop-up-menu",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "4.0.0-0"
+}
