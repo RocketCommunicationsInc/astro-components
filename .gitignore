@@ -61,7 +61,7 @@ node_modules/
 /build 
 /dist
 /storybook-static
-/demo
+
 
 # ignore OS generated files
 ehthumbs.db
