@@ -28,32 +28,32 @@ export default class AstroApp extends LitElement {
       }
 
       #tl {
-        top: 0;
-        left: 0;
+        top: 2rem;
+        left: 2rem;
       }
 
       #tr {
-        top: 0;
-        right: 0;
+        top: 2rem;
+        right: 2rem;
       }
 
       #bl {
-        bottom: 0;
-        left: 0;
+        bottom: 2rem;
+        left: 2rem;
       }
 
       #br {
-        bottom: 0;
-        right: 0;
+        bottom: 2rem;
+        right: 2rem;
       }
 
       #tc {
-        top: 0;
+        top: 2rem;
         right: 50vw;
       }
 
       #bc {
-        bottom: 0;
+        bottom: 2rem;
         right: 50vw;
       }
     `;
@@ -71,7 +71,8 @@ export default class AstroApp extends LitElement {
   constructor() {
     super();
     this.heading = 'Hello world!';
-    this.data = [
+    this.data = [];
+    this._data1 = [
       {
         id: '1',
         label: 'Item 1',
@@ -86,6 +87,30 @@ export default class AstroApp extends LitElement {
         role: 'seperator',
       },
     ];
+
+    this._data2 = [
+      {
+        id: '1',
+        label: 'Second 1',
+      },
+      {
+        id: '2',
+        label: 'Second 2',
+      },
+    ];
+
+    document.addEventListener('click', (e) => {
+      if (e.path[0].classList.contains('button')) {
+        const target = e.path[0].getAttribute('aria-controls');
+        console.log(target);
+
+        if (this.data.length > 2) {
+          this.data = [...this._data2];
+        } else {
+          this.data = [...this._data1];
+        }
+      }
+    });
   }
 
   render() {
@@ -93,15 +118,20 @@ export default class AstroApp extends LitElement {
       <div id="demo">
         <rux-clock></rux-clock>
         <div id="pop-demo">
-          <button id="tl">tl</button>
-          <button id="tr">tr</button>
-          <button id="bl">bl</button>
-          <button id="br">br</button>
-          <button id="tc">tv</button>
-          <button id="bc">bc</button>
+          <button aria-controls="popup-menu-1" aria-haspopup="true" class="button" id="tl">tl</button>
+          <button aria-controls="popup-menu-2" aria-haspopup="true" class="button" id="tr">tr</button>
+          <button aria-controls="popup-menu-3" aria-haspopup="true" class="button" id="bl">bl</button>
+          <button aria-controls="popup-menu-4" aria-haspopup="true" class="button" id="br">br</button>
+          <button aria-controls="popup-menu-5" aria-haspopup="true" class="button" id="tc">tv</button>
+          <button aria-controls="popup-menu-6" aria-haspopup="true" class="button" id="bc">bc</button>
         </div>
 
-        <rux-pop-up-menu .data="${this.data}"></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-1" .data="${this._data1}" expanded></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-2" .data="${this._data1}" expanded></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-3" .data="${this._data1}" expanded></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-4" .data="${this._data1}" expanded></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-5" .data="${this._data1}" expanded></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-6" .data="${this._data1}" expanded></rux-pop-up-menu>
       </div>
     `;
   }

@@ -11,12 +11,14 @@ export class RuxPopUpMenu extends LitElement {
         type: Boolean,
         reflect: true,
       },
+      expanded: {
+        type: Boolean,
+        reflect: true,
+      },
       target: {
         type: Object,
       },
-      trigger: {
-        type: Object,
-      },
+
       data: {
         type: Array,
       },
@@ -29,7 +31,10 @@ export class RuxPopUpMenu extends LitElement {
     this.orientation = 'top';
     this.opened = false;
     this.target = {};
+    this.expanded = false;
     this.data = [];
+
+    this.padding = 16;
   }
 
   _listenForExternalEvents() {
@@ -73,7 +78,45 @@ export class RuxPopUpMenu extends LitElement {
 
   firstUpdated() {
     this._listenForExternalEvents();
+
+    const menuBounds = this.getBoundingClientRect();
+    const targetBounds = this.parentElement.querySelector(`[aria-controls="${this.id}"]`).getBoundingClientRect();
+
+    const left =
+      menuBounds.width + targetBounds.right > window.innerWidth
+        ? targetBounds.right - menuBounds.width
+        : targetBounds.left - this.padding;
+
+    let top = targetBounds.bottom + this.padding;
+
+    if (menuBounds.height + targetBounds.bottom > window.innerHeight) {
+      top = targetBounds.top - menuBounds.height - this.padding * 1.5;
+      this.classList.add('rux-pop-up--bottom');
+    }
+
+    const caretLeft = targetBounds.left - left;
+    this.style.setProperty('--caretLeft', `${caretLeft}px`);
+
+    this.style.left = `${left}px`;
+    this.style.top = `${top}px`;
   }
+
+  updated(changedProperties) {
+    if (changedProperties.get('expanded')) {
+      console.log(this.expanded);
+    }
+  }
+
+  /* updated(changedProperties) {
+    console.log(changedProperties);
+    if (changedProperties.get('data')) {
+      if (this.data) {
+        this.opened = true;
+      } else {
+        this._closeMenu();
+      }
+    }
+  } */
 
   _closeMenu() {
     this.opened = false;
@@ -85,11 +128,16 @@ export class RuxPopUpMenu extends LitElement {
     return html`
       
       ${ (this.data.length) ?
-        html `<nav>
-          <ul>
-            ${this.data.map((item) => html`<li class="${item.role}"><a>${item.label}</a></li>`)}
+        html `
+          <ul role="menu" aria-expanded="${this.expanded}">
+            ${this.data.map((item) => html`
+              <li 
+                role="menuitem" 
+                tabindex="-1" 
+                class="${item.role}">${item.label}
+              </li>`)}
           </ul>
-        </nav>` :
+        ` :
       html `<slot></slot>`
 }
       
@@ -99,20 +147,25 @@ export class RuxPopUpMenu extends LitElement {
   static get styles() {
     return css`
       :host {
-        /* display: none; */
+        --caretLeft: 2px;
+        --caretSize: 1.875rem;
+
+        display: none;
 
         font-size: 0.875rem;
 
-        margin: 1em;
+        margin: 0;
+        padding: 0;
 
-        min-width: 15em;
-        max-width: 20em;
-        position: relative;
+        /* min-width: 15em;
+        max-width: 20em; */
+        position: absolute;
 
         color: var(--colorBlack, rgb(0, 0, 0));
 
         background-color: var(--colorWhite, rgb(255, 255, 255));
         border: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+        border-top-width: 3px;
         z-index: 10000;
 
         -webkit-user-select: none;
@@ -120,7 +173,7 @@ export class RuxPopUpMenu extends LitElement {
         -ms-user-select: none;
         user-select: none;
       }
-      :host([opened]) {
+      :host([expanded]) {
         display: block;
       }
 
@@ -129,13 +182,14 @@ export class RuxPopUpMenu extends LitElement {
         display: block;
         position: absolute;
 
-        width: 1.1875rem;
-        height: 1.1875rem;
+        width: var(--carentSize, 1.1875rem);
+        height: var(--carentSize, 1.1875rem);
 
         background-color: #047cdc;
         z-index: 1;
 
-        margin: -13px 0 0 15px;
+        margin: -12px 0 0 0;
+        left: var(--caretLeft, 2px);
         transform: rotate(45deg);
       }
 
@@ -144,7 +198,7 @@ export class RuxPopUpMenu extends LitElement {
         list-style: none;
         padding: 0;
         margin: 0;
-        background: none;
+
         background-color: #fff;
 
         z-index: 2;
@@ -159,7 +213,7 @@ export class RuxPopUpMenu extends LitElement {
         border: none;
       }
 
-      :host a {
+      :host li {
         display: block;
         padding: 0.5em;
         color: #000;
@@ -174,17 +228,25 @@ export class RuxPopUpMenu extends LitElement {
         overflow: hidden;
       }
 
-      :host a:hover {
+      :host li:hover {
         /* font-weight: 700; */
         background-color: var(--colorSecondaryLighten3, rgb(211, 234, 255));
       }
 
-      :host,
-      .rux-pop-up--top {
-        border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+      :host(.rux-pop-up--bottom) {
+        border-top-width: 1px;
+        border-bottom-width: 3px;
       }
 
-      :host::before,
+      :host(.rux-pop-up--bottom)::before {
+        bottom: -12px;
+      }
+      /* :host,
+      .rux-pop-up--top {
+        border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+      } */
+
+      /*  :host::before,
       .rux-pop-up--top::before {
         content: '';
         display: block;
@@ -256,7 +318,7 @@ export class RuxPopUpMenu extends LitElement {
         right: 0;
         margin: 16px -13px 0 0;
         transform: rotate(45deg);
-      }
+      } */
 
       .seperator {
         border-top: 1px dashed #7d7d7d !important;
