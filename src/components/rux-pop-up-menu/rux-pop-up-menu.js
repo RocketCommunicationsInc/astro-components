@@ -37,8 +37,22 @@ export class RuxPopUpMenu extends LitElement {
     this.padding = 16;
   }
 
+  _close() {
+    this.expanded = false;
+    // window.removeEventListener('mousedown', e);
+  }
+
   _listenForExternalEvents() {
-    // Handle clicks external to the tooltip
+    const _listener = () => {
+      if (this.expanded) {
+        this.expanded = false;
+        window.removeEventListener('mousedown', _listener, true);
+      }
+    };
+
+    window.addEventListener('mousedown', _listener, true);
+
+    /*  // Handle clicks external to the tooltip
     const externalClickListener = (event) => {
       // traverse the dompath for the clicked event and see if
       // there’s a tooltip id in its path. Probably fragile for
@@ -73,11 +87,13 @@ export class RuxPopUpMenu extends LitElement {
     // an attach on scroll in the future
     // parent.addEventListener('scroll', externalClickListener);
     document.addEventListener('mouseup', externalClickListener);
-    window.addEventListener('resize', this._setPosition);
+    window.addEventListener('resize', this._setPosition); */
   }
 
-  firstUpdated() {
-    this._listenForExternalEvents();
+  updated() {
+    if (this.expanded) {
+      this._listenForExternalEvents();
+    }
 
     const menuBounds = this.getBoundingClientRect();
     const targetBounds = this.parentElement.querySelector(`[aria-controls="${this.id}"]`).getBoundingClientRect();
@@ -99,12 +115,6 @@ export class RuxPopUpMenu extends LitElement {
 
     this.style.left = `${left}px`;
     this.style.top = `${top}px`;
-  }
-
-  updated(changedProperties) {
-    if (changedProperties.get('expanded')) {
-      console.log(this.expanded);
-    }
   }
 
   /* updated(changedProperties) {

@@ -101,8 +101,9 @@ export default class AstroApp extends LitElement {
 
     document.addEventListener('click', (e) => {
       if (e.path[0].classList.contains('button')) {
-        const target = e.path[0].getAttribute('aria-controls');
-        console.log(target);
+        const _menu = e.path[0].getAttribute('aria-controls');
+        console.log(this.shadowRoot.getElementById(_menu));
+        this.shadowRoot.getElementById(_menu).setAttribute('expanded', '');
 
         if (this.data.length > 2) {
           this.data = [...this._data2];
@@ -126,12 +127,12 @@ export default class AstroApp extends LitElement {
           <button aria-controls="popup-menu-6" aria-haspopup="true" class="button" id="bc">bc</button>
         </div>
 
-        <rux-pop-up-menu id="popup-menu-1" .data="${this._data1}" expanded></rux-pop-up-menu>
-        <rux-pop-up-menu id="popup-menu-2" .data="${this._data1}" expanded></rux-pop-up-menu>
-        <rux-pop-up-menu id="popup-menu-3" .data="${this._data1}" expanded></rux-pop-up-menu>
-        <rux-pop-up-menu id="popup-menu-4" .data="${this._data1}" expanded></rux-pop-up-menu>
-        <rux-pop-up-menu id="popup-menu-5" .data="${this._data1}" expanded></rux-pop-up-menu>
-        <rux-pop-up-menu id="popup-menu-6" .data="${this._data1}" expanded></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-1" .data="${this._data1}"></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-2" .data="${this._data1}"></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-3" .data="${this._data1}"></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-4" .data="${this._data1}"></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-5" .data="${this._data1}"></rux-pop-up-menu>
+        <rux-pop-up-menu id="popup-menu-6" .data="${this._data1}"></rux-pop-up-menu>
       </div>
     `;
   }
