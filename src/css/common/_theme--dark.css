@@ -211,6 +211,23 @@
     rgb(122, 122, 122)
   );
 
+
+  /* 
+    
+    Popup Menu Colors 
+    ==========================================================================
+
+  */
+  --popupMenuBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --popupMenuBorderColor: var(--colorBlack, rgb(0, 0, 0));
+  --popupMenuTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --popupMenuItemBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --popupMenuItemHoverBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --popupMenuItemHoverTextColor: var(--colorBlack, rgb(0, 0, 0));
+
+
+
   /* 
     
     Pushbutton Colors 

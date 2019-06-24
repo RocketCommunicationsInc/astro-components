@@ -35,6 +35,31 @@ export class RuxPopUpMenu extends LitElement {
     this.data = [];
 
     this.padding = 16;
+
+    this._handleClick = this.handleClick.bind(this);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this._handleClick);
+    super.disconnectedCallback();
+  }
+
+  handleClick(e) {
+    console.log('handling click', e);
+
+    this.dispatchEvent(
+        new CustomEvent('pop-up-menu-clicked', {
+          detail: {
+            data: this,
+          },
+          bubbles: true,
+          composed: true,
+        })
+    );
   }
 
   _close() {
@@ -43,15 +68,40 @@ export class RuxPopUpMenu extends LitElement {
   }
 
   _listenForExternalEvents() {
-    const _listener = () => {
+    const _listener = (e) => {
+      const trigger = e.path.find((item) => {
+        // console.log('type', typeof item);
+        // console.log(item.attributes);
+        // console.log(item.getAttributeNode('aria-controls'));
+
+        if (item.attributes && item.hasAttribute('aria-controls')) {
+          return item.getAttribute('aria-controls');
+        }
+        // item.getAttribute('aria-controlls') === this.id;
+      });
+
+      if (trigger && this.expanded) {
+        this.expanded = true;
+      } else {
+        this.expanded = true;
+      }
+
+      /* if (this.expanded) {
+        console.log('esternal', e.path);
+        window.removeEventListener('mousedown', _listener, true);
+        this.expanded = false;
+      } */
+    };
+    window.addEventListener('mousedown', _listener);
+
+    /* const _listener = () => {
       if (this.expanded) {
         this.expanded = false;
         window.removeEventListener('mousedown', _listener, true);
       }
     };
 
-    window.addEventListener('mousedown', _listener, true);
-
+    window.addEventListener('mousedown', _listener, true); */
     /*  // Handle clicks external to the tooltip
     const externalClickListener = (event) => {
       // traverse the dompath for the clicked event and see if
@@ -95,6 +145,8 @@ export class RuxPopUpMenu extends LitElement {
       this._listenForExternalEvents();
     }
 
+    this.addEventListener('click', this._handleClick);
+
     const menuBounds = this.getBoundingClientRect();
     const targetBounds = this.parentElement.querySelector(`[aria-controls="${this.id}"]`).getBoundingClientRect();
 
@@ -117,17 +169,6 @@ export class RuxPopUpMenu extends LitElement {
     this.style.top = `${top}px`;
   }
 
-  /* updated(changedProperties) {
-    console.log(changedProperties);
-    if (changedProperties.get('data')) {
-      if (this.data) {
-        this.opened = true;
-      } else {
-        this._closeMenu();
-      }
-    }
-  } */
-
   _closeMenu() {
     this.opened = false;
     this.target = {};
@@ -145,6 +186,7 @@ export class RuxPopUpMenu extends LitElement {
                 role="menuitem" 
                 tabindex="-1" 
                 class="${item.role}">${item.label}
+                
               </li>`)}
           </ul>
         ` :
@@ -160,7 +202,7 @@ export class RuxPopUpMenu extends LitElement {
         --caretLeft: 2px;
         --caretSize: 1.875rem;
 
-        display: none;
+        display: block;
 
         font-size: 0.875rem;
 
@@ -173,8 +215,8 @@ export class RuxPopUpMenu extends LitElement {
 
         color: var(--colorBlack, rgb(0, 0, 0));
 
-        background-color: var(--colorWhite, rgb(255, 255, 255));
-        border: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+        background-color: var(--popupMenuBackgroundColor, rgb(255, 255, 255));
+        border: 1px solid var(--popupMenuBorderColor, rgb(77, 172, 255));
         border-top-width: 3px;
         z-index: 10000;
 
@@ -195,7 +237,7 @@ export class RuxPopUpMenu extends LitElement {
         width: var(--carentSize, 1.1875rem);
         height: var(--carentSize, 1.1875rem);
 
-        background-color: #047cdc;
+        background-color: var(--popupCaretBackgroundColor, rgb(77, 172, 255));
         z-index: 1;
 
         margin: -12px 0 0 0;
@@ -209,7 +251,7 @@ export class RuxPopUpMenu extends LitElement {
         padding: 0;
         margin: 0;
 
-        background-color: #fff;
+        background-color: var(--popupMenuBackgroundColor, rgb(255, 255, 255));
 
         z-index: 2;
       }
@@ -226,7 +268,7 @@ export class RuxPopUpMenu extends LitElement {
       :host li {
         display: block;
         padding: 0.5em;
-        color: #000;
+        color: var(--popupMenuTextColor, rgb(0, 0, 0));
         text-decoration: none;
 
         min-width: 15em;
@@ -240,7 +282,7 @@ export class RuxPopUpMenu extends LitElement {
 
       :host li:hover {
         /* font-weight: 700; */
-        background-color: var(--colorSecondaryLighten3, rgb(211, 234, 255));
+        background-color: var(--popupMenuItemHoverBackgroundColor, rgb(211, 234, 255));
       }
 
       :host(.rux-pop-up--bottom) {
@@ -331,21 +373,8 @@ export class RuxPopUpMenu extends LitElement {
       } */
 
       .seperator {
-        border-top: 1px dashed #7d7d7d !important;
+        border-top: 1px dashed var(--popupMenuItemSeperatorBorderColor, rgb(123, 128, 137)) !important;
       }
-
-      /*
-      
-        .rux-pop-up--top-left
-        .rux-pop-up--top-right
-        .rux-pop-up--bottom-left
-        .rux-pop-up--bottom-right
-        
-        .rux-pop-up--left-top
-        .rux-pop-up--left-bottom
-        .rux-pop-up--top-left
-      
-      */
     `;
   }
 }

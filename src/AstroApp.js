@@ -99,10 +99,10 @@ export default class AstroApp extends LitElement {
       },
     ];
 
-    document.addEventListener('click', (e) => {
+    document.addEventListener('mousedown', (e) => {
       if (e.path[0].classList.contains('button')) {
         const _menu = e.path[0].getAttribute('aria-controls');
-        console.log(this.shadowRoot.getElementById(_menu));
+
         this.shadowRoot.getElementById(_menu).setAttribute('expanded', '');
 
         if (this.data.length > 2) {
