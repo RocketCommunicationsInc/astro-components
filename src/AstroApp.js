@@ -17,9 +17,8 @@ export default class AstroApp extends LitElement {
         position: absolute;
         top: 0;
         left: 0;
-        height: 100vh;
-        width: 100vw;
-        display: flex;
+        height: 100%;
+        width: 100%;
       }
 
       button {
@@ -48,8 +47,10 @@ export default class AstroApp extends LitElement {
       }
 
       #tc {
-        top: 2rem;
-        right: 50vw;
+        position: relative;
+        top: 22rem;
+        left: 35rem;
+        height: 32px;
       }
 
       #bc {

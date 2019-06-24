@@ -3,24 +3,15 @@ import { LitElement, html, css } from 'lit-element';
 export class RuxPopUpMenu extends LitElement {
   static get properties() {
     return {
-      orientation: {
-        type: String,
-        value: 'top',
-      },
-      opened: {
-        type: Boolean,
-        reflect: true,
+      data: {
+        type: Array,
       },
       expanded: {
         type: Boolean,
         reflect: true,
       },
-      target: {
+      _trigger: {
         type: Object,
-      },
-
-      data: {
-        type: Array,
       },
     };
   }
@@ -28,38 +19,41 @@ export class RuxPopUpMenu extends LitElement {
   constructor() {
     super();
 
-    this.orientation = 'top';
-    this.opened = false;
-    this.target = {};
     this.expanded = false;
     this.data = [];
 
-    this.padding = 16;
+    this._trigger = {};
 
-    this._handleClick = this.handleClick.bind(this);
+    this._left = 0;
+    this._top = 0;
+
+    this.padding = 16;
   }
 
   connectedCallback() {
     super.connectedCallback();
+
+    this._trigger = this.parentElement.querySelector(`[aria-controls="${this.id}"]`);
   }
 
   disconnectedCallback() {
-    this.removeEventListener('click', this._handleClick);
     super.disconnectedCallback();
   }
 
-  handleClick(e) {
-    console.log('handling click', e);
+  static set left(val) {
+    this._left = val;
+  }
 
-    this.dispatchEvent(
-        new CustomEvent('pop-up-menu-clicked', {
-          detail: {
-            data: this,
-          },
-          bubbles: true,
-          composed: true,
-        })
-    );
+  static get left() {
+    return this._left;
+  }
+
+  static set top(val) {
+    this._top = val;
+  }
+
+  static get top() {
+    return this._top;
   }
 
   _close() {
@@ -67,111 +61,56 @@ export class RuxPopUpMenu extends LitElement {
     // window.removeEventListener('mousedown', e);
   }
 
-  _listenForExternalEvents() {
-    const _listener = (e) => {
-      const trigger = e.path.find((item) => {
-        // console.log('type', typeof item);
-        // console.log(item.attributes);
-        // console.log(item.getAttributeNode('aria-controls'));
-
-        if (item.attributes && item.hasAttribute('aria-controls')) {
-          return item.getAttribute('aria-controls');
-        }
-        // item.getAttribute('aria-controlls') === this.id;
-      });
-
-      if (trigger && this.expanded) {
-        this.expanded = true;
-      } else {
-        this.expanded = true;
-      }
-
-      /* if (this.expanded) {
-        console.log('esternal', e.path);
-        window.removeEventListener('mousedown', _listener, true);
-        this.expanded = false;
-      } */
-    };
-    window.addEventListener('mousedown', _listener);
-
-    /* const _listener = () => {
-      if (this.expanded) {
-        this.expanded = false;
-        window.removeEventListener('mousedown', _listener, true);
-      }
-    };
-
-    window.addEventListener('mousedown', _listener, true); */
-    /*  // Handle clicks external to the tooltip
-    const externalClickListener = (event) => {
-      // traverse the dompath for the clicked event and see if
-      // there’s a tooltip id in its path. Probably fragile for
-      // full component use as there’s the possibility of another
-      // tooltip id element
-      const isSelf = event.composedPath().findIndex((path) => {
-        return path === this;
-      });
-
-      // const isTrigger = event.composedPath().findIndex((path) => {
-      //   console.log();
-      // });
-
-      if (!isSelf && isTrigger <= 0) {
-        // console.log('close it');
-        removeClickListener();
-
-        this._toggleCase = isTrigger >= 0 ? true : false;
-        this.data = {};
-      }
-    };
-
-    // const parent = this.data.path[0];
-    const removeClickListener = () => {
-      // parent.removeEventListener('scroll', externalClickListener);
-      // this may be better with a throttled click event
-      document.removeEventListener('mouseup', externalClickListener);
-      window.removeEventListener('resize', this._setPosition);
-    };
-
-    // remove tooltip on scroll for now. Maybe enable
-    // an attach on scroll in the future
-    // parent.addEventListener('scroll', externalClickListener);
-    document.addEventListener('mouseup', externalClickListener);
-    window.addEventListener('resize', this._setPosition); */
-  }
-
-  updated() {
-    if (this.expanded) {
-      this._listenForExternalEvents();
-    }
-
-    this.addEventListener('click', this._handleClick);
-
+  _setMenuPosition() {
     const menuBounds = this.getBoundingClientRect();
-    const targetBounds = this.parentElement.querySelector(`[aria-controls="${this.id}"]`).getBoundingClientRect();
+    const triggerBounds = this._trigger.getBoundingClientRect();
 
-    const left =
-      menuBounds.width + targetBounds.right > window.innerWidth
-        ? targetBounds.right - menuBounds.width
-        : targetBounds.left - this.padding;
+    const oldLeft = this.left;
+    const oldTop = this.top;
 
-    let top = targetBounds.bottom + this.padding;
+    this.left =
+      menuBounds.width + triggerBounds.left - this.padding > window.innerWidth
+        ? triggerBounds.right - menuBounds.width
+        : triggerBounds.left - this.padding;
 
-    if (menuBounds.height + targetBounds.bottom > window.innerHeight) {
-      top = targetBounds.top - menuBounds.height - this.padding * 1.5;
+    this.top = triggerBounds.bottom + this.padding;
+
+    if (menuBounds.height + triggerBounds.bottom + this.padding > window.innerHeight) {
+      this.top = triggerBounds.top - menuBounds.height - this.padding * 1.5;
       this.classList.add('rux-pop-up--bottom');
     }
 
-    const caretLeft = targetBounds.left - left;
-    this.style.setProperty('--caretLeft', `${caretLeft}px`);
+    const xdif = Math.abs(oldLeft - this.left);
+    const ydif = Math.abs(oldTop - this.top);
+    console.log(`${ydif} = ${oldTop} - ${this.top}`);
 
-    this.style.left = `${left}px`;
-    this.style.top = `${top}px`;
+    console.log(ydif);
+
+    if (xdif > 50 || ydif > 50) {
+      this.classList.add('transition');
+      this.addEventListener('transitionend', () => {
+        this.classList.remove('transition');
+        this.removeEventListener('transitionend');
+      });
+    }
+
+    this.style.left = `${this.left}px`;
+    this.style.top = `${this.top}px`;
   }
 
-  _closeMenu() {
-    this.opened = false;
-    this.target = {};
+  _setCaretPosition() {
+    const caretLeft = this._trigger.getBoundingClientRect().left - this.left;
+    this.style.setProperty('--caretLeft', `${caretLeft}px`);
+  }
+
+  updated() {
+    this._setMenuPosition();
+    this._setCaretPosition();
+
+    window.addEventListener('resize', () => {
+      this._setMenuPosition();
+      this._setCaretPosition();
+    });
   }
 
   render() {
@@ -201,6 +140,7 @@ export class RuxPopUpMenu extends LitElement {
       :host {
         --caretLeft: 2px;
         --caretSize: 1.875rem;
+        --transitionSpeed: 0.1667s;
 
         display: block;
 
@@ -225,6 +165,11 @@ export class RuxPopUpMenu extends LitElement {
         -ms-user-select: none;
         user-select: none;
       }
+
+      :host(.transition) {
+        transition: bottom var(--transitionSpeed) ease-in-out, left var(--transitionSpeed) ease-in-out;
+      }
+
       :host([expanded]) {
         display: block;
       }
@@ -243,6 +188,14 @@ export class RuxPopUpMenu extends LitElement {
         margin: -12px 0 0 0;
         left: var(--caretLeft, 2px);
         transform: rotate(45deg);
+      }
+
+      :host(.transition)::before {
+        transition: left var(--transitionSpeed) ease-in-out;
+      }
+
+      :host(.transition)::after {
+        transition: bottom var(--transitionSpeed) ease-in-out;
       }
 
       :host ul {
