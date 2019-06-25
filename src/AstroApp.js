@@ -100,7 +100,7 @@ export default class AstroApp extends LitElement {
       },
     ];
 
-    document.addEventListener('mousedown', (e) => {
+    /* document.addEventListener('mousedown', (e) => {
       if (e.path[0].classList.contains('button')) {
         const _menu = e.path[0].getAttribute('aria-controls');
 
@@ -112,7 +112,7 @@ export default class AstroApp extends LitElement {
           this.data = [...this._data1];
         }
       }
-    });
+    }); */
   }
 
   render() {

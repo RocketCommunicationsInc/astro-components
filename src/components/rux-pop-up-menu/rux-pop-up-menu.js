@@ -33,7 +33,22 @@ export class RuxPopUpMenu extends LitElement {
   connectedCallback() {
     super.connectedCallback();
 
+    const _outsideClick = () => {
+      this.expanded = false;
+      window.removeEventListener('mousedown', _outsideClick);
+    };
+
+    const _click = () => {
+      this.expanded = true;
+
+      const debounce = setTimeout(() => {
+        window.addEventListener('mousedown', _outsideClick);
+        clearTimeout(debounce);
+      }, 10);
+    };
+
     this._trigger = this.parentElement.querySelector(`[aria-controls="${this.id}"]`);
+    this._trigger.addEventListener('mousedown', _click);
   }
 
   disconnectedCallback() {
@@ -65,8 +80,8 @@ export class RuxPopUpMenu extends LitElement {
     const menuBounds = this.getBoundingClientRect();
     const triggerBounds = this._trigger.getBoundingClientRect();
 
-    const oldLeft = this.left;
-    const oldTop = this.top;
+    /* const oldLeft = this.left;
+    const oldTop = this.top; */
 
     this.left =
       menuBounds.width + triggerBounds.left - this.padding > window.innerWidth
@@ -78,13 +93,13 @@ export class RuxPopUpMenu extends LitElement {
     if (menuBounds.height + triggerBounds.bottom + this.padding > window.innerHeight) {
       this.top = triggerBounds.top - menuBounds.height - this.padding * 1.5;
       this.classList.add('rux-pop-up--bottom');
+    } else {
+      this.classList.remove('rux-pop-up--bottom');
     }
 
-    const xdif = Math.abs(oldLeft - this.left);
+    /* const xdif = Math.abs(oldLeft - this.left);
     const ydif = Math.abs(oldTop - this.top);
-    console.log(`${ydif} = ${oldTop} - ${this.top}`);
 
-    console.log(ydif);
 
     if (xdif > 50 || ydif > 50) {
       this.classList.add('transition');
@@ -93,7 +108,7 @@ export class RuxPopUpMenu extends LitElement {
         this.removeEventListener('transitionend');
       });
     }
-
+ */
     this.style.left = `${this.left}px`;
     this.style.top = `${this.top}px`;
   }
@@ -119,7 +134,7 @@ export class RuxPopUpMenu extends LitElement {
       
       ${ (this.data.length) ?
         html `
-          <ul role="menu" aria-expanded="${this.expanded}">
+          <ul role="menu" aria-expanded="${this.expanded.toString()}">
             ${this.data.map((item) => html`
               <li 
                 role="menuitem" 
@@ -142,7 +157,7 @@ export class RuxPopUpMenu extends LitElement {
         --caretSize: 1.875rem;
         --transitionSpeed: 0.1667s;
 
-        display: block;
+        display: none;
 
         font-size: 0.875rem;
 
@@ -208,11 +223,6 @@ export class RuxPopUpMenu extends LitElement {
 
         z-index: 2;
       }
-
-      /* .rux-pop-up li,
-      .satcom-pop-up li {
-        border-bottom: 1px solid #f0f1f3;
-      } */
 
       :host li:last-child {
         border: none;
