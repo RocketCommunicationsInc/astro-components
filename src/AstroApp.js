@@ -99,20 +99,6 @@ export default class AstroApp extends LitElement {
         label: 'Second 2',
       },
     ];
-
-    /* document.addEventListener('mousedown', (e) => {
-      if (e.path[0].classList.contains('button')) {
-        const _menu = e.path[0].getAttribute('aria-controls');
-
-        this.shadowRoot.getElementById(_menu).setAttribute('expanded', '');
-
-        if (this.data.length > 2) {
-          this.data = [...this._data2];
-        } else {
-          this.data = [...this._data1];
-        }
-      }
-    }); */
   }
 
   render() {

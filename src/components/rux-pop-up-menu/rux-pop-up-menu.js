@@ -33,9 +33,12 @@ export class RuxPopUpMenu extends LitElement {
   connectedCallback() {
     super.connectedCallback();
 
-    const _outsideClick = () => {
-      this.expanded = false;
-      window.removeEventListener('mousedown', _outsideClick);
+    const _outsideClick = (e) => {
+      const x = e.path.find((element) => element.id && element.id === this._trigger.getAttribute('aria-controls'));
+      if (!x) {
+        this.expanded = false;
+        window.removeEventListener('mousedown', _outsideClick);
+      }
     };
 
     const _click = () => {
@@ -53,6 +56,19 @@ export class RuxPopUpMenu extends LitElement {
 
   disconnectedCallback() {
     super.disconnectedCallback();
+  }
+
+  _onClick() {
+    this.expanded = false;
+    this.dispatchEvent(
+        new CustomEvent('pop-up-menu-item-selected', {
+          detail: {
+            data: this,
+          },
+          bubbles: true,
+          composed: true,
+        })
+    );
   }
 
   static set left(val) {
@@ -79,27 +95,27 @@ export class RuxPopUpMenu extends LitElement {
   _setMenuPosition() {
     const menuBounds = this.getBoundingClientRect();
     const triggerBounds = this._trigger.getBoundingClientRect();
+    const caret = parseInt(getComputedStyle(this, ':after').height);
 
-    /* const oldLeft = this.left;
-    const oldTop = this.top; */
+    const oldLeft = this.left;
+    const oldTop = this.top;
 
     this.left =
       menuBounds.width + triggerBounds.left - this.padding > window.innerWidth
         ? triggerBounds.right - menuBounds.width
         : triggerBounds.left - this.padding;
 
-    this.top = triggerBounds.bottom + this.padding;
+    this.top = triggerBounds.bottom + this.padding / 2 + caret / 2;
 
     if (menuBounds.height + triggerBounds.bottom + this.padding > window.innerHeight) {
-      this.top = triggerBounds.top - menuBounds.height - this.padding * 1.5;
-      this.classList.add('rux-pop-up--bottom');
+      this.top = triggerBounds.top - menuBounds.height - caret;
+      this.classList.add('from-top');
     } else {
-      this.classList.remove('rux-pop-up--bottom');
+      this.classList.remove('from-top');
     }
 
-    /* const xdif = Math.abs(oldLeft - this.left);
+    const xdif = Math.abs(oldLeft - this.left);
     const ydif = Math.abs(oldTop - this.top);
-
 
     if (xdif > 50 || ydif > 50) {
       this.classList.add('transition');
@@ -108,7 +124,7 @@ export class RuxPopUpMenu extends LitElement {
         this.removeEventListener('transitionend');
       });
     }
- */
+
     this.style.left = `${this.left}px`;
     this.style.top = `${this.top}px`;
   }
@@ -131,23 +147,16 @@ export class RuxPopUpMenu extends LitElement {
   render() {
     /* prettier-ignore */
     return html`
-      
-      ${ (this.data.length) ?
-        html `
-          <ul role="menu" aria-expanded="${this.expanded.toString()}">
-            ${this.data.map((item) => html`
-              <li 
-                role="menuitem" 
-                tabindex="-1" 
-                class="${item.role}">${item.label}
-                
-              </li>`)}
-          </ul>
-        ` :
-      html `<slot></slot>`
-}
-      
-    `;
+      <ul role="menu" aria-expanded="${this.expanded.toString()}">
+        ${this.data.map((item) => {
+    return (item.role === 'seperator')
+          ? html `<li class="seperator"></li>`
+          : html `<li 
+                    @click="${this._onClick}"
+                    role="menuitem" 
+                    tabindex="-1" >${item.label}</li>`;
+  })}
+      </ul>`;
   }
 
   static get styles() {
@@ -157,7 +166,9 @@ export class RuxPopUpMenu extends LitElement {
         --caretSize: 1.875rem;
         --transitionSpeed: 0.1667s;
 
-        display: none;
+        display: block;
+        /* visibility: hidden; */
+        opacity: 1;
 
         font-size: 0.875rem;
 
@@ -170,15 +181,20 @@ export class RuxPopUpMenu extends LitElement {
 
         color: var(--colorBlack, rgb(0, 0, 0));
 
-        background-color: var(--popupMenuBackgroundColor, rgb(255, 255, 255));
+        background-color: var(--popupMenuBorderColor, rgb(77, 172, 255));
         border: 1px solid var(--popupMenuBorderColor, rgb(77, 172, 255));
-        border-top-width: 3px;
+        border-top-width: 4px;
         z-index: 10000;
 
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+
+        border-radius: 3px;
+
+        transition: opacity 0.1667s ease-out;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
       }
 
       :host(.transition) {
@@ -186,30 +202,33 @@ export class RuxPopUpMenu extends LitElement {
       }
 
       :host([expanded]) {
-        display: block;
+        /* display: block; */
+        /* visibility: visible; */
+        opacity: 1;
+        transition: opacity 0.0667s ease-in;
       }
 
-      :host::before {
+      :host::after {
         content: '';
         display: block;
         position: absolute;
 
-        width: var(--carentSize, 1.1875rem);
-        height: var(--carentSize, 1.1875rem);
+        /* width: 22px;
+        height: 22px; */
 
-        background-color: var(--popupCaretBackgroundColor, rgb(77, 172, 255));
+        /* background-color: var(--popupCaretBackgroundColor, rgb(77, 172, 255)); */
         z-index: 1;
 
-        margin: -12px 0 0 0;
-        left: var(--caretLeft, 2px);
-        transform: rotate(45deg);
-      }
+        border: 8px solid transparent;
+        border-bottom: 11px solid var(--popupCaretBackgroundColor, rgb(77, 172, 255));
 
-      :host(.transition)::before {
-        transition: left var(--transitionSpeed) ease-in-out;
+        left: var(--caretLeft, 2px);
+        top: -23px;
+        /* transform: rotate(45deg); */
       }
 
       :host(.transition)::after {
+        transition: left var(--transitionSpeed) ease-in-out;
         transition: bottom var(--transitionSpeed) ease-in-out;
       }
 
@@ -222,15 +241,22 @@ export class RuxPopUpMenu extends LitElement {
         background-color: var(--popupMenuBackgroundColor, rgb(255, 255, 255));
 
         z-index: 2;
+        border-radius: 2px;
       }
 
-      :host li:last-child {
+      :host li:last-of-type {
         border: none;
+        border-radius: 0 0 2px 2px;
       }
 
-      :host li {
+      :host li:first-of-type {
+        border: none;
+        border-radius: 2px 2px 0 0;
+      }
+
+      :host li:not(.seperator) {
         display: block;
-        padding: 0.5em;
+        padding: 0.15rem 0.75rem;
         color: var(--popupMenuTextColor, rgb(0, 0, 0));
         text-decoration: none;
 
@@ -243,100 +269,27 @@ export class RuxPopUpMenu extends LitElement {
         overflow: hidden;
       }
 
-      :host li:hover {
+      :host li:not(.seperator):hover {
         /* font-weight: 700; */
         background-color: var(--popupMenuItemHoverBackgroundColor, rgb(211, 234, 255));
       }
 
-      :host(.rux-pop-up--bottom) {
+      :host(.from-top) {
         border-top-width: 1px;
-        border-bottom-width: 3px;
+        border-bottom-width: 4px;
       }
 
-      :host(.rux-pop-up--bottom)::before {
-        bottom: -12px;
+      :host(.from-top)::after {
+        top: unset;
+        bottom: -23px;
+        transform: rotate(180deg);
       }
-      /* :host,
-      .rux-pop-up--top {
-        border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
-      } */
-
-      /*  :host::before,
-      .rux-pop-up--top::before {
-        content: '';
-        display: block;
-        position: absolute;
-
-        width: 1.1875rem;
-        height: 1.1875rem;
-
-        background-color: var(--colorSecondary, rgb(77, 172, 255));
-        z-index: 1;
-
-        margin: -13px 0 0 16px;
-        transform: rotate(45deg);
-      }
-
-      .rux-pop-up--bottom {
-        border-bottom: 3px solid var(--colorSecondary, rgb(77, 172, 255));
-      }
-
-      .rux-pop-up--bottom::after {
-        content: '';
-        display: block;
-        position: absolute;
-        border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-        border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-        width: 1.1875rem;
-        height: 1.1875rem;
-
-        background-color: var(--colorSecondary, rgb(77, 172, 255));
-
-        margin: -6px 0 0 16px;
-        transform: rotate(45deg);
-      }
-
-      .rux-pop-up--left {
-        border-left: 3px solid var(--colorSecondary, rgb(77, 172, 255));
-      }
-
-      .rux-pop-up--left::before {
-        content: '';
-        display: block;
-        position: absolute;
-        border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-        border-left: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-        width: 1.1875rem;
-        height: 1.1875rem;
-
-        background-color: var(--colorSecondary, rgb(77, 172, 255));
-
-        margin: 16px 0 0 -13px;
-        transform: rotate(45deg);
-      }
-
-      .rux-pop-up--right {
-        border-right: 3px solid var(--colorSecondary, rgb(77, 172, 255));
-      }
-
-      .rux-pop-up--right::before {
-        content: '';
-        display: block;
-        position: absolute;
-        border-top: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-        border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-        width: 1.1875rem;
-        height: 1.1875rem;
-
-        background-color: var(--colorSecondary, rgb(77, 172, 255));
-
-        right: 0;
-        margin: 16px -13px 0 0;
-        transform: rotate(45deg);
-      } */
 
       .seperator {
+        height: 6px;
         border-top: 1px dashed var(--popupMenuItemSeperatorBorderColor, rgb(123, 128, 137)) !important;
+
+        margin: 6px 0.5rem 0 0.5rem;
       }
     `;
   }
