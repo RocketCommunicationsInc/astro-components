@@ -34,20 +34,25 @@ export class RuxPopUpMenu extends LitElement {
     super.connectedCallback();
 
     const _outsideClick = (e) => {
+      console.log('outside click');
       const x = e.path.find((element) => element.id && element.id === this._trigger.getAttribute('aria-controls'));
       if (!x) {
         this.expanded = false;
         window.removeEventListener('mousedown', _outsideClick);
       }
+      this._trigger.addEventListener('mousedown', _click);
     };
 
     const _click = () => {
+      console.log('click');
       this.expanded = true;
 
       const debounce = setTimeout(() => {
         window.addEventListener('mousedown', _outsideClick);
         clearTimeout(debounce);
       }, 10);
+
+      this._trigger.removeEventListener('mousedown', _click);
     };
 
     this._trigger = this.parentElement.querySelector(`[aria-controls="${this.id}"]`);
@@ -150,13 +155,13 @@ export class RuxPopUpMenu extends LitElement {
       <ul role="menu" aria-expanded="${this.expanded.toString()}">
         ${this.data.map((item) => {
     return (item.role === 'seperator')
-          ? html `<li class="seperator"></li>`
-          : html `<li 
+            ? html `<li role="separator" class="seperator"></li>`
+            : html `<li 
                     @click="${this._onClick}"
                     role="menuitem" 
                     tabindex="-1" >${item.label}</li>`;
   })}
-      </ul>`;
+        </ul>`;
   }
 
   static get styles() {
@@ -168,7 +173,7 @@ export class RuxPopUpMenu extends LitElement {
 
         display: block;
         /* visibility: hidden; */
-        opacity: 1;
+        opacity: 0;
 
         font-size: 0.875rem;
 
@@ -212,11 +217,6 @@ export class RuxPopUpMenu extends LitElement {
         content: '';
         display: block;
         position: absolute;
-
-        /* width: 22px;
-        height: 22px; */
-
-        /* background-color: var(--popupCaretBackgroundColor, rgb(77, 172, 255)); */
         z-index: 1;
 
         border: 8px solid transparent;
@@ -224,7 +224,6 @@ export class RuxPopUpMenu extends LitElement {
 
         left: var(--caretLeft, 2px);
         top: -23px;
-        /* transform: rotate(45deg); */
       }
 
       :host(.transition)::after {
@@ -270,7 +269,6 @@ export class RuxPopUpMenu extends LitElement {
       }
 
       :host li:not(.seperator):hover {
-        /* font-weight: 700; */
         background-color: var(--popupMenuItemHoverBackgroundColor, rgb(211, 234, 255));
       }
 
