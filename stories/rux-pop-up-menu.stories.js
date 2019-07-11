@@ -19,6 +19,9 @@ storiesOf('Components|Pop Up Menu', module)
             {
               id: '1',
               label: 'Item 1',
+              value: '',
+              selected: false,
+              shortcut: 'Shift 1',
             },
             {
               id: '2',
@@ -83,6 +86,11 @@ storiesOf('Components|Pop Up Menu', module)
             bottom: 2rem;
             right: 50vw;
           }
+
+          #static {
+            top: 20rem;
+            left: 50rem;
+          }
         </style>
         <div class="demo">
           <div id="pop-demo">
@@ -92,6 +100,7 @@ storiesOf('Components|Pop Up Menu', module)
             <button aria-controls="popup-menu-4" aria-haspopup="true" class="button" id="br">br</button>
             <button aria-controls="popup-menu-5" aria-haspopup="true" class="button" id="tc">tv</button>
             <button aria-controls="popup-menu-6" aria-haspopup="true" class="button" id="bc">bc</button>
+            <button aria-controls="popup-menu-7" aria-haspopup="true" class="button" id="static">bc</button>
           </div>
 
           <rux-pop-up-menu id="popup-menu-1" .data="${data}"></rux-pop-up-menu>
@@ -100,6 +109,7 @@ storiesOf('Components|Pop Up Menu', module)
           <rux-pop-up-menu id="popup-menu-4" .data="${data}"></rux-pop-up-menu>
           <rux-pop-up-menu id="popup-menu-5" .data="${data}"></rux-pop-up-menu>
           <rux-pop-up-menu id="popup-menu-6" .data="${data}"></rux-pop-up-menu>
+          <rux-pop-up-menu id="popup-menu-7" .data="${data}"></rux-pop-up-menu>
         </div>
       `;
         },
