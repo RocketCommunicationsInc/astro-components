@@ -28,53 +28,60 @@ export class RuxPopUpMenu extends LitElement {
     this._top = 0;
 
     this.padding = 16;
+
+    this._menuClick = () => {
+      // console.log('menu click');
+
+      this.dispatchEvent(
+          new CustomEvent('pop-up-menu-item-selected', {
+            detail: {
+              data: this,
+            },
+            bubbles: true,
+            composed: true,
+          })
+      );
+      // this.expanded = false;
+      this._close();
+    };
+
+    // any click that happens outside of the trigger element
+    this._outsideClick = (e) => {
+      const x = e.path.find((element) => element.id && element.id === this._trigger.getAttribute('aria-controls'));
+      // console.log('outside click');
+      // console.log(x);
+
+      x ? this._trigger.addEventListener('mousedown', this._click) : this._close();
+      /* if (!x) {
+        // this.expanded = false;
+        this._close();
+      }
+      this._trigger.addEventListener('mousedown', this._click); */
+    };
+
+    this._click = () => {
+      // this.expanded = true;
+      this._open();
+    };
+
+    this._trigger = this.parentElement.querySelector(`[aria-controls="${this.id}"]`);
+
+    this._trigger.addEventListener('mousedown', this._click);
   }
 
   connectedCallback() {
     super.connectedCallback();
-
-    const _outsideClick = (e) => {
-      console.log('outside click');
-      const x = e.path.find((element) => element.id && element.id === this._trigger.getAttribute('aria-controls'));
-      if (!x) {
-        this.expanded = false;
-        window.removeEventListener('mousedown', _outsideClick);
-      }
-      this._trigger.addEventListener('mousedown', _click);
-    };
-
-    const _click = () => {
-      console.log('click');
-      this.expanded = true;
-
-      const debounce = setTimeout(() => {
-        window.addEventListener('mousedown', _outsideClick);
-        clearTimeout(debounce);
-      }, 10);
-
-      this._trigger.removeEventListener('mousedown', _click);
-    };
-
-    this._trigger = this.parentElement.querySelector(`[aria-controls="${this.id}"]`);
-    this._trigger.addEventListener('mousedown', _click);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
   }
 
-  _onClick() {
-    this.expanded = false;
-    this.dispatchEvent(
-        new CustomEvent('pop-up-menu-item-selected', {
-          detail: {
-            data: this,
-          },
-          bubbles: true,
-          composed: true,
-        })
-    );
-  }
+  handleMenuClick() {}
+
+  handleTriggerClick() {}
+
+  handleOutsideClick() {}
 
   static set left(val) {
     this._left = val;
@@ -92,8 +99,43 @@ export class RuxPopUpMenu extends LitElement {
     return this._top;
   }
 
+  _open() {
+    // console.log('open menu');
+    this.expanded = true;
+    this._setMenuPosition();
+
+    const debounce = setTimeout(() => {
+      window.addEventListener('mousedown', this._outsideClick);
+      clearTimeout(debounce);
+    }, 10);
+
+    this._trigger.removeEventListener('mousedown', this._click);
+
+    this._menuItems = this.shadowRoot.querySelectorAll('[role="menuitem"]');
+    // console.log(this._menuItems);
+    this._menuItems.forEach((item) => {
+      item.addEventListener('click', this._menuClick);
+    });
+
+    window.addEventListener('resize', () => {
+      this._setMenuPosition();
+    });
+  }
+
   _close() {
+    // console.log('close menu');
     this.expanded = false;
+    // this.style.left = 0;
+    // this.style.top = 0;
+    // this.style.zIndex = -1000;
+
+    window.removeEventListener('mousedown', this._outsideClick);
+
+    this._menuItems.forEach((item) => {
+      item.removeEventListener('click', this._menuClick);
+    });
+
+    this._trigger.addEventListener('mousedown', this._click);
     // window.removeEventListener('mousedown', e);
   }
 
@@ -132,6 +174,7 @@ export class RuxPopUpMenu extends LitElement {
 
     this.style.left = `${this.left}px`;
     this.style.top = `${this.top}px`;
+    this._setCaretPosition();
   }
 
   _setCaretPosition() {
@@ -139,27 +182,14 @@ export class RuxPopUpMenu extends LitElement {
     this.style.setProperty('--caretLeft', `${caretLeft}px`);
   }
 
-  updated() {
-    this._setMenuPosition();
-    this._setCaretPosition();
-
-    window.addEventListener('resize', () => {
-      this._setMenuPosition();
-      this._setCaretPosition();
-    });
-  }
-
   render() {
     /* prettier-ignore */
     return html`
       <ul role="menu" aria-expanded="${this.expanded.toString()}">
         ${this.data.map((item) => {
-    return (item.role === 'seperator')
-            ? html `<li role="separator" class="seperator"></li>`
-            : html `<li 
-                    @click="${this._onClick}"
-                    role="menuitem" 
-                    tabindex="-1" >${item.label}</li>`;
+    return html `<li 
+                  role="${item.role || 'menuitem'}" 
+                  tabindex="-1" >${item.label}</li>`;
   })}
         </ul>`;
   }
@@ -171,9 +201,7 @@ export class RuxPopUpMenu extends LitElement {
         --caretSize: 1.875rem;
         --transitionSpeed: 0.1667s;
 
-        display: block;
-        /* visibility: hidden; */
-        opacity: 0;
+        opacity: 0.5;
 
         font-size: 0.875rem;
 
@@ -197,6 +225,9 @@ export class RuxPopUpMenu extends LitElement {
         user-select: none;
 
         border-radius: 3px;
+
+        top: -9999rem;
+        left: -9999rem;
 
         transition: opacity 0.1667s ease-out;
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
@@ -253,7 +284,7 @@ export class RuxPopUpMenu extends LitElement {
         border-radius: 2px 2px 0 0;
       }
 
-      :host li:not(.seperator) {
+      :host li:not([role='seperator']) {
         display: block;
         padding: 0.15rem 0.75rem;
         color: var(--popupMenuTextColor, rgb(0, 0, 0));
@@ -268,7 +299,7 @@ export class RuxPopUpMenu extends LitElement {
         overflow: hidden;
       }
 
-      :host li:not(.seperator):hover {
+      :host li:not([role='seperator']):hover {
         background-color: var(--popupMenuItemHoverBackgroundColor, rgb(211, 234, 255));
       }
 
@@ -283,7 +314,7 @@ export class RuxPopUpMenu extends LitElement {
         transform: rotate(180deg);
       }
 
-      .seperator {
+      [role='seperator'] {
         height: 6px;
         border-top: 1px dashed var(--popupMenuItemSeperatorBorderColor, rgb(123, 128, 137)) !important;
 
