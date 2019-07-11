@@ -1,10 +1,14 @@
 import { LitElement, html, css } from 'lit-element';
+import ruxData from '../rux-utils/data.js';
 
 export class RuxPopUpMenu extends LitElement {
   static get properties() {
     return {
       data: {
         type: Array,
+      },
+      selected: {
+        type: Object,
       },
       expanded: {
         type: Boolean,
@@ -19,10 +23,13 @@ export class RuxPopUpMenu extends LitElement {
   constructor() {
     super();
 
-    this.expanded = false;
     this.data = [];
-
+    this.selected = {};
+    this.expanded = false;
     this._trigger = this.parentElement.querySelector(`[aria-controls="${this.id}"]`);
+
+    this.left = 0;
+    this.top = 0;
 
     this._handleClick = this.handleClick.bind(this);
     this._handleOutsideClick = this.handleOutsideClick.bind(this);
@@ -40,6 +47,23 @@ export class RuxPopUpMenu extends LitElement {
     super.disconnectedCallback();
   }
 
+  findInObject(arr, key) {
+    console.log('finding');
+    arr.forEach((a) => {
+      if (a.key === key) {
+        a.selected = true;
+        this.found = a;
+      } else {
+        delete a.selected;
+        if (a.children) {
+          this.findInObject(a.children, key);
+        }
+      }
+    });
+
+    return this.found;
+  }
+
   handleClick() {
     this._open();
   }
@@ -50,10 +74,13 @@ export class RuxPopUpMenu extends LitElement {
   }
 
   handleMenuItemClick(e) {
+    this.selected = this.findInObject(this.data, e.target.dataset.key);
+
     this.dispatchEvent(
         new CustomEvent('pop-up-menu-item-selected', {
           detail: {
-            data: e.target,
+            data: this.data,
+            selected: this.selected,
           },
           bubbles: true,
           composed: true,
@@ -93,6 +120,7 @@ export class RuxPopUpMenu extends LitElement {
     // this.style.zIndex = -1000;
 
     window.removeEventListener('mousedown', this._handleOutsideClick);
+    window.removeEventListener('resize', this);
 
     this._menuItems.forEach((item) => {
       item.removeEventListener('click', this._handleMenuItemClick);
@@ -107,9 +135,6 @@ export class RuxPopUpMenu extends LitElement {
     const triggerBounds = this._trigger.getBoundingClientRect();
     const caret = parseInt(getComputedStyle(this, ':after').height);
 
-    /* const oldLeft = this.left;
-    const oldTop = this.top; */
-
     const padding = 16;
 
     this.left =
@@ -119,6 +144,8 @@ export class RuxPopUpMenu extends LitElement {
 
     this.top = triggerBounds.bottom + padding / 2 + caret / 2;
 
+    const caretLeft = triggerBounds.left - this.left;
+
     if (menuBounds.height + triggerBounds.bottom + padding > window.innerHeight) {
       this.top = triggerBounds.top - menuBounds.height - caret;
       this.classList.add('from-top');
@@ -126,24 +153,9 @@ export class RuxPopUpMenu extends LitElement {
       this.classList.remove('from-top');
     }
 
-    /*  const xdif = Math.abs(oldLeft - this.left);
-    const ydif = Math.abs(oldTop - this.top);
-
-    if (xdif > 50 || ydif > 50) {
-      this.classList.add('transition');
-      this.addEventListener('transitionend', () => {
-        this.classList.remove('transition');
-        this.removeEventListener('transitionend');
-      });
-    } */
-
     this.style.left = `${this.left}px`;
     this.style.top = `${this.top}px`;
-    this._setCaretPosition();
-  }
 
-  _setCaretPosition() {
-    const caretLeft = this._trigger.getBoundingClientRect().left - this.left;
     this.style.setProperty('--caretLeft', `${caretLeft}px`);
   }
 
@@ -152,7 +164,9 @@ export class RuxPopUpMenu extends LitElement {
     return html`
       <ul role="menu" aria-expanded="${this.expanded.toString()}">
         ${this.data.map((item) => {
+    item.key = item.id || ruxData.id();
     return html `<li 
+                  data-key="${item.key}"
                   role="${item.role || 'menuitem'}" 
                   tabindex="-1" >${item.label}</li>`;
   })}
@@ -199,13 +213,7 @@ export class RuxPopUpMenu extends LitElement {
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
       }
 
-      :host(.transition) {
-        transition: bottom var(--transitionSpeed) ease-in-out, left var(--transitionSpeed) ease-in-out;
-      }
-
       :host([expanded]) {
-        /* display: block; */
-        /* visibility: visible; */
         pointer-events: auto;
         opacity: 1;
         transition: opacity 0.0667s ease-in;
@@ -221,12 +229,7 @@ export class RuxPopUpMenu extends LitElement {
         border-bottom: 11px solid var(--popupCaretBackgroundColor, rgb(77, 172, 255));
 
         left: var(--caretLeft, 2px);
-        top: -23px;
-      }
-
-      :host(.transition)::after {
-        transition: left var(--transitionSpeed) ease-in-out;
-        transition: bottom var(--transitionSpeed) ease-in-out;
+        top: -1.4375rem;
       }
 
       :host ul {
@@ -282,9 +285,9 @@ export class RuxPopUpMenu extends LitElement {
       }
 
       [role='seperator'] {
+        pointer-events: none;
         height: 6px;
         border-top: 1px dashed var(--popupMenuItemSeperatorBorderColor, rgb(123, 128, 137)) !important;
-
         margin: 6px 0.5rem 0 0.5rem;
       }
     `;

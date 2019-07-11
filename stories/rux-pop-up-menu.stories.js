@@ -12,7 +12,8 @@ storiesOf('Components|Pop Up Menu', module)
         'Pop Up Menu',
         () => {
           window.addEventListener('pop-up-menu-item-selected', (e) => {
-            console.log('Pop Up Menu Item Selected', e.detail.data);
+            console.log('Pop Up Menu Item Selected', e.detail.selected);
+            console.log('Pop Up Menu Item Data', e.detail.data);
           });
 
           const data = [
@@ -20,8 +21,6 @@ storiesOf('Components|Pop Up Menu', module)
               id: '1',
               label: 'Item 1',
               value: '',
-              selected: false,
-              shortcut: 'Shift 1',
             },
             {
               id: '2',
@@ -33,6 +32,46 @@ storiesOf('Components|Pop Up Menu', module)
             {
               id: '4',
               label: 'Item 3',
+            },
+          ];
+
+          const data2 = [
+            {
+              id: 'b1',
+              label: 'Item 1',
+              value: '',
+            },
+            {
+              id: 'b2',
+              label: 'Item 2',
+            },
+            {
+              role: 'seperator',
+            },
+            {
+              id: 'b4',
+              label: 'Item 3',
+            },
+            {
+              role: 'seperator',
+            },
+            {
+              id: 'b5',
+              label: 'Item 5 with a Really Long Title …',
+              value: '',
+            },
+            {
+              id: 'b6',
+              label: 'Item 6',
+            },
+            {
+              id: 'b7',
+              label: 'Item 7',
+              value: '',
+            },
+            {
+              id: 'b8',
+              label: 'Item 8',
             },
           ];
 
@@ -103,7 +142,7 @@ storiesOf('Components|Pop Up Menu', module)
             <button aria-controls="popup-menu-7" aria-haspopup="true" class="button" id="static">bc</button>
           </div>
 
-          <rux-pop-up-menu id="popup-menu-1" .data="${data}"></rux-pop-up-menu>
+          <rux-pop-up-menu id="popup-menu-1" .data="${data2}"></rux-pop-up-menu>
           <rux-pop-up-menu id="popup-menu-2" .data="${data}"></rux-pop-up-menu>
           <rux-pop-up-menu id="popup-menu-3" .data="${data}"></rux-pop-up-menu>
           <rux-pop-up-menu id="popup-menu-4" .data="${data}"></rux-pop-up-menu>
