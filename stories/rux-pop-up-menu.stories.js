@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { storiesOf } from '@storybook/polymer';
-import { html, render } from 'lit-html';
-import { boolean, select, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf, html } from '@open-wc/demoing-storybook';
+import { withKnobs, boolean, object } from '@storybook/addon-knobs';
+import { withConsole } from '@storybook/addon-console';
 import { RuxPopUpMenu } from '../src/components/rux-pop-up-menu/rux-pop-up-menu.js';
 import Readme from '../src/components/rux-pop-up-menu/README.md';
 /* eslint-enable no-unused-vars */
@@ -158,10 +158,6 @@ storiesOf('Components|Pop Up Menu', module)
       `;
         },
         {
-          exports: {
-            render,
-            html,
-          },
           notes: {
             markdown: Readme,
           },
