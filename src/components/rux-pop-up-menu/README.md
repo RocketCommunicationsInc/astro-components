@@ -1,31 +1,113 @@
-#Pop Up Menu
-The RUX Pop Up Menu component is … RUX Pop Up Menu is based on the industry standard [WebComponents v1 spec](https://html.spec.whatwg.org/multipage/custom-elements.html) and implemented with [Polymer Project 3](https://www.polymer-project.org) for backwards compatibility and document binding.
+# Pop Up Menu
 
-RUX Pop Up Menu is in **BETA** and supplied as-is and …
+A Pop-Up Menu provides users with a quick way to access common actions for a highlighted item.
 
-For stylesheet usage outside of a WebComponent environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
+## Guidelines
 
-##Guidelines
+- [Astro UXDS: Pop Up Menu](http://www.astrouxds.com/library/pop-up-menu)
 
-* [Astro UXDS: Pop Up Menu](http://www.astrouxds.com/library/pop-up-menu)
+### 1. Installation
 
-##Installation
-`npm i -S @astrouxds/rux-pop-up-menu`
+#### ** Install the Astro UXDS Pop Up Menu package via Command Line** (Preferred Method)
 
-###Dependancies
+```sh
+npm i --save @astrouxds/rux-pop-up-menu
+```
 
-* [Polymer 3](https://www.polymer-project.com)
-* [Astro 3 Core CSS](https://bitbucket.org/rocketcom/astro-styles/src/master/)
+You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-##Usage
-###Import RUX Pop Up Menu
+#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+
+Via CLI:
+
+```sh
+git clone https://bitbucket.org/rocketcom/astro-components.git
+```
+
+Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+
+### 2. Import the Astro Pop Up Menu Web Component
+
+This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxPopUpMenu } from "@astro-components/rux-pop-up-menu/rux-pop-up-menu.js";
+import { RuxPopUpMenu } from '@astro-components/rux-pop-up-menu/rux-pop-up-menu.js';
 ```
 
-###Basic HTML Usage
+### 3. Render the Astro Pop Up Menu Web Component
+
+Pass properties as attributes of the Astro Pop Up Menu custom element:
 
 ```xml
-<rux-pop-up-menu ></rux-pop-up-menu>
+<rux-pop-up-menu
+ id="popup-menu-1"
+ .data="${data}">
+</rux-pop-up-menu>
 ```
+
+Create a triggering element to initiate the pop up menu. **Note**: The trigger element _must_ have an `aria-controls` attribute with a value equal to the `id` of the `rux-pop-up-menu`.
+
+```xml
+<button
+ aria-controls="popup-menu-1"
+ aria-haspopup="true"
+>Open Pop Up Menu
+</button>
+```
+
+### Properties
+
+| Property | Type   | Default | Required | Description                                                                |
+| -------- | ------ | ------- | -------- | -------------------------------------------------------------------------- |
+| `id`     | String | `-`     | Yes      | A unique identifier to associate the pop up menu with a triggering element |
+| `data`   | Array  | `-`     | Yes      | An array of objects that defines the pop up menu’s labels                  |
+
+### Sample `data` Array
+
+A sample of a `data` Array.
+
+```json
+[
+  {
+    "id": "item1",
+    "label": "Item 1"
+  },
+  {
+    "id": "item2",
+    "label": "Item 2"
+  },
+  {
+    "role": "seperator"
+  },
+  {
+    "id": "item3",
+    "label": "Item 3"
+  }
+]
+```
+
+### `data` Array Item Properties
+
+| Property | Type   | Default | Required | Description                                                                                           |
+| -------- | ------ | ------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `id`     | String | `-`     | Yes      | A unique identifier. If not supplied the component will auto-generate and `id`                        |
+| `label`  | String | `-`     | Yes      | The menu item’s label                                                                                 |
+| `role`   | String | `-`     | No       | Add `"role": "seperator"` property to an empty object to create a cosmetic seperator line in the menu |
+
+### Component Events
+
+Pop Up Menu emits a `pop-up-menu-item-selected` event whenever a user clicks on an menu item. Events contain a composed path to the element that triggered the event and an object in the the `detail.selected` event property.
+
+#### Sample Tree event
+
+```javascript
+window.addEventListener('pop-up-menu-item-selected', (e) => {
+  console.log('Pop Up Menu Item Selected', e.detail.selected);
+});
+```
+
+#### Event Properties
+
+| Property   | Type   | Description                    |
+| ---------- | ------ | ------------------------------ |
+| `selected` | Object | The currently selected element |
