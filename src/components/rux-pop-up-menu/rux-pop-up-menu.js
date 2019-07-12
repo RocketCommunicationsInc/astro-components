@@ -74,7 +74,9 @@ export class RuxPopUpMenu extends LitElement {
    **
    */
   handleOutsideClick(e) {
-    const target = e.path.find((element) => element.id && element.id === this._trigger.getAttribute('aria-controls'));
+    const target = e
+        .composedPath()
+        .find((element) => element.id && element.id === this._trigger.getAttribute('aria-controls'));
     target ? this._trigger.addEventListener('mousedown', this._click) : this.hide();
   }
 

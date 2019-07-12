@@ -90,7 +90,7 @@ export class RuxMonitoringIcon extends LitElement {
 
   get iconTemplate() {
     return html`
-      <rux-icon icon="${this.icon}"></rux-icon>
+      <rux-icon icon="${this.icon}" class="rux-status--${this.status}"></rux-icon>
     `;
   }
 
