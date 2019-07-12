@@ -11,13 +11,11 @@ storiesOf('Components|Pop Up Menu', module)
     .add(
         'Pop Up Menu',
         () => {
-          let selectedMenuItem = {};
+          const selectedMenuItem = {};
           selectedMenuItem.value = 'test';
 
           window.addEventListener('pop-up-menu-item-selected', (e) => {
             console.log('Pop Up Menu Item Selected', e.detail.selected);
-            /* console.log('Pop Up Menu Item Data', e.detail.data); */
-            selectedMenuItem = { ...{ value: 'updated' } };
           });
 
           const data = [
@@ -136,7 +134,6 @@ storiesOf('Components|Pop Up Menu', module)
           }
         </style>
         <div class="demo">
-          Selected Menu Item: ${selectedMenuItem.value}
           <div id="pop-demo">
             <button aria-controls="popup-menu-1" aria-haspopup="true" class="button" id="tl">tl</button>
             <button aria-controls="popup-menu-2" aria-haspopup="true" class="button" id="tr">tr</button>
