@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import { withKnobs, boolean, object } from '@storybook/addon-knobs';
-import { withConsole } from '@storybook/addon-console';
+import { withKnobs } from '@storybook/addon-knobs';
 import { RuxTree } from '../src/components/rux-tree/rux-tree.js';
 import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 import Readme from '../src/components/rux-tree/README.md';
@@ -12,10 +11,6 @@ storiesOf('Components|Tree', module)
     .add(
         'Tree',
         () => {
-          window.addEventListener('tree-updated', (e) => {
-            treeData.data = [...e.detail.data];
-          });
-
           const treeData = [
             {
               label: 'Tree Item 1',
@@ -65,6 +60,10 @@ storiesOf('Components|Tree', module)
               label: 'Tree Item 3',
             },
           ];
+
+          window.addEventListener('tree-updated', (e) => {
+            treeData.data = [...e.detail.data];
+          });
 
           return html`
         <style>
