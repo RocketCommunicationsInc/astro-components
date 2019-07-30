@@ -45,6 +45,7 @@
 .*
 ~*
 .DS_Store
+.vscode/
 
 # ignore node/grunt dependency directories
 node_modules/
@@ -58,7 +59,8 @@ node_modules/
 # ignore build directories
 /_site
 /build 
-
+/dist
+/storybook-static
 
 # ignore OS generated files
 ehthumbs.db
@@ -73,6 +75,7 @@ Thumbs.db
 *.log
 *.sql
 *.sqlite
+*.report.html
 
 # ignore compiled files
 *.com
@@ -99,3 +102,6 @@ Thumbs.db
 # track these files, if they exist
 !.gitignore
 !.editorconfig
+!.eslintrc.js
+!.eslintrc
+!.storybook

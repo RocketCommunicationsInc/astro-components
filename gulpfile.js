@@ -1,85 +1,81 @@
-const gulp = require("gulp");
-const spawn = require("child_process").spawn;
-var concatCss = require("gulp-concat-css");
-var concat = require("gulp-concat");
-var clean = require("gulp-clean");
-var rename = require("gulp-rename");
-var watch = require("gulp-watch");
-var postcss = require("gulp-postcss");
-var cssnext = require("postcss-cssnext");
-var order = require("gulp-order");
-var hwb = require("postcss-color-hwb");
-var properties = require("postcss-custom-properties");
-var color = require("postcss-color-function");
-var sourcemaps = require("gulp-sourcemaps");
-var autoprefixer = require("gulp-autoprefixer");
-var csso = require("gulp-csso");
-const browserSync = require("browser-sync").create();
+const gulp = require('gulp');
+const cssimport = require('gulp-cssimport');
+const rename = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
+const csso = require('gulp-csso');
+const postcss = require('gulp-postcss');
+const postcssColor = require('postcss-color-mod-function');
+const del = require('del');
+const gulpif = require('gulp-if');
+const properties = require('postcss-custom-properties');
+const autoprefixer = require('gulp-autoprefixer');
 
-// Static Server + watching scss/html files
-gulp.task("serve", cb => {
-  var process = spawn("polymer serve --port 8082", [], {
-    shell: true
-  });
-  // should maybe put this in a callback, but whatever
-  process.stdout.on("data", data => {
-    if (data.toString().includes("info")) {
-      browserSync.init({
-        proxy: "http://127.0.0.1:8082"
-      });
-
-      gulp.watch("public/css/**/*.css", ["concatCss"]);
-      gulp.watch("public/*.html").on("change", browserSync.reload);
-      gulp.watch("packages/**/*").on("change", browserSync.reload);
-      gulp.watch("src/**/*").on("change", browserSync.reload);
-      gulp.watch("index*.html").on("change", browserSync.reload);
-    }
-  });
-});
-
-const AUTOPREFIXER_BROWSERS = [
-  "ie >= 11",
-  "ff >= 30",
-  "chrome >= 34",
-  "safari >= 7"
-];
-
-// gulp.task("watch", function() {
-//   gulp.watch("public/css/src/**/*.css", ["concatCss"]);
-// });
-
-gulp.task("concatCss", function() {
+/*
+ * * The color method handles the generation of the tint/shade
+ * * color palettes using the CSS4 color-mod function (no longer)
+ * * part of the spec. It takes a base color and increases the
+ * * tint or shade by 20% increments
+ */
+function color() {
   return gulp
-    .src("public/css/src/**/*.css")
-    .pipe(
-      order([
-        "public/css/src/_colors--light.css",
-        "public/css/src/_colors--dark.css",
-        "public/css/src/_fonts.css",
-        "public/css/src/_variables.css",
-        "public/css/src/_theme--light.css",
-        "public/css/src/_theme--dark.css",
-        "public/css/src/_typography.css",
-        "public/css/src/_global.css",
-        "public/css/src/**/*.css"
-      ])
-    )
-    .pipe(sourcemaps.init())
-    .pipe(autoprefixer({ browsers: AUTOPREFIXER_BROWSERS }))
-    .pipe(postcss([properties()]))
-    .pipe(concat("astro.css"))
-    .pipe(gulp.dest("public/css"))
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(csso())
-    .pipe(gulp.dest("public/css"))
-    .pipe(sourcemaps.write("."))
-    .pipe(browserSync.stream());
-});
+      .src('./src/css/common/__variables.css')
+      .pipe(postcss([postcssColor()]))
+      .pipe(rename('_variables.css'))
+      .pipe(gulp.dest('./src/css/common'));
+}
 
-// Force CSS to trigger browser injection typically
-// ignored when using CSS @import directives
-// gulp.task("styles", function() {
-//   return gulp.src("public/css/**/*.css").pipe(browserSync.stream());
-// });
+function css() {
+  const condition = (file) => file !== 'astro.css';
 
-gulp.task("default", ["serve"]);
+  return gulp
+      .src('./src/css/*.css')
+      .pipe(sourcemaps.init())
+      .pipe(cssimport())
+      .pipe(gulpif(condition, postcss([properties()])))
+      .pipe(gulpif(condition, autoprefixer({ browsers: 'last 2 versions' })))
+      .pipe(gulp.dest('./static/css'))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(csso())
+      .pipe(gulp.dest('./static/css'))
+      .pipe(sourcemaps.write('./'));
+}
+
+/*
+ * * Cleans the distribution folder before building
+ */
+function clean() {
+  return del(['./static/css/dist/']);
+}
+
+/*
+ * * Handles watching for file changes and triggering a browser reload
+ */
+function watch() {
+  // watch for color changes and generate palette
+  gulp.watch('./static/css/src/common/__variables.css', gulp.series('color'));
+
+  // compile and minify css
+  gulp.watch(
+      './static/css/src/**/*.css',
+      {
+        ignored: [
+          './static/css/src/common/__variables.css',
+          './static/css/src/astro.core.css',
+          './static/css/src/astro.css',
+        ],
+      },
+      gulp.series(css)
+  );
+}
+
+const defaultTasks = gulp.series(clean, watch);
+gulp.task('default', defaultTasks);
+gulp.task('css:colors', gulp.series(color, css));
+
+exports.css = css;
+exports.color = color;
+exports.watch = watch;
+// exports.build = build;
+// exports.start = start;
+// exports.dev = dev;
+exports.clean = clean;
