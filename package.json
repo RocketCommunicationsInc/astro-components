@@ -48,7 +48,8 @@
     "polymer-webpack-loader": "^2.0.3",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-custom-properties": "^8.0.10",
-    "prettier": "^1.17.1"
+    "prettier": "^1.17.1",
+    "storybook-dark-mode": "^0.1.4"
   },
   "hooks": {
     "pre-commit": "lint-staged"
