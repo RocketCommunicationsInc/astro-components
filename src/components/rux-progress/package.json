@@ -1,10 +1,23 @@
 {
   "author": {
     "name": "Rocket Communications",
-    "email": "astro@rocketcom.com"
+    "email": "uxsupport@rocketcom.com"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "lit-element": "^2.1.0"
+  },
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "uxsupport@rocketcom.com",
+    "url": "https://bitbucket.org/rocketcom/astro-components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
   },
   "description": "Astro Web Component for both determinate and indeterminate progress indicators",
-  "license": "",
+  "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-progress.js",
   "name": "@astrouxds/rux-progress",
   "scripts": {

@@ -1,7 +1,7 @@
 {
   "author": {
     "name": "Rocket Communications",
-    "email": "astrouxds@rocketcom.com"
+    "email": "uxsupport@rocketcom.com"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.2.10",
@@ -9,14 +9,15 @@
   },
   "homepage": "https://www.astrouxds.com",
   "bugs": {
-    "email": "support@astrouxds.com"
+    "email": "uxsupport@rocketcom.com",
+    "url": "https://bitbucket.org/rocketcom/astro-components/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://www.bitbucket.org/rocketcom/astro-storybook/src/master"
+    "url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
   },
   "description": "Astro Web Component for modal dialogue",
-  "license": "",
+  "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-modal.js",
   "name": "@astrouxds/rux-modal",
   "scripts": {
