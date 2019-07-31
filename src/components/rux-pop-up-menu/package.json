@@ -19,6 +19,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "4.0.0-alpha.2",
-  "gitHead": "97813c2b1497c16f484dec6fee608518daa1b065"
+  "gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }
