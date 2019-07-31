@@ -23,6 +23,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "4.0.0-5",
+  "version": "4.0.0-6",
   "gitHead": "97813c2b1497c16f484dec6fee608518daa1b065"
 }
