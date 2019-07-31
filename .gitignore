@@ -46,6 +46,7 @@
 ~*
 .DS_Store
 .vscode/
+.npmrc
 
 # ignore node/grunt dependency directories
 node_modules/
