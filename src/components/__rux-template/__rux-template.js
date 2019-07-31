@@ -13,6 +13,9 @@ export class RuxTemplate extends LitElement {
       propertyTwo: {
         type: String,
       },
+      booleanAttr: {
+        type: Boolean,
+      },
     };
   }
 

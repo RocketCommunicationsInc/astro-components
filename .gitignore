@@ -62,7 +62,6 @@ node_modules/
 /dist
 /storybook-static
 
-
 # ignore OS generated files
 ehthumbs.db
 Thumbs.db

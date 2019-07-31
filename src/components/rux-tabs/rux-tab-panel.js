@@ -1,14 +1,13 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html } from 'lit-element';
 
 /**
  * @polymer
  * @extends HTMLElement
  */
 export class RuxTabPanel extends LitElement {
-
   connectedCallback() {
     super.connectedCallback();
-    this.setAttribute("role", "tabpanel");
+    this.setAttribute('role', 'tabpanel');
   }
 
   render() {
@@ -32,4 +31,4 @@ export class RuxTabPanel extends LitElement {
   }
 }
 
-customElements.define("rux-tab-panel", RuxTabPanel);
+customElements.define('rux-tab-panel', RuxTabPanel);

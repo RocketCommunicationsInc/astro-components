@@ -1,0 +1,7 @@
+{
+  "name": "astro",
+  "short_name": "astro",
+  "description": "Sample application using the Astro Design System",
+  "start_url": "/",
+  "display": "standalone"
+}

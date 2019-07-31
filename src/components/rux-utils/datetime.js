@@ -7,8 +7,7 @@ export default class {
 
   static dayOfYear(timezone = 'utc') {
     const now = timezone === 'utc' ? this.utcDate() : new Date();
-    const year =
-      timezone === 'utc' ? new Date(now.getFullYear(), 0, 1) : new Date(now.getUTCFullYear(), 0, 1);
+    const year = timezone === 'utc' ? new Date(now.getFullYear(), 0, 1) : new Date(now.getUTCFullYear(), 0, 1);
 
     const day = Math.ceil((now - year) / this.properties.oneDay);
 
@@ -17,12 +16,12 @@ export default class {
 
   static utcDate(date = new Date()) {
     return new Date(
-      date.getFullYear(),
-      date.getUTCMonth(),
-      date.getUTCDate(),
-      date.getUTCHours(),
-      date.getUTCMinutes(),
-      date.getUTCSeconds(),
+        date.getFullYear(),
+        date.getUTCMonth(),
+        date.getUTCDate(),
+        date.getUTCHours(),
+        date.getUTCMinutes(),
+        date.getUTCSeconds()
     );
   }
 
@@ -37,5 +36,4 @@ export default class {
     return `${time.getUTCFullYear()}-${time.getUTCMonth()}-${time.getUTCDate()} 
             ${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}:${time.getUTCMilliseconds()}`;
   }
-   
 }

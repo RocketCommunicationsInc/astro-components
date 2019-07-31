@@ -1,14 +1,14 @@
-const gulp = require("gulp");
-const cssimport = require("gulp-cssimport");
-const rename = require("gulp-rename");
-const sourcemaps = require("gulp-sourcemaps");
-const csso = require("gulp-csso");
-const postcss = require("gulp-postcss");
-const postcssColor = require("postcss-color-mod-function");
-const del = require("del");
-const gulpif = require("gulp-if");
-const properties = require("postcss-custom-properties");
-const autoprefixer = require("gulp-autoprefixer");
+const gulp = require('gulp');
+const cssimport = require('gulp-cssimport');
+const rename = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
+const csso = require('gulp-csso');
+const postcss = require('gulp-postcss');
+const postcssColor = require('postcss-color-mod-function');
+const del = require('del');
+const gulpif = require('gulp-if');
+const properties = require('postcss-custom-properties');
+const autoprefixer = require('gulp-autoprefixer');
 
 /*
  * * The color method handles the generation of the tint/shade
@@ -18,33 +18,33 @@ const autoprefixer = require("gulp-autoprefixer");
  */
 function color() {
   return gulp
-    .src("./src/css/common/__variables.css")
-    .pipe(postcss([postcssColor()]))
-    .pipe(rename("_variables.css"))
-    .pipe(gulp.dest("./src/css/common"));
+      .src('./src/css/common/__variables.css')
+      .pipe(postcss([postcssColor()]))
+      .pipe(rename('_variables.css'))
+      .pipe(gulp.dest('./src/css/common'));
 }
 
 function css() {
-  const condition = file => file !== "astro.css";
+  const condition = (file) => file !== 'astro.css';
 
   return gulp
-    .src("./src/css/*.css")
-    .pipe(sourcemaps.init())
-    .pipe(cssimport())
-    .pipe(gulpif(condition, postcss([properties()])))
-    .pipe(gulpif(condition, autoprefixer({ browsers: "last 2 versions" })))
-    .pipe(gulp.dest("./static/css"))
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(csso())
-    .pipe(gulp.dest("./static/css"))
-    .pipe(sourcemaps.write("./"));
+      .src('./src/css/*.css')
+      .pipe(sourcemaps.init())
+      .pipe(cssimport())
+      .pipe(gulpif(condition, postcss([properties()])))
+      .pipe(gulpif(condition, autoprefixer({ browsers: 'last 2 versions' })))
+      .pipe(gulp.dest('./static/css'))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(csso())
+      .pipe(gulp.dest('./static/css'))
+      .pipe(sourcemaps.write('./'));
 }
 
 /*
  * * Cleans the distribution folder before building
  */
 function clean() {
-  return del(["./static/css/dist/"]);
+  return del(['./static/css/dist/']);
 }
 
 /*
@@ -52,25 +52,25 @@ function clean() {
  */
 function watch() {
   // watch for color changes and generate palette
-  gulp.watch("./static/css/src/common/__variables.css", gulp.series("color"));
+  gulp.watch('./static/css/src/common/__variables.css', gulp.series('color'));
 
   // compile and minify css
   gulp.watch(
-    "./static/css/src/**/*.css",
-    {
-      ignored: [
-        "./static/css/src/common/__variables.css",
-        "./static/css/src/astro.core.css",
-        "./static/css/src/astro.css"
-      ]
-    },
-    gulp.series(css)
+      './static/css/src/**/*.css',
+      {
+        ignored: [
+          './static/css/src/common/__variables.css',
+          './static/css/src/astro.core.css',
+          './static/css/src/astro.css',
+        ],
+      },
+      gulp.series(css)
   );
 }
 
 const defaultTasks = gulp.series(clean, watch);
-gulp.task("default", defaultTasks);
-gulp.task("css:colors", gulp.series(color, css));
+gulp.task('default', defaultTasks);
+gulp.task('css:colors', gulp.series(color, css));
 
 exports.css = css;
 exports.color = color;

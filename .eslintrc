@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "google",
-    "plugin:wc/recommended"
-  ],
+  "extends": ["google"],
   "rules": {
     "require-jsdoc": 0,
     "object-curly-spacing": 0,
@@ -20,7 +17,7 @@
       {
         "ignoreUrls": true,
         "ignoreStrings": true,
-        "ignorePattern": "data:image\/|\\s*require\\s*\\(|^\\s*loader\\.lazy|-\\*-"
+        "ignorePattern": "data:image/|\\s*require\\s*\\(|^\\s*loader\\.lazy|-\\*-"
       }
     ]
   },
