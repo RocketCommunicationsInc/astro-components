@@ -4,8 +4,8 @@
     "email": "astrouxds@rocketcom.com"
   },
   "dependencies": {
-    "lit-element": "^2.1.0",
-    "@webcomponents/webcomponentsjs": "^2.2.10"
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "lit-element": "^2.1.0"
   },
   "homepage": "https://www.astrouxds.com",
   "bugs": {
@@ -22,5 +22,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "4.0.0-3"
+  "version": "4.0.0-4"
 }
