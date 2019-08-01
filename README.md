@@ -17,10 +17,17 @@ To review the entire Astro Library
 
 The directions below assume basic knowledge of NodeJS. Make sure you have installed both globally before continuing. An example can be seen on the [Astro Storybook site](https://astro-storybook.netlify.com)
 
+Create a new directory and change directory
+
+```
+mkdir astro
+cd astro
+```
+
 Clone this repository
 
 ```
-git clone git@bitbucket.org:rocketcom/astro-components.git
+git clone https://bitbucket.org/rocketcom/astro-components.git
 ```
 
 Install NPM modules for this project
@@ -90,9 +97,9 @@ The Astro Component Library is designed for use on modern browsers that support 
 | `Global Status Bar`   | `4.0`         |                                                                    | [@astrouxds/rux-global-status-bar](https://www.npmjs.com/package/@astrouxds/rux-global-status-bar) | [Docs](./src/components/rux-global-status-bar/README.md) | [Gudielines](https://astrouxds.com/ui-components/global-status-bar)   |
 | `Icons`               | `4.0`         | Icons in Astro 4 are a breaking change                             | [@astrouxds/rux-icon](https://www.npmjs.com/package/@astrouxds/rux-icon)                           | [Docs](./src/components/rux-icon/README.md)              | [Gudielines](https://astrouxds.com/ui-components/icons-and-symbols)   |
 | `Input Field`         | `not planned` | Use standard style sheets to define style                          | n/a                                                                                                |                                                          | [Gudielines](https://astrouxds.com/ui-components/input-field)         |
-| `Links`               | `not planned` |                                                                    | n/a                                                                                                |                                                          | [Gudielines](https://astrouxds.com/ui-components/link)               |
+| `Links`               | `not planned` |                                                                    | n/a                                                                                                |                                                          | [Gudielines](https://astrouxds.com/ui-components/link)                |
 | `Log`                 | `4.0`         |                                                                    | [@astrouxds/rux-log](https://www.npmjs.com/package/@astrouxds/rux-log)                             | [Docs](./src/components/rux-log/README.md)               | [Gudielines](https://astrouxds.com/ui-components/log)                 |
-| `Notification Banner` | `4.0`         |                                                                    | [@astrouxds/rux-notification](https://www.npmjs.com/package/@astrouxds/rux-notification)           | [Docs](./src/components/rux-notification/README.md)              | [Gudielines](https://astrouxds.com/ui-components/notification-banner) |
+| `Notification Banner` | `4.0`         |                                                                    | [@astrouxds/rux-notification](https://www.npmjs.com/package/@astrouxds/rux-notification)           | [Docs](./src/components/rux-notification/README.md)      | [Gudielines](https://astrouxds.com/ui-components/notification-banner) |
 | `Pagination`          | `not planned` | Angular component is deprecated. Refer to Astro styles             | n/a                                                                                                |                                                          | [Gudielines](https://astrouxds.com/ui-components/pagination)          |
 | `Pop Ups`             | `4.0`         |                                                                    | [@astrouxds/rux-pop-up-menu](https://www.npmjs.com/package/@astrouxds/rux-pop-up-menu)             | [Docs](./src/components/rux-pop-up-menu/README.md)       | [Gudielines](https://astrouxds.com/ui-components/pop-up)              |
 | `Progress`            | `4.0`         |                                                                    | [@astrouxds/rux-progress](https://www.npmjs.com/package/@astrouxds/rux-progress)                   | [Docs](./src/components/rux-progress/README.md)          | [Gudielines](https://astrouxds.com/ui-components/progress)            |
@@ -100,10 +107,10 @@ The Astro Component Library is designed for use on modern browsers that support 
 | `Search`              | `not planned` | Use standard style sheets to define style                          | n/a                                                                                                |                                                          | [Gudielines](https://astrouxds.com/ui-components/search)              |
 | `Segmented Button`    | `4.0`         |                                                                    | [@astrouxds/rux-segmented-button](https://www.npmjs.com/package/@astrouxds/rux-segmented-button)   | [Docs](./src/components/rux-segmented-button/README.md)  | [Gudielines](https://astrouxds.com/ui-components/segmented-button)    |
 | `Slider`              | `4.0`         |                                                                    | [@astrouxds/rux-slider](https://www.npmjs.com/package/@astrouxds/rux-slider)                       | [Docs](./src/components/rux-slider/README.md)            | [Gudielines](https://astrouxds.com/ui-components/slider)              |
-| `Spectrum Analyzer`   | `3.0`         | Spectrum Analyzer has not been updated to Astro 4                  | n/a                                                                                                |  | [Gudielines](https://astrouxds.com/ui-components/spectrum-analyzer)   |
+| `Spectrum Analyzer`   | `3.0`         | Spectrum Analyzer has not been updated to Astro 4                  | n/a                                                                                                |                                                          | [Gudielines](https://astrouxds.com/ui-components/spectrum-analyzer)   |
 | `Status Symbol`       | `4.0`         | Astro 4 introduces a new status component. It is a breaking change | [@astrouxds/rux-status](https://www.npmjs.com/package/@astrouxds/rux-status)                       | [Docs](./src/components/rux-status/README.md)            | [Gudielines](https://astrouxds.com/ui-components/status-symbol)       |
 | `Table`               | `not started` | No start until 2019                                                | n/a                                                                                                |                                                          | [Gudielines](https://astrouxds.com/ui-components/table)               |
 | `Tabs`                | `4.0`         | Tabs are main navigation tabs. Internal tab interfaces coming 2019 | [@astrouxds/rux-tabs](https://www.npmjs.com/package/@astrouxds/rux-tabs)                           | [Docs](./src/components/rux-tabs/README.md)              | [Gudielines](https://astrouxds.com/ui-components/tabs)                |
-| `Timeline`            | `in progress` |                                                                    | [@astrouxds/rux-timeline](https://www.npmjs.com/package/@astrouxds/rux-timeline)                   |           | [Gudielines](https://astrouxds.com/ui-components/timeline)            |
+| `Timeline`            | `in progress` |                                                                    | [@astrouxds/rux-timeline](https://www.npmjs.com/package/@astrouxds/rux-timeline)                   |                                                          | [Gudielines](https://astrouxds.com/ui-components/timeline)            |
 | `Toggle`              | `4.0`         |                                                                    | [@astrouxds/rux-toggle](https://www.npmjs.com/package/@astrouxds/rux-toggle)                       | [Docs](./src/components/rux-toggle/README.md)            | [Gudielines](https://astrouxds.com/ui-components/toggle)              |
-| `Tree`                | `4.0`         |                                                                    | [@astrouxds/rux-tree](https://www.npmjs.com/package/@astrouxds/rux-tree)                           | [Docs](./src/components/rux-tree/README.md)            | [Gudielines](https://astrouxds.com/ui-components/tree)                |
+| `Tree`                | `4.0`         |                                                                    | [@astrouxds/rux-tree](https://www.npmjs.com/package/@astrouxds/rux-tree)                           | [Docs](./src/components/rux-tree/README.md)              | [Gudielines](https://astrouxds.com/ui-components/tree)                |
