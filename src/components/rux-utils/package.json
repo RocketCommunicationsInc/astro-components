@@ -3,10 +3,6 @@
     "name": "Rocket Communications",
     "email": "uxsupport@rocketcom.com"
   },
-  "dependencies": {
-    "@webcomponents/webcomponentsjs": "^2.2.10",
-    "lit-element": "^2.1.0"
-  },
   "homepage": "https://www.astrouxds.com",
   "bugs": {
     "email": "uxsupport@rocketcom.com",
@@ -16,10 +12,9 @@
     "type": "git",
     "url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
   },
-  "description": "Astro Web Component for Tree Navigation",
+  "description": "Utilities for Astro Components",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "rux-tree.js",
-  "name": "@astrouxds/rux-tree",
+  "name": "@astrouxds/rux-utils",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
