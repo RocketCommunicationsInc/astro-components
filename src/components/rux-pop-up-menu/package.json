@@ -1,8 +1,8 @@
 {
   "dependencies": {
+    "@astrouxds/rux-utils": "^4.0.1",
     "@webcomponents/webcomponentsjs": "^2.2.10",
-    "lit-element": "^2.1.0",
-    "@astrouxds/rux-utils": "^4.0.0"
+    "lit-element": "^2.1.0"
   },
   "homepage": "https://www.astrouxds.com",
   "bugs": {
@@ -23,6 +23,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "4.0.0",
+  "version": "4.0.1",
   "gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }
