@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.2.10",
-    "lit-element": "^2.1.0"
+    "lit-element": "^2.1.0",
+    "@astrouxds/rux-utils": "^4.0.0"
   },
   "homepage": "https://www.astrouxds.com",
   "bugs": {
