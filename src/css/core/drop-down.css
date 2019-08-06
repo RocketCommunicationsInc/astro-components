@@ -9,6 +9,8 @@
   -webkit-appearance: none;
   -moz-appearance: none;
 
+  display: none !important;
+
   border: 1px solid var(--selectBorderColor, rgb(0, 90, 143));
   border-radius: var(--buttonBorderRadius, 3px);
 

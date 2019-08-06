@@ -32,7 +32,6 @@ function css() {
       .pipe(sourcemaps.init())
       .pipe(cssimport())
       .pipe(gulpif(condition, postcss([properties()])))
-      .pipe(gulpif(condition, autoprefixer({ browsers: 'last 2 versions' })))
       .pipe(gulp.dest('./static/css'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(csso())

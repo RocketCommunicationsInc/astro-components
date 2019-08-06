@@ -363,6 +363,25 @@
   );
 
   --progressIndeterminate: url("data:image/svg+xml,%3Csvg width='66' height='66' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E %3ClinearGradient x1='70.883%25' y1='4.637%25' x2='50%25' y2='100%25' id='a'%3E %3Cstop stop-color='%235CB3FF' offset='0%25'/%3E %3Cstop stop-color='%23F6F7F8' stop-opacity='0' offset='100%25'/%3E %3C/linearGradient%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M33 65.5C15.05 65.5.5 50.95.5 33S15.05.5 33 .5 65.5 15.05 65.5 33 50.95 65.5 33 65.5zm0-7c14.083 0 25.5-11.417 25.5-25.5S47.083 7.5 33 7.5 7.5 18.917 7.5 33 18.917 58.5 33 58.5z' stroke='%23D7DDE2' fill='%23FFF'/%3E %3Cpath d='M51.908 8.236l-2.358 3.245A26.894 26.894 0 0 0 32 5C17.088 5 5 17.088 5 32s12.088 27 27 27c1.129 0 2.242-.07 3.334-.204l4.435 3.222C37.286 62.66 34.683 63 32 63 14.88 63 1 49.12 1 32 1 14.88 14.88 1 32 1c7.579 0 14.522 2.72 19.908 7.236z' fill='url(%23a)' transform='translate(1 1)'/%3E %3Cpath d='M48.564 13c1.92 0 3.557-.64 4.075-2.367.112-.375.361-.67.361-1.08C53 7.248 51.572 5 49.234 5S45 6.867 45 9.17c0 2.304 1.225 3.83 3.564 3.83z' stroke='%234DACFF' fill='%2352AEFF'/%3E %3C/g%3E %3C/svg%3E ");
+
+  /* 
+    
+    Popup Menu Colors 
+    ==========================================================================
+
+  */
+  --popupMenuBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --popupMenuBorderColor: var(--colorSecondary, rgb(77, 172, 255));
+  --popupMenuTextColor: var(--colorBlack, rgb(0,0,0));
+
+  --popupCaretBackgroundColor: var(--popupMenuBorderColor, rgb(77, 172, 255));
+
+  --popupMenuItemBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3, rgb(211, 234, 255));
+  --popupMenuItemHoverTextColor: var(--colorBlack, rgb(0, 0, 0));
+
+  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2, rgb(123, 128, 137));
+
   /* 
     
     Slider Colors 
@@ -400,10 +419,7 @@
 
   --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1),
     inset 0 1px 5px rgba(0, 0, 0, 0.06);
-  -webkit-transition: -webkit-box-shadow 0.067s ease-out;
-  transition: -webkit-box-shadow 0.067s ease-out;
   transition: box-shadow 0.067s ease-out;
-  transition: box-shadow 0.067s ease-out, -webkit-box-shadow 0.067s ease-out;
 
   --segmentedButtonSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
 
@@ -596,6 +612,8 @@
     ==========================================================================
 
   */
+
+  
 
   --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAA81BMVEUAAABaPhVcDwE7CQA6gJIAAAAATQAkTlsATgBcPxYrHAciGgkAAABcPxU0coUARgAxNTgnU2IoV2YzNjoAUgAtYXEzODovZngAUQAAUAAwNDg0dIk2d4sAOgAjKCgAGAAADQA+hJVZPBRcPxb62AAA4gD/rz1VSQBk2f//KgQiSldXDgEATQCOmqNXOxQwNDdoRhiGWx+tHAJiEAFZw+b1KAMAywDlnTb5qjv7rDzpnzdMpcNJn7xFlrGMmKGEj5g4eY82d4xxe4IyboIwaHskT15GTFEA2gAArAAAnAAAfgAAfABg0vddyu5cZGpg0fbOjTE6oyFAAAAAJHRSTlMA7cc4Kgj9+vbBJB4GypVn9vPu5t/Y18O8n4B/ckY6FRMdmtlkVn4PAAACq0lEQVRYw+2YaVPaUBSGqWbTWsK+b9pC6ek1lypGW1T2RUDb//9rmpsm3Nyc1DQfOhMc3k/cyUzmfeY5BxISh+xXzi7eJ/Y5ZyfGu30msPobQQSf/5KEmKZeymlarqQ3g28vJfMZVc3kk1LUYkdfA3OE+/duv3GCaACtskKcKOVWQP0i7FKMiHAcDHAc0L9zxwgQwKeAiAB1jZD1ylwuzdWaEK3u71BTAUaD/nbbH4wA1FpUBVdffLliAnD/DieIBKArZGO2nZgboujiLZIA437XSX8MkIyo4PpG7H9zzQTg/pwgEkBdIU9tT56IIjioATx0PXkAqEVWgAXg/pwgEkBLY/1FAq3lmX+V9RcJVLwHcqWQShUqcpgCLgD35wRRAMpk0/ZlQ8r8BkUY27XvZ/P57N7+OIaiv2QjS+1kG2EKuADcHxOEAzQVYvoBTKI0dwIA2Pw/T8HO9JntAYDk60/pYjIcThaUNkIUcAG4PyYIB9DJuo2yJjrf4FHXyhTSVUmqpmHKTiPfHstZ+vJ4aeXxhWblYAVYAO6PCcIBSmSFAVak5F7Pw4DND6TP2ek8DWyKBpAXClbogvVnBAtaCVaABeD+mCAcIMcmCM9Qzr2esSdoBtU/xyrM7BnKCAULdHLpZEILr2wBEnBhGL86OHc94+M/AmhkiQGWRHOvq7C1Gs/doZdgbh23oAr9UnToAgxp6pUvIrQB8gej9wP1/24ZOP2fAD+jAHAFXAAmwP1jNUK2Ai4AE+D+sVpiRwEXgAhQ/3h9jboKuABMIPaP1w8ZV8AFIAKhf8weJXYKBAGIgPeP2cMcVyAIwARu/7g9TnMFggBM4PSP2wuNR4EgABPc2v1j90rpUSAIwAQG6x+7l3qvAkEAJmD94/e3ileBIAATnJwmDjnkTeU3PTFjExFNx+YAAAAASUVORK5CYII=");
   /* 
@@ -881,6 +899,27 @@ li.light-theme {
     rgb(122, 122, 122)
   );
 
+
+  /* 
+    
+    Popup Menu Colors 
+    ==========================================================================
+
+  */
+  --popupMenuBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --popupMenuBorderColor: var(--colorSecondary, rgb(77, 172, 255));
+  --popupMenuTextColor: var(--colorBlack, rgb(0,0,0));
+
+  --popupCaretBackgroundColor: var(--popupMenuBorderColor, rgb(77, 172, 255));
+
+  --popupMenuItemBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3, rgb(211, 234, 255));
+  --popupMenuItemHoverTextColor: var(--colorBlack, rgb(0, 0, 0));
+
+  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2, rgb(123, 128, 137));
+
+
+
   /* 
     
     Pushbutton Colors 
@@ -992,7 +1031,7 @@ li.light-theme {
     ==========================================================================
     
   */
-
+  
   --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC");
   /* 
     
@@ -1179,7 +1218,6 @@ dd {
 **	the old IE border-box model of including padding in the overall size.
 */
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -1189,7 +1227,6 @@ html {
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -1213,16 +1250,14 @@ body {
 
   background-color: var(--backgroundColor, rgb(24, 38, 53));
 
-  scrollbar-color: rgb(58, 129, 191) rgb(32, 50, 70);
+  scrollbar-color: rgb(58, 129, 191)
+    rgb(32, 50, 70);
 
   scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
     var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
 }
 
 label {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -1256,7 +1291,8 @@ label {
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --scrollBarThumbBackgroundHoverColor,
     rgb(58, 129, 191)
@@ -1269,11 +1305,9 @@ label {
   background-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
 }
 ::-webkit-scrollbar-track:vertical {
-  -webkit-box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
   box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
 }
 ::-webkit-scrollbar-track:horizontal {
-  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -1298,8 +1332,6 @@ label {
 */
 
 .rux-button-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -1309,8 +1341,6 @@ label {
 
 /* Global Button Styles */
 .rux-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
 
@@ -1336,20 +1366,8 @@ label {
   overflow: hidden;
   text-overflow: ellipsis;
 
-  -webkit-box-pack: center;
-
-  -ms-flex-pack: center;
-
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-
-  -webkit-user-select: none;
-
-  -moz-user-select: none;
-
-  -ms-user-select: none;
 
   user-select: none;
 }
@@ -1375,16 +1393,10 @@ label {
   border: 1px solid var(--buttonBackgroundColor, rgb(0, 90, 143));
   background-color: rgb(0, 90, 143);
   background-color: var(--buttonBorderColor, rgb(0, 90, 143));
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12),
-    0 1px 5px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: var(
-    --controlBoxShadow,
-    0 2px 4px rgba(0, 0, 0, 0.14),
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12),
     0 1px 5px rgba(0, 0, 0, 0.2)
-  );
+  ;
   box-shadow: var(
     --controlBoxShadow,
     0 2px 4px rgba(0, 0, 0, 0.14),
@@ -1411,7 +1423,8 @@ label {
 .rux-button:active:not([hover]):not([disabled]) {
   border-color: rgb(0, 90, 143) !important;
   border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
-  background-color: rgb(0, 90, 143) !important;
+  background-color: rgb(0, 90, 143)
+   !important;
   background-color: var(
     --buttonActiveBackgroundColor,
     rgb(0, 90, 143)
@@ -1419,7 +1432,6 @@ label {
 }
 
 .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
-  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
 }
 
@@ -1433,16 +1445,10 @@ label {
   border-color: var(--buttonHoverBorderColor, rgb(58, 129, 191));
   background-color: rgb(58, 129, 191);
   background-color: var(--buttonHoverBackgroundColor, rgb(58, 129, 191));
-  -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: var(
-    --buttonHoverBoxShadow,
-    0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12),
     0 4px 5px rgba(0, 0, 0, 0.2)
-  );
+  ;
   box-shadow: var(
     --buttonHoverBoxShadow,
     0 8px 10px 1px rgba(0, 0, 0, 0.14),
@@ -1454,7 +1460,8 @@ label {
 .rux-button--outline:hover:not([disabled]) {
   color: rgb(255, 255, 255);
   color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-  background-color: rgba(30, 47, 66, 0.75);
+  background-color: rgba(30, 47, 66, 0.75)
+  ;
   background-color: var(
     --buttonOutlineHoverBackgroundColor,
     rgba(30, 47, 66, 0.75)
@@ -1551,11 +1558,7 @@ label {
   background-color: var(--cardHeaderBackgroundColor, rgb(20, 32, 44));
   margin: 0;
   padding: 0.325rem 0.625rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -1591,8 +1594,6 @@ label {
 .satcom-checkbox,
 .rux-radio-button,
 .satcom-radio-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
   margin: 0 0 1rem 0;
@@ -1626,17 +1627,9 @@ label {
 .rux-radio-button input[type="radio"] + label,
 .satcom-radio-button input[type="radio"] + label {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 
-  -webkit-box-align: center;
-
-  -ms-flex-align: center;
-
   align-items: center;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 
   color: rgb(255, 255, 255);
@@ -1648,13 +1641,8 @@ label {
 .satcom-checkbox input[type="checkbox"] + label::before,
 .rux-radio-button input[type="radio"] + label::before,
 .satcom-radio-button input[type="radio"] + label::before {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
   flex-grow: 0;
   content: "";
 
@@ -1686,7 +1674,8 @@ label {
 .satcom-checkbox input[type="checkbox"]:checked + label::before,
 .rux-radio-button input[type="radio"]:checked + label::before,
 .satcom-radio-button input[type="radio"]:checked + label::before {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --controlSelectedOutlineBackgroundColor,
     rgb(58, 129, 191)
@@ -1715,8 +1704,6 @@ label {
   border-right: 2px solid var(--controlTextColor, rgb(255, 255, 255));
   border-top: 2px solid rgb(255, 255, 255);
   border-top: 2px solid var(--controlTextColor, rgb(255, 255, 255));
-
-  -webkit-transform: rotate(125deg);
 
   transform: rotate(125deg);
 }
@@ -1758,6 +1745,8 @@ label {
   -webkit-appearance: none;
   -moz-appearance: none;
 
+  display: none !important;
+
   border: 1px solid rgb(0, 90, 143);
 
   border: 1px solid var(--selectBorderColor, rgb(0, 90, 143));
@@ -1776,7 +1765,8 @@ label {
   background-color: rgb(0, 90, 143);
 
   background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
-  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+  ;
   background-image: var(
     --selectCaret,
     url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
@@ -1805,11 +1795,7 @@ label {
 }
 
 .rux-form-element {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
   align-items: baseline;
 }
 
@@ -1844,17 +1830,9 @@ label {
 }
 
 .rux-form-field {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
 
   font-family: "Open Sans", sans-serif;
@@ -1872,34 +1850,21 @@ label {
 }
 
 .rux-form-field__label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
   order: 1;
   margin: 0 0 0.15rem 0;
   width: 100%;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 
   color: rgb(255, 255, 255);
 
   color: var(--fontColor, rgb(255, 255, 255));
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
 .rux-form-field input {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
   order: 2;
 
   height: 2.25rem;
@@ -1919,10 +1884,8 @@ label {
 }
 
 .rux-form-field textarea {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
+  -webkit-order: 2;
   order: 2;
 
   min-height: 4.25rem;
@@ -1980,11 +1943,6 @@ label {
   border: 1px solid var(--inputFocusBorderColor);
   /* border-left: 4px solid var(--inputFocusBorderColor); */
   /* padding-left: calc(0.5rem - 3px); */
-}
-
-.rux-form-field input::-moz-selection {
-  background-color: rgb(184, 222, 255);
-  background-color: var(--colorSecondaryLighten3);
 }
 
 .rux-form-field input::selection {
@@ -2080,9 +2038,7 @@ label {
 }
 
 .rux-form-field input:focus .rux-form-field input:invalid:focus {
-  -webkit-box-shadow: inset 0 0 3px rgb(204, 204, 204);
   box-shadow: inset 0 0 3px rgb(204, 204, 204);
-  -webkit-box-shadow: inset 0 0 3px var(--colorGray);
   box-shadow: inset 0 0 3px var(--colorGray);
   border-color: var(--inputFocusBorderColor);
   outline: none;
@@ -2146,11 +2102,7 @@ label {
 
 .rux-advanced-status__icon-group {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   max-width: 6.25rem;
   min-width: 4rem;
@@ -2171,14 +2123,10 @@ label {
 
 .rux-advanced-status__status-icon {
   margin: 0 2px 0 auto;
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
   order: 1;
 }
 
 .rux-advanced-status__icon {
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
   order: 2;
   margin: 0 auto;
 }
@@ -2200,8 +2148,6 @@ label {
 .rux-advanced-status__badge {
   display: block;
   z-index: 2;
-  -webkit-box-ordinal-group: 4;
-  -ms-flex-order: 3;
   order: 3;
 
   position: absolute;
@@ -2241,8 +2187,6 @@ label {
 }
 
 .rux-clock {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   color: rgb(255, 255, 255);
   color: var(--clockTextColor, rgb(255, 255, 255));
@@ -2251,24 +2195,13 @@ label {
 }
 
 .rux-clock__segment {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
 .rux-clock__segment__value {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   font-family: "Roboto Mono", monospace;
   font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
@@ -2349,14 +2282,9 @@ i.rux-icon {
 }
 
 .rux-log-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   position: relative;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 
   padding: 0.5rem;
@@ -2373,8 +2301,6 @@ i.rux-icon {
 }
 
 .rux-log__header-labels {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   color: rgb(255, 255, 255);
@@ -2390,10 +2316,7 @@ i.rux-icon {
 
 .rux-log__header-labels,
 .rux-log__log-event {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: start;
   align-content: flex-start;
 }
 
@@ -2403,7 +2326,6 @@ i.rux-icon {
 }
 
 .log-event__timestamp {
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 
   text-align: right;
@@ -2411,13 +2333,8 @@ i.rux-icon {
 }
 
 .rux-log__log-event {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgb(40, 63, 88);
@@ -2443,10 +2360,7 @@ i.rux-icon {
 }
 
 .log-event__status {
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
   flex-grow: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
   text-align: center;
   width: 1rem;
@@ -2454,18 +2368,12 @@ i.rux-icon {
 }
 
 .log-event__message {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
   text-align: left;
 }
 
 .log-header__message {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -2474,12 +2382,9 @@ i.rux-icon {
 } */
 
 .rux-log__filter-enabled {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
-
-  -ms-flex-line-pack: center;
 
   align-content: center;
 
@@ -2497,15 +2402,8 @@ i.rux-icon {
 
 .rux-modal {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 
   background-color: rgb(0, 0, 0);
@@ -2521,35 +2419,17 @@ i.rux-icon {
   margin: auto;
   padding: 0;
 
-  -webkit-user-select: none;
-
-  -moz-user-select: none;
-
-  -ms-user-select: none;
-
   user-select: none;
-
-  -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
 
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .rux-modal__titlebar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
   flex-grow: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 
   width: 100%;
@@ -2558,9 +2438,6 @@ i.rux-icon {
   background-color: rgb(0, 90, 143);
 
   background-color: var(--modalBorderColor, rgb(0, 90, 143));
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   cursor: move;
 }
@@ -2577,15 +2454,8 @@ i.rux-icon {
 
 .rux-modal__content {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
   padding: 1rem;
   color: rgb(255, 255, 255);
@@ -2594,7 +2464,6 @@ i.rux-icon {
 
 .rux-button-group {
   margin-left: auto;
-  -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
@@ -2603,7 +2472,6 @@ i.rux-icon {
 }
 
 .rux-modal .rux-button {
-  -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
 
@@ -2615,21 +2483,11 @@ i.rux-icon {
 **
 */
 .rux-notification {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
 
   top: -4.25rem;
@@ -2641,10 +2499,7 @@ i.rux-icon {
   padding: 0.7rem 1.25rem;
   background-color: rgb(87, 214, 255);
   background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-
-  -webkit-box-sizing: border-box;
 
   box-sizing: border-box;
   color: rgb(0, 0, 0);
@@ -2689,16 +2544,8 @@ i.rux-icon {
 
   margin-left: auto;
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -2727,12 +2574,10 @@ i.rux-icon {
 }
 
 .rux-notification_close-button::after {
-  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
 .rux-notification_close-button::before {
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -2900,7 +2745,6 @@ i.rux-icon {
   z-index: 1;
 
   margin: -12px 0 0 16px;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -2927,7 +2771,6 @@ i.rux-icon {
   background-color: var(--colorSecondary, rgb(77, 172, 255));
 
   margin: -7px 0 0 16px;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -2954,7 +2797,6 @@ i.rux-icon {
   background-color: var(--colorSecondary, rgb(77, 172, 255));
 
   margin: 16px 0 0 -12px;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -2982,7 +2824,6 @@ i.rux-icon {
 
   right: 0;
   margin: 16px -12px 0 0;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -3017,30 +2858,21 @@ i.rux-icon {
   --progressWidth: calc(100% - 4px);
 }
 .rux-progress {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
 
-  -webkit-box-pack: justify;
-
-  -ms-flex-pack: justify;
-
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 
   height: 2rem;
 }
 
 .rux-progress progress[value] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 
   /* background: #21384f; */
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3)
+  ;
   background-color: var(
     --progressDeterminateTrackBackgroundColor,
     rgba(0, 0, 0, 0.3)
@@ -3080,7 +2912,8 @@ i.rux-icon {
   max-width: calc(100% - 4px);
   max-width: var(--progressWidth);
 
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
 
   background-color: var(
     --progressDeterminateBarBackgroundColor,
@@ -3096,7 +2929,8 @@ i.rux-icon {
   margin: 2px;
   max-width: calc(100% - 6px); /* var(--progressWidth);*/
 
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
 
   background-color: var(
     --progressDeterminateBarBackgroundColor,
@@ -3114,7 +2948,8 @@ i.rux-icon {
   max-width: calc(100% - 4px);
   max-width: var(--progressWidth);
 
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
 
   background-color: var(
     --progressDeterminateBarBackgroundColor,
@@ -3126,14 +2961,14 @@ i.rux-icon {
 .rux-progress progress:indeterminate {
   -webkit-appearance: none;
   -moz-appearance: none;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
 
   height: 5rem;
   width: 5rem;
 
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23000000%22%20fill-opacity%3D%22.3%22%20stroke%3D%22%2314202c%22%20d%3D%22M32%2C63.5%20C49.3969696%2C63.5%2063.5%2C49.3969696%2063.5%2C32%20C63.5%2C14.6030304%2049.3969696%2C0.5%2032%2C0.5%20C14.6030304%2C0.5%200.5%2C14.6030304%200.5%2C32%20C0.5%2C49.3969696%2014.6030304%2C63.5%2032%2C63.5%20Z%20M32%2C56.5%20C18.4690236%2C56.5%207.5%2C45.5309764%207.5%2C32%20C7.5%2C18.4690236%2018.4690236%2C7.5%2032%2C7.5%20C45.5309764%2C7.5%2056.5%2C18.4690236%2056.5%2C32%20C56.5%2C45.5309764%2045.5309764%2C56.5%2032%2C56.5%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%234dacff%22%20fill-rule%3D%22nonzero%22%20d%3D%22M32%2C61.9354839%20C30.9333606%2C61.9354839%2030.0686785%2C61.0708018%2030.0686785%2C60.0041623%20C30.0686785%2C58.9375229%2030.9333606%2C58.0728408%2032%2C58.0728408%20C40.1954904%2C58.0728408%2047.7578267%2C54.2689176%2052.6662672%2C47.8987622%20C56.1526582%2C43.3741373%2058.0728408%2C37.8356396%2058.0728408%2C32%20C58.0728408%2C17.6003676%2046.3996324%2C5.92715921%2032%2C5.92715921%20C17.6003676%2C5.92715921%205.92715921%2C17.6003676%205.92715921%2C32%20C5.92715921%2C33.0666394%205.0624771%2C33.9313215%203.99583767%2C33.9313215%20C2.92919824%2C33.9313215%202.06451613%2C33.0666394%202.06451613%2C32%20C2.06451613%2C15.4670888%2015.4670888%2C2.06451613%2032%2C2.06451613%20C48.5329112%2C2.06451613%2061.9354839%2C15.4670888%2061.9354839%2C32%20C61.9354839%2C38.6961574%2059.7285058%2C45.0618765%2055.7259583%2C50.2563674%20C50.0938506%2C57.5656952%2041.4065535%2C61.9354839%2032%2C61.9354839%20Z%22%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23000000%22%20fill-opacity%3D%22.3%22%20stroke%3D%22%2314202c%22%20d%3D%22M32%2C63.5%20C49.3969696%2C63.5%2063.5%2C49.3969696%2063.5%2C32%20C63.5%2C14.6030304%2049.3969696%2C0.5%2032%2C0.5%20C14.6030304%2C0.5%200.5%2C14.6030304%200.5%2C32%20C0.5%2C49.3969696%2014.6030304%2C63.5%2032%2C63.5%20Z%20M32%2C56.5%20C18.4690236%2C56.5%207.5%2C45.5309764%207.5%2C32%20C7.5%2C18.4690236%2018.4690236%2C7.5%2032%2C7.5%20C45.5309764%2C7.5%2056.5%2C18.4690236%2056.5%2C32%20C56.5%2C45.5309764%2045.5309764%2C56.5%2032%2C56.5%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%234dacff%22%20fill-rule%3D%22nonzero%22%20d%3D%22M32%2C61.9354839%20C30.9333606%2C61.9354839%2030.0686785%2C61.0708018%2030.0686785%2C60.0041623%20C30.0686785%2C58.9375229%2030.9333606%2C58.0728408%2032%2C58.0728408%20C40.1954904%2C58.0728408%2047.7578267%2C54.2689176%2052.6662672%2C47.8987622%20C56.1526582%2C43.3741373%2058.0728408%2C37.8356396%2058.0728408%2C32%20C58.0728408%2C17.6003676%2046.3996324%2C5.92715921%2032%2C5.92715921%20C17.6003676%2C5.92715921%205.92715921%2C17.6003676%205.92715921%2C32%20C5.92715921%2C33.0666394%205.0624771%2C33.9313215%203.99583767%2C33.9313215%20C2.92919824%2C33.9313215%202.06451613%2C33.0666394%202.06451613%2C32%20C2.06451613%2C15.4670888%2015.4670888%2C2.06451613%2032%2C2.06451613%20C48.5329112%2C2.06451613%2061.9354839%2C15.4670888%2061.9354839%2C32%20C61.9354839%2C38.6961574%2059.7285058%2C45.0618765%2055.7259583%2C50.2563674%20C50.0938506%2C57.5656952%2041.4065535%2C61.9354839%2032%2C61.9354839%20Z%22%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+  ;
 
   background-image: var(
     --progressIndeterminate,
@@ -3144,14 +2979,9 @@ i.rux-icon {
   background-repeat: no-repeat;
   background-position: center center;
 
-  -webkit-animation-name: spin;
-
   animation-name: spin;
-  -webkit-animation-duration: 1.367s;
   animation-duration: 1.367s;
-  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 
   background-color: transparent;
@@ -3172,24 +3002,11 @@ i.rux-icon {
   background-color: transparent;
 }
 
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes spin {
   from {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -3229,17 +3046,9 @@ i.rux-icon {
 
 .rux-pushbutton__button,
 .satcom-pushbutton-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 
-  -webkit-box-pack: center;
-
-  -ms-flex-pack: center;
-
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 
   height: 1.375rem;
@@ -3270,8 +3079,6 @@ i.rux-icon {
 
 .rux-pushbutton__input:checked + .rux-pushbutton__button,
 .satcom-pushbutton-input:checked + .satcom-pushbutton-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   color: rgb(91, 255, 0);
   color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
@@ -3279,8 +3086,6 @@ i.rux-icon {
   background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
   border-color: rgb(0, 0, 0);
   border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
-
-  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
 
   box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
 }
@@ -3308,8 +3113,6 @@ i.rux-icon {
 */
 
 .rux-segmented-button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   height: 1.6875rem;
 
@@ -3335,14 +3138,8 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 
   width: auto;
@@ -3363,12 +3160,6 @@ i.rux-icon {
 
   font-size: 0.875rem;
 
-  -webkit-user-select: none;
-
-  -moz-user-select: none;
-
-  -ms-user-select: none;
-
   user-select: none;
 }
 
@@ -3381,7 +3172,8 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment label:hover {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --segmentedButtonHoverBackgroundColor,
     rgb(58, 129, 191)
@@ -3392,33 +3184,25 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment input:checked + label {
-  background-color: rgb(58, 129, 191);
+  background-color: rgb(58, 129, 191)
+  ;
   background-color: var(
     --segmentedButtonSelectedBackgroundColor,
     rgb(58, 129, 191)
   );
   color: rgb(255, 255, 255);
   color: var(--segmentedButtonSelectedTextColor, rgb(255, 255, 255));
-  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: var(
-    --segmentedButtonSelectedBoxShadow,
-    inset 0 2px 4px rgba(0, 0, 0, 0.14),
     inset 0 3px 4px rgba(0, 0, 0, 0.12),
     inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  );
+  ;
   box-shadow: var(
     --segmentedButtonSelectedBoxShadow,
     inset 0 2px 4px rgba(0, 0, 0, 0.14),
     inset 0 3px 4px rgba(0, 0, 0, 0.12),
     inset 0 1px 5px rgba(0, 0, 0, 0.2)
   );
-  -webkit-transition: -webkit-box-shadow 0.067 ease-out;
-  transition: -webkit-box-shadow 0.067 ease-out;
   transition: box-shadow 0.067 ease-out;
-  transition: box-shadow 0.067 ease-out, -webkit-box-shadow 0.067 ease-out;
 }
 
 /*
@@ -3467,8 +3251,6 @@ i.rux-icon {
 
 .rux-range,
 .satcom-range {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 
   background: none;
@@ -3482,9 +3264,7 @@ input[type="range"]:focus {
 
 .rux-range::-webkit-slider-runnable-track,
 .satcom-range::-webkit-slider-runnable-track {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
 
   /* width: 100%; */
@@ -3499,32 +3279,14 @@ input[type="range"]:focus {
   outline: 1px solid transparent;
   outline: 1px solid var(--sliderTrackBorderColor, transparent);
 
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgb(77, 172, 255)),
-    color-stop(rgb(77, 172, 255)),
-    color-stop(rgb(217, 217, 217)),
-    to(rgb(217, 217, 217))
-  );
-
   background-image: linear-gradient(
     to right,
     rgb(77, 172, 255) 0%,
-    rgb(77, 172, 255) calc(1% * var(--value)),
-    rgb(217, 217, 217) calc(1% * var(--value)),
+    rgb(77, 172, 255)
+      calc(1% * var(--value)),
+    rgb(217, 217, 217)
+      calc(1% * var(--value)),
     rgb(217, 217, 217) 100%
-  );
-
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))),
-    color-stop(var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))),
-    color-stop(var(--sliderTrackBackgroundColor, rgb(217, 217, 217))),
-    to(var(--sliderTrackBackgroundColor, rgb(217, 217, 217)))
   );
 
   background-image: linear-gradient(
@@ -3556,7 +3318,8 @@ input[type="range"]:focus {
 }
 
 .rux-range::-moz-range-progress {
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
   background-color: var(
     --sliderSelectedTrackBackgroundColor,
     rgb(77, 172, 255)
@@ -3571,9 +3334,7 @@ input[type="range"]:focus {
 }
 
 .rux-range::-ms-track {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
   align-items: center;
 
   /* width: 100%; */
@@ -3617,14 +3378,8 @@ input[type="range"]:focus {
   background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
   cursor: pointer;
-  -webkit-box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
-    0 1px 3px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-    var(--thumbShadow);
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 
   outline: none !important;
@@ -3652,8 +3407,7 @@ input:-moz-focusring {
   background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
 
   cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 }
@@ -3703,12 +3457,9 @@ input:-moz-focusring {
   border-color: rgb(77, 172, 255);
   border-color: var(--colorSecondary, rgb(77, 172, 255));
   background-color: rgb(255, 255, 255);
-  -webkit-box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
+  box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
     0 1px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 0 0 4px rgb(0, 90, 143), 0 1px 3px rgba(0, 0, 0, 0.14),
-    0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: var(--thumbShadowActive);
   box-shadow: var(--thumbShadowActive);
 }
 
@@ -3718,11 +3469,8 @@ input:-moz-focusring {
 .satcom-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
   background-color: rgb(58, 129, 191);
   background-color: var(--sliderHoverThumbBackgroundColor, rgb(58, 129, 191));
-  -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
     0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
-    0 3px 5px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: var(--thumbShadowHover);
   box-shadow: var(--thumbShadowHover);
 }
 
@@ -3757,11 +3505,12 @@ input:-moz-focusring {
 
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC");
 
-  background-image: var(
-    --statusSymbols,
-    url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC")
-  );
+  background-image: var(--statusSymbols, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC"));
 }
+
+
+
+
 
 /* Specific Status Iconography */
 .rux-status--off,
@@ -3769,6 +3518,7 @@ input:-moz-focusring {
 .rux-status--off .rux-advanced-status__icon {
   background-position-x: -5rem;
 }
+
 
 .rux-status--standby,
 .rux-status-indicator.rux-status--standby,
@@ -3882,12 +3632,6 @@ input:-moz-focusring {
   padding: 0;
   height: 5.625rem;
 
-  -webkit-user-select: none;
-
-  -moz-user-select: none;
-
-  -ms-user-select: none;
-
   user-select: none;
 }
 
@@ -3901,10 +3645,6 @@ input:-moz-focusring {
   padding: 0;
   margin: 0;
   height: 100%;
-
-  display: -webkit-box;
-
-  display: -ms-flexbox;
 
   display: flex;
   list-style: none;
@@ -3932,11 +3672,7 @@ input:-moz-focusring {
 .rux-tabs a,
 .satcom-tabs a {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 3px 2rem 0;
 
@@ -3959,9 +3695,7 @@ input:-moz-focusring {
 .satcom-tabs .selected a {
   color: rgb(255, 255, 255);
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
-  -webkit-box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
   box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
-  -webkit-box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
   box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
@@ -3969,9 +3703,7 @@ input:-moz-focusring {
 .rux-tabs--small .selected a:hover {
   color: rgb(255, 255, 255);
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
-  -webkit-box-shadow: inset 0 -3px 0 rgb(77, 172, 255);
   box-shadow: inset 0 -3px 0 rgb(77, 172, 255);
-  -webkit-box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
   box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
@@ -3979,9 +3711,7 @@ input:-moz-focusring {
 .satcom-tabs .selected a:hover {
   color: rgb(255, 255, 255);
   color: var(--tabSelectedTextColor, rgb(255, 255, 255));
-  -webkit-box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
   box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
-  -webkit-box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
   box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
 }
 
@@ -4013,7 +3743,6 @@ input:-moz-focusring {
 .satcom-toggle--legacy {
   position: relative;
   display: inline-block;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
   -webkit-font-smoothing: subpixel-antialiased;
@@ -4025,9 +3754,6 @@ input:-moz-focusring {
   border: 1px solid rgb(0, 0, 0);
   border: 1px solid var(--toggleBaseBorderColor, rgb(0, 0, 0));
   /* box-shadow: inset 0 0 2px rgba(0, 0, 0, 1); */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   overflow: hidden;
 }
@@ -4039,17 +3765,10 @@ input:-moz-focusring {
 
 .rux-toggle--legacy__button {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 
-  -ms-flex-pack: distribute;
-
   justify-content: space-around;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 
   top: 0;
@@ -4062,18 +3781,10 @@ input:-moz-focusring {
 }
 
 .rux-toggle--legacy__button span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 
-  -ms-flex-line-pack: center;
-
   align-content: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 
   width: 50%;
@@ -4105,16 +3816,12 @@ input:-moz-focusring {
 
   position: absolute;
 
-  -webkit-box-sizing: border-box;
-
   box-sizing: border-box;
 
   top: 0;
   left: 0;
 
   z-index: 10;
-
-  -webkit-transition: left 0.1s ease-out;
 
   transition: left 0.1s ease-out;
 
@@ -4131,15 +3838,9 @@ input:-moz-focusring {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E %3Cdefs%3E %3ClinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3E %3Cstop offset='0%25' stop-color='%23000'/%3E %3Cstop offset='100%25' stop-color='%23023861' stop-opacity='0'/%3E %3C/linearGradient%3E %3C/defs%3E %3Ccircle cx='3' cy='3' r='3' fill='url(%23a)' fill-rule='evenodd'/%3E %3C/svg%3E")
     center center no-repeat;
 
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 1px 0 2px rgba(0, 0, 0, 0.6);
-
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 1px 0 2px rgba(0, 0, 0, 0.6);
-
-  -webkit-box-shadow: var(
-    --toggleButtonBoxShadow,
-    0 0 3px rgba(0, 0, 0, 0.5),
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
     1px 0 2px rgba(0, 0, 0, 0.6)
-  );
+  ;
 
   box-shadow: var(
     --toggleButtonBoxShadow,
@@ -4167,13 +3868,9 @@ input:-moz-focusring {
 
 .rux-toggle--legacy__input:checked + .rux-toggle--legacy__button::after {
   left: 50%;
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), -1px 0 2px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), -1px 0 2px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: var(
-    --toggleButtonSelectedBoxShadow,
-    0 0 3px rgba(0, 0, 0, 0.5),
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5),
     -1px 0 2px rgba(0, 0, 0, 0.6)
-  );
+  ;
   box-shadow: var(
     --toggleButtonSelectedBoxShadow,
     0 0 3px rgba(0, 0, 0, 0.5),
@@ -4201,28 +3898,15 @@ input:-moz-focusring {
 
 .rux-toggle {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
   /* height: 1.175rem; */
   /* width: 2.3875rem; */
   height: 22px;
   width: 42px;
-
-  -webkit-user-select: none;
-
-  -moz-user-select: none;
-
-  -ms-user-select: none;
 
   user-select: none;
   overflow: hidden;
@@ -4233,22 +3917,14 @@ input:-moz-focusring {
 }
 
 .rux-toggle__button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   /* justify-content: center;
   align-content: center; */
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
 .rux-toggle__button::before {
   position: relative;
-
-  display: -webkit-box;
-
-  display: -ms-flexbox;
 
   display: flex;
   content: "";
@@ -4262,14 +3938,13 @@ input:-moz-focusring {
   height: 11px;
   width: 32px;
 
-  -webkit-transition: 0.167s background-color ease-in-out;
-
   transition: 0.167s background-color ease-in-out;
 }
 
 /* Track */
 .rux-toggle__input:checked + .rux-toggle__button::before {
-  background-color: rgb(77, 172, 255);
+  background-color: rgb(77, 172, 255)
+  ;
   background-color: var(
     --toggleSelectedTrackBackgroundColor,
     rgb(77, 172, 255)
@@ -4293,13 +3968,12 @@ input:-moz-focusring {
   background-color: rgb(255, 255, 255);
   background-color: var(--toggleThumbBackgroundColor, rgb(255, 255, 255));
 
-  -webkit-transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
-
   transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
 }
 
 .rux-toggle__input:disabled + .rux-toggle__button::after {
-  background-color: rgb(163, 163, 163);
+  background-color: rgb(163, 163, 163)
+  ;
   background-color: var(
     --toggleDisabledThumbBackgroundColor,
     rgb(163, 163, 163)
@@ -4315,7 +3989,8 @@ input:-moz-focusring {
 }
 
 .rux-toggle__input:checked:disabled + .rux-toggle__button::after {
-  border-color: rgb(163, 163, 163);
+  border-color: rgb(163, 163, 163)
+  ;
   border-color: var(
     --toggleDisabledSelectedThumbBorderColor,
     rgb(163, 163, 163)
@@ -4331,7 +4006,6 @@ input:-moz-focusring {
 
 .rux-tree {
   display: inline-block;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
   width: 100%;
@@ -4357,7 +4031,6 @@ input:-moz-focusring {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -4374,23 +4047,15 @@ input:-moz-focusring {
 
 /* Parent Elements */
 .rux-tree__parent-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: stretch;
   align-content: stretch;
   padding: 0 0 0 1.25rem;
   margin: 0;
 }
 
 .rux-tree__label {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
   padding: 0.5rem;
 
@@ -4418,7 +4083,8 @@ input:-moz-focusring {
   height: 0;
   border-style: solid;
   border-width: 7px 0 7px 7px;
-  border-color: transparent transparent transparent rgb(77, 172, 255);
+  border-color: transparent transparent transparent
+    rgb(77, 172, 255);
   border-color: transparent transparent transparent
     var(--treeAccentColor, rgb(77, 172, 255));
   display: inline-block;
@@ -4443,7 +4109,6 @@ input:-moz-focusring {
 
 /* Expanded */
 .expanded .rux-tree__arrow::after {
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
@@ -4455,10 +4120,7 @@ input:-moz-focusring {
 .rux-tree .selected {
   background-color: rgb(0, 68, 107);
   background-color: var(--treeSelectedBackgroundColor, rgb(0, 68, 107));
-  -webkit-box-shadow: inset 5px 0 rgb(77, 172, 255);
   box-shadow: inset 5px 0 rgb(77, 172, 255);
-  -webkit-box-shadow: inset 5px 0
-    var(--treeSelectedAccentColor, rgb(77, 172, 255));
   box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
 
   color: rgb(255, 255, 255);
@@ -4467,7 +4129,9 @@ input:-moz-focusring {
 }
 
 .rux-tree .selected .rux-tree__arrow::after {
-  border-color: transparent transparent transparent rgb(77, 172, 255);
+  border-color: transparent transparent transparent
+    rgb(77, 172, 255);
   border-color: transparent transparent transparent
     var(--treeSelectedAccentColor, rgb(77, 172, 255));
 }
+

@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
 import { storiesOf } from '@storybook/polymer';
 import { html, render } from 'lit-html';
+import { RuxButton } from '../src/components/rux-button/rux-button.js';
 import inputFieldsReadme from '../src/css/documentation/input-fields-README.md';
 import checkboxesReadme from '../src/css/documentation/checkboxes-README.md';
 import radioButtonsReadme from '../src/css/documentation/radio-buttons-README.md';
+/* eslint-enable no-unused-vars */
 
 storiesOf('Components|Form Elements', module)
     .add(
@@ -260,6 +263,47 @@ storiesOf('Components|Form Elements', module)
           },
           notes: {
             markdown: inputFieldsReadme,
+          },
+        }
+    )
+    .add(
+        'Combinations',
+        () => {
+          return html`
+        <style>
+          .horizontal {
+            padding: 1rem;
+            margin: 4rem;
+            align-content: center;
+            justify-content: center;
+            display: flex;
+          }
+
+          .horizontal > * {
+            margin: 0.25rem;
+          }
+        </style>
+
+        <div class="horizontal">
+          <div class="rux-form-field">
+            <input id="input__email" class="rux-input" type="email" placeholder="user@domain.com" />
+          </div>
+          <button class="rux-button">Test</button>
+          <select class="rux-select">
+            <optgroup>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+              <option>Option 4</option>
+            </optgroup>
+          </select>
+        </div>
+      `;
+        },
+        {
+          exports: {
+            render,
+            html,
           },
         }
     );
