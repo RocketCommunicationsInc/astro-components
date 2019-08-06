@@ -40,6 +40,10 @@ function css() {
 }
 
 /*
+ * TODO: readd browser prefix
+ */
+
+/*
  * * Cleans the distribution folder before building
  */
 function clean() {
@@ -51,17 +55,13 @@ function clean() {
  */
 function watch() {
   // watch for color changes and generate palette
-  gulp.watch('./static/css/src/common/__variables.css', gulp.series('color'));
+  gulp.watch('./src/css/common/__variables.css', gulp.series('color'));
 
   // compile and minify css
   gulp.watch(
-      './static/css/src/**/*.css',
+      './src/css/**/*.css',
       {
-        ignored: [
-          './static/css/src/common/__variables.css',
-          './static/css/src/astro.core.css',
-          './static/css/src/astro.css',
-        ],
+        ignored: ['./src/css/common/__variables.css', './src/css/astro.core.css', './src/css/astro.css'],
       },
       gulp.series(css)
   );

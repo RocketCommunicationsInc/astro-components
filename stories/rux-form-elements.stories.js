@@ -288,7 +288,7 @@ storiesOf('Components|Form Elements', module)
           <div class="rux-form-field">
             <input id="input__email" class="rux-input" type="email" placeholder="user@domain.com" />
           </div>
-          <button class="rux-button">Test</button>
+
           <select class="rux-select">
             <optgroup>
               <option>Option 1</option>
@@ -297,6 +297,8 @@ storiesOf('Components|Form Elements', module)
               <option>Option 4</option>
             </optgroup>
           </select>
+
+          <button class="rux-button">Test</button>
         </div>
       `;
         },

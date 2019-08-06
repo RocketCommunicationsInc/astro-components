@@ -9,16 +9,16 @@
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  display: none !important;
+  
 
   border: 1px solid var(--selectBorderColor, rgb(0, 90, 143));
   border-radius: var(--buttonBorderRadius, 3px);
 
   color: var(--selectTextColor, rgb(255, 255, 255));
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5;
-  height: 2rem;
+  height: 2.125rem;
   padding: 0 1.2rem 0 0.625rem;
 
   background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
@@ -28,6 +28,8 @@
   );
   background-position: center right 0.625rem;
   background-repeat: no-repeat;
+
+  user-select: none;
 }
 
 .rux-select .rux-select optgroup,
