@@ -56,9 +56,9 @@
   box-sizing: border-box;
   order: 2;
 
-  height: 2.25rem;
+  height: 2.125rem;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0 1rem;
 
   border: 1px solid var(--inputBorderColor, transparent);
   border-radius: 3px;

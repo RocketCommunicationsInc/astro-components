@@ -8,7 +8,7 @@ const postcssColor = require('postcss-color-mod-function');
 const del = require('del');
 const gulpif = require('gulp-if');
 const properties = require('postcss-custom-properties');
-const autoprefixer = require('gulp-autoprefixer');
+// const autoprefixer = require('gulp-autoprefixer');
 
 /*
  * * The color method handles the generation of the tint/shade
@@ -32,13 +32,16 @@ function css() {
       .pipe(sourcemaps.init())
       .pipe(cssimport())
       .pipe(gulpif(condition, postcss([properties()])))
-      .pipe(gulpif(condition, autoprefixer({ browsers: 'last 2 versions' })))
       .pipe(gulp.dest('./static/css'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(csso())
       .pipe(gulp.dest('./static/css'))
       .pipe(sourcemaps.write('./'));
 }
+
+/*
+ * TODO: readd browser prefix
+ */
 
 /*
  * * Cleans the distribution folder before building
@@ -52,17 +55,13 @@ function clean() {
  */
 function watch() {
   // watch for color changes and generate palette
-  gulp.watch('./static/css/src/common/__variables.css', gulp.series('color'));
+  gulp.watch('./src/css/common/__variables.css', gulp.series('color'));
 
   // compile and minify css
   gulp.watch(
-      './static/css/src/**/*.css',
+      './src/css/**/*.css',
       {
-        ignored: [
-          './static/css/src/common/__variables.css',
-          './static/css/src/astro.core.css',
-          './static/css/src/astro.css',
-        ],
+        ignored: ['./src/css/common/__variables.css', './src/css/astro.core.css', './src/css/astro.css'],
       },
       gulp.series(css)
   );
