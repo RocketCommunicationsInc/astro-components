@@ -8,7 +8,7 @@ const postcssColor = require('postcss-color-mod-function');
 const del = require('del');
 const gulpif = require('gulp-if');
 const properties = require('postcss-custom-properties');
-const autoprefixer = require('gulp-autoprefixer');
+// const autoprefixer = require('gulp-autoprefixer');
 
 /*
  * * The color method handles the generation of the tint/shade

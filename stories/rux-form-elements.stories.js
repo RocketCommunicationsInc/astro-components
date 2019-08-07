@@ -265,47 +265,4 @@ storiesOf('Components|Form Elements', module)
             markdown: inputFieldsReadme,
           },
         }
-    )
-    .add(
-        'Combinations',
-        () => {
-          return html`
-        <style>
-          .horizontal {
-            padding: 1rem;
-            margin: 4rem;
-            align-content: center;
-            justify-content: center;
-            display: flex;
-          }
-
-          .horizontal > * {
-            margin: 0.25rem;
-          }
-        </style>
-
-        <div class="horizontal">
-          <div class="rux-form-field">
-            <input id="input__email" class="rux-input" type="email" placeholder="user@domain.com" />
-          </div>
-
-          <select class="rux-select">
-            <optgroup>
-              <option>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-              <option>Option 4</option>
-            </optgroup>
-          </select>
-
-          <button class="rux-button">Test</button>
-        </div>
-      `;
-        },
-        {
-          exports: {
-            render,
-            html,
-          },
-        }
     );
