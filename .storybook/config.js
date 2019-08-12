@@ -96,6 +96,7 @@ function switchTheme(event) {
   // ensure origin is from astrouxds
   if (
     event.origin !== 'https://www.astrouxds.com' &&
+    event.origin !== 'https://staging.astrouxds.com' &&
     event.origin !== 'https://astrouxds-staging.heroku.com' &&
     event.origin !== 'http://localhost:3000' &&
     event.origin !== 'https://astrouxds.com'
