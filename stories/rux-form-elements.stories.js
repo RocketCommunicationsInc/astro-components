@@ -272,7 +272,7 @@ storiesOf('Components|Form Elements', module)
           return html`
         <style>
           .demo-rows {
-            padding: 10%;
+            padding: 1rem 10%;
             display: flex;
             flex-direction: column;
             justify-content: center;
