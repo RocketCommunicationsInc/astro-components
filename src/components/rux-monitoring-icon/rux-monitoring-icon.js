@@ -192,7 +192,7 @@ export class RuxMonitoringIcon extends LitElement {
         border-radius: 3px;
         padding: 0.65rem 0.25rem;
 
-        color: var(--fontColor, #fff);
+        color: #fff;
         font-size: 0.775rem;
         text-align: center;
         overflow: hidden;
