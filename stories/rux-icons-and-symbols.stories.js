@@ -251,4 +251,92 @@ storiesOf('Components|Icons & Symbols', module)
             markdown: ReadmeMonitoring,
           },
         }
+    )
+    .add(
+        'Monitoring Icon (set)',
+        () => {
+          return html`
+        <style>
+          ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+
+            padding: 0 1rem;
+          }
+
+          ul li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        </style>
+        <ul>
+          <li>
+            <rux-monitoring-icon
+              icon="mission"
+              label="Mission"
+              sublabel="Sub Label"
+              status="off"
+              notifications="4"
+            ></rux-monitoring-icon>
+          </li>
+          <li>
+            <rux-monitoring-icon
+              icon="equipment"
+              label="Equipment"
+              sublabel="Sub Label"
+              status="standby"
+              notifications="100"
+            ></rux-monitoring-icon>
+          </li>
+          <li>
+            <rux-monitoring-icon
+              icon="processor"
+              label="Processor"
+              sublabel="Sub Label"
+              status="normal"
+            ></rux-monitoring-icon>
+          </li>
+          <li>
+            <rux-monitoring-icon
+              icon="antenna"
+              label="Antenna"
+              sublabel="Sub Label"
+              status="caution"
+              notifications="1200"
+            ></rux-monitoring-icon>
+          </li>
+          <li>
+            <rux-monitoring-icon
+              icon="antenna-transmit"
+              label="NROL"
+              sublabel="Sub Label"
+              status="serious"
+              notifications="1000000"
+            ></rux-monitoring-icon>
+          </li>
+          <li>
+            <rux-monitoring-icon
+              icon="antenna-receive"
+              label="SBSS=1"
+              sublabel="Receiving"
+              status="critical"
+              notifications="34000000000000"
+            ></rux-monitoring-icon>
+          </li>
+        </ul>
+      `;
+        },
+        {
+          exports: {
+            render,
+            html,
+          },
+          notes: {
+            // this will also use a .md file, but just trying it out for now
+            /* eslint-disable no-useless-escape */
+            markdown: ReadmeMonitoring,
+          },
+        }
     );

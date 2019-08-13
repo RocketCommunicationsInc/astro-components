@@ -16,7 +16,7 @@ storiesOf('Components|Status', module)
             list-style: none;
             justify-content: space-around;
 
-            padding: 0;
+            padding: 0 1rem;
           }
 
           ul li {
