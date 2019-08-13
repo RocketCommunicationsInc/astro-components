@@ -58,35 +58,10 @@ storiesOf('Components|Tabs', module)
         }
     )
     .add(
-        'Tabs Variants',
+        'Tabs (Compact)',
         () => {
           return html`
         <div style="display: flex; flex-flow: column;">
-          <div style="border: rgba(255,255,255, .25) dashed 1px; margin: 1vw 1vw 0; padding: 2px;">
-            <rux-tabs id="tab-set-id-1">
-              <rux-tab id="tab-id-1-1">Tab 1</rux-tab>
-              <rux-tab id="tab-id-1-2" selected>Tab 2 (Selected on load)</rux-tab>
-              <rux-tab id="tab-id-1-3" disabled>Tab 3 (Disabled)</rux-tab>
-            </rux-tabs>
-
-            <rux-tab-panels aria-labelledby="tab-set-id-1">
-              <rux-tab-panel aria-labelledby="tab-id-1-1">
-                <pre
-                  style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-                ><<span>!-- Tab 1 HTML Content --</span>></pre>
-              </rux-tab-panel>
-              <rux-tab-panel aria-labelledby="tab-id-1-2">
-                <pre
-                  style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-                ><<span>!-- Tab 2 HTML Content --</span>></pre>
-              </rux-tab-panel>
-              <rux-tab-panel aria-labelledby="tab-id-1-3">
-                <pre
-                  style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-                ><<span>!-- Tab 3 HTML Content --</span>></pre>
-              </rux-tab-panel>
-            </rux-tab-panels>
-          </div>
           <div style="border: rgba(255,255,255, .25) dashed 1px; margin: 1vw 1vw 0; padding: 2px;">
             <rux-tabs small id="tab-set-id-2">
               <rux-tab id="tab-id-2-1">Tab 1</rux-tab>
