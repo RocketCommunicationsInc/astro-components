@@ -5,115 +5,60 @@ import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 import Readme from '../src/components/rux-status/README.md';
 /* eslint-enable no-unused-vars */
 
-storiesOf('Components|Status', module)
-    .add(
-        'Status',
-        () => {
-          return html`
-        <style>
-          ul {
-            display: flex;
-            list-style: none;
-            justify-content: space-around;
+storiesOf('Components|Status', module).add(
+    'Status',
+    () => {
+      return html`
+      <style>
+        ul {
+          display: flex;
+          list-style: none;
+          justify-content: space-around;
 
-            padding: 0 1rem;
-          }
-
-          ul li {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-        </style>
-        <ul>
-          <li>
-            <rux-status status="off"></rux-status>
-            <div class="label">Off</div>
-          </li>
-          <li>
-            <rux-status status="standby"></rux-status>
-            <div class="label">Standby</div>
-          </li>
-          <li>
-            <rux-status status="normal"></rux-status>
-            <div class="label">Caution</div>
-          </li>
-          <li>
-            <rux-status status="caution"></rux-status>
-            <div class="label">Normal</div>
-          </li>
-          <li>
-            <rux-status status="serious"></rux-status>
-            <div class="label">Serious</div>
-          </li>
-          <li>
-            <rux-status status="critical"></rux-status>
-            <div class="label">Critical</div>
-          </li>
-        </ul>
-      `;
-        },
-        {
-          exports: {
-            render,
-            html,
-          },
-          notes: {
-            markdown: Readme,
-          },
+          padding: 0 1rem;
         }
-    )
-    .add(
-        'Status (HTML)',
-        () => {
-          return html`
-        <style>
-          ul {
-            display: flex;
-            list-style: none;
-            margin: 1rem;
-            padding: 0;
-            width: 50%;
-            justify-content: center;
-            align-items: center;
-          }
 
-          ul:last-child {
-            flex-direction: column;
-          }
-
-          ul > li {
-            margin: 0.25rem;
-          }
-        </style>
-        <div style="margin: 3rem auto; display: flex; min-width: 50%;">
-          <ul>
-            <li><div class="rux-status rux-status--off"></div></li>
-            <li><div class="rux-status rux-status--standby"></div></li>
-            <li><div class="rux-status rux-status--normal"></div></li>
-            <li><div class="rux-status rux-status--caution"></div></li>
-            <li><div class="rux-status rux-status--serious"></div></li>
-            <li><div class="rux-status rux-status--critical"></div></li>
-          </ul>
-
-          <ul>
-            <li><div class="rux-status rux-status--off"></div></li>
-            <li><div class="rux-status rux-status--standby"></div></li>
-            <li><div class="rux-status rux-status--normal"></div></li>
-            <li><div class="rux-status rux-status--caution"></div></li>
-            <li><div class="rux-status rux-status--serious"></div></li>
-            <li><div class="rux-status rux-status--critical"></div></li>
-          </ul>
-        </div>
-      `;
-        },
-        {
-          exports: {
-            render,
-            html,
-          },
-          notes: {
-            markdown: Readme,
-          },
+        ul li {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
-    );
+      </style>
+      <ul>
+        <li>
+          <rux-status status="off"></rux-status>
+          <div class="label">Off</div>
+        </li>
+        <li>
+          <rux-status status="standby"></rux-status>
+          <div class="label">Standby</div>
+        </li>
+        <li>
+          <rux-status status="normal"></rux-status>
+          <div class="label">Caution</div>
+        </li>
+        <li>
+          <rux-status status="caution"></rux-status>
+          <div class="label">Normal</div>
+        </li>
+        <li>
+          <rux-status status="serious"></rux-status>
+          <div class="label">Serious</div>
+        </li>
+        <li>
+          <rux-status status="critical"></rux-status>
+          <div class="label">Critical</div>
+        </li>
+      </ul>
+    `;
+    },
+    {
+      exports: {
+        render,
+        html,
+      },
+      notes: {
+        markdown: Readme,
+      },
+    }
+);
