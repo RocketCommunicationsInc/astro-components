@@ -14,40 +14,43 @@ storiesOf('Components|Status', module)
           ul {
             display: flex;
             list-style: none;
-            margin: 1rem;
+            justify-content: space-around;
+
             padding: 0;
-            width: 50%;
-            justify-content: center;
+          }
+
+          ul li {
+            display: flex;
+            flex-direction: column;
             align-items: center;
           }
-
-          ul:last-child {
-            flex-direction: column;
-          }
-
-          ul > li {
-            margin: 0.25rem;
-          }
         </style>
-        <div style="margin: 3rem auto; display: flex; min-width: 50%;">
-          <ul>
-            <li><rux-status status="off"></rux-status></li>
-            <li><rux-status status="standby"></rux-status></li>
-            <li><rux-status status="normal"></rux-status></li>
-            <li><rux-status status="caution"></rux-status></li>
-            <li><rux-status status="serious"></rux-status></li>
-            <li><rux-status status="critical"></rux-status></li>
-          </ul>
-
-          <ul>
-            <li><rux-status status="off"></rux-status></li>
-            <li><rux-status status="standby"></rux-status></li>
-            <li><rux-status status="normal"></rux-status></li>
-            <li><rux-status status="caution"></rux-status></li>
-            <li><rux-status status="serious"></rux-status></li>
-            <li><rux-status status="critical"></rux-status></li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <rux-status status="off"></rux-status>
+            <div class="label">Off</div>
+          </li>
+          <li>
+            <rux-status status="standby"></rux-status>
+            <div class="label">Standby</div>
+          </li>
+          <li>
+            <rux-status status="normal"></rux-status>
+            <div class="label">Caution</div>
+          </li>
+          <li>
+            <rux-status status="caution"></rux-status>
+            <div class="label">Normal</div>
+          </li>
+          <li>
+            <rux-status status="serious"></rux-status>
+            <div class="label">Serious</div>
+          </li>
+          <li>
+            <rux-status status="critical"></rux-status>
+            <div class="label">Critical</div>
+          </li>
+        </ul>
       `;
         },
         {
