@@ -249,6 +249,17 @@ export class RuxLog extends LitElement {
           background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22rgb(0%2C%2090%2C%20143)%22%20fill-rule%3D%22evenodd%22%20d%3D%22M69.028%2064l22.628%2022.627-5.029%205.029L64%2069.028%2041.373%2091.656l-5.029-5.029L58.972%2064%2036.344%2041.373l5.029-5.029L64%2058.972l22.627-22.628%205.029%205.029L69.028%2064z%22%2F%3E%0A%3C%2Fsvg%3E');
         }
 
+        .sr-only {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+
         /*
         * *  END TEMPORARY STYLING
         */
@@ -262,7 +273,9 @@ export class RuxLog extends LitElement {
           <li class="log-event__message log-header__message">Event</li>
           <li>
             <div class="rux-form-field rux-form-field--small">
+              <label class="sr-only" for="log-search">Search</label>
               <input
+                id="log-search"
                 class="rux-input"
                 placeholder="Search"
                 type="search"
