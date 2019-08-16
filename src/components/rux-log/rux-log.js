@@ -194,12 +194,11 @@ export class RuxLog extends LitElement {
           padding: 0.5rem;
         }
 
-        /* input[type="search"] {
-        border: none;
-        border-radius: 3px;
-        font-size: 1rem;
-        background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg'/><path d='M6.33 5.67l1 1-3.66 3.66-1-1'/></g></svg>");
-      } */
+        /*  
+        * * NOTE: Temporary inclusion of static CSS stlyes here. Future decision needs
+        * * to be made whether or not the filter input element should be embedded in the
+        * * component which requires a new approach to styling elements.
+        */
 
         .rux-form-field--small input {
           box-sizing: border-box;
@@ -221,6 +220,38 @@ export class RuxLog extends LitElement {
           color: rgb(0, 0, 0);
           color: var(--inputTextColor, rgb(0, 0, 0));
         }
+
+        input[type='search']::-webkit-search-decoration {
+          -webkit-appearance: textfield;
+        }
+
+        /* SEARCH VARIANT */
+        input[type='search'] {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+
+          background: no-repeat center left 0.3rem/1.1em
+            url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
+            var(--inputBackgroundColor, rgb(255, 255, 255));
+        }
+
+        input[type='search'] {
+          padding: 0.3rem 0 0.3rem 1.5rem;
+        }
+
+        input[type='search']::-webkit-search-cancel-button {
+          position: relative;
+
+          -webkit-appearance: none;
+          width: 20px;
+          height: 20px;
+          background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22rgb(0%2C%2090%2C%20143)%22%20fill-rule%3D%22evenodd%22%20d%3D%22M69.028%2064l22.628%2022.627-5.029%205.029L64%2069.028%2041.373%2091.656l-5.029-5.029L58.972%2064%2036.344%2041.373l5.029-5.029L64%2058.972l22.627-22.628%205.029%205.029L69.028%2064z%22%2F%3E%0A%3C%2Fsvg%3E');
+        }
+
+        /*
+        * *  END TEMPORARY STYLING
+        */
       </style>
 
       <header class="rux-log-header">
@@ -233,7 +264,7 @@ export class RuxLog extends LitElement {
             <div class="rux-form-field rux-form-field--small">
               <input
                 class="rux-input"
-                placeholder="Filter Log…"
+                placeholder="Search"
                 type="search"
                 .value="${this._filterValue}"
                 @input="${this.filterChanged}"
