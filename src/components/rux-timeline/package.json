@@ -1,0 +1,31 @@
+{
+	"author": {
+		"name": "Rocket Communications",
+		"email": "uxsupport@rocketcom.com"
+	},
+	"dependencies": {
+		"@astrouxds/rux-status": "^4.0.0",
+		"@webcomponents/webcomponentsjs": "^2.2.10",
+		"lit-element": "^2.1.0"
+	},
+	"homepage": "https://www.astrouxds.com",
+	"bugs": {
+		"email": "uxsupport@rocketcom.com",
+		"url": "https://bitbucket.org/rocketcom/astro-components/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
+	},
+	"description": "Astro Web Component for Timeline Navigation",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"main": "rux-timeline.js",
+	"name": "@astrouxds/rux-timeline",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"version": "4.0.0"
+}
