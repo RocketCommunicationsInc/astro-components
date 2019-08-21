@@ -29,7 +29,7 @@ storiesOf('Components|Timeline', module)
                       today.getUTCFullYear(),
                       today.getUTCMonth(),
                       today.getUTCDate(),
-                      7,
+                      1,
                       30,
                       0
                   ).toISOString(),
@@ -37,7 +37,7 @@ storiesOf('Components|Timeline', module)
                       today.getUTCFullYear(),
                       today.getUTCMonth(),
                       today.getUTCDate(),
-                      8,
+                      3,
                       30,
                       0
                   ).toISOString(),
@@ -50,18 +50,11 @@ storiesOf('Components|Timeline', module)
                       today.getUTCFullYear(),
                       today.getUTCMonth(),
                       today.getUTCDate(),
-                      10,
+                      5,
                       0,
                       0
                   ).toISOString(),
-                  endTime: new Date(
-                      today.getUTCFullYear(),
-                      today.getUTCMonth(),
-                      today.getUTCDate(),
-                      13,
-                      0,
-                      0
-                  ).toISOString(),
+                  endTime: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), 7, 0, 0).toISOString(),
                 },
                 {
                   label: 'NROL-14 (KH-11)',
@@ -71,7 +64,7 @@ storiesOf('Components|Timeline', module)
                       today.getUTCFullYear(),
                       today.getUTCMonth(),
                       today.getUTCDate(),
-                      15,
+                      8,
                       0,
                       0
                   ).toISOString(),
@@ -79,7 +72,7 @@ storiesOf('Components|Timeline', module)
                       today.getUTCFullYear(),
                       today.getUTCMonth(),
                       today.getUTCDate(),
-                      20,
+                      11,
                       30,
                       0
                   ).toISOString(),
@@ -105,13 +98,13 @@ storiesOf('Components|Timeline', module)
             margin-left: auto;
           }
         </style>
-        <div style="position: relative; padding: 1rem; margin: 3rem auto;">
+        <div style="margin: 2rem 0 0 0">
           <!-- <div class="header" style="overflow: hidden;">
             <rux-status status="normal"></rux-status>
             <h2>Header ${scale}</h2>
             <rux-slider .val="${scale}" min="100" max="500" hideInput></rux-slider>
           </div> -->
-          <rux-timeline .tracks="${tracks}"></rux-timeline>
+          <rux-timeline duration="43200000" .tracks="${tracks}"></rux-timeline>
         </div>
       `;
         },

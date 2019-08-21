@@ -125,20 +125,6 @@ export class RuxTimelineRegion extends LitElement {
         opacity: 0.5;
       }
 
-      /*
-        Placeholders for variable sized timelines
-        :host(.large) {
-        }
-        
-        :host(.medium) {
-        }
-        
-        :host(.small) {
-        }
-        
-        :host(.compact) {
-        }
-        */
       :host(.current),
       :host([temporality='present']) {
         border: 1px solid #4dacff;
@@ -149,7 +135,7 @@ export class RuxTimelineRegion extends LitElement {
       :host([selected]) {
         border: 1px solid var(--timelineRegionSelectedBorderColor, rgb(77, 172, 255));
         background-color: var(--timelineRegionSelectedBackgroundColor, rgb(58, 129, 191));
-        color: var(--timelineRegionSelectedTextColor, rgb(255, 255, 255));
+
         z-index: 1;
       }
 
@@ -186,13 +172,11 @@ export class RuxTimelineRegion extends LitElement {
         color: var(--fontColor, #fff);
         text-overflow: ellipsis;
       }
-      /* 
-        placeholders for variant sizes
-        :host(.standard) .rux-region__label {
-        }
-        
-        :host(.medium) .rux-region__label {
-        } */
+
+      :host([selected]) .rux-region__label,
+      :host([selected]) .rux-region__time {
+        color: var(--timelineRegionSelectedTextColor, rgb(255, 255, 255));
+      }
 
       :host(.small) .rux-region__label {
         width: 45px;
@@ -213,15 +197,6 @@ export class RuxTimelineRegion extends LitElement {
         color: var(--fontColor, #fff);
         height: 50%;
       }
-
-      /* 
-        placeholder for variant sizes
-        :host(.standard) .rux-region__time {
-        }
-        
-        :host(.medium) .rux-region__time {
-          /* display: none; * /
-        } */
 
       :host(.small) .rux-region__time {
         display: none;

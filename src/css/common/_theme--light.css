@@ -416,7 +416,7 @@
     --colorSecondaryDarken1,
     rgb(62, 138, 204)
   );
-  --timelineRegionSelectedTextColor: var(--fontColor, rgb(255, 255, 255));
+  --timelineRegionSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
 
   /* 
     

@@ -139,8 +139,6 @@ export class RuxTimelineTrack extends LitElement {
 
   _onClick(e) {
     const _region = e.currentTarget;
-    console.log('currenttarget', _region);
-    console.log('\n\nend');
 
     this._resetSelected();
     if (_region.hasAttribute('selected')) {
