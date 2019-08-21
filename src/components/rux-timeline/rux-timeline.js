@@ -50,6 +50,7 @@ export class RuxTimeline extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="./css/astro.core.min.css" />
       <section class="rux-timeline__viewport">
         <div class="rux-timeline__viewport__labels">
           ${this.tracks.map(
