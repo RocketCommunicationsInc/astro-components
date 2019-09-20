@@ -30,7 +30,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
 
-  font-family: var(--fontFamilty, "Open Sans", sans-serif);
+  font-family: var(--fontFamily, "Open Sans", sans-serif);
   font-size: var(--fontSize, 1rem);
   color: var(--fontColor, rgb(255, 255, 255));
 }
