@@ -6,13 +6,19 @@ export class RuxTabPanels extends LitElement {
 
     this.setAttribute('style', 'position: relative; width: 100%;');
 
-    const _panels = this.querySelectorAll('rux-tab-panel');
+    let _panels = [];
 
-    window.dispatchEvent(
+    window.addEventListener('DOMContentLoaded', () => {
+      _panels = this.querySelectorAll('rux-tab-panel');
+    })
+
+    window.addEventListener('DOMContentLoaded', () => {
+      window.dispatchEvent(
         new CustomEvent('register-panels', {
           detail: { panels: _panels, for: this.getAttribute('aria-labelledby') },
         })
-    );
+      );
+    })
   }
 
   render() {
