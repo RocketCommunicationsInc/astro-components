@@ -1,24 +1,33 @@
 import { LitElement, html } from 'lit-element';
 
 export class RuxTabPanels extends LitElement {
+  constructor() {
+    super();
+    this._registerTabPanelsListener = this._registerTabPanels.bind(this);
+  }
+
   connectedCallback() {
     super.connectedCallback();
 
     this.setAttribute('style', 'position: relative; width: 100%;');
 
-    let _panels = [];
+    // Add event listener to wait for DOM to be completely loaded. This was needed for Angular
+    window.addEventListener('DOMContentLoaded', this._registerTabPanelsListener );
+  }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      _panels = this.querySelectorAll('rux-tab-panel');
-    })
+  disconnectedCallback() {
+    window.removeEventListener('DOMContentLoaded', this._registerTabPanelsListener);
+    super.disconnectedCallback();
+  }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      window.dispatchEvent(
-        new CustomEvent('register-panels', {
-          detail: { panels: _panels, for: this.getAttribute('aria-labelledby') },
-        })
-      );
-    })
+  _registerTabPanels() {
+    let _panels = document.querySelectorAll('rux-tab-panel');
+
+    window.dispatchEvent(
+      new CustomEvent('register-panels', {
+        detail: { panels: _panels, for: this.getAttribute('aria-labelledby') },
+      })
+    );
   }
 
   render() {
