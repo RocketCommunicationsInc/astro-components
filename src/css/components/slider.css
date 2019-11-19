@@ -44,6 +44,7 @@
 
 .rux-range,
 .satcom-range {
+  -webkit-appearance: none;
   appearance: none;
 
   background: none;

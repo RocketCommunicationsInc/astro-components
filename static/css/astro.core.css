@@ -1841,7 +1841,7 @@ label {
 
   font-family: "Open Sans", sans-serif;
 
-  font-family: var(--fontFamilty, "Open Sans", sans-serif);
+  font-family: var(--fontFamily, "Open Sans", sans-serif);
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
   color: rgb(255, 255, 255);
