@@ -851,7 +851,7 @@ li.light-theme {
   --selectBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
   --selectBorderColor: var(--colorPrimary, rgb(0, 90, 143));
   --selectTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --selectCaret: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
+  --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
 
   /* 
     
@@ -899,7 +899,6 @@ li.light-theme {
     rgb(122, 122, 122)
   );
 
-
   /* 
     
     Popup Menu Colors 
@@ -908,17 +907,21 @@ li.light-theme {
   */
   --popupMenuBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --popupMenuBorderColor: var(--colorSecondary, rgb(77, 172, 255));
-  --popupMenuTextColor: var(--colorBlack, rgb(0,0,0));
+  --popupMenuTextColor: var(--colorBlack, rgb(0, 0, 0));
 
   --popupCaretBackgroundColor: var(--popupMenuBorderColor, rgb(77, 172, 255));
 
   --popupMenuItemBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3, rgb(211, 234, 255));
+  --popupMenuItemHoverBackgroundColor: var(
+    --colorSecondaryLighten3,
+    rgb(211, 234, 255)
+  );
   --popupMenuItemHoverTextColor: var(--colorBlack, rgb(0, 0, 0));
 
-  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2, rgb(123, 128, 137));
-
-
+  --popupMenuItemSeperatorBorderColor: var(
+    --colorQuaternaryDarken2,
+    rgb(123, 128, 137)
+  );
 
   /* 
     
@@ -1031,8 +1034,8 @@ li.light-theme {
     ==========================================================================
     
   */
-  
-  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC");
+
+  --statusSymbols: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC');
   /* 
     
     Scrollbar Colors -- Dark
@@ -1074,10 +1077,10 @@ li.light-theme {
   --timelineRegionTextColor: var(--fontColor, rgb(255, 255, 255));
   --timelineRegionBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
-  --timelineRegionSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
+  --timelineRegionSelectedBorderColor: var(--colorWhite, rgb(255, 255, 255));
   --timelineRegionSelectedBackgroundColor: var(
-    --colorSecondaryDarken1,
-    rgb(62, 138, 204)
+    --colorSecondaryDarken2,
+    rgb(43, 101, 155)
   );
   --timelineRegionSelectedTextColor: var(--fontColor, rgb(255, 255, 255));
 
