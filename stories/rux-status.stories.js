@@ -6,9 +6,9 @@ import Readme from '../src/components/rux-status/README.md';
 /* eslint-enable no-unused-vars */
 
 storiesOf('Components|Status', module).add(
-    'Status',
-    () => {
-      return html`
+  'Status',
+  () => {
+    return html`
       <style>
         ul {
           display: flex;
@@ -35,11 +35,11 @@ storiesOf('Components|Status', module).add(
         </li>
         <li>
           <rux-status status="normal"></rux-status>
-          <div class="label">Caution</div>
+          <div class="label">Normal</div>
         </li>
         <li>
           <rux-status status="caution"></rux-status>
-          <div class="label">Normal</div>
+          <div class="label">Caution</div>
         </li>
         <li>
           <rux-status status="serious"></rux-status>
@@ -51,14 +51,14 @@ storiesOf('Components|Status', module).add(
         </li>
       </ul>
     `;
+  },
+  {
+    exports: {
+      render,
+      html,
     },
-    {
-      exports: {
-        render,
-        html,
-      },
-      notes: {
-        markdown: Readme,
-      },
-    }
+    notes: {
+      markdown: Readme,
+    },
+  },
 );
