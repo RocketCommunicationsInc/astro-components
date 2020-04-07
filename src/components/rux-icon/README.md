@@ -14,7 +14,7 @@ Display icons used in the Astro Design System
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Icon package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Icon package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-icon

@@ -8,7 +8,7 @@ A Pop-Up Menu provides users with a quick way to access common actions for a hig
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Pop Up Menu package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Pop Up Menu package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-pop-up-menu

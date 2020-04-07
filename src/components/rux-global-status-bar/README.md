@@ -10,7 +10,7 @@ The Global Status Bar is a full width view across the top of an application — 
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Global Status Bar package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Global Status Bar package via Command Line (Preferred Method)
 
 ```sh
 npm i -save @astrouxds/rux-global-status-bar

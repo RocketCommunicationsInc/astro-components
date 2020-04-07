@@ -2,7 +2,7 @@
 
 Segmented Buttons allow users to select one item at a time from two to four options. Selecting one option automatically turns off the last selection made. Segmented Buttons are mutually exclusive.
 
-##Guidelines
+## Guidelines
 
 - [Astro UXDS: Segmented Button](https://astrouxds.com/ui-components/segmented-button)
 
@@ -10,7 +10,7 @@ Segmented Buttons allow users to select one item at a time from two to four opti
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Segmented Button package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Segmented Button package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-segmented-button

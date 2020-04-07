@@ -10,7 +10,7 @@ Pushbuttons are a variant of the toggle button which incorporate label and actio
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Push Button package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Push Button package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-push-button

@@ -12,7 +12,7 @@ An item can be expanded to reveal subitems, if any exist, and collapsed to hide 
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Tree package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Tree package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-tree

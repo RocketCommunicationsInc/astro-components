@@ -10,7 +10,7 @@ The Status Symbol combines color and shape to create a standard and consistent w
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Status package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Status package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-status
