@@ -1,40 +1,20 @@
 /* global window */
 import astroThemes from './theme';
-
 import {
-  configure,
   addParameters,
   addDecorator,
-  // setCustomElements,
 } from '@storybook/web-components';
-
-import { addons } from '@storybook/addons';
-
 import {withA11y} from '@storybook/addon-a11y';
-
-import { addReadme } from 'storybook-readme/html'; // <---- html subpackage
+import { addReadme } from 'storybook-readme/html';
 
 addDecorator(withA11y);
-
 addDecorator(addReadme);
 
-// this is a preview-only theme toggle. Only affects canvas
 addParameters({
   themes: [
     { name: 'Light Theme', class: 'light-theme', color: '#eceff4'},
     { name: 'Dark Theme', class: 'dark-theme', color: '#192635', default: true },
   ],
-});
-
-// import customElements from '../custom-elements.json';
-
-// setCustomElements(customElements);
-
-addParameters({
-  docs: {
-    iframeHeight: '200px',
-  },
-  // for Readme Panel: 
   readme: {
     codeTheme: 'duotone-sea',
     theme: {
@@ -68,18 +48,5 @@ addParameters({
     }
   }
 });
-
-// configure(require.context('../stories', true, /\.stories\.(js|mdx)$/), module);
-
-// force full reload to not reregister web components
-const req = require.context('../stories', true, /\.stories\.(js|mdx)$/);
-configure(req, module);
-if (module.hot) {
-  module.hot.accept(req.id, () => {
-    const currentLocationHref = window.location.href;
-    window.history.pushState(null, null, currentLocationHref);
-    window.location.reload();
-  });
-}
 
 
