@@ -6,7 +6,7 @@ If the user is currently working in a specific screen area, the Banner may be pr
 
 If another Notification Banner is waiting, it appears when the current Banner is dismissed. Banners don’t stack or group.
 
-##Guidelines
+## Guidelines
 
 - [Astro UXDS: Notification Banner](https://www.astrouxds.com/ui-components/notification-banner)
 
@@ -14,7 +14,7 @@ If another Notification Banner is waiting, it appears when the current Banner is
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Notification Banner package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Notification Banner package via Command Line (Preferred Method)
 
 The name of the package reflects its earlier history as Astro UXDS Modal.
 

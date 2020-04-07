@@ -11,7 +11,7 @@ A Log is a tabular representation of application events and may include username
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Log package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Log package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-log

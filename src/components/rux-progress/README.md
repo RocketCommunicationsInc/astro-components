@@ -8,7 +8,7 @@ A visual indicator of a tasks progress. When indicating progress with a finite d
 
 ### 1. Installation
 
-#### ** Install the Astro RUX Progress package via Command Line** (Preferred Method)
+#### Install the Astro RUX Progress package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-progress

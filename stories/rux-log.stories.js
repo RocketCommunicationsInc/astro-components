@@ -1,90 +1,90 @@
-/* eslint-disable no-unused-vars */
-import { storiesOf } from '@storybook/polymer';
 import { html, render } from 'lit-html';
 import { button, text, withKnobs } from '@storybook/addon-knobs';
 import { RuxLog } from '../src/components/rux-log/rux-log.js';
 import Readme from '../src/components/rux-log/README.md';
-/* eslint-enable no-unused-vars */
 
-storiesOf('Components|Log', module)
-    .addDecorator(withKnobs)
-    .add(
-        'Log',
-        () => {
-          // /* FAKE LOG DATA */
+export default {
+  title: 'Components|Log',
+  decorators: [withKnobs],
+};
 
-          // dates cannot be dynamically generated in a story https://github.com/storybooks/storybook/tree/master/addons/knobs#date
-          const logData = [
-            {
-              timestamp: new Date(1557503698781),
-              status: 'off',
-              message: 'Antenna DGS 1 went offline.',
-            },
-            {
-              timestamp: new Date(1557503698781),
-              status: 'serious',
-              message: 'USA-177 experienced solar panel misalignment.',
-            },
-            {
-              timestamp: new Date(1557503698781),
-              status: 'caution',
-              message: 'USA-168 suffered power degradation.',
-            },
-            {
-              timestamp: new Date(1557503698781),
-              status: 'standby',
-              message: 'Antenna DGS 2 has weak signal.',
-            },
-            {
-              timestamp: new Date(1557503698781),
-              status: 'off',
-              message: 'Black FEP 121 is offline.',
-            },
-            {
-              timestamp: new Date(1557503698781),
-              status: 'off',
-              message: 'Antenna DGS 1 went offline.',
-            },
-            {
-              timestamp: new Date(1557503698781),
-              status: 'serious',
-              message: 'USA-177 experienced solar panel misalignment.',
-            },
-            {
-              timestamp: new Date(1557503698781),
-              status: 'caution',
-              message: 'USA-168 suffered power degradation.',
-            },
-            {
-              timestamp: new Date(1557503698781),
-              status: 'standby',
-              message: 'Antenna DGS 2 has weak signal.',
-            },
-            {
-              timestamp: new Date(1557503698781),
-              status: 'off',
-              message: 'Black FEP 121 is offline.',
-            },
-          ];
+export const Log = () => {
+  // /* FAKE LOG DATA */
 
-          // button causes unintention re-render, don't use til fixed https://github.com/storybooks/storybook/issues/6675
-          // button('Add log item', () => { _updateLog(); })
+  // dates cannot be dynamically generated in a story https://github.com/storybooks/storybook/tree/master/addons/knobs#date
+  const logData = [
+    {
+      timestamp: new Date(1557503698781),
+      status: 'off',
+      message: 'Antenna DGS 1 went offline.',
+    },
+    {
+      timestamp: new Date(1557503698781),
+      status: 'serious',
+      message: 'USA-177 experienced solar panel misalignment.',
+    },
+    {
+      timestamp: new Date(1557503698781),
+      status: 'caution',
+      message: 'USA-168 suffered power degradation.',
+    },
+    {
+      timestamp: new Date(1557503698781),
+      status: 'standby',
+      message: 'Antenna DGS 2 has weak signal.',
+    },
+    {
+      timestamp: new Date(1557503698781),
+      status: 'off',
+      message: 'Black FEP 121 is offline.',
+    },
+    {
+      timestamp: new Date(1557503698781),
+      status: 'off',
+      message: 'Antenna DGS 1 went offline.',
+    },
+    {
+      timestamp: new Date(1557503698781),
+      status: 'serious',
+      message: 'USA-177 experienced solar panel misalignment.',
+    },
+    {
+      timestamp: new Date(1557503698781),
+      status: 'caution',
+      message: 'USA-168 suffered power degradation.',
+    },
+    {
+      timestamp: new Date(1557503698781),
+      status: 'standby',
+      message: 'Antenna DGS 2 has weak signal.',
+    },
+    {
+      timestamp: new Date(1557503698781),
+      status: 'off',
+      message: 'Black FEP 121 is offline.',
+    },
+  ];
 
-          const filter = text('Filter log', '');
+  // button causes unintention re-render, don't use til fixed https://github.com/storybooks/storybook/issues/6675
+  // button('Add log item', () => { _updateLog(); })
 
-          return html`
-        <div style="display: flex; flex-flow: column; justify-content: center;">
-          <rux-log ._filterValue="${filter}" .data="${logData}"> </rux-log>
-        </div>
-      `;
-        },
-        {
-          exports: {
-            render,
-            html,
-          },
-          notes: {
-            markdown: Readme,
-          },
-        }
-    );
+  const filter = text('Filter log', '');
+
+  return html`
+    <div style="display: flex; flex-flow: column; justify-content: center;">
+      <rux-log ._filterValue="${filter}" .data="${logData}"> </rux-log>
+    </div>
+  `;
+};
+
+Log.story = {
+  parameters: {
+    exports: {
+      render,
+      html,
+    },
+    readme: {
+      sidebar: Readme,
+    },
+  },
+};

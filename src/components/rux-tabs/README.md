@@ -10,7 +10,7 @@ Tabs are used to divide major areas of content and to indicate work process.
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Tabs package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Tabs package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-tabs

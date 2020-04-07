@@ -10,7 +10,7 @@ An Accordion is a device which presents a hierarchical set of items in which onl
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Accordion package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Accordion package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-accordion

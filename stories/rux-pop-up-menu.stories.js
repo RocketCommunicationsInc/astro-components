@@ -1,167 +1,169 @@
-/* eslint-disable no-unused-vars */
-import { storiesOf } from '@storybook/polymer';
 import { html, render } from 'lit-html';
 import { withKnobs, boolean, object } from '@storybook/addon-knobs';
-import { withConsole } from '@storybook/addon-console';
+// import { withConsole } from '@storybook/addon-console';
 import { RuxPopUpMenu } from '../src/components/rux-pop-up-menu/rux-pop-up-menu.js';
 import Readme from '../src/components/rux-pop-up-menu/README.md';
-/* eslint-enable no-unused-vars */
 
-storiesOf('Components|Pop Up Menu', module)
-    .addDecorator(withKnobs)
-    .add(
-        'Pop Up Menu',
-        () => {
-          const selectedMenuItem = {};
-          selectedMenuItem.value = 'test';
+export default {
+  title: 'Components|Pop Up Menu',
+  decorators: [withKnobs],
+};
 
-          window.addEventListener('pop-up-menu-item-selected', (e) => {
-            console.log('Pop Up Menu Item Selected', e.detail.selected);
-          });
+export const PopUpMenu = () => {
+  const selectedMenuItem = {};
+  selectedMenuItem.value = 'test';
 
-          const data = [
-            {
-              id: '1',
-              label: 'Item 1',
-              value: '',
-            },
-            {
-              id: '2',
-              label: 'Item 2',
-            },
-            {
-              role: 'seperator',
-            },
-            {
-              id: '3',
-              label: 'Item 3',
-            },
-          ];
+  window.addEventListener('pop-up-menu-item-selected', (e) => {
+    console.log('Pop Up Menu Item Selected', e.detail.selected);
+  });
 
-          const data2 = [
-            {
-              id: 'b1',
-              label: 'Item 1',
-              value: '',
-            },
-            {
-              id: 'b2',
-              label: 'Item 2',
-            },
-            {
-              role: 'seperator',
-            },
-            {
-              id: 'b4',
-              label: 'Item 3',
-            },
-            {
-              role: 'seperator',
-            },
-            {
-              id: 'b5',
-              label: 'Item 5 with a Really Long Title …',
-              value: '',
-            },
-            {
-              id: 'b6',
-              label: 'Item 6',
-            },
-            {
-              id: 'b7',
-              label: 'Item 7',
-              value: '',
-            },
-            {
-              id: 'b8',
-              label: 'Item 8',
-            },
-          ];
+  const data = [
+    {
+      id: '1',
+      label: 'Item 1',
+      value: '',
+    },
+    {
+      id: '2',
+      label: 'Item 2',
+    },
+    {
+      role: 'seperator',
+    },
+    {
+      id: '3',
+      label: 'Item 3',
+    },
+  ];
 
-          return html`
-        <style>
-          #demo {
-            padding: 5%;
-            display: flex;
-            justify-content: center;
-          }
+  const data2 = [
+    {
+      id: 'b1',
+      label: 'Item 1',
+      value: '',
+    },
+    {
+      id: 'b2',
+      label: 'Item 2',
+    },
+    {
+      role: 'seperator',
+    },
+    {
+      id: 'b4',
+      label: 'Item 3',
+    },
+    {
+      role: 'seperator',
+    },
+    {
+      id: 'b5',
+      label: 'Item 5 with a Really Long Title …',
+      value: '',
+    },
+    {
+      id: 'b6',
+      label: 'Item 6',
+    },
+    {
+      id: 'b7',
+      label: 'Item 7',
+      value: '',
+    },
+    {
+      id: 'b8',
+      label: 'Item 8',
+    },
+  ];
 
-          #pop-demo {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-          }
+  return html`
+    <style>
+      #demo {
+        padding: 5%;
+        display: flex;
+        justify-content: center;
+      }
 
-          button {
-            display: inline-block;
-            position: absolute;
-          }
+      #pop-demo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
 
-          #tl {
-            top: 2rem;
-            left: 2rem;
-          }
+      button {
+        display: inline-block;
+        position: absolute;
+      }
 
-          #tr {
-            top: 2rem;
-            right: 2rem;
-          }
+      #tl {
+        top: 2rem;
+        left: 2rem;
+      }
 
-          #bl {
-            bottom: 2rem;
-            left: 2rem;
-          }
+      #tr {
+        top: 2rem;
+        right: 2rem;
+      }
 
-          #br {
-            bottom: 2rem;
-            right: 2rem;
-          }
+      #bl {
+        bottom: 2rem;
+        left: 2rem;
+      }
 
-          #tc {
-            top: 2rem;
-            right: 50vw;
-          }
+      #br {
+        bottom: 2rem;
+        right: 2rem;
+      }
 
-          #bc {
-            bottom: 2rem;
-            right: 50vw;
-          }
+      #tc {
+        top: 2rem;
+        right: 50vw;
+      }
 
-          #static {
-            top: 20rem;
-            left: 50rem;
-          }
-        </style>
-        <div class="demo">
-          <div id="pop-demo">
-            <button aria-controls="popup-menu-1" aria-haspopup="true" class="button" id="tl">tl</button>
-            <button aria-controls="popup-menu-2" aria-haspopup="true" class="button" id="tr">tr</button>
-            <button aria-controls="popup-menu-3" aria-haspopup="true" class="button" id="bl">bl</button>
-            <button aria-controls="popup-menu-4" aria-haspopup="true" class="button" id="br">br</button>
-            <button aria-controls="popup-menu-5" aria-haspopup="true" class="button" id="tc">tv</button>
-            <button aria-controls="popup-menu-6" aria-haspopup="true" class="button" id="bc">bc</button>
-            <button aria-controls="popup-menu-7" aria-haspopup="true" class="button" id="static">bc</button>
-          </div>
+      #bc {
+        bottom: 2rem;
+        right: 50vw;
+      }
 
-          <rux-pop-up-menu id="popup-menu-1" .data="${data2}"></rux-pop-up-menu>
-          <rux-pop-up-menu id="popup-menu-2" .data="${data}"></rux-pop-up-menu>
-          <rux-pop-up-menu id="popup-menu-3" .data="${data}"></rux-pop-up-menu>
-          <rux-pop-up-menu id="popup-menu-4" .data="${data}"></rux-pop-up-menu>
-          <rux-pop-up-menu id="popup-menu-5" .data="${data}"></rux-pop-up-menu>
-          <rux-pop-up-menu id="popup-menu-6" .data="${data}"></rux-pop-up-menu>
-          <rux-pop-up-menu id="popup-menu-7" .data="${data}"></rux-pop-up-menu>
-        </div>
-      `;
-        },
-        {
-          exports: {
-            render,
-            html,
-          },
-          notes: {
-            markdown: Readme,
-          },
-        }
-    );
+      #static {
+        top: 20rem;
+        left: 50rem;
+      }
+    </style>
+    <div class="demo">
+      <div id="pop-demo">
+        <button aria-controls="popup-menu-1" aria-haspopup="true" class="button" id="tl">tl</button>
+        <button aria-controls="popup-menu-2" aria-haspopup="true" class="button" id="tr">tr</button>
+        <button aria-controls="popup-menu-3" aria-haspopup="true" class="button" id="bl">bl</button>
+        <button aria-controls="popup-menu-4" aria-haspopup="true" class="button" id="br">br</button>
+        <button aria-controls="popup-menu-5" aria-haspopup="true" class="button" id="tc">tv</button>
+        <button aria-controls="popup-menu-6" aria-haspopup="true" class="button" id="bc">bc</button>
+        <button aria-controls="popup-menu-7" aria-haspopup="true" class="button" id="static">
+          bc
+        </button>
+      </div>
+
+      <rux-pop-up-menu id="popup-menu-1" .data="${data2}"></rux-pop-up-menu>
+      <rux-pop-up-menu id="popup-menu-2" .data="${data}"></rux-pop-up-menu>
+      <rux-pop-up-menu id="popup-menu-3" .data="${data}"></rux-pop-up-menu>
+      <rux-pop-up-menu id="popup-menu-4" .data="${data}"></rux-pop-up-menu>
+      <rux-pop-up-menu id="popup-menu-5" .data="${data}"></rux-pop-up-menu>
+      <rux-pop-up-menu id="popup-menu-6" .data="${data}"></rux-pop-up-menu>
+      <rux-pop-up-menu id="popup-menu-7" .data="${data}"></rux-pop-up-menu>
+    </div>
+  `;
+};
+
+PopUpMenu.story = {
+  parameters: {
+    exports: {
+      render,
+      html,
+    },
+    readme: {
+      sidebar: Readme,
+    },
+  },
+};

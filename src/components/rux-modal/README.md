@@ -2,7 +2,7 @@
 
 A Dialog Box interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to “Accept or Cancel” the actions presented within the Dialog Box.
 
-##Guidelines
+## Guidelines
 
 - [Astro UXDS: Dialog Box](https://astrouxds.com/ui-components/dialog-box)
 
@@ -10,7 +10,7 @@ A Dialog Box interrupts the app experience to prompt a user to confirm an action
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Dialog package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Dialog package via Command Line (Preferred Method)
 
 The name of the package reflects its earlier history as Astro UXDS Modal.
 
