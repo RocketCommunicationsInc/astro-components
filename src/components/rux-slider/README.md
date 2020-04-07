@@ -11,7 +11,7 @@ A Slider allows users to choose from a range of continuous and discrete values. 
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Slider package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Slider package via Command Line (Preferred Method)
 
 ```sh
 npm i -save @astrouxds/rux-slider

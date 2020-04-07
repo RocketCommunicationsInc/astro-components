@@ -10,7 +10,7 @@ Clock shows the current date and time, and optional AOS and LOS timers. It will 
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Clock package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Clock package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-clock

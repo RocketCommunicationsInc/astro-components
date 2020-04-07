@@ -10,7 +10,7 @@ These icons represent objects, equipment, and concepts that are being administer
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Monitoring Icon package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Monitoring Icon package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux--monitoring-icon
@@ -72,7 +72,7 @@ The Monitoring Progress Icon is a unique instance of the Monitoring Icon for dis
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Monitoring Icon package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Monitoring Icon package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux--monitoring-icon

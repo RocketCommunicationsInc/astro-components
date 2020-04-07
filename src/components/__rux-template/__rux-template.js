@@ -26,7 +26,7 @@ export class RuxTemplate extends LitElement {
     this.propertyTwo = 'Property Two';
 
     // set private properties in the constructor, not in get properties()
-    this._privateProperty = 'Private Property';
+    this._privateProperty = 'Private Property is private.';
   }
 
   // if any of these contain only the super callback, you can safely remove them
@@ -44,7 +44,7 @@ export class RuxTemplate extends LitElement {
   // custom methods, getters, and setters go here
 
   get computedProperty() {
-    return `${this.propertyTwo} is computed`;
+    return `${this.propertyTwo} is computed.`;
   }
 
   /*

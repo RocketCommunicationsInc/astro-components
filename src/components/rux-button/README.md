@@ -2,7 +2,7 @@
 
 Buttons allow users to trigger actions.
 
-##Guidelines
+## Guidelines
 
 - [Astro UXDS: Buttons](http://www.astrouxds.com/ui-components/buttons)
 
@@ -10,7 +10,7 @@ Buttons allow users to trigger actions.
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Button package via Command Line** (Preferred Method)
+#### Install the Astro UXDS Button package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-button

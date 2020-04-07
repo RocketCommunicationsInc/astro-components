@@ -1,64 +1,6 @@
-<!-- Styles to fix markdown-generated notes. Reported and fixed in upcoming version of storybook (https://github.com/storybooks/storybook/issues/5923). Remove when Storybook 5.1.0 lands. -->
-<style>
 
-#root .addon-notes-container pre, 
-#root .addon-notes-container code, 
-#root .addon-notes-container table, 
-#root .addon-notes-container p, 
-#root .addon-notes-container li {
-  font-size: 16px;
-}
-
-#root .addon-notes-container code,
-#root .addon-notes-container pre div[class^="lang-"] {
-  border: rgba(200,200,200, .3) 1px solid;
-}
-
-#root .addon-notes-container code,
-#root .addon-notes-container table,
-#root .addon-notes-container table tr td,
-#root .addon-notes-container table tr th,
-#root .addon-notes-container table tr,
-#root .addon-notes-container pre code, 
-#root .addon-notes-container pre pre, 
-#root .addon-notes-container pre.hljs,
-#root .addon-notes-container pre pre code, 
-#root .addon-notes-container pre.hljs code  {
-  color: inherit;
-}
-
-#root .addon-notes-container pre,
-#root .addon-notes-container code,
-#root .addon-notes-container table,
-#root .addon-notes-container table tr {
-  background: rgba(200,200,200, .075);
-}
-#root .addon-notes-container table thead tr,
-#root .addon-notes-container table tr:nth-of-type(2n) {
-  background: rgba(200,200,200, .15);
-}
-#root .addon-notes-container pre code, 
-#root .addon-notes-container pre pre, 
-#root .addon-notes-container pre.hljs,
-#root .addon-notes-container pre pre code, 
-#root .addon-notes-container pre.hljs code {
-  background: transparent;
-  border: 0;
-}
-#root .addon-notes-container table {
-  background: transparent;
-}
-
-#root .addon-notes-container table tr td,
-#root .addon-notes-container table tr th,
-#root .addon-notes-container table tr {
-  border-color: rgba(200,200,200, .4);
-}
-
-
-</style>
 <!-- Styles to offer more control over UI than current Storybook Theme. Unsupported, not sure if class names will stay the same. -->
-<style>
+<style type="text/css">
 /* .css-1d2iskc  is the auto-generated class name for the storybook container element. */
 /* .css-sqdry3 is the auto-generated class name for the storybook canvas/addons element, and others. */
 /* .css-1q7pov5 is the auto-generated class name for the sidebar element. */
@@ -66,15 +8,8 @@
 .css-1d2iskc > .css-sqdry3 {
   border: 1px solid rgba(255,255,255, .125);
 }
-/* has no light/dark toggle. Only use if not using toggled themes.
-.css-1q7pov5 {
-  background: url('https://www.astrouxds.com/img/astro2.0/astro-leftnav-bkgnd.jpg') no-repeat #000;
-} */
-
-/* nav bar restyle */
 
 /* component list */
-
 nav .css-0 section a > div {
   font-size: 16px;
   line-height: 20px;
@@ -119,32 +54,37 @@ nav .css-0 section > div[type="section"] {
   border-bottom: 1px solid rgba(140, 142, 145, 0.15);
 }
 /* addons panel */
-#root .addon-notes-container a,
 #storybook-panel-root .css-0 a,
 #storybook-panel-root .css-0 a span {
   color: rgb(77,172,255);
 }
-
-</style>
-<style type="text/css" id="scrollbarVars">
-body {
-  --scrollBarThumbBackgroundColor: var(
-    --colorSecondaryDarken2,
-    rgb(46, 103, 153)
-  );
-  --scrollBarThumbBackgroundHoverColor: var(
-    --colorSecondaryDarken1,
-    rgb(58, 129, 191)
-  );
-  --scrollBarTrackBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
-  --scrollBarTrackCornerBackgroundColor: var(
-    --colorTertiaryDarken1,
-    rgb(32, 50, 70)
-  );
+.storybook-readme-story {
+  padding: 10px;
 }
-</style>
+.storybook-readme-story p code,
+.storybook-readme-story li code { 
+  background: #182635; 
+  border-radius: 2px;
+}
+.storybook-readme-story code[class*="language-"], 
+.storybook-readme-story pre[class*="language-"]{
+  background: #060708; 
+  -webkit-font-smoothing: auto;
+}
+.storybook-readme-story .token.punctuation {
+  color: #a1acba;
+}
+.storybook-readme-story code.language-sh,
+.storybook-readme-story code.language-xml,
+.storybook-readme-story code.language-html,
+.storybook-readme-story code.language-js {
+  color: #ccd5e0;
+}
+.storybook-readme-story .markdown-body table thead tr {
+  background-color: #141f2c;
+}
 
-<style type="text/css">
+/* scrollbars */
 body {
   scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
     var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
@@ -178,7 +118,6 @@ body {
     rgb(58, 129, 191)
   );
 }
-
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
   background-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
@@ -190,54 +129,4 @@ body {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 </style>
-<script type="text/javascript">
 
-const scrollbarVarsDark = `
-body {
-  --scrollBarThumbBackgroundColor: var(
-    --colorSecondaryDarken2,
-    rgb(46, 103, 153)
-  );
-  --scrollBarThumbBackgroundHoverColor: var(
-    --colorSecondaryDarken1,
-    rgb(58, 129, 191)
-  );
-  --scrollBarTrackBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
-  --scrollBarTrackCornerBackgroundColor: var(
-    --colorTertiaryDarken1,
-    rgb(32, 50, 70)
-  );
-}
-`;
-const scrollbarVarsLight = `
-body {
---scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1, #9ba0aa);
-  --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2, #676a71);
-  --scrollBarTrackBackgroundColor: transparent;
-  --scrollBarTrackCornerBackgroundColor: var(
-    --colorQuaternaryLighten4,
-    #f2f4f7
-  );
-}
-`;
-function toggleScrollbarStyles(darkTheme = true) {
-  let tag = document.getElementById('scrollbarVars');
-  tag.innerText = darkTheme ? scrollbarVarsDark : scrollbarVarsLight;
-}
-// listens to Storybooks message channel for updates
-window.addEventListener('message', (e) => {
-  if (e.data.length > 0) {
-    let parsed = JSON.parse(e.data);
-    if (parsed && 
-        parsed.event && 
-        parsed.event.type === "DARK_MODE" &&
-        parsed.event.args
-      ) {
-      const isDark = parsed.event.args[0] || false;
-      toggleScrollbarStyles(isDark);
-    }
-  }
-});
-
-
-</script>
