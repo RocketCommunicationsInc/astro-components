@@ -10,12 +10,12 @@ To review the entire Astro Library
 
 - All components have been updated to [LitElement](https://lit-element.polymer-project.org) from Polymer
 - Updated documentation
-- [Storybook Component Sandbox](https://astro-storybook.netlify.com)
+- [Storybook Component Sandbox](https://astro-components.netlify.com)
 - Merged [Astro Style Library](https://bitbucket.org/rocketcom/astro-styles/src/master/) in to Astro Components
 
 ## Download and Install for all Astro Web Components and Styles
 
-The directions below assume basic knowledge of NodeJS. Make sure you have installed both globally before continuing. An example can be seen on the [Astro Storybook site](https://astro-storybook.netlify.com)
+The directions below assume basic knowledge of NodeJS. Make sure you have installed both globally before continuing. An example can be seen on the [Astro Storybook site](https://astro-components.netlify.com)
 
 Create a new directory and change directory
 
