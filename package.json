@@ -40,7 +40,7 @@
     "@storybook/web-components": "5.3.18",
     "@webcomponents/webcomponentsjs": "^2.4.0",
     "babel-loader": "^8.1.0",
-    "copy-webpack-plugin": "^4.6.0",
+    "copy-webpack-plugin": "5.1.1",
     "del": "^4.1.1",
     "eslint": "^5.16.0",
     "eslint-config-google": "^0.13.0",
