@@ -23,24 +23,21 @@
     "storybook": "start-storybook -p 9001 -c .storybook -s ./static && gulp"
   },
   "dependencies": {
-    "lit-element": "^2.1.0",
-    "lit-html": "^1.0.0"
+    "lit-element": "^2.3.1",
+    "lit-html": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
-    "@open-wc/demoing-storybook": "^0.2.2",
-    "@polymer/polymer": "^2.6.0",
-    "@storybook/addon-a11y": "^5.1.9",
-    "@storybook/addon-actions": "5.1.9",
-    "@storybook/addon-backgrounds": "5.1.9",
+    "@storybook/addon-a11y": "5.3.18",
+    "@storybook/addon-knobs": "5.3.18",
+    "@storybook/addons": "5.3.18",
+    "@storybook/theming": "5.3.18",
+    "@storybook/web-components": "5.3.18",
+    "@storybook/addon-actions": "5.3.18",
     "@storybook/addon-console": "^1.2.1",
-    "@storybook/addon-knobs": "5.1.9",
-    "@storybook/addon-links": "5.1.9",
-    "@storybook/addon-notes": "5.1.9",
-    "@storybook/addon-options": "5.1.9",
-    "@storybook/addon-storysource": "5.1.9",
-    "@storybook/addon-viewport": "5.1.9",
-    "@storybook/polymer": "5.1.9",
+    "@storybook/addon-links": "5.3.18",
+    "@storybook/addon-options": "5.3.18",
+    "@storybook/addon-viewport": "5.3.18",
     "@webcomponents/webcomponentsjs": "^2.4.0",
     "babel-loader": "^8.0.0",
     "copy-webpack-plugin": "^4.6.0",
@@ -65,7 +62,8 @@
     "postcss-color-mod-function": "^3.0.3",
     "postcss-custom-properties": "^8.0.10",
     "prettier": "^1.17.1",
-    "storybook-dark-mode": "^0.1.4"
+    "storybook-addon-themes": "^5.4.1",
+    "storybook-readme": "^5.0.8"
   },
   "hooks": {
     "pre-commit": "lint-staged"
