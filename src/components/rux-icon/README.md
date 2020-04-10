@@ -85,8 +85,8 @@ In the SVG icon library file:
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
 <a name="astro-4-migration">
-## Important Astro 4 Migration Note:
 
+## Important Astro 4 Migration Note:
 Prior to Astro 4.0, the Astro UXDS Icon Component imported icons from a single SVG file where icons were identified by `id` under specific groups. In that method, icons were accessed via a namespaced value for the `icon` property, such as `"group-id:icon-id"`.
 
 ### Prior to Astro 4.0:
