@@ -47,13 +47,24 @@ Pass properties as attributes of the Astro Button custom element:
 
 ```
 
-The component auto-imports the Astro Icon Web Component for icons, if you specify one:
+The component auto-imports the default Astro Icon Web Component for icons, if you specify one:
 
 ```xml
 <rux-button icon="caution">
   Button with Icon using Astro UXDS Icon Web Component
 </rux-button>
 ```
+Also, you can use [Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#Adding_flexibility_with_slots) to define icons within buttons. This method is best if you need to override the default icon library SVG file:
+
+```xml
+  <rux-button>
+    <rux-icon icon="alternate" library="/icons/astro-alternate.svg"></rux-icon>
+    Slotted Icon Button
+  </rux-button>
+```
+In this situation, you do not need to specify a size for the icon component -- the button's size attribute will define the appropriate size of the icon.
+
+
 
 ### Properties
 
@@ -62,7 +73,7 @@ The component auto-imports the Astro Icon Web Component for icons, if you specif
 | `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.                                                                                  |
 | `outline`  | Boolean | `false` | No       | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use an outline button for the less preferred option in Ok/Cancel button pairings.                     |
 | `iconOnly` | Boolean | `false` | No       | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Requires the `icon` attribute to be set as well.                                                                 |
-| `icon`     | String  | `''`    | No       | Displays an Astro icon matching this string to the left of the button text. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols). Required when the `iconOnly` attribute is `true`. |
+| `icon`     | String  | `''`    | No       | Displays an Astro icon matching this string to the left of the button text. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols). Required when the `iconOnly` attribute is `true`. Note that you can also use the Slot to add an icon. |
 | `size`     | String  | `''`    | No       | Displays the button as a `'small'` or `'large'` variant.                                                                                                                                                                                                                   |
 
 ---

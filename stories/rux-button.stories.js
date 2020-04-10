@@ -47,6 +47,48 @@ StandardButton.story = {
   },
 };
 
+export const slottedIconButton = () => {
+  const sizeOptions = {
+    Small: 'small',
+    Standard: '',
+    Large: 'large',
+  };
+
+  const size = select('Size', sizeOptions, 'small');
+  const disabled = boolean('Disabled', false);
+  const outline = boolean('Outline', false);
+  const iconOnly = boolean('Icon Only', false);
+  return html`
+    <div style="padding: 10%; display: flex; justify-content: center;">
+      <rux-button
+        .size="${size}"
+        ?disabled="${disabled}"
+        ?outline="${outline}"
+        ?iconOnly="${iconOnly}"
+        >
+        <rux-icon
+          icon="alternate" 
+          library="/icons/astro-alternate.svg"
+          color="${outline ? 'rgb(0, 90, 143)' : '#ffffff'}"
+        ></rux-icon>
+        Slotted Icon Button</rux-button
+      >
+    </div>
+  `;
+};
+
+slottedIconButton.story = {
+  parameters: {
+    exports: {
+      render,
+      html,
+    },
+    readme: {
+      sidebar: Readme,
+    },
+  },
+};
+
 export const GroupedButtons = () => html`
     <style>
       .rux-button-group rux-button:not(:last-child) {
