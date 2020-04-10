@@ -146,6 +146,9 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 - Demonstrate adding click handlers/methods to buttons, possibly incorporating Storybook Actions
 - Should `size` property have a default value of `'standard'` for the button size? we don't have classes for it
 
+##### **4.1**
+- Add styles for and example of using slots for Icon child component
+
 ##### **4.0**
 
 - Swapped kebab-cased `icon-only` attribute for standard camelCase `iconOnly`
