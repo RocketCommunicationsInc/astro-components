@@ -46,6 +46,7 @@ storiesOf('Components|Icons & Symbols', module)
             'processor-alt',
             'netcom',
             'propulsion-power',
+            'solar',
             'thermal',
             'satellite-off',
             'satellite-receive',
@@ -61,6 +62,7 @@ storiesOf('Components|Icons & Symbols', module)
             'search',
             'notifications',
             'settings',
+            'resources',
             'caution',
             'maintenance',
           ];
@@ -156,6 +158,7 @@ storiesOf('Components|Icons & Symbols', module)
             'Satellite (Off)': 'satellite-off',
             'Satellite (Receive)': 'satellite-receive',
             'Satellite (Transmit)': 'satellite-transmit',
+            'Solar': 'solar',
           };
           const defaultIconValue = 'altitude';
           const icon = select(iconLabel, iconOptions, defaultIconValue, groupId);
