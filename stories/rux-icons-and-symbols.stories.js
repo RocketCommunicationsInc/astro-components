@@ -183,8 +183,8 @@ export const MonitoringIcons = () => {
     </div>
     <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
       <rux-monitoring-icon
-        library="/icons/astro-alternate.svg"
-        icon="alternate"
+        library="/icons/custom.svg"
+        icon="custom"
         label="Custom Icon"
         sublabel="${sublabel}"
         status="${status}"
