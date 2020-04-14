@@ -92,6 +92,7 @@ export class RuxNotification extends LitElement {
           top: 0;
         }
 
+        :host,
         :host([status='standby']) {
           background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
           stroke: var(--colorStandbyDarken1, rgb(96, 168, 191));

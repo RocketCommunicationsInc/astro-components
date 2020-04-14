@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { directive } from 'lit-html';
+import { ifDefined } from 'lit-html/directives/if-defined';
 
 /* eslint-disable no-unused-vars */
 import { RuxIcon } from '../rux-icon/rux-icon.js';
@@ -57,6 +58,9 @@ export class RuxMonitoringIcon extends LitElement {
       icon: {
         type: String,
       },
+      library: {
+        type: String,
+      },
     };
   }
 
@@ -64,6 +68,7 @@ export class RuxMonitoringIcon extends LitElement {
     super();
 
     this.status = 'normal';
+    this.library = undefined;
     this.label = '';
     this.sublabel = '';
     this.icon = '';
@@ -90,7 +95,7 @@ export class RuxMonitoringIcon extends LitElement {
 
   get iconTemplate() {
     return html`
-      <rux-icon icon="${this.icon}" class="rux-status--${this.status}"></rux-icon>
+      <rux-icon icon="${this.icon}" library="${ifDefined(this.library)}" class="rux-status--${this.status}"></rux-icon>
     `;
   }
 

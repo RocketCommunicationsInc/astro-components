@@ -111,10 +111,8 @@ AllIcons.story = {
       render,
       html,
     },
-    notes: {
-      // this will also use a .md file, but just trying it out for now
-      /* eslint-disable no-useless-escape */
-      markdown: Readme,
+    readme: {
+      sidebar: Readme,
     },
   },
 };
@@ -169,7 +167,7 @@ export const MonitoringIcons = () => {
 
   /* Notifications */
   const notificationLabel = 'Notifications';
-  const notificationDefaultValue = null;
+  const notificationDefaultValue = 1;
 
   const notifications = number(notificationLabel, notificationDefaultValue, {}, groupId);
 
@@ -178,6 +176,16 @@ export const MonitoringIcons = () => {
       <rux-monitoring-icon
         icon="${icon}"
         label="${label}"
+        sublabel="${sublabel}"
+        status="${status}"
+        notifications="${notifications}"
+      ></rux-monitoring-icon>
+    </div>
+    <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+      <rux-monitoring-icon
+        library="/icons/custom.svg"
+        icon="custom"
+        label="Custom Icon"
         sublabel="${sublabel}"
         status="${status}"
         notifications="${notifications}"
@@ -192,10 +200,8 @@ MonitoringIcons.story = {
       render,
       html,
     },
-    notes: {
-      // this will also use a .md file, but just trying it out for now
-      /* eslint-disable no-useless-escape */
-      markdown: ReadmeMonitoring,
+    readme: {
+      sidebar: ReadmeMonitoring,
     },
   },
 };
@@ -246,10 +252,8 @@ ProgressIcon.story = {
       render,
       html,
     },
-    notes: {
-      // this will also use a .md file, but just trying it out for now
-      /* eslint-disable no-useless-escape */
-      markdown: ReadmeMonitoring,
+    readme: {
+      sidebar: Readme,
     },
   },
 };
@@ -335,10 +339,8 @@ MonitoringIconSet.story = {
       render,
       html,
     },
-    notes: {
-      // this will also use a .md file, but just trying it out for now
-      /* eslint-disable no-useless-escape */
-      markdown: ReadmeMonitoring,
+    readme: {
+      sidebar: ReadmeMonitoring,
     },
   },
 };
