@@ -19,7 +19,7 @@ export class RuxProgress extends LitElement {
   constructor() {
     super();
     this.max = 100;
-    this.label = false;
+    this.hideLabel = false;
   }
 
   getProgressAsString() {
