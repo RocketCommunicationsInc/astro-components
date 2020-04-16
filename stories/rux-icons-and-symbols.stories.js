@@ -38,15 +38,16 @@ export const AllIcons = () => {
     'antenna-transmit',
     'equipment',
     'mission',
+    'netcom',
     'payload',
     'processor',
     'processor-alt',
-    'netcom',
     'propulsion-power',
-    'thermal',
     'satellite-off',
     'satellite-receive',
     'satellite-transmit',
+    'solar',
+    'thermal',
     'add-large',
     'add-small',
     'close-large',
@@ -60,6 +61,7 @@ export const AllIcons = () => {
     'settings',
     'caution',
     'maintenance',
+    'resources',
   ];
 
   return html`
@@ -143,15 +145,16 @@ export const MonitoringIcons = () => {
     'Antenna (Transmit)': 'antenna-transmit',
     'Equipment': 'equipment',
     'Mission': 'mission',
+    'Netcom': 'netcom',
     'Payload': 'payload',
     'Processor': 'processor',
     'Processor (Alt)': 'processor-alt',
-    'Netcom': 'netcom',
     'Propulsion Power': 'propulsion-power',
-    'Thermal': 'thermal',
     'Satellite (Off)': 'satellite-off',
     'Satellite (Receive)': 'satellite-receive',
     'Satellite (Transmit)': 'satellite-transmit',
+    'Solar': 'solar',
+    'Thermal': 'thermal',
   };
   const defaultIconValue = 'altitude';
   const icon = select(iconLabel, iconOptions, defaultIconValue, groupId);
