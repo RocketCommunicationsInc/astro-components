@@ -106,5 +106,6 @@ Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming
 - Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
 
 <a name="astro-4-migration">
+
 ## Important Astro 4 Migration Note:
 Prior to Astro 4, the Astro UXDS Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 separates these two use cases into distinct components. The Astro UXDS Status Component is solely responsible for the status indicators. This component, [Astro UXDS Monitoring Icon Component](../rux-monitoring-icon/), replaces the previous "Advanced Status" features of Astro UXDS Status.

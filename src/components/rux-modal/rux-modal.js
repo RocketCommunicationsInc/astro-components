@@ -1,7 +1,6 @@
 import { LitElement, html } from 'lit-element';
 /* eslint-disable no-unused-vars */
 import { RuxButton } from '../rux-button/rux-button.js';
-import { RuxIcon } from '../rux-icon/rux-icon.js';
 /* eslint-enable no-unused-vars */
 
 export class RuxModal extends LitElement {
@@ -24,9 +23,6 @@ export class RuxModal extends LitElement {
       denyText: {
         type: String,
       },
-      icon: {
-        type: String,
-      },
     };
   }
 
@@ -37,7 +33,6 @@ export class RuxModal extends LitElement {
     this.title = '';
     this.confirmText = '';
     this.denyText = '';
-    this.icon = 'caution';
   }
   connectedCallback() {
     super.connectedCallback();

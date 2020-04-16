@@ -158,6 +158,7 @@ export class RuxButton extends LitElement {
           padding: 0 1.5rem;
         }
 
+        ::slotted(rux-icon),
         rux-icon {
           height: 1.5rem;
           width: 1.5rem;
@@ -168,11 +169,13 @@ export class RuxButton extends LitElement {
         .rux-button--icon-only {
           font-size: 0;
         }
+        .rux-button--icon-only ::slotted(rux-icon),
         .rux-button--icon-only rux-icon {
           margin-left: -0.625rem;
           margin-right: -0.625rem;
         }
 
+        .rux-button--large.rux-button--icon-only ::slotted(rux-icon),
         .rux-button--large.rux-button--icon-only rux-icon {
           margin-left: -1rem;
           margin-right: -1rem;
@@ -182,11 +185,13 @@ export class RuxButton extends LitElement {
           padding: 0 0.75rem;
         }
 
+        .rux-button--small ::slotted(rux-icon),
         .rux-button--small rux-icon {
           height: 0.875rem;
           width: 0.875rem;
         }
 
+        .rux-button--large ::slotted(rux-icon),
         .rux-button--large rux-icon {
           height: 1.75rem;
           width: 1.75rem;
