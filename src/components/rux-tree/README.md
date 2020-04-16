@@ -35,7 +35,7 @@ Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxTree } from '@astro-components/rux-tree/rux-tree.js';
+import { RuxTree } from '@astrouxds/rux-tree/rux-tree.js';
 ```
 
 ### 3. Render the Astro Tree Web Component
@@ -48,7 +48,7 @@ import { RuxTree } from '@astro-components/rux-tree/rux-tree.js';
 
 | Property | Type  | Default | Required | Description                                                                 |
 | -------- | ----- | ------- | -------- | --------------------------------------------------------------------------- |
-| `data`   | Array | `-`     | yes      | An array of objects defining the tree structure. See a sample object below. |
+| `data`   | Array | `[]`     | yes      | An array of objects defining the tree structure. See a sample object below. |
 
 #### Sample `data` object
 
