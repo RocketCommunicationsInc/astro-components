@@ -96,6 +96,9 @@ Indeterminate progress
 
 ## Revision History
 
+##### **4.0.2**
+- fixed broken property `hideLabel`
+
 ##### **4.0**
 
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

@@ -18,10 +18,10 @@ export const DeterminateProgress = () => {
     step: 1,
   };
   const progress = number(progressLabel, progressDefaultValue, progressOptions);
-  const hideLabel = boolean('Label', true);
+  const hideLabel = boolean('Hide Label', false);
   return html`
     <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-      <rux-progress value="${progress}" ?hide-label="${hideLabel}"></rux-progress>
+      <rux-progress value="${progress}" ?hide-label="${!hideLabel}"></rux-progress>
     </div>
   `;
 };
@@ -53,10 +53,10 @@ export const DeterminateProgressMax = () => {
 
   const progress = number(progressLabel, progressDefaultValue, progressOptions);
   const maxLimit = number(maxValueLabel, maxValueDefaultValue);
-  const hideLabel = boolean('Label', false);
+  const hideLabel = boolean('Hide Label', true);
   return html`
     <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-      <rux-progress value="${progress}" max="${maxLimit}" ?hide-label="${hideLabel}"></rux-progress>
+      <rux-progress value="${progress}" max="${maxLimit}" ?hide-label="${!hideLabel}"></rux-progress>
     </div>
   `;
 };

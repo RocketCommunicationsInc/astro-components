@@ -48,7 +48,7 @@ import { RuxTree } from '@astrouxds/rux-tree/rux-tree.js';
 
 | Property | Type  | Default | Required | Description                                                                 |
 | -------- | ----- | ------- | -------- | --------------------------------------------------------------------------- |
-| `data`   | Array | `-`     | yes      | An array of objects defining the tree structure. See a sample object below. |
+| `data`   | Array | `[]`     | yes      | An array of objects defining the tree structure. See a sample object below. |
 
 #### Sample `data` object
 
