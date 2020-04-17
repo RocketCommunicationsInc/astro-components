@@ -37,7 +37,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxIcon } from '@astro-components/rux-icon/rux-icon.js';
+import { RuxIcon } from '@astrouxds/rux-icon/rux-icon.js';
 ```
 
 ### 3. Render the Astro Icon Web Component

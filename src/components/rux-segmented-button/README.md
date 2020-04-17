@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxSegmentedButton } from '@astro-components/rux-segmented-button/rux-segmented-button.js';
+import { RuxSegmentedButton } from '@astrouxds/rux-segmented-button/rux-segmented-button.js';
 ```
 
 ### 3. Render the Astro Segmented Button Web Component
@@ -41,7 +41,7 @@ import { RuxSegmentedButton } from '@astro-components/rux-segmented-button/rux-s
 Pass an Array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` Array must be objects with a `label` string. The first item in the Array will be auto-selected unless another segment item has a `selected` property with a truthy value:
 
 ```javascript
-import { RuxSegmentedButton } from "@astro-components/rux-segmented-button/rux-segmented-button.js";
+import { RuxSegmentedButton } from '@astrouxds/rux-segmented-button/rux-segmented-button.js';
 
 const myButtonSegments = [
   { label: "First Segment" },
