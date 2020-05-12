@@ -1,15 +1,16 @@
 {
-  "name": "astro-components-static-assets",
+  "name": "astroux-static",
   "author": {
     "name": "Rocket Communications UX",
     "email": "uxsupport@rocket.com"
   },
-  "version": "4.0.2",
+  "version": "1.0.0",
+  "main": "css/astro.core.min.css",
   "homepage": "https://www.astrouxds.com",
-  "description": "Astro-Static-Assets are the static assets for Astro UX Design System",
+  "description": "Astrouxds css and font assets for Astro UX Design System",
   "style": "css/astro.core.min.css",
   "files": [
-    "css",
+    "css/*.css",
     "fonts",
     "icons",
     "img",
@@ -19,7 +20,12 @@
     "type": "git",
     "url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
   },
-  "keywords": [],  
+  "keywords": [
+    "css",
+    "front-end",
+    "static",
+    "web"
+  ],
   "license": "SEE LICENSE IN ASTRO-COMPONENTS/SRC/MASTER LICENSE.md",
   "bugs": {
     "email": "uxsupport@rocketcom.com",
