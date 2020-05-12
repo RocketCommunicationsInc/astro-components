@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxTabs } from '@astro-components/rux-tabs/rux-tabs.js';
+import { RuxTabs } from '@astrouxds/rux-tabs/rux-tabs.js';
 ```
 
 ### 3. Render the Astro Tabs Web Component

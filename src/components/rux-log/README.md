@@ -34,7 +34,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxLog } from '@astro-components/rux-log/rux-log.js';
+import { RuxLog } from '@astrouxds/rux-log/rux-log.js';
 ```
 
 ### 3. Render the Astro Log Web Component
@@ -42,7 +42,7 @@ import { RuxLog } from '@astro-components/rux-log/rux-log.js';
 Pass an Array of log entries via the `data` attribute. Log entries must be Objects with a `timestamp` in [JavaScript Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) format, a `status` String matching one of the specified [Astro UXDS Status](https://astrouxds.com/design-guidelines/status-system) values, and a `message` String:
 
 ```javascript
-import { RuxLog } from "@astro-components/rux-log/rux-log.js";
+import { RuxLog } from '@astrouxds/rux-log/rux-log.js';
 
 const myLogData = [
   {

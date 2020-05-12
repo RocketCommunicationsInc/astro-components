@@ -33,7 +33,7 @@ Or, [download Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/a
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro UXDS Components directory in your project.
 
 ```javascript
-import { RuxTemplate } from '@astro-components/rux-template/rux-template.js';
+import { RuxTemplate } from '@astrouxds/rux-template/rux-template.js';
 ```
 
 ### 3. Render the Astro Template Web Component

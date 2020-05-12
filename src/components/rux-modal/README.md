@@ -35,7 +35,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxModal } from '@astro-components/rux-modal/rux-modal.js';
+import { RuxModal } from '@astrouxds/rux-modal/rux-modal.js';
 ```
 
 ### 3. Render the Astro Dialog Box Web Component

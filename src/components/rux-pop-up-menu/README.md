@@ -31,7 +31,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxPopUpMenu } from '@astro-components/rux-pop-up-menu/rux-pop-up-menu.js';
+import { RuxPopUpMenu } from '@astrouxds/rux-pop-up-menu/rux-pop-up-menu.js';
 ```
 
 ### 3. Render the Astro Pop Up Menu Web Component

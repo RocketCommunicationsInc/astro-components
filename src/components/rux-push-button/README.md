@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxPushButton } from '@astro-components/rux-push-button/rux-push-button.js';
+import { RuxPushButton } from '@astrouxds/rux-push-button/rux-push-button.js';
 ```
 
 ### 3. Render the Astro Push Button Web Component
