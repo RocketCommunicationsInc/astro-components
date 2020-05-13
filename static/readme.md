@@ -8,7 +8,7 @@
 
 2. Import
    
-    `import {astrocore} from 'astrocore';`
+    `import "astroux-static";`
 
 3. Relative Path
    
