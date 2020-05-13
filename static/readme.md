@@ -4,7 +4,7 @@
 
 1. Install the Astro UXDS Static Assets
 
-    ` npm i --save-dev astro-components-css-assets`
+    ` npm i --save-dev astroux-static`
 
 2. Import
    
