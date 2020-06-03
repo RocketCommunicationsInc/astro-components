@@ -19,7 +19,6 @@
   "private": false,
   "scripts": {
     "build-storybook": "build-storybook -c .storybook -s ./static",
-    "start": "webpack-dev-server",
     "storybook": "start-storybook -p 9001 -c .storybook -s ./static && gulp"
   },
   "dependencies": {
