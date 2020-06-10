@@ -113,3 +113,19 @@ The Astro Component Library is designed for use on modern browsers that support 
 | `Timeline`            | [@astrouxds/rux-timeline](https://www.npmjs.com/package/@astrouxds/rux-timeline)                   |                                                          | [Guidelines](https://astrouxds.com/ui-components/timeline)            |
 | `Toggle`              | [@astrouxds/rux-toggle](https://www.npmjs.com/package/@astrouxds/rux-toggle)                       | [Docs](./src/components/rux-toggle/README.md)            | [Guidelines](https://astrouxds.com/ui-components/toggle)              |
 | `Tree`                | [@astrouxds/rux-tree](https://www.npmjs.com/package/@astrouxds/rux-tree)                           | [Docs](./src/components/rux-tree/README.md)              | [Guidelines](https://astrouxds.com/ui-components/tree)                |
+
+
+## Contributing
+Follow the style defined in `/.eslintrc`, installing such tools as your IDE supports for revealing discrepencies before committing. 
+
+### Astro Web Components
+The folders in `/src/components/*` contain the Web Components, which are tested using matching Stories in  `/stories/*`. The Story files create instances of the components with various properties exposed via Storybook Knobs. All component variations should be demonstrated using Knobs before publishing or updating to ensure that the properties work as intended. There are heavily commented templates for Stories (`/stores/__rux-.stories.template.js`) and Components (`/src/components/__rux-template/`) to enable maintainers to quickly scaffold new Components. These component folders are what are ultimately published on NPM under the [AstroUXDS org](https://www.npmjs.com/org/astrouxds).
+
+[Further information on Contributing to Astro Web Components](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--contributing)
+
+### Astro CSS
+The Astro CSS library is used to style native HTML Elements and to set theme styles that are inherited throughout the application, even when developers do not use the Web Components themselves. The CSS is divided into partials in `/src/css/*`, which is concatenated into the `/static/css/` files using [PostCSS](https://postcss.org/) when the project builds using [Gulp](https://gulpjs.com/). See `/gulpfile.js` for more details.
+
+**Note:** Changes to the Astro CSS should never be made directly to the `/static/css/*` files, as those are for distribution only.
+
+Be sure to demonstrate any new or changed HTML elements using a Story. The Form Elements story (`/stories/rux-form-elements.stories.js`) shows how, even without a Web Component to mount, the functionality and variations can be displayed. If both Web Components and native HTML Elements can be used, such as in the case of Buttons (`/stories/rux-button.stories.js`), be sure to demonstrate both options.
