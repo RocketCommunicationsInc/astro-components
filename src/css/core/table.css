@@ -6,8 +6,7 @@
 
 
 
-.rux-table,
-.satcom-table {
+.rux-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0px;
@@ -20,9 +19,7 @@
   overflow: scroll;
 }
 .rux-table__column-head th,
-.satcom-table-column-head th,
-.rux-table th,
-.satcom-table th {
+.rux-table th {
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: var(--tableHeaderAccentColor,rgb(40, 63, 88));
@@ -34,8 +31,7 @@
   white-space: nowrap;
 }
 
-.rux-table__column-head,
-.satcom-table-column-head {
+.rux-table__column-head {
   box-shadow: var(--tableHeaderBoxShadow, 0 0.25rem .5rem rgba(0, 0, 0, 0.45));
   border-top-color: var(--tableBorderColor, rgb(83, 101, 121));
   border-top-width: 1px;
@@ -43,18 +39,15 @@
 }
 
 .rux-table tr[data-selected],
-.rux-table tr.selected,
-.satcom-table tr.selected {
+.rux-table tr.selected {
   background: var(--tableRowSelectedBackgroundColor, rgb(40, 63, 88));
 }
 
-.rux-table tr:hover,
-.satcom-table tr:hover {
+.rux-table tr:hover {
   background: var(--tableRowHoverBackgroundColor, rgb(24, 38, 53));
 }
 
-.rux-table td,
-.satcom-table td {
+.rux-table td {
   border-color: var(--tableRowBorderColor, rgb(83, 101, 121));
   border-width: 1px 0;
   border-style: solid;
@@ -64,26 +57,18 @@
 }
 
 .rux-table__column-head th:first-child,
-.satcom-table-column-head th:first-child,
 .rux-table th:first-child,
-.satcom-table th:first-child,
-.rux-table td:first-child,
-.satcom-table td:first-child {
+.rux-table td:first-child {
   padding-left: 1.875rem;
 
 }
 .rux-table__column-head th:last-child,
-.satcom-table-column-head th:last-child,
 .rux-table th:last-child,
-.satcom-table th:last-child,
-.rux-table td:last-child,
-.satcom-table td:last-child {
+.rux-table td:last-child {
   padding-right: 1.875rem;
-
 
 }
 
-.rux-table tr:last-child td,
-.satcom-table tr:last-child td {
+.rux-table tr:last-child td {
 
 }
