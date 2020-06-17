@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit-element';
-// import style from './rux-clock.css';
-import RuxUtils from '../rux-utils/datetime.js';
+
+import moment from 'moment';
+import 'moment-timezone';
 
 export class RuxClock extends LitElement {
   static get properties() {
@@ -67,8 +68,8 @@ export class RuxClock extends LitElement {
     Private functions should occur after public functions
   */
   updateTime() {
-    this.time = RuxUtils.formatClockTimeUTC(new Date(), this.timezone, this.hideTimezone);
-    this.dayOfYear = RuxUtils.dayOfYear();
+    this.time = moment.tz(this.timezone).format(`HH:mm:ss ${this.hideTimezone ? '' : 'z'}`);
+    this.dayOfYear = moment().tz(this.timezone).dayOfYear();
   }
 
   /*
@@ -171,7 +172,7 @@ export class RuxClock extends LitElement {
         ? html`
             <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__aos">
               <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--aos">
-                ${RuxUtils.formatClockTimeUTC(this.aos, this.timezone, true)}
+                ${moment(this.aos).tz(this.timezone).format('HH:mm:ss')}
               </div>
               <div class="rux-clock__segment__label" id="rux-clock__time-label--aos">
                 AOS
@@ -183,7 +184,7 @@ export class RuxClock extends LitElement {
         ? html`
             <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__los">
               <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--los">
-                ${RuxUtils.formatClockTimeUTC(this.los, this.timezone, true)}
+              ${moment(this.los).tz(this.timezone).format('HH:mm:ss')}
               </div>
               <div class="rux-clock__segment__label" id="rux-clock__time-label--los">
                 LOS

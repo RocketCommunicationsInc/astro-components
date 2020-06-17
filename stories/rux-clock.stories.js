@@ -17,6 +17,8 @@ export const Clock = () => {
     Mountain: 'America/Denver',
     Central: 'America/Chicago',
     Eastern: 'America/New_York',
+    Tokyo: 'Asia/Tokyo',
+    Sydney: 'Australia/Sydney',
     UTC: 'UTC',
   };
 
