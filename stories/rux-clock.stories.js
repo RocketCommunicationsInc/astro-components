@@ -20,9 +20,11 @@ export const Clock = () => {
     Tokyo: 'Asia/Tokyo',
     Sydney: 'Australia/Sydney',
     UTC: 'UTC',
+    Z: 'Z',
+    Zulu: 'Zulu',
   };
 
-  const timezoneKnob = select('Timezone', timezones, 'UTC');
+  const timezoneKnob = select('Timezone', timezones, 'Z');
   const hideTimezoneKnob = boolean('Hide Timezone', false);
   const hideDateKnob = boolean('Hide DOY', false);
   const smallKnob = boolean('Small Version', false);

@@ -36,6 +36,12 @@ export class RuxClock extends LitElement {
 
   constructor() {
     super();
+    // register a custom UTC abbreviatio in moment's Zone object format so that devs can use "Z" or "Rux/Zulu"
+    moment.tz.add('Rux/Zulu|Z|0|0||');
+    // alias likely Zulu abbreviations
+    moment.tz.link('Rux/Zulu|Z');
+    moment.tz.link('Rux/Zulu|Zulu');
+
 
     this.timezone = 'UTC';
     this.hideTimezone = false;
@@ -47,6 +53,14 @@ export class RuxClock extends LitElement {
   /*
     Lifecycle hooks should occur after the constructor and before custom methods
   */
+
+  updated() {
+    this._timezone = this.timezone;
+    if (this._timezone && this._timezone === 'Z') {
+      this._timezone = 'UTC';
+    }
+  }
+
   connectedCallback() {
     super.connectedCallback();
 
