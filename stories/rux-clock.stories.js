@@ -21,7 +21,7 @@ export const Clock = () => {
     Sydney: 'Australia/Sydney',
     UTC: 'UTC',
     Z: 'Z',
-    Zulu: 'Zulu',
+    z: 'z',
   };
 
   const timezoneKnob = select('Timezone', timezones, 'Z');
@@ -65,9 +65,11 @@ export const ClockWithAosLos = () => {
     Alaska: 'America/Anchorage',
     Pacific: 'America/Los_Angeles',
     Mountain: 'America/Denver',
-    Central: 'America/Chicago',
+    Central: 'america/chicago',
     Eastern: 'America/New_York',
     UTC: 'UTC',
+    Z: 'Z',
+    z: 'z',
   };
 
   const timezoneKnob = select('Timezone', timezones, 'UTC');

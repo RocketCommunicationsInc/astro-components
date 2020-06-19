@@ -36,11 +36,35 @@ export class RuxClock extends LitElement {
 
   constructor() {
     super();
-    // register a custom UTC abbreviatio in moment's Zone object format so that devs can use "Z" or "Rux/Zulu"
-    moment.tz.add('Rux/Zulu|Z|0|0||');
-    // alias likely Zulu abbreviations
-    moment.tz.link('Rux/Zulu|Z');
-    moment.tz.link('Rux/Zulu|Zulu');
+    // register military timezone designations in Zone object format so that devs can use single-character abbreviation
+    // note that moment does not require these to be case-sensitive
+    moment.tz.add([
+      'A|A|10|0||',
+      'B|B|20|0||',
+      'C|C|30|0||',
+      'D|D|40|0||',
+      'E|E|50|0||',
+      'F|F|60|0||',
+      'G|G|70|0||',
+      'H|H|80|0||',
+      'I|I|90|0||',
+      'K|K|a0|0||',
+      'L|L|b0|0||',
+      'M|M|c0|0||',
+      'N|N|-10|0||',
+      'O|O|-20|0||',
+      'P|P|-30|0||',
+      'Q|Q|-40|0||',
+      'R|R|-50|0||',
+      'S|S|-60|0||',
+      'T|T|-70|0||',
+      'U|U|-80|0||',
+      'V|V|-90|0||',
+      'W|W|-a0|0||',
+      'X|X|-b0|0||',
+      'Y|Y|-c0|0||',
+      'Z|Z|0|0||',
+    ]);
 
 
     this.timezone = 'UTC';
@@ -82,7 +106,7 @@ export class RuxClock extends LitElement {
     Private functions should occur after public functions
   */
   updateTime() {
-    this.time = moment.tz(this.timezone).format(`HH:mm:ss ${this.hideTimezone ? '' : 'z'}`);
+    this.time = moment().tz(this.timezone).format(`HH:mm:ss ${this.hideTimezone ? '' : 'z'}`);
     this.dayOfYear = moment().tz(this.timezone).dayOfYear();
   }
 
