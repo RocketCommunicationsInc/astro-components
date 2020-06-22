@@ -78,12 +78,6 @@ export class RuxClock extends LitElement {
     Lifecycle hooks should occur after the constructor and before custom methods
   */
 
-  updated() {
-    this._timezone = this.timezone;
-    if (this._timezone && this._timezone === 'Z') {
-      this._timezone = 'UTC';
-    }
-  }
 
   connectedCallback() {
     super.connectedCallback();

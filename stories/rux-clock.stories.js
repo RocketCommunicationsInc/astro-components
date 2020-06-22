@@ -15,7 +15,7 @@ export const Clock = () => {
     Alaska: 'America/Anchorage',
     Pacific: 'America/Los_Angeles',
     Mountain: 'America/Denver',
-    Central: 'America/Chicago',
+    Central: 'america/chicago', // testing case-insensitive string match
     Eastern: 'America/New_York',
     Tokyo: 'Asia/Tokyo',
     Sydney: 'Australia/Sydney',
@@ -65,7 +65,7 @@ export const ClockWithAosLos = () => {
     Alaska: 'America/Anchorage',
     Pacific: 'America/Los_Angeles',
     Mountain: 'America/Denver',
-    Central: 'america/chicago',
+    Central: 'america/chicago', // testing case-insensitive string match
     Eastern: 'America/New_York',
     UTC: 'UTC',
     Z: 'Z',
