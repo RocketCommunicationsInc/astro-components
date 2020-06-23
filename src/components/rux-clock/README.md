@@ -63,6 +63,10 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 
 ## Revision History
 
+##### **4.1**
+- Added moment.js for date/time calculations, fixing Day of Year count error at EOD
+- Added the 24 military timezone designations
+
 ##### **4.0**
 
 - Renamed `compact` property to `small`
