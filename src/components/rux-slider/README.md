@@ -34,7 +34,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxSlider } from '@astro-components/rux-slider/rux-slider.js';
+import { RuxSlider } from '@astrouxds/rux-slider/rux-slider.js';
 ```
 
 ### 3. Render the Astro Slider Web Component

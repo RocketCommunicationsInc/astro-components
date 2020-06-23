@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxGlobalStatusBar } from '@astro-components/rux-global-status-bar/rux-global-status-bar.js';
+import { RuxGlobalStatusBar } from '@astrouxds/rux-global-status-bar/rux-global-status-bar.js';
 ```
 
 ### 3. Render the Astro Global Status Bar Web Component

@@ -74,7 +74,7 @@ gulp.task('css:colors', gulp.series(color, css));
 exports.css = css;
 exports.color = color;
 exports.watch = watch;
-// exports.build = build;
+exports.build = gulp.series(clean, css, color);
 // exports.start = start;
 // exports.dev = dev;
 exports.clean = clean;

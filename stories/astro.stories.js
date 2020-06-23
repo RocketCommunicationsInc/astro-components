@@ -24,6 +24,23 @@ export const StartHere = () => {
     .content-wrap {
       padding: 2vh 2vw;
     }
+    code {
+      font-size: 14px;
+      line-height: 1.375;
+      direction: ltr;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      tab-size: 4;
+      hyphens: none;
+      background: #060708;
+      color: #ccd5e0;
+      padding: 1em;
+      margin: .5em 0;
+      overflow: auto;
+      display: block;
+    }
   </style>
   <div class="welcome-wrap">
     <h1>Welcome to the Astro Storybook</h1>
@@ -40,20 +57,23 @@ export const StartHere = () => {
   </div>
   <div class="content-wrap">
     <p>
-      In the <b>Sidebar</b> to the left, you can browse the components and patterns within Astro. Each example will
-      be demonstrated in what is called a "story" within the <b>Canvas</b> tab (the area of the window you're
-      reading now). Across the top of the <b>Canvas</b> area, you will see a tab for Notes, which contain developer
-      documentation in the form of README files for each component, as well as zoom controls, a color blindness
-      simulator, a viewport selector, and a light/dark theme toggle.
+      In the Sidebar to the left, you can browse the components and patterns within Astro. Each example will
+      be demonstrated in what is called a "story" within the Canvas (the area of the window you're
+      reading now). Across the top of the Canvas area, you will see zoom controls, a color blindness
+      simulator, and a light/dark theme toggle.
     </p>
     <p>
-      Below the <b>Canvas</b>, there is a tabbed <b>Panel</b> which displays Knobs, an Accessibilty audit, and any
+      To the right of the Canvas, there is a tabbed Panel which displays Knobs, Readme files for each component, as well as an Accessibilty audit, and any
       Actions outputs associated with that demonstration.
     </p>
     <ul>
       <li>
         The <b>Knobs</b> options allow you to change content in the demonstration area by altering the data given to
         the component via its properties.
+      </li>
+      <li>
+        The <b>Readme</b> tab shows developer documentation for the patterns or components, whether available as a Web Component or
+        simply HTML and CSS styles.
       </li>
       <li>
         The <b>Accessibilty</b> tab displays a11y violations of WCAG 2.0 Levels A and AA, WCAG 2.1 Level AA, Section
@@ -70,6 +90,12 @@ export const StartHere = () => {
       Display options and keyboard shortcuts are available via the ellipsis menu icon next to the Astro UXDS logo at
       the top of the sidebar.
     </p>
+    <p>
+      If you would like to download and run the Astro UXDS Components Storybook yourself, you may clone <a 
+      href="https://bitbucket.org/rocketcom/astro-components.git" target="_blank">the repository</a>:
+    </p>
+    <code class="language-sh">git clone https://bitbucket.org/rocketcom/astro-components.git</code>
+
   </div>
 `;
 };

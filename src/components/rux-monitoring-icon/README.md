@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxMonitoringIcon } from '@astro-components/rux-monitoring-icon/rux-monitoring-icon.js';
+import { RuxMonitoringIcon } from '@astrouxds/rux-monitoring-icon/rux-monitoring-icon.js';
 ```
 
 ### 3. Render the Astro Monitoring Icon Web Component
@@ -96,7 +96,7 @@ Or, [download Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/a
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project. Status is assigned via a range object.
 
 ```javascript
-import { RuxMonitoringProgressIcon } from '@astro-components/rux-monitoring-icon/rux-monitoring-progress-icon.js';
+import { RuxMonitoringProgressIcon } from '@astrouxds/rux-monitoring-icon/rux-monitoring-progress-icon.js';
 ```
 
 ### 3. Render the Astro Monitoring Progress Icon Web Component

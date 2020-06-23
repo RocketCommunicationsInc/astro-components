@@ -28,6 +28,7 @@ export class RuxTree extends LitElement {
   constructor() {
     super();
 
+    this.data = [];
     this._handleKeyPress = this.handleKeyPress.bind(this);
     this._handleClick = this.handleClick.bind(this);
     this._activeElement = null;

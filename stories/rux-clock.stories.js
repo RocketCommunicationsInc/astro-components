@@ -15,12 +15,16 @@ export const Clock = () => {
     Alaska: 'America/Anchorage',
     Pacific: 'America/Los_Angeles',
     Mountain: 'America/Denver',
-    Central: 'America/Chicago',
+    Central: 'america/chicago', // testing case-insensitive string match
     Eastern: 'America/New_York',
+    Tokyo: 'Asia/Tokyo',
+    Sydney: 'Australia/Sydney',
     UTC: 'UTC',
+    Z: 'Z',
+    z: 'z',
   };
 
-  const timezoneKnob = select('Timezone', timezones, 'UTC');
+  const timezoneKnob = select('Timezone', timezones, 'Z');
   const hideTimezoneKnob = boolean('Hide Timezone', false);
   const hideDateKnob = boolean('Hide DOY', false);
   const smallKnob = boolean('Small Version', false);
@@ -61,9 +65,11 @@ export const ClockWithAosLos = () => {
     Alaska: 'America/Anchorage',
     Pacific: 'America/Los_Angeles',
     Mountain: 'America/Denver',
-    Central: 'America/Chicago',
+    Central: 'america/chicago', // testing case-insensitive string match
     Eastern: 'America/New_York',
     UTC: 'UTC',
+    Z: 'Z',
+    z: 'z',
   };
 
   const timezoneKnob = select('Timezone', timezones, 'UTC');

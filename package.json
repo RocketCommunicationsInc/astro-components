@@ -18,9 +18,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "private": false,
   "scripts": {
-    "build-storybook": "build-storybook -c .storybook -s ./static",
-    "start": "webpack-dev-server",
-    "storybook": "start-storybook -p 9001 -c .storybook -s ./static && gulp"
+    "build-storybook": "gulp build && build-storybook -c .storybook -s ./static",
+    "storybook": "gulp build && start-storybook -p 9001 -c .storybook -s ./static "
   },
   "dependencies": {
     "lit-element": "^2.3.1",
@@ -58,6 +57,8 @@
     "husky": "^2.3.0",
     "lerna": "^3.16.4",
     "lint-staged": "^8.1.6",
+    "moment": "^2.26.0",
+    "moment-timezone": "^0.5.31",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-custom-properties": "^8.0.10",
     "prettier": "^1.19.1",

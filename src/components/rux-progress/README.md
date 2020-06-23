@@ -31,7 +31,7 @@ Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxProgress } from '@astro-components/rux-progress/rux-progress.js';
+import { RuxProgress } from '@astrouxds/rux-progress/rux-progress.js';
 ```
 
 ### 3. Render the Astro Template Web Component
@@ -95,6 +95,9 @@ Indeterminate progress
 | `max`    | Number | `100`                                                                                                                                                                                                 | no       | For progress bars where progress bars have a maximum value greater or less than 100 |
 
 ## Revision History
+
+##### **4.0.2**
+- fixed broken property `hideLabel`
 
 ##### **4.0**
 
