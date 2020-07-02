@@ -1,34 +1,35 @@
 {
-  "name": "astroux-static",
-  "author": {
-    "name": "Rocket Communications UX",
-    "email": "uxsupport@rocket.com"
-  },
-  "version": "1.0.0",
-  "main": "css/astro.core.min.css",
-  "homepage": "https://www.astrouxds.com",
-  "description": "Astrouxds css and font assets for Astro UX Design System",
-  "style": "css/astro.core.min.css",
-  "files": [
-    "css/*.css",
-    "fonts",
-    "icons",
-    "img",
-    "favicon.ico"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
-  },
-  "keywords": [
-    "css",
-    "front-end",
-    "static",
-    "web"
-  ],
-  "license": "SEE LICENSE IN ASTRO-COMPONENTS/SRC/MASTER LICENSE.md",
-  "bugs": {
-    "email": "uxsupport@rocketcom.com",
-    "url": "https://bitbucket.org/rocketcom/astro-components/issues"
-  }
+	"name": "astroux-static",
+	"author": {
+		"name": "Rocket Communications UX",
+		"email": "uxsupport@rocket.com"
+	},
+	"version": "1.0.0",
+	"main": "css/astro.core.min.css",
+	"homepage": "https://www.astrouxds.com",
+	"description": "Static CSS, SVG, and font assets for Astro UXDS",
+	"style": "css/astro.core.min.css",
+	"files": [
+		"css/*.css",
+		"fonts/",
+		"icons/*.svg",
+		"icons/*.png",
+		"img/*.svg",
+		"favicon.ico"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/RocketCommunicationsInc/astro-components/tree/master"
+	},
+	"keywords": [
+		"css",
+		"front-end",
+		"static",
+		"web"
+	],
+	"license": "SEE LICENSE IN ASTRO-COMPONENTS/SRC/MASTER LICENSE.md",
+	"bugs": {
+		"email": "uxsupport@rocketcom.com",
+		"url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
+	}
 }
