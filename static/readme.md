@@ -1,4 +1,6 @@
-# Static Assets Usage
+# Astro UXDS Static Assets
+
+
 
 ## Installation
 
@@ -29,3 +31,5 @@
     - astro-logo-small-light.svg 
 
 
+### NPM Package Page
+   - [Package Link](https://www.npmjs.com/package/@astrouxds/rux-static)
