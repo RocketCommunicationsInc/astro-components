@@ -1,15 +1,16 @@
 {
-	"name": "astroux-static",
+	"name": "@astrouxds/rux-static",
 	"author": {
 		"name": "Rocket Communications UX",
 		"email": "uxsupport@rocket.com"
 	},
-	"version": "1.0.0",
-	"main": "css/astro.core.min.css",
+	"version": "1.1.0",
+	"main": "./css/astro.core.min.css",
 	"homepage": "https://www.astrouxds.com",
 	"description": "Static CSS, SVG, and font assets for Astro UXDS",
 	"style": "css/astro.core.min.css",
 	"files": [
+		"main.js",
 		"css/*.css",
 		"fonts/",
 		"icons/*.svg",

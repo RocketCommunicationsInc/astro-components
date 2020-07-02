@@ -4,11 +4,11 @@
 
 1. Install the Astro UXDS Static Assets
 
-    ` npm i astroux-static --save-dev `
+    `npm i @astrouxds/rux-static `
 
 2. Import
    
-    `import "astroux-static";`
+    `import '@astrouxds/rux-static';`
 
 3. Relative Path
    
