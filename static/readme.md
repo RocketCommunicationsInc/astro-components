@@ -26,7 +26,7 @@ Use relative Path
 
 ## Asset Directory Structure
 ```
-|-css
+|--css
 	|-astro.core.css
 	|- astro.core.min.css
 	|- astro.css
