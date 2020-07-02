@@ -13,8 +13,8 @@
 		"main.js",
 		"css/*.css",
 		"fonts/",
-		"icons/*.svg",
-		"icons/*.png",
+		"/icons/*.svg",
+		"/icons/*.png",
 		"img/*.svg",
 		"favicon.ico"
 	],
@@ -32,5 +32,8 @@
 	"bugs": {
 		"email": "uxsupport@rocketcom.com",
 		"url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
+	},
+	"devDependencies": {
+		"copy-webpack-plugin": "^6.0.3"
 	}
 }

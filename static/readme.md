@@ -3,16 +3,14 @@
 ## Installation
 
 1. Install the Astro UXDS Static Assets
-
     `npm i @astrouxds/rux-static `
 
-2. Import
-   
+2. Import   
     `import '@astrouxds/rux-static';`
 
 3. Relative Path
    
-   `<link href="./node_modules/astro-static-css-assets/css/[Filename]>`
+   `<link href="./node_modules/@astrouxds/rux-static/css/astro.core.css>`
 
 
 ## Included Assets
