@@ -4,18 +4,17 @@
 		"name": "Rocket Communications UX",
 		"email": "uxsupport@rocket.com"
 	},
-	"version": "1.1.0",
-	"main": "./css/astro.core.min.css",
+	"version": "1.2.0",
+	"main": "index.js",
 	"homepage": "https://www.astrouxds.com",
 	"description": "Static CSS, SVG, and font assets for Astro UXDS",
 	"style": "css/astro.core.min.css",
 	"files": [
-		"main.js",
-		"css/*.css",
-		"fonts/",
-		"/icons/*.svg",
-		"/icons/*.png",
-		"img/*.svg",
+		"./main.js",
+		"css/**/*.css",
+		"fonts/**/*{.txt,woff,woff2}",
+		"icons/**/*{svg,png}",
+		"img/**/*.svg",
 		"favicon.ico"
 	],
 	"repository": {
@@ -33,7 +32,8 @@
 		"email": "uxsupport@rocketcom.com",
 		"url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
 	},
-	"devDependencies": {
+	"devDependencies": {},
+	"dependencies": {
 		"copy-webpack-plugin": "^6.0.3"
 	}
 }
