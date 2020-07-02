@@ -1,35 +1,46 @@
 # Astro UXDS Static Assets
 
-
-
 ## Installation
+Install the Astro UXDS Static Assets
 
-1. Install the Astro UXDS Static Assets
-    `npm i @astrouxds/rux-static `
+```npm i @astrouxds/rux-static ```
 
-2. Import   
-    `import '@astrouxds/rux-static';`
 
-3. Relative Path
+## Usage
+Importing CSS into your build
+	
+	`import '@astrouxds/rux-static';` default imports `css/astro.core.min.css`
+
+Optional Imports
+
+	`import '@astrouxds/rux-static/css/astro.css';` 
+
+	`import '@astrouxds/rux-static/css/astro.core.css';`
+
+	`import '@astrouxds/rux-static/css/astro.min.css';` 
+
+Use relative Path
    
-   `<link href="./node_modules/@astrouxds/rux-static/css/astro.core.css>`
+   ```<link href="./node_modules/@astrouxds/rux-static/css/astro.core.css>```
 
 
-## Included Assets
-  - css
-    - astro.core.css
-    - astro.core.min.css
-    - astro.css
-    - astro.min.css
-  - icons
-    - astro.svg
-    - custom.svg
-    - status.dark.png
-    - status.light.png
-  - img
-    - astro-log-small-dark.svg
-    - astro-logo-small-light.svg 
+## Asset Directory Structure
+```
+|-css
+	|-astro.core.css
+	|- astro.core.min.css
+	|- astro.css
+	|- astro.min.css
+|-icons
+	|- astro.svg
+	|- custom.svg
+	|- status.dark.png
+	|- status.light.png
+|-img
+	|- astro-logo-small-dark.svg
+	|- astro-logo-small-light.svg
+```
 
 
 ### NPM Package Page
-   - [Package Link](https://www.npmjs.com/package/@astrouxds/rux-static)
+   - [@astrouxds/rux-static](https://www.npmjs.com/package/@astrouxds/rux-static)

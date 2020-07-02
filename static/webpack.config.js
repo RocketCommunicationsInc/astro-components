@@ -12,7 +12,6 @@ module.exports = {
 						gitignore: true,
 						ignore: ['readme.md', 'package.json', 'favicon.ico'],
 					}
-
 				},
 			],
 		}),
