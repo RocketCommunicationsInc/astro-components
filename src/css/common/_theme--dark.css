@@ -433,6 +433,9 @@
   
   --tableControlsBackgroundColor: var(--colorTertiaryDarken2, rgb(24, 38, 53));
   --tableCellSelectedBorderColor: var(--colorSecondaryDarken2, rgb(46, 103, 153));
+  --tableFilterBorderColor: var(--colorTertiaryLighten1, rgb(83, 101, 121));
+  --tableFilterDisabledBorderColor: var(--colorTertiary, rgb(40, 63, 88));
+  --tableFilterDisabledBackgroundColor: var(--colorTertiaryDarken1,  rgb(32, 50, 70));
 }
 
 li.dark-theme {

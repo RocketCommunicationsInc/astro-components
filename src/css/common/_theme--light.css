@@ -7,7 +7,7 @@
   */
   --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
-  --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
+  --fontLowContrastColor: var(--colorQuaternaryDarken1, rgb(166, 171, 182));
   --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
   --fontInvertedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
 
@@ -439,8 +439,8 @@
     ==========================================================================
       
   */
-  --tableBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
 
+  --tableBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
 
   --tableHeaderBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
   --tableHeaderTextColor: var(--colorQuaternaryDarken4, rgb(41, 43, 45));
@@ -455,7 +455,9 @@
   
   --tableControlsBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
   --tableCellSelectedBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
-
+  --tableFilterBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --tableFilterDisabledBorderColor: var(--colorTertiaryLighten3, rgb(40, 63, 88));
+  --tableFilterDisabledBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
 }
 
 li.light-theme {
