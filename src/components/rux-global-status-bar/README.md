@@ -18,15 +18,15 @@ npm i -save @astrouxds/rux-global-status-bar
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
 
 Via CLI:
 
 ```sh
-git clone https://bitbucket.org/rocketcom/astro-components.git
+git clone https://github.com/RocketCommunicationsInc/astro-components.git
 ```
 
-Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/get/master.zip)
 
 ### 2. Import the Astro Global Status Bar Web Component
 

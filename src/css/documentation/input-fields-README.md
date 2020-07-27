@@ -11,7 +11,7 @@ Input Fields allow users to enter text or numeric data.
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
+Latest release is available in the [static css directory](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static/css).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
@@ -44,7 +44,7 @@ Apply the class `rux-form-field--small` to style the input element and label sma
 | `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
 | `required` | Boolean | `false` | No | Follows native form element `required` behavior, preventing submission of the form until a valid value has been entered. |
 
-For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
+For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://www.astrouxds.com/components/readme/#getting-started-with-html-%26-css)
 
 ### HTML5 Coverage
 

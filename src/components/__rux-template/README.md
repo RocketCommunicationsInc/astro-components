@@ -18,15 +18,15 @@ npm i --save @astrouxds/rux-template
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
 
 Via CLI:
 
 ```sh
-git clone https://bitbucket.org/rocketcom/astro-components.git
+git clone https://github.com/RocketCommunicationsInc/astro-components.git
 ```
 
-Or, [download Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+Or, [download Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/get/master.zip)
 
 ### 2. Import the Astro Template Web Component
 
@@ -57,7 +57,7 @@ Pass properties as attributes of the Astro Template custom element:
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
+Latest release is available in the [static css directory](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static/css).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
@@ -82,7 +82,7 @@ Configure the component using native HTML attributes or [BEM-style](http://getbe
 | `disabled`                | Boolean | `false` | No       | When set, what does this property do? |
 | `rux-template--attribute` | Class   | `''`    | No       | When set, what does this property do? |
 
-For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
+For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://www.astrouxds.com/components/readme/#getting-started-with-html-%26-css)
 
 ## Revision History
 

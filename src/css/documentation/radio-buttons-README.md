@@ -12,7 +12,7 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
+Latest release is available in the [static css directory](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static/css).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
@@ -39,4 +39,4 @@ Wrap an input field and its associated label in an element with the `rux-radio-b
 | `required` | Boolean | `false` | No | Follows native form element `required` behavior, preventing submission of the form until a valid value has been entered. |
 
 
-For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
+For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://www.astrouxds.com/components/readme/#getting-started-with-html-%26-css)

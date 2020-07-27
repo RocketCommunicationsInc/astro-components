@@ -15,7 +15,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
+		"url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
 	},
 	"description": "Astro Web Component for mission clock",
 	"license": "SEE LICENSE IN LICENSE.md",

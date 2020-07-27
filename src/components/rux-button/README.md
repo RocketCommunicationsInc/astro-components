@@ -18,15 +18,15 @@ npm i --save @astrouxds/rux-button
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
 
 Via CLI:
 
 ```sh
-git clone https://bitbucket.org/rocketcom/astro-components.git
+git clone https://github.com/RocketCommunicationsInc/astro-components.git
 ```
 
-Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/get/master.zip)
 
 ### 2. Import the Astro Button Web Component
 
@@ -82,7 +82,7 @@ In this situation, you do not need to specify a size for the icon component -- t
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
+Latest release is available in the [static css directory](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static/css).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
@@ -132,7 +132,7 @@ Otherwise, wrap your icon SVG in an HTML element with the [BEM-style](http://get
 | `rux-button--icon`      | Class   | —       | No       | Displays an Astro icon matching this string to the left of the button text. Required when element also has the class `rux-button--icon-only`. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) Note: Astro UXDS icons are only available when using the Web Component usage pattern, which imports the `<rux-icon>` component. |
 | `rux-button--size`      | Class   | —       | No       | Displays the button as a `'small'` or `'large'` variant.                                                                                                                                                                                                                                                                                                                                                                  |
 
-For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
+For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://www.astrouxds.com/components/readme/#getting-started-with-html-%26-css)
 
 ---
 

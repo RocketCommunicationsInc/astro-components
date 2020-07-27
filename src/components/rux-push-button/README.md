@@ -18,15 +18,15 @@ npm i --save @astrouxds/rux-push-button
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
 
 Via CLI:
 
 ```sh
-git clone https://bitbucket.org/rocketcom/astro-components.git
+git clone https://github.com/RocketCommunicationsInc/astro-components.git
 ```
 
-Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/get/master.zip)
 
 ### 2. Import the Astro Push Button Web Component
 
@@ -59,7 +59,7 @@ Provide a label for the Push Button inside the component node using the componen
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
+Latest release is available in the [static css directory](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static/css).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />
@@ -92,7 +92,7 @@ Apply attributes such as `disabled` and/or `checked` on the `<input>` element.
 | `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
 | `checked`  | Boolean | `false` | No       | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.                                                                            |
 
-For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://bitbucket.org/rocketcom/astro-styles)
+For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://www.astrouxds.com/components/readme/#getting-started-with-html-%26-css)
 
 ## Revision History
 
