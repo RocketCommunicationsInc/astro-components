@@ -19,6 +19,7 @@
   "description": "Astro Web Component for tabs",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-tabs.js",
+  "module": "rux-tabs.js",
   "name": "@astrouxds/rux-tabs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

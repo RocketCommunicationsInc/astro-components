@@ -19,6 +19,7 @@
   "description": "Astro Web Component for status indicator",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-status.js",
+  "module": "rux-status.js",
   "name": "@astrouxds/rux-status",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

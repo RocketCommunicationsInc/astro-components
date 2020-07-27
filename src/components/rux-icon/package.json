@@ -19,6 +19,7 @@
   "description": "Astro Web Component for Icons",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-icon.js",
+  "module": "rux-icon.js",
   "name": "@astrouxds/rux-icon",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

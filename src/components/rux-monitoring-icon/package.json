@@ -21,6 +21,7 @@
   "description": "Astro Web Component for Monitoring Icons",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-monitoring-icon.js",
+  "module": "rux-monitoring-icon.js",
   "name": "@astrouxds/rux-monitoring-icon",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

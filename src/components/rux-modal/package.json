@@ -19,6 +19,7 @@
   "description": "Astro Web Component for modal dialogue",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-modal.js",
+  "module": "rux-modal.js",
   "name": "@astrouxds/rux-modal",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

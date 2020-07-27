@@ -20,6 +20,7 @@
   "description": "Astro Web Component for notification banners",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-notification.js",
+  "module": "rux-notification.js",
   "name": "@astrouxds/rux-notification",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

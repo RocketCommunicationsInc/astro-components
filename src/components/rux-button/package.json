@@ -20,6 +20,7 @@
   "description": "Astro Web Component for buttons",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-button.js",
+  "module": "rux-button.js",
   "name": "@astrouxds/rux-button",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

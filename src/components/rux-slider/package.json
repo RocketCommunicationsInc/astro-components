@@ -19,6 +19,7 @@
   "description": "Astro Web Component for sliders",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-slider.js",
+  "module": "rux-slider.js",
   "name": "@astrouxds/rux-slider",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
