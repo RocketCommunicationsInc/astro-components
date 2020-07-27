@@ -26,7 +26,7 @@ Via CLI:
 git clone https://github.com/RocketCommunicationsInc/astro-components.git
 ```
 
-Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/get/master.zip)
+Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip)
 
 ### 2. Import the Astro Monitoring Icon Web Component
 
@@ -89,7 +89,7 @@ Via CLI:
 git clone https://github.com/RocketCommunicationsInc/astro-components.git
 ```
 
-Or, [download Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/get/master.zip)
+Or, [download Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip)
 
 ### 2. Import the Astro Monitoring Progress Icon Web Component
 

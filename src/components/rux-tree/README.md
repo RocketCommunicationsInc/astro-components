@@ -28,7 +28,7 @@ Via CLI:
 git clone https://github.com/RocketCommunicationsInc/astro-components.git
 ```
 
-Or, [download Astro Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/get/master.zip)
+Or, [download Astro Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip)
 
 ### 2. Import the Astro Tree Web Component
 
