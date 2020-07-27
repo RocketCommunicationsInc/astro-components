@@ -69,7 +69,7 @@ Pass properties as attributes of the Astro Dialog Box custom element:
 
 ### Event Listener
 
-When closed, the Dialog Box Web Component will emit a message using the `'modal-event'` event name and a detail message of `confirm` with a value of `true` (confirm) or `false` (deny) depending on whether the user clicks the confirm or deny button.
+When closed, the Dialog Box Web Component will emit a message using the `'modalClosed'` event name and a detail message of `confirm` with a value of `true` (confirm) or `false` (deny) depending on whether the user clicks the confirm or deny button.
 
 ## Revision History
 
