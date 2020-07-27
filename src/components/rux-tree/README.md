@@ -57,14 +57,16 @@ import { RuxTree } from '@astrouxds/rux-tree/rux-tree.js';
  {
   label: "Option 1",
   status: "critical",
+  expanded: "true",
   children: [{
-   label: "Option 1.1"
-   status: "normal"
+   label: "Option 1.1",
+   status: "normal",
+   selected: "true",
    children: [ …] }]
  },
  {
-  label: "Option 1.2"
-  status: "normal"
+  label: "Option 1.2",
+  status: "normal",
   children: [ …]
  },
  {
@@ -80,6 +82,8 @@ import { RuxTree } from '@astrouxds/rux-tree/rux-tree.js';
 | ---------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `label`    | String | yes      | The label for the tree item                                                                                                                 |
 | `id`       | String | no       | An optional property to help identify individual tree elements                                                                              |
+| `selected` | Boolean | no      | If set to `true`, this item shows a selected style. When a new item is selected by user click, all other selected items are unselected. |
+| `expanded` | Boolean | no      | If set to `true`, this item is expanded. Multiple items can be expanded at the same time. |
 | `status`   | String | no       | An optional property to assign status. See [Astro Status](http://www.astrouxds.com/library/tree) for valid status options                   |
 | `children` | Array  | no       | An array of child elements. Children use the same structure as parents and may include their own `children` array to create nested elements |
 
