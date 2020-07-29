@@ -10,15 +10,16 @@
   "homepage": "https://www.astrouxds.com",
   "bugs": {
     "email": "uxsupport@rocketcom.com",
-    "url": "https://bitbucket.org/rocketcom/astro-components/issues"
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
   },
   "description": "Astro Web Component for sliders",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-slider.js",
+  "module": "rux-slider.js",
   "name": "@astrouxds/rux-slider",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
