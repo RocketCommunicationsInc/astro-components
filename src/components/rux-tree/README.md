@@ -57,11 +57,11 @@ import { RuxTree } from '@astrouxds/rux-tree/rux-tree.js';
  {
   label: "Option 1",
   status: "critical",
-  expanded: "true",
+  expanded: true,
   children: [{
    label: "Option 1.1",
    status: "normal",
-   selected: "true",
+   selected: true,
    children: [ …] }]
  },
  {
