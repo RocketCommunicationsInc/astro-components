@@ -14,13 +14,13 @@ export const Tree = () => {
     {
       label: 'Tree Item 1',
       expanded: true,
-      selected: true,
       children: [
         {
           label: 'Tree Item 1.1',
+          expanded: true,
           children: [
             { label: 'Tree Item 1.1.1' },
-            { label: 'Tree Item 1.1.2' },
+            { label: 'Tree Item 1.1.2', selected: true },
             { label: 'Tree Item 1.1.3' },
           ],
         },

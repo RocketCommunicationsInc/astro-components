@@ -4,7 +4,6 @@
 		"email": "uxsupport@rocketcom.com"
 	},
 	"dependencies": {
-		"@astrouxds/rux-utils": "^4.0.2",
 		"@webcomponents/webcomponentsjs": "^2.2.10",
 		"lit-element": "^2.1.0",
 		"moment": "^2.26.0",
@@ -16,11 +15,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
+		"url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
 	},
 	"description": "Astro Web Component for mission clock",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"main": "rux-clock.js",
+  "module": "rux-clock.js",
 	"name": "@astrouxds/rux-clock",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
@@ -28,6 +28,10 @@
 	"publishConfig": {
 		"access": "public"
 	},
+<<<<<<< HEAD
 	"version": "4.1.0",
+=======
+	"version": "4.0.4",
+>>>>>>> a8ae65dd81d215331319bc7ec6e650db75c91cfb
 	"gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }

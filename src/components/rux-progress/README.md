@@ -16,15 +16,15 @@ npm i --save @astrouxds/rux-progress
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro Component Library](https://bitbucket.org/rocketcom/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
 
 Via CLI:
 
 ```sh
-git clone https://bitbucket.org/rocketcom/astro-components.git
+git clone https://github.com/RocketCommunicationsInc/astro-components.git
 ```
 
-Or, [download Astro Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
+Or, [download Astro Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip)
 
 ### 2. Import the Astro Astro Template Web Component
 
@@ -62,7 +62,7 @@ For projects where Web Components are not a viable option use the Astro CSS and 
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in [Astro Styles repo](https://bitbucket.org/rocketcom/astro-styles/src/master/).
+Latest release is available in the [static css directory](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static/css).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />

@@ -92,9 +92,9 @@ export const StartHere = () => {
     </p>
     <p>
       If you would like to download and run the Astro UXDS Components Storybook yourself, you may clone <a 
-      href="https://bitbucket.org/rocketcom/astro-components.git" target="_blank">the repository</a>:
+      href="https://github.com/RocketCommunicationsInc/astro-components.git" target="_blank">the repository</a>:
     </p>
-    <code class="language-sh">git clone https://bitbucket.org/rocketcom/astro-components.git</code>
+    <code class="language-sh">git clone https://github.com/RocketCommunicationsInc/astro-components.git</code>
 
   </div>
 `;

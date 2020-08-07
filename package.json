@@ -8,17 +8,17 @@
   "homepage": "https://www.astrouxds.com",
   "bugs": {
     "email": "uxsupport@rocketcom.com",
-    "url": "https://bitbucket.org/rocketcom/astro-components/issues"
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
   },
   "description": "Astro Web Component for buttons",
   "license": "SEE LICENSE IN LICENSE.md",
   "private": false,
   "scripts": {
-    "build-storybook": "build-storybook -c .storybook -s ./static",
+    "build-storybook": "gulp build && build-storybook -c .storybook -s ./static",
     "storybook": "gulp build && start-storybook -p 9001 -c .storybook -s ./static "
   },
   "dependencies": {
