@@ -68,6 +68,7 @@ export const AllIcons = () => {
     'stop',
     'refresh',
     'star-fill',
+    'star-fill-alt',
     'star',
   ];
 
