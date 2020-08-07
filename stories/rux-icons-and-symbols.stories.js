@@ -70,6 +70,15 @@ export const AllIcons = () => {
     'star-fill',
     'star-fill-alt',
     'star',
+    'up',
+    'down',
+    'back',
+    'forward',
+    'hamburger',
+    'delete',
+    'help',
+    'visibility',
+    'visibility-off',
   ];
 
   return html`
