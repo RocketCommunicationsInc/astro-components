@@ -79,6 +79,11 @@ export const AllIcons = () => {
     'help',
     'visibility',
     'visibility-off',
+    'coat-tail',
+    'constellation',
+    'mission-alt',
+    'satellite-operating-center',
+    'tree',
   ];
 
   return html`
