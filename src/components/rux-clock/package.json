@@ -28,10 +28,6 @@
 	"publishConfig": {
 		"access": "public"
 	},
-<<<<<<< HEAD
 	"version": "4.1.0",
-=======
-	"version": "4.0.4",
->>>>>>> a8ae65dd81d215331319bc7ec6e650db75c91cfb
 	"gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }

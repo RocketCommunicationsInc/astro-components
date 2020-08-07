@@ -58,10 +58,17 @@ export const AllIcons = () => {
     'unlock',
     'search',
     'notifications',
+    'notifications-filled',
     'settings',
     'caution',
     'maintenance',
     'resources',
+    'play',
+    'pause',
+    'stop',
+    'refresh',
+    'star-fill',
+    'star',
   ];
 
   return html`
