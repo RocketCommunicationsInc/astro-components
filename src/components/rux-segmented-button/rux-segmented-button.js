@@ -7,20 +7,56 @@ export class RuxSegmentedButton extends LitElement {
       data: {
         type: Array,
       },
+      selected: {
+        reflect: true,
+        type: String,
+      },
     };
   }
 
   constructor() {
     super();
     this.data = [{ label: 'No data passed' }];
+    this._selected = '';
+  }
+
+  get selected() {
+    return this._selected;
+  }
+
+  set selected(label) {
+    const prevSelection = this.selected;
+    this._selected = label;
+    this.data.forEach((segment) => {
+      segment.selected = segment.label === label;
+    });
+    this.requestUpdate('selected', prevSelection);
+  }
+
+  deselectSelected() {
+    const previousSelectedElement = this.querySelectorAll('input[checked]');
+    previousSelectedElement.forEach((element) => {
+      element.checked = false;
+    });
+  }
+
+  handleChange(event) {
+    this.selected = event.target.value;
+    this.dispatchEvent(
+        new Event('change', {
+          bubbles: true,
+          composed: true,
+        })
+    );
   }
 
   connectedCallback() {
     super.connectedCallback();
 
-    const selectedSegment = this.data.find((segment) => segment.selected) || this.data[0];
-    selectedSegment.selected = true;
+    const initialSelection = this.data.find((segment) => segment.selected) || this.data[0];
+    this.selected = initialSelection.label;
   }
+
 
   _slugify(label) {
     return `${RuxUtils.stringToSlug(label)}`;
@@ -112,10 +148,10 @@ export class RuxSegmentedButton extends LitElement {
         }
 
         /* 
-  OVERRIDE FOR IE 
-  Otherwise all segments get rounded corners. Need to override and re-enable
-  some style definitions.
-*/
+          OVERRIDE FOR IE 
+          Otherwise all segments get rounded corners. Need to override and re-enable
+          some style definitions.
+        */
 
         .rux-segmented-buttons.style-scope {
           border-radius: 3px 6px 6px 3px !important;
@@ -130,23 +166,23 @@ export class RuxSegmentedButton extends LitElement {
       </style>
 
       <ul class="rux-segmented-buttons">
-        ${this.data.map(
-      (item) => html`
+        ${this.data.map((item) => html`
             <li class="rux-segmented-button">
               <input
                 type="radio"
                 name="rux-group"
                 id="${this._slugify(item.label)}"
+                value="${item.label}"
                 ?checked="${item.selected}"
                 data-label="${item.label}"
+                @change=${this.handleChange}
               />
               <label for="${this._slugify(item.label)}">
                 ${item.label}
               </label>
             </li>
-          `
-  )}
-      </ul>
+          `)}
+    </ul>
     `;
   }
 }
