@@ -1,21 +1,22 @@
 {
   "dependencies": {
-    "@astrouxds/rux-utils": "^4.0.2",
+    "@astrouxds/rux-utils": "^4.0.3",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "lit-element": "^2.1.0"
   },
   "homepage": "https://www.astrouxds.com",
   "bugs": {
     "email": "uxsupport@rocketcom.com",
-    "url": "https://bitbucket.org/rocketcom/astro-components/issues"
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
   },
   "description": "Astro Web Component for pop-up menus",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-pop-up-menu.js",
+  "module": "rux-pop-up-menu.js",
   "name": "@astrouxds/rux-pop-up-menu",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +24,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "4.0.4",
+  "version": "4.0.5",
   "gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }

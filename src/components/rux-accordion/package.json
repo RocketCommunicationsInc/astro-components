@@ -13,15 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://www.bitbucket.org/rocketcom/astro-components/src/master"
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
   },
   "description": "Astro Web Component for accordions",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-accordion.js",
+  "module": "rux-accordion.js",
   "name": "@astrouxds/rux-accordion",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "4.0.2",
+  "version": "4.0.3",
   "gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }
