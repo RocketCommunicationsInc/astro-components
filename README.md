@@ -190,8 +190,8 @@ The folders in `/src/components/*` contain the Web Components, which are tested 
 [Further information on Contributing to Astro Web Components](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--contributing)
 
 ### Astro CSS
-The Astro CSS library is used to style native HTML Elements and to set theme styles that are inherited throughout the application, even when developers do not use the Web Components themselves. The CSS is divided into partials in `/src/css/*`, which is concatenated into the `/static/css/` files using [PostCSS](https://postcss.org/) when the project builds using [Gulp](https://gulpjs.com/). See `/gulpfile.js` for more details.
+The Astro CSS library is used to style native HTML Elements and to set theme styles that are inherited throughout the application, even when developers do not use the Web Components themselves. The CSS is divided into partials in `/src/css/*`, which is concatenated into the `/src/components/rux-assets/css/` folder using [PostCSS](https://postcss.org/) when the project builds using [Gulp](https://gulpjs.com/). See `/gulpfile.js` for more details.
 
-**Note:** Changes to the Astro CSS should never be made directly to the `/static/css/*` files, as those are for distribution only.
+**Note:** Changes to the Astro CSS should never be made directly to the `/src/components/rux-assets/css/*` files, as those are for distribution only.
 
 Be sure to demonstrate any new or changed HTML elements using a Story. The Form Elements story (`/stories/rux-form-elements.stories.js`) shows how, even without a Web Component to mount, the functionality and variations can be displayed. If both Web Components and native HTML Elements can be used, such as in the case of Buttons (`/stories/rux-button.stories.js`), be sure to demonstrate both options.
