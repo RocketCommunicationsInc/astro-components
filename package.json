@@ -18,8 +18,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "private": false,
   "scripts": {
-    "build-storybook": "gulp build && build-storybook -c .storybook -s ./static",
-    "storybook": "gulp build && start-storybook -p 9001 -c .storybook -s ./static "
+    "build-storybook": "gulp build && build-storybook -c .storybook -s ./storybook-assets",
+    "storybook": "gulp build && start-storybook -p 9001 -c .storybook -s ./storybook-assets "
   },
   "dependencies": {
     "lit-element": "^2.3.1",

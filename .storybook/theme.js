@@ -33,7 +33,7 @@ let light = create({
 
   brandTitle: 'AstroUXDS',
   brandUrl: 'https://astrouxds.com',
-  brandImage: '/img/astro-logo-small-light.svg',
+  brandImage: 'astro-logo-small-light.svg',
 });
 
 let dark = create({
@@ -69,7 +69,7 @@ let dark = create({
 
   brandTitle: 'AstroUXDS',
   brandUrl: 'https://astrouxds.com',
-  brandImage: '/img/astro-logo-small-dark.svg',
+  brandImage: 'astro-logo-small-dark.svg',
 });
 
 export default {light, dark}

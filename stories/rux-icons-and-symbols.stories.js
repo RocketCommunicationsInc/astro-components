@@ -93,7 +93,6 @@ export const AllIcons = () => {
       (icon) => html`
             <li>
               <rux-icon
-                library="/icons/astro.svg"
                 icon="${icon}"
                 color="${colorKnob}"
                 size="${sizeKnob}"
@@ -186,7 +185,7 @@ export const MonitoringIcons = () => {
     </div>
     <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
       <rux-monitoring-icon
-        library="/icons/custom.svg"
+        library="/custom-icons.svg"
         icon="custom"
         label="Custom Icon"
         sublabel="${sublabel}"
