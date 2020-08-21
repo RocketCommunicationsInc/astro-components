@@ -24,6 +24,7 @@ function color() {
       .pipe(gulp.dest('./src/css/common'));
 }
 
+
 function css() {
   const condition = (file) => file !== 'astro.css';
 
@@ -32,26 +33,23 @@ function css() {
       .pipe(sourcemaps.init())
       .pipe(cssimport())
       .pipe(gulpif(condition, postcss([properties()])))
-      .pipe(gulp.dest('./static/css'))
+      .pipe(gulp.dest('./src/components/rux-assets/css'))
+      // in an upcoming major release, we should deprecate distributing .mins, that's not our concern
       .pipe(rename({ suffix: '.min' }))
       .pipe(csso())
-      .pipe(gulp.dest('./static/css'))
+      .pipe(gulp.dest('./src/components/rux-assets/css'))
       .pipe(sourcemaps.write('./'));
 }
-
-/*
- * TODO: readd browser prefix
- */
 
 /*
  * * Cleans the distribution folder before building
  */
 function clean() {
-  return del(['./static/css/dist/']);
+  return del(['./src/components/rux-assets/css/']);
 }
 
 /*
- * * Handles watching for file changes and triggering a browser reload
+ * * NOTE: watching doesn't work with Storybook right now
  */
 function watch() {
   // watch for color changes and generate palette
@@ -61,13 +59,13 @@ function watch() {
   gulp.watch(
       './src/css/**/*.css',
       {
-        ignored: ['./src/css/common/__variables.css', './src/css/astro.core.css', './src/css/astro.css'],
+        ignored: ['./src/css/common/__variables.css'],
       },
       gulp.series(css)
   );
 }
 
-const defaultTasks = gulp.series(clean, watch);
+const defaultTasks = gulp.series(clean);
 gulp.task('default', defaultTasks);
 gulp.task('css:colors', gulp.series(color, css));
 

@@ -438,6 +438,3 @@
   --tableFilterDisabledBackgroundColor: var(--colorTertiaryDarken1,  rgb(32, 50, 70));
 }
 
-li.dark-theme {
-  display: none;
-}

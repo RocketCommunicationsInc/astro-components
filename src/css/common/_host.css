@@ -1,0 +1,83 @@
+/* Shared, scoped styles across all components */
+
+/*
+** The first line targets all elements with rux- containing classes.
+** The second targets all web components (not just Astro ones).
+**
+** In astro.css and astro.core.css, these are set on the <html> element instead.
+** The components and .rux- classes rely on these to work, but the styles shouldn't be 
+** applied to the entire app when importing a single component.
+*/
+[class*='rux-'],
+:host {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-size: 1rem;
+  color: var(--fontColor, rgb(255, 255, 255));
+
+  background-color: var(--backgroundColor, rgb(24, 38, 53));
+
+  scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
+    var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
+    
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*='rux-'] *,
+:host *,
+[class*='rux-'] *::before,
+:host *::before,
+[class*='rux-'] *::after,
+:host *::after {
+  box-sizing: inherit;
+}
+/*
+** CSS-styled Scrollbars for IE & Webkit browsers
+** Dark theme by default.
+**
+*/
+
+:host::-webkit-scrollbar {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+}
+
+:host::-webkit-scrollbar-thumb {
+  background-color: var(--scrollBarThumbBackgroundColor, rgb(46, 103, 153));
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+/* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+:host::-webkit-scrollbar-thumb:vertical {
+  border-left-width: 4px;
+}
+
+:host::-webkit-scrollbar-thumb:horizontal {
+  border-top-width: 4px;
+}
+
+:host::-webkit-scrollbar-thumb:active,
+:host::-webkit-scrollbar-thumb:hover {
+  background-color: var(
+    --scrollBarThumbBackgroundHoverColor,
+    rgb(58, 129, 191)
+  );
+}
+
+:host::-webkit-scrollbar-track,
+:host::-webkit-scrollbar-corner {
+  background-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
+}
+:host::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
+}
+:host::-webkit-scrollbar-track:horizontal {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}

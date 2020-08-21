@@ -459,7 +459,3 @@
   --tableFilterDisabledBorderColor: var(--colorTertiaryLighten3, rgb(40, 63, 88));
   --tableFilterDisabledBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
 }
-
-li.light-theme {
-  display: none;
-}
