@@ -7,8 +7,8 @@
     "@webcomponents/webcomponentsjs": "^2.2.10"
   },
   "peerDependencies": {
-    "@astrouxds/rux-icon": "^4.0.2",
-    "@astrouxds/rux-status": "^4.0.2",
+    "@astrouxds/rux-icon": "^4.0.3",
+    "@astrouxds/rux-status": "^4.0.3",
     "@astroxuds/rux-assets": "^1.0.0",
     "lit-element": "^2.1.0"
   },
@@ -32,6 +32,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "4.1.1",
+  "version": "4.1.2",
   "gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }

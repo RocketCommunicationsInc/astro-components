@@ -113,6 +113,14 @@ export class RuxButton extends LitElement {
           border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
           background-color: var(--buttonActiveBackgroundColor, rgb(0, 90, 143)) !important;
         }
+        
+        .rux-button--outline:active:not([hover]):not([disabled]) {
+          border-color: var(--buttonOutlineBorderColor, rgb(0, 90, 143)) !important;
+          background-color: var(
+            --buttonOutlineBackgroundColor,
+            transparent
+          ) !important;
+        }
 
         .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
           box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
