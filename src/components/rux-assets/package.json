@@ -1,0 +1,25 @@
+{
+  "author": {
+    "name": "Rocket Communications",
+    "email": "uxsupport@rocketcom.com"
+  },
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "uxsupport@rocketcom.com",
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
+  },
+  "description": "Design Tokens and Static Assets (CSS, Fonts, Icons, Favicon) for Astro",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "name": "@astrouxds/rux-assets",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "4.0.3"
+}
