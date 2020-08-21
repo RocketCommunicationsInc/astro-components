@@ -24,16 +24,7 @@ npm i --save @astrouxds/rux-notification
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
-
-Via CLI:
-
-```sh
-git clone https://github.com/RocketCommunicationsInc/astro-components.git
-```
-
-Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip)
-
+Make sure you have also installed the `@astrouxds/rux-assets`  package as a peer dependency. This provides the light and dark Astro theme variables to all components. You only need to install it once for your entire app.
 ### 2. Import the Astro Notiication Banner Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.

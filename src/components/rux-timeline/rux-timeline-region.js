@@ -1,4 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
+/* eslint-disable no-unused-vars */
+import { RuxStatus } from '@astrouxds/rux-status/rux-status.js';
+/* eslint-enable no-unused-vars */
 
 export class RuxTimelineRegion extends LitElement {
   static get properties() {

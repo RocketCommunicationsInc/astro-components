@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export class RuxStatus extends LitElement {
   static get properties() {

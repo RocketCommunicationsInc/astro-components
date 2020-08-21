@@ -1,8 +1,9 @@
 import { LitElement, html } from 'lit-element';
-import RuxUtils from '../rux-utils/datetime.js';
+import RuxUtils from '@astrouxds/rux-utils/datetime.js';
 /* eslint-disable no-unused-vars */
-import { RuxStatus } from '../rux-status/rux-status.js';
+import { RuxStatus } from '@astrouxds/rux-status/rux-status.js';
 /* eslint-enable no-unused-vars */
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export class RuxLog extends LitElement {
   static get properties() {

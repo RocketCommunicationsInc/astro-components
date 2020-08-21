@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit-element';
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 /** Class representing a single Toggle instance. */
 

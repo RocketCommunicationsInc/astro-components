@@ -5,10 +5,13 @@
 	},
 	"dependencies": {
 		"@webcomponents/webcomponentsjs": "^2.2.10",
-		"lit-element": "^2.1.0",
 		"moment": "^2.26.0",
 		"moment-timezone": "^0.5.31"
 	},
+	"peerDependencies": {
+    "@astroxuds/rux-assets": "^1.0.0",
+		"lit-element": "^2.1.0"
+  },
 	"homepage": "https://www.astrouxds.com",
 	"bugs": {
 		"email": "uxsupport@rocketcom.com"

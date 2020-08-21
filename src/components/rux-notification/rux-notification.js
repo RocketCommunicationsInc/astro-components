@@ -1,8 +1,9 @@
 import { LitElement, html } from 'lit-element';
 
 /* eslint-disable-next-line no-unused-vars */
-import { RuxIcon } from '../rux-icon/rux-icon';
+import { RuxIcon } from '@astrouxds/rux-icon/rux-icon';
 /* eslint-enable-next-line no-unused-vars */
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export class RuxNotification extends LitElement {
   static get properties() {

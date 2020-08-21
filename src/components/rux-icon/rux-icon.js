@@ -1,5 +1,7 @@
 import { LitElement, html } from 'lit-element';
 import { directive } from 'lit-html';
+import RuxIconLibrary from '@astrouxds/rux-assets/icons/astro.svg';
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 const getIcon = directive((library, icon) => (part) => {
   try {
@@ -32,8 +34,7 @@ export class RuxIcon extends LitElement {
 
   constructor() {
     super();
-
-    this.library = '/icons/astro.svg';
+    this.library = RuxIconLibrary;
     /* TODO: a non-presumptive way to assign a better default label if the user doesn’t provide one */
     this.label = 'icon';
   }

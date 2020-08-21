@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
-import ruxData from '../rux-utils/data.js';
+import ruxData from '@astrouxds/rux-utils/data.js';
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export class RuxPopUpMenu extends LitElement {
   static get properties() {

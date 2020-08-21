@@ -3,6 +3,7 @@ import { LitElement, html, css } from 'lit-element';
 /* eslint-disable no-unused-vars */
 import { RuxTimelineTrack } from './rux-timeline-track.js';
 import { RuxTimelineRegion } from './rux-timeline-region.js';
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export class RuxTimeline extends LitElement {
   static get properties() {

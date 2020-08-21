@@ -1,7 +1,8 @@
 import { LitElement, html } from 'lit-element';
 /* eslint-disable no-unused-vars */
-import { RuxButton } from '../rux-button/rux-button.js';
+import { RuxButton } from '@astrouxds/rux-button/rux-button.js';
 /* eslint-enable no-unused-vars */
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export class RuxModal extends LitElement {
   static get properties() {

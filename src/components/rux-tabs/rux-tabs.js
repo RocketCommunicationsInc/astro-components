@@ -4,6 +4,7 @@ import { RuxTab } from './rux-tab.js';
 import { RuxTabPanels } from './rux-tab-panels.js';
 import { RuxTabPanel } from './rux-tab-panel.js';
 /* eslint-enable no-unused-vars */
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export class RuxTabs extends LitElement {
   static get is() {

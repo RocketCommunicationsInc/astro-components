@@ -18,16 +18,7 @@ npm i --save @astrouxds/rux--monitoring-icon
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
-
-Via CLI:
-
-```sh
-git clone https://github.com/RocketCommunicationsInc/astro-components.git
-```
-
-Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip)
-
+Make sure you have also installed the `@astrouxds/rux-assets`  package as a peer dependency. This provides the light and dark Astro theme variables to all components. You only need to install it once for your entire app.
 ### 2. Import the Astro Monitoring Icon Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
@@ -55,7 +46,7 @@ Pass properties as attributes of the Astro Monitoring Icon custom element:
 | Property        | Type   | Default    | Required | Description                                                                                                                                                                                                                                                                                       |
 | --------------- | ------ | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `icon`          | String | `''`       | Yes      | Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)                                                                                                          |
-| `library` | String | `'/icons/astro.svg'`  | No       | Defines the root-relative path for a specific icon library SVG for this icon. An icon library SVG document has individual icon elements identified by an `id` property on the node (usually on a `<g>` or `<path>`). If a value for `library` is not provided, the icon component assumes the Astro library SVG exists at the default path, and will look for the icon by `id` there. |
+| `library` | String | `'@astrouxds/rux-assets/icons/astro.svg'`  | No       | Defines the root-relative path for a specific icon library SVG for this icon. An icon library SVG document has individual icon elements identified by an `id` property on the node (usually on a `<g>` or `<path>`). If a value for `library` is not provided, the icon component assumes the Astro library SVG exists at the default path, and will look for the icon by `id` there. |
 | `label`         | String | `'icon'`   | Yes      | Displays a label below the icon                                                                                                                                                                                                                                                                   |
 | `status`        | String | `'normal'` | Yes      | Styles the icon according to the Astro Status colors. Valid options are the Astro statuses `critical`, `serious`, `caution`, `normal`, `standby` and `off`                                                                                                                                        |
 | `sublabel`      | String | `''`       | No       | Displays a smaller label underneath the icon label                                                                                                                                                                                                                                                |

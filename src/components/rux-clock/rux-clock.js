@@ -2,6 +2,8 @@ import { LitElement, html } from 'lit-element';
 
 import moment from 'moment';
 import 'moment-timezone';
+import '@astrouxds/rux-assets/css/astro.tokens.css';
+
 
 export class RuxClock extends LitElement {
   static get properties() {

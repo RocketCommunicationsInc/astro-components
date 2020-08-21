@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit-element';
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export class RuxPushButton extends LitElement {
   static get properties() {

@@ -1,8 +1,10 @@
 import { LitElement, html, css } from 'lit-element';
 /* eslint-disable no-unused-vars */
-import { RuxStatus } from '../rux-status/rux-status';
-import ruxData from '../rux-utils/data.js';
+import { RuxStatus } from '@astrouxds/rux-status/rux-status';
+import ruxData from '@astrouxds/rux-utils/data.js';
 /* eslint-enable no-unused-vars */
+import '@astrouxds/rux-assets/css/astro.tokens.css';
+
 
 export class RuxTree extends LitElement {
   static get properties() {

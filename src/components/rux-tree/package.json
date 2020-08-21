@@ -4,7 +4,11 @@
     "email": "uxsupport@rocketcom.com"
   },
   "dependencies": {
-    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "@webcomponents/webcomponentsjs": "^2.2.10"
+  },
+  "peerDependencies": {
+    "@astrouxds/rux-status": "^4.0.2",
+    "@astroxuds/rux-assets": "^1.0.0",
     "lit-element": "^2.1.0"
   },
   "homepage": "https://www.astrouxds.com",

@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit-element';
-import RuxUtils from '../rux-utils/string.js';
+import RuxUtils from '@astrouxds/rux-utils/string.js';
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export class RuxSegmentedButton extends LitElement {
   static get properties() {

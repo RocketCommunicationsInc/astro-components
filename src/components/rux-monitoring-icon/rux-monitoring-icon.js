@@ -3,9 +3,10 @@ import { directive } from 'lit-html';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
 /* eslint-disable no-unused-vars */
-import { RuxIcon } from '../rux-icon/rux-icon.js';
-import { RuxStatus } from '../rux-status/rux-status.js';
+import { RuxIcon } from '@astrouxds/rux-icon/rux-icon.js';
+import { RuxStatus } from '@astrouxds/rux-status/rux-status.js';
 /* eslint-enable no-unused-vars */
+import '@astrouxds/rux-assets/css/astro.tokens.css';
 
 export const collapseNumber = directive((val) => (part) => {
   try {

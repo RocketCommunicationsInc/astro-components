@@ -3,11 +3,14 @@
 		"name": "Rocket Communications",
 		"email": "uxsupport@rocketcom.com"
 	},
-	"dependencies": {
-		"@astrouxds/rux-status": "^4.0.2",
-		"@webcomponents/webcomponentsjs": "^2.2.10",
-		"lit-element": "^2.1.0"
-	},
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10"
+  },
+  "peerDependencies": {
+    "@astrouxds/rux-status": "^4.0.2",
+    "@astroxuds/rux-assets": "^1.0.0",
+    "lit-element": "^2.1.0"
+  },
 	"homepage": "https://www.astrouxds.com",
 	"bugs": {
 		"email": "uxsupport@rocketcom.com",
