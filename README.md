@@ -9,7 +9,7 @@ This respository contains all of the individual Astro Web Component packages as 
 
 
 ## Download and Install the Astro Web Component Storybook
-If you would like to run the Astro Storybook locally, you may download and run this project, provided you have already installed [NodeJS]():
+If you would like to run the Astro Storybook locally, you may download and run this project, provided you have already installed [NodeJS](https://nodejs.org/en/download/):
 
 ```
 git clone https://github.com/RocketCommunicationsInc/astro-components.git
