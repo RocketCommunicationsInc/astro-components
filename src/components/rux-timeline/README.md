@@ -1,3 +1,3 @@
 # Timeline
 
-Pre-alpha port to LitElement
+Pre-release Alpha for visual reference only
