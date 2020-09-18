@@ -1,0 +1,30 @@
+{
+  "author": {
+    "name": "Rocket Communications",
+    "email": "uxsupport@rocketcom.com"
+  },
+  "dependencies": {
+    "@astrouxds/rux-icon": "^4.0.3",
+    "@webcomponents/webcomponentsjs": "^2.4.4",
+    "lit-element": "^2.4.0"
+  },
+  "homepage": "https://www.astrouxds.com",
+  "bugs": {
+    "email": "uxsupport@rocketcom.com",
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
+  },
+  "description": "Astro Web Component for classification banners",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "rux-classification.js",
+  "modules" : "rux-classification.js",
+  "name": "@astrouxds/rux-classification",
+  "version": "1.0.0", 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+  
+}
