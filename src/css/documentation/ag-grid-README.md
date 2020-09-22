@@ -1,6 +1,6 @@
 # ag-grid for Astro
 
-For more complex tables, we recommend using either the community or enterprise tier of [ag-grd](https://www.ag-grid.com/).
+For more complex tables, we recommend using either the community or enterprise tier of [ag-grid](https://www.ag-grid.com/).
 
 ## Guidelines
 
