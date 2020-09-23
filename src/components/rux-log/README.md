@@ -5,7 +5,7 @@ A Log is a tabular representation of application events and may include username
 ## Guidelines
 
 - [Astro UXDS: Log](http://www.astrouxds.com/ui-components/log)
-- [Astro UXDS: Notification System](https://www.astrouxds.com/design-guidelines/notifications)]
+- [Astro UXDS: Notification System](https://www.astrouxds.com/design-guidelines/notifications)
 
 ## Web Components Usage
 
