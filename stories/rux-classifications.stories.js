@@ -27,7 +27,7 @@ export const ClassificationMarker = () => {
 	
 
   return html`
-    <div style="display: flex; flex-flow: row; justify-content: center;margin-top:40px;">
+    <div style="display: flex; flex-flow: row; justify-content: center;margin-top:30px;">
       <rux-classification-marking
         type="${markerType}"
         classification="${markerFilter()}"
