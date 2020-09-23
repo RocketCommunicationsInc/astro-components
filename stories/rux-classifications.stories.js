@@ -1,8 +1,5 @@
 import { html, render } from 'lit-html';
-import { text, select, array, withKnobs } from '@storybook/addon-knobs';
-
-
-
+import { text, select, withKnobs } from '@storybook/addon-knobs';
 import { RuxClassification } from '../src/components/rux-classifications/rux-classification.js';
 import Readme from '../src/components/rux-classifications/README.md';
 
@@ -15,15 +12,16 @@ export default {
 
 export const ClassificationBanner = () => {
   const classificationOptions = ['Top Secret//SCI', 'Top Secret', 'Secret', 'Confidential','Controlled','Unclassified'];
-  const classification = array('Classification', classificationOptions[2].toLowerCase());
+  const classification = select('Classification', classificationOptions, 'Top Secret//SCI');
   
-  const markerOptions = ['banner', 'tag'];
-  const markerType = select('Banner Type', markerOptions, 'Banner');
+  const markerOptions = ['Banner', 'Tag'];
+  const markerType = select('Marker Type', markerOptions, 'Banner');
   
-  const markerText = text('Marker Text','');
+	const markerText = text('Marker Text','');
+	
 
   return html`
-    <div style="display: flex; flex-flow: column; justify-content: center;">
+    <div style="display: flex; flex-flow: row; justify-content: center;margin-top:60px;">
       <rux-classification-marking
         type="${markerType}"
         classification="${classification}"

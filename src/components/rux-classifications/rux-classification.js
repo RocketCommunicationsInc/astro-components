@@ -15,12 +15,12 @@ export class RuxClassification extends LitElement {
   }
   
   _setClassificationText() {
-    const markClass = this.classification.toLowerCase();
+    const markClass = this.classification.toLowerCase().replace(/\s+/g, '');
     const markType = this.type.toLowerCase();
     let classLabel;
     
     // const classType = this.classification;
-    if(markType !== ''){
+    if(markType) {
       if(markType === 'banner') {
         switch(markClass) {
           case 'unclassified':
@@ -35,7 +35,7 @@ export class RuxClassification extends LitElement {
           case 'secret':
             classLabel = 'secret';
             break;
-          case 'top secret':
+          case 'topsecret':
             classLabel = 'top secret';
             break;
           default:
@@ -57,7 +57,7 @@ export class RuxClassification extends LitElement {
           case 'secret':
             classLabel = 's';
             break;
-          case 'top secret':
+          case 'topsecret':
             classLabel = 'ts';
             break;
           default:
@@ -65,17 +65,48 @@ export class RuxClassification extends LitElement {
         }
       }
     } else {
-      classLabel = 'Please select a marker type';
+      classLabel = 'Select a marker type';
     }
 
     return classLabel;
   }
 
+  _setClassificationLabel(param) {
+		const markClass = this.classification.toLowerCase().replace(/\s+/g, '');
+		const classLabel = param.toLowerCase().replace(/\s+/g, '');
+		let styleLabel;
+		
+		if(classLabel == markClass){
+			switch(classLabel) {
+				case 'unclassified':
+					styleLabel = 'unclassified';
+					break;
+				case 'controlled':
+					styleLabel = 'controlled';
+					break;
+				case 'confidential':
+					styleLabel = 'confidential';
+					break;
+				case 'secret':
+					styleLabel = 'secret';
+					break;
+				case 'topsecret':
+					styleLabel = 'top secret';
+					break;
+				default:
+					styleLabel = 'Top Secret//SCI';
+			}
+		}
+		
+		return styleLabel;
+  }
+
   constructor() {
     super();
     this.message = '';
-    this.classification = '';
-    this.type = 'banner';
+    this.classification = 'Top Secret//SCI';
+		this.type = 'banner';
+		this.getClass = this._setClassificationLabel;
     this.getText = this._setClassificationText;
   }
 
@@ -88,7 +119,7 @@ export class RuxClassification extends LitElement {
       justify-content: center;
       align-items: center;
       align-content: center; 
-      height: 26px;
+      height: 22px;
       padding: 5px 0; 
       box-sizing: border-box;
       font-size: var(--fontSize);
@@ -110,40 +141,40 @@ export class RuxClassification extends LitElement {
     
     :host([type='tag']){
       position: relative;
-      align-items:baseline;			
+      align-items:center;			
       left: auto;
       width: fit-content;
       padding: 4px 15px;
-      border-radius:5px;
+      border-radius:3px;
       font-size: var(--fontSizeMD);			
     }
 
     :host,
-    :host([classification='topsecret//sci']) {
+    :host([classification='${this.getClass('topsecret//sci')}']) {
       background-color: var(--classificationTopSecretSCIBackgroundColor);
     }
 
-    :host([classification='topsecret']),
-    :host([classification='top secret']){
+    :host([classification='${this.getClass('top secret')}']){
       background-color: var(--classificationTopSecretBackgroundColor);
     }
 
-    :host([classification='secret']) {
+		:host([classification='${this.getClass('secret')}']),
+		:host([classification='Secret']){
       background-color: var(--classificationSecretBackgroundColor);
       color: var(--colorWhite);
     }
 
-    :host([classification='confidential']) {
+    :host([classification='${this.getClass('confidential')}']) {
       background-color: var(--classificationConfidentialBackgroundColor);
       color: var(--colorWhite);
     }
 
-    :host([classification='controlled']) {
+    :host([classification='${this.getClass('controlled')}']) {
       background-color: var(--classificationControlledBackgroundColor);
       color: var(--colorWhite);
     }
 
-    :host([classification='unclassified']) {
+    :host([classification='${this.getClass('unclassified')}']) {
       background-color: var(--classificationUnclassifiedBackgroundColor);
       color: var(--colorWhite);
     }
