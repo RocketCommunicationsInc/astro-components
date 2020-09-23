@@ -107,7 +107,7 @@ export class RuxClassification extends LitElement {
     this.classification = 'Top Secret//SCI';
 		this.type = 'banner';
 		this.getClass = this._setClassificationLabel;
-    this.getText = this._setClassificationText;
+    this.markerText = this._setClassificationText;
   }
 
   render() {
@@ -181,7 +181,7 @@ export class RuxClassification extends LitElement {
     }
     </style>
     
-    <div class="rux-classification__message">${this.getText()}${this.label}</div>
+    <div class="rux-classification__message">${this.markerText()}${this.label}</div>
 
     `;
   }
