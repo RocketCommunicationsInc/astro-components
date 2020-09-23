@@ -18,14 +18,20 @@ export const ClassificationBanner = () => {
   const markerType = select('Marker Type', markerOptions, 'Banner');
   
 	const markerText = text('Marker Text','');
+
+	function markerFilter(){
+		const markerClass = classification.toLowerCase();
+
+		return markerClass;
+	}
 	
 
   return html`
     <div style="display: flex; flex-flow: row; justify-content: center;margin-top:60px;">
       <rux-classification-marking
         type="${markerType}"
-        classification="${classification}"
-        message="${markerText}">
+        classification="${markerFilter()}"
+        message=" ${markerText}">
       </rux-classification-marking>
     </div>
   `;
