@@ -10,14 +10,14 @@ export default {
 };
 
 
-export const ClassificationBanner = () => {
+export const ClassificationMarker = () => {
   const classificationOptions = ['Top Secret//SCI', 'Top Secret', 'Secret', 'Confidential','Controlled','Unclassified'];
   const classification = select('Classification', classificationOptions, 'Top Secret//SCI');
   
   const markerOptions = ['Banner', 'Tag'];
   const markerType = select('Marker Type', markerOptions, 'Banner');
   
-	const markerText = text('Marker Text','');
+	const markerText = text('Marker Label','');
 
 	function markerFilter(){
 		const markerClass = classification.toLowerCase();
@@ -27,17 +27,17 @@ export const ClassificationBanner = () => {
 	
 
   return html`
-    <div style="display: flex; flex-flow: row; justify-content: center;margin-top:60px;">
+    <div style="display: flex; flex-flow: row; justify-content: center;margin-top:40px;">
       <rux-classification-marking
         type="${markerType}"
         classification="${markerFilter()}"
-        message=" ${markerText}">
+        label="${markerText}">
       </rux-classification-marking>
     </div>
   `;
 };
 
-ClassificationBanner.story = {
+ClassificationMarker.story = {
   parameters: {
     exports: {
       render,
@@ -49,13 +49,13 @@ ClassificationBanner.story = {
   },
 };
 
-export const AllClassificationBanners = () => html`
+export const ClassificationBanners = () => html`
     <div style="display: flex; flex-flow: column; justify-content: center; margin:20px;">
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
           type="banner"
           classification="top secret//sci"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
       
@@ -63,7 +63,7 @@ export const AllClassificationBanners = () => html`
         <rux-classification-marking
           type="banner"
           classification="top secret"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
       
@@ -71,7 +71,7 @@ export const AllClassificationBanners = () => html`
         <rux-classification-marking
           type="banner"
           classification="secret"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
     
@@ -79,7 +79,7 @@ export const AllClassificationBanners = () => html`
         <rux-classification-marking
           type="banner"
           classification="confidential"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
     
@@ -87,7 +87,7 @@ export const AllClassificationBanners = () => html`
         <rux-classification-marking
           type="banner"
           classification="controlled"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
     
@@ -95,13 +95,13 @@ export const AllClassificationBanners = () => html`
         <rux-classification-marking
           type="banner"
           classification="unclassified"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>	  
     </div>
 `;
 
-AllClassificationBanners.story = {
+ClassificationBanners.story = {
   parameters: {
     exports: {
       render,
@@ -122,7 +122,7 @@ export const ClassificationTags = () => html`
         <rux-classification-marking
           type="tag"
           classification="top secret//sci"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
 
@@ -131,7 +131,7 @@ export const ClassificationTags = () => html`
         <rux-classification-marking
           type="tag"
           classification="top secret"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
       <div style="display: flex; align-items:baseline;  position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
@@ -139,7 +139,7 @@ export const ClassificationTags = () => html`
         <rux-classification-marking
           type="tag"
           classification="secret"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
       <div style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
@@ -147,7 +147,7 @@ export const ClassificationTags = () => html`
         <rux-classification-marking
           type="tag"
           classification="confidential"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
       <div style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
@@ -155,7 +155,7 @@ export const ClassificationTags = () => html`
         <rux-classification-marking
           type="tag"
           classification="controlled"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
       <div style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
@@ -163,7 +163,7 @@ export const ClassificationTags = () => html`
         <rux-classification-marking
           type="tag"
           classification="unclassified"
-          message=""
+          label=""
         ></rux-classification-marking>
       </div>
 

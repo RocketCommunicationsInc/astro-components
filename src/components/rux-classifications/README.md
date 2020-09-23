@@ -1,5 +1,6 @@
 # Classification Markings
 
+Classification and control markings are required for digital products created for government clients who interact with classified or controlled information.
 
 ## Guidelines
 
@@ -10,9 +11,7 @@
 
 ### 1. Installation
 
-#### Install the Astro UXDS Classification Markgins package via Command Line (Preferred Method)
-
-The name of the package reflects its earlier history as Astro UXDS Modal.
+#### Install the Astro UXDS Classification Markings package via Command Line (Preferred Method)
 
 ```sh
 npm i --save @astrouxds/rux-classification
@@ -36,4 +35,42 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 
 ```javascript
 import { RuxClassification } from '@astrouxds/rux-classifications/rux-classification.js';
+```
+
+### 3. Render the Classification Marker Component
+
+Apply `classification` property as an attribute of the Astro Classification custom element:
+
+```javascript
+<rux-classification-marking classification="controlled"></rux-classification-marking>
+
+```
+
+### 4. Marker Type Declaration
+ Apply the ```type``` property attribute to set the marker type. The `type` attribute property accepts two attribute values for marker generation. 1) `banner` generates a banner marker and 2) `tag` generates a tag marker. The ```type``` attribute property value is not case sensitive.
+
+#### Marker Banner
+```javascript
+	<rux-classification-marking
+		classification="controlled"
+		type="banner"	
+	></rux-classification-marking>
+```
+
+#### Marker Tag
+```javascript
+	<rux-classification-marking
+		classification="controlled"
+		type="tag"		
+	></rux-classification-marking>
+```
+
+### 5. Custom Marker Labels
+Apply the `label` property attribute to Astro Classification custom element. The custom `label` text value is added to the marker in addition to it's classification text.
+
+```javascript
+	<rux-classification-marking classification="controlled" type="banner"
+			label="//SCI"
+	></rux-classification-marking>
+
 ```

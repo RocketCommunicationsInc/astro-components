@@ -4,7 +4,6 @@
     "email": "uxsupport@rocketcom.com"
   },
   "dependencies": {
-    "@astrouxds/rux-icon": "^4.0.3",
     "@webcomponents/webcomponentsjs": "^2.4.4",
     "lit-element": "^2.4.0"
   },
@@ -20,11 +19,10 @@
   "description": "Astro Web Component for classification banners",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "rux-classification.js",
-  "modules" : "rux-classification.js",
+  "modules": "rux-classification.js",
   "name": "@astrouxds/rux-classification",
-  "version": "1.0.0", 
+  "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
-  
 }
