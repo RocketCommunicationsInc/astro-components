@@ -37,7 +37,7 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 import { RuxClassification } from '@astrouxds/rux-classifications/rux-classification.js';
 ```
 
-### 3. Render the Classification Marker Component
+### 3. Render the Classification Marking Component
 
 Apply `classification` property as an attribute of the Astro Classification custom element:
 
@@ -46,25 +46,25 @@ Apply `classification` property as an attribute of the Astro Classification cust
 
 ```
 
-### 4. Marker Type Declaration
- Apply the ```type``` property attribute to set the marker type. The `type` attribute property accepts two attribute values for marker generation. 1) `banner` generates a banner marker and 2) `tag` generates a tag marker. The ```type``` attribute property value is not case sensitive.
+### 4. Marking Type Declaration
+ Apply the ```type``` property attribute to set the marking type. The `type` attribute property accepts two attribute values for marking generation. 1) `banner` generates a banner markingr and 2) `tag` generates a tag marking. The ```type``` attribute property value is not case sensitive.
 
-#### Marker Banner
+#### Marking Banner
 ```javascript
 	<rux-classification-marking classification="controlled"
 		type="banner"	
 	></rux-classification-marking>
 ```
 
-#### Marker Tag
+#### Marking Tag
 ```javascript
 	<rux-classification-marking classification="controlled"
 		type="tag"		
 	></rux-classification-marking>
 ```
 
-### 5. Custom Marker Labels
-Apply the `label` property attribute to Astro Classification custom element. The custom `label` text value is added to the marker in addition to it's classification text.
+### 5. Custom Marking Labels
+Apply the `label` property attribute to Astro Classification custom element. The custom `label` text value is added to the marking in addition to it's classification text.
 
 ```javascript
 	<rux-classification-marking classification="controlled" type="banner"
