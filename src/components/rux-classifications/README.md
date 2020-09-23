@@ -51,16 +51,14 @@ Apply `classification` property as an attribute of the Astro Classification cust
 
 #### Marker Banner
 ```javascript
-	<rux-classification-marking
-		classification="controlled"
+	<rux-classification-marking classification="controlled"
 		type="banner"	
 	></rux-classification-marking>
 ```
 
 #### Marker Tag
 ```javascript
-	<rux-classification-marking
-		classification="controlled"
+	<rux-classification-marking classification="controlled"
 		type="tag"		
 	></rux-classification-marking>
 ```
