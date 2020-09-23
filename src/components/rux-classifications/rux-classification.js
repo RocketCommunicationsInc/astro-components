@@ -72,33 +72,33 @@ export class RuxClassification extends LitElement {
   }
 
   _setClassificationLabel(param) {
-		const markClass = this.classification.toLowerCase().replace(/\s+/g, '');
-		const classLabel = param.toLowerCase().replace(/\s+/g, '');
-		let styleLabel;
+		const markerClass = this.classification.toLowerCase().replace(/\s+/g, '');
+		const markerLabel = param.toLowerCase().replace(/\s+/g, '');
+		let markerStyle;
 		
-		if(classLabel == markClass){
-			switch(classLabel) {
+		if(markerLabel == markerClass){
+			switch(markerLabel) {
 				case 'unclassified':
-					styleLabel = 'unclassified';
+					markerStyle = 'unclassified';
 					break;
 				case 'controlled':
-					styleLabel = 'controlled';
+					markerStyle = 'controlled';
 					break;
 				case 'confidential':
-					styleLabel = 'confidential';
+					markerStyle = 'confidential';
 					break;
 				case 'secret':
-					styleLabel = 'secret';
+					markerStyle = 'secret';
 					break;
 				case 'topsecret':
-					styleLabel = 'top secret';
+					markerStyle = 'top secret';
 					break;
 				default:
-					styleLabel = 'Top Secret//SCI';
+					markerStyle = 'Top Secret//SCI';
 			}
 		}
 		
-		return styleLabel;
+		return markerStyle;
   }
 
   constructor() {
