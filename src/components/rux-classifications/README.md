@@ -4,7 +4,7 @@ Classification and control markings are required for digital products created fo
 
 ## Guidelines
 
-- [Astro UXDS: Classification Markings](https://www.astrouxds.com/ui-components/)
+- [Astro UXDS: Classification Markings](https://www.astrouxds.com/components/readme/)
 
 
 ## Web Components Usage
