@@ -119,7 +119,7 @@ export class RuxClassification extends LitElement {
       justify-content: center;
       align-items: center;
       align-content: center; 
-      height: 22px;
+      height: 26px;
       padding: 5px 0; 
       box-sizing: border-box;
       font-size: var(--fontSize);
@@ -143,7 +143,8 @@ export class RuxClassification extends LitElement {
       position: relative;
       align-items:center;			
       left: auto;
-      width: fit-content;
+			width: fit-content;
+			height: 22px;
       padding: 4px 15px;
       border-radius:3px;
       font-size: var(--fontSizeMD);			
