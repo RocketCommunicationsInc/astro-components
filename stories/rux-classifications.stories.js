@@ -10,14 +10,14 @@ export default {
 };
 
 
-export const ClassificationMarker = () => {
+export const ClassificationMarking = () => {
   const classificationOptions = ['Top Secret//SCI', 'Top Secret', 'Secret', 'Confidential','Controlled','Unclassified'];
   const classification = select('Classification', classificationOptions, 'Top Secret//SCI');
   
   const markerOptions = ['Banner', 'Tag'];
-  const markerType = select('Marker Type', markerOptions, 'Banner');
+  const markerType = select('Marking Type', markerOptions, 'Banner');
   
-	const markerText = text('Marker Label','');
+	const markerText = text('Marking Label','');
 
 	function markerFilter(){
 		const markerClass = classification.toLowerCase();
@@ -37,7 +37,7 @@ export const ClassificationMarker = () => {
   `;
 };
 
-ClassificationMarker.story = {
+ClassificationMarking.story = {
   parameters: {
     exports: {
       render,
