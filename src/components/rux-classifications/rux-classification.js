@@ -78,9 +78,6 @@ export class RuxClassification extends LitElement {
 		
 		if(markerLabel == markerClass){
 			switch(markerLabel) {
-				case 'unclassified':
-					markerStyle = 'unclassified';
-					break;
 				case 'controlled':
 					markerStyle = 'controlled';
 					break;
@@ -93,8 +90,11 @@ export class RuxClassification extends LitElement {
 				case 'topsecret':
 					markerStyle = 'top secret';
 					break;
+				case 'topsecret//sci':
+					markerStyle = 'top secret//sci';
+					break;
 				default:
-					markerStyle = 'Top Secret//SCI';
+					markerStyle = 'unclassified';
 			}
 		}
 		
@@ -104,7 +104,7 @@ export class RuxClassification extends LitElement {
   constructor() {
     super();
     this.label = '';
-    this.classification = 'Top Secret//SCI';
+    this.classification = 'unclassified';
 		this.type = 'banner';
 		this.getClass = this._setClassificationLabel;
     this.markerText = this._setClassificationText;
