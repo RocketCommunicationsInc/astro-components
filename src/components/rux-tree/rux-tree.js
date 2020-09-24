@@ -37,6 +37,8 @@ export class RuxTree extends LitElement {
   connectedCallback() {
     super.connectedCallback();
 
+    this.removeMultiples(this.data);
+
     // check to see if any of the elements have status and set the _hasStatus property
     this._hasStatus = this.data.flat(2).find((element) => element.status);
     this.addEventListener('keydown', this._handleKeyPress);
@@ -102,6 +104,23 @@ export class RuxTree extends LitElement {
       default:
         break;
     }
+  }
+
+  /*
+   ** Removes duplicate selections on initial load
+   */
+  removeMultiples(data, selected = false) {
+    data.forEach((a) => {
+      if (a.selected && !selected) {
+        selected = true;
+      } else {
+        delete a.selected;
+      }
+      if (a.children) {
+        selected = this.removeMultiples(a.children, selected);
+      }
+    });
+    return selected;
   }
 
   /*
