@@ -10,7 +10,7 @@ export default {
 };
 
 export const Checkboxes = () => html`
-    <div style="padding: 10%; display: flex; justify-content: center;">
+    <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
       <ul>
         <li class="rux-checkbox">
           <input type="checkbox" name="checkbox1c" id="checkbox1c" />
@@ -45,7 +45,7 @@ Checkboxes.story = {
 };
 
 export const RadioButtons = () => html`
-    <div style="padding: 10%; display: flex; justify-content: center;">
+    <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
       <ul>
         <li class="rux-radio-button">
           <input type="radio" name="radio1c" id="radio1c" />
