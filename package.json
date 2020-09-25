@@ -19,15 +19,19 @@
   "private": false,
   "scripts": {
     "build-storybook": "gulp build && build-storybook -c .storybook -s ./static",
-    "storybook": "gulp build && start-storybook -p 9001 -c .storybook -s ./static "
+    "storybook": "gulp build && start-storybook -p 9001 -c .storybook -s ./static ",
+    "test": "karma start --coverage",
+    "test:watch": "karma start --auto-watch=true --single-run=false"
   },
   "dependencies": {
     "ag-grid-community": "^24.0.0",
+    "@open-wc/testing-karma": "^4.0.5",
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@open-wc/testing": "^2.5.26",
     "@storybook/addon-a11y": "5.3.18",
     "@storybook/addon-actions": "5.3.18",
     "@storybook/addon-console": "^1.2.1",
