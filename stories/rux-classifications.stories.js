@@ -10,7 +10,7 @@ export default {
 };
 
 
-export const ClassificationMarking = () => {
+export const ClassificationMarkings = () => {
   const classificationOptions = ['Top Secret//SCI', 'Top Secret', 'Secret', 'Confidential','Controlled','Unclassified'];
   const classification = select('Classification', classificationOptions, 'Top Secret//SCI');
   
@@ -37,7 +37,7 @@ export const ClassificationMarking = () => {
   `;
 };
 
-ClassificationMarking.story = {
+ClassificationMarkings.story = {
   parameters: {
     exports: {
       render,

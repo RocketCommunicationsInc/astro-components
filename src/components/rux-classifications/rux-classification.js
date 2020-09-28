@@ -118,8 +118,7 @@ export class RuxClassification extends LitElement {
       justify-content: center;
       align-items: center;
       align-content: center; 
-      height: 26px;
-      padding: 5px 0; 
+      min-height: 26px;
       box-sizing: border-box;
       font-size: var(--fontSize);
       font-weight:bold;
@@ -127,6 +126,8 @@ export class RuxClassification extends LitElement {
       text-transform:uppercase;
       color: var(--colorBlack, rgb(0, 0, 0));
       transition: top 0.5s ease;
+      overflow-wrap: anywhere;
+      white-space: pre-line;
     }
 
     :host([type='banner']){

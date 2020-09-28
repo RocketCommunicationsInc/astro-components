@@ -37,7 +37,7 @@ This example assumes you're using the NPM package in `node_modules`. Otherwise, 
 import { RuxClassification } from '@astrouxds/rux-classifications/rux-classification.js';
 ```
 
-### 3. Render the Classification Marking Component
+### 3. Render the Classification Markings Component
 
 Pass properties as attributes of the Astro Classification custom element:
 
@@ -71,7 +71,7 @@ Pass properties as attributes of the Astro Classification custom element:
 ```
 
 #### Custom Marking Labels
-Applying the `label` property attribute to the Classification custom element adds `label` text value to the marking in addition to it's classification text.
+Applying the `label` property attribute to the Classification custom element adds `label` text value to the marking in addition to its classification text.
 
 ```javascript
 	<rux-classification-marking classification="controlled" type="banner"
