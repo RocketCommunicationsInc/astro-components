@@ -100,15 +100,6 @@
   --colorQuaternaryDarken3: color-mod(var(--colorQuaternary) shade(60%));
   --colorQuaternaryDarken4: color-mod(var(--colorQuaternary) shade(80%));
 
-  --colorGrayLighten1: color-mod(var(--colorGray) tint(20%));
-  --colorGrayLighten2: color-mod(var(--colorGray) tint(40%));
-  --colorGrayLighten3: color-mod(var(--colorGray) tint(60%));
-  --colorGrayLighten4: color-mod(var(--colorGray) tint(80%));
-  --colorGrayDarken1: color-mod(var(--colorGray) shade(20%));
-  --colorGrayDarken2: color-mod(var(--colorGray) shade(40%));
-  --colorGrayDarken3: color-mod(var(--colorGray) shade(60%));
-  --colorGrayDarken4: color-mod(var(--colorGray) shade(80%));
-
   --colorCriticalLighten1: color-mod(var(--statusDarkCritical) tint(20%));
   --colorCriticalLighten2: color-mod(var(--statusDarkCritical) tint(40%));
   --colorCriticalLighten3: color-mod(var(--statusDarkCritical) tint(60%));
