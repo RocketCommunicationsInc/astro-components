@@ -18,8 +18,7 @@ export class RuxClassification extends LitElement {
     const markClass = this.classification.toLowerCase().replace(/\s+/g, '');
     const markType = this.type.toLowerCase();
     let markLabel;
-    
-    // const classType = this.classification;
+
     if(markType) {
       if(markType === 'banner') {
         switch(markClass) {

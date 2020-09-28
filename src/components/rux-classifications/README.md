@@ -47,7 +47,7 @@ Apply `classification` property as an attribute of the Astro Classification cust
 ```
 
 ### 4. Marking Type Declaration
- Apply the ```type``` property attribute to set the marking type. The `type` attribute property accepts two attribute values for marking generation. 1) `banner` generates a banner markingr and 2) `tag` generates a tag marking. The ```type``` attribute property value is not case sensitive.
+ Apply the ```type``` property attribute to set the marking type. The `type` attribute property accepts two attribute values for marking generation. 1) `banner` generates a banner marking and 2) `tag` generates a tag marking. The ```type``` attribute property value is not case sensitive.
 
 #### Marking Banner
 ```javascript
