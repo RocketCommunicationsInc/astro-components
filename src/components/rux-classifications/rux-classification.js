@@ -20,39 +20,39 @@ export class RuxClassification extends LitElement {
 		const markingLabel = marker.toLowerCase().replace(/\s+/g, '');
 		let bannerLabel;
 		let tagLabel;
-		let markerStyle;
+		let markingStyle;
 
     if(markingType && markingClass == markingLabel){
         switch(markingLabel) {
           case 'controlled':
 						bannerLabel = 'cui';
 						tagLabel = 'cui';
-						markerStyle = 'controlled';
+						markingStyle = 'controlled';
             break;
           case 'confidential':
 						bannerLabel = 'confidential';
 						tagLabel = 'c';
-						markerStyle = 'confidential';
+						markingStyle = 'confidential';
             break;
           case 'secret':
 						bannerLabel = 'secret';
 						tagLabel = 's';
-						markerStyle = 'secret';
+						markingStyle = 'secret';
             break;
           case 'topsecret':
 						bannerLabel = 'top secret';
 						tagLabel = 'ts';
-						markerStyle = 'top secret';
+						markingStyle = 'top secret';
 						break;
 					case 'topsecret//sci':
 						bannerLabel = 'top secret//sci';
 						tagLabel = 'TS//SCI'
-						markerStyle = 'top secret//sci';
+						markingStyle = 'top secret//sci';
 						break;
           default:
 						bannerLabel = 'unclassified';
 						tagLabel = 'u';
-						markerStyle = 'unclassified';
+						markingStyle = 'unclassified';
         }
     } else {
 			bannerLabel = 'Select a Classification Marking type';
@@ -63,7 +63,7 @@ export class RuxClassification extends LitElement {
 
 		const markingData = {
 			label : bannerType,
-			style : markerStyle
+			style : markingStyle
 		}
 
 		return markingData;
@@ -113,8 +113,8 @@ export class RuxClassification extends LitElement {
       align-items:center;			
       left: auto;
 			width: fit-content;
-			min-height: 22px;
-      padding: 4px 15px;
+			height: 22px;
+      padding: 0 15px;
       border-radius:3px;
       font-size: var(--fontSizeMD);			
     }
