@@ -14,90 +14,60 @@ export class RuxClassification extends LitElement {
     };
   }
   
-  _setClassificationText() {
-    const markClass = this.classification.toLowerCase().replace(/\s+/g, '');
-    const markType = this.type.toLowerCase();
-    let markLabel;
+  _setClassificationMarking(marker) {
+    const markingClass = this.classification.toLowerCase().replace(/\s+/g, '');
+		const markingType = this.type.toLowerCase();
+		const markingLabel = marker.toLowerCase().replace(/\s+/g, '');
+		let bannerLabel;
+		let tagLabel;
+		let markerStyle;
 
-    if(markType) {
-      if(markType === 'banner') {
-        switch(markClass) {
-          case 'unclassified':
-            markLabel = 'unclassified';
-            break;
+    if(markingType && markingClass == markingLabel){
+        switch(markingLabel) {
           case 'controlled':
-            markLabel = 'cui';
+						bannerLabel = 'cui';
+						tagLabel = 'cui';
+						markerStyle = 'controlled';
             break;
           case 'confidential':
-            markLabel = 'confidential';
+						bannerLabel = 'confidential';
+						tagLabel = 'c';
+						markerStyle = 'confidential';
             break;
           case 'secret':
-            markLabel = 'secret';
+						bannerLabel = 'secret';
+						tagLabel = 's';
+						markerStyle = 'secret';
             break;
           case 'topsecret':
-            markLabel = 'top secret';
-            break;
+						bannerLabel = 'top secret';
+						tagLabel = 'ts';
+						markerStyle = 'top secret';
+						break;
+					case 'topsecret//sci':
+						bannerLabel = 'top secret//sci';
+						tagLabel = 'TS//SCI'
+						markerStyle = 'top secret//sci';
+						break;
           default:
-            markLabel = 'Top Secret//SCI';
+						bannerLabel = 'unclassified';
+						tagLabel = 'u';
+						markerStyle = 'unclassified';
         }
-
-      } else if (markType === 'tag') {
-        
-        switch(markClass) {
-          case 'unclassified':
-            markLabel = 'u';
-            break;
-          case 'controlled':
-            markLabel = 'cui';
-            break;
-          case 'confidential':
-            markLabel = 'c';
-            break;
-          case 'secret':
-            markLabel = 's';
-            break;
-          case 'topsecret':
-            markLabel = 'ts';
-            break;
-          default:
-            markLabel = 'TS//SCI';
-        }
-      }
     } else {
-      markLabel = 'Select a marker type';
+			bannerLabel = 'Select a Classification Marking type';
+			tagLabel = bannerLabel;
     }
 
-    return markLabel;
-  }
+		const bannerType = (markingType === 'banner') ? bannerLabel : tagLabel;
 
-  _setClassificationLabel(param) {
-		const markerClass = this.classification.toLowerCase().replace(/\s+/g, '');
-		const markerLabel = param.toLowerCase().replace(/\s+/g, '');
-		let markerStyle;
-		
-		if(markerLabel == markerClass){
-			switch(markerLabel) {
-				case 'controlled':
-					markerStyle = 'controlled';
-					break;
-				case 'confidential':
-					markerStyle = 'confidential';
-					break;
-				case 'secret':
-					markerStyle = 'secret';
-					break;
-				case 'topsecret':
-					markerStyle = 'top secret';
-					break;
-				case 'topsecret//sci':
-					markerStyle = 'top secret//sci';
-					break;
-				default:
-					markerStyle = 'unclassified';
-			}
+		const markingData = {
+			label : bannerType,
+			style : markerStyle
 		}
-		
-		return markerStyle;
+
+		return markingData;
+
   }
 
   constructor() {
@@ -105,8 +75,7 @@ export class RuxClassification extends LitElement {
     this.label = '';
     this.classification = 'unclassified';
 		this.type = 'banner';
-		this.getClass = this._setClassificationLabel;
-    this.markerText = this._setClassificationText;
+    this.marking = this._setClassificationMarking;
   }
 
   render() {
@@ -144,44 +113,44 @@ export class RuxClassification extends LitElement {
       align-items:center;			
       left: auto;
 			width: fit-content;
-			height: 22px;
+			min-height: 22px;
       padding: 4px 15px;
       border-radius:3px;
       font-size: var(--fontSizeMD);			
     }
 
     :host,
-    :host([classification='${this.getClass('topsecret//sci')}']) {
+    :host([classification='${this.marking('topsecret//sci').style}']) {
       background-color: var(--classificationTopSecretSCIBackgroundColor);
     }
 
-    :host([classification='${this.getClass('topsecret')}']){
+    :host([classification='${this.marking('topsecret').style}']){
       background-color: var(--classificationTopSecretBackgroundColor);
     }
 
-		:host([classification='${this.getClass('secret')}']),
+		:host([classification='${this.marking('secret').style}']),
 		:host([classification='Secret']){
       background-color: var(--classificationSecretBackgroundColor);
       color: var(--colorWhite);
     }
 
-    :host([classification='${this.getClass('confidential')}']) {
+    :host([classification='${this.marking('confidential').style}']) {
       background-color: var(--classificationConfidentialBackgroundColor);
       color: var(--colorWhite);
     }
 
-    :host([classification='${this.getClass('controlled')}']) {
+    :host([classification='${this.marking('controlled').style}']) {
       background-color: var(--classificationControlledBackgroundColor);
       color: var(--colorWhite);
     }
 
-    :host([classification='${this.getClass('unclassified')}']) {
+    :host([classification='${this.marking('unclassified').style}']) {
       background-color: var(--classificationUnclassifiedBackgroundColor);
       color: var(--colorWhite);
     }
     </style>
     
-    <div class="rux-classification__message">${this.markerText()}${this.label}</div>
+    <div class="rux-classification__message">${this.marking(this.classification).label}${this.label}</div>
 
     `;
   }

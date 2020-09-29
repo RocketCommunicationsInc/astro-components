@@ -14,24 +14,24 @@ export const ClassificationMarkings = () => {
   const classificationOptions = ['Top Secret//SCI', 'Top Secret', 'Secret', 'Confidential','Controlled','Unclassified'];
   const classification = select('Classification', classificationOptions, 'Top Secret//SCI');
   
-  const markerOptions = ['Banner', 'Tag'];
-  const markerType = select('Marking Type', markerOptions, 'Banner');
+  const markingOptions = ['Banner', 'Tag'];
+  const markingType = select('Marking Type', markingOptions, 'Banner');
   
-	const markerText = text('Marking Label','');
+	const markingText = text('Marking Label','');
 
 	function markerFilter(){
-		const markerClass = classification.toLowerCase();
+		const markingClass = classification.toLowerCase();
 
-		return markerClass;
+		return markingClass;
 	}
 	
 
   return html`
     <div style="display: flex; flex-flow: row; justify-content: center;margin-top:30px;">
       <rux-classification-marking
-        type="${markerType}"
+        type="${markingType}"
         classification="${markerFilter()}"
-        label="${markerText}">
+        label="${markingText}">
       </rux-classification-marking>
     </div>
   `;
