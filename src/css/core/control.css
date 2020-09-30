@@ -70,6 +70,8 @@
   flex-grow: 0;
   content: "";
 
+  align-self: start;
+
   height: var(--controlOptionSize, 1.25rem);
   width: var(--controlOptionSize, 1.25rem);
 
@@ -105,7 +107,8 @@
 .rux-radio-button input[type="radio"]:checked + label::after,
 .satcom-radio-button input[type="radio"]:checked + label::after {
   position: absolute;
-  display: block;
+  top: 5px;
+  display: flex;
 
   content: "";
 }
@@ -114,7 +117,6 @@
 .satcom-checkbox input[type="checkbox"]:checked + label::after {
   height: 6px;
   width: 12px;
-  top: 5px;
   left: 4px;
   border-right: 2px solid var(--controlTextColor, rgb(255, 255, 255));
   border-top: 2px solid var(--controlTextColor, rgb(255, 255, 255));
@@ -124,7 +126,6 @@
 
 .rux-radio-button input[type="radio"]:checked + label::after,
 .satcom-radio-button input[type="radio"]:checked + label::after {
-  top: 5px;
   left: 5px;
 
   height: 10px;
