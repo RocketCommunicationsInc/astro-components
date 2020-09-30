@@ -105,10 +105,10 @@ export class RuxClassification extends LitElement {
       font-weight:bold;
       font-family: var( --fontFamily);
       text-transform:uppercase;
-      color: var(--colorBlack, rgb(0, 0, 0));
       transition: top 0.5s ease;
       overflow-wrap: anywhere;
       white-space: pre-line;
+      color: var(--colorWhite);
       background-color: var(--classificationUnclassifiedBackgroundColor);
     }
 
@@ -118,8 +118,7 @@ export class RuxClassification extends LitElement {
       left: 0;
       flex-wrap: nowrap;
       flex-grow: 1;		
-      width: 100%;
-      
+      width: 100%;      
     }
     
     :host([type='tag']){
@@ -135,31 +134,29 @@ export class RuxClassification extends LitElement {
 
     :host([classification='${this.marking('top-secret-sci').style}']) {
       background-color: var(--classificationTopSecretSCIBackgroundColor);
+      color: var(--colorBlack, rgb(0, 0, 0));
     }
 
     :host([classification='${this.marking('top-secret').style}']){
       background-color: var(--classificationTopSecretBackgroundColor);
+      color: var(--colorBlack, rgb(0, 0, 0));
     }
 
     :host([classification='${this.marking('secret').style}']),
     :host([classification='Secret']){
       background-color: var(--classificationSecretBackgroundColor);
-      color: var(--colorWhite);
     }
 
     :host([classification='${this.marking('confidential').style}']) {
       background-color: var(--classificationConfidentialBackgroundColor);
-      color: var(--colorWhite);
     }
 
     :host([classification='${this.marking('controlled').style}']) {
       background-color: var(--classificationControlledBackgroundColor);
-      color: var(--colorWhite);
     }
 
     :host([classification='${this.marking('unclassified').style}']) {
       background-color: var(--classificationUnclassifiedBackgroundColor);
-      color: var(--colorWhite);
     }
     </style>
     
