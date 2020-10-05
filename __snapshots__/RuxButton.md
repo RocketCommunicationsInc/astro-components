@@ -14,7 +14,6 @@
   <slot>
   </slot>
 </button>
-
 ```
 
 #### `is default`
@@ -31,7 +30,6 @@
   <slot>
   </slot>
 </button>
-
 ```
 
 #### `is outlined`
@@ -48,7 +46,6 @@
   <slot>
   </slot>
 </button>
-
 ```
 
 #### `is disabled`
@@ -68,7 +65,6 @@
   <slot>
   </slot>
 </button>
-
 ```
 
 #### `handles disabled values`
@@ -88,7 +84,6 @@
   <slot>
   </slot>
 </button>
-
 ```
 
 #### `is small`
@@ -105,7 +100,6 @@
   <slot>
   </slot>
 </button>
-
 ```
 
 #### `is large`
@@ -122,7 +116,6 @@
   <slot>
   </slot>
 </button>
-
 ```
 
 #### `should ignore invalid size`
@@ -139,7 +132,6 @@
   <slot>
   </slot>
 </button>
-
 ```
 
 #### `should ignore invalid icon`
@@ -149,54 +141,6 @@
   <rux-icon
     color="#ffffff"
     icon="qwerty"
-    style="--iconDefaultColor:#ffffff;"
-  >
-  </rux-icon>
-  <slot>
-  </slot>
-</button>
-
-```
-
-#### `handles nonsense icon`
-
-```html
-<button class="rux-button">
-  <rux-icon
-    color="#ffffff"
-    icon="qwerty"
-    style="--iconDefaultColor:#ffffff;"
-  >
-  </rux-icon>
-  <slot>
-  </slot>
-</button>
-```
-
-#### `is nothing`
-
-```html
-<button class="rux-button rux-button--green">
-  <rux-icon
-    color="#ffffff"
-    hidden=""
-    icon=""
-    style="--iconDefaultColor:#ffffff;"
-  >
-  </rux-icon>
-  <slot>
-  </slot>
-</button>
-```
-
-#### `renders button correctly`
-
-```html
-<button class="rux-button">
-  <rux-icon
-    color="#ffffff"
-    hidden=""
-    icon=""
     style="--iconDefaultColor:#ffffff;"
   >
   </rux-icon>
