@@ -21,7 +21,9 @@
     "build-storybook": "gulp build && build-storybook -c .storybook -s ./static",
     "storybook": "gulp build && start-storybook -p 9001 -c .storybook -s ./static ",
     "test": "karma start --coverage",
-    "test:watch": "karma start --auto-watch=true --single-run=false"
+    "test:watch": "karma start --auto-watch=true --single-run=false",
+    "test:update-snapshots": "karma start --update-snapshots",
+    "test:prune-snapshots": "karma start --prune-snapshots"
   },
   "dependencies": {
     "ag-grid-community": "^24.0.0",
