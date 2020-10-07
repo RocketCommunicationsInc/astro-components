@@ -1,5 +1,5 @@
 import { html, render } from 'lit-html';
-import { text, select,boolean, withKnobs } from '@storybook/addon-knobs';
+import { text, select, withKnobs } from '@storybook/addon-knobs';
 import { RuxClassification } from '../src/components/rux-classification-marking/rux-classification-marking.js';
 import Readme from '../src/components/rux-classification-marking/README.md';
 
@@ -18,27 +18,29 @@ export const ClassificationMarkings = () => {
   const markingType = select('Marking Type', markingOptions,'banner');
   const markingText = text('Marking Label','');
 
-  function typeSelection() {
-   const myLabel = markingType.toLowerCase();
-
-   return html`${myLabel}`;
+  function markingSelect() {
+    const myLabel = markingType.toLowerCase();
+    
+    return `${myLabel}`;
   }
 
-  function markerFilter() {
+  function markingFilter() {
     const markingClass = classification.toLowerCase();
     return markingClass;
   }
   
-  const aTemplate = html`${typeSelection()}`;
-  return html`
+  const template = `
     <div style="display: flex; flex-flow: row; justify-content: center;margin-top:30px;">
       <rux-classification-marking
-        classification="${markerFilter()}"
+        classification="${markingFilter()}"
         label="${markingText}"
+        ${markingSelect()}
       >
       </rux-classification-marking>
     </div>
   `;
+
+  return template;
 };
 
 ClassificationMarkings.story = {
