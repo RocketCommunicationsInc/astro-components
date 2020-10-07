@@ -75,7 +75,7 @@ Applying the `label` property attribute to the Classification custom element add
 
 ```javascript
 	<rux-classification-marking classification="controlled" type="banner"
-			label="//SCI"
+			label=""
 	></rux-classification-marking>
 
 ```
