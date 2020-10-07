@@ -1,5 +1,5 @@
 import { html, render } from 'lit-html';
-import { text, select,array, withKnobs } from '@storybook/addon-knobs';
+import { text, select,boolean, withKnobs } from '@storybook/addon-knobs';
 import { RuxClassification } from '../src/components/rux-classification-marking/rux-classification-marking.js';
 import Readme from '../src/components/rux-classification-marking/README.md';
 
@@ -15,35 +15,27 @@ export const ClassificationMarkings = () => {
   const classification = select('Classification', classificationOptions, 'Top Secret//SCI');
   
   const markingOptions = ['Banner', 'Tag'];
-	const markingType = select ('Marking Type', markingOptions, 'banner');
-	
-	function markingTag(param){
-		let type
-		if (param == markingOptions[0]){
-			tagLabel = '';
-		} else {
-			type = 'tag';
-		}
-		
-		return type;
-	}
+  const markingType = select('Marking Type', markingOptions,'banner');
+  const markingText = text('Marking Label','');
+
+  function typeSelection() {
+   const myLabel = markingType.toLowerCase();
+
+   return html`${myLabel}`;
+  }
+
+  function markerFilter() {
+    const markingClass = classification.toLowerCase();
+    return markingClass;
+  }
   
-	const markingText = text('Marking Label','');
-
-	function markerFilter(){
-		const markingClass = classification.toLowerCase();
-
-		return markingClass;
-	}
-	
-
+  const aTemplate = html`${typeSelection()}`;
   return html`
     <div style="display: flex; flex-flow: row; justify-content: center;margin-top:30px;">
       <rux-classification-marking
         classification="${markerFilter()}"
-				label="${markingText}"
-				tag
-			>
+        label="${markingText}"
+      >
       </rux-classification-marking>
     </div>
   `;
@@ -64,8 +56,7 @@ ClassificationMarkings.story = {
 export const ClassificationMarkingBanners = () => html`
     <div style="display: flex; flex-flow: column; justify-content: center; margin:20px;">
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
-				<rux-classification-marking
-				  tag					
+        <rux-classification-marking		
           classification="top secret//sci"
         ></rux-classification-marking>
       </div>

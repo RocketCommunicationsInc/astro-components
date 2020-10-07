@@ -36,9 +36,8 @@ export class RuxClassificationMarking extends LitElement {
   }
   
   _setClassificationMarking(marker) {
-    const markingType =  this.tag;
     const markingClass = this.markingSlug(this.classification);
-    const markingLabel = this.markingSlug(marker);    
+    const markingLabel = this.markingSlug(marker);
     let bannerLabel;
     let tagLabel;
     let markingStyle;
@@ -80,12 +79,10 @@ export class RuxClassificationMarking extends LitElement {
       tagLabel = bannerLabel;
     }
 
-    const bannerType = (markingType === 'false') ? bannerLabel : tagLabel;
-
     const markingData = {
-      label: bannerType,
-      style: markingStyle,
-      type: markingType
+      label: bannerLabel,
+      labelTag: tagLabel,
+      style: markingStyle
     }
 
     return markingData;
@@ -120,12 +117,8 @@ export class RuxClassificationMarking extends LitElement {
       flex-grow: 1;		
       width: 100%; 
     }
-
-    :host([banner]) .rux-classification__marking{
-        
-    }
     
-    :host([tag]) .rux-classification__marking {
+    :host([tag]), :host([tag]) .rux-classification__marking {
       position: relative;
       align-items:center;
       top: auto;		
@@ -166,7 +159,11 @@ export class RuxClassificationMarking extends LitElement {
     </style>
     
     <div class="rux-classification__marking">
-      ${this.marking(this.classification).label}${this.label} ${this.tag}
+      ${this.tag ? 
+        `${this.marking(this.classification).labelTag}` : 
+        `${this.marking(this.classification).label}` 
+      }
+      ${this.label}
     </div>
 
     `;
