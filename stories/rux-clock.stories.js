@@ -22,6 +22,8 @@ export const Clock = () => {
     UTC: 'UTC',
     Z: 'Z',
     z: 'z',
+    a: 'a',
+    B: 'B',
   };
 
   const timezoneKnob = select('Timezone', timezones, 'Z');
