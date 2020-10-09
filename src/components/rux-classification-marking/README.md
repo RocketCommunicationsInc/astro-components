@@ -14,7 +14,7 @@ Classification and control markings are required for digital products created fo
 #### Install the Astro UXDS Classification Markings package via Command Line (Preferred Method)
 
 ```sh
-npm i --save @astrouxds/rux-classification
+npm i --save @astrouxds/rux-classification-marking
 ```
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
@@ -34,7 +34,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxClassification } from '@astrouxds/rux-classifications/rux-classification.js';
+import { RuxClassification } from '@astrouxds/rux-classification-marking/rux-classification-marking.js';
 ```
 
 ### 3. Render the Classification Markings Component
@@ -42,40 +42,32 @@ import { RuxClassification } from '@astrouxds/rux-classifications/rux-classifica
 Pass properties as attributes of the Astro Classification custom element:
 
 ```javascript
-<rux-classification-marking classification="controlled" type="banner" label=""></rux-classification-marking>
+<rux-classification-marking classification="controlled" label=""></rux-classification-marking>
 ```
 
 | Property       	| Type   	| Default  	| Required 	| Description 	|
 |----------------	|--------	|----------	|----------	|-------------	|
 | Classification 	| String 	| `'unclassified'`         	| Yes      	| This property            	|
-| Type           	| String 	| `'banner'` 	| Yes      	| This property determines marking type `banner` or `tag`            	|
+| Tag          	| attribute 	| `'tag'` 	| No      	| This property defines the marking as a`tag` rather than the default banner            	|
 | Label         	| String 	| `''` 	| No      	| This property allows additional text labels to be added to the a marking           	|
 
 
-
 #### Marking Type Declaration
- Apply the ```type``` property attribute to set the marking type. The `type` attribute property accepts two attribute values for marking generation. 1) `banner` generates a banner marking and 2) `tag` generates a tag marking. The ```type``` attribute property value is not case sensitive.
+ By default classificatin markings rendered in banner format. Applying the ```tag``` property attribute sets the marking type. The `tag` attribute property defines the classification marking as a tag.
 
-##### Marking Banner
+##### Banner Marking Type
 ```javascript
-	<rux-classification-marking classification="controlled"
-		type="banner"	
-	></rux-classification-marking>
+	<rux-classification-marking classification="controlled"></rux-classification-marking>
 ```
 
-##### Marking Tag
+##### Tag Marking Type
 ```javascript
-	<rux-classification-marking classification="controlled"
-		type="tag"		
-	></rux-classification-marking>
+	<rux-classification-marking classification="controlled" tag></rux-classification-marking>
 ```
 
 #### Custom Marking Labels
-Applying the `label` property attribute to the Classification custom element adds `label` text value to the marking in addition to its classification text.
+Applying the `label` property attribute to the classification custom element adds `label` text value to the marking in addition to its classification text.
 
 ```javascript
-	<rux-classification-marking classification="controlled" type="banner"
-			label=""
-	></rux-classification-marking>
-
+	<rux-classification-marking classification="controlled" label="//custom/label"></rux-classification-marking>
 ```
