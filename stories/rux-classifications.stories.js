@@ -29,7 +29,7 @@ export const ClassificationMarkings = () => {
     return markingClass;
   }
   
-  const template = `
+  const markingTemplate = `
     <div style="display: flex; flex-flow: row; justify-content: center;margin-top:30px;">
       <rux-classification-marking
         classification="${markingFilter()}"
@@ -40,7 +40,7 @@ export const ClassificationMarkings = () => {
     </div>
   `;
 
-  return template;
+  return markingTemplate;
 };
 
 ClassificationMarkings.story = {
@@ -58,7 +58,7 @@ ClassificationMarkings.story = {
 export const ClassificationMarkingBanners = () => html`
     <div style="display: flex; flex-flow: column; justify-content: center; margin:20px;">
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
-        <rux-classification-marking		
+        <rux-classification-marking
           classification="top secret//sci"
         ></rux-classification-marking>
       </div>
@@ -71,28 +71,24 @@ export const ClassificationMarkingBanners = () => html`
       
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          
           classification="secret"
         ></rux-classification-marking>
       </div>
     
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          
           classification="confidential"
         ></rux-classification-marking>
       </div>
     
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          
           classification="controlled"
         ></rux-classification-marking>
       </div>
     
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          
           classification="unclassified"
         ></rux-classification-marking>
       </div>	  
