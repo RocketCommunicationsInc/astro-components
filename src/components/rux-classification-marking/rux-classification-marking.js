@@ -130,7 +130,8 @@ export class RuxClassificationMarking extends LitElement {
       font-size: var(--fontSizeMD);			
     }
 
-    :host([classification='${this.marking('top-secret-sci').style}']) .rux-classification__marking {
+		:host([classification='${this.marking('topsecretsci').style}']) .rux-classification__marking,
+		:host([classification='topsecretsci']) .rux-classification__marking {
       background-color: var(--classificationTopSecretSCIBackgroundColor);
       color: var(--colorBlack, rgb(0, 0, 0));
     }
@@ -161,7 +162,7 @@ export class RuxClassificationMarking extends LitElement {
     <div class="rux-classification__marking">
       ${this.tag ? 
         `${this.marking(this.classification).labelTag}` : 
-        `${this.marking(this.classification).label}` 
+        `${this.marking(this.classification).label}`
       }
       ${this.label}
     </div>

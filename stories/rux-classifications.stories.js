@@ -59,7 +59,7 @@ export const ClassificationMarkingBanners = () => html`
     <div style="display: flex; flex-flow: column; justify-content: center; margin:20px;">
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          classification="top secret//sci"
+          classification="topsecretsci"
         ></rux-classification-marking>
       </div>
       
