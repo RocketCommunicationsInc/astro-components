@@ -48,7 +48,7 @@ Pass properties as attributes of the Astro Classification custom element:
 | Property       	| Type   	| Default  	| Required 	| Description 	|
 |----------------	|--------	|----------	|----------	|-------------	|
 | Classification 	| String 	| `'unclassified'`         	| Yes      	| This property            	|
-| Tag          	| attribute 	| `boolean` 	| No      	| This property defines the marking as a`tag` rather than the default banner            	|
+| Tag          	| Boolean 	| `false` 	| No      	| This property defines the marking as a`tag` rather than the default banner            	|
 | Label         	| String 	| `null` 	| No      	| This property allows additional text labels to be added to the a marking           	|
 
 
