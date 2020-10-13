@@ -1,11 +1,11 @@
 import { html, render } from 'lit-html';
 import { text, select, withKnobs } from '@storybook/addon-knobs';
-import { RuxClassification } from '../src/components/rux-classifications/rux-classification.js';
-import Readme from '../src/components/rux-classifications/README.md';
+import { RuxClassification } from '../src/components/rux-classification-marking/rux-classification-marking.js';
+import Readme from '../src/components/rux-classification-marking/README.md';
 
 
 export default {
-  title: 'Components|Classification',
+  title: 'Components|Classification Markings',
   decorators: [withKnobs]
 };
 
@@ -15,26 +15,32 @@ export const ClassificationMarkings = () => {
   const classification = select('Classification', classificationOptions, 'Top Secret//SCI');
   
   const markingOptions = ['Banner', 'Tag'];
-  const markingType = select('Marking Type', markingOptions, 'Banner');
+  const markingType = select('Marking Type', markingOptions,'banner');
+  const markingText = text('Marking Label','');
+
+  function markingSelect() {
+    const myLabel = markingType.toLowerCase();
+    
+    return `${myLabel}`;
+  }
+
+  function markingFilter() {
+    const markingClass = classification.toLowerCase();
+    return markingClass;
+  }
   
-	const markingText = text('Marking Label','');
-
-	function markerFilter(){
-		const markingClass = classification.toLowerCase();
-
-		return markingClass;
-	}
-	
-
-  return html`
+  const markingTemplate = `
     <div style="display: flex; flex-flow: row; justify-content: center;margin-top:30px;">
       <rux-classification-marking
-        type="${markingType}"
-        classification="${markerFilter()}"
-        label="${markingText}">
+        classification="${markingFilter()}"
+        label="${markingText}"
+        ${markingSelect()}
+      >
       </rux-classification-marking>
     </div>
   `;
+
+  return markingTemplate;
 };
 
 ClassificationMarkings.story = {
@@ -49,53 +55,47 @@ ClassificationMarkings.story = {
   },
 };
 
-export const ClassificationBanners = () => html`
+export const ClassificationMarkingBanners = () => html`
     <div style="display: flex; flex-flow: column; justify-content: center; margin:20px;">
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          type="banner"
-          classification="top secret//sci"
+          classification="topsecretsci"
         ></rux-classification-marking>
       </div>
       
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
-        <rux-classification-marking
-          type="banner"
+        <rux-classification-marking          
           classification="top secret"
         ></rux-classification-marking>
       </div>
       
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          type="banner"
           classification="secret"
         ></rux-classification-marking>
       </div>
     
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          type="banner"
           classification="confidential"
         ></rux-classification-marking>
       </div>
     
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          type="banner"
           classification="controlled"
         ></rux-classification-marking>
       </div>
     
       <div style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <rux-classification-marking
-          type="banner"
           classification="unclassified"
         ></rux-classification-marking>
       </div>	  
     </div>
 `;
 
-ClassificationBanners.story = {
+ClassificationMarkingBanners.story = {
   parameters: {
     exports: {
       render,
@@ -108,13 +108,13 @@ ClassificationBanners.story = {
 };
 
 
-export const ClassificationTags = () => html`
+export const ClassificationMarkingTags = () => html`
     <div style="display: flex; flex-flow: column; justify-content: flex-start; width: 400px; margin:60px auto;">	  
       
       <div style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <p style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9;">Top Secret//SCI</p>
         <rux-classification-marking
-          type="tag"
+          tag
           classification="top secret//sci"
         ></rux-classification-marking>
       </div>
@@ -122,35 +122,35 @@ export const ClassificationTags = () => html`
       <div style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <p style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9;">Top Secret</p>	
         <rux-classification-marking
-          type="tag"
+          tag
           classification="top secret"
         ></rux-classification-marking>
       </div>
       <div style="display: flex; align-items:baseline;  position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <p style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9;">Secret</p>	
         <rux-classification-marking
-          type="tag"
+          tag
           classification="secret"
         ></rux-classification-marking>
       </div>
       <div style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <p style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9;">Confidential</p>	
         <rux-classification-marking
-          type="tag"
+          tag
           classification="confidential"
         ></rux-classification-marking>
       </div>
       <div style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <p style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9;">Controlled Unclassified</p>	
         <rux-classification-marking
-          type="tag"
+          tag
           classification="controlled"
         ></rux-classification-marking>
       </div>
       <div style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;">
         <p style="display: flex; width:225px; font-size:13px; font-style:italic; color:#d5d7d9;">Uncontrolled Unclassified</p>	
         <rux-classification-marking
-          type="tag"
+          tag
           classification="unclassified"
         ></rux-classification-marking>
       </div>
@@ -158,7 +158,7 @@ export const ClassificationTags = () => html`
     </div>
   `;
 
-ClassificationTags.story = {
+ClassificationMarkingTags.story = {
   parameters: {
     exports: {
       render,
