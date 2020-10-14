@@ -82,7 +82,7 @@ export class RuxClock extends LitElement {
   */
   updateTime() {
     this.time = format(utcToZonedTime(new Date(), this._timezone), `HH:mm:ss ${this.hideTimezone ? '' : this.tzFormat}`, {timeZone: this._timezone});
-    this.dayOfYear = getDayOfYear(zonedTimeToUtc(new Date()));
+    this.dayOfYear = getDayOfYear(zonedTimeToUtc(new Date(), this._timezone));
   }
 
   convertTimezone(timezone) {
@@ -90,7 +90,9 @@ export class RuxClock extends LitElement {
     this.tzFormat = 'O';
     if (!this._timezone) {
       this._timezone = timezone;
-      this.tzFormat = 'z';
+      this.tzFormat = 'zzz';
+    } else if (timezone.toUpperCase() == 'Z') {
+      this.tzFormat = 'X';
     }
   }
 

@@ -26,7 +26,7 @@ export const Clock = () => {
     B: 'B',
   };
 
-  const timezoneKnob = select('Timezone', timezones, 'Z');
+  const timezoneKnob = select('Timezone', timezones, 'UTC');
   const hideTimezoneKnob = boolean('Hide Timezone', false);
   const hideDateKnob = boolean('Hide DOY', false);
   const smallKnob = boolean('Small Version', false);
