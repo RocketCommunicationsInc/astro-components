@@ -50,6 +50,14 @@
   --statusLightStandby: rgb(100, 217, 255);
   --statusLightOff: rgb(142, 154, 163);
 
+  --classificationTopSecretSCIBackgroundColor: rgba(252,232,58);
+  --classificationTopSecretBackgroundColor: rgba(255,140,0);
+  --classificationSecretBackgroundColor: rgba(200,16,46);
+  --classificationConfidentialBackgroundColor: rgba(0,51,160);
+  --classificationControlledBackgroundColor: rgba(80,43,133);
+  --classificationUnclassifiedBackgroundColor: rgba(0,122,51);
+
+
   --colorTag1: rgb(25, 199, 202);
   --colorTag2: rgb(120, 112, 208);
   --colorTag3: rgb(160, 13, 190);
@@ -91,15 +99,6 @@
   --colorQuaternaryDarken2: color-mod(var(--colorQuaternary) shade(40%));
   --colorQuaternaryDarken3: color-mod(var(--colorQuaternary) shade(60%));
   --colorQuaternaryDarken4: color-mod(var(--colorQuaternary) shade(80%));
-
-  --colorGrayLighten1: color-mod(var(--colorGray) tint(20%));
-  --colorGrayLighten2: color-mod(var(--colorGray) tint(40%));
-  --colorGrayLighten3: color-mod(var(--colorGray) tint(60%));
-  --colorGrayLighten4: color-mod(var(--colorGray) tint(80%));
-  --colorGrayDarken1: color-mod(var(--colorGray) shade(20%));
-  --colorGrayDarken2: color-mod(var(--colorGray) shade(40%));
-  --colorGrayDarken3: color-mod(var(--colorGray) shade(60%));
-  --colorGrayDarken4: color-mod(var(--colorGray) shade(80%));
 
   --colorCriticalLighten1: color-mod(var(--statusDarkCritical) tint(20%));
   --colorCriticalLighten2: color-mod(var(--statusDarkCritical) tint(40%));

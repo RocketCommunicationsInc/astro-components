@@ -1,7 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { html, render } from 'lit-html';
 import { boolean, number, text, array, withKnobs } from '@storybook/addon-knobs';
-import Readme from '../src/css/documentation/table-README.md';
+import { Grid } from 'ag-grid-community';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import '../story-assets/ag-grid-astro.css';
+import TableReadme from '../src/css/documentation/table-README.md';
+import agGridReadme from '../src/css/documentation/ag-grid-README.md';
 /* eslint-enable no-unused-vars */
 
 const columnData = [
@@ -87,7 +91,44 @@ HTMLTable.story = {
       html,
     },
     readme: {
-      sidebar: Readme,
+      sidebar: TableReadme,
+    },
+  },
+};
+
+
+export const AGGrid = () => {
+  const gridOptions = {
+    columnDefs: columnData,
+    rowData: rowData,
+  };
+
+
+  if ( document.readyState !== 'loading' ) {
+    setTimeout(startAGGrid, 0);
+  }
+
+  function startAGGrid() {
+    const eGridDiv = document.querySelector('#myGrid');
+    new Grid(eGridDiv, gridOptions);
+  }
+
+
+  return html`
+    <div style="display: flex; padding: 2vh; justify-content: center;">
+      <div id="myGrid" class="ag-theme-astro" style="width: 100%; height: 96vh"></div> 
+    </div>
+  `;
+};
+AGGrid.story = {
+  name: 'ag-grid',
+  parameters: {
+    exports: {
+      render,
+      html,
+    },
+    readme: {
+      sidebar: agGridReadme,
     },
   },
 };

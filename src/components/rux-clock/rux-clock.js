@@ -1,7 +1,10 @@
 import { LitElement, html } from 'lit-element';
 
-import moment from 'moment';
-import 'moment-timezone';
+import { getDayOfYear } from 'date-fns';
+import { format, utcToZonedTime, zonedTimeToUtc} from 'date-fns-tz';
+
+import militaryTimezones from 'military-timezones';
+
 
 export class RuxClock extends LitElement {
   static get properties() {
@@ -36,38 +39,9 @@ export class RuxClock extends LitElement {
 
   constructor() {
     super();
-    // register military timezone designations in Zone object format so that devs can use single-character abbreviation
-    // note that moment does not require these to be case-sensitive
-    moment.tz.add([
-      'A|A|10|0||',
-      'B|B|20|0||',
-      'C|C|30|0||',
-      'D|D|40|0||',
-      'E|E|50|0||',
-      'F|F|60|0||',
-      'G|G|70|0||',
-      'H|H|80|0||',
-      'I|I|90|0||',
-      'K|K|a0|0||',
-      'L|L|b0|0||',
-      'M|M|c0|0||',
-      'N|N|-10|0||',
-      'O|O|-20|0||',
-      'P|P|-30|0||',
-      'Q|Q|-40|0||',
-      'R|R|-50|0||',
-      'S|S|-60|0||',
-      'T|T|-70|0||',
-      'U|U|-80|0||',
-      'V|V|-90|0||',
-      'W|W|-a0|0||',
-      'X|X|-b0|0||',
-      'Y|Y|-c0|0||',
-      'Z|Z|0|0||',
-    ]);
-
-
     this.timezone = 'UTC';
+    this._timezone = this.timezone;
+    this.tzFormat = 'z';
     this.hideTimezone = false;
     this.hideDate = false;
 
@@ -92,6 +66,13 @@ export class RuxClock extends LitElement {
     super.disconnectedCallback();
   }
 
+  updated(changedProperties) {
+    const oldZone = changedProperties.get('timezone');
+    if (oldZone) {
+      this.convertTimezone(this.timezone);
+    }
+  }
+
   /*
     Public functions should occur after lifecycle hooks
   */
@@ -100,8 +81,19 @@ export class RuxClock extends LitElement {
     Private functions should occur after public functions
   */
   updateTime() {
-    this.time = moment().tz(this.timezone).format(`HH:mm:ss ${this.hideTimezone ? '' : 'z'}`);
-    this.dayOfYear = moment().tz(this.timezone).dayOfYear();
+    this.time = format(utcToZonedTime(new Date(), this._timezone), `HH:mm:ss ${this.hideTimezone ? '' : this.tzFormat}`, {timeZone: this._timezone});
+    this.dayOfYear = getDayOfYear(zonedTimeToUtc(new Date(), this._timezone));
+  }
+
+  convertTimezone(timezone) {
+    this._timezone = militaryTimezones[timezone.toUpperCase()];
+    this.tzFormat = 'O';
+    if (!this._timezone) {
+      this._timezone = timezone;
+      this.tzFormat = 'zzz';
+    } else if (timezone.toUpperCase() == 'Z') {
+      this.tzFormat = 'X';
+    }
   }
 
   /*
@@ -204,7 +196,7 @@ export class RuxClock extends LitElement {
         ? html`
             <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__aos">
               <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--aos">
-                ${moment(this.aos).tz(this.timezone).format('HH:mm:ss')}
+                ${format(utcToZonedTime(this.aos, this._timezone), 'HH:mm:ss')}
               </div>
               <div class="rux-clock__segment__label" id="rux-clock__time-label--aos">
                 AOS
@@ -216,7 +208,7 @@ export class RuxClock extends LitElement {
         ? html`
             <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__los">
               <div class="rux-clock__segment__value" aria-labelledby="rux-clock__time-label--los">
-              ${moment(this.los).tz(this.timezone).format('HH:mm:ss')}
+              ${format(utcToZonedTime(this.los, this._timezone), 'HH:mm:ss')}
               </div>
               <div class="rux-clock__segment__label" id="rux-clock__time-label--los">
                 LOS

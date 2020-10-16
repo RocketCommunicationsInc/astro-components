@@ -50,6 +50,14 @@
   --statusLightStandby: rgb(100, 217, 255);
   --statusLightOff: rgb(142, 154, 163);
 
+  --classificationTopSecretSCIBackgroundColor: rgba(252,232,58);
+  --classificationTopSecretBackgroundColor: rgba(255,140,0);
+  --classificationSecretBackgroundColor: rgba(200,16,46);
+  --classificationConfidentialBackgroundColor: rgba(0,51,160);
+  --classificationControlledBackgroundColor: rgba(80,43,133);
+  --classificationUnclassifiedBackgroundColor: rgba(0,122,51);
+
+
   --colorTag1: rgb(25, 199, 202);
   --colorTag2: rgb(120, 112, 208);
   --colorTag3: rgb(160, 13, 190);
@@ -91,15 +99,6 @@
   --colorQuaternaryDarken2: rgb(124, 128, 136);
   --colorQuaternaryDarken3: rgb(83, 86, 91);
   --colorQuaternaryDarken4: rgb(41, 43, 45);
-
-  --colorGrayLighten1: rgb(214, 214, 214);
-  --colorGrayLighten2: rgb(224, 224, 224);
-  --colorGrayLighten3: rgb(235, 235, 235);
-  --colorGrayLighten4: rgb(245, 245, 245);
-  --colorGrayDarken1: rgb(163, 163, 163);
-  --colorGrayDarken2: rgb(122, 122, 122);
-  --colorGrayDarken3: rgb(82, 82, 82);
-  --colorGrayDarken4: rgb(41, 41, 41);
 
   --colorCriticalLighten1: rgb(255, 96, 96);
   --colorCriticalLighten2: rgb(255, 136, 136);
@@ -1716,6 +1715,8 @@ label {
   flex-grow: 0;
   content: "";
 
+  align-self: start;
+
   height: 1.25rem;
 
   height: var(--controlOptionSize, 1.25rem);
@@ -1759,7 +1760,8 @@ label {
 .rux-radio-button input[type="radio"]:checked + label::after,
 .satcom-radio-button input[type="radio"]:checked + label::after {
   position: absolute;
-  display: block;
+  top: 5px;
+  display: flex;
 
   content: "";
 }
@@ -1768,7 +1770,6 @@ label {
 .satcom-checkbox input[type="checkbox"]:checked + label::after {
   height: 6px;
   width: 12px;
-  top: 5px;
   left: 4px;
   border-right: 2px solid rgb(255, 255, 255);
   border-right: 2px solid var(--controlTextColor, rgb(255, 255, 255));
@@ -1780,7 +1781,6 @@ label {
 
 .rux-radio-button input[type="radio"]:checked + label::after,
 .satcom-radio-button input[type="radio"]:checked + label::after {
-  top: 5px;
   left: 5px;
 
   height: 10px;
