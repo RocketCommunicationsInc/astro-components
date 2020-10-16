@@ -16,11 +16,11 @@
     "type": "git",
     "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
   },
-  "description": "Astro Web Component for classification markings",
+  "description": "Astro Web Component for classification marking",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "rux-classification.js",
-  "modules": "rux-classification.js",
-  "name": "@astrouxds/rux-classification",
+  "main": "rux-classification-marking.js",
+  "modules": "rux-classification-marking.js",
+  "name": "@astrouxds/rux-classification-marking",
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
