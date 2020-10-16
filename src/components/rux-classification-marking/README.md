@@ -2,6 +2,9 @@
 
 Classification and control markings are required for digital products created for government clients who interact with classified or controlled information.
 
+For the most up-to-date policies, see the [ISOO Training Aids](https://www.archives.gov/isoo/training/training-aids) for classification marking policies and the [CUI Registry](https://www.archives.gov/cui) for control marking policies. In addition to these requirements, each government agency may have their own rules to use for classification and control markings.
+
+
 ## Guidelines
 
 - [Astro UXDS: Classification Markings](https://www.astrouxds.com/components/readme/)
