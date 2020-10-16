@@ -56,7 +56,7 @@ Pass properties as attributes of the Astro Classification custom element:
 
 
 #### Marking Type Declaration
- By default classificatin markings rendered in banner format. Applying the ```tag``` property attribute sets the marking type. The `tag` attribute property defines the classification marking as a tag.
+ By default classification markings rendered in banner format. Applying the ```tag``` property attribute sets the marking type. The `tag` attribute property defines the classification marking as a tag.
 
 ##### Banner Marking Type
 ```javascript
