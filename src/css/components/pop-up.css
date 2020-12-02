@@ -19,8 +19,8 @@
   min-width: 15em;
   position: relative;
 
-  border: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  border: 1px solid var(--colorSecondary);
+  background-color: var(--colorSecondary);
   border-radius: 3px;
 }
 
@@ -55,7 +55,7 @@
 
 .rux-pop-up a:hover,
 .satcom-pop-up a:hover {
-  background-color: var(--colorSecondaryLighten3, rgb(211, 234, 255));
+  background-color: var(--colorSecondaryLighten3);
 }
 
 .rux-pop-up li:first-child a,
@@ -73,7 +73,7 @@
 
 .rux-pop-up--top,
 .satcom-pop-up-top {
-  border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-top: 3px solid var(--colorSecondary);
 }
 
 .rux-pop-up--top::before,
@@ -85,7 +85,7 @@
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
   z-index: 1;
 
   margin: -12px 0 0 16px;
@@ -94,7 +94,7 @@
 
 .rux-pop-up--bottom,
 .satcom-pop-up-bottom {
-  border-bottom: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-bottom: 3px solid var(--colorSecondary);
 }
 
 .rux-pop-up--bottom::after,
@@ -102,12 +102,12 @@
   content: "";
   display: block;
   position: absolute;
-  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-bottom: 1px solid var(--colorSecondary);
+  border-right: 1px solid var(--colorSecondary);
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
 
   margin: -7px 0 0 16px;
   transform: rotate(45deg);
@@ -115,7 +115,7 @@
 
 .rux-pop-up--left,
 .satcom-pop-up-left {
-  border-left: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-left: 3px solid var(--colorSecondary);
 }
 
 .rux-pop-up--left::before,
@@ -123,12 +123,12 @@
   content: "";
   display: block;
   position: absolute;
-  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  border-left: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-bottom: 1px solid var(--colorSecondary);
+  border-left: 1px solid var(--colorSecondary);
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
 
   margin: 16px 0 0 -12px;
   transform: rotate(45deg);
@@ -136,7 +136,7 @@
 
 .rux-pop-up--right,
 .satcom-pop-up-right {
-  border-right: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-right: 3px solid var(--colorSecondary);
 }
 
 .rux-pop-up--right::before,
@@ -144,12 +144,12 @@
   content: "";
   display: block;
   position: absolute;
-  border-top: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-top: 1px solid var(--colorSecondary);
+  border-right: 1px solid var(--colorSecondary);
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
 
   right: 0;
   margin: 16px -12px 0 0;

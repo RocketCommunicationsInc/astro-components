@@ -126,11 +126,11 @@ export class RuxModal extends LitElement {
           flex-direction: column;
           justify-content: space-between;
 
-          background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
+          background-color: var(--modalBackgroundColor);
 
           width: 28rem;
           height: 13.5rem;
-          border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
+          border: 2px solid var(--modalBorderColor);
 
           border-radius: 4px;
           margin: auto;
@@ -152,7 +152,7 @@ export class RuxModal extends LitElement {
           width: 100%;
           height: 2rem;
 
-          background-color: var(--modalBorderColor, rgb(0, 90, 143));
+          background-color: var(--modalBorderColor);
           user-select: none;
           cursor: move;
         }
