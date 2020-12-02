@@ -60,18 +60,18 @@ export class RuxPushButton extends LitElement {
           margin: 0;
           padding: 0 0.625rem;
 
-          color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+          color: var(--pushbuttonTextColor);
 
-          background-color: var(--pushbuttonBackgroundColor, rgb(0, 90, 143));
+          background-color: var(--pushbuttonBackgroundColor);
           border-radius: var(--defaultBorderRadius, 3px);
-          border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
+          border: 1px solid var(--pushbuttonBorderColor);
         }
 
         .rux-push-button__input:checked + .rux-push-button__button {
           display: flex;
-          color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
-          background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
-          border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
+          color: var(--pushbuttonSelectedTextColor);
+          background-color: var(--pushbuttonSelectedBackgroundColor);
+          border-color: var(--pushbuttonSelectedBorderColor);
 
           box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.33);
         }

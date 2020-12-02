@@ -77,7 +77,7 @@
 
   margin: 0 0.625rem 0 0;
 
-  border: 1px solid var(--controlBorderColor, rgb(122, 193, 255));
+  border: 1px solid var(--controlBorderColor);
 }
 
 .rux-checkbox input[type="checkbox"] + label::before{

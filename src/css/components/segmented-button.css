@@ -41,7 +41,7 @@
   padding: 0 0.75rem;
 
   border: none;
-  border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  border-right: 1px solid var(--segmentedButtonBorderColor);
 
   color: var(--segmentedButtonTextColor, rgb(255, 255, 255));
   background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));

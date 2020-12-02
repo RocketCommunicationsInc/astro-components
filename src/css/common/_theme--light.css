@@ -173,7 +173,7 @@
   --segmentedButtonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --segmentedButtonTextColor: var(--primary, rgb(0, 90, 143));
 
-  --segmentedButtonHoverBackgroundColor: rgb(0, 90, 143, 0.05);
+  --segmentedButtonHoverBackgroundColor: rgba(0, 90, 143, 0.05);
   --segmentedButtonHoverTextColor: var(--primary, rgb(0, 90, 143));
 
   --segmentedButtonSelectedBackgroundColor: var(
