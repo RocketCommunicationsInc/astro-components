@@ -61,6 +61,17 @@
 }
 
 @font-face {
+	font-family: 'Roboto Light';
+	src: url('/fonts/RobotoLight.eot');
+	src: url('/fonts/RobotoLight.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoLight.woff2') format('woff2'),
+			 url('/fonts/RobotoLight.woff') format('woff'),
+			 url('/fonts/RobotoLight.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
 	font-family: 'Roboto';
 	src: url('/fonts/RobotoLightItalic.eot');
 	src: url('/fonts/RobotoLightItalic.eot') format('embedded-opentype'),
