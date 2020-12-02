@@ -5,7 +5,7 @@
     ==========================================================================
 
   */
-  --backgroundColor: var(--colorTertiaryDarken2, rgb(46, 103, 153));
+  --backgroundColor: rgb(16, 25, 35);
   --fontColor: var(--colorWhite, rgb(255, 255, 255));
   --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
   --fontInvertedColor: var(--colorBlack, rgb(0, 0, 0));
@@ -13,6 +13,17 @@
 
   --fontLinkColor: var(--colorSecondary, rgb(77, 172, 255));
   --fontLinkHoverColor: var(--colorSecondaryLighten1, rgb(113, 189, 255));
+
+	/* KM Palette Colors */
+	--defaultText: rgb(23, 38, 53);
+	--secondaryText: rgb(212, 216, 221);
+	--globalAppHeader: rgb(23, 38, 53);
+	--surfaceElements: rgb(27, 45, 62);
+	--primary: rgb(77, 172, 255);
+	--primaryLight: rgb(146, 203, 255);
+	--primaryDark: rgb(58, 135, 207);
+	--primaryElementText: rgb(8, 12, 17);
+	--inputBackground: var(--colorWhite);
 
   /* Status Custom */
   --wcagCompliance: rgba(255, 255, 255, 0);

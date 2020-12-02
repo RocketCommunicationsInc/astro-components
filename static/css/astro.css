@@ -239,6 +239,146 @@
   font-weight: 400;
   font-style: normal;
 }
+
+/* ---- Roboto ---- */
+
+/* Thin */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoThin.eot');
+	src: url('/fonts/RobotoThin.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoThin.woff2') format('woff2'),
+			 url('/fonts/RobotoThin.woff') format('woff'),
+			 url('/fonts/RobotoThin.ttf') format('truetype'),
+			 url('/fonts/RobotoThin.svg#RobotoThin') format('svg');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoThinItalic.eot');
+	src: url('/fonts/RobotoThinItalic.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoThinItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoThinItalic.woff') format('woff'),
+			 url('/fonts/RobotoThinItalic.ttf') format('truetype'),
+			 url('/fonts/RobotoThinItalic.svg#RobotoThinItalic') format('svg');
+	font-weight: 200;
+	font-style: italic;
+}
+
+
+/* Light */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoLight.eot');
+	src: url('/fonts/RobotoLight.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoLight.woff2') format('woff2'),
+			 url('/fonts/RobotoLight.woff') format('woff'),
+			 url('/fonts/RobotoLight.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoLightItalic.eot');
+	src: url('/fonts/RobotoLightItalic.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoLightItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoLightItalic.woff') format('woff'),
+			 url('/fonts/RobotoLightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+/* Regular */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoRegular.eot');
+	src: url('/fonts/RobotoRegular.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoRegular.woff2') format('woff2'),
+			 url('/fonts/RobotoRegular.woff') format('woff'),
+			 url('/fonts/RobotoRegular.ttf') format('truetype'),
+			 url('/fonts/RobotoRegular.svg#RobotoRegular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Medidum */
+@font-face {
+	font-family: 'Roboto';
+	src: url('fonts/RobotoMedium.eot');
+	src: url('fonts/RobotoMedium.eot') format('embedded-opentype'),
+			 url('fonts/RobotoMedium.woff2') format('woff2'),
+			 url('fonts/RobotoMedium.woff') format('woff'),
+			 url('fonts/RobotoMedium.ttf') format('truetype'),
+			 url('fonts/RobotoMedium.svg#RobotoMedium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoMediumItalic.eot');
+	src: url('/fonts/RobotoMediumItalic.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoMediumItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoMediumItalic.woff') format('woff'),
+			 url('/fonts/RobotoMediumItalic.ttf') format('truetype'),
+			 url('/fonts/RobotoMediumItalic.svg#RobotoMediumItalic') format('svg');
+	font-weight: 500;
+	font-style: italic;
+}
+
+
+/* Bold */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBold.eot');
+	src: url('/fonts/RobotoBold.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoBold.woff2') format('woff2'),
+			 url('/fonts/RobotoBold.woff') format('woff'),
+			 url('/fonts/RobotoBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBoldItalic.eot');
+	src: url('/fonts/RobotoBoldItalic.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoBoldItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoBoldItalic.woff') format('woff'),
+			 url('/fonts/RobotoBoldItalic.ttf') format('truetype');
+	font-weight: 600;
+	font-style: italic;
+}
+
+
+/* Black */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBlack.eot');
+	src: url('/fonts/RobotoBlack.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoBlack.woff2') format('woff2'),
+			 url('/fonts/RobotoBlack.woff') format('woff'),
+			 url('/fonts/RobotoBlack.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBlackItalic.eot');
+	src: url('/fonts/RobotoBlackItalic.eot') format('embedded-opentype'),
+			 url('/fonts/RobotoBlackItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoBlackItalic.woff') format('woff'),
+			 url('/fonts/RobotoBlackItalic.ttf') format('truetype');
+	font-weight: 800;
+	font-style: italic;
+}
+
+
 @font-face {
   font-family: "Roboto Mono";
   src: url("/fonts/roboto-mono-regular.woff2") format("woff2"),
@@ -254,14 +394,25 @@
     ==========================================================================
 
   */
-  --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
+  --backgroundColor: rgb(234, 238, 244);
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
   --fontLowContrastColor: var(--colorQuaternaryDarken1, rgb(166, 171, 182));
   --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
   --fontInvertedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
 
   --fontLinkColor: var(--colorPrimary, rgb(0, 90, 143));
-  --fontLinkHoverColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+	--fontLinkHoverColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+	
+	/* KM Palette Colors */
+	--defaultText: rgb(41, 42, 45);
+	--secondaryText: rgb(81, 85, 91);
+	--globalAppHeader: rgb(23, 38, 53);
+	--surfaceElements: var(--colorWhite);
+	--primary: rgb(0, 90, 143);
+	--primaryLight: rgb(47, 122, 167);
+	--primaryDark: rgb(0, 72, 114);
+	--primaryElementText: var(--colorWhite);
+	--inputBackground: var(--colorWhite);
 
   --wcagCompliance: rgba(0, 0, 0, 0.5);
   --criticalBorder: #7f1c1c;
@@ -720,7 +871,7 @@ li.light-theme {
     ==========================================================================
 
   */
-  --backgroundColor: var(--colorTertiaryDarken2, rgb(46, 103, 153));
+  --backgroundColor: rgb(16, 25, 35);
   --fontColor: var(--colorWhite, rgb(255, 255, 255));
   --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
   --fontInvertedColor: var(--colorBlack, rgb(0, 0, 0));
@@ -728,6 +879,17 @@ li.light-theme {
 
   --fontLinkColor: var(--colorSecondary, rgb(77, 172, 255));
   --fontLinkHoverColor: var(--colorSecondaryLighten1, rgb(113, 189, 255));
+
+	/* KM Palette Colors */
+	--defaultText: rgb(23, 38, 53);
+	--secondaryText: rgb(212, 216, 221);
+	--globalAppHeader: rgb(23, 38, 53);
+	--surfaceElements: rgb(27, 45, 62);
+	--primary: rgb(77, 172, 255);
+	--primaryLight: rgb(146, 203, 255);
+	--primaryDark: rgb(58, 135, 207);
+	--primaryElementText: rgb(8, 12, 17);
+	--inputBackground: var(--colorWhite);
 
   /* Status Custom */
   --wcagCompliance: rgba(255, 255, 255, 0);
@@ -1160,7 +1322,7 @@ li.dark-theme {
 h1,
 h2,
 h3 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: rgb(255, 255, 255);
   color: var(--fontColor, rgb(255, 255, 255));
@@ -1299,7 +1461,7 @@ body {
 
   font-family: "Open Sans", sans-serif;
 
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-family: var(--fontFamily, "Roboto", sans-serif);
   font-size: 1rem;
   color: rgb(255, 255, 255);
   color: var(--fontColor, rgb(255, 255, 255));
@@ -1828,7 +1990,7 @@ label {
   color: rgb(255, 255, 255);
 
   color: var(--selectTextColor, rgb(255, 255, 255));
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   height: 2.125rem;

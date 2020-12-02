@@ -5,14 +5,25 @@
     ==========================================================================
 
   */
-  --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
+  --backgroundColor: rgb(234, 238, 244);
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
   --fontLowContrastColor: var(--colorQuaternaryDarken1, rgb(166, 171, 182));
   --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
   --fontInvertedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
 
   --fontLinkColor: var(--colorPrimary, rgb(0, 90, 143));
-  --fontLinkHoverColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+	--fontLinkHoverColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+	
+	/* KM Palette Colors */
+	--defaultText: rgb(41, 42, 45);
+	--secondaryText: rgb(81, 85, 91);
+	--globalAppHeader: rgb(23, 38, 53);
+	--surfaceElements: var(--colorWhite);
+	--primary: rgb(0, 90, 143);
+	--primaryLight: rgb(47, 122, 167);
+	--primaryDark: rgb(0, 72, 114);
+	--primaryElementText: var(--colorWhite);
+	--inputBackground: var(--colorWhite);
 
   --wcagCompliance: rgba(0, 0, 0, 0.5);
   --criticalBorder: #7f1c1c;
