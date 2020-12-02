@@ -80,21 +80,17 @@
   border: 1px solid var(--controlBorderColor, rgb(122, 193, 255));
 }
 
-.rux-checkbox input[type="checkbox"] + label::before,
-.satcom-checkbox input[type="checkbox"] + label::before {
+.rux-checkbox input[type="checkbox"] + label::before{
   border-radius: 2px;
 }
 
-.rux-radio-button input[type="radio"] + label::before,
-.satcom-radio-button input[type="radio"] + label::before {
+.rux-radio-button input[type="radio"] + label::before{
   border-radius: 100%;
   background-color: transparent;
 }
 
 .rux-checkbox input[type="checkbox"]:checked + label::before,
-.satcom-checkbox input[type="checkbox"]:checked + label::before,
-.rux-radio-button input[type="radio"]:checked + label::before,
-.satcom-radio-button input[type="radio"]:checked + label::before {
+.rux-radio-button input[type="radio"]:checked + label::before {
   background-color: var(
     --controlSelectedOutlineBackgroundColor,
     rgb(58, 129, 191)
@@ -103,9 +99,7 @@
 }
 
 .rux-checkbox input[type="checkbox"]:checked + label::after,
-.satcom-checkbox input[type="checkbox"]:checked + label::after,
-.rux-radio-button input[type="radio"]:checked + label::after,
-.satcom-radio-button input[type="radio"]:checked + label::after {
+.rux-radio-button input[type="radio"]:checked + label::after {
   position: absolute;
   top: 5px;
   display: flex;
@@ -113,8 +107,7 @@
   content: "";
 }
 
-.rux-checkbox input[type="checkbox"]:checked + label::after,
-.satcom-checkbox input[type="checkbox"]:checked + label::after {
+.rux-checkbox input[type="checkbox"]:checked + label::after {
   height: 6px;
   width: 12px;
   left: 4px;
@@ -124,8 +117,7 @@
   transform: rotate(125deg);
 }
 
-.rux-radio-button input[type="radio"]:checked + label::after,
-.satcom-radio-button input[type="radio"]:checked + label::after {
+.rux-radio-button input[type="radio"]:checked + label::after {
   left: 5px;
 
   height: 10px;
@@ -138,9 +130,7 @@
 }
 
 .rux-checkbox input[type="checkbox"]:disabled + label,
-.satcom-checkbox input[type="checkbox"]:disabled + label,
-.rux-radio-button input[type="radio"]:disabled + label,
-.satcom-radio-button input[type="radio"]:disabled + label {
+.rux-radio-button input[type="radio"]:disabled + label {
   cursor: var(--disabledCursor, not-allowed);
   opacity: var(--disabledOpacity, 0.4);
 }

@@ -454,14 +454,14 @@
   --tableBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
 
   --tableHeaderBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
-  --tableHeaderTextColor: var(--colorQuaternaryDarken4, rgb(41, 43, 45));
+  --tableHeaderTextColor: var(--defaultText, rgb(41, 42, 45));
   --tableHeaderBoxShadow:  0 0.1rem .45rem rgba(0, 0, 0, 0.2);
   --tableHeaderAccentColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
 
   --tableRowBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --tableRowSelectedBackgroundColor:  var(--colorQuaternaryLighten3, rgb(236, 239, 244));
   --tableRowHoverBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
-  --tableRowTextColor: var(--colorQuaternaryDarken4, rgb(41, 43, 45));
+  --tableRowTextColor: var(--defaultText, rgb(41, 42, 45));
   --tableRowBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
   
   --tableControlsBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
