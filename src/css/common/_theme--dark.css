@@ -37,7 +37,7 @@
   --colorCaution: var(--statusDarkCaution);
   --colorNormal: var(--statusDarkNormal);
   --colorStandby: var(--statusDarkStandby);
-  --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
+  --colorOff: var(--statusDarkOff);
 
   /* 
     
@@ -181,7 +181,7 @@
   --toggleTrackBackgroundColor: var(--colorGray);
 
   /* Selected State */
-  /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153)); */
+  /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2); */
   --toggleSelectedThumbBorderColor: #fff;
 
   --toggleSelectedTrackBackgroundColor: var(--primary);
