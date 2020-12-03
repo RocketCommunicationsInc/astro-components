@@ -18,8 +18,7 @@
 
 .rux-checkbox,
 .satcom-checkbox,
-.rux-radio-button,
-.satcom-radio-button {
+.rux-radio-button{
   display: flex;
   position: relative;
   margin: 0 0 1rem 0;
@@ -56,7 +55,7 @@
   align-items: center;
   justify-content: flex-start;
 
-  color: var(--controlLabelColor, rgb(255, 255, 255));
+  color: var(--controlLabelColor);
 }
 
 .rux-checkbox input[type="checkbox"] + label::before,
@@ -68,8 +67,8 @@
 
   align-self: start;
 
-  height: var(--controlOptionSize, 1.25rem);
-  width: var(--controlOptionSize, 1.25rem);
+  height: var(--controlOptionSize);
+  width: var(--controlOptionSize);
 
   margin: 0 0.625rem 0 0;
 
@@ -87,11 +86,8 @@
 
 .rux-checkbox input[type="checkbox"]:checked + label::before,
 .rux-radio-button input[type="radio"]:checked + label::before {
-  background-color: var(
-    --controlSelectedOutlineBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  border-color: var(--controlSelectedOutlineBorderColor, rgb(255, 255, 255));
+  background-color: var(--controlSelectedOutlineBackgroundColor);
+  border-color: var(--controlSelectedOutlineBorderColor);
 }
 
 .rux-checkbox input[type="checkbox"]:checked + label::after,
@@ -122,11 +118,11 @@
   border-radius: 100%;
   /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
 
-  background-color: var(--controlTextColor, rgb(255, 255, 255));
+  background-color: var(--controlTextColor);
 }
 
 .rux-checkbox input[type="checkbox"]:disabled + label,
 .rux-radio-button input[type="radio"]:disabled + label {
-  cursor: var(--disabledCursor, not-allowed);
-  opacity: var(--disabledOpacity, 0.4);
+  cursor: var(--disabledCursor);
+  opacity: var(--disabledOpacity);
 }
