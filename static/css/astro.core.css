@@ -2090,7 +2090,7 @@ label {
 
   font-family: "Roboto", sans-serif;
 
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
   color: rgb(255, 255, 255);
@@ -2124,16 +2124,13 @@ label {
   width: 100%;
   padding: 0 1rem;
 
-  border: 1px solid transparent;
-
-  border: 1px solid var(--inputBorderColor, transparent);
+  border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
 
   font-size: 1rem;
 
   font-size: var(--fontSize, 1rem);
-  color: rgb(0, 0, 0);
-  color: var(--inputTextColor, rgb(0, 0, 0));
+  color: var(--inputTextColor);
 }
 
 .rux-form-field textarea {
@@ -2147,22 +2144,19 @@ label {
 
   border: 1px solid transparent;
 
-  border: 1px solid transparent;
-
-  border: 1px solid var(--inputBorderColor, transparent);
+  border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
 
   font-family: "Open Sans", sans-serif;
 
   font-family: "Roboto", sans-serif;
 
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
   color: rgb(0, 0, 0);
-  color: rgb(0, 0, 0);
-  color: var(--inputTextColor, rgb(0, 0, 0));
+  color: var(--inputTextColor);
 }
 
 .rux-form-field input[type="number"]::-webkit-inner-spin-button,
@@ -2310,11 +2304,7 @@ label {
 
   background: no-repeat center left 0.3rem/1.1em
     url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
-    rgb(255, 255, 255);
-
-  background: no-repeat center left 0.3rem/1.1em
-    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
-    var(--inputBackgroundColor, rgb(255, 255, 255));
+    var(--inputBackgroundColor);
 }
 
 .rux-form-field--large input[type="search"] {
