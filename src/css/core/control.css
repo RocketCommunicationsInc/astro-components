@@ -49,9 +49,7 @@
 }
 
 .rux-checkbox input[type="checkbox"] + label,
-.satcom-checkbox input[type="checkbox"] + label,
-.rux-radio-button input[type="radio"] + label,
-.satcom-radio-button input[type="radio"] + label {
+.rux-radio-button input[type="radio"] + label {
   position: relative;
   display: flex;
 
@@ -62,9 +60,7 @@
 }
 
 .rux-checkbox input[type="checkbox"] + label::before,
-.satcom-checkbox input[type="checkbox"] + label::before,
-.rux-radio-button input[type="radio"] + label::before,
-.satcom-radio-button input[type="radio"] + label::before {
+.rux-radio-button input[type="radio"] + label::before{
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
@@ -111,8 +107,8 @@
   height: 6px;
   width: 12px;
   left: 4px;
-  border-right: 2px solid var(--controlTextColor, rgb(255, 255, 255));
-  border-top: 2px solid var(--controlTextColor, rgb(255, 255, 255));
+  border-right: 2px solid var(--controlTextColor);
+  border-top: 2px solid var(--controlTextColor);
 
   transform: rotate(125deg);
 }

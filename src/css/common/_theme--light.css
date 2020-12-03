@@ -60,7 +60,7 @@
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --buttonActiveControlTextColor: var(--colorWhite);
   --buttonActiveBackgroundColor: var(--primary, rgb(0, 90, 143));
   --buttonActiveBorderColor: var(--primary, rgb(0, 90, 143));
 
