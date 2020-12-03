@@ -610,7 +610,7 @@
 
   */
 
-  --modalTextColor: var(--colorBlack);
+  --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--colorWhite);
   --modalBorderColor: var(--primary);
   /* 
@@ -800,7 +800,7 @@ li.light-theme {
 
 	/* KM Dark Palette Colors */
 	--backgroundColor: #101923;
-	--defaultText: #172635;
+	--defaultText: #FFFFFF;
 	--secondaryText: #d4d8dd;
 	--globalAppHeader: #172635;
 	--surfaceElements: #1b2d3e;
@@ -1027,6 +1027,18 @@ li.light-theme {
   --clockBackgroundColor: var(--globalAppHeader);
   --clockBorderColor: var(--colorTertiary);
 
+	/* 
+    
+    Modal Colors 
+    ==========================================================================
+
+  */
+
+  --modalTextColor: var(--defaultText);
+  --modalBackgroundColor: var(--surfaceElements);
+  --modalBorderColor: var(--primary);
+	/* 
+	
   /* 
     
     Log Colors 
@@ -1336,20 +1348,14 @@ body {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-  font-family: var(--fontFamily, "Roboto", sans-serif);
+  font-family: var(--fontFamily);
   font-size: 1rem;
-  color: rgb(255, 255, 255);
-  color: var(--fontColor, rgb(255, 255, 255));
+  color: var(--defaultText);
 
-  background-color: rgb(24, 38, 53);
+  background-color: var(--backgroundColor);
 
-  background-color: var(--backgroundColor, rgb(24, 38, 53));
-
-  scrollbar-color: rgb(58, 129, 191)
-    rgb(32, 50, 70);
-
-  scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
-    var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
+  scrollbar-color: var(--scrollBarThumbBackgroundColor)
+    var(--scrollBarTrackCornerBackgroundColor);
 }
 
 label {
@@ -1369,8 +1375,7 @@ label {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(46, 103, 153);
-  background-color: var(--scrollBarThumbBackgroundColor, rgb(46, 103, 153));
+  background-color: var(--scrollBarThumbBackgroundColor);
   border-radius: 10px;
   border: 3px solid transparent;
   background-clip: padding-box;
@@ -1386,18 +1391,12 @@ label {
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(58, 129, 191)
-  ;
-  background-color: var(
-    --scrollBarThumbBackgroundHoverColor,
-    rgb(58, 129, 191)
-  );
+  background-color: var(--scrollBarThumbBackgroundHoverColor);
 }
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background-color: rgb(32, 50, 70);
-  background-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
+  background-color: var(--scrollBarTrackCornerBackgroundColor);
 }
 ::-webkit-scrollbar-track:vertical {
   box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
