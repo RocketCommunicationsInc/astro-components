@@ -18,7 +18,7 @@
 	--inputBackground: #ffffff;
 
   /* styles */
-  --fontColor: var(--colorBlack);
+  --fontColor: var(--defaultText);
   --fontLowContrastColor: var(--colorQuaternaryDarken1);
   --fontInvertedColor: var(--colorWhite);
   --fontInvertedBackgroundColor: var(--colorBlack);
@@ -134,17 +134,17 @@
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --popupMenuBorderColor: var(--colorSecondary, rgb(77, 172, 255));
-  --popupMenuTextColor: var(--colorBlack, rgb(0,0,0));
+  --popupMenuBackgroundColor: var(--colorWhite);
+  --popupMenuBorderColor: var(--colorSecondary);
+  --popupMenuTextColor: var(--colorBlack);
 
-  --popupCaretBackgroundColor: var(--popupMenuBorderColor, rgb(77, 172, 255));
+  --popupCaretBackgroundColor: var(--popupMenuBorderColor);
 
-  --popupMenuItemBackgroundColor: var(--primary, rgb(0, 90, 143));
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3, rgb(211, 234, 255));
-  --popupMenuItemHoverTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --popupMenuItemBackgroundColor: var(--primary);
+  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3);
+  --popupMenuItemHoverTextColor: var(--colorBlack);
 
-  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2, rgb(123, 128, 137));
+  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2);
 
   /* 
     
@@ -152,16 +152,13 @@
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--primary, rgb(0, 90, 143));
-  --sliderThumbBorderColor: var(--colorWhite, rgb(255, 255, 255));
+  --sliderThumbBackgroundColor: var(--primary);
+  --sliderThumbBorderColor: var(--colorWhite);
 
-  --sliderTrackBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
-  --sliderTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --sliderTrackBorderColor: var(--colorQuaternary);
+  --sliderTrackBackgroundColor: var(--colorWhite);
 
-  --sliderSelectedTrackBackgroundColor: var(
-    --colorSecondary,
-    rgb(77, 172, 255)
-  );
+  --sliderSelectedTrackBackgroundColor: var(--colorSecondary);
 
   /* 
     
@@ -169,23 +166,20 @@
     ==========================================================================
 
   */
-  --segmentedButtonBorderColor: var(--primary, rgb(0, 90, 143));
-  --segmentedButtonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --segmentedButtonTextColor: var(--primary, rgb(0, 90, 143));
+  --segmentedButtonBorderColor: var(--primary);
+  --segmentedButtonBackgroundColor: var(--colorWhite);
+  --segmentedButtonTextColor: var(--primary);
 
   --segmentedButtonHoverBackgroundColor: rgb(0, 90, 143, 0.05);
-  --segmentedButtonHoverTextColor: var(--primary, rgb(0, 90, 143));
+  --segmentedButtonHoverTextColor: var(--primary);
 
-  --segmentedButtonSelectedBackgroundColor: var(
-    --colorSecondaryDarken1,
-    rgb(58, 129, 191)
-  );
+  --segmentedButtonSelectedBackgroundColor: var(--colorSecondaryDarken1);
 
   --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1),
     inset 0 1px 5px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.067s ease-out;
 
-  --segmentedButtonSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --segmentedButtonSelectedTextColor: var(--colorWhite);
 
   /* 
     
@@ -193,9 +187,9 @@
     ==========================================================================
     
   */
-  --selectBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --selectBorderColor: var(--primary, rgb(0, 90, 143));
-  --selectTextColor: var(--primary, rgb(0, 90, 143));
+  --selectBackgroundColor: var(--colorWhite);
+  --selectBorderColor: var(--primary);
+  --selectTextColor: var(--primary);
   --selectCaret: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23#004872%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
 
   /* 
@@ -205,7 +199,7 @@
 
   */
 
-  --toggleButtonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --toggleButtonBackgroundColor: var(--colorWhite);
   --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25),
     1px 0 2px rgba(0, 0, 0, 0.3);
 
@@ -214,38 +208,29 @@
     var(--colorNormal) 50%,
     var(--colorPrimaryLighten4) 50.1%
   );
-	--toggleBaseBorderColor: var(--primaryLight, rgb(47, 122, 167));
-  --toggleBaseTextColor: var(--primary, rgb(255, 255, 255));
+	--toggleBaseBorderColor: var(--primaryLight);
+  --toggleBaseTextColor: var(--primary);
 
   --toggleBaseSelectedTextColor: #007300;
   --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
     -1px 0 2px rgba(0, 0, 0, 0.3);
 
   /* Alt Toggle */
-  --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
-  --toggleThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --toggleThumbBorderColor: var(--colorGrayDarken2);
+  --toggleThumbBackgroundColor: var(--colorWhite);
 
-  --toggleSelectedThumbBorderColor: var(
-    --colorStandbyDarken2,
-    rgb(27, 122, 153)
-  );
-  --toggleSelectedThumbBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
+  --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2);
+  --toggleSelectedThumbBackgroundColor: var(--colorStandby);
 
-  --toggleTrackBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
-  --toggleTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
+  --toggleTrackBorderColor: var(--colorGrayDarken2);
+  --toggleTrackBackgroundColor: var(--colorGray);
 
-  --toggleSelectedTrackBorderColor: var(
-    --colorStandbyDarken2,
-    rgb(27, 122, 153)
-  );
-  --toggleSelectedTrackBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
+  --toggleSelectedTrackBorderColor: var(--colorStandbyDarken2);
+  --toggleSelectedTrackBackgroundColor: var(--colorStandby);
 
-  --toggleDisabledThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
-  --toggleDisabledThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --toggleDisabledSelectedThumbBorderColor: var(
-    --colorPrimaryLighten3,
-    rgb(153, 189, 210)
-  );
+  --toggleDisabledThumbBorderColor: var(--colorGrayDarken1);
+  --toggleDisabledThumbBackgroundColor: var(--colorWhite);
+  --toggleDisabledSelectedThumbBorderColor: var(--colorPrimaryLighten3);
 
   /* 
     
@@ -254,11 +239,11 @@
 
   */
 
-  --pushbuttonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --pushbuttonBorderColor: var(--primary, rgb(0, 90, 143));
-  --pushbuttonTextColor: var(--primary, rgb(0, 90, 143));
+  --pushbuttonBackgroundColor: var(--colorWhite);
+  --pushbuttonBorderColor: var(--primary);
+  --pushbuttonTextColor: var(--primary);
 
-  --pushbuttonSelectedBackgroundColor: var(--colorNormal, rgb(91, 255, 0));
+  --pushbuttonSelectedBackgroundColor: var(--colorNormal);
   --pushbuttonSelectedBorderColor: #3dc100;
   /* var(--colorNormal, rgb(91, 255, 0)); */
   --pushbuttonSelectedTextColor: #007300;
@@ -271,9 +256,9 @@
 
   */
 
-  --clockTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --clockBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --clockBorderColor: var(--colorQuaternary, rgb(39, 86, 128));
+  --clockTextColor: var(--colorBlack);
+  --clockBackgroundColor: var(--colorWhite);
+  --clockBorderColor: var(--colorQuaternary);
 
   /* 
     
@@ -282,9 +267,9 @@
 
   */
 
-  --modalTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --modalBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --modalBorderColor: var(--primary, rgb(0, 90, 143));
+  --modalTextColor: var(--colorBlack);
+  --modalBackgroundColor: var(--colorWhite);
+  --modalBorderColor: var(--primary);
   /* 
     
     Log Colors 
@@ -307,26 +292,23 @@
     ==========================================================================
 
   */
-  --treeTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --treeBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --treeBorderColor: var(--colorQuaternary, 207, 214, 227);
-  --treeItemBorderColor: var(--colorQuaternary, 207, 214, 227);
-  --treeAccentColor: var(--colorSecondary, rgb(77, 172, 255));
+  --treeTextColor: var(--colorBlack);
+  --treeBackgroundColor: var(--colorWhite);
+  --treeBorderColor: var(--colorQuaternary);
+  --treeItemBorderColor: var(--colorQuaternary);
+  --treeAccentColor: var(--colorSecondary);
 
-  --treeHoverBackgroundColor: var(--colorSecondaryLighten4, rgb(219, 238, 255));
-  --treeHoverAccentColor: var(--colorSecondaryLighten3, rgb(184, 222, 255));
+  --treeHoverBackgroundColor: var(--colorSecondaryLighten4);
+  --treeHoverAccentColor: var(--colorSecondaryLighten3);
 
   --treeSelectedBackgroundColor: var(
     --colorSecondaryLighten3,
     rgb(184, 222, 255)
   );
-  --treeSelectedAccentColor: var(--colorSecondaryLighten1, rgb(113, 189, 255));
-  --treeSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --treeSelectedAccentColor: var(--colorSecondaryLighten1);
+  --treeSelectedTextColor: var(--colorBlack);
 
-  --treeChildrenBackgroundColor: var(
-    --backgroundColor,
-    rgb(234, 238, 244)
-  );
+  --treeChildrenBackgroundColor: var(--backgroundColor);
 
   /* 
     
@@ -334,14 +316,14 @@
     ==========================================================================
 
   */
-  --tabTextColor: var(--primary, rgb(0, 90, 143));
-  --tabBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --tabBorderColor: var(--colorQuaternaryLighten1, rgb(219, 224, 234));
+  --tabTextColor: var(--primary);
+  --tabBackgroundColor: var(--colorWhite);
+  --tabBorderColor: var(--colorQuaternaryLighten1);
 
-  --tabHoverTextColor: var(--colorSecondary, rgb(77, 172, 255));
+  --tabHoverTextColor: var(--colorSecondary);
 
-  --tabSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --tabSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
+  --tabSelectedTextColor: var(--colorBlack);
+  --tabSelectedBorderColor: var(--colorSecondary);
 
   /* 
     
@@ -361,14 +343,14 @@
     
   */
 
-  --inputBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --inputBorderColor: var(--colorQuaternaryDarken1, rgb(255, 255, 255));
-  --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
+  --inputBackgroundColor: var(--colorWhite);
+  --inputBorderColor: var(--colorQuaternaryDarken1);
+  --inputTextColor: var(--colorBlack);
 
   --inputFocusBorderColor: var(--colorSecondary);
   --inputFocusBoxShadow: none;
 
-  --inputInvalidBorderColor: var(--colorCritical, rgb(255, 48, 48));
+  --inputInvalidBorderColor: var(--colorCritical);
 
   /* 
     
@@ -388,8 +370,8 @@
     
   */
 
-  --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1, #9ba0aa);
-  --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2, #676a71);
+  --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1);
+  --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2);
   --scrollBarTrackBackgroundColor: transparent;
   --scrollBarTrackCornerBackgroundColor: var(
     --colorQuaternaryLighten4,
@@ -403,33 +385,24 @@
       
   */
 
-  --timelineHeaderBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
-  --timelineHeaderTextColor: var(--fontColor, rgb(0, 0, 0));
+  --timelineHeaderBackgroundColor: var(--colorQuaternary);
+  --timelineHeaderTextColor: var(--fontColor);
 
-  --timelineRulerBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
-  --timelineRulerTextColor: var(--fontColor, rgb(0, 0, 0));
+  --timelineRulerBackgroundColor: var(--colorQuaternary);
+  --timelineRulerTextColor: var(--fontColor);
 
-  --timelineTrackLabelBackgroundColor: var(
-    --colorQuaternaryLighten2,
-    rgb(40, 63, 88)
-  );
+  --timelineTrackLabelBackgroundColor: var(--colorQuaternaryLighten2);
   --timelineTrackBackgroundColor: var(
     --colorQuaternaryLighten2,
     rgb(40, 63, 88)
   );
 
-  --timelineRegionBackgroundColor: var(--primaryLighten4, rgb(24, 38, 53));
-  --timelineRegionTextColor: var(--fontColor, rgb(255, 255, 255));
+  --timelineRegionBackgroundColor: var(--primaryLighten4);
+  --timelineRegionTextColor: var(--fontColor);
   --timelineRegionBorderColor: var(--primaryLighten3);
 
-  --timelineRegionSelectedBorderColor: var(
-    --colorSecondaryDarken3,
-    rgb(77, 172, 255)
-  );
-  --timelineRegionSelectedBackgroundColor: var(
-    --colorSecondaryDarken1,
-    rgb(62, 138, 204)
-  );
+  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken3);
+  --timelineRegionSelectedBackgroundColor: var(--colorSecondaryDarken1);
   --timelineRegionSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
 
   /* 
@@ -454,24 +427,24 @@
       
   */
 
-  --tableBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
+  --tableBorderColor: var(--colorQuaternary);
 
-  --tableHeaderBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
-  --tableHeaderTextColor: var(--defaultText, rgb(41, 42, 45));
+  --tableHeaderBackgroundColor: var(--colorQuaternary);
+  --tableHeaderTextColor: var(--defaultText);
   --tableHeaderBoxShadow:  0 0.1rem .45rem rgba(0, 0, 0, 0.2);
-  --tableHeaderAccentColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
+  --tableHeaderAccentColor: var(--colorQuaternaryLighten2);
 
-  --tableRowBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --tableRowSelectedBackgroundColor:  var(--backgroundColor, rgb(234, 238, 244));
-  --tableRowHoverBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
-  --tableRowTextColor: var(--defaultText, rgb(41, 42, 45));
-  --tableRowBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
+  --tableRowBackgroundColor: var(--colorWhite);
+  --tableRowSelectedBackgroundColor:  var(--backgroundColor);
+  --tableRowHoverBackgroundColor: var(--colorQuaternary);
+  --tableRowTextColor: var(--defaultText);
+  --tableRowBorderColor: var(--colorQuaternary);
   
-  --tableControlsBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
-  --tableCellSelectedBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
-  --tableFilterBorderColor: var(--primary, rgb(0, 90, 143));
-  --tableFilterDisabledBorderColor: var(--colorTertiaryLighten3, rgb(40, 63, 88));
-  --tableFilterDisabledBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
+  --tableControlsBackgroundColor: var(--colorQuaternaryLighten2);
+  --tableCellSelectedBorderColor: var(--colorQuaternary);
+  --tableFilterBorderColor: var(--primary);
+  --tableFilterDisabledBorderColor: var(--colorTertiaryLighten3);
+  --tableFilterDisabledBackgroundColor: var(--colorQuaternaryLighten2);
 }
 
 li.light-theme {
