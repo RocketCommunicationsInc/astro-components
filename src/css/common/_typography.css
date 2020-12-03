@@ -72,8 +72,8 @@ dd {
 
 .invert,
 .inverted {
-  background-color: var(--fontInvertedBackgroundColor, rgb(255, 255, 255));
-  color: var(--fontInvertedColor, rgb(0, 0, 0));
+  background-color: var(--fontInvertedBackgroundColor);
+  color: var(--fontInvertedColor);
   padding: 0 0.25rem;
 }
 
@@ -83,21 +83,21 @@ dd {
 
 /* Size Options */
 .xl {
-  font-size: var(--fontSizeXL, 1.125rem);
+  font-size: var(--fontSizeXL);
 }
 
 .lg {
-  font-size: var(--fontSize, 1rem);
+  font-size: var(--fontSize);
 }
 
 .md {
-  font-size: var(--fontSizeMD, 0.875rem);
+  font-size: var(--fontSizeMD);
 }
 
 .sm {
-  font-size: var(--fontSizeSM, 0.75rem);
+  font-size: var(--fontSizeSM);
 }
 
 .xs {
-  font-size: var(--fontSizeXS, 0.65rem);
+  font-size: var(--fontSizeXS);
 }

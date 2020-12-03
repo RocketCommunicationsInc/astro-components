@@ -607,10 +607,10 @@
     
     Modal Colors 
     ==========================================================================
-
+ 
   */
 
-  --modalTextColor: var(--colorBlack);
+  --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--colorWhite);
   --modalBorderColor: var(--primary);
   /* 
@@ -800,7 +800,7 @@ li.light-theme {
 
 	/* KM Dark Palette Colors */
 	--backgroundColor: #101923;
-	--defaultText: #172635;
+	--defaultText: #FFFFFF;
 	--secondaryText: #d4d8dd;
 	--globalAppHeader: #172635;
 	--surfaceElements: #1b2d3e;
@@ -808,7 +808,7 @@ li.light-theme {
 	--primaryLight: #92cbff;
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
-	--inputBackground: #ffffff;
+	--inputBackground: #FFFFFF;
 
 	/* styles */
   --fontColor: var(--defaultText);
@@ -1025,7 +1025,19 @@ li.light-theme {
   */
   --clockTextColor: var(--colorWhite);
   --clockBackgroundColor: var(--globalAppHeader);
-  --clockBorderColor: var(--colorTertiary);
+	--clockBorderColor: var(--colorTertiary);
+
+	/* 
+    
+    Modal Colors 
+    ==========================================================================
+
+  */
+
+  --modalTextColor: var(--defaultText);
+  --modalBackgroundColor: var(--surfaceElements);
+  --modalBorderColor: var(--primary);
+  /* 
 
   /* 
     
@@ -1229,14 +1241,12 @@ p {
 }
 
 a {
-  color: rgb(77, 172, 255);
-  color: var(--fontLinkColor, rgb(77, 172, 255));
+  color: var(--fontLinkColor);
   text-decoration: none;
 }
 
 a:hover {
-  color: rgb(113, 189, 255);
-  color: var(--fontLinkHoverColor, rgb(113, 189, 255));
+  color: var(--fontLinkHoverColor);
 }
 
 dt {
@@ -1274,10 +1284,8 @@ dd {
 
 .invert,
 .inverted {
-  background-color: rgb(255, 255, 255);
-  background-color: var(--fontInvertedBackgroundColor, rgb(255, 255, 255));
-  color: rgb(0, 0, 0);
-  color: var(--fontInvertedColor, rgb(0, 0, 0));
+  background-color: var(--fontInvertedBackgroundColor);
+  color: var(--fontInvertedColor);
   padding: 0 0.25rem;
 }
 
@@ -1288,27 +1296,27 @@ dd {
 /* Size Options */
 .xl {
   font-size: 1.125rem;
-  font-size: var(--fontSizeXL, 1.125rem);
+  font-size: var(--fontSizeXL);
 }
 
 .lg {
   font-size: 1rem;
-  font-size: var(--fontSize, 1rem);
+  font-size: var(--fontSize);
 }
 
 .md {
   font-size: 0.875rem;
-  font-size: var(--fontSizeMD, 0.875rem);
+  font-size: var(--fontSizeMD);
 }
 
 .sm {
   font-size: 0.75rem;
-  font-size: var(--fontSizeSM, 0.75rem);
+  font-size: var(--fontSizeSM);
 }
 
 .xs {
   font-size: 0.65rem;
-  font-size: var(--fontSizeXS, 0.65rem);
+  font-size: var(--fontSizeXS);
 }
 
 /*

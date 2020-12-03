@@ -7,7 +7,7 @@
 
 	/* KM Dark Palette Colors */
 	--backgroundColor: #101923;
-	--defaultText: #172635;
+	--defaultText: #FFFFFF;
 	--secondaryText: #d4d8dd;
 	--globalAppHeader: #172635;
 	--surfaceElements: #1b2d3e;
@@ -15,7 +15,7 @@
 	--primaryLight: #92cbff;
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
-	--inputBackground: #ffffff;
+	--inputBackground: #FFFFFF;
 
 	/* styles */
   --fontColor: var(--defaultText);
@@ -232,7 +232,19 @@
   */
   --clockTextColor: var(--colorWhite);
   --clockBackgroundColor: var(--globalAppHeader);
-  --clockBorderColor: var(--colorTertiary);
+	--clockBorderColor: var(--colorTertiary);
+
+	/* 
+    
+    Modal Colors 
+    ==========================================================================
+
+  */
+
+  --modalTextColor: var(--defaultText);
+  --modalBackgroundColor: var(--surfaceElements);
+  --modalBorderColor: var(--primary);
+  /* 
 
   /* 
     
