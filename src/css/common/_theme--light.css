@@ -246,11 +246,11 @@
     
     Modal Colors 
     ==========================================================================
-
+ 
   */
 
   --modalTextColor: var(--defaultText);
-  --modalBackgroundColor: var(--surfaceElements);
+  --modalBackgroundColor: var(--colorWhite);
   --modalBorderColor: var(--primary);
   /* 
     

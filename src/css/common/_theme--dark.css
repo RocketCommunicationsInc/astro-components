@@ -15,7 +15,7 @@
 	--primaryLight: #92cbff;
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
-	--inputBackground: #ffffff;
+	--inputBackground: #FFFFFF;
 
 	/* styles */
   --fontColor: var(--defaultText);
@@ -232,7 +232,19 @@
   */
   --clockTextColor: var(--colorWhite);
   --clockBackgroundColor: var(--globalAppHeader);
-  --clockBorderColor: var(--colorTertiary);
+	--clockBorderColor: var(--colorTertiary);
+
+	/* 
+    
+    Modal Colors 
+    ==========================================================================
+
+  */
+
+  --modalTextColor: var(--defaultText);
+  --modalBackgroundColor: var(--surfaceElements);
+  --modalBorderColor: var(--primary);
+  /* 
 
 	/* 
     

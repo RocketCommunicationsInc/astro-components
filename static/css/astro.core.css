@@ -607,11 +607,11 @@
     
     Modal Colors 
     ==========================================================================
-
+ 
   */
 
   --modalTextColor: var(--defaultText);
-  --modalBackgroundColor: var(--surfaceElements);
+  --modalBackgroundColor: var(--colorWhite);
   --modalBorderColor: var(--primary);
   /* 
     
@@ -808,7 +808,7 @@ li.light-theme {
 	--primaryLight: #92cbff;
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
-	--inputBackground: #ffffff;
+	--inputBackground: #FFFFFF;
 
 	/* styles */
   --fontColor: var(--defaultText);
@@ -1025,7 +1025,19 @@ li.light-theme {
   */
   --clockTextColor: var(--colorWhite);
   --clockBackgroundColor: var(--globalAppHeader);
-  --clockBorderColor: var(--colorTertiary);
+	--clockBorderColor: var(--colorTertiary);
+
+	/* 
+    
+    Modal Colors 
+    ==========================================================================
+
+  */
+
+  --modalTextColor: var(--defaultText);
+  --modalBackgroundColor: var(--surfaceElements);
+  --modalBorderColor: var(--primary);
+  /* 
 
 	/* 
     
