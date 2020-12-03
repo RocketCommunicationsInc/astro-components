@@ -842,8 +842,8 @@ li.light-theme {
 
   /* Button */
   --buttonTextColor: var(--colorWhite);
-  --buttonBackgroundColor: var(--colorPrimary);
-  --buttonBorderColor: var(--colorPrimary);
+  --buttonBackgroundColor: var(--primary);
+  --buttonBorderColor: var(--primary);
   --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
@@ -1009,9 +1009,9 @@ li.light-theme {
     ==========================================================================
 
   */
-  --pushbuttonBackgroundColor: var(--colorPrimary);
+  --pushbuttonBackgroundColor: var(--primary);
   --pushbuttonBorderColor: var(--colorBlack);
-  --pushbuttonTextColor: var(--colorWhite);
+  --pushbuttonTextColor: var(--primaryElementText);
 
   --pushbuttonSelectedBackgroundColor: var(--colorBlack);
   --pushbuttonSelectedBorderColor: var(--colorBlack);
