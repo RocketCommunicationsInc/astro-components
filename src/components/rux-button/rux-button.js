@@ -51,7 +51,7 @@ export class RuxButton extends LitElement {
           min-width: 2.25rem;
           /* max-width: 10.125rem; */
 
-          border-radius: var(--buttonBorderRadius, 3px);
+          border-radius: var(--buttonBorderRadius);
 
           color: var(--buttonTextColor);
           font-family: var(--fontFamily);
@@ -85,8 +85,8 @@ export class RuxButton extends LitElement {
           outline: none;
         }
         .rux-button:not(.rux-button--outline) {
-          border: 1px solid var(--buttonBackgroundColor);
-          background-color: var(--buttonBorderColor);
+          border: 1px solid var(--buttonBorderColor);
+          background-color: var(--buttonBackgroundColor);
           box-shadow: var(
             --controlBoxShadow,
             0 2px 4px rgba(0, 0, 0, 0.14),
@@ -150,14 +150,14 @@ export class RuxButton extends LitElement {
         */
 
         .rux-button--small {
-          font-size: var(--smallLabelTextSize, 0.875rem);
+          font-size: var(--smallLabelTextSize);
           height: 1.625rem;
           padding: 0 1rem;
           line-height: 1;
         }
 
         .rux-button--large {
-          font-size: var(--largeLabelTextSize, 1.125rem);
+          font-size: var(--largeLabelTextSize);
           height: 2.875rem;
           /* min-width: 2.875rem; */
           padding: 0 1.5rem;
