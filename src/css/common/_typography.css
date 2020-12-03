@@ -29,12 +29,12 @@ p {
 }
 
 a {
-  color: var(--fontLinkColor, rgb(77, 172, 255));
+  color: var(--fontLinkColor);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--fontLinkHoverColor, rgb(113, 189, 255));
+  color: var(--fontLinkHoverColor);
 }
 
 dt {
