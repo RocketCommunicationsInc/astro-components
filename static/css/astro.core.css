@@ -16,7 +16,8 @@
   --largeLabelFontSize: 1.125rem;
 
   /* Typography */
-  --fontFamily: "Roboto", sans-serif;
+  --fontFamily: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --fontSize: 1rem; /* 16px */
   --fontSizeXL: 1.125rem;
   --fontSizeLG: 1rem;
@@ -25,7 +26,8 @@
   --fontSizeXS: 0.65rem;
 
   --fontFamilyLight: "Roboto Light", sans-serif;
-  --fontFamilyMono: "Roboto Mono", monospace;
+	--fontFamilyMono: "Roboto Mono", SFMono-Regular, Menlo, Monaco,
+										Consolas, "Liberation Mono", "Courier New", monospace;
 
   --colorBlack: rgb(0, 0, 0);
   --colorWhite: rgb(255, 255, 255);
@@ -419,25 +421,22 @@
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonActiveBackgroundColor: var(--primary, rgb(0, 90, 143));
-  --buttonActiveBorderColor: var(--primary, rgb(0, 90, 143));
+  --buttonActiveControlTextColor: var(--colorWhite);
+  --buttonActiveBackgroundColor: var(--primary);
+  --buttonActiveBorderColor: var(--primary);
 
   /* Default Button State */
-  --buttonDefaultBorderColor: var(--colorWhite, rgb(255, 255, 255));
+  --buttonDefaultBorderColor: var(--colorWhite);
 
   /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--primary, rgb(0, 90, 143));
+  --buttonOutlineTextColor: var(--primary);
   --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--primary, rgb(0, 90, 143));
+  --buttonOutlineBorderColor: var(--primary);
 
   /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--primary, rgb(0, 90, 143));
+  --buttonOutlineHoverTextColor: var(--primary);
   --buttonOutlineHoverBackgroundColor: rgba(77, 172, 255, 0.1);
-  --buttonOutlineHoverBorderColor: var(
-    --colorSecondaryDarken1,
-    rgb(58, 129, 191)
-  );
+  --buttonOutlineHoverBorderColor: var(--colorSecondaryDarken1);
 
   /* 
     
@@ -446,25 +445,19 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --controlLabelColor: var(--colorBlack, rgb(0, 0, 0));
-  --controlBackgroundColor: var(--colorSecondaryDarken1, rgb(62, 138, 204));
-  --controlBorderColor: var(--primary, rgb(0, 90, 143));
-  --controlAccentColor: var(--colorSecondary, rgb(77, 172, 255));
+  --controlTextColor: var(--colorWhite);
+  --controlLabelColor: var(--colorBlack);
+  --controlBackgroundColor: var(--colorSecondaryDarken1);
+  --controlBorderColor: var(--primary);
+  --controlAccentColor: var(--colorSecondary);
 
-  --controlSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --controlSelectedBackgroundColor: var(
-    --colorSecondaryDarken1,
-    rgb(58, 129, 191)
-  );
-  --controlSelectedBorderColor: var(--primary, rgb(0, 90, 143));
+  --controlSelectedTextColor: var(--colorBlack);
+  --controlSelectedBackgroundColor: var(--colorSecondaryDarken1);
+  --controlSelectedBorderColor: var(--primary);
 
   --controlHoverOutlineBackgroundColor: none;
-  --controlSelectedOutlineBorderColor: var(--primary, rgb(0, 90, 143));
-  --controlSelectedOutlineBackgroundColor: var(
-    --colorSecondaryDarken1,
-    rgb(58, 129, 191)
-  );
+  --controlSelectedOutlineBorderColor: var(--primary);
+  --controlSelectedOutlineBackgroundColor: var(--colorSecondaryDarken1);
 
   /* 
     
@@ -472,18 +465,9 @@
     ==========================================================================
 
   */
-  --progressDeterminateBarBackgroundColor: var(
-    --colorSecondary,
-    rgb(77, 172, 255)
-  );
-  --progressDeterminateTrackBackgroundColor: var(
-    --colorWhite,
-    rgb(255, 255, 255)
-  );
-  --progressDeterminateTrackBorderColor: var(
-    --colorQuaternary,
-    rgb(207, 214, 227)
-  );
+  --progressDeterminateBarBackgroundColor: var(--colorSecondary);
+  --progressDeterminateTrackBackgroundColor: var(--colorWhite);
+  --progressDeterminateTrackBorderColor: var(--colorQuaternary);
 
   --progressIndeterminate: url("data:image/svg+xml,%3Csvg width='66' height='66' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E %3ClinearGradient x1='70.883%25' y1='4.637%25' x2='50%25' y2='100%25' id='a'%3E %3Cstop stop-color='%23005a8f' offset='0%25'/%3E %3Cstop stop-color='%23005a8f' stop-opacity='0' offset='100%25'/%3E %3C/linearGradient%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M33 65.5C15.05 65.5.5 50.95.5 33S15.05.5 33 .5 65.5 15.05 65.5 33 50.95 65.5 33 65.5zm0-7c14.083 0 25.5-11.417 25.5-25.5S47.083 7.5 33 7.5 7.5 18.917 7.5 33 18.917 58.5 33 58.5z' stroke='%23D7DDE2' fill='%23FFF'/%3E %3Cpath d='M51.908 8.236l-2.358 3.245A26.894 26.894 0 0 0 32 5C17.088 5 5 17.088 5 32s12.088 27 27 27c1.129 0 2.242-.07 3.334-.204l4.435 3.222C37.286 62.66 34.683 63 32 63 14.88 63 1 49.12 1 32 1 14.88 14.88 1 32 1c7.579 0 14.522 2.72 19.908 7.236z' fill='url(%23a)' transform='translate(1 1)'/%3E %3Cpath d='M48.564 13c1.92 0 3.557-.64 4.075-2.367.112-.375.361-.67.361-1.08C53 7.248 51.572 5 49.234 5S45 6.867 45 9.17c0 2.304 1.225 3.83 3.564 3.83z' stroke='%23005a8f' fill='%23005a8f'/%3E %3C/g%3E %3C/svg%3E");
 
@@ -604,9 +588,9 @@
 
   --pushbuttonSelectedBackgroundColor: var(--colorNormal);
   --pushbuttonSelectedBorderColor: #3dc100;
-  /* var(--colorNormal, rgb(91, 255, 0)); */
+  /* var(--colorNormal); */
   --pushbuttonSelectedTextColor: #007300;
-  /* var(--colorWhite, rgb(255, 255, 255)); */
+  /* var(--colorWhite); */
 
   /* 
     
@@ -732,10 +716,7 @@
   --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1);
   --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2);
   --scrollBarTrackBackgroundColor: transparent;
-  --scrollBarTrackCornerBackgroundColor: var(
-    --colorQuaternaryLighten4,
-    #f2f4f7
-  );
+  --scrollBarTrackCornerBackgroundColor: var(--colorQuaternaryLighten4);
 
   /* 
     
@@ -762,7 +743,7 @@
 
   --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken3);
   --timelineRegionSelectedBackgroundColor: var(--colorSecondaryDarken1);
-  --timelineRegionSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --timelineRegionSelectedTextColor: var(--colorWhite);
 
   /* 
     
@@ -849,7 +830,7 @@ li.light-theme {
   --colorCaution: var(--statusDarkCaution);
   --colorNormal: var(--statusDarkNormal);
   --colorStandby: var(--statusDarkStandby);
-  --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
+  --colorOff: var(--statusDarkOff);
 
   /* 
     
@@ -993,7 +974,7 @@ li.light-theme {
   --toggleTrackBackgroundColor: var(--colorGray);
 
   /* Selected State */
-  /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2, rgb(27, 122, 153)); */
+  /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2); */
   --toggleSelectedThumbBorderColor: #fff;
 
   --toggleSelectedTrackBackgroundColor: var(--primary);
@@ -1248,14 +1229,12 @@ p {
 }
 
 a {
-  color: rgb(77, 172, 255);
-  color: var(--fontLinkColor, rgb(77, 172, 255));
+  color: var(--fontLinkColor);
   text-decoration: none;
 }
 
 a:hover {
-  color: rgb(113, 189, 255);
-  color: var(--fontLinkHoverColor, rgb(113, 189, 255));
+  color: var(--fontLinkHoverColor);
 }
 
 dt {
@@ -1293,10 +1272,8 @@ dd {
 
 .invert,
 .inverted {
-  background-color: rgb(255, 255, 255);
-  background-color: var(--fontInvertedBackgroundColor, rgb(255, 255, 255));
-  color: rgb(0, 0, 0);
-  color: var(--fontInvertedColor, rgb(0, 0, 0));
+  background-color: var(--fontInvertedBackgroundColor);
+  color: var(--fontInvertedColor);
   padding: 0 0.25rem;
 }
 
@@ -1307,27 +1284,27 @@ dd {
 /* Size Options */
 .xl {
   font-size: 1.125rem;
-  font-size: var(--fontSizeXL, 1.125rem);
+  font-size: var(--fontSizeXL);
 }
 
 .lg {
   font-size: 1rem;
-  font-size: var(--fontSize, 1rem);
+  font-size: var(--fontSize);
 }
 
 .md {
   font-size: 0.875rem;
-  font-size: var(--fontSizeMD, 0.875rem);
+  font-size: var(--fontSizeMD);
 }
 
 .sm {
   font-size: 0.75rem;
-  font-size: var(--fontSizeSM, 0.75rem);
+  font-size: var(--fontSizeSM);
 }
 
 .xs {
   font-size: 0.65rem;
-  font-size: var(--fontSizeXS, 0.65rem);
+  font-size: var(--fontSizeXS);
 }
 
 /*
@@ -1356,7 +1333,8 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   font-family: var(--fontFamily, "Roboto", sans-serif);
   font-size: 1rem;
@@ -1475,7 +1453,8 @@ label {
   color: rgb(255, 255, 255);
 
   color: var(--buttonTextColor, rgb(255, 255, 255));
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily, "Open Sans", sans-serif);
   font-size: 1rem;
 
@@ -1968,7 +1947,8 @@ label {
   flex-wrap: wrap;
   align-items: flex-start;
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   font-family: var(--fontFamily);
   font-size: 1rem;
@@ -2029,7 +2009,8 @@ label {
 
   font-family: "Open Sans", sans-serif;
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   font-family: var(--fontFamily);
   font-size: 1rem;
