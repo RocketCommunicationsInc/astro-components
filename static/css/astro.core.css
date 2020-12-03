@@ -611,7 +611,7 @@
   */
 
   --modalTextColor: var(--defaultText);
-  --modalBackgroundColor: var(--colorWhite);
+  --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
   /* 
     
