@@ -6,37 +6,37 @@
 	*/
 	
 	/* KM Light Palette Colors */
-	--backgroundColor: rgb(234, 238, 244);
-	--defaultText: rgb(41, 42, 45);
-	--secondaryText: rgb(81, 85, 91);
-	--globalAppHeader: rgb(23, 38, 53);
-	--surfaceElements: var(--colorWhite);
-	--primary: rgb(0, 90, 143);
-	--primaryLight: rgb(47, 122, 167);
-	--primaryDark: rgb(0, 72, 114);
-	--primaryElementText: var(--colorWhite);
-	--inputBackground: var(--colorWhite);
+	--backgroundColor: #eaeef4;
+	--defaultText: #292A2D;
+	--secondaryText: #51555B;
+	--globalAppHeader: #172635;
+	--surfaceElements: #ffffff;
+	--primary: #005A8F;
+	--primaryLight: #2F7AA7;
+	--primaryDark: #004872;
+	--primaryElementText: #ffffff;
+	--inputBackground: #ffffff;
 
   /* styles */
-  --fontColor: var(--colorBlack, rgb(0, 0, 0));
-  --fontLowContrastColor: var(--colorQuaternaryDarken1, rgb(166, 171, 182));
-  --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
-  --fontInvertedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
+  --fontColor: var(--colorBlack);
+  --fontLowContrastColor: var(--colorQuaternaryDarken1);
+  --fontInvertedColor: var(--colorWhite);
+  --fontInvertedBackgroundColor: var(--colorBlack);
 
-  --fontLinkColor: var(--primary, rgb(0, 90, 143));
-	--fontLinkHoverColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+  --fontLinkColor: var(--primary);
+	--fontLinkHoverColor: var(--colorSecondaryDarken1);
 	
 	
 
   --wcagCompliance: rgba(0, 0, 0, 0.5);
   --criticalBorder: #7f1c1c;
 
-  --colorCritical: var(--statusLightCritical, rgb(255, 42, 4));
-  --colorSerious: var(--statusLightSerious, rgb(255, 175, 61));
-  --colorCaution: var(--statusLightCaution, rgb(250, 216, 0));
-  --colorNormal: var(--statusLightNormal, rgb(0, 226, 0));
-  --colorStandby: var(--statusLightStandby, rgb(100, 217, 255));
-  --colorOff: var(--statusLightOff, rgb(142, 154, 163));
+  --colorCritical: var(--statusLightCritical);
+  --colorSerious: var(--statusLightSerious);
+  --colorCaution: var(--statusLightCaution);
+  --colorNormal: var(--statusLightNormal);
+  --colorStandby: var(--statusLightStandby);
+  --colorOff: var(--statusLightOff);
   /* 
     
     Button Colors 
@@ -46,16 +46,16 @@
   */
 
   /* Button */
-  --buttonTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonBackgroundColor: var(--primary, rgb(0, 90, 143));
-  --buttonBorderColor: var(--primary, rgb(0, 90, 143));
+  --buttonTextColor: var(--colorWhite);
+  --buttonBackgroundColor: var(--primary);
+  --buttonBorderColor: var(--primary);
   --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Hover State */
-  --buttonHoverTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+  --buttonHoverTextColor: var(--colorWhite);
+  --buttonHoverBackgroundColor: var(--colorSecondaryDarken1);
+  --buttonHoverBorderColor: var(--colorSecondaryDarken1);
   --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
