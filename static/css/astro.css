@@ -366,7 +366,7 @@
     ==========================================================================
 	*/
 	
-	/* KM Light Palette Colors */
+	/* Astro 5 Simplified Color Palette */
 	--backgroundColor: #eaeef4;
 	--defaultText: #292A2D;
 	--secondaryText: #51555B;
@@ -796,7 +796,7 @@ li.light-theme {
     =========================================================================
 	*/
 
-	/* KM Dark Palette Colors */
+	/* Astro 5 Simplified Colors */
 	--backgroundColor: #101923;
 	--defaultText: #FFFFFF;
 	--secondaryText: #d4d8dd;
@@ -966,8 +966,8 @@ li.light-theme {
 
   /* Alt Toggle */
   /* --toggleThumbBorderColor: var(--colorGrayDarken2); */
-  --toggleThumbBorderColor: #fff;
-  --toggleThumbBackgroundColor: var(--colorWhite);
+  --toggleThumbBorderColor: var(--defaultText);
+  --toggleThumbBackgroundColor: var(--defaultText);
 
   --toggleTrackBorderColor: var(--colorGrayDarken2);
   --toggleTrackBackgroundColor: var(--colorGray);
