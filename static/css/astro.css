@@ -609,7 +609,7 @@
     ==========================================================================
  
   */
-
+	--modalTitleColor: var(--colorWhite);
   --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--colorWhite);
   --modalBorderColor: var(--primary);
@@ -1034,7 +1034,7 @@ li.light-theme {
     ==========================================================================
 
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
@@ -2608,14 +2608,11 @@ i.rux-icon {
   flex-direction: column;
   justify-content: space-between;
 
-  background-color: rgb(0, 0, 0);
-
-  background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
+  background-color: var(--modalBackgroundColor);
 
   width: 28rem;
   height: 13.5rem;
-  border: 2px solid rgb(0, 90, 143);
-  border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
+  border: 2px solid var(--modalBorderColor);
 
   border-radius: 4px;
   margin: auto;
@@ -2637,9 +2634,7 @@ i.rux-icon {
   width: 100%;
   height: 2rem;
 
-  background-color: rgb(0, 90, 143);
-
-  background-color: var(--modalBorderColor, rgb(0, 90, 143));
+  background-color: var(--modalBorderColor);
   user-select: none;
   cursor: move;
 }
@@ -2651,7 +2646,7 @@ i.rux-icon {
   margin: 0;
   line-height: 1.2;
 
-  color: rgb(255, 255, 255) !important;
+  color: var(--modalTitleColor);
 }
 
 .rux-modal__content {
@@ -2660,8 +2655,7 @@ i.rux-icon {
   flex-direction: column;
   flex-grow: 1;
   padding: 1rem;
-  color: rgb(255, 255, 255);
-  color: var(--fontColor, rgb(255, 255, 255));
+  color: var(--defaultText);
 }
 
 .rux-button-group {
