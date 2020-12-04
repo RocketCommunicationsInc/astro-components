@@ -1,8 +1,7 @@
 h1,
 h2,
 h3 {
-	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-	 Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: var(--fontFamily);
   font-weight: 300;
   color: var(--defaultText);
   margin: 0 0 0.5rem 0;
