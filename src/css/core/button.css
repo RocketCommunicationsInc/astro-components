@@ -38,9 +38,9 @@
   min-width: 2.25rem;
   /* max-width: 10.125rem; */
 
-  border-radius: var(--buttonBorderRadius, 3px);
+  border-radius: var(--buttonBorderRadius);
 
-  color: var(--buttonTextColo);
+  color: var(--buttonTextColor);
   font-family: var(--fontFamily);
   font-size: 1rem;
 
@@ -61,8 +61,8 @@
 */
 /* disabled state */
 .rux-button:disabled {
-  opacity: var(--disabledOpacity, 0.4);
-  cursor: var(--disabledCursor, not-allowed);
+  opacity: var(--disabledOpacity);
+  cursor: var(--disabledCursor);
 }
 
 .rux-button:focus {
@@ -71,12 +71,7 @@
 .rux-button:not(.rux-button--outline) {
   border: 1px solid var(--buttonBackgroundColor);
   background-color: var(--buttonBorderColor);
-  box-shadow: var(
-    --controlBoxShadow,
-    0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12),
-    0 1px 5px rgba(0, 0, 0, 0.2)
-  );
+  box-shadow: var(--controlBoxShadow);
 }
 
 /* Outline Button Specific Styles */
@@ -108,12 +103,7 @@
 .rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
   border-color: var(--buttonHoverBorderColor);
   background-color: var(--buttonHoverBackgroundColor);
-  box-shadow: var(
-    --buttonHoverBoxShadow,
-    0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12),
-    0 4px 5px rgba(0, 0, 0, 0.2)
-  );
+  box-shadow: var(--buttonHoverBoxShadow);
 }
 
 .rux-button--outline:hover:not([disabled]) {
