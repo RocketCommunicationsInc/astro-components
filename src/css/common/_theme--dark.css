@@ -87,10 +87,10 @@
 
   */
   --controlTextColor: var(--primary);
-  --controlLabelColor: var(--colorWhite);
-  --controlBackgroundColor: var(--colorPrimary);
-  --controlBorderColor: var(--colorSecondaryLighten1);
-  --controlAccentColor: var(--colorSecondaryLighten1);
+  --controlLabelColor: var(--defaultText);
+  --controlBackgroundColor: var(--primary);
+  --controlBorderColor: var(--primary);
+  --controlAccentColor: var(--primary);
 
   --controlSelectedTextColor: var(--colorWhite);
   --controlSelectedBackgroundColor: var(--primaryDark);
