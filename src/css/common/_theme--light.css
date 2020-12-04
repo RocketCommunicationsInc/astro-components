@@ -5,7 +5,7 @@
     ==========================================================================
 	*/
 	
-	/* KM Light Palette Colors */
+	/* Change to Astro 5 Simplified Colors */
 	--backgroundColor: #eaeef4;
 	--defaultText: #292A2D;
 	--secondaryText: #51555B;
@@ -153,15 +153,15 @@
   --segmentedButtonTextColor: var(--primary);
 
 	/* Segmented Hover */
-  --segmentedButtonHoverBackgroundColor: var(--primaryLight);
-  --segmentedButtonHoverTextColor: var(--colorWhite);
+  --segmentedButtonHoverBackgroundColor: var(--primaryDark);
+  --segmentedButtonHoverTextColor: var(--primaryElementText);
 
 	/* Segmented Select */
   --segmentedButtonSelectedBackgroundColor: var(--primary);
 	/* --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1), inset 0 1px 5px rgba(0, 0, 0, 0.06);
   	transition: box-shadow 0.067s ease-out; */
 	--segmentedButtonSelectedBoxShadow: none;
-  --segmentedButtonSelectedTextColor: var(--colorWhite);
+  --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
