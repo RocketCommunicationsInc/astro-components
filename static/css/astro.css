@@ -842,8 +842,8 @@ li.light-theme {
 
   /* Button */
   --buttonTextColor: var(--colorWhite);
-  --buttonBackgroundColor: var(--colorPrimary);
-  --buttonBorderColor: var(--colorPrimary);
+  --buttonBackgroundColor: var(--primary);
+  --buttonBorderColor: var(--primary);
   --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
@@ -865,7 +865,7 @@ li.light-theme {
   /* Outline Button Variant */
   --buttonOutlineTextColor: var(--colorWhite);
   --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--colorPrimary);
+  --buttonOutlineBorderColor: var(--primary);
 
   /* Outline Button Variant Hover State */
   --buttonOutlineHoverTextColor: var(--primary);
@@ -907,7 +907,7 @@ li.light-theme {
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--colorPrimary);
+  --sliderThumbBackgroundColor: var(--primary);
   --sliderThumbBorderColor: var(--colorWhite);
 
   --sliderTrackBorderColor: transparent;
@@ -957,7 +957,7 @@ li.light-theme {
 
   */
 
-  --toggleButtonBackgroundColor: var(--colorPrimary);
+  --toggleButtonBackgroundColor: var(--primary);
   --toggleBaseBackgroundColor: var(--colorBlack);
   --toggleBaseBorderColor: var(--colorBlack);
   --toggleBaseTextColor: var(--colorWhite5);
@@ -1008,7 +1008,7 @@ li.light-theme {
     ==========================================================================
 
   */
-  --pushbuttonBackgroundColor: var(--colorPrimary);
+  --pushbuttonBackgroundColor: var(--primary);
   --pushbuttonBorderColor: var(--colorBlack);
   --pushbuttonTextColor: var(--primaryElementText);
 
@@ -1115,7 +1115,7 @@ li.light-theme {
   --inputFocusBorderColor: var(--primary);
   /* --inputFocusBoxShadow: 0 0 4px var(--colorSecondaryLighten3); */
   --inputFocusBoxShadow: inset 0 0 0 1px white,
-    inset 0 0 0 2px var(--colorPrimary);
+    inset 0 0 0 2px var(--primary);
 
   --inputInvalidBorderColor: var(--colorCritical);
 
