@@ -1011,7 +1011,7 @@ li.light-theme {
   */
   --pushbuttonBackgroundColor: var(--colorPrimary);
   --pushbuttonBorderColor: var(--colorBlack);
-  --pushbuttonTextColor: var(--colorWhite);
+  --pushbuttonTextColor: var(--primaryElementText);
 
   --pushbuttonSelectedBackgroundColor: var(--colorBlack);
   --pushbuttonSelectedBorderColor: var(--colorBlack);
