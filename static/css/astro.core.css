@@ -582,15 +582,13 @@
 
   */
 
-  --pushbuttonBackgroundColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
   --pushbuttonBorderColor: var(--primary);
   --pushbuttonTextColor: var(--primary);
 
   --pushbuttonSelectedBackgroundColor: var(--colorNormal);
-  --pushbuttonSelectedBorderColor: #3dc100;
-  /* var(--colorNormal); */
-  --pushbuttonSelectedTextColor: #007300;
-  /* var(--colorWhite); */
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--defaultText);
 
   /* 
     
@@ -1010,13 +1008,13 @@ li.light-theme {
     ==========================================================================
 
   */
-  --pushbuttonBackgroundColor: var(--colorPrimary);
-  --pushbuttonBorderColor: var(--colorBlack);
-  --pushbuttonTextColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
+  --pushbuttonBorderColor: var(--primary);
+  --pushbuttonTextColor: var(--primary);
 
-  --pushbuttonSelectedBackgroundColor: var(--colorBlack);
-  --pushbuttonSelectedBorderColor: var(--colorBlack);
-  --pushbuttonSelectedTextColor: var(--colorNormal);
+  --pushbuttonSelectedBackgroundColor: var(--colorNormal);
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--colorBlack);
 
   /* 
     

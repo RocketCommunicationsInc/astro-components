@@ -221,15 +221,13 @@
 
   */
 
-  --pushbuttonBackgroundColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
   --pushbuttonBorderColor: var(--primary);
   --pushbuttonTextColor: var(--primary);
 
   --pushbuttonSelectedBackgroundColor: var(--colorNormal);
-  --pushbuttonSelectedBorderColor: #3dc100;
-  /* var(--colorNormal); */
-  --pushbuttonSelectedTextColor: #007300;
-  /* var(--colorWhite); */
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--defaultText);
 
   /* 
     
