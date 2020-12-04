@@ -96,7 +96,7 @@
 
   --controlHoverOutlineBackgroundColor: none;
   --controlSelectedOutlineBorderColor: var(--primary);
-  --controlSelectedOutlineBackgroundColor: var(--colorSecondaryDarken1);
+  --controlSelectedOutlineBackgroundColor: none;
 
   /* 
     
