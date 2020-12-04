@@ -171,7 +171,7 @@ export class RuxModal extends LitElement {
           flex-direction: column;
           flex-grow: 1;
           padding: 1rem;
-          color: var(--fontColor);
+          color: var(--defaultText);
         }
 
         rux-icon {
