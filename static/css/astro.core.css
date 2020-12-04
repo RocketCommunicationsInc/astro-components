@@ -497,11 +497,12 @@
   */
   --sliderThumbBackgroundColor: var(--primary);
   --sliderThumbBorderColor: var(--colorWhite);
+	--sliderHoverThumbBackgroundColor: var(--primary);
 
   --sliderTrackBorderColor: var(--colorQuaternary);
   --sliderTrackBackgroundColor: var(--colorWhite);
 
-  --sliderSelectedTrackBackgroundColor: var(--colorSecondary);
+  --sliderSelectedTrackBackgroundColor: var(--primary);
 
   /* 
     

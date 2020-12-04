@@ -497,11 +497,12 @@
   */
   --sliderThumbBackgroundColor: var(--primary);
   --sliderThumbBorderColor: var(--colorWhite);
+	--sliderHoverThumbBackgroundColor: var(--primary);
 
   --sliderTrackBorderColor: var(--colorQuaternary);
   --sliderTrackBackgroundColor: var(--colorWhite);
 
-  --sliderSelectedTrackBackgroundColor: var(--colorSecondary);
+  --sliderSelectedTrackBackgroundColor: var(--primary);
 
   /* 
     
@@ -3438,7 +3439,7 @@ i.rux-icon {
     0 1px 3px rgba(0, 0, 0, 0.2);
   --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
     0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
-  --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary, rgb(0, 90, 143)),
+  --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
     0 1px 1px rgba(0, 0, 0, 0.2);
 
@@ -3476,30 +3477,17 @@ input[type="range"]:focus {
   cursor: pointer;
   cursor: var(--trackCursor);
 
-  background-color: rgb(217, 217, 217);
-
-  background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
-  outline: 1px solid transparent;
-  outline: 1px solid var(--sliderTrackBorderColor, transparent);
+  background-color: var(--sliderTrackBackgroundColor);
+  outline: 1px solid var(--sliderTrackBorderColor);
 
   background-image: linear-gradient(
     to right,
-    rgb(77, 172, 255) 0%,
-    rgb(77, 172, 255)
+    var(--sliderSelectedTrackBackgroundColor) 0%,
+    var(--sliderSelectedTrackBackgroundColor)
       calc(1% * var(--value)),
-    rgb(217, 217, 217)
+    var(--sliderTrackBackgroundColor)
       calc(1% * var(--value)),
-    rgb(217, 217, 217) 100%
-  );
-
-  background-image: linear-gradient(
-    to right,
-    var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255)) 0%,
-    var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))
-      calc(1% * var(--value)),
-    var(--sliderTrackBackgroundColor, rgb(217, 217, 217))
-      calc(1% * var(--value)),
-    var(--sliderTrackBackgroundColor, rgb(217, 217, 217)) 100%
+    var(--sliderTrackBackgroundColor) 100%
   );
 }
 
@@ -3513,11 +3501,8 @@ input[type="range"]:focus {
   cursor: pointer;
   cursor: var(--trackCursor);
 
-  background-color: rgb(217, 217, 217);
-
-  background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
-  outline: 1px solid transparent;
-  outline: 1px solid var(--sliderTrackBorderColor, transparent);
+  background-color: var(--sliderTrackBackgroundColor);
+  outline: 1px solid var(--sliderTrackBorderColor);
 }
 
 .rux-range::-moz-range-progress {
@@ -3531,9 +3516,9 @@ input[type="range"]:focus {
 
 .rux-range:disabled {
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 .rux-range::-ms-track {
@@ -3548,7 +3533,7 @@ input[type="range"]:focus {
   color: transparent;
   background-color: transparent;
   border: none;
-  /* background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217)); */
+  /* background-color: var(--sliderTrackBackgroundColor); */
   outline: 1px solid transparent;
 }
 
@@ -3559,8 +3544,7 @@ input[type="range"]:focus {
 
 .rux-range::-ms-fill-upper {
   height: 2px;
-  background-color: rgb(217, 217, 217);
-  background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
+  background-color: var(--sliderTrackBackgroundColor);
 }
 
 .rux-range::-webkit-slider-thumb {
@@ -3575,10 +3559,8 @@ input[type="range"]:focus {
   width: var(--thumbSize);
 
   border-radius: 100%;
-  border: 1px solid rgb(255, 255, 255);
-  border: 1px solid var(--sliderThumbBorderColor, rgb(255, 255, 255));
-  background-color: rgb(0, 90, 143);
-  background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
+  border: 1px solid var(--sliderThumbBorderColor);
+  background-color: var(--sliderThumbBackgroundColor);
 
   cursor: pointer;
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
@@ -3604,10 +3586,8 @@ input:-moz-focusring {
   width: var(--thumbSize);
 
   border-radius: 100%;
-  border: 1px solid rgb(255, 255, 255);
-  border: 1px solid var(--sliderThumbBorderColor, rgb(255, 255, 255));
-  background-color: rgb(0, 90, 143);
-  background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
+  border: 1px solid var(--sliderThumbBorderColor);
+  background-color: var(--sliderThumbBackgroundColor);
 
   cursor: pointer;
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
@@ -3617,7 +3597,7 @@ input:-moz-focusring {
 
 .rux-range:disabled::-moz-range-thumb {
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 .rux-range::-ms-thumb {
@@ -3639,15 +3619,15 @@ input:-moz-focusring {
 .rux-range:disabled::-webkit-slider-runnable-track,
 .satcom-range:disabled::-webkit-slider-runnable-track {
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 .rux-range:disabled::-webkit-slider-thumb,
 .satcom-range:disabled::-webkit-slider-thumbtrack {
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 .rux-range:disabled::-ms-thumb {
@@ -3658,7 +3638,7 @@ input:-moz-focusring {
 .rux-range:not(:disabled)::-webkit-slider-thumb:active,
 .satcom-range:not(:disabled)::-webkit-slider-thumb:active {
   border-color: rgb(77, 172, 255);
-  border-color: var(--colorSecondary, rgb(77, 172, 255));
+  border-color: var(--colorSecondary);
   background-color: rgb(255, 255, 255);
   box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
@@ -3670,8 +3650,7 @@ input:-moz-focusring {
 .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active),
 .satcom-range:not(:disabled)::-webkit-slider-thumb:focus,
 .satcom-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-  background-color: rgb(58, 129, 191);
-  background-color: var(--sliderHoverThumbBackgroundColor, rgb(58, 129, 191));
+  background-color: var(--sliderHoverThumbBackgroundColor);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
     0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
   box-shadow: var(--thumbShadowHover);
