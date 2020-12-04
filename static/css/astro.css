@@ -495,13 +495,16 @@
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--primary);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBackgroundColor: var(--primaryDark);
+	--sliderThumbBorderColor: var(--inputBackground);
+	--sliderHoverThumbBackgroundColor: var(--primaryDark);
+	--sliderActiveThumbBackgroundColor: var(--inputBackground);
+	--sliderActiveThumbBorderColor: var(--inputBackground);
 
-  --sliderTrackBorderColor: var(--colorQuaternary);
-  --sliderTrackBackgroundColor: var(--colorWhite);
-
-  --sliderSelectedTrackBackgroundColor: var(--colorSecondary);
+  --sliderTrackBorderColor: var(--secondaryText);
+  --sliderTrackBackgroundColor: transparent;
+	
+  --sliderSelectedTrackBackgroundColor: var(--primary);
 
   /* 
     
@@ -907,14 +910,16 @@ li.light-theme {
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--colorPrimary);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBackgroundColor: var(--primary);
+	--sliderThumbBorderColor: var(--inputBackground);
+	--sliderHoverThumbBackgroundColor: var(--primary);
+	--sliderActiveThumbBackgroundColor: var(--inputBackground);
+	--sliderActiveThumbBorderColor: var(--inputBackground);
+	
+	--sliderTrackBorderColor: transparent;
+  --sliderTrackBackgroundColor: var(--secondaryText);
 
-  --sliderTrackBorderColor: transparent;
-  --sliderTrackBackgroundColor: var(--colorGray);
-
-  --sliderHoverThumbBackgroundColor: var(--primaryDark);
-
+  
   --sliderSelectedTrackBackgroundColor: var(--primary);
 
   /* 
@@ -3458,8 +3463,7 @@ input[type="range"]:focus {
   cursor: var(--trackCursor);
 
   background-color: var(--sliderTrackBackgroundColor);
-  outline: 1px solid transparent;
-  outline: 1px solid var(--sliderTrackBorderColor, transparent);
+  outline: 1px solid var(--sliderTrackBorderColor);
 
   background-image: linear-gradient(
     to right,
@@ -3583,8 +3587,8 @@ input:-moz-focusring {
   width: 1.25rem;
 
   border-radius: 100%;
-  border: 1px solid rgb(255, 255, 255);
-  background-color: rgb(0, 90, 143);
+  border: 1px solid var(--sliderThumbBorderColor);
+  background-color: var(--sliderThumbBackgroundColor);
 
   cursor: pointer;
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
@@ -3615,9 +3619,8 @@ input:-moz-focusring {
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:active,
 .satcom-range:not(:disabled)::-webkit-slider-thumb:active {
-  border-color: rgb(77, 172, 255);
-  border-color: var(--colorSecondary);
-  background-color: rgb(255, 255, 255);
+  border-color: var(--sliderActiveThumbBorderColor);
+  background-color: var(--sliderActiveThumbBackgroundColor);
   box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
     0 1px 1px rgba(0, 0, 0, 0.2);
@@ -3629,9 +3632,9 @@ input:-moz-focusring {
 .satcom-range:not(:disabled)::-webkit-slider-thumb:focus,
 .satcom-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
   background-color: var(--sliderHoverThumbBackgroundColor);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
     0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: var(--thumbShadowHover);
+	box-shadow: var(--thumbShadowHover);
 }
 
 /*

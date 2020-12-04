@@ -114,14 +114,16 @@
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--colorPrimary);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBackgroundColor: var(--primary);
+	--sliderThumbBorderColor: var(--inputBackground);
+	--sliderHoverThumbBackgroundColor: var(--primary);
+	--sliderActiveThumbBackgroundColor: var(--inputBackground);
+	--sliderActiveThumbBorderColor: var(--inputBackground);
+	
+	--sliderTrackBorderColor: transparent;
+  --sliderTrackBackgroundColor: var(--secondaryText);
 
-  --sliderTrackBorderColor: transparent;
-  --sliderTrackBackgroundColor: var(--colorGray);
-
-  --sliderHoverThumbBackgroundColor: var(--primaryDark);
-
+  
   --sliderSelectedTrackBackgroundColor: var(--primary);
 
   /* 

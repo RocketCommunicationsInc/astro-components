@@ -55,7 +55,7 @@ export class RuxSlider extends LitElement {
     return html`
       <style>
         :host {
-          --thumbSize: var(--controlOptionSize, 1.25rem);
+          --thumbSize: var(--controlOptionSize);
 
           --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
           --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
@@ -186,8 +186,8 @@ export class RuxSlider extends LitElement {
 
           position: relative;
 
-          height: var(--thumbSize, 1.25rem);
-          width: var(--thumbSize, 1.25rem);
+          height: var(--thumbSize);
+          width: var(--thumbSize);
 
           border-radius: 100%;
           border: 1px solid var(--sliderThumbBorderColor);
@@ -207,14 +207,14 @@ export class RuxSlider extends LitElement {
         }
 
         .rux-range:not(:disabled)::-webkit-slider-thumb:active {
-          border-color: var(--colorSecondary);
-          background-color: #fff;
+          border-color: var(--sliderActiveThumbBorderColor);
+          background-color: var(--sliderActiveThumbBackgroundColor);
           box-shadow: var(--thumbShadowActive);
         }
 
         .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
         .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-          background-color: var(--sliderHoverThumbBackgroundColor);
+					background-color: var(--sliderHoverThumbBackgroundColor);					
         }
 
         .rux-range::-moz-range-thumb {
