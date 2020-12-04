@@ -30,8 +30,7 @@ body {
 
   background-color: var(--backgroundColor);
 
-  scrollbar-color: var(--scrollBarThumbBackgroundColor)
-    var(--scrollBarTrackCornerBackgroundColor);
+  scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackCornerBackgroundColor);
 }
 
 label {

@@ -713,10 +713,10 @@
     
   */
 
-  --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1);
-  --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2);
+  --scrollBarThumbBackgroundColor: var(--primary);
+  --scrollBarThumbBackgroundHoverColor: var(--primaryLight);
   --scrollBarTrackBackgroundColor: transparent;
-  --scrollBarTrackCornerBackgroundColor: var(--colorQuaternaryLighten4);
+  --scrollBarTrackCornerBackgroundColor: var(--colorGray);
 
   /* 
     
@@ -1136,10 +1136,10 @@ li.light-theme {
     
   */
 
-  --scrollBarThumbBackgroundColor: var(--colorSecondaryDarken2);
+  --scrollBarThumbBackgroundColor: var(--primary);
   --scrollBarThumbBackgroundHoverColor: var(--primaryDark);
-  --scrollBarTrackBackgroundColor: var(--colorTertiaryDarken1);
-  --scrollBarTrackCornerBackgroundColor: var(--colorTertiaryDarken1);
+  --scrollBarTrackBackgroundColor: var(--colorGray);
+  --scrollBarTrackCornerBackgroundColor: var(--colorGray);
 
   /* 
     
@@ -1356,8 +1356,7 @@ body {
 
   background-color: var(--backgroundColor);
 
-  scrollbar-color: var(--scrollBarThumbBackgroundColor)
-    var(--scrollBarTrackCornerBackgroundColor);
+  scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackCornerBackgroundColor);
 }
 
 label {
