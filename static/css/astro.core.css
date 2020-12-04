@@ -457,7 +457,7 @@
 
   --controlHoverOutlineBackgroundColor: none;
   --controlSelectedOutlineBorderColor: var(--primary);
-  --controlSelectedOutlineBackgroundColor: var(--colorSecondaryDarken1);
+  --controlSelectedOutlineBackgroundColor: none;
 
   /* 
     
@@ -842,8 +842,8 @@ li.light-theme {
 
   /* Button */
   --buttonTextColor: var(--colorWhite);
-  --buttonBackgroundColor: var(--primary);
-  --buttonBorderColor: var(--primary);
+  --buttonBackgroundColor: var(--colorPrimary);
+  --buttonBorderColor: var(--colorPrimary);
   --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
@@ -879,7 +879,7 @@ li.light-theme {
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--colorWhite);
+  --controlTextColor: var(--primary);
   --controlLabelColor: var(--colorWhite);
   --controlBackgroundColor: var(--colorPrimary);
   --controlBorderColor: var(--colorSecondaryLighten1);
@@ -887,7 +887,8 @@ li.light-theme {
 
   --controlSelectedTextColor: var(--colorWhite);
   --controlSelectedBackgroundColor: var(--primaryDark);
-  --controlSelectedBorderColor: var(--colorWhite);
+	--controlSelectedBorderColor: var(--primary);
+	--controlSelectedOutlineBorderColor: var(--primary);
 
   /* 
     
@@ -907,7 +908,7 @@ li.light-theme {
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--primary);
+  --sliderThumbBackgroundColor: var(--colorPrimary);
   --sliderThumbBorderColor: var(--colorWhite);
 
   --sliderTrackBorderColor: transparent;
@@ -924,18 +925,19 @@ li.light-theme {
 
   */
   --segmentedButtonBorderColor: var(--colorTertiaryDarken1);
-  --segmentedButtonBackgroundColor: var(--primary);
+  --segmentedButtonBackgroundColor: var(--colorPrimary);
   --segmentedButtonTextColor: var(--colorWhite);
 
-  --segmentedButtonHoverBackgroundColor: var(--primaryDark);
+  --segmentedButtonHoverBackgroundColor: var(
+    --primaryDark,
+    rgb(58, 135, 207)
+  );
   --segmentedButtonHoverTextColor: var(--colorWhite);
 
   --segmentedButtonSelectedBackgroundColor: var(--primaryDark);
 
-	--segmentedButtonSelectedBoxShadow:
-		inset 0 2px 4px rgba(0, 0, 0, 0.14),
-		inset 0 3px 4px rgba(0, 0, 0, 0.12),
-		inset 0 1px 5px rgba(0, 0, 0, 0.2);
+  --segmentedButtonSelectedBoxShadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
+    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
 
   --segmentedButtonSelectedTextColor: var(--colorWhite);
 
@@ -946,7 +948,7 @@ li.light-theme {
     
   */
   --selectBackgroundColor: var(--primary);
-  --selectBorderColor: var(--primary);
+  --selectBorderColor: var(--colorPrimary);
   --selectTextColor: var(--colorWhite);
   --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
 
@@ -957,7 +959,7 @@ li.light-theme {
 
   */
 
-  --toggleButtonBackgroundColor: var(--primary);
+  --toggleButtonBackgroundColor: var(--colorPrimary);
   --toggleBaseBackgroundColor: var(--colorBlack);
   --toggleBaseBorderColor: var(--colorBlack);
   --toggleBaseTextColor: var(--colorWhite5);
@@ -1008,9 +1010,9 @@ li.light-theme {
     ==========================================================================
 
   */
-  --pushbuttonBackgroundColor: var(--primary);
+  --pushbuttonBackgroundColor: var(--colorPrimary);
   --pushbuttonBorderColor: var(--colorBlack);
-  --pushbuttonTextColor: var(--primaryElementText);
+  --pushbuttonTextColor: var(--colorWhite);
 
   --pushbuttonSelectedBackgroundColor: var(--colorBlack);
   --pushbuttonSelectedBorderColor: var(--colorBlack);
@@ -1115,7 +1117,7 @@ li.light-theme {
   --inputFocusBorderColor: var(--primary);
   /* --inputFocusBoxShadow: 0 0 4px var(--colorSecondaryLighten3); */
   --inputFocusBoxShadow: inset 0 0 0 1px white,
-    inset 0 0 0 2px var(--primary);
+    inset 0 0 0 2px var(--colorPrimary);
 
   --inputInvalidBorderColor: var(--colorCritical);
 
