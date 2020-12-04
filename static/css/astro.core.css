@@ -599,9 +599,10 @@
 
   */
 
-  --clockTextColor: var(--colorBlack);
-  --clockBackgroundColor: var(--colorWhite);
-  --clockBorderColor: var(--colorQuaternary);
+  --clockTextColor: var(--primaryElementText);
+  --clockBackgroundColor: var(--globalAppHeader);
+	--clockBorderColor: var(--globalAppHeader);
+	--clockLabelColor: var(--defaultText);
 
   /* 
     
@@ -1024,9 +1025,10 @@ li.light-theme {
     ==========================================================================
 
   */
-  --clockTextColor: var(--colorWhite);
-  --clockBackgroundColor: var(--globalAppHeader);
-	--clockBorderColor: var(--colorTertiary);
+  --clockTextColor: var(--defaultText);
+  --clockBackgroundColor: var(--backgroundColor);
+	--clockBorderColor: var(--surfaceElements);
+	--clockLabelColor: var(--defaultText);
 
 	/* 
     

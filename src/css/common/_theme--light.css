@@ -238,9 +238,10 @@
 
   */
 
-  --clockTextColor: var(--colorBlack);
-  --clockBackgroundColor: var(--colorWhite);
-  --clockBorderColor: var(--colorQuaternary);
+  --clockTextColor: var(--primaryElementText);
+  --clockBackgroundColor: var(--globalAppHeader);
+	--clockBorderColor: var(--globalAppHeader);
+	--clockLabelColor: var(--defaultText);
 
   /* 
     

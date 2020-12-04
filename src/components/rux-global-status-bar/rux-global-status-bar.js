@@ -65,7 +65,7 @@ export class RuxGlobalStatusBar extends LitElement {
 
           padding: 0;
           margin: 0;
-          color: #bdc3c9;
+          color: var(--inputBackground);
         }
 
         .app-meta h1 {

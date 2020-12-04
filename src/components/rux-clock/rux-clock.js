@@ -106,7 +106,7 @@ export class RuxClock extends LitElement {
           display: flex;
           margin: 0 1rem;
 
-          color: var(--clockTextColor, rgb(255, 255, 255));
+          color: var(--clockTextColor);
 
           font-size: 1.15rem;
 
@@ -125,12 +125,12 @@ export class RuxClock extends LitElement {
         .rux-clock__segment__value {
           display: flex;
           align-items: center;
-          font-family: var(--fontFamilyMono, 'Roboto Mono', monospace);
+          font-family: var(--fontFamilyMono);
           font-weight: 700;
 
-          border: 1px solid var(--clockBorderColor, rgb(40, 63, 88));
+          border: 1px solid var(--clockBorderColor);
 
-          background-color: var(--clockBackgroundColor, rgb(20, 32, 44));
+          background-color: var(--clockBackgroundColor);
           margin-bottom: 0.25rem;
 
           white-space: nowrap;
@@ -152,7 +152,8 @@ export class RuxClock extends LitElement {
         }
 
         .rux-clock__segment__label {
-          font-size: 0.875rem;
+					font-size: 0.875rem;
+					color: var(--clockLabelColor);
         }
 
         .rux-clock__day-of-the-year .rux-clock__segment__value {
