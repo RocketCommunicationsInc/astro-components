@@ -1,11 +1,28 @@
 .light-theme {
+    /* 
+    
+    Astro V5 Simplified Colors
+    ==========================================================================
+
+  */
+  --backgroundColor: #eaeef4;
+	--defaultText: #292A2D;
+	--secondaryText: #51555B;
+	--globalAppHeader: #172635;
+	--surfaceElements: #ffffff;
+	--primary: #005a8F;
+	--primaryLight: #2F7AA7;
+	--primaryDark: #004872;
+	--primaryElementText: #ffffff;
+	--inputBackground: #ffffff;
+
   /* 
     
     Global Colors 
     ==========================================================================
 
   */
-  --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
+  /* --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248)); */
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
   --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
   --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
@@ -32,39 +49,34 @@
   */
 
   /* Button */
-  --buttonTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+  --buttonTextColor: var(--primaryElementText);
+  --buttonBackgroundColor: var(--primary);
+  --buttonBorderColor: var(--primary);
+  --buttonBoxShadow: 0 2px 4px rgba(5, 5, 5, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Hover State */
-  --buttonHoverTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
+  --buttonHoverTextColor: var(--primaryElementText);
+  --buttonHoverBackgroundColor: var(--primaryDark);
+  --buttonHoverBorderColor: var(--primaryDark);
+  --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonActiveBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonActiveBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonActiveControlTextColor: var(--primaryElementText);
+  --buttonActiveBackgroundColor: var(--primary);
+  --buttonActiveBorderColor: var(--primary);
 
   /* Default Button State */
   --buttonDefaultBorderColor: var(--colorWhite, rgb(255, 255, 255));
 
   /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonOutlineTextColor: var(--primary);
   --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonOutlineBorderColor: var(--primary);
 
   /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonOutlineHoverBackgroundColor: rgba(0, 90, 143, 0.05);
-  --buttonOutlineHoverBorderColor: var(
-    --colorSecondaryDarken1,
-    rgb(58, 129, 191)
-  );
+  --buttonOutlineHoverTextColor: var(--primaryDark);
+  --buttonOutlineHoverBackgroundColor: transparent;
+  --buttonOutlineHoverBorderColor: var(--primaryDark);
 
   /* 
     

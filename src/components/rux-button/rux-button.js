@@ -85,8 +85,8 @@ export class RuxButton extends LitElement {
           outline: none;
         }
         .rux-button:not(.rux-button--outline) {
-          border: 1px solid var(--buttonBackgroundColor);
-          background-color: var(--buttonBorderColor);
+          border: 1px solid var(--buttonBorderColor);
+          background-color: var(--buttonBackgroundColor);
           box-shadow: var(--controlBoxShadow);
         }
 

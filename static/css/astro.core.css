@@ -219,27 +219,123 @@
   --colorGrayDarken4: rgb(41, 41, 41);
 }
 
+/* ---- Roboto ---- */
+
+/* Thin */
 @font-face {
-  font-family: "Open Sans";
-  src: url("/fonts/opensans-bold-webfont.woff2") format("woff2"),
-    url("/fonts/opensans-bold-webfont.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoThin.woff2') format('woff2'),
+			 url('/fonts/RobotoThin.woff') format('woff');
+	font-weight: 200;
+	font-style: normal;
 }
+
 @font-face {
-  font-family: "Open Sans";
-  src: url("/fonts/opensans-light-webfont.woff2") format("woff2"),
-    url("/fonts/opensans-light-webfont.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoThinItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoThinItalic.woff') format('woff');
+	font-weight: 200;
+	font-style: italic;
 }
+
+
+/* Light */
 @font-face {
-  font-family: "Open Sans";
-  src: url("/fonts/opensans-regular-webfont.woff2") format("woff2"),
-    url("/fonts/opensans-regular-webfont.woff") format("woff");
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoLight.woff2') format('woff2'),
+			 url('/fonts/RobotoLight.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto Light';
+	src: url('/fonts/RobotoLight.woff2') format('woff2'),
+			 url('/fonts/RobotoLight.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoLightItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoLightItalic.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+}
+
+/* Regular */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoRegular.woff2') format('woff2'),
+			 url('/fonts/RobotoRegular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Medium */
+@font-face {
+	font-family: 'Roboto';
+	src: url('fonts/RobotoMedium.woff2') format('woff2'),
+			 url('fonts/RobotoMedium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoMediumItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoMediumItalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+}
+
+
+/* Bold */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBold.woff2') format('woff2'),
+			 url('/fonts/RobotoBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBoldItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoBoldItalic.woff') format('woff');
+	font-weight: 600;
+	font-style: italic;
+}
+
+
+/* Black */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBlack.woff2') format('woff2'),
+			 url('/fonts/RobotoBlack.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBlackItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoBlackItalic.woff') format('woff');
+	font-weight: 800;
+	font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/roboto-mono-regular.woff2") format("woff2"),
+    url("/fonts/roboto-mono-regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Roboto Mono";
   src: url("/fonts/roboto-mono-regular.woff2") format("woff2"),
@@ -249,13 +345,30 @@
 }
 
 .light-theme {
+    /* 
+    
+    Astro V5 Simplified Colors
+    ==========================================================================
+
+  */
+  --backgroundColor: #eaeef4;
+	--defaultText: #292A2D;
+	--secondaryText: #51555B;
+	--globalAppHeader: #172635;
+	--surfaceElements: #ffffff;
+	--primary: #005a8F;
+	--primaryLight: #2F7AA7;
+	--primaryDark: #004872;
+	--primaryElementText: #ffffff;
+	--inputBackground: #ffffff;
+
   /* 
     
     Global Colors 
     ==========================================================================
 
   */
-  --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
+  /* --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248)); */
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
   --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
   --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
@@ -282,39 +395,34 @@
   */
 
   /* Button */
-  --buttonTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+  --buttonTextColor: var(--primaryElementText);
+  --buttonBackgroundColor: var(--primary);
+  --buttonBorderColor: var(--primary);
+  --buttonBoxShadow: 0 2px 4px rgba(5, 5, 5, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Hover State */
-  --buttonHoverTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
-  --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
+  --buttonHoverTextColor: var(--primaryElementText);
+  --buttonHoverBackgroundColor: var(--primaryDark);
+  --buttonHoverBorderColor: var(--primaryDark);
+  --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite, rgb(255, 255, 255));
-  --buttonActiveBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonActiveBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonActiveControlTextColor: var(--primaryElementText);
+  --buttonActiveBackgroundColor: var(--primary);
+  --buttonActiveBorderColor: var(--primary);
 
   /* Default Button State */
   --buttonDefaultBorderColor: var(--colorWhite, rgb(255, 255, 255));
 
   /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonOutlineTextColor: var(--primary);
   --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonOutlineBorderColor: var(--primary);
 
   /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonOutlineHoverBackgroundColor: rgba(0, 90, 143, 0.05);
-  --buttonOutlineHoverBorderColor: var(
-    --colorSecondaryDarken1,
-    rgb(58, 129, 191)
-  );
+  --buttonOutlineHoverTextColor: var(--primaryDark);
+  --buttonOutlineHoverBackgroundColor: transparent;
+  --buttonOutlineHoverBorderColor: var(--primaryDark);
 
   /* 
     
@@ -794,9 +902,7 @@ li.light-theme {
 
   /* Outline Button Variant Hover State */
   --buttonOutlineHoverTextColor: var(--primaryLight);
-  /* --buttonOutlineHoverBackgroundColor: rgba(30, 47, 66, 0.75); */
   --buttonOutlineHoverBackgroundColor: transparent;
-
   --buttonOutlineHoverBorderColor: var(--primaryLight);
 
   /* 
@@ -1351,13 +1457,11 @@ label {
 
   border-radius: 3px;
 
-  border-radius: var(--buttonBorderRadius, 3px);
+  border-radius: var(--buttonBorderRadius);
 
-  color: rgb(255, 255, 255);
-
-  color: var(--buttonTextColor, rgb(255, 255, 255));
+  color: var(--buttonTextColor);
   font-family: "Open Sans", sans-serif;
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-family: var(--fontFamily);
   font-size: 1rem;
 
   white-space: nowrap;
@@ -1378,39 +1482,25 @@ label {
 /* disabled state */
 .rux-button:disabled {
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 .rux-button:focus {
   outline: none;
 }
 .rux-button:not(.rux-button--outline) {
-  border: 1px solid rgb(0, 90, 143);
-  border: 1px solid var(--buttonBackgroundColor, rgb(0, 90, 143));
-  background-color: rgb(0, 90, 143);
-  background-color: var(--buttonBorderColor, rgb(0, 90, 143));
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12),
-    0 1px 5px rgba(0, 0, 0, 0.2)
-  ;
-  box-shadow: var(
-    --controlBoxShadow,
-    0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12),
-    0 1px 5px rgba(0, 0, 0, 0.2)
-  );
+  border: 1px solid var(--buttonBackgroundColor);
+  background-color: var(--buttonBorderColor);
+  box-shadow: var(--controlBoxShadow);
 }
 
 /* Outline Button Specific Styles */
 .rux-button--outline {
-  color: rgb(255, 255, 255);
-  color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-  background-color: transparent;
-  background-color: var(--buttonOutlineBackgroundColor, transparent);
-  border: 1px solid rgb(0, 90, 143);
-  border: 1px solid var(--buttonOutlineBorderColor, rgb(0, 90, 143));
+  color: var(--buttonOutlineTextColor);
+  background-color: var(--buttonOutlineBackgroundColor);
+  border: 1px solid var(--buttonOutlineBorderColor);
 }
 
 /* 
@@ -1419,14 +1509,8 @@ label {
 
 */
 .rux-button:active:not([hover]):not([disabled]) {
-  border-color: rgb(0, 90, 143) !important;
-  border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
-  background-color: rgb(0, 90, 143)
-   !important;
-  background-color: var(
-    --buttonActiveBackgroundColor,
-    rgb(0, 90, 143)
-  ) !important;
+  border-color: var(--buttonActiveBorderColor) !important;
+  background-color: var(--buttonActiveBackgroundColor) !important;
 }
 
 .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
@@ -1439,33 +1523,15 @@ label {
 
 */
 .rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
-  border-color: rgb(58, 129, 191);
-  border-color: var(--buttonHoverBorderColor, rgb(58, 129, 191));
-  background-color: rgb(58, 129, 191);
-  background-color: var(--buttonHoverBackgroundColor, rgb(58, 129, 191));
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12),
-    0 4px 5px rgba(0, 0, 0, 0.2)
-  ;
-  box-shadow: var(
-    --buttonHoverBoxShadow,
-    0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12),
-    0 4px 5px rgba(0, 0, 0, 0.2)
-  );
+  border-color: var(--buttonHoverBorderColor);
+  background-color: var(--buttonHoverBackgroundColor);
+  box-shadow: var(--buttonHoverBoxShadow);
 }
 
 .rux-button--outline:hover:not([disabled]) {
-  color: rgb(255, 255, 255);
-  color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-  background-color: rgba(30, 47, 66, 0.75)
-  ;
-  background-color: var(
-    --buttonOutlineHoverBackgroundColor,
-    rgba(30, 47, 66, 0.75)
-  );
-  border-color: rgb(58, 129, 191);
-  border-color: var(--buttonOutlineHoverBorderColor, rgb(58, 129, 191));
+  color: var(--buttonOutlineHoverTextColor);
+  background-color: var(--buttonOutlineHoverBackgroundColor);
+  border-color: var(--buttonOutlineHoverBorderColor);
 }
 
 /* 
@@ -1476,7 +1542,7 @@ label {
 
 .rux-button--small {
   font-size: 0.875rem;
-  font-size: var(--smallLabelFontSize, 0.875rem);
+  font-size: var(--smallLabelFontSize);
   height: 1.625rem;
   padding: 0 1rem;
   line-height: 1;
@@ -1484,9 +1550,8 @@ label {
 
 .rux-button--large {
   font-size: 1.125rem;
-  font-size: var(--largeLabelFontSize, 1.125rem);
+  font-size: var(--largeLabelFontSize);
   height: 2.875rem;
-  /* min-width: 2.875rem; */
   padding: 0 1.5rem;
 }
 
@@ -1523,23 +1588,20 @@ label {
 .rux-button__icon .rux-icon {
   height: auto;
   width: 100%;
-  fill: rgb(255, 255, 255);
-  fill: var(--buttonTextColor, rgb(255, 255, 255));
+  fill: var(--buttonTextColor);
 }
 
 .rux-button.rux-button--critical,
 .rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
   background-color: rgb(204, 45, 45) !important;
-  background-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
+  background-color: var(--colorCriticalDarken1) !important;
   border-color: rgb(204, 45, 45) !important;
-  border-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
+  border-color: var(--colorCriticalDarken1) !important;
 }
 
 .rux-button.rux-button--critical:hover:not([active]):not([disabled]) {
-  background-color: rgb(255, 48, 48);
-  background-color: var(--colorCritical, rgb(255, 48, 48));
-  border-color: rgb(255, 48, 48);
-  border-color: var(--colorCritical, rgb(255, 48, 48));
+  background-color: var(--colorCritical);
+  border-color: var(--colorCritical);
 }
 
 .rux-card {
