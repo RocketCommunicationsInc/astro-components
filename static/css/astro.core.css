@@ -660,13 +660,13 @@
 
   */
   --tabTextColor: var(--primary);
-  --tabBackgroundColor: var(--colorWhite);
-  --tabBorderColor: var(--colorQuaternaryLighten1);
+  --tabBackgroundColor: var(--inputBackground);
+  --tabBorderColor: var(--primary);
 
-  --tabHoverTextColor: var(--colorSecondary);
+  --tabHoverTextColor: var(--defaultText);
 
-  --tabSelectedTextColor: var(--colorBlack);
-  --tabSelectedBorderColor: var(--colorSecondary);
+  --tabSelectedTextColor: var(--defaultText);
+  --tabSelectedBorderColor: var(--primary);
 
   /* 
     
@@ -1086,10 +1086,10 @@ li.light-theme {
 
   */
   --tabTextColor: var(--primary);
-  --tabBackgroundColor: var(--colorTertiaryDarken1);
+  --tabBackgroundColor: transparent;
   --tabBorderColor: var(--globalAppHeader);
 
-  --tabSelectedTextColor: var(--colorWhite);
+  --tabSelectedTextColor: var(--defaultText);
   --tabSelectedBorderColor: var(--primary);
 
   /* 

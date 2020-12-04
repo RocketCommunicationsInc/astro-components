@@ -660,13 +660,13 @@
 
   */
   --tabTextColor: var(--primary);
-  --tabBackgroundColor: var(--colorWhite);
-  --tabBorderColor: var(--colorQuaternaryLighten1);
+  --tabBackgroundColor: var(--inputBackground);
+  --tabBorderColor: var(--primary);
 
-  --tabHoverTextColor: var(--colorSecondary);
+  --tabHoverTextColor: var(--defaultText);
 
-  --tabSelectedTextColor: var(--colorBlack);
-  --tabSelectedBorderColor: var(--colorSecondary);
+  --tabSelectedTextColor: var(--defaultText);
+  --tabSelectedBorderColor: var(--primary);
 
   /* 
     
@@ -1086,10 +1086,10 @@ li.light-theme {
 
   */
   --tabTextColor: var(--primary);
-  --tabBackgroundColor: var(--colorTertiaryDarken1);
+  --tabBackgroundColor: transparent;
   --tabBorderColor: var(--globalAppHeader);
 
-  --tabSelectedTextColor: var(--colorWhite);
+  --tabSelectedTextColor: var(--defaultText);
   --tabSelectedBorderColor: var(--primary);
 
   /* 
@@ -3826,8 +3826,7 @@ input:-moz-focusring {
 
 /* 	REQUIRED CLASSES */
 
-.rux-tabs,
-.satcom-tabs {
+.rux-tabs {
   font-size: 1.5rem;
 
   width: 100%;
@@ -3835,7 +3834,7 @@ input:-moz-focusring {
   padding: 0;
   height: 5.625rem;
 
-  user-select: none;
+	user-select: none;
 }
 
 .rux-tabs--small {
@@ -3843,8 +3842,7 @@ input:-moz-focusring {
   font-size: 1rem;
 }
 
-.rux-tabs ul,
-.satcom-tabs ul {
+.rux-tabs ul {
   padding: 0;
   margin: 0;
   height: 100%;
@@ -3853,8 +3851,7 @@ input:-moz-focusring {
   list-style: none;
 }
 
-.rux-tabs li,
-.satcom-tabs li {
+.rux-tabs li {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -3867,21 +3864,18 @@ input:-moz-focusring {
    border-right: 1px solid var(--tabBorderColor, rgb(20, 32, 44)); 
 } */
 
-.rux-tabs li::before,
-.satcom-tabs li::before {
+.rux-tabs li::before {
   display: none !important;
 }
 
-.rux-tabs a,
-.satcom-tabs a {
+.rux-tabs a {
   height: 100%;
   display: flex;
   align-items: center;
   padding: 3px 2rem 0;
 
   text-decoration: none;
-  color: rgb(77, 172, 255);
-  color: var(--tabTextColor, rgb(77, 172, 255));
+  color: var(--tabTextColor);
 
   /* background-color: var(--tabBackgroundColor, rgb(30, 47, 66)); */
   /* overflow: auto; */
@@ -3889,39 +3883,29 @@ input:-moz-focusring {
 
 .rux-tabs a[disabled] {
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
-.rux-tabs .selected a,
-.satcom-tabs .selected a {
-  color: rgb(255, 255, 255);
-  color: var(--tabSelectedTextColor, rgb(255, 255, 255));
-  box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
-  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+.rux-tabs .selected a {
+  color: var(--tabSelectedTextColor);
+  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor);
 }
 
 .rux-tabs--small .selected a,
 .rux-tabs--small .selected a:hover {
-  color: rgb(255, 255, 255);
-  color: var(--tabSelectedTextColor, rgb(255, 255, 255));
-  box-shadow: inset 0 -3px 0 rgb(77, 172, 255);
-  box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+  color: var(--tabSelectedTextColor);
+  box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor);
 }
 
-.rux-tabs .selected a:hover,
-.satcom-tabs .selected a:hover {
-  color: rgb(255, 255, 255);
-  color: var(--tabSelectedTextColor, rgb(255, 255, 255));
-  box-shadow: inset 0 -5px 0 0 rgb(77, 172, 255);
-  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+.rux-tabs .selected a:hover {
+  color: var(--tabSelectedTextColor);
+  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor);
 }
 
-.rux-tabs a:hover:not([disabled]),
-.satcom-tabs a:hover:not([disabled]) {
-  color: rgb(255, 255, 255);
-  color: var(--tabHoverTextColor, rgb(255, 255, 255));
+.rux-tabs a:hover:not([disabled]) {
+  color: var(--tabHoverTextColor);
 }
 
 /*

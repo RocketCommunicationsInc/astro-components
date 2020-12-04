@@ -293,10 +293,10 @@
 
   */
   --tabTextColor: var(--primary);
-  --tabBackgroundColor: var(--colorTertiaryDarken1);
+  --tabBackgroundColor: transparent;
   --tabBorderColor: var(--globalAppHeader);
 
-  --tabSelectedTextColor: var(--colorWhite);
+  --tabSelectedTextColor: var(--defaultText);
   --tabSelectedBorderColor: var(--primary);
 
   /* 
