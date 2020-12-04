@@ -132,21 +132,22 @@
 
   */
   --segmentedButtonBorderColor: var(--colorTertiaryDarken1);
-  --segmentedButtonBackgroundColor: var(--colorPrimary);
-  --segmentedButtonTextColor: var(--colorWhite);
+  --segmentedButtonBackgroundColor: none;
+  --segmentedButtonTextColor: var(--primaryLight);
 
-  --segmentedButtonHoverBackgroundColor: var(
-    --primaryDark,
-    rgb(58, 135, 207)
-  );
-  --segmentedButtonHoverTextColor: var(--colorWhite);
+	/* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--primaryLight);
+  --segmentedButtonHoverTextColor: var(--primaryElementText);
 
-  --segmentedButtonSelectedBackgroundColor: var(--primaryDark);
+	/* Segmented Select */
+  --segmentedButtonSelectedBackgroundColor: var(--primary);
 
-  --segmentedButtonSelectedBoxShadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
+	--segmentedButtonSelectedBoxShadow: 
+		inset 0 2px 4px rgba(0, 0, 0, 0.14),
+		inset 0 3px 4px rgba(0, 0, 0, 0.12),
+		inset 0 1px 5px rgba(0, 0, 0, 0.2);
 
-  --segmentedButtonSelectedTextColor: var(--colorWhite);
+  --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
     

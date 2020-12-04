@@ -510,17 +510,17 @@
 
   */
   --segmentedButtonBorderColor: var(--primary);
-  --segmentedButtonBackgroundColor: var(--colorWhite);
+  --segmentedButtonBackgroundColor: none;
   --segmentedButtonTextColor: var(--primary);
 
-  --segmentedButtonHoverBackgroundColor: rgb(0, 90, 143, 0.05);
-  --segmentedButtonHoverTextColor: var(--primary);
+	/* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--primaryLight);
+  --segmentedButtonHoverTextColor: var(--colorWhite);
 
-  --segmentedButtonSelectedBackgroundColor: var(--colorSecondaryDarken1);
-
-  --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1),
-    inset 0 1px 5px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.067s ease-out;
+	/* Segmented Select */
+  --segmentedButtonSelectedBackgroundColor: var(--primary);
+	--segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1), inset 0 1px 5px rgba(0, 0, 0, 0.06);
+  	transition: box-shadow 0.067s ease-out;
 
   --segmentedButtonSelectedTextColor: var(--colorWhite);
 
@@ -925,21 +925,22 @@ li.light-theme {
 
   */
   --segmentedButtonBorderColor: var(--colorTertiaryDarken1);
-  --segmentedButtonBackgroundColor: var(--colorPrimary);
-  --segmentedButtonTextColor: var(--colorWhite);
+  --segmentedButtonBackgroundColor: none;
+  --segmentedButtonTextColor: var(--primaryLight);
 
-  --segmentedButtonHoverBackgroundColor: var(
-    --primaryDark,
-    rgb(58, 135, 207)
-  );
-  --segmentedButtonHoverTextColor: var(--colorWhite);
+	/* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--primaryLight);
+  --segmentedButtonHoverTextColor: var(--primaryElementText);
 
-  --segmentedButtonSelectedBackgroundColor: var(--primaryDark);
+	/* Segmented Select */
+  --segmentedButtonSelectedBackgroundColor: var(--primary);
 
-  --segmentedButtonSelectedBoxShadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
+	--segmentedButtonSelectedBoxShadow: 
+		inset 0 2px 4px rgba(0, 0, 0, 0.14),
+		inset 0 3px 4px rgba(0, 0, 0, 0.12),
+		inset 0 1px 5px rgba(0, 0, 0, 0.2);
 
-  --segmentedButtonSelectedTextColor: var(--colorWhite);
+  --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -3327,9 +3328,8 @@ i.rux-icon {
 
   border-radius: 3px;
 
-  border-radius: var(--controlBorderRadius, 3px);
-  border: 1px solid rgb(30, 47, 66);
-  border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  border-radius: var(--controlBorderRadius);
+  border: 1px solid var(--segmentedButtonBorderColor);
 }
 
 .rux-segmented-button__segment {
@@ -3351,14 +3351,10 @@ i.rux-icon {
   padding: 0 0.75rem;
 
   border: none;
-  border-right: 1px solid rgb(30, 47, 66);
-  border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  border-right: 1px solid var(--segmentedButtonBorderColor);
 
-  color: rgb(255, 255, 255);
-
-  color: var(--segmentedButtonTextColor, rgb(255, 255, 255));
-  background-color: rgb(0, 90, 143);
-  background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
+  color: var(--segmentedButtonTextColor);
+  background-color: var(--segmentedButtonBackgroundColor);
 
   font-size: 0.875rem;
 
@@ -3374,36 +3370,15 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment label:hover {
-  background-color: rgb(58, 129, 191)
-  ;
-  background-color: var(
-    --segmentedButtonHoverBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: rgb(255, 255, 255);
-  color: var(--segmentedButtonHoverTextColor, rgb(255, 255, 255));
+  background-color: var(--segmentedButtonHoverBackgroundColor);
+  color: var(--segmentedButtonHoverTextColor);
   outline: none;
 }
 
 .rux-segmented-button__segment input:checked + label {
-  background-color: rgb(58, 129, 191)
-  ;
-  background-color: var(
-    --segmentedButtonSelectedBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: rgb(255, 255, 255);
-  color: var(--segmentedButtonSelectedTextColor, rgb(255, 255, 255));
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12),
-    inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  ;
-  box-shadow: var(
-    --segmentedButtonSelectedBoxShadow,
-    inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12),
-    inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  );
+  background-color: var(--segmentedButtonSelectedBackgroundColor);
+  color: var(--segmentedButtonSelectedTextColor);
+  box-shadow: var(--segmentedButtonSelectedBoxShadow);
   transition: box-shadow 0.067 ease-out;
 }
 
