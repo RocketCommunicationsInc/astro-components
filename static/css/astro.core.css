@@ -968,8 +968,8 @@ li.light-theme {
 
   /* Alt Toggle */
   /* --toggleThumbBorderColor: var(--colorGrayDarken2); */
-  --toggleThumbBorderColor: #fff;
-  --toggleThumbBackgroundColor: var(--colorWhite);
+  --toggleThumbBorderColor: var(--defaultText);
+  --toggleThumbBackgroundColor: var(--defaultText);
 
   --toggleTrackBorderColor: var(--colorGrayDarken2);
   --toggleTrackBackgroundColor: var(--colorGray);
