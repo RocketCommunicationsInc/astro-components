@@ -223,7 +223,7 @@
 
   --pushbuttonSelectedBackgroundColor: var(--colorNormal);
   --pushbuttonSelectedBorderColor: var(--colorNormal);
-  --pushbuttonSelectedTextColor: var(--colorBlack);
+  --pushbuttonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
