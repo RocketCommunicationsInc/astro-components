@@ -297,7 +297,15 @@
   --tabBorderColor: var(--globalAppHeader);
 
   --tabSelectedTextColor: var(--colorWhite);
-  --tabSelectedBorderColor: var(--primary);
+	--tabSelectedBorderColor: var(--primary);
+	
+	/* 
+    
+    Notification Colors 
+    ==========================================================================
+
+	*/
+	--notificationTextColor: var(--primaryElementText);
 
   /* 
     

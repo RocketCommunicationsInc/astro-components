@@ -666,7 +666,15 @@
   --tabHoverTextColor: var(--colorSecondary);
 
   --tabSelectedTextColor: var(--colorBlack);
-  --tabSelectedBorderColor: var(--colorSecondary);
+	--tabSelectedBorderColor: var(--colorSecondary);
+	
+	/* 
+    
+    Notification Colors 
+    ==========================================================================
+
+	*/
+	--notificationTextColor: var(--defaultText);
 
   /* 
     
@@ -1090,7 +1098,15 @@ li.light-theme {
   --tabBorderColor: var(--globalAppHeader);
 
   --tabSelectedTextColor: var(--colorWhite);
-  --tabSelectedBorderColor: var(--primary);
+	--tabSelectedBorderColor: var(--primary);
+	
+	/* 
+    
+    Notification Colors 
+    ==========================================================================
+
+	*/
+	--notificationTextColor: var(--primaryElementText);
 
   /* 
     
