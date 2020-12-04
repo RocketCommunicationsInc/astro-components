@@ -84,7 +84,7 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--colorWhite);
+  --controlTextColor: var(--primary);
   --controlLabelColor: var(--colorBlack);
   --controlBackgroundColor: var(--colorSecondaryDarken1);
   --controlBorderColor: var(--primary);
