@@ -686,11 +686,11 @@
     
   */
 
-  --inputBackgroundColor: var(--colorWhite);
-  --inputBorderColor: var(--colorQuaternaryDarken1);
-  --inputTextColor: var(--colorBlack);
+  --inputBackgroundColor: var(--inputBackground);
+  --inputBorderColor: var(--primaryLight);
+  --inputTextColor: var(--defaultText);
 
-  --inputFocusBorderColor: var(--colorSecondary);
+  --inputFocusBorderColor: var(--primary);
   --inputFocusBoxShadow: none;
 
   --inputInvalidBorderColor: var(--colorCritical);
@@ -1110,13 +1110,12 @@ li.light-theme {
     
   */
 
-  --inputBackgroundColor: var(--colorWhite);
-  --inputBorderColor: transparent;
-  --inputTextColor: var(--colorBlack);
+  --inputBackgroundColor: var(--inputBackground);
+  --inputBorderColor: var(--surfaceElements);
+  --inputTextColor: var(--primaryElementText);
 	 
 	/* Input Focus */
   --inputFocusBorderColor: var(--primary);
-  /* --inputFocusBoxShadow: 0 0 4px var(--colorSecondaryLighten3); */
   --inputFocusBoxShadow: inset 0 0 0 1px var(--primary),
     inset 0 0 0 2px var(--primary);
 

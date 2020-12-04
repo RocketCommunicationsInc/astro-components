@@ -325,11 +325,11 @@
     
   */
 
-  --inputBackgroundColor: var(--colorWhite);
-  --inputBorderColor: var(--colorQuaternaryDarken1);
-  --inputTextColor: var(--colorBlack);
+  --inputBackgroundColor: var(--inputBackground);
+  --inputBorderColor: var(--primaryLight);
+  --inputTextColor: var(--defaultText);
 
-  --inputFocusBorderColor: var(--colorSecondary);
+  --inputFocusBorderColor: var(--primary);
   --inputFocusBoxShadow: none;
 
   --inputInvalidBorderColor: var(--colorCritical);
