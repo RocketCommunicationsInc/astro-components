@@ -40,8 +40,8 @@
 
   border-radius: var(--buttonBorderRadius, 3px);
 
-  color: var(--buttonTextColor, rgb(255, 255, 255));
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  color: var(--buttonTextColo);
+  font-family: var(--fontFamily);
   font-size: 1rem;
 
   white-space: nowrap;
@@ -69,8 +69,8 @@
   outline: none;
 }
 .rux-button:not(.rux-button--outline) {
-  border: 1px solid var(--buttonBackgroundColor, rgb(0, 90, 143));
-  background-color: var(--buttonBorderColor, rgb(0, 90, 143));
+  border: 1px solid var(--buttonBackgroundColor);
+  background-color: var(--buttonBorderColor);
   box-shadow: var(
     --controlBoxShadow,
     0 2px 4px rgba(0, 0, 0, 0.14),
@@ -81,9 +81,9 @@
 
 /* Outline Button Specific Styles */
 .rux-button--outline {
-  color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-  background-color: var(--buttonOutlineBackgroundColor, transparent);
-  border: 1px solid var(--buttonOutlineBorderColor, rgb(0, 90, 143));
+  color: var(--buttonOutlineTextColor);
+  background-color: var(--buttonOutlineBackgroundColor);
+  border: 1px solid var(--buttonOutlineBorderColor);
 }
 
 /* 
@@ -92,11 +92,8 @@
 
 */
 .rux-button:active:not([hover]):not([disabled]) {
-  border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
-  background-color: var(
-    --buttonActiveBackgroundColor,
-    rgb(0, 90, 143)
-  ) !important;
+  border-color: var(--buttonActiveBorderColor) !important;
+  background-color: var(--buttonActiveBackgroundColor) !important;
 }
 
 .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
@@ -109,8 +106,8 @@
 
 */
 .rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
-  border-color: var(--buttonHoverBorderColor, rgb(58, 129, 191));
-  background-color: var(--buttonHoverBackgroundColor, rgb(58, 129, 191));
+  border-color: var(--buttonHoverBorderColor);
+  background-color: var(--buttonHoverBackgroundColor);
   box-shadow: var(
     --buttonHoverBoxShadow,
     0 8px 10px 1px rgba(0, 0, 0, 0.14),
@@ -120,12 +117,9 @@
 }
 
 .rux-button--outline:hover:not([disabled]) {
-  color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-  background-color: var(
-    --buttonOutlineHoverBackgroundColor,
-    rgba(30, 47, 66, 0.75)
-  );
-  border-color: var(--buttonOutlineHoverBorderColor, rgb(58, 129, 191));
+  color: var(--buttonOutlineHoverTextColor);
+  background-color: var(--buttonOutlineHoverBackgroundColor);
+  border-color: var(--buttonOutlineHoverBorderColor);
 }
 
 /* 
@@ -135,16 +129,15 @@
 */
 
 .rux-button--small {
-  font-size: var(--smallLabelFontSize, 0.875rem);
+  font-size: var(--smallLabelFontSize);
   height: 1.625rem;
   padding: 0 1rem;
   line-height: 1;
 }
 
 .rux-button--large {
-  font-size: var(--largeLabelFontSize, 1.125rem);
+  font-size: var(--largeLabelFontSize);
   height: 2.875rem;
-  /* min-width: 2.875rem; */
   padding: 0 1.5rem;
 }
 
@@ -181,16 +174,16 @@
 .rux-button__icon .rux-icon {
   height: auto;
   width: 100%;
-  fill: var(--buttonTextColor, rgb(255, 255, 255));
+  fill: var(--buttonTextColor);
 }
 
 .rux-button.rux-button--critical,
 .rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
-  background-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
-  border-color: var(--colorCriticalDarken1, rgb(191, 36, 36)) !important;
+  background-color: var(--colorCriticalDarken1) !important;
+  border-color: var(--colorCriticalDarken1) !important;
 }
 
 .rux-button.rux-button--critical:hover:not([active]):not([disabled]) {
-  background-color: var(--colorCritical, rgb(255, 48, 48));
-  border-color: var(--colorCritical, rgb(255, 48, 48));
+  background-color: var(--colorCritical);
+  border-color: var(--colorCritical);
 }

@@ -24,36 +24,36 @@
   --fontSizeSM: 0.75rem;
   --fontSizeXS: 0.65rem;
 
-  --fontFamily: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  --fontFamilyMono: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fontFamilyLight: "Open Sans Light", sans-serif;
+  --fontFamilyMono: "Roboto Mono", monospace;
 
-  --colorBlack: #000000;
-  --colorWhite: #ffffff;
-  --colorGray: #cccccc;
+  --colorBlack: rgb(0, 0, 0);
+  --colorWhite: rgb(255, 255, 255);
+  --colorGray: rgb(204, 204, 204);
 
-  --colorPrimary: #005a8f;
-  --colorSecondary: #4dacff;
-  --colorTertiary: #283f58;
-  --colorQuaternary: #cfd6e3;
+  --colorPrimary: rgb(0, 90, 143);
+  --colorSecondary: rgb(77, 172, 255);
+  --colorTertiary: rgb(40, 63, 88);
+  --colorQuaternary: rgb(207, 214, 227);
 
-  --statusDarkCritical: #ff3838;
-  --statusDarkSerious: #ffb302;
-  --statusDarkCaution: #fce83a;
-  --statusDarkNormal: #56f000;
-  --statusDarkStandby: #2dccff;
-  --statusDarkOff: #9ea7ad;
+  --statusDarkCritical: rgb(255, 56, 56);
+  --statusDarkSerious: rgb(255, 179, 0);
+  --statusDarkCaution: rgb(252, 232, 58);
+  --statusDarkNormal: rgb(86, 240, 0);
+  --statusDarkStandby: rgb(45, 204, 255);
+  --statusDarkOff: rgb(158, 167, 173);
 
-  --statusLightCritical: #ff2a04;
-  --statusLightSerious: #ffaf3d;
-  --statusLightCaution: #fad800;
-  --statusLightNormal: #00e200;
-  --statusLightStandby: #64d9ff;
-  --statusLightOff: #8e9aa3;
+  --statusLightCritical: rgb(255, 42, 4);
+  --statusLightSerious: rgb(255, 175, 61);
+  --statusLightCaution: rgb(250, 216, 0);
+  --statusLightNormal: rgb(0, 226, 0);
+  --statusLightStandby: rgb(100, 217, 255);
+  --statusLightOff: rgb(142, 154, 163);
 
-  --colorTag1: #00c7cb;
-  --colorTag2: #786dd3;
-  --colorTag3: #a200c1;
-  --colorTag4: #da5309;
+  --colorTag1: rgb(25, 199, 202);
+  --colorTag2: rgb(120, 112, 208);
+  --colorTag3: rgb(160, 13, 190);
+  --colorTag4: rgb(216, 83, 30);
 
   --colorPrimaryLighten5: rgb(51, 123, 165);
   --colorPrimaryLighten1: rgb(51, 123, 165);
@@ -774,8 +774,8 @@ li.light-theme {
 
   /* Button Hover State */
   --buttonHoverTextColor: var(--primaryElementText);
-  --buttonHoverBackgroundColor: var(--colorSecondaryDarken1);
-  --buttonHoverBorderColor: var(--colorSecondaryDarken1);
+  --buttonHoverBackgroundColor: var(--primaryLight);
+  --buttonHoverBorderColor: var(--primaryLight);
   --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
@@ -788,14 +788,16 @@ li.light-theme {
   --buttonDefaultBorderColor: var(--colorWhite);
 
   /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--colorWhite);
+  --buttonOutlineTextColor: var(--primary);
   --buttonOutlineBackgroundColor: transparent;
   --buttonOutlineBorderColor: var(--primary);
 
   /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--colorSecondary);
-  --buttonOutlineHoverBackgroundColor: rgba(30, 47, 66, 0.75);
-  --buttonOutlineHoverBorderColor: var(--colorSecondaryDarken1);
+  --buttonOutlineHoverTextColor: var(--primaryLight);
+  /* --buttonOutlineHoverBackgroundColor: rgba(30, 47, 66, 0.75); */
+  --buttonOutlineHoverBackgroundColor: transparent;
+
+  --buttonOutlineHoverBorderColor: var(--primaryLight);
 
   /* 
     
@@ -1235,7 +1237,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
 
   font-family: var(--fontFamily, "Open Sans", sans-serif);
   font-size: 1rem;
@@ -1354,7 +1356,7 @@ label {
   color: rgb(255, 255, 255);
 
   color: var(--buttonTextColor, rgb(255, 255, 255));
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-family: var(--fontFamily, "Open Sans", sans-serif);
   font-size: 1rem;
 
@@ -1835,7 +1837,7 @@ label {
   flex-wrap: wrap;
   align-items: flex-start;
 
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
 
   font-family: var(--fontFamily, "Open Sans", sans-serif);
   font-size: 1rem;
@@ -1901,7 +1903,7 @@ label {
 
   font-family: "Open Sans", sans-serif;
 
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
 
   font-family: var(--fontFamily, "Open Sans", sans-serif);
   font-size: 1rem;
@@ -2038,7 +2040,7 @@ label {
 }
 
 .rux-form-field input:focus .rux-form-field input:invalid:focus {
-  box-shadow: inset 0 0 3px #cccccc;
+  box-shadow: inset 0 0 3px rgb(204, 204, 204);
   box-shadow: inset 0 0 3px var(--colorGray);
   border-color: var(--inputFocusBorderColor);
   outline: none;
@@ -2288,7 +2290,7 @@ label {
 .rux-clock__segment__value {
   display: flex;
   align-items: center;
-  font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: "Roboto Mono", monospace;
   font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
   font-weight: 700;
 
@@ -2344,7 +2346,7 @@ label {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  fill: #4dacff;
+  fill: rgb(77, 172, 255);
 
   fill: var(--colorSecondary, rgb(77, 172, 255));
 }
@@ -2354,7 +2356,7 @@ i.rux-icon {
   width: 2.8rem;
   height: 2.8rem;
 
-  color: #4dacff;
+  color: rgb(77, 172, 255);
 
   color: var(--colorSecondary, rgb(77, 172, 255));
 }
@@ -2440,7 +2442,7 @@ i.rux-icon {
 }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: "Roboto Mono", monospace;
   font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
 }
 
@@ -2587,7 +2589,7 @@ i.rux-icon {
   transition: all 0.5s ease;
 
   box-sizing: border-box;
-  color: #000000;
+  color: rgb(0, 0, 0);
   color: var(--colorBlack, rgb(0, 0, 0));
 }
 
@@ -2753,10 +2755,10 @@ i.rux-icon {
   min-width: 15em;
   position: relative;
 
-  border: 1px solid #4dacff;
+  border: 1px solid rgb(77, 172, 255);
 
   border: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  background-color: #4dacff;
+  background-color: rgb(77, 172, 255);
   background-color: var(--colorSecondary, rgb(77, 172, 255));
   border-radius: 3px;
 }
@@ -2811,7 +2813,7 @@ i.rux-icon {
 
 .rux-pop-up--top,
 .satcom-pop-up-top {
-  border-top: 3px solid #4dacff;
+  border-top: 3px solid rgb(77, 172, 255);
   border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
 }
 
@@ -2824,7 +2826,7 @@ i.rux-icon {
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: #4dacff;
+  background-color: rgb(77, 172, 255);
 
   background-color: var(--colorSecondary, rgb(77, 172, 255));
   z-index: 1;
@@ -2835,7 +2837,7 @@ i.rux-icon {
 
 .rux-pop-up--bottom,
 .satcom-pop-up-bottom {
-  border-bottom: 3px solid #4dacff;
+  border-bottom: 3px solid rgb(77, 172, 255);
   border-bottom: 3px solid var(--colorSecondary, rgb(77, 172, 255));
 }
 
@@ -2844,14 +2846,14 @@ i.rux-icon {
   content: "";
   display: block;
   position: absolute;
-  border-bottom: 1px solid #4dacff;
+  border-bottom: 1px solid rgb(77, 172, 255);
   border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  border-right: 1px solid #4dacff;
+  border-right: 1px solid rgb(77, 172, 255);
   border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: #4dacff;
+  background-color: rgb(77, 172, 255);
 
   background-color: var(--colorSecondary, rgb(77, 172, 255));
 
@@ -2861,7 +2863,7 @@ i.rux-icon {
 
 .rux-pop-up--left,
 .satcom-pop-up-left {
-  border-left: 3px solid #4dacff;
+  border-left: 3px solid rgb(77, 172, 255);
   border-left: 3px solid var(--colorSecondary, rgb(77, 172, 255));
 }
 
@@ -2870,14 +2872,14 @@ i.rux-icon {
   content: "";
   display: block;
   position: absolute;
-  border-bottom: 1px solid #4dacff;
+  border-bottom: 1px solid rgb(77, 172, 255);
   border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  border-left: 1px solid #4dacff;
+  border-left: 1px solid rgb(77, 172, 255);
   border-left: 1px solid var(--colorSecondary, rgb(77, 172, 255));
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: #4dacff;
+  background-color: rgb(77, 172, 255);
 
   background-color: var(--colorSecondary, rgb(77, 172, 255));
 
@@ -2887,7 +2889,7 @@ i.rux-icon {
 
 .rux-pop-up--right,
 .satcom-pop-up-right {
-  border-right: 3px solid #4dacff;
+  border-right: 3px solid rgb(77, 172, 255);
   border-right: 3px solid var(--colorSecondary, rgb(77, 172, 255));
 }
 
@@ -2896,14 +2898,14 @@ i.rux-icon {
   content: "";
   display: block;
   position: absolute;
-  border-top: 1px solid #4dacff;
+  border-top: 1px solid rgb(77, 172, 255);
   border-top: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  border-right: 1px solid #4dacff;
+  border-right: 1px solid rgb(77, 172, 255);
   border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: #4dacff;
+  background-color: rgb(77, 172, 255);
 
   background-color: var(--colorSecondary, rgb(77, 172, 255));
 
@@ -3540,10 +3542,10 @@ input:-moz-focusring {
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:active,
 .satcom-range:not(:disabled)::-webkit-slider-thumb:active {
-  border-color: #4dacff;
+  border-color: rgb(77, 172, 255);
   border-color: var(--colorSecondary, rgb(77, 172, 255));
   background-color: rgb(255, 255, 255);
-  box-shadow: inset 0 0 0 4px #005a8f,
+  box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
     0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: var(--thumbShadowActive);
