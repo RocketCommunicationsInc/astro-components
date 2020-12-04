@@ -1113,11 +1113,12 @@ li.light-theme {
   --inputBackgroundColor: var(--colorWhite);
   --inputBorderColor: transparent;
   --inputTextColor: var(--colorBlack);
-
+	 
+	/* Input Focus */
   --inputFocusBorderColor: var(--primary);
   /* --inputFocusBoxShadow: 0 0 4px var(--colorSecondaryLighten3); */
-  --inputFocusBoxShadow: inset 0 0 0 1px white,
-    inset 0 0 0 2px var(--colorPrimary);
+  --inputFocusBoxShadow: inset 0 0 0 1px var(--primary),
+    inset 0 0 0 2px var(--primary);
 
   --inputInvalidBorderColor: var(--colorCritical);
 
@@ -1960,8 +1961,10 @@ label {
 
 .rux-form-field input:required + label::after {
   content: "*";
-  margin-left: 0.25rem;
+	margin-left: 0.25rem;
+	color: var(--inputTextColor);
 }
+
 
 .rux-form-field__label {
   display: flex;
@@ -1971,9 +1974,7 @@ label {
   align-content: center;
   align-items: center;
 
-  color: rgb(255, 255, 255);
-
-  color: var(--fontColor, rgb(255, 255, 255));
+  color: var(--defaultText);
   user-select: none;
 }
 
@@ -1985,9 +1986,7 @@ label {
   width: 100%;
   padding: 0 1rem;
 
-  border: 1px solid transparent;
-
-  border: 1px solid var(--inputBorderColor, transparent);
+  border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
 
   font-size: 1rem;
@@ -2055,7 +2054,7 @@ label {
 
 .rux-form-field input:not([type="search"]):focus,
 .rux-form-field input:not([type="search"]):invalid:focus {
-  border: 1px solid var(--inputFocusBorderColor);
+  border: 1px solid var(--inputFocusBorderColor) !important;
   /* border-left: 4px solid var(--inputFocusBorderColor); */
   /* padding-left: calc(0.5rem - 3px); */
 }
@@ -2107,9 +2106,9 @@ label {
 
 .rux-form-field input:disabled {
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 .rux-form-field--large,
@@ -2117,7 +2116,7 @@ label {
 .rux-form-field--large input,
 .rux-form-field--large textarea {
   font-size: 1.125rem;
-  font-size: var(--fontSizeXL, 1.125rem);
+  font-size: var(--fontSizeXL);
 }
 
 .rux-form-field--small,
@@ -2125,7 +2124,7 @@ label {
 .rux-form-field--small input,
 .rux-form-field--small textarea {
   font-size: 0.875rem;
-  font-size: var(--fontSizeMD, 0.875rem);
+  font-size: var(--fontSizeMD);
 }
 
 .rux-form-field--large input,
@@ -2152,7 +2151,9 @@ label {
   padding: 0.5rem 1.875rem 0.5rem 0.5rem;
 }
 
-.rux-form-field input:focus .rux-form-field input:invalid:focus {
+.rux-form-field input:focus,
+.rux-form-field input:invalid:focus,
+.rux-form-field textarea:focus {
   box-shadow: inset 0 0 3px rgb(204, 204, 204);
   box-shadow: inset 0 0 3px var(--colorGray);
   border-color: var(--inputFocusBorderColor);
@@ -2172,11 +2173,7 @@ label {
 
   background: no-repeat center left 0.3rem/1.1em
     url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
-    rgb(255, 255, 255);
-
-  background: no-repeat center left 0.3rem/1.1em
-    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
-    var(--inputBackgroundColor, rgb(255, 255, 255));
+    var(--inputBackgroundColor);
 }
 
 .rux-form-field--large input[type="search"] {

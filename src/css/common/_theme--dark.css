@@ -320,11 +320,12 @@
   --inputBackgroundColor: var(--colorWhite);
   --inputBorderColor: transparent;
   --inputTextColor: var(--colorBlack);
-
+	 
+	/* Input Focus */
   --inputFocusBorderColor: var(--primary);
   /* --inputFocusBoxShadow: 0 0 4px var(--colorSecondaryLighten3); */
-  --inputFocusBoxShadow: inset 0 0 0 1px white,
-    inset 0 0 0 2px var(--colorPrimary);
+  --inputFocusBoxShadow: inset 0 0 0 1px var(--primary),
+    inset 0 0 0 2px var(--primary);
 
   --inputInvalidBorderColor: var(--colorCritical);
 
