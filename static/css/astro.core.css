@@ -909,7 +909,7 @@ li.light-theme {
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--colorPrimary);
+  --sliderThumbBackgroundColor: var(--primaryDark);
   --sliderThumbBorderColor: var(--colorWhite);
 
   --sliderTrackBorderColor: transparent;
