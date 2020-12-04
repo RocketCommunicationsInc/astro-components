@@ -199,17 +199,17 @@
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--colorWhite);
+  --popupMenuBackgroundColor: var(--inputBackground);
   --popupMenuBorderColor: var(--primary);
-  --popupMenuTextColor: var(--colorBlack);
+  --popupMenuTextColor: var(--primaryElementText);
 
-  --popupCaretBackgroundColor: var(--popupMenuBorderColor);
+  --popupCaretBackgroundColor: var(--primary);
 
-  --popupMenuItemBackgroundColor: var(--colorPrimary);
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3);
-  --popupMenuItemHoverTextColor: var(--colorBlack);
+  --popupMenuItemBackgroundColor: var(--primary);
+  --popupMenuItemHoverBackgroundColor: var(--primaryLight);
+  --popupMenuItemHoverTextColor: var(--primaryElementText);
 
-  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2);
+  --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
 
   /* 
     
