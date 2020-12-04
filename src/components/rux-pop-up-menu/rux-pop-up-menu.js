@@ -208,8 +208,8 @@ export class RuxPopUpMenu extends LitElement {
 
         color: var(--colorBlack, rgb(0, 0, 0));
 
-        background-color: var(--popupMenuBorderColor, rgb(77, 172, 255));
-        border: 1px solid var(--popupMenuBorderColor, rgb(77, 172, 255));
+        background-color: var(--popupMenuBorderColor);
+        border: 1px solid var(--popupMenuBorderColor);
         border-top-width: 4px;
         z-index: 10000;
 
@@ -240,7 +240,7 @@ export class RuxPopUpMenu extends LitElement {
         z-index: 1;
 
         border: 8px solid transparent;
-        border-bottom: 11px solid var(--popupCaretBackgroundColor, rgb(77, 172, 255));
+        border-bottom: 11px solid var(--popupCaretBackgroundColor);
 
         left: var(--caretLeft, 2px);
         top: -1.4375rem;
@@ -252,7 +252,7 @@ export class RuxPopUpMenu extends LitElement {
         padding: 0;
         margin: 0;
 
-        background-color: var(--popupMenuBackgroundColor, rgb(255, 255, 255));
+        background-color: var(--popupMenuBackgroundColor);
 
         z-index: 2;
         border-radius: 2px;
@@ -271,7 +271,7 @@ export class RuxPopUpMenu extends LitElement {
       li:not([role='seperator']) {
         display: block;
         padding: 0.15rem 0.75rem;
-        color: var(--popupMenuTextColor, rgb(0, 0, 0));
+        color: var(--popupMenuTextColor);
         text-decoration: none;
 
         min-width: 15em;
@@ -284,7 +284,8 @@ export class RuxPopUpMenu extends LitElement {
       }
 
       li:not([role='seperator']):hover {
-        background-color: var(--popupMenuItemHoverBackgroundColor, rgb(211, 234, 255));
+        background-color: var(--popupMenuItemHoverBackgroundColor);
+				color: var(--popupMenuItemHoverTextColor);
       }
 
       :host(.from-top) {
@@ -301,7 +302,7 @@ export class RuxPopUpMenu extends LitElement {
       [role='seperator'] {
         pointer-events: none;
         height: 6px;
-        border-top: 1px dashed var(--popupMenuItemSeperatorBorderColor, rgb(123, 128, 137)) !important;
+        border-top: 1px dashed var(--popupMenuItemSeperatorBorderColor) !important;
         margin: 6px 0.5rem 0 0.5rem;
       }
     `;

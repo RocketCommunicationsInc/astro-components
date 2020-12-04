@@ -478,14 +478,14 @@
 
   */
   --popupMenuBackgroundColor: var(--colorWhite);
-  --popupMenuBorderColor: var(--colorSecondary);
+  --popupMenuBorderColor: var(--primary);
   --popupMenuTextColor: var(--colorBlack);
 
   --popupCaretBackgroundColor: var(--popupMenuBorderColor);
 
-  --popupMenuItemBackgroundColor: var(--primary);
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3);
-  --popupMenuItemHoverTextColor: var(--colorBlack);
+  --popupMenuItemBackgroundColor: var(--primaryLight);
+  --popupMenuItemHoverBackgroundColor: var(--primary);
+  --popupMenuItemHoverTextColor: var(--colorWhite);
 
   --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2);
 
