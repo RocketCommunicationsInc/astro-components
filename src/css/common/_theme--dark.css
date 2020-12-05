@@ -394,22 +394,24 @@
       
   */
 
-  --tableBorderColor: var(--colorTertiaryLighten1);
+  --tableBorderColor: var(--backgroundColor);
 
   --tableHeaderBackgroundColor: var(--globalAppHeader);
-  --tableHeaderTextColor: var(--colorTertiaryLighten3);
+  --tableHeaderTextColor: var(--defaultText);
   --tableHeaderBoxShadow: 0 0.25rem .5rem rgba(0, 0, 0, 0.45);
   --tableHeaderAccentColor:  var(--colorTertiary);
 
-  --tableRowBackgroundColor: var(--colorTertiaryDarken1);
-  --tableRowSelectedBackgroundColor: var(--colorTertiary);
-  --tableRowHoverBackgroundColor: var(--globalAppHeader);
+  --tableRowBackgroundColor: var(--surfaceElements);
+  --tableRowSelectedBackgroundColor: var(--backgroundColor);
+  --tableRowSelectedBorderColor: var(--primary);
+	--tableRowHoverBackgroundColor: var(--primaryLight);
+	--tableRowHoverTextColor: var(--primaryElementText);
   --tableRowTextColor: var(--fontColor);
   --tableRowBorderColor: var(--globalAppHeader);
   
   --tableControlsBackgroundColor: var(--globalAppHeader);
-  --tableCellSelectedBorderColor: var(--colorSecondaryDarken2);
-  --tableFilterBorderColor: var(--colorTertiaryLighten1);
+  --tableCellSelectedBorderColor: var(--backgroundColor);
+  --tableFilterBorderColor: var(--primary);
   --tableFilterDisabledBorderColor: var(--colorTertiary);
   --tableFilterDisabledBackgroundColor: var(--colorTertiaryDarken1);
 }

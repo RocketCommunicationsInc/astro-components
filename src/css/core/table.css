@@ -10,11 +10,11 @@
   width: 100%;
   border-collapse: separate;
   border-spacing: 0px;
-  color: var(--tableRowTextColor, rgb(255, 255, 255));
+  color: var(--tableRowTextColor);
   border-style: solid;
   border-width: 1px;
-  border-color: var(--tableBorderColor, rgb(83, 101, 121));
-  background: var(--tableRowBackgroundColor, rgb(32, 50, 70));
+  border-color: var(--tableBorderColor);
+  background: var(--tableRowBackgroundColor);
   text-align: left;
   overflow: scroll;
 }
@@ -22,9 +22,9 @@
 .rux-table th {
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: var(--tableHeaderAccentColor,rgb(40, 63, 88));
-  background: var(--tableHeaderBackgroundColor, rgb(24, 38, 53));
-  color: var(--tableHeaderTextColor, rgb(169, 178, 188));
+  border-top-color: var(--tableHeaderAccentColor);
+  background: var(--tableHeaderBackgroundColor);
+  color: var(--tableHeaderTextColor);
   font-weight: 600;
   height:  2.625rem;
   padding: 0.625rem 1rem;
@@ -32,23 +32,28 @@
 }
 
 .rux-table__column-head {
-  box-shadow: var(--tableHeaderBoxShadow, 0 0.25rem .5rem rgba(0, 0, 0, 0.45));
-  border-top-color: var(--tableBorderColor, rgb(83, 101, 121));
+  box-shadow: var(--tableHeaderBoxShadow);
+  border-top-color: var(--tableBorderColor);
   border-top-width: 1px;
   border-top-style: solid;
 }
 
 .rux-table tr[data-selected],
 .rux-table tr.selected {
-  background: var(--tableRowSelectedBackgroundColor, rgb(40, 63, 88));
+	background: var(--tableRowSelectedBackgroundColor);
+	border-color: var(--tableRowSelectedBorderColor);
 }
 
+.rux-table tr[data-selected] td {
+	border-color: var(--tableRowSelectedBorderColor);
+}
 .rux-table tr:hover {
-  background: var(--tableRowHoverBackgroundColor, rgb(24, 38, 53));
+	background: var(--tableRowHoverBackgroundColor);
+	color: var(--tableRowHoverTextColor);
 }
 
 .rux-table td {
-  border-color: var(--tableRowBorderColor, rgb(83, 101, 121));
+  border-color: var(--tableRowBorderColor);
   border-width: 1px 0;
   border-style: solid;
   padding: 0.625rem 1rem;

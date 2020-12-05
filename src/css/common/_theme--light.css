@@ -406,18 +406,20 @@
       
   */
 
-  --tableBorderColor: var(--colorQuaternary);
+  --tableBorderColor: var(--backgroundColor);
 
-  --tableHeaderBackgroundColor: var(--colorQuaternary);
+  --tableHeaderBackgroundColor: var(--globalAppHeader);
   --tableHeaderTextColor: var(--defaultText);
   --tableHeaderBoxShadow:  0 0.1rem .45rem rgba(0, 0, 0, 0.2);
   --tableHeaderAccentColor: var(--colorQuaternaryLighten2);
 
-  --tableRowBackgroundColor: var(--colorWhite);
-  --tableRowSelectedBackgroundColor:  var(--backgroundColor);
-  --tableRowHoverBackgroundColor: var(--colorQuaternary);
+  --tableRowBackgroundColor: var(--surfaceElements);
+  --tableRowBorderColor: var(---backgroundColor);
   --tableRowTextColor: var(--defaultText);
-  --tableRowBorderColor: var(--colorQuaternary);
+	--tableRowSelectedBackgroundColor:  var(--backgroundColor);
+	--tableRowSelectedBorderColor: var(--primary);
+	--tableRowHoverBackgroundColor: var(--primaryLight);
+	--tableRowHoverTextColor: var(--primaryElementText);
   
   --tableControlsBackgroundColor: var(--colorQuaternaryLighten2);
   --tableCellSelectedBorderColor: var(--colorQuaternary);
