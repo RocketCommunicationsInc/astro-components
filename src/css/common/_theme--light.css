@@ -134,12 +134,12 @@
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--primary);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBackgroundColor: var(--primaryDark);
+  --sliderThumbBorderColor: var(--inputBackground);
 	--sliderHoverThumbBackgroundColor: var(--primary);
 
-  --sliderTrackBorderColor: var(--colorQuaternary);
-  --sliderTrackBackgroundColor: var(--colorWhite);
+  --sliderTrackBorderColor: var(--secondaryText);
+  --sliderTrackBackgroundColor: var(--inputBackground);
 
   --sliderSelectedTrackBackgroundColor: var(--primary);
 

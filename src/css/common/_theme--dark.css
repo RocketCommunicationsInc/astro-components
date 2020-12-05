@@ -116,7 +116,7 @@
 
   */
   --sliderThumbBackgroundColor: var(--primaryDark);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBorderColor: var(--inputBackground);
 
   --sliderTrackBorderColor: transparent;
   --sliderTrackBackgroundColor: var(--colorGray);
