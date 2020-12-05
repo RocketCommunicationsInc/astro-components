@@ -841,9 +841,9 @@ li.light-theme {
   */
 
   /* Button */
-  --buttonTextColor: var(--colorWhite);
-  --buttonBackgroundColor: var(--colorPrimary);
-  --buttonBorderColor: var(--colorPrimary);
+  --buttonTextColor: var(--defaultText);
+  --buttonBackgroundColor: var(--primary);
+  --buttonBorderColor: var(--primary);
   --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
@@ -855,15 +855,15 @@ li.light-theme {
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite);
-  --buttonActiveBackgroundColor: var(--colorPrimary);
-  --buttonActiveBorderColor: var(--colorPrimary);
+  --buttonActiveControlTextColor: var(--defaultText);
+  --buttonActiveBackgroundColor: var(--primary);
+  --buttonActiveBorderColor: var(--primary);
 
   /* Default Button State */
-  --buttonDefaultBorderColor: var(--colorWhite);
+  --buttonDefaultBorderColor: var(--defaultText);
 
   /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--colorWhite);
+  --buttonOutlineTextColor: var(--defaultText);
   --buttonOutlineBackgroundColor: transparent;
   --buttonOutlineBorderColor: var(--primary);
 
@@ -885,7 +885,7 @@ li.light-theme {
   --controlBorderColor: var(--primary);
   --controlAccentColor: var(--primary);
 
-  --controlSelectedTextColor: var(--colorWhite);
+  --controlSelectedTextColor: var(--defaultText);
   --controlSelectedBackgroundColor: var(--primaryDark);
 	--controlSelectedBorderColor: var(--primary);
 	--controlSelectedOutlineBorderColor: var(--primary);
