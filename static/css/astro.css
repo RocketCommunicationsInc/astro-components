@@ -3273,8 +3273,6 @@ i.rux-icon {
   color: var(--pushbuttonSelectedTextColor);
   background-color: var(--pushbuttonSelectedBackgroundColor);
   border-color: var(--pushbuttonSelectedBorderColor);
-
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
 }
 
 .rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on {

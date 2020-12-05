@@ -72,8 +72,6 @@ export class RuxPushButton extends LitElement {
           color: var(--pushbuttonSelectedTextColor);
           background-color: var(--pushbuttonSelectedBackgroundColor);
           border-color: var(--pushbuttonSelectedBorderColor);
-
-          box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.33);
         }
 
         :host([disabled]) {
