@@ -68,6 +68,4 @@
 .rux-segmented-button__segment input:checked + label {
   background-color: var(--segmentedButtonSelectedBackgroundColor);
   color: var(--segmentedButtonSelectedTextColor);
-  box-shadow: var(--segmentedButtonSelectedBoxShadow);
-  transition: box-shadow 0.067 ease-out;
 }

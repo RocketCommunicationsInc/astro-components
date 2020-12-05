@@ -519,9 +519,6 @@
 
 	/* Segmented Select */
   --segmentedButtonSelectedBackgroundColor: var(--primary);
-	/* --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1), inset 0 1px 5px rgba(0, 0, 0, 0.06);
-  	transition: box-shadow 0.067s ease-out; */
-	--segmentedButtonSelectedBoxShadow: none;
   --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
@@ -935,11 +932,6 @@ li.light-theme {
 	/* Segmented Select */
   --segmentedButtonSelectedBackgroundColor: var(--primary);
 
-	/* --segmentedButtonSelectedBoxShadow: 
-		inset 0 2px 4px rgba(0, 0, 0, 0.14),
-		inset 0 3px 4px rgba(0, 0, 0, 0.12),
-		inset 0 1px 5px rgba(0, 0, 0, 0.2); */
-		--segmentedButtonSelectedBoxShadow:none;
   --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
@@ -3378,8 +3370,6 @@ i.rux-icon {
 .rux-segmented-button__segment input:checked + label {
   background-color: var(--segmentedButtonSelectedBackgroundColor);
   color: var(--segmentedButtonSelectedTextColor);
-  box-shadow: var(--segmentedButtonSelectedBoxShadow);
-  transition: box-shadow 0.067 ease-out;
 }
 
 /*
