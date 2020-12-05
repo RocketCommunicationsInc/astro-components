@@ -1,7 +1,7 @@
 .rux-log {
   display: block;
   font-size: 0.875rem;
-  background-color: var(--logBackgroundColor, rgb(30, 47, 66));
+  background-color: var(--logBackgroundColor);
 }
 
 .rux-log-header {
@@ -11,7 +11,7 @@
   justify-content: space-between;
 
   padding: 0.5rem;
-  background-color: var(--logHeaderBackgroundColor, rgb(20, 32, 44));
+  background-color: var(--logHeaderBackgroundColor);
 }
 
 .rux-log-header-title {
@@ -25,7 +25,7 @@
 .rux-log__header-labels {
   display: flex;
   width: 100%;
-  color: var(--logHeaderTextColor, rgb(255, 255, 255));
+  color: var(--logHeaderTextColor);
 }
 
 .rux-log__header-labels,
@@ -58,7 +58,7 @@
   flex-shrink: 0;
   align-items: flex-start;
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--logBorderColor, rgb(40, 63, 88));
+  border-bottom: 1px solid var(--logBorderColor);
 }
 
 .rux-log__log-event:last-child {
@@ -75,7 +75,7 @@
 }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+  font-family: var(--fontFamilyMono);
 }
 
 .log-event__status {
@@ -107,8 +107,8 @@
 
   align-content: center;
 
-  color: var(--logFilterTextColor, rgb(0, 0, 0));
-  background-color: var(--logFilterBackgroundColor, rgb(192, 240, 255));
+  color: var(--logFilterTextColor);
+  background-color: var(--logFilterBackgroundColor);
   padding: 0.5rem;
 }
 
