@@ -299,7 +299,7 @@
 
   */
   --tabTextColor: var(--primary);
-  --tabBackgroundColor: var(--inputBackground);
+  --tabBackgroundColor: transparent;
   --tabBorderColor: var(--primary);
 
   --tabHoverTextColor: var(--defaultText);
