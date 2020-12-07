@@ -95,6 +95,7 @@
   --controlSelectedTextColor: var(--defaultText);
   --controlSelectedBackgroundColor: var(--primaryDark);
 	--controlSelectedBorderColor: var(--primary);
+	--controlHoverBorderColor: var(--primaryLight);
 	--controlSelectedOutlineBorderColor: var(--primary);
 
   /* 

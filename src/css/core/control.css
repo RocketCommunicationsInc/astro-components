@@ -86,6 +86,16 @@
   border-color: var(--controlSelectedOutlineBorderColor);
 }
 
+.rux-checkbox input[type="checkbox"]:hover + label::before,
+.rux-radio-button input[type="radio"]:hover + label::before {
+	border-color: var(--controlHoverBorderColor);
+}
+
+.rux-checkbox input[type="checkbox"]:checked:hover + label::before,
+.rux-radio-button input[type="radio"]:checked:hover + label::before {
+	border-color: var(--controlSelectedBorderColor);
+}
+
 .rux-checkbox input[type="checkbox"]:checked + label::after,
 .rux-radio-button input[type="radio"]:checked + label::after{
   position: absolute;

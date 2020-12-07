@@ -455,7 +455,8 @@
   --controlSelectedBackgroundColor: transparent;
   --controlSelectedBorderColor: var(--primary);
 
-  --controlHoverOutlineBackgroundColor: none;
+	--controlHoverOutlineBackgroundColor: none;
+	--controlHoverBorderColor: var(--primaryDark);
   --controlSelectedOutlineBorderColor: var(--primary);
   --controlSelectedOutlineBackgroundColor: none;
 
@@ -888,6 +889,7 @@ li.light-theme {
   --controlSelectedTextColor: var(--defaultText);
   --controlSelectedBackgroundColor: var(--primaryDark);
 	--controlSelectedBorderColor: var(--primary);
+	--controlHoverBorderColor: var(--primaryLight);
 	--controlSelectedOutlineBorderColor: var(--primary);
 
   /* 
@@ -1769,6 +1771,16 @@ label {
 .rux-radio-button input[type="radio"]:checked + label::before {
   background-color: var(--controlSelectedOutlineBackgroundColor);
   border-color: var(--controlSelectedOutlineBorderColor);
+}
+
+.rux-checkbox input[type="checkbox"]:hover + label::before,
+.rux-radio-button input[type="radio"]:hover + label::before {
+	border-color: var(--controlHoverBorderColor);
+}
+
+.rux-checkbox input[type="checkbox"]:checked:hover + label::before,
+.rux-radio-button input[type="radio"]:checked:hover + label::before {
+	border-color: var(--controlSelectedBorderColor);
 }
 
 .rux-checkbox input[type="checkbox"]:checked + label::after,
