@@ -560,7 +560,7 @@
 
   /* Default Toggle */
   --toggleThumbBorderColor: var(--secondaryText);
-	--toggleThumbBackgroundColor: var(--backgroundColor);
+	--toggleThumbBackgroundColor: var(--inputBackground);
 	
 	--toggleTrackBorderColor: var(--secondaryText);
 	--toggleTrackBackgroundColor: var(--backgroundColor);
@@ -574,8 +574,8 @@
   --toggleSelectedTrackBackgroundColor: var(--primaryLight);
 
   --toggleDisabledThumbBorderColor: var(--secondaryText);
-  --toggleDisabledThumbBackgroundColor: var(--primaryElementText);
-  --toggleDisabledSelectedThumbBorderColor: var(--secondaryText);
+  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
+  --toggleDisabledSelectedThumbBorderColor: var(--primary);
 
   /* 
     
@@ -960,7 +960,7 @@ li.light-theme {
     ==========================================================================
 
   */
-
+	
   --toggleButtonBackgroundColor: var(--primary);
   --toggleBaseBackgroundColor: var(--primary);
   --toggleBaseBorderColor: var(--primary);
@@ -968,9 +968,9 @@ li.light-theme {
 
   --toggleBaseSelectedTextColor: var(--colorNormal);
 
-  /* Alt Toggle */
+  /* Default Toggle */
   /* --toggleThumbBorderColor: var(--colorGrayDarken2); */
-  --toggleThumbBorderColor: var(--defaultText);
+  --toggleThumbBorderColor: var(--secondaryText);
   --toggleThumbBackgroundColor: var(--inputBackground);
 
   --toggleTrackBorderColor: var(--secondaryText);

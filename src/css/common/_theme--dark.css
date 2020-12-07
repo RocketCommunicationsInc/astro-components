@@ -165,7 +165,7 @@
     ==========================================================================
 
   */
-
+	
   --toggleButtonBackgroundColor: var(--primary);
   --toggleBaseBackgroundColor: var(--primary);
   --toggleBaseBorderColor: var(--primary);
@@ -173,9 +173,9 @@
 
   --toggleBaseSelectedTextColor: var(--colorNormal);
 
-  /* Alt Toggle */
+  /* Default Toggle */
   /* --toggleThumbBorderColor: var(--colorGrayDarken2); */
-  --toggleThumbBorderColor: var(--defaultText);
+  --toggleThumbBorderColor: var(--secondaryText);
   --toggleThumbBackgroundColor: var(--inputBackground);
 
   --toggleTrackBorderColor: var(--secondaryText);
