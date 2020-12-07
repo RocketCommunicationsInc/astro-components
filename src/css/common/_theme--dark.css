@@ -214,13 +214,13 @@
     ==========================================================================
 
   */
-  --pushbuttonBackgroundColor: var(--colorPrimary);
-  --pushbuttonBorderColor: var(--colorBlack);
-  --pushbuttonTextColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
+  --pushbuttonBorderColor: var(--primary);
+  --pushbuttonTextColor: var(--primary);
 
-  --pushbuttonSelectedBackgroundColor: var(--colorBlack);
-  --pushbuttonSelectedBorderColor: var(--colorBlack);
-  --pushbuttonSelectedTextColor: var(--colorNormal);
+  --pushbuttonSelectedBackgroundColor: var(--colorNormal);
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
