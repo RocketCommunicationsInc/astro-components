@@ -484,7 +484,7 @@
   --popupCaretBackgroundColor: var(--primary);
 
   --popupMenuItemBackgroundColor: var(--inputBackground);
-  --popupMenuItemHoverBackgroundColor: var(--primaryLight);
+  --popupMenuItemHoverBackgroundColor: var(--primaryDark);
   --popupMenuItemHoverTextColor: var(--primaryElementText);
 
   --popupMenuItemSeperatorBorderColor: var(--defaultText);
