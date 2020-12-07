@@ -26,7 +26,7 @@ export class RuxGlobalStatusBar extends LitElement {
           padding: 0 1.875rem;
 
           box-sizing: border-box;
-          background-color: rgb(0, 23, 36);
+          background-color: var(--globalAppHeader);
 
           -webkit-user-select: none;
           -moz-user-select: none;
@@ -62,7 +62,6 @@ export class RuxGlobalStatusBar extends LitElement {
 
         .app-meta {
           display: block;
-
           padding: 0;
           margin: 0;
           color: var(--inputBackground);
