@@ -510,19 +510,17 @@
 
   */
   --segmentedButtonBorderColor: var(--primary);
-  --segmentedButtonBackgroundColor: var(--colorWhite);
+  --segmentedButtonBackgroundColor: none;
   --segmentedButtonTextColor: var(--primary);
 
-  --segmentedButtonHoverBackgroundColor: rgb(0, 90, 143, 0.05);
-  --segmentedButtonHoverTextColor: var(--primary);
+	/* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--primaryDark);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryDark);
 
-  --segmentedButtonSelectedBackgroundColor: var(--colorSecondaryDarken1);
-
-  --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1),
-    inset 0 1px 5px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.067s ease-out;
-
-  --segmentedButtonSelectedTextColor: var(--colorWhite);
+	/* Segmented Select */
+  --segmentedButtonSelectedBackgroundColor: var(--primary);
+  --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -582,15 +580,13 @@
 
   */
 
-  --pushbuttonBackgroundColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
   --pushbuttonBorderColor: var(--primary);
   --pushbuttonTextColor: var(--primary);
 
   --pushbuttonSelectedBackgroundColor: var(--colorNormal);
-  --pushbuttonSelectedBorderColor: #3dc100;
-  /* var(--colorNormal); */
-  --pushbuttonSelectedTextColor: #007300;
-  /* var(--colorWhite); */
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--defaultText);
 
   /* 
     
@@ -609,9 +605,9 @@
     ==========================================================================
  
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
-  --modalBackgroundColor: var(--colorWhite);
+  --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
   /* 
     
@@ -932,22 +928,19 @@ li.light-theme {
     ==========================================================================
 
   */
-  --segmentedButtonBorderColor: var(--colorTertiaryDarken1);
-  --segmentedButtonBackgroundColor: var(--colorPrimary);
-  --segmentedButtonTextColor: var(--colorWhite);
+  --segmentedButtonBorderColor: var(--primary);
+  --segmentedButtonBackgroundColor: none;
+  --segmentedButtonTextColor: var(--primary);
 
-  --segmentedButtonHoverBackgroundColor: var(
-    --primaryDark,
-    rgb(58, 135, 207)
-  );
-  --segmentedButtonHoverTextColor: var(--colorWhite);
+	/* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--primaryLight);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryLight);
 
-  --segmentedButtonSelectedBackgroundColor: var(--primaryDark);
+	/* Segmented Select */
+  --segmentedButtonSelectedBackgroundColor: var(--primary);
 
-  --segmentedButtonSelectedBoxShadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
-
-  --segmentedButtonSelectedTextColor: var(--colorWhite);
+  --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -1018,13 +1011,13 @@ li.light-theme {
     ==========================================================================
 
   */
-  --pushbuttonBackgroundColor: var(--colorPrimary);
-  --pushbuttonBorderColor: var(--colorBlack);
-  --pushbuttonTextColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
+  --pushbuttonBorderColor: var(--primary);
+  --pushbuttonTextColor: var(--primary);
 
-  --pushbuttonSelectedBackgroundColor: var(--colorBlack);
-  --pushbuttonSelectedBorderColor: var(--colorBlack);
-  --pushbuttonSelectedTextColor: var(--colorNormal);
+  --pushbuttonSelectedBackgroundColor: var(--colorNormal);
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -1042,7 +1035,7 @@ li.light-theme {
     ==========================================================================
 
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
@@ -2624,14 +2617,11 @@ i.rux-icon {
   flex-direction: column;
   justify-content: space-between;
 
-  background-color: rgb(0, 0, 0);
-
-  background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
+  background-color: var(--modalBackgroundColor);
 
   width: 28rem;
   height: 13.5rem;
-  border: 2px solid rgb(0, 90, 143);
-  border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
+  border: 2px solid var(--modalBorderColor);
 
   border-radius: 4px;
   margin: auto;
@@ -2653,9 +2643,7 @@ i.rux-icon {
   width: 100%;
   height: 2rem;
 
-  background-color: rgb(0, 90, 143);
-
-  background-color: var(--modalBorderColor, rgb(0, 90, 143));
+  background-color: var(--modalBorderColor);
   user-select: none;
   cursor: move;
 }
@@ -2667,7 +2655,7 @@ i.rux-icon {
   margin: 0;
   line-height: 1.2;
 
-  color: rgb(255, 255, 255) !important;
+  color: var(--modalTitleColor);
 }
 
 .rux-modal__content {
@@ -2676,8 +2664,7 @@ i.rux-icon {
   flex-direction: column;
   flex-grow: 1;
   padding: 1rem;
-  color: rgb(255, 255, 255);
-  color: var(--fontColor, rgb(255, 255, 255));
+  color: var(--defaultText);
 }
 
 .rux-button-group {
@@ -3246,8 +3233,7 @@ i.rux-icon {
 **  - Updated transition speed
 */
 
-.rux-pushbutton,
-.satcom-pushbutton {
+.rux-pushbutton{
   display: inline-block;
 
   height: 1.3125rem;
@@ -3256,13 +3242,11 @@ i.rux-icon {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.rux-pushbutton__input,
-.satcom-pushbutton-input {
+.rux-pushbutton__input{
   display: none;
 }
 
-.rux-pushbutton__button,
-.satcom-pushbutton-button {
+.rux-pushbutton__button {
   display: flex;
 
   justify-content: center;
@@ -3275,49 +3259,34 @@ i.rux-icon {
   margin: 0;
   padding: 0 0.625rem;
 
-  color: rgb(255, 255, 255);
+  color: var(--pushbuttonTextColor);
 
-  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
-
-  background-color: rgb(0, 90, 143);
-
-  background-color: var(--pushbuttonBackgroundColor, rgb(0, 90, 143));
+  background-color: var(--pushbuttonBackgroundColor);
   border-radius: 3px;
   border-radius: var(--defaultBorderRadius, 3px);
-  border: 1px solid rgb(30, 47, 66);
-  border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
+  border: 1px solid var(--pushbuttonBorderColor);
 }
 
-.rux-pushbutton__button label,
-.satcom-pushbutton-button label {
-  color: rgb(255, 255, 255);
-  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+.rux-pushbutton__button label {
+  color: var(--pushbuttonTextColor);
 }
 
-.rux-pushbutton__input:checked + .rux-pushbutton__button,
-.satcom-pushbutton-input:checked + .satcom-pushbutton-button {
+.rux-pushbutton__input:checked + .rux-pushbutton__button{
   display: flex;
-  color: rgb(91, 255, 0);
-  color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
-  background-color: rgb(0, 0, 0);
-  background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
-  border-color: rgb(0, 0, 0);
-  border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
-
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
+  color: var(--pushbuttonSelectedTextColor);
+  background-color: var(--pushbuttonSelectedBackgroundColor);
+  border-color: var(--pushbuttonSelectedBorderColor);
 }
 
-.rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on,
-.satcom-pushbutton-input:not(:checked) + .satcom-pushbutton-button .on {
+.rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on {
   display: none;
 }
 
-.rux-pushbutton__input:disabled + .rux-pushbutton__button,
-.satcom-pushbutton-input:disabled + .satcom-pushbutton-button {
+.rux-pushbutton__input:disabled + .rux-pushbutton__button{
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 /*
@@ -3342,9 +3311,12 @@ i.rux-icon {
 
   border-radius: 3px;
 
-  border-radius: var(--controlBorderRadius, 3px);
-  border: 1px solid rgb(30, 47, 66);
-  border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  border-radius: var(--controlBorderRadius);
+  border: 1px solid var(--segmentedButtonBorderColor);
+}
+
+.rux-segmented-button:hover{
+	border-color: var(--segmentedButtonHoverBorderColor);
 }
 
 .rux-segmented-button__segment {
@@ -3366,21 +3338,17 @@ i.rux-icon {
   padding: 0 0.75rem;
 
   border: none;
-  border-right: 1px solid rgb(30, 47, 66);
-  border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  border-right: 1px solid var(--segmentedButtonBorderColor);
 
-  color: rgb(255, 255, 255);
+  color: var(--segmentedButtonTextColor);
+  background-color: var(--segmentedButtonBackgroundColor);
 
-  color: var(--segmentedButtonTextColor, rgb(255, 255, 255));
-  background-color: rgb(0, 90, 143);
-  background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
-
-  font-size: 0.875rem;
+  font-size: 1rem;
 
   user-select: none;
 }
 
-.rux-segmented-button__segment:last-child label {
+.rux-segmented-button__segment:nth-child(2):not(:last-child) label {
   border-right: none !important;
 }
 
@@ -3389,37 +3357,29 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment label:hover {
-  background-color: rgb(58, 129, 191)
-  ;
-  background-color: var(
-    --segmentedButtonHoverBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: rgb(255, 255, 255);
-  color: var(--segmentedButtonHoverTextColor, rgb(255, 255, 255));
+	background-color: var(--segmentedButtonHoverBackgroundColor);
+	border-color: var( --segmentedButtonHoverBorderColor);
+  color: var(--segmentedButtonHoverTextColor);
   outline: none;
 }
 
 .rux-segmented-button__segment input:checked + label {
-  background-color: rgb(58, 129, 191)
-  ;
-  background-color: var(
-    --segmentedButtonSelectedBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: rgb(255, 255, 255);
-  color: var(--segmentedButtonSelectedTextColor, rgb(255, 255, 255));
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12),
-    inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  ;
-  box-shadow: var(
-    --segmentedButtonSelectedBoxShadow,
-    inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12),
-    inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  );
-  transition: box-shadow 0.067 ease-out;
+  background-color: var(--segmentedButtonSelectedBackgroundColor);
+  color: var(--segmentedButtonSelectedTextColor);
+}
+
+.rux-segmented-button:nth-child(2):not(:last-child) label {
+	border-right: none;
+	border-left: none;
+}
+.rux-segmented-button:first-child label{
+	border-radius: 3px 0 0 3px;
+	border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
+
+}
+.rux-segmented-button:last-child label{
+	border-radius: 0 3px 3px 0;
+	border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
 }
 
 /*
