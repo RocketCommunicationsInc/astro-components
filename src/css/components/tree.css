@@ -8,7 +8,7 @@
 
   font-size: 1rem;
 
-  background-color: var(--treeBackgroundColor, rgb(30, 47, 66));
+  background-color: var(--treeBackgroundColor);
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -33,7 +33,7 @@
 }
 
 .rux-tree li:not(:first-child) {
-  border-top: 1px solid var(--treeItemBorderColor, rgb(40, 63, 88));
+  border-top: 1px solid var(--treeItemBorderColor);
 }
 
 /* Parent Elements */
@@ -75,7 +75,7 @@
   border-style: solid;
   border-width: 7px 0 7px 7px;
   border-color: transparent transparent transparent
-    var(--treeAccentColor, rgb(77, 172, 255));
+    var(--treeAccentColor);
   display: inline-block;
 }
 
@@ -107,13 +107,13 @@
 }
 
 .rux-tree .selected {
-  background-color: var(--treeSelectedBackgroundColor, rgb(0, 68, 107));
-  box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
+  background-color: var(--treeSelectedBackgroundColor);
+  box-shadow: inset 5px 0 var(--treeSelectedAccentColor);
 
-  color: var(--treeSelectedTextColor, rgb(255, 255, 255));
+  color: var(--treeSelectedTextColor);
 }
 
 .rux-tree .selected .rux-tree__arrow::after {
   border-color: transparent transparent transparent
-    var(--treeSelectedAccentColor, rgb(77, 172, 255));
+    var(--treeSelectedAccentColor);
 }

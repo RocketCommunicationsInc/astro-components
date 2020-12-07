@@ -334,7 +334,7 @@ export class RuxTree extends LitElement {
         font-size: 1rem;
 
         color: var(--treeTextColor, rgb(255, 255, 255));
-        background-color: var(--treeBackgroundColor, rgb(32, 50, 70));
+        background-color: var(--treeBackgroundColor);
 
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -365,7 +365,7 @@ export class RuxTree extends LitElement {
 
       .rux-tree li {
         font-weight: bold;
-        border-top: 1px solid var(--treeItemBorderColor, rgb(24, 38, 53));
+        border-top: 1px solid var(--treeItemBorderColor);
       }
 
       .rux-tree__parent {
@@ -386,24 +386,24 @@ export class RuxTree extends LitElement {
       }
 
       [aria-selected='true'] > .rux-tree__parent {
-        color: var(--treeSelectedTextColor, rgb(255, 255, 255));
+        color: var(--treeSelectedTextColor);
       }
 
       [aria-selected='true'] > .rux-tree__parent::after,
       [aria-selected='true'] > .rux-tree__parent:hover::after {
-        box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor, rgb(77, 172, 255)) !important;
-        background-color: var(--treeSelectedBackgroundColor, rgb(0, 72, 114)) !important;
+        box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor) !important;
+        background-color: var(--treeSelectedBackgroundColor) !important;
       }
 
       .rux-tree__tree-item:focus > .rux-tree__parent:not(:hover)::after,
       :not([aria-selected='true']) > .rux-tree__parent:hover::after {
-        background-color: var(--treeHoverBackgroundColor, rgb(0, 72, 114));
-        box-shadow: inset 0.25rem 0 0 var(--treeHoverAccentColor, rgb(77, 172, 255));
+        background-color: var(--treeHoverBackgroundColor);
+        box-shadow: inset 0.25rem 0 0 var(--treeHoverAccentColor);
       }
 
       .rux-tree__tree-item:focus > .rux-tree__parent:not(:hover)::after {
-        border-top: 1px solid var(--treeHoverAccentColor, rgb(77, 172, 255));
-        border-bottom: 1px solid var(--treeHoverAccentColor, rgb(77, 172, 255));
+        border-top: 1px solid var(--treeHoverAccentColor);
+        border-bottom: 1px solid var(--treeHoverAccentColor);
       }
 
       .rux-tree__parent:hover::after {
@@ -475,7 +475,7 @@ export class RuxTree extends LitElement {
         height: 0;
         border-style: solid;
         border-width: 0.35rem 0 0.35rem 0.35rem;
-        border-color: transparent transparent transparent var(--treeAccentColor, rgb(77, 172, 255));
+        border-color: transparent transparent transparent var(--treeAccentColor);
         display: inline-block;
       }
 
@@ -485,7 +485,7 @@ export class RuxTree extends LitElement {
 
       [aria-expanded='true'] > .rux-tree__children {
         display: block;
-        background-color: var(--treeChildrenBackgroundColor, rgb(24, 38, 53));
+        background-color: var(--treeChildrenBackgroundColor);
       }
 
       [aria-expanded='true'] > .rux-tree__children li {

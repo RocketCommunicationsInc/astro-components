@@ -635,23 +635,20 @@
     ==========================================================================
 
   */
-  --treeTextColor: var(--colorBlack);
-  --treeBackgroundColor: var(--colorWhite);
-  --treeBorderColor: var(--colorQuaternary);
-  --treeItemBorderColor: var(--colorQuaternary);
-  --treeAccentColor: var(--colorSecondary);
+  --treeTextColor: var(--defaultText);
+  --treeBackgroundColor: var(--inputBackground);
+  --treeBorderColor: var(--primaryDark);
+  --treeItemBorderColor: var(--primaryDark);
+  --treeAccentColor: var(--primary);
 
-  --treeHoverBackgroundColor: var(--colorSecondaryLighten4);
-  --treeHoverAccentColor: var(--colorSecondaryLighten3);
+  --treeHoverBackgroundColor: var(--backgroundColor);
+  --treeHoverAccentColor: var(--primary);
 
-  --treeSelectedBackgroundColor: var(
-    --colorSecondaryLighten3,
-    rgb(184, 222, 255)
-  );
-  --treeSelectedAccentColor: var(--colorSecondaryLighten1);
-  --treeSelectedTextColor: var(--colorBlack);
+  --treeSelectedBackgroundColor: var(--inputBackground);
+  --treeSelectedAccentColor: var(--primary);
+  --treeSelectedTextColor: var(--defaultText);
 
-  --treeChildrenBackgroundColor: var(--backgroundColor);
+  --treeChildrenBackgroundColor: var(--inputBackground);
 
   /* 
     
@@ -1062,23 +1059,23 @@ li.light-theme {
     ==========================================================================
 
   */
-  --treeTextColor: var(--colorWhite);
-  --treeBackgroundColor: var(--colorTertiaryDarken1);
-  --treeBorderColor: var(--colorSecondaryDarken2);
-  --treeItemBorderColor: var(--globalAppHeader);
+  --treeTextColor: var(--defaultText);
+  --treeBackgroundColor: var(--surfaceElements);
+  --treeBorderColor: var(--primaryDark);
+  --treeItemBorderColor: var(--primaryDark);
   --treeAccentColor: var(--primary);
 
   /* --treeFocusedBackgroundColor: var(--colorTertiaryLighten1, green);
   --treeFocusedAccentColor: var(--colorTertiaryLighten3, green); */
 
-  --treeHoverBackgroundColor: var(--colorPrimaryDarken2);
-  --treeHoverAccentColor: var(--colorPrimaryLighten1);
+  --treeHoverBackgroundColor: var(--globalAppHeader);
+  --treeHoverAccentColor: var(--primary);
 
-  --treeSelectedBackgroundColor: var(--colorPrimaryDarken1);
+  --treeSelectedBackgroundColor: var(--surfaceElements);
   --treeSelectedAccentColor: var(--primary);
-  --treeSelectedTextColor: var(--colorWhite);
+  --treeSelectedTextColor: var(--defaultText);
 
-  --treeChildrenBackgroundColor: var(--globalAppHeader);
+  --treeChildrenBackgroundColor: var(--surfaceElements);
   /* 
     
     Tab Colors 
@@ -4217,9 +4214,7 @@ input:-moz-focusring {
 
   font-size: 1rem;
 
-  background-color: rgb(30, 47, 66);
-
-  background-color: var(--treeBackgroundColor, rgb(30, 47, 66));
+  background-color: var(--treeBackgroundColor);
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -4244,8 +4239,7 @@ input:-moz-focusring {
 }
 
 .rux-tree li:not(:first-child) {
-  border-top: 1px solid rgb(40, 63, 88);
-  border-top: 1px solid var(--treeItemBorderColor, rgb(40, 63, 88));
+  border-top: 1px solid var(--treeItemBorderColor);
 }
 
 /* Parent Elements */
@@ -4287,9 +4281,7 @@ input:-moz-focusring {
   border-style: solid;
   border-width: 7px 0 7px 7px;
   border-color: transparent transparent transparent
-    rgb(77, 172, 255);
-  border-color: transparent transparent transparent
-    var(--treeAccentColor, rgb(77, 172, 255));
+    var(--treeAccentColor);
   display: inline-block;
 }
 
@@ -4321,20 +4313,14 @@ input:-moz-focusring {
 }
 
 .rux-tree .selected {
-  background-color: rgb(0, 68, 107);
-  background-color: var(--treeSelectedBackgroundColor, rgb(0, 68, 107));
-  box-shadow: inset 5px 0 rgb(77, 172, 255);
-  box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
+  background-color: var(--treeSelectedBackgroundColor);
+  box-shadow: inset 5px 0 var(--treeSelectedAccentColor);
 
-  color: rgb(255, 255, 255);
-
-  color: var(--treeSelectedTextColor, rgb(255, 255, 255));
+  color: var(--treeSelectedTextColor);
 }
 
 .rux-tree .selected .rux-tree__arrow::after {
   border-color: transparent transparent transparent
-    rgb(77, 172, 255);
-  border-color: transparent transparent transparent
-    var(--treeSelectedAccentColor, rgb(77, 172, 255));
+    var(--treeSelectedAccentColor);
 }
 

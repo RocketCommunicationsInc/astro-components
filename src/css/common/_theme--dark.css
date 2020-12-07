@@ -269,23 +269,23 @@
     ==========================================================================
 
   */
-  --treeTextColor: var(--colorWhite);
-  --treeBackgroundColor: var(--colorTertiaryDarken1);
-  --treeBorderColor: var(--colorSecondaryDarken2);
-  --treeItemBorderColor: var(--globalAppHeader);
+  --treeTextColor: var(--defaultText);
+  --treeBackgroundColor: var(--surfaceElements);
+  --treeBorderColor: var(--primaryDark);
+  --treeItemBorderColor: var(--primaryDark);
   --treeAccentColor: var(--primary);
 
   /* --treeFocusedBackgroundColor: var(--colorTertiaryLighten1, green);
   --treeFocusedAccentColor: var(--colorTertiaryLighten3, green); */
 
-  --treeHoverBackgroundColor: var(--colorPrimaryDarken2);
-  --treeHoverAccentColor: var(--colorPrimaryLighten1);
+  --treeHoverBackgroundColor: var(--globalAppHeader);
+  --treeHoverAccentColor: var(--primary);
 
-  --treeSelectedBackgroundColor: var(--colorPrimaryDarken1);
+  --treeSelectedBackgroundColor: var(--surfaceElements);
   --treeSelectedAccentColor: var(--primary);
-  --treeSelectedTextColor: var(--colorWhite);
+  --treeSelectedTextColor: var(--defaultText);
 
-  --treeChildrenBackgroundColor: var(--globalAppHeader);
+  --treeChildrenBackgroundColor: var(--surfaceElements);
   /* 
     
     Tab Colors 
