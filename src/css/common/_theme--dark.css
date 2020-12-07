@@ -183,10 +183,10 @@
 
   /* Selected State */
   /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2); */
-  --toggleSelectedThumbBorderColor:var(--primary);
+  --toggleSelectedThumbBorderColor:var(--primaryDark);
 
   --toggleSelectedTrackBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--primary);
+  --toggleSelectedTrackBorderColor: var(--primaryDark);
 
   /* Disabled State */
   --toggleDisabledThumbBorderColor: var(--secondaryText);
