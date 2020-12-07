@@ -609,9 +609,9 @@
     ==========================================================================
  
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
-  --modalBackgroundColor: var(--colorWhite);
+  --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
   /* 
     
@@ -1034,7 +1034,7 @@ li.light-theme {
     ==========================================================================
 
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
