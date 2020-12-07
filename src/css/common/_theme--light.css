@@ -60,7 +60,7 @@
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite);
+  --buttonActiveControlTextColor: var(--defaultText);
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
 
@@ -84,17 +84,18 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--colorWhite);
-  --controlLabelColor: var(--colorBlack);
-  --controlBackgroundColor: var(--colorSecondaryDarken1);
+  --controlTextColor: var(--primary);
+  --controlLabelColor: var(--defaultText);
+  --controlBackgroundColor: var(--primary);
   --controlBorderColor: var(--primary);
-  --controlAccentColor: var(--colorSecondary);
+  --controlAccentColor: var(--primary);
 
-  --controlSelectedTextColor: var(--colorBlack);
-  --controlSelectedBackgroundColor: var(--colorSecondaryDarken1);
+  --controlSelectedTextColor: var(--defaultText);
+  --controlSelectedBackgroundColor: transparent;
   --controlSelectedBorderColor: var(--primary);
 
-  --controlHoverOutlineBackgroundColor: none;
+	--controlHoverOutlineBackgroundColor: none;
+	--controlHoverBorderColor: var(--primaryDark);
   --controlSelectedOutlineBorderColor: var(--primary);
   --controlSelectedOutlineBackgroundColor: none;
 
