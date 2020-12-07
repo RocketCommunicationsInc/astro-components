@@ -515,7 +515,8 @@
 
 	/* Segmented Hover */
   --segmentedButtonHoverBackgroundColor: var(--primaryDark);
-  --segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryDark);
 
 	/* Segmented Select */
   --segmentedButtonSelectedBackgroundColor: var(--primary);
@@ -927,7 +928,8 @@ li.light-theme {
 
 	/* Segmented Hover */
   --segmentedButtonHoverBackgroundColor: var(--primaryLight);
-  --segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryLight);
 
 	/* Segmented Select */
   --segmentedButtonSelectedBackgroundColor: var(--primary);
@@ -3324,6 +3326,10 @@ i.rux-icon {
   border: 1px solid var(--segmentedButtonBorderColor);
 }
 
+.rux-segmented-button:hover{
+	border-color: var(--segmentedButtonHoverBorderColor);
+}
+
 .rux-segmented-button__segment {
   height: 1.6875rem;
   width: auto;
@@ -3353,7 +3359,7 @@ i.rux-icon {
   user-select: none;
 }
 
-.rux-segmented-button__segment:last-child label {
+.rux-segmented-button__segment:nth-child(2):not(:last-child) label {
   border-right: none !important;
 }
 
@@ -3362,7 +3368,8 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment label:hover {
-  background-color: var(--segmentedButtonHoverBackgroundColor);
+	background-color: var(--segmentedButtonHoverBackgroundColor);
+	border-color: var( --segmentedButtonHoverBorderColor);
   color: var(--segmentedButtonHoverTextColor);
   outline: none;
 }
@@ -3370,6 +3377,20 @@ i.rux-icon {
 .rux-segmented-button__segment input:checked + label {
   background-color: var(--segmentedButtonSelectedBackgroundColor);
   color: var(--segmentedButtonSelectedTextColor);
+}
+
+.rux-segmented-button:nth-child(2):not(:last-child) label {
+	border-right: none;
+	border-left: none;
+}
+.rux-segmented-button:first-child label{
+	border-radius: 3px 0 0 3px;
+	border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
+
+}
+.rux-segmented-button:last-child label{
+	border-radius: 0 3px 3px 0;
+	border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
 }
 
 /*

@@ -137,7 +137,8 @@
 
 	/* Segmented Hover */
   --segmentedButtonHoverBackgroundColor: var(--primaryLight);
-  --segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryLight);
 
 	/* Segmented Select */
   --segmentedButtonSelectedBackgroundColor: var(--primary);

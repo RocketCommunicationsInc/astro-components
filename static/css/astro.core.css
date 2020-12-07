@@ -515,7 +515,8 @@
 
 	/* Segmented Hover */
   --segmentedButtonHoverBackgroundColor: var(--primaryDark);
-  --segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryDark);
 
 	/* Segmented Select */
   --segmentedButtonSelectedBackgroundColor: var(--primary);
@@ -927,7 +928,8 @@ li.light-theme {
 
 	/* Segmented Hover */
   --segmentedButtonHoverBackgroundColor: var(--primaryLight);
-  --segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryLight);
 
 	/* Segmented Select */
   --segmentedButtonSelectedBackgroundColor: var(--primary);
