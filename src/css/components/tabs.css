@@ -76,18 +76,15 @@
 
 .rux-tabs .selected a {
   color: var(--tabSelectedTextColor);
-  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor);
 }
 
 .rux-tabs--small .selected a,
 .rux-tabs--small .selected a:hover {
   color: var(--tabSelectedTextColor);
-  box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor);
 }
 
 .rux-tabs .selected a:hover {
   color: var(--tabSelectedTextColor);
-  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor);
 }
 
 .rux-tabs a:hover:not([disabled]) {
