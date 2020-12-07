@@ -772,15 +772,15 @@
   --tableHeaderBackgroundColor: var(--globalAppHeader);
   --tableHeaderTextColor: var(--defaultText);
   --tableHeaderBoxShadow:  0 0.1rem .45rem rgba(0, 0, 0, 0.2);
-  --tableHeaderAccentColor: var(--colorQuaternaryLighten2);
+  --tableHeaderAccentColor: var(--primary);
 
   --tableRowBackgroundColor: var(--surfaceElements);
   --tableRowBorderColor: var(---backgroundColor);
   --tableRowTextColor: var(--defaultText);
 	--tableRowSelectedBackgroundColor:  var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
-	--tableRowHoverBackgroundColor: var(--primaryLight);
-	--tableRowHoverTextColor: var(--primaryElementText);
+	--tableRowHoverBackgroundColor: var(--primaryDark);
+	--tableRowHoverTextColor: var(--defaultText);
   
   --tableControlsBackgroundColor: var(--colorQuaternaryLighten2);
   --tableCellSelectedBorderColor: var(--colorQuaternary);
@@ -1194,21 +1194,21 @@ li.light-theme {
   --tableHeaderBackgroundColor: var(--globalAppHeader);
   --tableHeaderTextColor: var(--defaultText);
   --tableHeaderBoxShadow: 0 0.25rem .5rem rgba(0, 0, 0, 0.45);
-  --tableHeaderAccentColor:  var(--colorTertiary);
+  --tableHeaderAccentColor:  var(--primary);
 
   --tableRowBackgroundColor: var(--surfaceElements);
   --tableRowSelectedBackgroundColor: var(--backgroundColor);
   --tableRowSelectedBorderColor: var(--primary);
 	--tableRowHoverBackgroundColor: var(--primaryLight);
 	--tableRowHoverTextColor: var(--primaryElementText);
-  --tableRowTextColor: var(--fontColor);
+  --tableRowTextColor: var(--defaultText);
   --tableRowBorderColor: var(--globalAppHeader);
   
   --tableControlsBackgroundColor: var(--globalAppHeader);
   --tableCellSelectedBorderColor: var(--backgroundColor);
   --tableFilterBorderColor: var(--primary);
-  --tableFilterDisabledBorderColor: var(--colorTertiary);
-  --tableFilterDisabledBackgroundColor: var(--colorTertiaryDarken1);
+  --tableFilterDisabledBorderColor: var(--primary);
+  --tableFilterDisabledBackgroundColor: var(--primaryLight);
 }
 
 li.dark-theme {
