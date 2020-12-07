@@ -32,7 +32,7 @@ export class RuxPushButton extends LitElement {
     return html`
       <style>
         :host {
-          font-size: 12px;
+          font-size: 16px;
           height: 1.3125rem;
           line-height: 1.7;
 
