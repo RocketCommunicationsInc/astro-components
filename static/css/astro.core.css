@@ -611,7 +611,7 @@
   */
 	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
-  --modalBackgroundColor: var(--inputBackground);
+  --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
   /* 
     
