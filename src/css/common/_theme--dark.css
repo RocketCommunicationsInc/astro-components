@@ -238,7 +238,7 @@
     ==========================================================================
 
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
