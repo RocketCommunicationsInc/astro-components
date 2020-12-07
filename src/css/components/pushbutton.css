@@ -49,8 +49,7 @@
   border: 1px solid var(--pushbuttonBorderColor);
 }
 
-.rux-pushbutton__button label,
-.satcom-pushbutton-button label {
+.rux-pushbutton__button label {
   color: var(--pushbuttonTextColor);
 }
 

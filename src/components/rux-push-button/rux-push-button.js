@@ -55,7 +55,7 @@ export class RuxPushButton extends LitElement {
           align-items: center;
 
           height: 1.375rem;
-          font-size: 0.75rem !important;
+          font-size: 1rem !important;
 
           margin: 0;
           padding: 0 0.625rem;
