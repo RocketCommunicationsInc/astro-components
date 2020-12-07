@@ -294,7 +294,9 @@
   */
   --tabTextColor: var(--primary);
   --tabBackgroundColor: transparent;
-  --tabBorderColor: var(--globalAppHeader);
+	--tabBorderColor: var(--globalAppHeader);
+	
+	--tabHoverTextColor: var(--defaultText);
 
   --tabSelectedTextColor: var(--defaultText);
   --tabSelectedBorderColor: var(--primary);
