@@ -113,7 +113,7 @@ export class RuxSegmentedButton extends LitElement {
 
           color: var(--segmentedButtonTextColor);
 
-          font-size: 0.875rem;
+          font-size: 1rem;
 
           -webkit-user-select: none;
           -moz-user-select: none;

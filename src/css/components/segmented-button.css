@@ -50,7 +50,7 @@
   color: var(--segmentedButtonTextColor);
   background-color: var(--segmentedButtonBackgroundColor);
 
-  font-size: 0.875rem;
+  font-size: 1rem;
 
   user-select: none;
 }
