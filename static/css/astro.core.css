@@ -484,7 +484,7 @@
   --popupCaretBackgroundColor: var(--primary);
 
   --popupMenuItemBackgroundColor: var(--inputBackground);
-  --popupMenuItemHoverBackgroundColor: var(--primaryLight);
+  --popupMenuItemHoverBackgroundColor: var(--primaryDark);
   --popupMenuItemHoverTextColor: var(--primaryElementText);
 
   --popupMenuItemSeperatorBorderColor: var(--defaultText);
@@ -999,7 +999,7 @@ li.light-theme {
   --popupCaretBackgroundColor: var(--primary);
 
   --popupMenuItemBackgroundColor: var(--primary);
-  --popupMenuItemHoverBackgroundColor: var(--primaryDark);
+  --popupMenuItemHoverBackgroundColor: var(--primaryLight);
   --popupMenuItemHoverTextColor: var(--primaryElementText);
 
   --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
