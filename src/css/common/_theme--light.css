@@ -136,12 +136,16 @@
   */
   --sliderThumbBackgroundColor: var(--primaryDark);
   --sliderThumbBorderColor: var(--inputBackground);
-	--sliderHoverThumbBackgroundColor: var(--primary);
+	--sliderHoverThumbBackgroundColor: var(--primaryDark);
+	--sliderHoverThumbBorderColor: var(--inputBackground);
 
   --sliderTrackBorderColor: var(--secondaryText);
   --sliderTrackBackgroundColor: var(--inputBackground);
 
-  --sliderSelectedTrackBackgroundColor: var(--primary);
+	--sliderSelectedThumbBorderColor: var(--primaryLight);
+	--sliderSelectedTrackBackgroundColor: var(--primary);
+
+	--borderThumbSize: .25px;
 
   /* 
     

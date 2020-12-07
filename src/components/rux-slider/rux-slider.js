@@ -190,12 +190,15 @@ export class RuxSlider extends LitElement {
           width: var(--thumbSize, 1.25rem);
 
           border-radius: 100%;
-          border: 1px solid var(--sliderThumbBorderColor);
+          border: var(--borderThumbSize) solid var(--sliderThumbBorderColor);
           background-color: var(--sliderThumbBackgroundColor);
 
           cursor: pointer;
           box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
-        }
+				}
+				.rux-range::-webkit-slider-thumb:hover{
+					border-color: var(--sliderHoverThumbBorderColor);
+				}
 
         .rux-range:disabled::-webkit-slider-runnable-track {
           opacity: var(--disabledOpacity, 0.4);
@@ -207,8 +210,8 @@ export class RuxSlider extends LitElement {
         }
 
         .rux-range:not(:disabled)::-webkit-slider-thumb:active {
-          border-color: var(--colorSecondary);
-          background-color: #fff;
+          border-color: var(--sliderSelectedThumbBorderColor);
+          background-color: var(--inputBackground);
           box-shadow: var(--thumbShadowActive);
         }
 
@@ -226,12 +229,16 @@ export class RuxSlider extends LitElement {
           width: var(--thumbSize);
 
           border-radius: 100%;
-          border: 1px solid var(--sliderThumbBorderColor);
+          border: var(--borderThumbSize) solid var(--sliderThumbBorderColor);
           background-color: var(--sliderThumbBackgroundColor);
 
           cursor: pointer;
           box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
-        }
+				}
+
+				.rux-range::-moz-range-thumb:hover{
+					border-color:var(--sliderHoverThumbBorderColor);
+				}
 
         input:-moz-focusring {
           outline: none;
@@ -248,7 +255,7 @@ export class RuxSlider extends LitElement {
           width: 1.25rem;
 
           border-radius: 100%;
-          border: 1px solid rgb(255, 255, 255);
+          border: var(--borderThumbSize) solid var(--sliderThumbBorderColor);
           background-color: rgb(0, 90, 143);
 
           cursor: pointer;
