@@ -130,7 +130,7 @@ export class RuxLog extends LitElement {
 
         .log-event__timestamp {
           flex-shrink: 0;
-          text-align: right;
+          text-align: left;
           width: 5rem;
         }
 
@@ -156,7 +156,7 @@ export class RuxLog extends LitElement {
         }
 
         .rux-log__log-event .log-event__timestamp {
-          font-family: var(--fontFamilyMono);
+          font-family: var(--fontFamily);
         }
 
         .log-event__status {

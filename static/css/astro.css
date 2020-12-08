@@ -620,13 +620,13 @@
 
   */
   --logTextColor: var(--defaultText);
-  --logBackgroundColor: var(--inputBackground);
-  --logBorderColor: var(--backgroundColor);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--secondaryText);
 
   --logHeaderTextColor: var(--defaultText);
   --logHeaderBackgroundColor: var(--backgroundColor);
 
-  --logFilterBackgroundColor: var(--primary);
+  --logFilterBackgroundColor: var(--primaryLight);
   --logFilterTextColor: var(--primaryElementText);
 
   /* 
@@ -1053,8 +1053,8 @@ li.light-theme {
   --logHeaderTextColor: var(--defaultText);
   --logHeaderBackgroundColor: var(--globalAppHeader);
 
-  --logFilterBackgroundColor: var(--primary);
-  --logFilterTextColor: var(--defaultText);
+  --logFilterBackgroundColor: var(--primaryDark);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     
@@ -2526,7 +2526,7 @@ i.rux-icon {
 .log-event__timestamp {
   flex-shrink: 0;
 
-  text-align: right;
+  text-align: left;
   width: 5rem;
 }
 
@@ -2552,9 +2552,9 @@ i.rux-icon {
 }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco,
-										Consolas, "Liberation Mono", "Courier New", monospace;
-  font-family: var(--fontFamilyMono);
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: var(--fontFamily);
 }
 
 .log-event__status {

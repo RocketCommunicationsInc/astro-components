@@ -259,13 +259,13 @@
 
   */
   --logTextColor: var(--defaultText);
-  --logBackgroundColor: var(--inputBackground);
-  --logBorderColor: var(--backgroundColor);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--secondaryText);
 
   --logHeaderTextColor: var(--defaultText);
   --logHeaderBackgroundColor: var(--backgroundColor);
 
-  --logFilterBackgroundColor: var(--primary);
+  --logFilterBackgroundColor: var(--primaryLight);
   --logFilterTextColor: var(--primaryElementText);
 
   /* 

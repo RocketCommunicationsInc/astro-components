@@ -620,13 +620,13 @@
 
   */
   --logTextColor: var(--defaultText);
-  --logBackgroundColor: var(--inputBackground);
-  --logBorderColor: var(--backgroundColor);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--secondaryText);
 
   --logHeaderTextColor: var(--defaultText);
   --logHeaderBackgroundColor: var(--backgroundColor);
 
-  --logFilterBackgroundColor: var(--primary);
+  --logFilterBackgroundColor: var(--primaryLight);
   --logFilterTextColor: var(--primaryElementText);
 
   /* 
@@ -1053,8 +1053,8 @@ li.light-theme {
   --logHeaderTextColor: var(--defaultText);
   --logHeaderBackgroundColor: var(--globalAppHeader);
 
-  --logFilterBackgroundColor: var(--primary);
-  --logFilterTextColor: var(--defaultText);
+  --logFilterBackgroundColor: var(--primaryDark);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     

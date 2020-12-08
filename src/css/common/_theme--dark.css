@@ -260,8 +260,8 @@
   --logHeaderTextColor: var(--defaultText);
   --logHeaderBackgroundColor: var(--globalAppHeader);
 
-  --logFilterBackgroundColor: var(--primary);
-  --logFilterTextColor: var(--defaultText);
+  --logFilterBackgroundColor: var(--primaryDark);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     
