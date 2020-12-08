@@ -32,7 +32,7 @@ export class RuxPushButton extends LitElement {
     return html`
       <style>
         :host {
-          font-size: 12px;
+          font-size: 16px;
           height: 1.3125rem;
           line-height: 1.7;
 
@@ -55,34 +55,32 @@ export class RuxPushButton extends LitElement {
           align-items: center;
 
           height: 1.375rem;
-          font-size: 0.75rem !important;
+          font-size: 1rem !important;
 
           margin: 0;
           padding: 0 0.625rem;
 
-          color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+          color: var(--pushbuttonTextColor);
 
-          background-color: var(--pushbuttonBackgroundColor, rgb(0, 90, 143));
-          border-radius: var(--defaultBorderRadius, 3px);
-          border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
+          background-color: var(--pushbuttonBackgroundColor);
+          border-radius: var(--defaultBorderRadius);
+          border: 1px solid var(--pushbuttonBorderColor);
         }
 
         .rux-push-button__input:checked + .rux-push-button__button {
           display: flex;
-          color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
-          background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
-          border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
-
-          box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.33);
+          color: var(--pushbuttonSelectedTextColor);
+          background-color: var(--pushbuttonSelectedBackgroundColor);
+          border-color: var(--pushbuttonSelectedBorderColor);
         }
 
         :host([disabled]) {
-          opacity: var(--disabledOpacity, 0.4);
+          opacity: var(--disabledOpacity);
           cursor: not-allowed;
         }
 
         .rux-push-button__input:disabled + .rux-push-button__button {
-          opacity: var(--disabledOpacity, 0.4);
+          opacity: var(--disabledOpacity);
           cursor: not-allowed;
         }
       </style>
