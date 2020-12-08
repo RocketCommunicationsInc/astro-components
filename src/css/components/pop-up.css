@@ -9,9 +9,8 @@
 */
 
 /* 	REQUIRED CLASSES */
-.rux-pop-up,
-.satcom-pop-up {
-  font-size: 0.875rem;
+.rux-pop-up {
+  font-size: 1rem;
   display: inline-block;
 
   margin: 1em;
@@ -19,19 +18,18 @@
   min-width: 15em;
   position: relative;
 
-  border: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  border: 1px solid var(--colorSecondary);
+  background-color: var(--colorSecondary);
   border-radius: 3px;
 }
 
-.rux-pop-up ul,
-.satcom-pop-up ul {
+.rux-pop-up ul {
   position: relative;
   list-style: none;
   padding: 0;
   margin: 0;
   background: none;
-  background-color: #fff;
+  background-color: var(--colorWhite);
   border-radius: 2px;
 
   z-index: 2;
@@ -42,42 +40,37 @@
   border-bottom: 1px solid #f0f1f3;
 } */
 
-.rux-pop-up a,
-.satcom-pop-up a {
+.rux-pop-up a {
   display: block;
   padding: 0.5em;
-  color: #000;
+  color: var(--popupMenuTextColor);
   text-decoration: none;
 
   min-width: 15em;
   max-width: 20em;
 }
 
-.rux-pop-up a:hover,
-.satcom-pop-up a:hover {
-  background-color: var(--colorSecondaryLighten3, rgb(211, 234, 255));
+.rux-pop-up a:hover,.rux-pop-up li:hover {
+	background-color: var(--colorSecondaryLighten3);
+	color: var(--popupMenuItemHoverTextColor);
 }
 
-.rux-pop-up li:first-child a,
-.satcom-pop-up li:first-child a {
+.rux-pop-up li:first-child a {
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
 }
 
-.rux-pop-up li:last-child a,
-.satcom-pop-up li:last-child a {
+.rux-pop-up li:last-child a {
   border: none;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
-.rux-pop-up--top,
-.satcom-pop-up-top {
-  border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+.rux-pop-up--top {
+  border-top: 3px solid var(--colorSecondary);
 }
 
-.rux-pop-up--top::before,
-.satcom-pop-up-top::before {
+.rux-pop-up--top::before {
   content: "";
   display: block;
   position: absolute;
@@ -85,71 +78,65 @@
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
   z-index: 1;
 
   margin: -12px 0 0 16px;
   transform: rotate(45deg);
 }
 
-.rux-pop-up--bottom,
-.satcom-pop-up-bottom {
-  border-bottom: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+.rux-pop-up--bottom{
+  border-bottom: 3px solid var(--colorSecondary);
 }
 
-.rux-pop-up--bottom::after,
-.satcom-pop-up-bottom::after {
+.rux-pop-up--bottom::after {
   content: "";
   display: block;
   position: absolute;
-  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-bottom: 1px solid var(--colorSecondary);
+  border-right: 1px solid var(--colorSecondary);
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
 
   margin: -7px 0 0 16px;
   transform: rotate(45deg);
 }
 
-.rux-pop-up--left,
-.satcom-pop-up-left {
-  border-left: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+.rux-pop-up--left {
+  border-left: 3px solid var(--colorSecondary);
 }
 
-.rux-pop-up--left::before,
-.satcom-pop-up-left::before {
+.rux-pop-up--left::before {
   content: "";
   display: block;
   position: absolute;
-  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  border-left: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-bottom: 1px solid var(--colorSecondary);
+  border-left: 1px solid var(--colorSecondary);
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
 
   margin: 16px 0 0 -12px;
   transform: rotate(45deg);
 }
 
-.rux-pop-up--right,
-.satcom-pop-up-right {
-  border-right: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+.rux-pop-up--right {
+  border-right: 3px solid var(--colorSecondary);
 }
 
-.rux-pop-up--right::before,
-.satcom-pop-up-right::before {
+.rux-pop-up--right::before{
   content: "";
   display: block;
   position: absolute;
-  border-top: 1px solid var(--colorSecondary, rgb(77, 172, 255));
-  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-top: 1px solid var(--colorSecondary);
+  border-right: 1px solid var(--colorSecondary);
   width: 1.1875rem;
   height: 1.1875rem;
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
 
   right: 0;
   margin: 16px -12px 0 0;
