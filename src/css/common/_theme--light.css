@@ -60,7 +60,7 @@
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite);
+  --buttonActiveControlTextColor: var(--defaultText);
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
 
@@ -84,17 +84,18 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--colorWhite);
-  --controlLabelColor: var(--colorBlack);
-  --controlBackgroundColor: var(--colorSecondaryDarken1);
+  --controlTextColor: var(--primary);
+  --controlLabelColor: var(--defaultText);
+  --controlBackgroundColor: var(--primary);
   --controlBorderColor: var(--primary);
-  --controlAccentColor: var(--colorSecondary);
+  --controlAccentColor: var(--primary);
 
-  --controlSelectedTextColor: var(--colorBlack);
-  --controlSelectedBackgroundColor: var(--colorSecondaryDarken1);
+  --controlSelectedTextColor: var(--defaultText);
+  --controlSelectedBackgroundColor: transparent;
   --controlSelectedBorderColor: var(--primary);
 
-  --controlHoverOutlineBackgroundColor: none;
+	--controlHoverOutlineBackgroundColor: none;
+	--controlHoverBorderColor: var(--primaryDark);
   --controlSelectedOutlineBorderColor: var(--primary);
   --controlSelectedOutlineBackgroundColor: none;
 
@@ -116,17 +117,17 @@
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--colorWhite);
-  --popupMenuBorderColor: var(--colorSecondary);
-  --popupMenuTextColor: var(--colorBlack);
+  --popupMenuBackgroundColor: var(--inputBackground);
+  --popupMenuBorderColor: var(--primary);
+  --popupMenuTextColor: var(--defaultText);
 
-  --popupCaretBackgroundColor: var(--popupMenuBorderColor);
+  --popupCaretBackgroundColor: var(--primary);
 
-  --popupMenuItemBackgroundColor: var(--primary);
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3);
-  --popupMenuItemHoverTextColor: var(--colorBlack);
+  --popupMenuItemBackgroundColor: var(--inputBackground);
+  --popupMenuItemHoverBackgroundColor: var(--primaryDark);
+  --popupMenuItemHoverTextColor: var(--primaryElementText);
 
-  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2);
+  --popupMenuItemSeperatorBorderColor: var(--defaultText);
 
   /* 
     
@@ -134,13 +135,19 @@
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--primary);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBackgroundColor: var(--primaryDark);
+  --sliderThumbBorderColor: var(--inputBackground);
+	--sliderHoverThumbBackgroundColor: var(--primaryDark);
+	--sliderHoverThumbBorderColor: var(--inputBackground);
 
-  --sliderTrackBorderColor: var(--colorQuaternary);
-  --sliderTrackBackgroundColor: var(--colorWhite);
+  --sliderTrackBorderColor: var(--secondaryText);
+  --sliderTrackBackgroundColor: var(--inputBackground);
 
-  --sliderSelectedTrackBackgroundColor: var(--colorSecondary);
+	--sliderSelectedThumbBorderColor: var(--primaryLight);
+	--sliderSelectedTrackBackgroundColor: var(--primary);
+
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: .25px;
 
   /* 
     
@@ -234,9 +241,10 @@
 
   */
 
-  --clockTextColor: var(--colorBlack);
-  --clockBackgroundColor: var(--colorWhite);
-  --clockBorderColor: var(--colorQuaternary);
+  --clockTextColor: var(--primaryElementText);
+  --clockBackgroundColor: #101923;
+	--clockBorderColor: #1b2d3e;
+	--clockLabelColor: var(--primaryElementText);
 
   /* 
     
@@ -302,6 +310,14 @@
 
   --tabSelectedTextColor: var(--defaultText);
   --tabSelectedBorderColor: var(--primary);
+	
+	/* 
+    
+    Notification Colors 
+    ==========================================================================
+
+	*/
+	--notificationTextColor: var(--defaultText);
 
   /* 
     
