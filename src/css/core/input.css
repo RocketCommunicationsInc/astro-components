@@ -214,7 +214,6 @@
 .rux-form-field input:focus,
 .rux-form-field input:invalid:focus,
 .rux-form-field textarea:focus {
-  box-shadow: inset 0 0 3px var(--colorGray);
   border-color: var(--inputFocusBorderColor);
   outline: none;
   color: black;
