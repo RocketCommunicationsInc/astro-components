@@ -77,16 +77,17 @@ export class RuxNotification extends LitElement {
           top: -4.25rem;
           left: 0;
 
-          height: 4.25rem;
+          height: 4.375rem;
           width: 100%;
 
           position: absolute;
           padding: 0 1.25rem;
-          background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
+          background-color: var(--colorStandbyLighten1);
           transition: top 0.5s ease;
 
-          box-sizing: border-box;
-          color: var(--colorBlack, rgb(0, 0, 0));
+					box-sizing: border-box;
+					font-size: var(--fontSizeXL);
+					color: var(--notificationTextColor);
         }
         :host([open]) {
           top: 0;
@@ -94,27 +95,27 @@ export class RuxNotification extends LitElement {
 
         :host,
         :host([status='standby']) {
-          background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
-          stroke: var(--colorStandbyDarken1, rgb(96, 168, 191));
-          fill: var(--colorStandbyDarken1, rgb(96, 168, 191));
+          background-color: var(--colorStandbyLighten1);
+          stroke: var(--colorStandbyDarken1);
+          fill: var(--colorStandbyDarken1);
         }
 
         :host([status='normal']) {
-          background-color: var(--colorNormalLighten2, rgb(173, 255, 128));
-          stroke: var(--colorNormalDarken1, rgb(68, 191, 0));
-          fill: var(--colorNormalDarken1, rgb(68, 191, 0));
+          background-color: var(--colorNormalLighten2);
+          stroke: var(--colorNormalDarken1);
+          fill: var(--colorNormalDarken1);
         }
 
         :host([status='caution']) {
-          background-color: var(--colorCautionLighten1, rgb(250, 237, 86));
-          stroke: var(--colorCautionDarken1, rgb(186, 173, 22));
-          fill: var(--colorCautionDarken1, rgb(186, 173, 22));
+          background-color: var(--colorCautionLighten1);
+          stroke: var(--colorCautionDarken1);
+          fill: var(--colorCautionDarken1);
         }
 
         :host([status='critical']) {
-          background-color: var(--colorCriticalLighten1, rgb(255, 100, 100));
-          stroke: var(--colorCriticalDarken1, rgb(191, 36, 36));
-          fill: var(--colorCriticalDarken1, rgb(191, 36, 36));
+          background-color: var(--colorCriticalLighten1);
+          stroke: var(--colorCriticalDarken1);
+          fill: var(--colorCriticalDarken1);
         }
       </style>
 
