@@ -597,9 +597,9 @@
   */
 
   --clockTextColor: var(--primaryElementText);
-  --clockBackgroundColor: var(--globalAppHeader);
-	--clockBorderColor: var(--globalAppHeader);
-	--clockLabelColor: var(--defaultText);
+  --clockBackgroundColor: #101923;
+	--clockBorderColor: #1b2d3e;
+	--clockLabelColor: var(--primaryElementText);
 
   /* 
     
