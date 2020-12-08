@@ -23,7 +23,8 @@
   background-color: var(--colorStandbyLighten1);
   transition: all 0.5s ease;
 
-  box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: var(--fontSizeXL);
   color: var(--notificationTextColor);
 }
 

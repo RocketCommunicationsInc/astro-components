@@ -85,7 +85,8 @@ export class RuxNotification extends LitElement {
           background-color: var(--colorStandbyLighten1);
           transition: top 0.5s ease;
 
-          box-sizing: border-box;
+					box-sizing: border-box;
+					font-size: var(--fontSizeXL);
 					color: var(--notificationTextColor);
         }
         :host([open]) {
