@@ -77,7 +77,7 @@ export class RuxNotification extends LitElement {
           top: -4.25rem;
           left: 0;
 
-          height: 4.25rem;
+          height: 4.375rem;
           width: 100%;
 
           position: absolute;
