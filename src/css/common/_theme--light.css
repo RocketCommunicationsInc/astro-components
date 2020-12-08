@@ -181,8 +181,7 @@
   */
 
   --toggleButtonBackgroundColor: var(--primary);
-  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25),
-    1px 0 2px rgba(0, 0, 0, 0.3);
+  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
 
   --toggleBaseBackgroundColor: linear-gradient(
     to right,
@@ -198,16 +197,13 @@
 
   /* Default Toggle */
   --toggleThumbBorderColor: var(--secondaryText);
-	--toggleThumbBackgroundColor: var(--inputBackground);
-	
+	--toggleThumbBackgroundColor: var(--inputBackground);	
 	--toggleTrackBorderColor: var(--secondaryText);
 	--toggleTrackBackgroundColor: var(--backgroundColor);
 
 	/* Selected State */
   --toggleSelectedThumbBorderColor: var(--primary);
-  --toggleSelectedThumbBackgroundColor: var(--primary);  
-  
-
+  --toggleSelectedThumbBackgroundColor: var(--primary);
   --toggleSelectedTrackBorderColor: var(--primary);
   --toggleSelectedTrackBackgroundColor: var(--primaryLight);
 
