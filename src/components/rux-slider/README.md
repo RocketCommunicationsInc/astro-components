@@ -69,6 +69,8 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | `disabled`   | Boolean | `false` | No       | Sets a disabled state on the component, which prevents typical user action from changing the value.                                                                                                                   |
 
 ## Revision History
+##### **5.0**
+ - Removed fallback CSS properties
 
 ##### **4.0**
 

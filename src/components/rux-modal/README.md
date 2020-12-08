@@ -72,7 +72,9 @@ Pass properties as attributes of the Astro Dialog Box custom element:
 When closed, the Dialog Box Web Component will emit a message using the `'modalClosed'` event name and a detail message of `confirm` with a value of `true` (confirm) or `false` (deny) depending on whether the user clicks the confirm or deny button.
 
 ## Revision History
-
+##### **5.0**
+- Added `--modalTitleColor` color variable for Modal Title Color
+- Removed CSS Fallback properties
 ##### **4.1**
 - Removed mention of Icon component
 
