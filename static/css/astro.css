@@ -602,9 +602,10 @@
 
   */
 
-  --clockTextColor: var(--colorBlack);
-  --clockBackgroundColor: var(--colorWhite);
-  --clockBorderColor: var(--colorQuaternary);
+  --clockTextColor: var(--primaryElementText);
+  --clockBackgroundColor: #101923;
+	--clockBorderColor: #1b2d3e;
+	--clockLabelColor: var(--primaryElementText);
 
   /* 
     
@@ -1037,9 +1038,10 @@ li.light-theme {
     ==========================================================================
 
   */
-  --clockTextColor: var(--colorWhite);
-  --clockBackgroundColor: var(--globalAppHeader);
-	--clockBorderColor: var(--colorTertiary);
+  --clockTextColor: var(--defaultText);
+  --clockBackgroundColor: var(--backgroundColor);
+	--clockBorderColor: var(--surfaceElements);
+	--clockLabelColor: var(--defaultText);
 
 	/* 
     
@@ -2382,9 +2384,7 @@ label {
 
 .rux-clock {
   display: flex;
-  color: rgb(255, 255, 255);
-  color: var(--clockTextColor, rgb(255, 255, 255));
-
+  color: var(--clockTextColor);
   font-size: 1.15rem;
 }
 
@@ -2399,16 +2399,12 @@ label {
   align-items: center;
   font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco,
 										Consolas, "Liberation Mono", "Courier New", monospace;
-  font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+  font-family: var(--fontFamilyMono);
   font-weight: 700;
 
-  border: 1px solid rgb(39, 86, 128);
+  border: 1px solid var(--clockBorderColor);
 
-  border: 1px solid var(--clockBorderColor, rgb(39, 86, 128));
-
-  background-color: rgb(20, 32, 44);
-
-  background-color: var(--clockBackgroundColor, rgb(20, 32, 44));
+  background-color: var(--clockBackgroundColor);
   margin-bottom: 0.25rem;
 
   white-space: nowrap;
@@ -2434,7 +2430,8 @@ label {
 }
 
 .rux-clock__segment__label {
-  font-size: 0.875rem;
+	font-size: 0.875rem;
+	color: var(--clockLabelColor);
 }
 
 .rux-clock__aos {
