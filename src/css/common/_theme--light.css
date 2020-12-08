@@ -117,17 +117,17 @@
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--colorWhite);
-  --popupMenuBorderColor: var(--colorSecondary);
-  --popupMenuTextColor: var(--colorBlack);
+  --popupMenuBackgroundColor: var(--inputBackground);
+  --popupMenuBorderColor: var(--primary);
+  --popupMenuTextColor: var(--defaultText);
 
-  --popupCaretBackgroundColor: var(--popupMenuBorderColor);
+  --popupCaretBackgroundColor: var(--primary);
 
-  --popupMenuItemBackgroundColor: var(--primary);
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3);
-  --popupMenuItemHoverTextColor: var(--colorBlack);
+  --popupMenuItemBackgroundColor: var(--inputBackground);
+  --popupMenuItemHoverBackgroundColor: var(--primaryDark);
+  --popupMenuItemHoverTextColor: var(--primaryElementText);
 
-  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2);
+  --popupMenuItemSeperatorBorderColor: var(--defaultText);
 
   /* 
     
