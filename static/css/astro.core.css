@@ -507,7 +507,8 @@
 	--sliderSelectedThumbBorderColor: var(--primaryLight);
 	--sliderSelectedTrackBackgroundColor: var(--primary);
 
-	--borderThumbSize: .25px;
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: .25px;
 
   /* 
     
@@ -922,7 +923,8 @@ li.light-theme {
 	--sliderSelectedThumbBorderColor: var(--primaryLight);
 	--sliderSelectedTrackBackgroundColor: var(--primary);
 
-	--borderThumbSize: 1px;
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: 1px;
 
   /* 
     

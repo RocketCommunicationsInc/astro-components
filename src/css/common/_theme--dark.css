@@ -127,7 +127,8 @@
 	--sliderSelectedThumbBorderColor: var(--primaryLight);
 	--sliderSelectedTrackBackgroundColor: var(--primary);
 
-	--borderThumbSize: 1px;
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: 1px;
 
   /* 
     

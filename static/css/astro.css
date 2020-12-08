@@ -507,7 +507,8 @@
 	--sliderSelectedThumbBorderColor: var(--primaryLight);
 	--sliderSelectedTrackBackgroundColor: var(--primary);
 
-	--borderThumbSize: .25px;
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: .25px;
 
   /* 
     
@@ -922,7 +923,8 @@ li.light-theme {
 	--sliderSelectedThumbBorderColor: var(--primaryLight);
 	--sliderSelectedTrackBackgroundColor: var(--primary);
 
-	--borderThumbSize: 1px;
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: 1px;
 
   /* 
     
@@ -3408,7 +3410,7 @@ input[type="range"]:focus {
   cursor: var(--trackCursor);
 
   background-color: var(--sliderTrackBackgroundColor);
-  outline: 1px solid var(--sliderTrackBorderColor);
+  outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
 
   background-image: linear-gradient(
     to right,
@@ -3432,7 +3434,7 @@ input[type="range"]:focus {
   cursor: var(--trackCursor);
 
   background-color: var(--sliderTrackBackgroundColor);
-  outline: 1px solid var(--sliderTrackBorderColor);
+  outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
 }
 
 .rux-range::-moz-range-progress {
@@ -3459,12 +3461,12 @@ input[type="range"]:focus {
   background-color: transparent;
   border: none;
   /* background-color: var(--sliderTrackBackgroundColor); */
-  outline: 1px solid transparent;
+  outline: var(--sliderTrackBorderSize) solid transparent;
 }
 
 .rux-range::-ms-fill-lower {
   height: 2px;
-  background-color: rgb(77, 172, 255);
+  background-color: var(--sliderTrackBackgroundColor);
 }
 
 .rux-range::-ms-fill-upper {
@@ -3484,7 +3486,7 @@ input[type="range"]:focus {
   width: var(--thumbSize);
 
   border-radius: 100%;
-  border: var(--borderThumbSize) solid var(--sliderThumbBorderColor);
+  border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
   background-color: var(--sliderThumbBackgroundColor);
 
   cursor: pointer;
@@ -3514,7 +3516,7 @@ input:-moz-focusring {
   width: var(--thumbSize);
 
   border-radius: 100%;
-  border: var(--borderThumbSize) solid var(--sliderThumbBorderColor);
+  border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
   background-color: var(--sliderThumbBackgroundColor);
 
   cursor: pointer;
@@ -3538,7 +3540,7 @@ input:-moz-focusring {
   width: 1.25rem;
 
   border-radius: 100%;
-  border: var(--borderThumbSize) solid var(--sliderThumbBorderColor);
+  border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
   background-color: rgb(0, 90, 143);
 
   cursor: pointer;

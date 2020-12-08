@@ -123,7 +123,7 @@ export class RuxSlider extends LitElement {
           cursor: var(--trackCursor, pointer);
 
           background-color: var(--sliderTrackBackgroundColor);
-          outline: 1px solid var(--sliderTrackBorderColor, transparent);
+          outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor, transparent);
 
           background-image: linear-gradient(
             to right,
@@ -143,7 +143,7 @@ export class RuxSlider extends LitElement {
           cursor: var(--trackCursor, pointer);
 
           background-color: var(--sliderTrackBackgroundColor);
-          outline: 1px solid var(--sliderTrackBorderColor);
+          outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
         }
 
         .rux-range::-moz-range-progress {
@@ -168,7 +168,7 @@ export class RuxSlider extends LitElement {
           background-color: transparent;
           border: none;
           /* background-color: var(--sliderTrackBackgroundColor); */
-          outline: 1px solid transparent;
+          outline: var(--sliderTrackBorderSize) solid transparent;
         }
 
         .rux-range::-ms-fill-lower {
@@ -190,7 +190,7 @@ export class RuxSlider extends LitElement {
           width: var(--thumbSize, 1.25rem);
 
           border-radius: 100%;
-          border: var(--borderThumbSize) solid var(--sliderThumbBorderColor);
+          border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
           background-color: var(--sliderThumbBackgroundColor);
 
           cursor: pointer;
@@ -229,7 +229,7 @@ export class RuxSlider extends LitElement {
           width: var(--thumbSize);
 
           border-radius: 100%;
-          border: var(--borderThumbSize) solid var(--sliderThumbBorderColor);
+          border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
           background-color: var(--sliderThumbBackgroundColor);
 
           cursor: pointer;
@@ -255,7 +255,7 @@ export class RuxSlider extends LitElement {
           width: 1.25rem;
 
           border-radius: 100%;
-          border: var(--borderThumbSize) solid var(--sliderThumbBorderColor);
+          border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
           background-color: rgb(0, 90, 143);
 
           cursor: pointer;
