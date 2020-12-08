@@ -48,9 +48,9 @@
   */
 
   /* Button */
-  --buttonTextColor: var(--colorWhite);
-  --buttonBackgroundColor: var(--colorPrimary);
-  --buttonBorderColor: var(--colorPrimary);
+  --buttonTextColor: var(--defaultText);
+  --buttonBackgroundColor: var(--primary);
+  --buttonBorderColor: var(--primary);
   --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
@@ -62,15 +62,15 @@
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite);
-  --buttonActiveBackgroundColor: var(--colorPrimary);
-  --buttonActiveBorderColor: var(--colorPrimary);
+  --buttonActiveControlTextColor: var(--defaultText);
+  --buttonActiveBackgroundColor: var(--primary);
+  --buttonActiveBorderColor: var(--primary);
 
   /* Default Button State */
-  --buttonDefaultBorderColor: var(--colorWhite);
+  --buttonDefaultBorderColor: var(--defaultText);
 
   /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--colorWhite);
+  --buttonOutlineTextColor: var(--defaultText);
   --buttonOutlineBackgroundColor: transparent;
   --buttonOutlineBorderColor: var(--primary);
 
@@ -87,14 +87,15 @@
 
   */
   --controlTextColor: var(--primary);
-  --controlLabelColor: var(--colorWhite);
-  --controlBackgroundColor: var(--colorPrimary);
-  --controlBorderColor: var(--colorSecondaryLighten1);
-  --controlAccentColor: var(--colorSecondaryLighten1);
+  --controlLabelColor: var(--defaultText);
+  --controlBackgroundColor: var(--primary);
+  --controlBorderColor: var(--primary);
+  --controlAccentColor: var(--primary);
 
-  --controlSelectedTextColor: var(--colorWhite);
+  --controlSelectedTextColor: var(--defaultText);
   --controlSelectedBackgroundColor: var(--primaryDark);
 	--controlSelectedBorderColor: var(--primary);
+	--controlHoverBorderColor: var(--primaryLight);
 	--controlSelectedOutlineBorderColor: var(--primary);
 
   /* 
@@ -131,22 +132,19 @@
     ==========================================================================
 
   */
-  --segmentedButtonBorderColor: var(--colorTertiaryDarken1);
-  --segmentedButtonBackgroundColor: var(--colorPrimary);
-  --segmentedButtonTextColor: var(--colorWhite);
+  --segmentedButtonBorderColor: var(--primary);
+  --segmentedButtonBackgroundColor: none;
+  --segmentedButtonTextColor: var(--primary);
 
-  --segmentedButtonHoverBackgroundColor: var(
-    --primaryDark,
-    rgb(58, 135, 207)
-  );
-  --segmentedButtonHoverTextColor: var(--colorWhite);
+	/* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--primaryLight);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryLight);
 
-  --segmentedButtonSelectedBackgroundColor: var(--primaryDark);
+	/* Segmented Select */
+  --segmentedButtonSelectedBackgroundColor: var(--primary);
 
-  --segmentedButtonSelectedBoxShadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
-
-  --segmentedButtonSelectedTextColor: var(--colorWhite);
+  --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -203,17 +201,17 @@
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--colorWhite);
+  --popupMenuBackgroundColor: var(--inputBackground);
   --popupMenuBorderColor: var(--primary);
-  --popupMenuTextColor: var(--colorBlack);
+  --popupMenuTextColor: var(--primaryElementText);
 
-  --popupCaretBackgroundColor: var(--popupMenuBorderColor);
+  --popupCaretBackgroundColor: var(--primary);
 
-  --popupMenuItemBackgroundColor: var(--colorPrimary);
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3);
-  --popupMenuItemHoverTextColor: var(--colorBlack);
+  --popupMenuItemBackgroundColor: var(--primary);
+  --popupMenuItemHoverBackgroundColor: var(--primaryLight);
+  --popupMenuItemHoverTextColor: var(--primaryElementText);
 
-  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2);
+  --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
 
   /* 
     
@@ -221,13 +219,13 @@
     ==========================================================================
 
   */
-  --pushbuttonBackgroundColor: var(--colorPrimary);
-  --pushbuttonBorderColor: var(--colorBlack);
-  --pushbuttonTextColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
+  --pushbuttonBorderColor: var(--primary);
+  --pushbuttonTextColor: var(--primary);
 
-  --pushbuttonSelectedBackgroundColor: var(--colorBlack);
-  --pushbuttonSelectedBorderColor: var(--colorBlack);
-  --pushbuttonSelectedTextColor: var(--colorNormal);
+  --pushbuttonSelectedBackgroundColor: var(--colorNormal);
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -245,7 +243,7 @@
     ==========================================================================
 
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
