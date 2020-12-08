@@ -665,7 +665,7 @@
   */
   --tabTextColor: var(--primary);
   --tabBackgroundColor: transparent;
-  --tabBorderColor: var(--primary);
+  --tabBorderColor: transparent;
 
   --tabHoverTextColor: var(--defaultText);
 
@@ -1102,7 +1102,7 @@ li.light-theme {
   */
   --tabTextColor: var(--primary);
   --tabBackgroundColor: transparent;
-	--tabBorderColor: var(--globalAppHeader);
+	--tabBorderColor: transparent;
 	
 	--tabHoverTextColor: var(--defaultText);
 
@@ -3761,11 +3761,13 @@ input:-moz-focusring {
   height: 5.625rem;
 
 	user-select: none;
+	border-bottom: 5px solid var(--tabBorderColor);
 }
 
 .rux-tabs--small {
   height: 3.125rem;
-  font-size: 1rem;
+	font-size: 1rem;
+	border-bottom: 3px solid var(--tabBorderColor);
 }
 
 .rux-tabs ul {
@@ -3830,6 +3832,14 @@ input:-moz-focusring {
 .rux-tabs a:hover:not([disabled]) {
   color: var(--tabHoverTextColor);
 }
+
+.rux-tabs .rux-tab {
+	border-bottom: 5px solid var(--tabBorderColor);
+}
+.rux-tabs .rux-tab {
+	border-bottom: 5px solid var(--tabBorderColor);
+}
+
 
 /*
 **

@@ -665,7 +665,7 @@
   */
   --tabTextColor: var(--primary);
   --tabBackgroundColor: transparent;
-  --tabBorderColor: var(--primary);
+  --tabBorderColor: transparent;
 
   --tabHoverTextColor: var(--defaultText);
 
@@ -1102,7 +1102,7 @@ li.light-theme {
   */
   --tabTextColor: var(--primary);
   --tabBackgroundColor: transparent;
-	--tabBorderColor: var(--globalAppHeader);
+	--tabBorderColor: transparent;
 	
 	--tabHoverTextColor: var(--defaultText);
 

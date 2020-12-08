@@ -47,7 +47,8 @@ export class RuxTab extends LitElement {
 
           text-decoration: none;
 
-          color: var(--tabTextColor);
+					color: var(--tabTextColor);
+					border-bottom: 5px solid var(--tabBorderColor);
         }
 
         :host span {
@@ -57,7 +58,8 @@ export class RuxTab extends LitElement {
         }
 
         :host([small]) {
-          min-width: 2rem;
+					min-width: 2rem;
+					border-bottom: 3px solid var(--tabBorderColor);
         }
 
         :host([small][selected]) {
