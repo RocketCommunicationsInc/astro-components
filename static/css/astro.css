@@ -3365,8 +3365,7 @@ i.rux-icon {
   */
 
 :root {
-  --thumbSize: var(--controlOptionSize, 1.25rem);
-
+  --thumbSize: var(--controlOptionSize);
   --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
   --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
@@ -3384,8 +3383,7 @@ i.rux-icon {
   margin-right: 0;
 }
 
-.rux-range,
-.satcom-range {
+.rux-range {
   -webkit-appearance: none;
   appearance: none;
 
@@ -3398,8 +3396,7 @@ input[type="range"]:focus {
   outline: none;
 }
 
-.rux-range::-webkit-slider-runnable-track,
-.satcom-range::-webkit-slider-runnable-track {
+.rux-range::-webkit-slider-runnable-track {
   display: flex;
   align-items: center;
 
@@ -3477,7 +3474,9 @@ input[type="range"]:focus {
 .rux-range::-webkit-slider-thumb {
   -webkit-appearance: none;
 
-  position: relative;
+	position: relative;
+	top: calc( 1.25rem / -2);
+	top: calc( var(--thumbSize) / -2);
 
   height: 1.25rem;
 
@@ -3507,7 +3506,9 @@ input:-moz-focusring {
 .rux-range::-moz-range-thumb {
   -moz-appearance: none;
 
-  position: relative;
+	position: relative;
+	top: calc( 1.25rem / -2);
+	top: calc( var(--thumbSize) / -2);
 
   height: 1.25rem;
 
@@ -3534,7 +3535,8 @@ input:-moz-focusring {
 }
 
 .rux-range::-ms-thumb {
-  position: relative;
+	position: relative;
+	top: -10px;
 
   height: 1.25rem;
   width: 1.25rem;
