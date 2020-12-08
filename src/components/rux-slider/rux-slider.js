@@ -256,7 +256,7 @@ export class RuxSlider extends LitElement {
 
           border-radius: 100%;
           border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
-          background-color: rgb(0, 90, 143);
+          background-color: var(--sliderThumbBackgroundColor);
 
           cursor: pointer;
           box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14),
