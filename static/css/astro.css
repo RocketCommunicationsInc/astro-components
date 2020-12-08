@@ -2139,6 +2139,7 @@ label {
 	background: no-repeat center left 0.4rem/1.1em
 		var(--searchIcon)
     var(--inputBackgroundColor);
+    background-size: 15px 15px;
 }
 
 .rux-form-field--large input[type="search"] {
