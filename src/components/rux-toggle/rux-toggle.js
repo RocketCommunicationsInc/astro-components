@@ -95,7 +95,8 @@ export class RuxToggle extends LitElement {
 
       .rux-toggle__input:disabled + .rux-toggle__button::after {
         background-color: var(--toggleDisabledThumbBackgroundColor);
-        border-color: var(--toggleDisabledThumbBorderColor);
+				border-color: var(--toggleDisabledThumbBorderColor);
+				cursor: var(--disabledCursor);
       }
 
       .rux-toggle__input:checked + .rux-toggle__button::after {
@@ -105,12 +106,12 @@ export class RuxToggle extends LitElement {
 
       .rux-toggle__input:checked:disabled + .rux-toggle__button::after {
         border-color: var(--toggleDisabledSelectedThumbBorderColor);
-        cursor: not-allowed;
+				cursor: var(--disabledCursor);				
       }
 
       .rux-toggle__input:disabled + .rux-toggle__button::before {
         opacity: var(--disabledOpacity);
-        cursor: not-allowed;
+        cursor: var(--disabledCursor);
       }
       </style>      
       <div class='rux-toggle'>
