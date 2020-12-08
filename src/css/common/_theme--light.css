@@ -340,7 +340,8 @@
   --inputBorderColor: var(--primaryLight);
   --inputTextColor: var(--defaultText);
 
-  --inputFocusBorderColor: var(--primary);
+	--inputFocusBorderColor: var(--primary);
+	--inputFocusTextColor: var(--defaultText);
 
 	--inputInvalidBorderColor: var(--colorCritical);
 	

@@ -701,7 +701,8 @@
   --inputBorderColor: var(--primaryLight);
   --inputTextColor: var(--defaultText);
 
-  --inputFocusBorderColor: var(--primary);
+	--inputFocusBorderColor: var(--primary);
+	--inputFocusTextColor: var(--defaultText);
 
 	--inputInvalidBorderColor: var(--colorCritical);
 	
@@ -1137,7 +1138,9 @@ li.light-theme {
   --inputTextColor: var(--primaryElementText);
 	 
 	/* Input Focus */
-  --inputFocusBorderColor: var(--primary);
+	--inputFocusBorderColor: var(--primary);
+	--inputFocusTextColor: var(--primaryElementText);
+
 	--inputInvalidBorderColor: var(--colorCritical);
 	
 	--searchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a92' fill-rule='evenodd'/%3E%3C/svg%3E");
@@ -1945,11 +1948,10 @@ label {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-family: var(--fontFamily);
   font-size: 1rem;
-  font-size: var(--fontSize, 1rem);
-  color: rgb(255, 255, 255);
-  color: var(--fontColor, rgb(255, 255, 255));
+  font-size: var(--fontSize);
+  color: var(--fontColor);
 }
 
 .rux-form-field input:required + label::after {
@@ -1984,9 +1986,8 @@ label {
 
   font-size: 1rem;
 
-  font-size: var(--fontSize, 1rem);
-  color: rgb(0, 0, 0);
-  color: var(--inputTextColor, rgb(0, 0, 0));
+  font-size: var(--fontSize);
+  color: var(--inputTextColor);
 }
 
 .rux-form-field textarea {
@@ -2000,23 +2001,18 @@ label {
 
   border: 1px solid transparent;
 
-  border: 1px solid transparent;
-
-  border: 1px solid var(--inputBorderColor, transparent);
+  border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
-
-  font-family: "Open Sans", sans-serif;
 
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
   color: rgb(0, 0, 0);
-  color: rgb(0, 0, 0);
-  color: var(--inputTextColor, rgb(0, 0, 0));
+  color: var(--inputTextColor);
 }
 
 .rux-form-field input[type="number"]::-webkit-inner-spin-button,
@@ -2149,7 +2145,7 @@ label {
 .rux-form-field textarea:focus {
   border-color: var(--inputFocusBorderColor);
   outline: none;
-  color: black;
+  color: var(--inputFocusTextColor);
 }
 
 .rux-form-field input[type="search"]::-webkit-search-decoration {
