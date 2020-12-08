@@ -135,13 +135,19 @@
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--primary);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBackgroundColor: var(--primaryDark);
+  --sliderThumbBorderColor: var(--inputBackground);
+	--sliderHoverThumbBackgroundColor: var(--primaryDark);
+	--sliderHoverThumbBorderColor: var(--inputBackground);
 
-  --sliderTrackBorderColor: var(--colorQuaternary);
-  --sliderTrackBackgroundColor: var(--colorWhite);
+  --sliderTrackBorderColor: var(--secondaryText);
+  --sliderTrackBackgroundColor: var(--inputBackground);
 
-  --sliderSelectedTrackBackgroundColor: var(--colorSecondary);
+	--sliderSelectedThumbBorderColor: var(--primaryLight);
+	--sliderSelectedTrackBackgroundColor: var(--primary);
+
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: .25px;
 
   /* 
     
@@ -235,9 +241,10 @@
 
   */
 
-  --clockTextColor: var(--colorBlack);
-  --clockBackgroundColor: var(--colorWhite);
-  --clockBorderColor: var(--colorQuaternary);
+  --clockTextColor: var(--primaryElementText);
+  --clockBackgroundColor: #101923;
+	--clockBorderColor: #1b2d3e;
+	--clockLabelColor: var(--primaryElementText);
 
   /* 
     
@@ -302,7 +309,15 @@
   --tabHoverTextColor: var(--colorSecondary);
 
   --tabSelectedTextColor: var(--colorBlack);
-  --tabSelectedBorderColor: var(--colorSecondary);
+	--tabSelectedBorderColor: var(--colorSecondary);
+	
+	/* 
+    
+    Notification Colors 
+    ==========================================================================
+
+	*/
+	--notificationTextColor: var(--defaultText);
 
   /* 
     
