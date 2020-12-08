@@ -35,11 +35,10 @@
   background-color: var(--selectOptBackground);
 }
 
-.rux-select .rux-select:hover optgroup,
+.rux-select .rux-select optgroup:hover,
 .rux-select option:hover {
   background-color: var(--selectHoverOptBackgroundColor);
 }
-
 
 .rux-select:disabled {
   opacity: 0.4;
