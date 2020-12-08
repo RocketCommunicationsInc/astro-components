@@ -201,7 +201,7 @@ export class RuxSlider extends LitElement {
 				}
 
         .rux-range:disabled::-webkit-slider-runnable-track {
-          opacity: var(--disabledOpacity, 0.4);
+          opacity: var(--disabledOpacity);
           cursor: var(--disabledCursor);
         }
 

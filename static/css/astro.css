@@ -3563,7 +3563,9 @@ input:-moz-focusring {
 
 .rux-range:disabled::-ms-thumb {
   opacity: 0.4;
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
+  cursor: var(--disabledCursor);
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:active {
