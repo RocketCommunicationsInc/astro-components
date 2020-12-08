@@ -47,7 +47,7 @@ export class RuxTab extends LitElement {
 
           text-decoration: none;
 
-          color: var(--tabTextColor, rgb(77, 172, 255));
+          color: var(--tabTextColor);
         }
 
         :host span {
@@ -61,22 +61,22 @@ export class RuxTab extends LitElement {
         }
 
         :host([small][selected]) {
-          box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+          border-bottom: solid 3px var(--tabSelectedBorderColor);
         }
 
         :host([selected]) {
-          color: var(--tabSelectedTextColor, rgb(255, 255, 255));
-          box-shadow: inset 0 -5px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+          color: var(--tabSelectedTextColor);
+          border-bottom: 5px solid var(--tabSelectedBorderColor);
         }
 
         :host(:hover) {
-          color: var(--tabHoverTextColor, rgb(255, 255, 255));
+          color: var(--tabHoverTextColor);
         }
 
         :host([disabled]) {
-          color: var(--tabTextColor, rgb(77, 172, 255));
-          opacity: var(--disabledOpacity, 0.4);
-          cursor: var(--disabledCursor, not-allowed);
+          color: var(--tabTextColor);
+          opacity: var(--disabledOpacity);
+          cursor: var(--disabledCursor);
         }
       </style>
       <span><slot></slot></span>
