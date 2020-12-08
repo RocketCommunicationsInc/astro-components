@@ -77,7 +77,7 @@ export class RuxLog extends LitElement {
       <style>
         :host {
           display: block;
-          font-size: 0.875rem;
+          font-size: 1rem;
           color: var(--fontColor, rgb(255, 255, 255));
           background-color: var(--logBackgroundColor);
         }
@@ -215,10 +215,10 @@ export class RuxLog extends LitElement {
           border-radius: 3px;
 
           font-size: 0.75rem;
-          font-size: var(--fontSizeSM, 0.75rem);
+          font-size: var(--fontSizeSM);
 
           color: rgb(0, 0, 0);
-          color: var(--inputTextColor, rgb(0, 0, 0));
+          color: var(--inputTextColor);
         }
 
         input[type='search']::-webkit-search-decoration {
@@ -277,7 +277,7 @@ export class RuxLog extends LitElement {
               <input
                 id="log-search"
                 class="rux-input"
-                placeholder="Search"
+                placeholder="Search..."
                 type="search"
                 .value="${this._filterValue}"
                 @input="${this.filterChanged}"
