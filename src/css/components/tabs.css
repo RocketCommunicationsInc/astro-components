@@ -28,7 +28,7 @@
 
 .rux-tabs--small {
   height: 3.125rem;
-	font-size: 1rem;
+	font-size: var(--fontSizeXL);
 	border-bottom: 3px solid var(--tabBorderColor);
 }
 
