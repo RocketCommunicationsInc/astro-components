@@ -16,15 +16,16 @@
   top: -4.25rem;
   left: 0;
 
-  height: 4.25rem;
+  height: 4.375rem;
   width: 100%;
 
   padding: 0.7rem 1.25rem;
-  background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
+  background-color: var(--colorStandbyLighten1);
   transition: all 0.5s ease;
 
-  box-sizing: border-box;
-  color: var(--colorBlack, rgb(0, 0, 0));
+	box-sizing: border-box;
+	font-size: var(--fontSizeXL);
+  color: var(--notificationTextColor);
 }
 
 .rux-notification::after {
@@ -50,8 +51,8 @@
 }
 
 .rux-notification_close-button {
-  border: 3px solid var(--colorStandbyDarken1, rgb(96, 168, 191));
-  color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+  border: 3px solid var(--colorStandbyDarken1);
+  color: var(--colorStandbyDarken1);
 
   background-color: transparent;
 
@@ -80,7 +81,7 @@
 
   content: "";
 
-  background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+  background-color: var(--colorStandbyDarken1);
 }
 
 @supports (--css: variables) {
@@ -100,54 +101,54 @@
 
 /* Critical Variant */
 .rux-notification--critical {
-  background-color: var(--colorCriticalLighten1, rgb(255, 100, 100));
+  background-color: var(--colorCriticalLighten1);
 }
 
 .rux-notification--critical .rux-notification_close-button {
-  border-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
+  border-color: var(--colorCriticalDarken1);
 }
 
 .rux-notification--critical .rux-notification_close-button::after,
 .rux-notification--critical .rux-notification_close-button::before {
-  background-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
+  background-color: var(--colorCriticalDarken1);
 }
 
 /* Caution Variant */
 .rux-notification--caution {
-  background-color: var(--colorCautionLighten1, rgb(250, 237, 86));
+  background-color: var(--colorCautionLighten1);
 }
 .rux-notification--caution .rux-notification_close-button {
-  border-color: var(--colorCautionDarken1, rgb(186, 173, 22));
+  border-color: var(--colorCautionDarken1);
 }
 
 .rux-notification--caution .rux-notification_close-button::after,
 .rux-notification--caution .rux-notification_close-button::before {
-  background-color: var(--colorCautionDarken1, rgb(186, 173, 22));
+  background-color: var(--colorCautionDarken1);
 }
 
 /* Normal Variant */
 .rux-notification--normal {
-  background-color: var(--colorNormalLighten2, rgb(173, 255, 128));
+  background-color: var(--colorNormalLighten2);
 }
 
 .rux-notification--normal .rux-notification_close-button {
-  border-color: var(--colorNormalDarken1, rgb(68, 191, 0));
+  border-color: var(--colorNormalDarken1);
 }
 
 .rux-notification--normal .rux-notification_close-button::after,
 .rux-notification--normal .rux-notification_close-button::before {
-  background-color: var(--colorNormalDarken1, rgb(68, 191, 0));
+  background-color: var(--colorNormalDarken1);
 }
 
 /* Info Variant */
 .rux-notification--info {
-  background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
+  background-color: var(--colorStandbyLighten1);
 }
 .rux-notification--info .rux-notification_close-button {
-  border-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+  border-color: var(--colorStandbyDarken1);
 }
 
 .rux-notification--info .rux-notification_close-button::after,
 .rux-notification--info .rux-notification_close-button::before {
-  background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+  background-color: var(--colorStandbyDarken1);
 }
