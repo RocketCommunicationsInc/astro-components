@@ -421,7 +421,7 @@
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite);
+  --buttonActiveControlTextColor: var(--defaultText);
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
 
@@ -445,17 +445,18 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--colorWhite);
-  --controlLabelColor: var(--colorBlack);
-  --controlBackgroundColor: var(--colorSecondaryDarken1);
+  --controlTextColor: var(--primary);
+  --controlLabelColor: var(--defaultText);
+  --controlBackgroundColor: var(--primary);
   --controlBorderColor: var(--primary);
-  --controlAccentColor: var(--colorSecondary);
+  --controlAccentColor: var(--primary);
 
-  --controlSelectedTextColor: var(--colorBlack);
-  --controlSelectedBackgroundColor: var(--colorSecondaryDarken1);
+  --controlSelectedTextColor: var(--defaultText);
+  --controlSelectedBackgroundColor: transparent;
   --controlSelectedBorderColor: var(--primary);
 
-  --controlHoverOutlineBackgroundColor: none;
+	--controlHoverOutlineBackgroundColor: none;
+	--controlHoverBorderColor: var(--primaryDark);
   --controlSelectedOutlineBorderColor: var(--primary);
   --controlSelectedOutlineBackgroundColor: none;
 
@@ -477,17 +478,17 @@
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--colorWhite);
-  --popupMenuBorderColor: var(--colorSecondary);
-  --popupMenuTextColor: var(--colorBlack);
+  --popupMenuBackgroundColor: var(--inputBackground);
+  --popupMenuBorderColor: var(--primary);
+  --popupMenuTextColor: var(--defaultText);
 
-  --popupCaretBackgroundColor: var(--popupMenuBorderColor);
+  --popupCaretBackgroundColor: var(--primary);
 
-  --popupMenuItemBackgroundColor: var(--primary);
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3);
-  --popupMenuItemHoverTextColor: var(--colorBlack);
+  --popupMenuItemBackgroundColor: var(--inputBackground);
+  --popupMenuItemHoverBackgroundColor: var(--primaryDark);
+  --popupMenuItemHoverTextColor: var(--primaryElementText);
 
-  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2);
+  --popupMenuItemSeperatorBorderColor: var(--defaultText);
 
   /* 
     
@@ -495,13 +496,19 @@
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--primary);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBackgroundColor: var(--primaryDark);
+  --sliderThumbBorderColor: var(--inputBackground);
+	--sliderHoverThumbBackgroundColor: var(--primaryDark);
+	--sliderHoverThumbBorderColor: var(--inputBackground);
 
-  --sliderTrackBorderColor: var(--colorQuaternary);
-  --sliderTrackBackgroundColor: var(--colorWhite);
+  --sliderTrackBorderColor: var(--secondaryText);
+  --sliderTrackBackgroundColor: var(--inputBackground);
 
-  --sliderSelectedTrackBackgroundColor: var(--colorSecondary);
+	--sliderSelectedThumbBorderColor: var(--primaryLight);
+	--sliderSelectedTrackBackgroundColor: var(--primary);
+
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: .25px;
 
   /* 
     
@@ -510,19 +517,17 @@
 
   */
   --segmentedButtonBorderColor: var(--primary);
-  --segmentedButtonBackgroundColor: var(--colorWhite);
+  --segmentedButtonBackgroundColor: none;
   --segmentedButtonTextColor: var(--primary);
 
-  --segmentedButtonHoverBackgroundColor: rgb(0, 90, 143, 0.05);
-  --segmentedButtonHoverTextColor: var(--primary);
+	/* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--primaryDark);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryDark);
 
-  --segmentedButtonSelectedBackgroundColor: var(--colorSecondaryDarken1);
-
-  --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1),
-    inset 0 1px 5px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.067s ease-out;
-
-  --segmentedButtonSelectedTextColor: var(--colorWhite);
+	/* Segmented Select */
+  --segmentedButtonSelectedBackgroundColor: var(--primary);
+  --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -582,15 +587,13 @@
 
   */
 
-  --pushbuttonBackgroundColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
   --pushbuttonBorderColor: var(--primary);
   --pushbuttonTextColor: var(--primary);
 
   --pushbuttonSelectedBackgroundColor: var(--colorNormal);
-  --pushbuttonSelectedBorderColor: #3dc100;
-  /* var(--colorNormal); */
-  --pushbuttonSelectedTextColor: #007300;
-  /* var(--colorWhite); */
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--defaultText);
 
   /* 
     
@@ -599,9 +602,10 @@
 
   */
 
-  --clockTextColor: var(--colorBlack);
-  --clockBackgroundColor: var(--colorWhite);
-  --clockBorderColor: var(--colorQuaternary);
+  --clockTextColor: var(--primaryElementText);
+  --clockBackgroundColor: #101923;
+	--clockBorderColor: #1b2d3e;
+	--clockLabelColor: var(--primaryElementText);
 
   /* 
     
@@ -609,9 +613,9 @@
     ==========================================================================
  
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
-  --modalBackgroundColor: var(--colorWhite);
+  --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
   /* 
     
@@ -619,15 +623,15 @@
     ==========================================================================
 
   */
-  --logTextColor: var(--colorBlack);
-  --logBackgroundColor: var(--colorWhite);
-  --logBorderColor: var(--colorQuaternaryLighten2);
+  --logTextColor: var(--defaultText);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--secondaryText);
 
-  --logHeaderTextColor: var(--colorBlack);
-  --logHeaderBackgroundColor: var(--colorQuaternary);
+  --logHeaderTextColor: var(--defaultText);
+  --logHeaderBackgroundColor: var(--backgroundColor);
 
-  --logFilterBackgroundColor: var(--colorStandbyLighten3);
-  --logFilterTextColor: var(--colorStandbyDarken2);
+  --logFilterBackgroundColor: var(--primaryLight);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     
@@ -666,7 +670,15 @@
   --tabHoverTextColor: var(--colorSecondary);
 
   --tabSelectedTextColor: var(--colorBlack);
-  --tabSelectedBorderColor: var(--colorSecondary);
+	--tabSelectedBorderColor: var(--colorSecondary);
+	
+	/* 
+    
+    Notification Colors 
+    ==========================================================================
+
+	*/
+	--notificationTextColor: var(--defaultText);
 
   /* 
     
@@ -843,9 +855,9 @@ li.light-theme {
   */
 
   /* Button */
-  --buttonTextColor: var(--colorWhite);
-  --buttonBackgroundColor: var(--colorPrimary);
-  --buttonBorderColor: var(--colorPrimary);
+  --buttonTextColor: var(--defaultText);
+  --buttonBackgroundColor: var(--primary);
+  --buttonBorderColor: var(--primary);
   --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
@@ -857,15 +869,15 @@ li.light-theme {
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite);
-  --buttonActiveBackgroundColor: var(--colorPrimary);
-  --buttonActiveBorderColor: var(--colorPrimary);
+  --buttonActiveControlTextColor: var(--defaultText);
+  --buttonActiveBackgroundColor: var(--primary);
+  --buttonActiveBorderColor: var(--primary);
 
   /* Default Button State */
-  --buttonDefaultBorderColor: var(--colorWhite);
+  --buttonDefaultBorderColor: var(--defaultText);
 
   /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--colorWhite);
+  --buttonOutlineTextColor: var(--defaultText);
   --buttonOutlineBackgroundColor: transparent;
   --buttonOutlineBorderColor: var(--primary);
 
@@ -882,14 +894,15 @@ li.light-theme {
 
   */
   --controlTextColor: var(--primary);
-  --controlLabelColor: var(--colorWhite);
-  --controlBackgroundColor: var(--colorPrimary);
-  --controlBorderColor: var(--colorSecondaryLighten1);
-  --controlAccentColor: var(--colorSecondaryLighten1);
+  --controlLabelColor: var(--defaultText);
+  --controlBackgroundColor: var(--primary);
+  --controlBorderColor: var(--primary);
+  --controlAccentColor: var(--primary);
 
-  --controlSelectedTextColor: var(--colorWhite);
+  --controlSelectedTextColor: var(--defaultText);
   --controlSelectedBackgroundColor: var(--primaryDark);
 	--controlSelectedBorderColor: var(--primary);
+	--controlHoverBorderColor: var(--primaryLight);
 	--controlSelectedOutlineBorderColor: var(--primary);
 
   /* 
@@ -910,15 +923,19 @@ li.light-theme {
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--colorPrimary);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBackgroundColor: var(--primaryDark);
+  --sliderThumbBorderColor: var(--inputBackground);
+	--sliderHoverThumbBackgroundColor: var(--primaryDark);
+	--sliderHoverThumbBorderColor: var(--inputBackground);
 
   --sliderTrackBorderColor: transparent;
-  --sliderTrackBackgroundColor: var(--colorGray);
+  --sliderTrackBackgroundColor: var(--secondaryText);
 
-  --sliderHoverThumbBackgroundColor: var(--primaryDark);
+	--sliderSelectedThumbBorderColor: var(--primaryLight);
+	--sliderSelectedTrackBackgroundColor: var(--primary);
 
-  --sliderSelectedTrackBackgroundColor: var(--primary);
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: 1px;
 
   /* 
     
@@ -926,22 +943,19 @@ li.light-theme {
     ==========================================================================
 
   */
-  --segmentedButtonBorderColor: var(--colorTertiaryDarken1);
-  --segmentedButtonBackgroundColor: var(--colorPrimary);
-  --segmentedButtonTextColor: var(--colorWhite);
+  --segmentedButtonBorderColor: var(--primary);
+  --segmentedButtonBackgroundColor: none;
+  --segmentedButtonTextColor: var(--primary);
 
-  --segmentedButtonHoverBackgroundColor: var(
-    --primaryDark,
-    rgb(58, 135, 207)
-  );
-  --segmentedButtonHoverTextColor: var(--colorWhite);
+	/* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--primaryLight);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryLight);
 
-  --segmentedButtonSelectedBackgroundColor: var(--primaryDark);
+	/* Segmented Select */
+  --segmentedButtonSelectedBackgroundColor: var(--primary);
 
-  --segmentedButtonSelectedBoxShadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12), inset 0 1px 5px rgba(0, 0, 0, 0.2);
-
-  --segmentedButtonSelectedTextColor: var(--colorWhite);
+  --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -994,17 +1008,17 @@ li.light-theme {
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--colorWhite);
+  --popupMenuBackgroundColor: var(--inputBackground);
   --popupMenuBorderColor: var(--primary);
-  --popupMenuTextColor: var(--colorBlack);
+  --popupMenuTextColor: var(--primaryElementText);
 
-  --popupCaretBackgroundColor: var(--popupMenuBorderColor);
+  --popupCaretBackgroundColor: var(--primary);
 
-  --popupMenuItemBackgroundColor: var(--colorPrimary);
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3);
-  --popupMenuItemHoverTextColor: var(--colorBlack);
+  --popupMenuItemBackgroundColor: var(--primary);
+  --popupMenuItemHoverBackgroundColor: var(--primaryLight);
+  --popupMenuItemHoverTextColor: var(--primaryElementText);
 
-  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2);
+  --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
 
   /* 
     
@@ -1012,13 +1026,13 @@ li.light-theme {
     ==========================================================================
 
   */
-  --pushbuttonBackgroundColor: var(--colorPrimary);
-  --pushbuttonBorderColor: var(--colorBlack);
-  --pushbuttonTextColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
+  --pushbuttonBorderColor: var(--primary);
+  --pushbuttonTextColor: var(--primary);
 
-  --pushbuttonSelectedBackgroundColor: var(--colorBlack);
-  --pushbuttonSelectedBorderColor: var(--colorBlack);
-  --pushbuttonSelectedTextColor: var(--colorNormal);
+  --pushbuttonSelectedBackgroundColor: var(--colorNormal);
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -1026,9 +1040,10 @@ li.light-theme {
     ==========================================================================
 
   */
-  --clockTextColor: var(--colorWhite);
-  --clockBackgroundColor: var(--globalAppHeader);
-	--clockBorderColor: var(--colorTertiary);
+  --clockTextColor: var(--defaultText);
+  --clockBackgroundColor: var(--backgroundColor);
+	--clockBorderColor: var(--surfaceElements);
+	--clockLabelColor: var(--defaultText);
 
 	/* 
     
@@ -1036,7 +1051,7 @@ li.light-theme {
     ==========================================================================
 
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
@@ -1048,15 +1063,15 @@ li.light-theme {
     ==========================================================================
 
   */
-  --logTextColor: var(--colorWhite);
-  --logBackgroundColor: var(--colorTertiaryDarken1);
-  --logBorderColor: var(--colorTertiary);
+  --logTextColor: var(--defaultText);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--backgroundColor);
 
-  --logHeaderTextColor: var(--colorWhiteDarken2);
+  --logHeaderTextColor: var(--defaultText);
   --logHeaderBackgroundColor: var(--globalAppHeader);
 
-  --logFilterBackgroundColor: var(--colorStandbyLighten1);
-  --logFilterTextColor: var(--colorStandbyDarken3);
+  --logFilterBackgroundColor: var(--primaryDark);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     
@@ -1092,7 +1107,15 @@ li.light-theme {
   --tabBorderColor: var(--globalAppHeader);
 
   --tabSelectedTextColor: var(--colorWhite);
-  --tabSelectedBorderColor: var(--primary);
+	--tabSelectedBorderColor: var(--primary);
+	
+	/* 
+    
+    Notification Colors 
+    ==========================================================================
+
+	*/
+	--notificationTextColor: var(--primaryElementText);
 
   /* 
     
@@ -1703,13 +1726,10 @@ label {
 */
 
 .rux-checkbox,
-.satcom-checkbox,
-.rux-radio-button,
-.satcom-radio-button {
+.rux-radio-button {
   display: flex;
   position: relative;
   margin: 0 0 1rem 0;
-
   line-height: 1.2;
 
   /* DEBUG */
@@ -1727,32 +1747,24 @@ label {
 }
 
 .rux-checkbox input[type="checkbox"],
-.satcom-checkbox input[type="checkbox"],
-.rux-radio-button input[type="radio"],
-.satcom-radio-button input[type="radio"] {
+.rux-radio-button input[type="radio"] {
   -webkit-appearance: none;
   display: none;
 }
 
 .rux-checkbox input[type="checkbox"] + label,
-.satcom-checkbox input[type="checkbox"] + label,
-.rux-radio-button input[type="radio"] + label,
-.satcom-radio-button input[type="radio"] + label {
+.rux-radio-button input[type="radio"] + label {
   position: relative;
   display: flex;
 
   align-items: center;
   justify-content: flex-start;
 
-  color: rgb(255, 255, 255);
-
-  color: var(--controlLabelColor, rgb(255, 255, 255));
+  color: var(--controlLabelColor);
 }
 
 .rux-checkbox input[type="checkbox"] + label::before,
-.satcom-checkbox input[type="checkbox"] + label::before,
-.rux-radio-button input[type="radio"] + label::before,
-.satcom-radio-button input[type="radio"] + label::before {
+.rux-radio-button input[type="radio"] + label::before {
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
@@ -1762,89 +1774,73 @@ label {
 
   height: 1.25rem;
 
-  height: var(--controlOptionSize, 1.25rem);
+  height: var(--controlOptionSize);
   width: 1.25rem;
-  width: var(--controlOptionSize, 1.25rem);
+  width: var(--controlOptionSize);
 
   margin: 0 0.625rem 0 0;
 
-  border: 1px solid rgb(122, 193, 255);
-
-  border: 1px solid var(--controlBorderColor, rgb(122, 193, 255));
+  border: 1px solid var(--controlBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"] + label::before,
-.satcom-checkbox input[type="checkbox"] + label::before {
+.rux-checkbox input[type="checkbox"] + label::before {
   border-radius: 2px;
 }
 
-.rux-radio-button input[type="radio"] + label::before,
-.satcom-radio-button input[type="radio"] + label::before {
+.rux-radio-button input[type="radio"] + label::before {
   border-radius: 100%;
   background-color: transparent;
 }
 
 .rux-checkbox input[type="checkbox"]:checked + label::before,
-.satcom-checkbox input[type="checkbox"]:checked + label::before,
-.rux-radio-button input[type="radio"]:checked + label::before,
-.satcom-radio-button input[type="radio"]:checked + label::before {
-  background-color: rgb(58, 129, 191)
-  ;
-  background-color: var(
-    --controlSelectedOutlineBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  border-color: rgb(255, 255, 255);
-  border-color: var(--controlSelectedOutlineBorderColor, rgb(255, 255, 255));
+.rux-radio-button input[type="radio"]:checked + label::before {
+  background-color: var(--controlSelectedOutlineBackgroundColor);
+  border-color: var(--controlSelectedOutlineBorderColor);
+}
+
+.rux-checkbox input[type="checkbox"]:hover + label::before,
+.rux-radio-button input[type="radio"]:hover + label::before {
+	border-color: var(--controlHoverBorderColor);
+}
+
+.rux-checkbox input[type="checkbox"]:checked:hover + label::before,
+.rux-radio-button input[type="radio"]:checked:hover + label::before {
+	border-color: var(--controlSelectedBorderColor);
 }
 
 .rux-checkbox input[type="checkbox"]:checked + label::after,
-.satcom-checkbox input[type="checkbox"]:checked + label::after,
-.rux-radio-button input[type="radio"]:checked + label::after,
-.satcom-radio-button input[type="radio"]:checked + label::after {
+.rux-radio-button input[type="radio"]:checked + label::after{
   position: absolute;
   top: 5px;
   display: flex;
-
   content: "";
 }
 
-.rux-checkbox input[type="checkbox"]:checked + label::after,
-.satcom-checkbox input[type="checkbox"]:checked + label::after {
+.rux-checkbox input[type="checkbox"]:checked + label::after{
   height: 6px;
   width: 12px;
   left: 4px;
-  border-right: 2px solid rgb(255, 255, 255);
-  border-right: 2px solid var(--controlTextColor, rgb(255, 255, 255));
-  border-top: 2px solid rgb(255, 255, 255);
-  border-top: 2px solid var(--controlTextColor, rgb(255, 255, 255));
-
+  border-right: 2px solid var(--controlTextColor);
+  border-top: 2px solid var(--controlTextColor);
   transform: rotate(125deg);
 }
 
-.rux-radio-button input[type="radio"]:checked + label::after,
-.satcom-radio-button input[type="radio"]:checked + label::after {
+.rux-radio-button input[type="radio"]:checked + label::after {
   left: 5px;
-
   height: 10px;
   width: 10px;
-
   border-radius: 100%;
   /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
 
-  background-color: rgb(255, 255, 255);
-
-  background-color: var(--controlTextColor, rgb(255, 255, 255));
+  background-color: var(--primary);
 }
 
 .rux-checkbox input[type="checkbox"]:disabled + label,
-.satcom-checkbox input[type="checkbox"]:disabled + label,
-.rux-radio-button input[type="radio"]:disabled + label,
-.satcom-radio-button input[type="radio"]:disabled + label {
+.rux-radio-button input[type="radio"]:disabled + label {
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
 }
 
 /*
@@ -2386,9 +2382,7 @@ label {
 
 .rux-clock {
   display: flex;
-  color: rgb(255, 255, 255);
-  color: var(--clockTextColor, rgb(255, 255, 255));
-
+  color: var(--clockTextColor);
   font-size: 1.15rem;
 }
 
@@ -2403,16 +2397,12 @@ label {
   align-items: center;
   font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco,
 										Consolas, "Liberation Mono", "Courier New", monospace;
-  font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+  font-family: var(--fontFamilyMono);
   font-weight: 700;
 
-  border: 1px solid rgb(39, 86, 128);
+  border: 1px solid var(--clockBorderColor);
 
-  border: 1px solid var(--clockBorderColor, rgb(39, 86, 128));
-
-  background-color: rgb(20, 32, 44);
-
-  background-color: var(--clockBackgroundColor, rgb(20, 32, 44));
+  background-color: var(--clockBackgroundColor);
   margin-bottom: 0.25rem;
 
   white-space: nowrap;
@@ -2438,7 +2428,8 @@ label {
 }
 
 .rux-clock__segment__label {
-  font-size: 0.875rem;
+	font-size: 0.875rem;
+	color: var(--clockLabelColor);
 }
 
 .rux-clock__aos {
@@ -2475,9 +2466,8 @@ i.rux-icon {
 
 .rux-log {
   display: block;
-  font-size: 0.875rem;
-  background-color: rgb(30, 47, 66);
-  background-color: var(--logBackgroundColor, rgb(30, 47, 66));
+  font-size: 1rem;
+  background-color: var(--logBackgroundColor);
 }
 
 .rux-log-header {
@@ -2487,8 +2477,7 @@ i.rux-icon {
   justify-content: space-between;
 
   padding: 0.5rem;
-  background-color: rgb(20, 32, 44);
-  background-color: var(--logHeaderBackgroundColor, rgb(20, 32, 44));
+  background-color: var(--logHeaderBackgroundColor);
 }
 
 .rux-log-header-title {
@@ -2502,8 +2491,7 @@ i.rux-icon {
 .rux-log__header-labels {
   display: flex;
   width: 100%;
-  color: rgb(255, 255, 255);
-  color: var(--logHeaderTextColor, rgb(255, 255, 255));
+  color: var(--logHeaderTextColor);
 }
 
 .rux-log__header-labels,
@@ -2527,7 +2515,7 @@ i.rux-icon {
 .log-event__timestamp {
   flex-shrink: 0;
 
-  text-align: right;
+  text-align: left;
   width: 5rem;
 }
 
@@ -2536,8 +2524,7 @@ i.rux-icon {
   flex-shrink: 0;
   align-items: flex-start;
   padding: 0.5rem 0;
-  border-bottom: 1px solid rgb(40, 63, 88);
-  border-bottom: 1px solid var(--logBorderColor, rgb(40, 63, 88));
+  border-bottom: 1px solid var(--logBorderColor);
 }
 
 .rux-log__log-event:last-child {
@@ -2554,9 +2541,9 @@ i.rux-icon {
 }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco,
-										Consolas, "Liberation Mono", "Courier New", monospace;
-  font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: var(--fontFamily);
 }
 
 .log-event__status {
@@ -2588,11 +2575,8 @@ i.rux-icon {
 
   align-content: center;
 
-  color: rgb(0, 0, 0);
-
-  color: var(--logFilterTextColor, rgb(0, 0, 0));
-  background-color: rgb(192, 240, 255);
-  background-color: var(--logFilterBackgroundColor, rgb(192, 240, 255));
+  color: var(--logFilterTextColor);
+  background-color: var(--logFilterBackgroundColor);
   padding: 0.5rem;
 }
 
@@ -2606,14 +2590,11 @@ i.rux-icon {
   flex-direction: column;
   justify-content: space-between;
 
-  background-color: rgb(0, 0, 0);
-
-  background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
+  background-color: var(--modalBackgroundColor);
 
   width: 28rem;
   height: 13.5rem;
-  border: 2px solid rgb(0, 90, 143);
-  border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
+  border: 2px solid var(--modalBorderColor);
 
   border-radius: 4px;
   margin: auto;
@@ -2635,9 +2616,7 @@ i.rux-icon {
   width: 100%;
   height: 2rem;
 
-  background-color: rgb(0, 90, 143);
-
-  background-color: var(--modalBorderColor, rgb(0, 90, 143));
+  background-color: var(--modalBorderColor);
   user-select: none;
   cursor: move;
 }
@@ -2649,7 +2628,7 @@ i.rux-icon {
   margin: 0;
   line-height: 1.2;
 
-  color: rgb(255, 255, 255) !important;
+  color: var(--modalTitleColor);
 }
 
 .rux-modal__content {
@@ -2658,8 +2637,7 @@ i.rux-icon {
   flex-direction: column;
   flex-grow: 1;
   padding: 1rem;
-  color: rgb(255, 255, 255);
-  color: var(--fontColor, rgb(255, 255, 255));
+  color: var(--defaultText);
 }
 
 .rux-button-group {
@@ -2693,17 +2671,18 @@ i.rux-icon {
   top: -4.25rem;
   left: 0;
 
-  height: 4.25rem;
+  height: 4.375rem;
   width: 100%;
 
   padding: 0.7rem 1.25rem;
   background-color: rgb(87, 214, 255);
-  background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
+  background-color: var(--colorStandbyLighten1);
   transition: all 0.5s ease;
 
-  box-sizing: border-box;
-  color: rgb(0, 0, 0);
-  color: var(--colorBlack, rgb(0, 0, 0));
+	box-sizing: border-box;
+	font-size: 1.125rem;
+	font-size: var(--fontSizeXL);
+  color: var(--notificationTextColor);
 }
 
 .rux-notification::after {
@@ -2730,9 +2709,9 @@ i.rux-icon {
 
 .rux-notification_close-button {
   border: 3px solid rgb(36, 163, 204);
-  border: 3px solid var(--colorStandbyDarken1, rgb(96, 168, 191));
+  border: 3px solid var(--colorStandbyDarken1);
   color: rgb(36, 163, 204);
-  color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+  color: var(--colorStandbyDarken1);
 
   background-color: transparent;
 
@@ -2763,7 +2742,7 @@ i.rux-icon {
 
   background-color: rgb(36, 163, 204);
 
-  background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+  background-color: var(--colorStandbyDarken1);
 }
 
 @supports (--css: variables) {
@@ -2784,67 +2763,67 @@ i.rux-icon {
 /* Critical Variant */
 .rux-notification--critical {
   background-color: rgb(255, 96, 96);
-  background-color: var(--colorCriticalLighten1, rgb(255, 100, 100));
+  background-color: var(--colorCriticalLighten1);
 }
 
 .rux-notification--critical .rux-notification_close-button {
   border-color: rgb(204, 45, 45);
-  border-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
+  border-color: var(--colorCriticalDarken1);
 }
 
 .rux-notification--critical .rux-notification_close-button::after,
 .rux-notification--critical .rux-notification_close-button::before {
   background-color: rgb(204, 45, 45);
-  background-color: var(--colorCriticalDarken1, rgb(191, 36, 36));
+  background-color: var(--colorCriticalDarken1);
 }
 
 /* Caution Variant */
 .rux-notification--caution {
   background-color: rgb(253, 237, 97);
-  background-color: var(--colorCautionLighten1, rgb(250, 237, 86));
+  background-color: var(--colorCautionLighten1);
 }
 .rux-notification--caution .rux-notification_close-button {
   border-color: rgb(202, 186, 46);
-  border-color: var(--colorCautionDarken1, rgb(186, 173, 22));
+  border-color: var(--colorCautionDarken1);
 }
 
 .rux-notification--caution .rux-notification_close-button::after,
 .rux-notification--caution .rux-notification_close-button::before {
   background-color: rgb(202, 186, 46);
-  background-color: var(--colorCautionDarken1, rgb(186, 173, 22));
+  background-color: var(--colorCautionDarken1);
 }
 
 /* Normal Variant */
 .rux-notification--normal {
   background-color: rgb(154, 246, 102);
-  background-color: var(--colorNormalLighten2, rgb(173, 255, 128));
+  background-color: var(--colorNormalLighten2);
 }
 
 .rux-notification--normal .rux-notification_close-button {
   border-color: rgb(69, 192, 0);
-  border-color: var(--colorNormalDarken1, rgb(68, 191, 0));
+  border-color: var(--colorNormalDarken1);
 }
 
 .rux-notification--normal .rux-notification_close-button::after,
 .rux-notification--normal .rux-notification_close-button::before {
   background-color: rgb(69, 192, 0);
-  background-color: var(--colorNormalDarken1, rgb(68, 191, 0));
+  background-color: var(--colorNormalDarken1);
 }
 
 /* Info Variant */
 .rux-notification--info {
   background-color: rgb(87, 214, 255);
-  background-color: var(--colorStandbyLighten1, rgb(160, 232, 255));
+  background-color: var(--colorStandbyLighten1);
 }
 .rux-notification--info .rux-notification_close-button {
   border-color: rgb(36, 163, 204);
-  border-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+  border-color: var(--colorStandbyDarken1);
 }
 
 .rux-notification--info .rux-notification_close-button::after,
 .rux-notification--info .rux-notification_close-button::before {
   background-color: rgb(36, 163, 204);
-  background-color: var(--colorStandbyDarken1, rgb(96, 168, 191));
+  background-color: var(--colorStandbyDarken1);
 }
 
 /*
@@ -2858,9 +2837,8 @@ i.rux-icon {
 */
 
 /* 	REQUIRED CLASSES */
-.rux-pop-up,
-.satcom-pop-up {
-  font-size: 0.875rem;
+.rux-pop-up {
+  font-size: 1rem;
   display: inline-block;
 
   margin: 1em;
@@ -2870,20 +2848,20 @@ i.rux-icon {
 
   border: 1px solid rgb(77, 172, 255);
 
-  border: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border: 1px solid var(--colorSecondary);
   background-color: rgb(77, 172, 255);
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
   border-radius: 3px;
 }
 
-.rux-pop-up ul,
-.satcom-pop-up ul {
+.rux-pop-up ul {
   position: relative;
   list-style: none;
   padding: 0;
   margin: 0;
   background: none;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
+  background-color: var(--colorWhite);
   border-radius: 2px;
 
   z-index: 2;
@@ -2894,44 +2872,39 @@ i.rux-icon {
   border-bottom: 1px solid #f0f1f3;
 } */
 
-.rux-pop-up a,
-.satcom-pop-up a {
+.rux-pop-up a {
   display: block;
   padding: 0.5em;
-  color: #000;
+  color: var(--popupMenuTextColor);
   text-decoration: none;
 
   min-width: 15em;
   max-width: 20em;
 }
 
-.rux-pop-up a:hover,
-.satcom-pop-up a:hover {
-  background-color: rgb(184, 222, 255);
-  background-color: var(--colorSecondaryLighten3, rgb(211, 234, 255));
+.rux-pop-up a:hover,.rux-pop-up li:hover {
+	background-color: rgb(184, 222, 255);
+	background-color: var(--colorSecondaryLighten3);
+	color: var(--popupMenuItemHoverTextColor);
 }
 
-.rux-pop-up li:first-child a,
-.satcom-pop-up li:first-child a {
+.rux-pop-up li:first-child a {
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
 }
 
-.rux-pop-up li:last-child a,
-.satcom-pop-up li:last-child a {
+.rux-pop-up li:last-child a {
   border: none;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
-.rux-pop-up--top,
-.satcom-pop-up-top {
+.rux-pop-up--top {
   border-top: 3px solid rgb(77, 172, 255);
-  border-top: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-top: 3px solid var(--colorSecondary);
 }
 
-.rux-pop-up--top::before,
-.satcom-pop-up-top::before {
+.rux-pop-up--top::before {
   content: "";
   display: block;
   position: absolute;
@@ -2941,86 +2914,80 @@ i.rux-icon {
 
   background-color: rgb(77, 172, 255);
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
   z-index: 1;
 
   margin: -12px 0 0 16px;
   transform: rotate(45deg);
 }
 
-.rux-pop-up--bottom,
-.satcom-pop-up-bottom {
+.rux-pop-up--bottom{
   border-bottom: 3px solid rgb(77, 172, 255);
-  border-bottom: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-bottom: 3px solid var(--colorSecondary);
 }
 
-.rux-pop-up--bottom::after,
-.satcom-pop-up-bottom::after {
+.rux-pop-up--bottom::after {
   content: "";
   display: block;
   position: absolute;
   border-bottom: 1px solid rgb(77, 172, 255);
-  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-bottom: 1px solid var(--colorSecondary);
   border-right: 1px solid rgb(77, 172, 255);
-  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-right: 1px solid var(--colorSecondary);
   width: 1.1875rem;
   height: 1.1875rem;
 
   background-color: rgb(77, 172, 255);
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
 
   margin: -7px 0 0 16px;
   transform: rotate(45deg);
 }
 
-.rux-pop-up--left,
-.satcom-pop-up-left {
+.rux-pop-up--left {
   border-left: 3px solid rgb(77, 172, 255);
-  border-left: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-left: 3px solid var(--colorSecondary);
 }
 
-.rux-pop-up--left::before,
-.satcom-pop-up-left::before {
+.rux-pop-up--left::before {
   content: "";
   display: block;
   position: absolute;
   border-bottom: 1px solid rgb(77, 172, 255);
-  border-bottom: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-bottom: 1px solid var(--colorSecondary);
   border-left: 1px solid rgb(77, 172, 255);
-  border-left: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-left: 1px solid var(--colorSecondary);
   width: 1.1875rem;
   height: 1.1875rem;
 
   background-color: rgb(77, 172, 255);
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
 
   margin: 16px 0 0 -12px;
   transform: rotate(45deg);
 }
 
-.rux-pop-up--right,
-.satcom-pop-up-right {
+.rux-pop-up--right {
   border-right: 3px solid rgb(77, 172, 255);
-  border-right: 3px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-right: 3px solid var(--colorSecondary);
 }
 
-.rux-pop-up--right::before,
-.satcom-pop-up-right::before {
+.rux-pop-up--right::before{
   content: "";
   display: block;
   position: absolute;
   border-top: 1px solid rgb(77, 172, 255);
-  border-top: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-top: 1px solid var(--colorSecondary);
   border-right: 1px solid rgb(77, 172, 255);
-  border-right: 1px solid var(--colorSecondary, rgb(77, 172, 255));
+  border-right: 1px solid var(--colorSecondary);
   width: 1.1875rem;
   height: 1.1875rem;
 
   background-color: rgb(77, 172, 255);
 
-  background-color: var(--colorSecondary, rgb(77, 172, 255));
+  background-color: var(--colorSecondary);
 
   right: 0;
   margin: 16px -12px 0 0;
@@ -3229,8 +3196,7 @@ i.rux-icon {
 **  - Updated transition speed
 */
 
-.rux-pushbutton,
-.satcom-pushbutton {
+.rux-pushbutton{
   display: inline-block;
 
   height: 1.3125rem;
@@ -3239,13 +3205,11 @@ i.rux-icon {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.rux-pushbutton__input,
-.satcom-pushbutton-input {
+.rux-pushbutton__input{
   display: none;
 }
 
-.rux-pushbutton__button,
-.satcom-pushbutton-button {
+.rux-pushbutton__button {
   display: flex;
 
   justify-content: center;
@@ -3258,49 +3222,34 @@ i.rux-icon {
   margin: 0;
   padding: 0 0.625rem;
 
-  color: rgb(255, 255, 255);
+  color: var(--pushbuttonTextColor);
 
-  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
-
-  background-color: rgb(0, 90, 143);
-
-  background-color: var(--pushbuttonBackgroundColor, rgb(0, 90, 143));
+  background-color: var(--pushbuttonBackgroundColor);
   border-radius: 3px;
   border-radius: var(--defaultBorderRadius, 3px);
-  border: 1px solid rgb(30, 47, 66);
-  border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
+  border: 1px solid var(--pushbuttonBorderColor);
 }
 
-.rux-pushbutton__button label,
-.satcom-pushbutton-button label {
-  color: rgb(255, 255, 255);
-  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+.rux-pushbutton__button label {
+  color: var(--pushbuttonTextColor);
 }
 
-.rux-pushbutton__input:checked + .rux-pushbutton__button,
-.satcom-pushbutton-input:checked + .satcom-pushbutton-button {
+.rux-pushbutton__input:checked + .rux-pushbutton__button{
   display: flex;
-  color: rgb(91, 255, 0);
-  color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
-  background-color: rgb(0, 0, 0);
-  background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
-  border-color: rgb(0, 0, 0);
-  border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
-
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
+  color: var(--pushbuttonSelectedTextColor);
+  background-color: var(--pushbuttonSelectedBackgroundColor);
+  border-color: var(--pushbuttonSelectedBorderColor);
 }
 
-.rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on,
-.satcom-pushbutton-input:not(:checked) + .satcom-pushbutton-button .on {
+.rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on {
   display: none;
 }
 
-.rux-pushbutton__input:disabled + .rux-pushbutton__button,
-.satcom-pushbutton-input:disabled + .satcom-pushbutton-button {
+.rux-pushbutton__input:disabled + .rux-pushbutton__button{
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 /*
@@ -3325,9 +3274,12 @@ i.rux-icon {
 
   border-radius: 3px;
 
-  border-radius: var(--controlBorderRadius, 3px);
-  border: 1px solid rgb(30, 47, 66);
-  border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  border-radius: var(--controlBorderRadius);
+  border: 1px solid var(--segmentedButtonBorderColor);
+}
+
+.rux-segmented-button:hover{
+	border-color: var(--segmentedButtonHoverBorderColor);
 }
 
 .rux-segmented-button__segment {
@@ -3349,21 +3301,17 @@ i.rux-icon {
   padding: 0 0.75rem;
 
   border: none;
-  border-right: 1px solid rgb(30, 47, 66);
-  border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  border-right: 1px solid var(--segmentedButtonBorderColor);
 
-  color: rgb(255, 255, 255);
+  color: var(--segmentedButtonTextColor);
+  background-color: var(--segmentedButtonBackgroundColor);
 
-  color: var(--segmentedButtonTextColor, rgb(255, 255, 255));
-  background-color: rgb(0, 90, 143);
-  background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
-
-  font-size: 0.875rem;
+  font-size: 1rem;
 
   user-select: none;
 }
 
-.rux-segmented-button__segment:last-child label {
+.rux-segmented-button__segment:nth-child(2):not(:last-child) label {
   border-right: none !important;
 }
 
@@ -3372,37 +3320,29 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment label:hover {
-  background-color: rgb(58, 129, 191)
-  ;
-  background-color: var(
-    --segmentedButtonHoverBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: rgb(255, 255, 255);
-  color: var(--segmentedButtonHoverTextColor, rgb(255, 255, 255));
+	background-color: var(--segmentedButtonHoverBackgroundColor);
+	border-color: var( --segmentedButtonHoverBorderColor);
+  color: var(--segmentedButtonHoverTextColor);
   outline: none;
 }
 
 .rux-segmented-button__segment input:checked + label {
-  background-color: rgb(58, 129, 191)
-  ;
-  background-color: var(
-    --segmentedButtonSelectedBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: rgb(255, 255, 255);
-  color: var(--segmentedButtonSelectedTextColor, rgb(255, 255, 255));
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12),
-    inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  ;
-  box-shadow: var(
-    --segmentedButtonSelectedBoxShadow,
-    inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12),
-    inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  );
-  transition: box-shadow 0.067 ease-out;
+  background-color: var(--segmentedButtonSelectedBackgroundColor);
+  color: var(--segmentedButtonSelectedTextColor);
+}
+
+.rux-segmented-button:nth-child(2):not(:last-child) label {
+	border-right: none;
+	border-left: none;
+}
+.rux-segmented-button:first-child label{
+	border-radius: 3px 0 0 3px;
+	border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
+
+}
+.rux-segmented-button:last-child label{
+	border-radius: 0 3px 3px 0;
+	border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
 }
 
 /*
@@ -3430,13 +3370,12 @@ i.rux-icon {
   */
 
 :root {
-  --thumbSize: var(--controlOptionSize, 1.25rem);
-
+  --thumbSize: var(--controlOptionSize);
   --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
     0 1px 3px rgba(0, 0, 0, 0.2);
   --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
     0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
-  --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary, rgb(0, 90, 143)),
+  --thumbShadowActive: inset 0 0 0 4px var(--primary),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
     0 1px 1px rgba(0, 0, 0, 0.2);
 
@@ -3449,8 +3388,7 @@ i.rux-icon {
   margin-right: 0;
 }
 
-.rux-range,
-.satcom-range {
+.rux-range {
   -webkit-appearance: none;
   appearance: none;
 
@@ -3463,8 +3401,7 @@ input[type="range"]:focus {
   outline: none;
 }
 
-.rux-range::-webkit-slider-runnable-track,
-.satcom-range::-webkit-slider-runnable-track {
+.rux-range::-webkit-slider-runnable-track {
   display: flex;
   align-items: center;
 
@@ -3474,30 +3411,17 @@ input[type="range"]:focus {
   cursor: pointer;
   cursor: var(--trackCursor);
 
-  background-color: rgb(217, 217, 217);
-
-  background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
-  outline: 1px solid transparent;
-  outline: 1px solid var(--sliderTrackBorderColor, transparent);
+  background-color: var(--sliderTrackBackgroundColor);
+  outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
 
   background-image: linear-gradient(
     to right,
-    rgb(77, 172, 255) 0%,
-    rgb(77, 172, 255)
+    var(--sliderSelectedTrackBackgroundColor) 0%,
+    var(--sliderSelectedTrackBackgroundColor)
       calc(1% * var(--value)),
-    rgb(217, 217, 217)
+    var(--sliderTrackBackgroundColor)
       calc(1% * var(--value)),
-    rgb(217, 217, 217) 100%
-  );
-
-  background-image: linear-gradient(
-    to right,
-    var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255)) 0%,
-    var(--sliderSelectedTrackBackgroundColor, rgb(77, 172, 255))
-      calc(1% * var(--value)),
-    var(--sliderTrackBackgroundColor, rgb(217, 217, 217))
-      calc(1% * var(--value)),
-    var(--sliderTrackBackgroundColor, rgb(217, 217, 217)) 100%
+    var(--sliderTrackBackgroundColor) 100%
   );
 }
 
@@ -3511,27 +3435,19 @@ input[type="range"]:focus {
   cursor: pointer;
   cursor: var(--trackCursor);
 
-  background-color: rgb(217, 217, 217);
-
-  background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
-  outline: 1px solid transparent;
-  outline: 1px solid var(--sliderTrackBorderColor, transparent);
+  background-color: var(--sliderTrackBackgroundColor);
+  outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
 }
 
 .rux-range::-moz-range-progress {
-  background-color: rgb(77, 172, 255)
-  ;
-  background-color: var(
-    --sliderSelectedTrackBackgroundColor,
-    rgb(77, 172, 255)
-  );
+  background-color: var(--sliderSelectedTrackBackgroundColor);
 }
 
 .rux-range:disabled {
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 .rux-range::-ms-track {
@@ -3546,25 +3462,26 @@ input[type="range"]:focus {
   color: transparent;
   background-color: transparent;
   border: none;
-  /* background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217)); */
-  outline: 1px solid transparent;
+  /* background-color: var(--sliderTrackBackgroundColor); */
+  outline: var(--sliderTrackBorderSize) solid transparent;
 }
 
 .rux-range::-ms-fill-lower {
   height: 2px;
-  background-color: rgb(77, 172, 255);
+  background-color: var(--sliderTrackBackgroundColor);
 }
 
 .rux-range::-ms-fill-upper {
   height: 2px;
-  background-color: rgb(217, 217, 217);
-  background-color: var(--sliderTrackBackgroundColor, rgb(217, 217, 217));
+  background-color: var(--sliderTrackBackgroundColor);
 }
 
 .rux-range::-webkit-slider-thumb {
   -webkit-appearance: none;
 
-  position: relative;
+	position: relative;
+	top: calc( 1.25rem / -2);
+	top: calc( var(--thumbSize) / -2);
 
   height: 1.25rem;
 
@@ -3573,10 +3490,8 @@ input[type="range"]:focus {
   width: var(--thumbSize);
 
   border-radius: 100%;
-  border: 1px solid rgb(255, 255, 255);
-  border: 1px solid var(--sliderThumbBorderColor, rgb(255, 255, 255));
-  background-color: rgb(0, 90, 143);
-  background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
+  border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
+  background-color: var(--sliderThumbBackgroundColor);
 
   cursor: pointer;
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
@@ -3584,6 +3499,9 @@ input[type="range"]:focus {
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 
   outline: none !important;
+}
+.rux-range::-webkit-slider-thumb:hover{
+	border-color: var(--sliderHoverThumbBorderColor);
 }
 
 input:-moz-focusring {
@@ -3593,7 +3511,9 @@ input:-moz-focusring {
 .rux-range::-moz-range-thumb {
   -moz-appearance: none;
 
-  position: relative;
+	position: relative;
+	top: calc( 1.25rem / -2);
+	top: calc( var(--thumbSize) / -2);
 
   height: 1.25rem;
 
@@ -3602,10 +3522,33 @@ input:-moz-focusring {
   width: var(--thumbSize);
 
   border-radius: 100%;
-  border: 1px solid rgb(255, 255, 255);
-  border: 1px solid var(--sliderThumbBorderColor, rgb(255, 255, 255));
-  background-color: rgb(0, 90, 143);
-  background-color: var(--sliderThumbBackgroundColor, rgb(0, 90, 143));
+  border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
+  background-color: var(--sliderThumbBackgroundColor);
+
+  cursor: pointer;
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
+}
+.rux-range::-moz-range-thumb:hover{
+	border-color:var(--sliderHoverThumbBorderColor);
+}
+
+.rux-range:disabled::-moz-range-thumb {
+  cursor: not-allowed;
+  cursor: var(--disabledCursor);
+}
+
+.rux-range::-ms-thumb {
+	position: relative;
+	top: -10px;
+
+  height: 1.25rem;
+  width: 1.25rem;
+
+  border-radius: 100%;
+  border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
+  background-color: var(--sliderThumbBackgroundColor);
 
   cursor: pointer;
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
@@ -3613,63 +3556,37 @@ input:-moz-focusring {
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
 }
 
-.rux-range:disabled::-moz-range-thumb {
-  cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
-}
-
-.rux-range::-ms-thumb {
-  position: relative;
-
-  height: 1.25rem;
-  width: 1.25rem;
-
-  border-radius: 100%;
-  border: 1px solid rgb(255, 255, 255);
-  background-color: rgb(0, 90, 143);
-
-  cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
-    0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.rux-range:disabled::-webkit-slider-runnable-track,
-.satcom-range:disabled::-webkit-slider-runnable-track {
+.rux-range:disabled::-webkit-slider-runnable-track {
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
-.rux-range:disabled::-webkit-slider-thumb,
-.satcom-range:disabled::-webkit-slider-thumbtrack {
+.rux-range:disabled::-webkit-slider-thumb {
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 .rux-range:disabled::-ms-thumb {
   opacity: 0.4;
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
+  cursor: var(--disabledCursor);
 }
 
-.rux-range:not(:disabled)::-webkit-slider-thumb:active,
-.satcom-range:not(:disabled)::-webkit-slider-thumb:active {
-  border-color: rgb(77, 172, 255);
-  border-color: var(--colorSecondary, rgb(77, 172, 255));
-  background-color: rgb(255, 255, 255);
-  box-shadow: inset 0 0 0 4px rgb(0, 90, 143),
+.rux-range:not(:disabled)::-webkit-slider-thumb:active {
+  border-color: var(--sliderSelectedThumbBorderColor);
+  background-color: var(--inputBackground);
+	box-shadow: inset 0 0 0 4px var(--primary),
     0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
     0 1px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: var(--thumbShadowActive);
+	box-shadow: var(--thumbShadowActive);
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
-.rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active),
-.satcom-range:not(:disabled)::-webkit-slider-thumb:focus,
-.satcom-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-  background-color: rgb(58, 129, 191);
-  background-color: var(--sliderHoverThumbBackgroundColor, rgb(58, 129, 191));
+.rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
+  background-color: var(--sliderHoverThumbBackgroundColor);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
     0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
   box-shadow: var(--thumbShadowHover);

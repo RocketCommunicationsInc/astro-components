@@ -18,8 +18,12 @@
 
   list-style: none;
 
-  border-radius: var(--controlBorderRadius, 3px);
-  border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  border-radius: var(--controlBorderRadius);
+  border: 1px solid var(--segmentedButtonBorderColor);
+}
+
+.rux-segmented-button:hover{
+	border-color: var(--segmentedButtonHoverBorderColor);
 }
 
 .rux-segmented-button__segment {
@@ -41,17 +45,17 @@
   padding: 0 0.75rem;
 
   border: none;
-  border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+  border-right: 1px solid var(--segmentedButtonBorderColor);
 
-  color: var(--segmentedButtonTextColor, rgb(255, 255, 255));
-  background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
+  color: var(--segmentedButtonTextColor);
+  background-color: var(--segmentedButtonBackgroundColor);
 
-  font-size: 0.875rem;
+  font-size: 1rem;
 
   user-select: none;
 }
 
-.rux-segmented-button__segment:last-child label {
+.rux-segmented-button__segment:nth-child(2):not(:last-child) label {
   border-right: none !important;
 }
 
@@ -60,25 +64,25 @@
 }
 
 .rux-segmented-button__segment label:hover {
-  background-color: var(
-    --segmentedButtonHoverBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: var(--segmentedButtonHoverTextColor, rgb(255, 255, 255));
+	background-color: var(--segmentedButtonHoverBackgroundColor);
+	border-color: var( --segmentedButtonHoverBorderColor);
+  color: var(--segmentedButtonHoverTextColor);
   outline: none;
 }
 
 .rux-segmented-button__segment input:checked + label {
-  background-color: var(
-    --segmentedButtonSelectedBackgroundColor,
-    rgb(58, 129, 191)
-  );
-  color: var(--segmentedButtonSelectedTextColor, rgb(255, 255, 255));
-  box-shadow: var(
-    --segmentedButtonSelectedBoxShadow,
-    inset 0 2px 4px rgba(0, 0, 0, 0.14),
-    inset 0 3px 4px rgba(0, 0, 0, 0.12),
-    inset 0 1px 5px rgba(0, 0, 0, 0.2)
-  );
-  transition: box-shadow 0.067 ease-out;
+  background-color: var(--segmentedButtonSelectedBackgroundColor);
+  color: var(--segmentedButtonSelectedTextColor);
+}
+
+.rux-segmented-button:nth-child(2):not(:last-child) label {
+	border-right: none;
+	border-left: none;
+}
+.rux-segmented-button:first-child label{
+	border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
+
+}
+.rux-segmented-button:last-child label{
+	border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
 }
