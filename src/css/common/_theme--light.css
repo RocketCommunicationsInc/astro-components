@@ -305,13 +305,13 @@
 
   */
   --tabTextColor: var(--primary);
-  --tabBackgroundColor: var(--colorWhite);
-  --tabBorderColor: var(--colorQuaternaryLighten1);
+  --tabBackgroundColor: transparent;
+  --tabBorderColor: transparent;
 
-  --tabHoverTextColor: var(--colorSecondary);
+  --tabHoverTextColor: var(--defaultText);
 
-  --tabSelectedTextColor: var(--colorBlack);
-	--tabSelectedBorderColor: var(--colorSecondary);
+  --tabSelectedTextColor: var(--defaultText);
+  --tabSelectedBorderColor: var(--primary);
 	
 	/* 
     
