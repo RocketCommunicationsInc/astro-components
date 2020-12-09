@@ -602,9 +602,10 @@
 
   */
 
-  --clockTextColor: var(--colorBlack);
-  --clockBackgroundColor: var(--colorWhite);
-  --clockBorderColor: var(--colorQuaternary);
+  --clockTextColor: var(--primaryElementText);
+  --clockBackgroundColor: #101923;
+	--clockBorderColor: #1b2d3e;
+	--clockLabelColor: var(--primaryElementText);
 
   /* 
     
@@ -622,15 +623,15 @@
     ==========================================================================
 
   */
-  --logTextColor: var(--colorBlack);
-  --logBackgroundColor: var(--colorWhite);
-  --logBorderColor: var(--colorQuaternaryLighten2);
+  --logTextColor: var(--defaultText);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--secondaryText);
 
-  --logHeaderTextColor: var(--colorBlack);
-  --logHeaderBackgroundColor: var(--colorQuaternary);
+  --logHeaderTextColor: var(--defaultText);
+  --logHeaderBackgroundColor: var(--backgroundColor);
 
-  --logFilterBackgroundColor: var(--colorStandbyLighten3);
-  --logFilterTextColor: var(--colorStandbyDarken2);
+  --logFilterBackgroundColor: var(--primaryLight);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     
@@ -1039,9 +1040,10 @@ li.light-theme {
     ==========================================================================
 
   */
-  --clockTextColor: var(--colorWhite);
-  --clockBackgroundColor: var(--globalAppHeader);
-	--clockBorderColor: var(--colorTertiary);
+  --clockTextColor: var(--defaultText);
+  --clockBackgroundColor: var(--backgroundColor);
+	--clockBorderColor: var(--surfaceElements);
+	--clockLabelColor: var(--defaultText);
 
 	/* 
     
@@ -1061,15 +1063,15 @@ li.light-theme {
     ==========================================================================
 
   */
-  --logTextColor: var(--colorWhite);
-  --logBackgroundColor: var(--colorTertiaryDarken1);
-  --logBorderColor: var(--colorTertiary);
+  --logTextColor: var(--defaultText);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--backgroundColor);
 
-  --logHeaderTextColor: var(--colorWhiteDarken2);
+  --logHeaderTextColor: var(--defaultText);
   --logHeaderBackgroundColor: var(--globalAppHeader);
 
-  --logFilterBackgroundColor: var(--colorStandbyLighten1);
-  --logFilterTextColor: var(--colorStandbyDarken3);
+  --logFilterBackgroundColor: var(--primaryDark);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     
@@ -2373,9 +2375,7 @@ label {
 
 .rux-clock {
   display: flex;
-  color: rgb(255, 255, 255);
-  color: var(--clockTextColor, rgb(255, 255, 255));
-
+  color: var(--clockTextColor);
   font-size: 1.15rem;
 }
 
@@ -2390,16 +2390,12 @@ label {
   align-items: center;
   font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco,
 										Consolas, "Liberation Mono", "Courier New", monospace;
-  font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+  font-family: var(--fontFamilyMono);
   font-weight: 700;
 
-  border: 1px solid rgb(39, 86, 128);
+  border: 1px solid var(--clockBorderColor);
 
-  border: 1px solid var(--clockBorderColor, rgb(39, 86, 128));
-
-  background-color: rgb(20, 32, 44);
-
-  background-color: var(--clockBackgroundColor, rgb(20, 32, 44));
+  background-color: var(--clockBackgroundColor);
   margin-bottom: 0.25rem;
 
   white-space: nowrap;
@@ -2425,7 +2421,8 @@ label {
 }
 
 .rux-clock__segment__label {
-  font-size: 0.875rem;
+	font-size: 0.875rem;
+	color: var(--clockLabelColor);
 }
 
 .rux-clock__aos {
@@ -2462,9 +2459,8 @@ i.rux-icon {
 
 .rux-log {
   display: block;
-  font-size: 0.875rem;
-  background-color: rgb(30, 47, 66);
-  background-color: var(--logBackgroundColor, rgb(30, 47, 66));
+  font-size: 1rem;
+  background-color: var(--logBackgroundColor);
 }
 
 .rux-log-header {
@@ -2474,8 +2470,7 @@ i.rux-icon {
   justify-content: space-between;
 
   padding: 0.5rem;
-  background-color: rgb(20, 32, 44);
-  background-color: var(--logHeaderBackgroundColor, rgb(20, 32, 44));
+  background-color: var(--logHeaderBackgroundColor);
 }
 
 .rux-log-header-title {
@@ -2489,8 +2484,7 @@ i.rux-icon {
 .rux-log__header-labels {
   display: flex;
   width: 100%;
-  color: rgb(255, 255, 255);
-  color: var(--logHeaderTextColor, rgb(255, 255, 255));
+  color: var(--logHeaderTextColor);
 }
 
 .rux-log__header-labels,
@@ -2514,7 +2508,7 @@ i.rux-icon {
 .log-event__timestamp {
   flex-shrink: 0;
 
-  text-align: right;
+  text-align: left;
   width: 5rem;
 }
 
@@ -2523,8 +2517,7 @@ i.rux-icon {
   flex-shrink: 0;
   align-items: flex-start;
   padding: 0.5rem 0;
-  border-bottom: 1px solid rgb(40, 63, 88);
-  border-bottom: 1px solid var(--logBorderColor, rgb(40, 63, 88));
+  border-bottom: 1px solid var(--logBorderColor);
 }
 
 .rux-log__log-event:last-child {
@@ -2541,9 +2534,9 @@ i.rux-icon {
 }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco,
-										Consolas, "Liberation Mono", "Courier New", monospace;
-  font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: var(--fontFamily);
 }
 
 .log-event__status {
@@ -2575,11 +2568,8 @@ i.rux-icon {
 
   align-content: center;
 
-  color: rgb(0, 0, 0);
-
-  color: var(--logFilterTextColor, rgb(0, 0, 0));
-  background-color: rgb(192, 240, 255);
-  background-color: var(--logFilterBackgroundColor, rgb(192, 240, 255));
+  color: var(--logFilterTextColor);
+  background-color: var(--logFilterBackgroundColor);
   padding: 0.5rem;
 }
 

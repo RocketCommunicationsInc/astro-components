@@ -77,9 +77,9 @@ export class RuxLog extends LitElement {
       <style>
         :host {
           display: block;
-          font-size: 0.875rem;
+          font-size: 1rem;
           color: var(--fontColor, rgb(255, 255, 255));
-          background-color: var(--logBackgroundColor, rgb(32, 50, 70));
+          background-color: var(--logBackgroundColor);
         }
 
         *[hidden] {
@@ -91,7 +91,7 @@ export class RuxLog extends LitElement {
           flex-wrap: wrap;
           position: relative;
           justify-content: space-between;
-          background-color: var(--logHeaderBackgroundColor, rgb(24, 38, 53));
+          background-color: var(--logHeaderBackgroundColor);
           padding: 0.5rem;
         }
 
@@ -106,7 +106,7 @@ export class RuxLog extends LitElement {
         .rux-log__header-labels {
           display: flex;
           width: 100%;
-          color: var(--logHeaderTextColor, rgb(255, 255, 255));
+          color: var(--logHeaderTextColor);
         }
 
         .rux-log__header-labels,
@@ -125,12 +125,12 @@ export class RuxLog extends LitElement {
         .rux-log__events {
           height: 100%;
           overflow-y: auto;
-          background-color: var(--logBackgroundColor, rgb(32, 50, 70));
+          background-color: var(--logBackgroundColor);
         }
 
         .log-event__timestamp {
           flex-shrink: 0;
-          text-align: right;
+          text-align: left;
           width: 5rem;
         }
 
@@ -139,7 +139,7 @@ export class RuxLog extends LitElement {
           flex-shrink: 0;
           align-items: flex-start;
           padding: 0.5rem 0;
-          border-bottom: 1px solid var(--logBorderColor, rgb(40, 63, 88));
+          border-bottom: 1px solid var(--logBorderColor);
         }
 
         .rux-log__log-event:last-child {
@@ -156,7 +156,7 @@ export class RuxLog extends LitElement {
         }
 
         .rux-log__log-event .log-event__timestamp {
-          font-family: var(--fontFamilyMono, 'Roboto Mono', monospace);
+          font-family: var(--fontFamily);
         }
 
         .log-event__status {
@@ -189,8 +189,8 @@ export class RuxLog extends LitElement {
 
           align-content: center;
 
-          color: var(--logFilterTextColor, rgb(0, 0, 0));
-          background-color: var(--logFilterBackgroundColor, rgb(192, 240, 255));
+          color: var(--logFilterTextColor);
+          background-color: var(--logFilterBackgroundColor);
           padding: 0.5rem;
         }
 
@@ -211,14 +211,14 @@ export class RuxLog extends LitElement {
 
           border: 1px solid transparent;
 
-          border: 1px solid var(--inputBorderColor, transparent);
+          border: 1px solid var(--inputBorderColor);
           border-radius: 3px;
 
           font-size: 0.75rem;
-          font-size: var(--fontSizeSM, 0.75rem);
+          font-size: var(--fontSizeSM);
 
           color: rgb(0, 0, 0);
-          color: var(--inputTextColor, rgb(0, 0, 0));
+          color: var(--inputTextColor);
         }
 
         input[type='search']::-webkit-search-decoration {
@@ -233,7 +233,7 @@ export class RuxLog extends LitElement {
 
           background: no-repeat center left 0.3rem/1.1em
             url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
-            var(--inputBackgroundColor, rgb(255, 255, 255));
+            var(--inputBackgroundColor);
         }
 
         input[type='search'] {
@@ -277,7 +277,7 @@ export class RuxLog extends LitElement {
               <input
                 id="log-search"
                 class="rux-input"
-                placeholder="Search"
+                placeholder="Search..."
                 type="search"
                 .value="${this._filterValue}"
                 @input="${this.filterChanged}"
