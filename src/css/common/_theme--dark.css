@@ -175,7 +175,6 @@
   --toggleBaseSelectedTextColor: var(--colorNormal);
 
   /* Default Toggle */
-  /* --toggleThumbBorderColor: var(--colorGrayDarken2); */
   --toggleThumbBorderColor: var(--secondaryText);
   --toggleThumbBackgroundColor: var(--inputBackground);
   --toggleTrackBorderColor: var(--secondaryText);
