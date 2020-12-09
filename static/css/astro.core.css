@@ -715,8 +715,8 @@
 
   --scrollBarThumbBackgroundColor: var(--primary);
 	--scrollBarThumbBackgroundHoverColor: var(--primaryDark);
-	--scrollBarTrackBackgroundColor:var(--backgroundColor);
-	--scrollBarTrackCornerBackgroundColor: var(--scrollBarTrackBackgroundColor);
+	--scrollBarTrackBackgroundColor: var(--backgroundColor);
+	--scrollBarTrackCornerBackgroundColor: var(--backgroundColor);
 	--scrollBarTrackBorderColor: var(--primaryDark);
 	
 
