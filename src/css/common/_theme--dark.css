@@ -167,33 +167,28 @@
     ==========================================================================
 
   */
-
-  --toggleButtonBackgroundColor: var(--colorPrimary);
-  --toggleBaseBackgroundColor: var(--colorBlack);
-  --toggleBaseBorderColor: var(--colorBlack);
-  --toggleBaseTextColor: var(--colorWhite5);
-
+	
+  --toggleButtonBackgroundColor: var(--primary);
+  --toggleBaseBackgroundColor: var(--primary);
+  --toggleBaseBorderColor: var(--primary);
+  --toggleBaseTextColor: var(--primaryElementText);
   --toggleBaseSelectedTextColor: var(--colorNormal);
 
-  /* Alt Toggle */
-  /* --toggleThumbBorderColor: var(--colorGrayDarken2); */
-  --toggleThumbBorderColor: var(--defaultText);
-  --toggleThumbBackgroundColor: var(--defaultText);
-
-  --toggleTrackBorderColor: var(--colorGrayDarken2);
-  --toggleTrackBackgroundColor: var(--colorGray);
+  /* Default Toggle */
+  --toggleThumbBorderColor: var(--secondaryText);
+  --toggleThumbBackgroundColor: var(--inputBackground);
+  --toggleTrackBorderColor: var(--secondaryText);
+  --toggleTrackBackgroundColor: var(--backgroundColor);
 
   /* Selected State */
-  /* --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2); */
-  --toggleSelectedThumbBorderColor: #fff;
-
+  --toggleSelectedThumbBorderColor:var(--primaryDark);
   --toggleSelectedTrackBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--colorSecondaryDarken2);
+  --toggleSelectedTrackBorderColor: var(--primaryDark);
 
   /* Disabled State */
-  --toggleDisabledThumbBorderColor: var(--colorGrayDarken1);
-  --toggleDisabledThumbBackgroundColor: var(--colorGrayDarken1);
-  --toggleDisabledSelectedThumbBorderColor: var(--colorGrayDarken1);
+  --toggleDisabledThumbBorderColor: var(--secondaryText);
+  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
+  --toggleDisabledSelectedThumbBorderColor: var(--primary);
 
   /* 
     
