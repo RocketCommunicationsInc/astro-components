@@ -2187,7 +2187,7 @@ label {
   right: 0.25rem;
   width: 20px;
   height: 20px;
-  background-color: red;
+  background-color: var(--inputInvalidBorderColor);
 }
 
 /*
