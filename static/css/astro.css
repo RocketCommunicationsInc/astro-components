@@ -715,7 +715,6 @@
 
   --scrollBarThumbBackgroundColor: var(--primary);
 	--scrollBarThumbBackgroundHoverColor: var(--primaryDark);
-	--scrollBarThumbBorderColor: var(--primaryDark);
 	--scrollBarTrackBackgroundColor:var(--backgroundColor);
 	--scrollBarTrackCornerBackgroundColor: var(--scrollBarTrackBackgroundColor);
 	--scrollBarTrackBorderColor: var(--primaryDark);
@@ -1141,7 +1140,6 @@ li.light-theme {
 
   --scrollBarThumbBackgroundColor: var(--primary);
 	--scrollBarThumbBackgroundHoverColor: var(--primaryLight);
-	--scrollBarThumbBorderColor: var(--primaryDark);
 	--scrollBarTrackBackgroundColor: var(--backgroundColor);
 	--scrollBarTrackCornerBackgroundColor: var(--scrollBarTrackBackgroundColor);
 	--scrollBarTrackBorderColor: var(--primaryDark);
