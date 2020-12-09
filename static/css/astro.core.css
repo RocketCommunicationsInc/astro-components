@@ -707,8 +707,9 @@
 
 	--inputInvalidBorderColor: var(--colorCritical);
 	
-	--searchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%233a87cf' fill-rule='evenodd'/%3E%3C/svg%3E");
-
+	--inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%233a87cf' fill-rule='evenodd'/%3E%3C/svg%3E");
+	--inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23004872' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+	
   /* 
     
     Status
@@ -1145,8 +1146,9 @@ li.light-theme {
 
 	--inputInvalidBorderColor: var(--colorCritical);
 	
-	--searchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a92' fill-rule='evenodd'/%3E%3C/svg%3E");
-
+	--inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a92' fill-rule='evenodd'/%3E%3C/svg%3E");
+	--inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%233a87cf' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+	
   /* 
     
     Status Symbols
@@ -2158,12 +2160,8 @@ label {
 .rux-form-field input[type="search"] {
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: 0.5rem 0.5rem 0.5rem 1.75rem;
-
-	background: no-repeat center left 0.4rem/1.1em
-		var(--searchIcon)
-    var(--inputBackgroundColor);
-    background-size: 15px 15px;
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+	background: var(--inputBackgroundColor) var(--inputSearchIcon) 10px/0.975rem no-repeat;
 }
 
 .rux-form-field--large input[type="search"] {
@@ -2171,7 +2169,7 @@ label {
 }
 
 .rux-form-field--small input[type="search"] {
-  padding: 0.3rem 0 0.3rem 1.5rem;
+  padding: 0.3rem 0 0.3rem 2rem;
 }
 
 .rux-form-field input[type="search"]::-webkit-search-cancel-button {
@@ -2180,7 +2178,7 @@ label {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22rgb(0%2C%2090%2C%20143)%22%20fill-rule%3D%22evenodd%22%20d%3D%22M69.028%2064l22.628%2022.627-5.029%205.029L64%2069.028%2041.373%2091.656l-5.029-5.029L58.972%2064%2036.344%2041.373l5.029-5.029L64%2058.972l22.627-22.628%205.029%205.029L69.028%2064z%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: var(--inputSearchCancel);
 }
 
 .rux-form-field input[type="search"]::-ms-clear {
