@@ -8,6 +8,8 @@
 
   font-size: 1rem;
 
+	color: var(--treeTextColor);
+	border:solid 1px var(--treeBorderColor);
   background-color: var(--treeBackgroundColor);
 
   -webkit-user-select: none;
@@ -31,19 +33,24 @@
   margin: 0;
   list-style: none;
 }
+.rux-tree li {
+	font-weight: bold;
+}
 
 .rux-tree li:not(:first-child) {
   border-top: 1px solid var(--treeItemBorderColor);
 }
 
 /* Parent Elements */
-.rux-tree__parent-container {
+.rux-tree__parent {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: stretch;
-  padding: 0 0 0 1.25rem;
-  margin: 0;
+	align-items: center;
+	padding: 0 0.5rem;
+	height: 2rem;
+}
+.rux-tree__parent:hover{
+	background: var(--treeHoverBackgroundColor);
+	color: var(--treeHoverTextColor);
 }
 
 .rux-tree__label {
@@ -109,11 +116,15 @@
 .rux-tree .selected {
   background-color: var(--treeSelectedBackgroundColor);
   box-shadow: inset 5px 0 var(--treeSelectedAccentColor);
-
   color: var(--treeSelectedTextColor);
 }
 
 .rux-tree .selected .rux-tree__arrow::after {
-  border-color: transparent transparent transparent
-    var(--treeSelectedAccentColor);
+  border-color: transparent transparent transparent var(--treeSelectedAccentColor);
+}
+
+.rux-tree__tree-item:focus > .rux-tree__parent:not(:hover)::after,
+[aria-selected='true'] > .rux-tree__parent::after {
+	border-top: 1px solid var(--treeSelectedBorderColor);
+	border-bottom: 1px solid var(--treeSelectedBorderColor);
 }
