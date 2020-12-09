@@ -52,7 +52,7 @@ label {
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollBarThumbBackgroundColor);
   border-radius: 10px;
-  border: 3px solid transparent;
+	box-shadow: inset 0 0 0 .25px var(--scrollBarThumbBorderColor); 
   background-clip: padding-box;
 }
 /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */

@@ -353,9 +353,11 @@
   */
 
   --scrollBarThumbBackgroundColor: var(--primary);
-  --scrollBarThumbBackgroundHoverColor: var(--primaryLight);
-  --scrollBarTrackBackgroundColor: var(--backgroundColor);
-  --scrollBarTrackCornerBackgroundColor: var(--backgroundColor);
+	--scrollBarThumbBackgroundHoverColor: var(--primaryDark);
+	--scrollBarThumbBorderColor: var(--primaryDark);
+	--scrollBarTrackBackgroundColor:var(--backgroundColor);
+	--scrollBarTrackCornerBackgroundColor: var(--scrollBarTrackBackgroundColor);
+	
 
   /* 
     
