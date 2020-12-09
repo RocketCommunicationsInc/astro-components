@@ -426,7 +426,6 @@
   
   --tableRowSelectedBackgroundColor: var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
-  --tableCellSelectedBorderColor: var(--backgroundColor);
 	
   --tableControlsBackgroundColor: var(--primary);
   --tableFilterBorderColor: var(--primary);

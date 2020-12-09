@@ -803,7 +803,6 @@
 
 	--tableRowSelectedBackgroundColor:  var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
-  --tableCellSelectedBorderColor: var(--primary);
   
   --tableControlsBackgroundColor: var(--primary);
   --tableFilterBorderColor: var(--primary);
@@ -1243,7 +1242,6 @@ li.light-theme {
   
   --tableRowSelectedBackgroundColor: var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
-  --tableCellSelectedBorderColor: var(--backgroundColor);
 	
   --tableControlsBackgroundColor: var(--primary);
   --tableFilterBorderColor: var(--primary);
