@@ -535,10 +535,14 @@
     ==========================================================================
     
   */
-  --selectBackgroundColor: var(--colorWhite);
+	--selectBackgroundColor: var(--primary);
   --selectBorderColor: var(--primary);
-  --selectTextColor: var(--primary);
-  --selectCaret: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23#004872%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
+	--selectTextColor: var(--primaryElementText);
+	--selectOptBackground: var(--inputBackground);
+	--selectHoverOptBackgroundColor: var(--primaryDark);
+	--selectCaret: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
+	
+	--selectActiveBorderColor: var(--primary);
 
   /* 
     
@@ -964,10 +968,14 @@ li.light-theme {
     ==========================================================================
     
   */
-  --selectBackgroundColor: var(--primary);
-  --selectBorderColor: var(--colorPrimary);
-  --selectTextColor: var(--colorWhite);
-  --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+	--selectBackgroundColor: var(--primary);
+  --selectBorderColor: var(--primary);
+	--selectTextColor: var(--primaryElementText);
+	--selectOptBackground: var(--inputBackground);
+	--selectHoverOptBackgroundColor: var(--primaryLight);
+	--selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+	
+	--selectActiveBorderColor: var(--primary);
 
   /* 
     
@@ -1853,32 +1861,21 @@ label {
 
   
 
-  border: 1px solid rgb(0, 90, 143);
-
-  
-
-  border: 1px solid var(--selectBorderColor, rgb(0, 90, 143));
+  border: 1px solid var(--selectBorderColor);
   border-radius: 3px;
-  border-radius: var(--buttonBorderRadius, 3px);
+  border-radius: var(--buttonBorderRadius);
 
-  color: rgb(255, 255, 255);
-
-  color: var(--selectTextColor, rgb(255, 255, 255));
-  font-family: "Roboto", sans-serif;
+  color: var(--selectTextColor);
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: var(--fontFamily);
   font-size: 1rem;
   line-height: 1.5;
   height: 2.125rem;
   padding: 0 1.2rem 0 0.625rem;
 
-  background-color: rgb(0, 90, 143);
-
-  background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E")
-  ;
-  background-image: var(
-    --selectCaret,
-    url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E")
-  );
+  background-color: var(--selectBackgroundColor);
+  background-image: var(--selectCaret);
   background-position: center right 0.625rem;
   background-repeat: no-repeat;
 
@@ -1888,7 +1885,12 @@ label {
 .rux-select .rux-select optgroup,
 .rux-select option {
   color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+  background-color: var(--selectOptBackground);
+}
+
+.rux-select .rux-select optgroup:hover,
+.rux-select option:hover {
+  background-color: var(--selectHoverOptBackgroundColor);
 }
 
 .rux-select:disabled {
@@ -1896,12 +1898,18 @@ label {
   cursor: not-allowed;
 }
 
+.rux-select:focus {
+	border-color: var(--selectActiveBorderColor);
+	outline-color: var(--selectActiveBorderColor);
+}
+
 .rux-select::-ms-expand {
   display: none;
 }
 
 .rux-select:focus::-ms-value {
-  background: transparent;
+	background: transparent;
+	
 }
 
 .rux-form-element {
