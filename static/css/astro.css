@@ -1401,6 +1401,7 @@ label {
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
 	box-shadow: inset 0px 0 .25px var(--scrollBarTrackBorderColor);
+	background-color: var(--scrollBarTrackCornerBackgroundColor);
 }
 ::-webkit-scrollbar-track:vertical {
 	box-shadow: inset 0px 0 .25px var(--scrollBarTrackBorderColor);
