@@ -11,21 +11,18 @@
 
   
 
-  border: 1px solid var(--selectBorderColor, rgb(0, 90, 143));
-  border-radius: var(--buttonBorderRadius, 3px);
+  border: 1px solid var(--selectBorderColor);
+  border-radius: var(--buttonBorderRadius);
 
-  color: var(--selectTextColor, rgb(255, 255, 255));
-  font-family: "Roboto", sans-serif;
+  color: var(--selectTextColor);
+  font-family: var(--fontFamily);
   font-size: 1rem;
   line-height: 1.5;
   height: 2.125rem;
   padding: 0 1.2rem 0 0.625rem;
 
-  background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
-  background-image: var(
-    --selectCaret,
-    url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E")
-  );
+  background-color: var(--selectBackgroundColor);
+  background-image: var(--selectCaret);
   background-position: center right 0.625rem;
   background-repeat: no-repeat;
 
@@ -35,7 +32,12 @@
 .rux-select .rux-select optgroup,
 .rux-select option {
   color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+  background-color: var(--selectOptBackground);
+}
+
+.rux-select .rux-select optgroup:hover,
+.rux-select option:hover {
+  background-color: var(--selectHoverOptBackgroundColor);
 }
 
 .rux-select:disabled {
@@ -43,10 +45,16 @@
   cursor: not-allowed;
 }
 
+.rux-select:focus {
+	border-color: var(--selectActiveBorderColor);
+	outline-color: var(--selectActiveBorderColor);
+}
+
 .rux-select::-ms-expand {
   display: none;
 }
 
 .rux-select:focus::-ms-value {
-  background: transparent;
+	background: transparent;
+	
 }
