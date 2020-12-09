@@ -22,7 +22,7 @@
 .rux-table th {
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: var(--tableHeaderAccentColor);
+  border-top-color: var(--tableHeaderBorderColor);
   background: var(--tableHeaderBackgroundColor);
   color: var(--tableHeaderTextColor);
   font-weight: 600;
@@ -33,7 +33,7 @@
 
 .rux-table__column-head {
   box-shadow: var(--tableHeaderBoxShadow);
-  border-top-color: var(--tableBorderColor);
+  border-top-color: var(--tableHeaderBorderColor);
   border-top-width: 1px;
   border-top-style: solid;
 }
@@ -71,9 +71,5 @@
 .rux-table th:last-child,
 .rux-table td:last-child {
   padding-right: 1.875rem;
-
-}
-
-.rux-table tr:last-child td {
 
 }

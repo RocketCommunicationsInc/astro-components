@@ -114,7 +114,16 @@ export const AGGrid = () => {
   }
 
 
-  return html`
+	return html`
+		<style>
+		.ag-theme-astro .ag-row:hover{
+			color:var(--primaryElementText);
+		}
+
+		.ag-theme-astro .ag-ltr .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected){
+			border-color: var(--tableRowSelectedBorderColor);
+		}
+		</style>
     <div style="display: flex; padding: 2vh; justify-content: center;">
       <div id="myGrid" class="ag-theme-astro" style="width: 100%; height: 96vh"></div> 
     </div>

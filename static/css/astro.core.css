@@ -781,24 +781,27 @@
 
   --tableBorderColor: var(--backgroundColor);
 
-  --tableHeaderBackgroundColor: var(--globalAppHeader);
-  --tableHeaderTextColor: var(--defaultText);
+	--tableHeaderBackgroundColor: var(--globalAppHeader);
+	--tableHeaderBorderColor: var(--surfaceElements);
+  --tableHeaderTextColor: var(--primaryElementText);
   --tableHeaderBoxShadow:  0 0.1rem .45rem rgba(0, 0, 0, 0.2);
   --tableHeaderAccentColor: var(--primary);
 
   --tableRowBackgroundColor: var(--surfaceElements);
   --tableRowBorderColor: var(---backgroundColor);
-  --tableRowTextColor: var(--defaultText);
+	--tableRowTextColor: var(--defaultText);
+	
+	--tableRowHoverBackgroundColor: var(--primaryDark);
+	--tableRowHoverTextColor: var(--primaryElementText);
+
 	--tableRowSelectedBackgroundColor:  var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
-	--tableRowHoverBackgroundColor: var(--primaryDark);
-	--tableRowHoverTextColor: var(--defaultText);
+  --tableCellSelectedBorderColor: var(--primary);
   
-  --tableControlsBackgroundColor: var(--colorQuaternaryLighten2);
-  --tableCellSelectedBorderColor: var(--colorQuaternary);
+  --tableControlsBackgroundColor: var(--primary);
   --tableFilterBorderColor: var(--primary);
-  --tableFilterDisabledBorderColor: var(--colorTertiaryLighten3);
-  --tableFilterDisabledBackgroundColor: var(--colorQuaternaryLighten2);
+  --tableFilterDisabledBorderColor: var(--backgroundColor);
+  --tableFilterDisabledBackgroundColor: var(--surfaceElements);
 }
 
 li.light-theme {
@@ -1214,24 +1217,27 @@ li.light-theme {
 
   --tableBorderColor: var(--backgroundColor);
 
-  --tableHeaderBackgroundColor: var(--globalAppHeader);
+	--tableHeaderBackgroundColor: var(--globalAppHeader);
+	--tableHeaderBorderColor: var(--surfaceElements);
   --tableHeaderTextColor: var(--defaultText);
   --tableHeaderBoxShadow: 0 0.25rem .5rem rgba(0, 0, 0, 0.45);
   --tableHeaderAccentColor:  var(--primary);
 
   --tableRowBackgroundColor: var(--surfaceElements);
-  --tableRowSelectedBackgroundColor: var(--backgroundColor);
-  --tableRowSelectedBorderColor: var(--primary);
+  --tableRowTextColor: var(--defaultText);
+	--tableRowBorderColor: var(--backgroundColor);
+	
 	--tableRowHoverBackgroundColor: var(--primaryLight);
 	--tableRowHoverTextColor: var(--primaryElementText);
-  --tableRowTextColor: var(--defaultText);
-  --tableRowBorderColor: var(--globalAppHeader);
   
-  --tableControlsBackgroundColor: var(--globalAppHeader);
+  --tableRowSelectedBackgroundColor: var(--backgroundColor);
+	--tableRowSelectedBorderColor: var(--primary);
   --tableCellSelectedBorderColor: var(--backgroundColor);
+	
+  --tableControlsBackgroundColor: var(--primary);
   --tableFilterBorderColor: var(--primary);
-  --tableFilterDisabledBorderColor: var(--primary);
-  --tableFilterDisabledBackgroundColor: var(--primaryLight);
+  --tableFilterDisabledBorderColor: var(--backgroundColor);
+  --tableFilterDisabledBackgroundColor: var(--surfaceElements);
 }
 
 li.dark-theme {
@@ -2228,7 +2234,7 @@ label {
 .rux-table th {
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: var(--tableHeaderAccentColor);
+  border-top-color: var(--tableHeaderBorderColor);
   background: var(--tableHeaderBackgroundColor);
   color: var(--tableHeaderTextColor);
   font-weight: 600;
@@ -2239,7 +2245,7 @@ label {
 
 .rux-table__column-head {
   box-shadow: var(--tableHeaderBoxShadow);
-  border-top-color: var(--tableBorderColor);
+  border-top-color: var(--tableHeaderBorderColor);
   border-top-width: 1px;
   border-top-style: solid;
 }
@@ -2277,9 +2283,5 @@ label {
 .rux-table th:last-child,
 .rux-table td:last-child {
   padding-right: 1.875rem;
-
-}
-
-.rux-table tr:last-child td {
 
 }
