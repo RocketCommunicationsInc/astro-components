@@ -2178,7 +2178,8 @@ label {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background-image: var(--inputSearchCancel);
+	background-image: var(--inputSearchCancel);
+	background-repeat: no-repeat;
 }
 
 .rux-form-field input[type="search"]::-ms-clear {
