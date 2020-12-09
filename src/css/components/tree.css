@@ -113,9 +113,11 @@
   height: auto;
 }
 
-.rux-tree .selected {
+.rux-tree .selected,
+[aria-selected='true'] > .rux-tree__parent::after,
+[aria-selected='true'] > .rux-tree__parent:hover::after {
   background-color: var(--treeSelectedBackgroundColor);
-  box-shadow: inset 5px 0 var(--treeSelectedAccentColor);
+  box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor);
   color: var(--treeSelectedTextColor);
 }
 
