@@ -116,12 +116,28 @@ export const AGGrid = () => {
 
 	return html`
 		<style>
-		.ag-theme-astro .ag-row:hover{
-			color:var(--primaryElementText);
+		.ag-theme-astro .ag-header-row {
+			background-color: var(--tableHeaderBackgroundColor);
+		}
+		.ag-theme-astro .ag-header-cell {
+			border-color: var(--tableHeaderBorderColor);
+		}
+	
+		.ag-theme-astro .ag-row {
+			background-color: var(--tableRowBackgroundColor);
+			border-color: var(--tableRowBorderColor);
+		}
+		.ag-theme-astro .ag-row:hover {
+			background-color: var(--tableRowHoverBackgroundColor);
+			color: var(--tableRowHoverTextColor);
 		}
 
 		.ag-theme-astro .ag-ltr .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected){
+			background-color: var(--tableRowSelectedBackgroundColor);
 			border-color: var(--tableRowSelectedBorderColor);
+		}
+		.ag-theme-astro .ag-ltr .ag-has-focus .ag-cell-focus:hover:not(.ag-cell-range-selected) {
+			color: var(--tableRowTextColor);
 		}
 		</style>
     <div style="display: flex; padding: 2vh; justify-content: center;">
