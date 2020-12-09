@@ -229,9 +229,10 @@
     ==========================================================================
 
   */
-  --clockTextColor: var(--colorWhite);
-  --clockBackgroundColor: var(--globalAppHeader);
-	--clockBorderColor: var(--colorTertiary);
+  --clockTextColor: var(--defaultText);
+  --clockBackgroundColor: var(--backgroundColor);
+	--clockBorderColor: var(--surfaceElements);
+	--clockLabelColor: var(--defaultText);
 
 	/* 
     
@@ -251,15 +252,15 @@
     ==========================================================================
 
   */
-  --logTextColor: var(--colorWhite);
-  --logBackgroundColor: var(--colorTertiaryDarken1);
-  --logBorderColor: var(--colorTertiary);
+  --logTextColor: var(--defaultText);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--backgroundColor);
 
-  --logHeaderTextColor: var(--colorWhiteDarken2);
+  --logHeaderTextColor: var(--defaultText);
   --logHeaderBackgroundColor: var(--globalAppHeader);
 
-  --logFilterBackgroundColor: var(--colorStandbyLighten1);
-  --logFilterTextColor: var(--colorStandbyDarken3);
+  --logFilterBackgroundColor: var(--primaryDark);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     
