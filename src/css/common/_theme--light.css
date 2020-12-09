@@ -369,10 +369,12 @@
     
   */
 
-  --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1);
-  --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2);
-  --scrollBarTrackBackgroundColor: transparent;
-  --scrollBarTrackCornerBackgroundColor: var(--colorQuaternaryLighten4);
+  --scrollBarThumbBackgroundColor: var(--primary);
+	--scrollBarThumbBackgroundHoverColor: var(--primaryDark);
+	--scrollBarTrackBackgroundColor: var(--backgroundColor);
+	--scrollBarTrackCornerBackgroundColor: var(--backgroundColor);
+	--scrollBarTrackBorderColor: var(--primaryDark);
+	
 
   /* 
     

@@ -730,10 +730,12 @@
     
   */
 
-  --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1);
-  --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2);
-  --scrollBarTrackBackgroundColor: transparent;
-  --scrollBarTrackCornerBackgroundColor: var(--colorQuaternaryLighten4);
+  --scrollBarThumbBackgroundColor: var(--primary);
+	--scrollBarThumbBackgroundHoverColor: var(--primaryDark);
+	--scrollBarTrackBackgroundColor: var(--backgroundColor);
+	--scrollBarTrackCornerBackgroundColor: var(--backgroundColor);
+	--scrollBarTrackBorderColor: var(--primaryDark);
+	
 
   /* 
     
@@ -1165,10 +1167,11 @@ li.light-theme {
     
   */
 
-  --scrollBarThumbBackgroundColor: var(--colorSecondaryDarken2);
-  --scrollBarThumbBackgroundHoverColor: var(--primaryDark);
-  --scrollBarTrackBackgroundColor: var(--colorTertiaryDarken1);
-  --scrollBarTrackCornerBackgroundColor: var(--colorTertiaryDarken1);
+  --scrollBarThumbBackgroundColor: var(--primary);
+	--scrollBarThumbBackgroundHoverColor: var(--primaryLight);
+	--scrollBarTrackBackgroundColor: var(--backgroundColor);
+	--scrollBarTrackCornerBackgroundColor: var(--scrollBarTrackBackgroundColor);
+	--scrollBarTrackBorderColor: var(--primaryDark);
 
   /* 
     
@@ -1385,8 +1388,7 @@ body {
 
   background-color: var(--backgroundColor);
 
-  scrollbar-color: var(--scrollBarThumbBackgroundColor)
-    var(--scrollBarTrackCornerBackgroundColor);
+  scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackCornerBackgroundColor);
 }
 
 label {
@@ -1408,7 +1410,7 @@ label {
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollBarThumbBackgroundColor);
   border-radius: 10px;
-  border: 3px solid transparent;
+	border: 3px solid transparent;
   background-clip: padding-box;
 }
 /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
@@ -1427,13 +1429,14 @@ label {
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background-color: var(--scrollBarTrackCornerBackgroundColor);
+	box-shadow: inset 0px 0 .25px var(--scrollBarTrackBorderColor);
+	background-color: var(--scrollBarTrackCornerBackgroundColor);
 }
 ::-webkit-scrollbar-track:vertical {
-  box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);
+	box-shadow: inset 0px 0 .25px var(--scrollBarTrackBorderColor);
 }
 ::-webkit-scrollbar-track:horizontal {
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 0 .25px var(--scrollBarTrackBorderColor);
 }
 
 /*
