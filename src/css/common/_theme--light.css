@@ -60,7 +60,7 @@
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
-  --buttonActiveControlTextColor: var(--colorWhite);
+  --buttonActiveControlTextColor: var(--defaultText);
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
 
@@ -84,17 +84,18 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--colorWhite);
-  --controlLabelColor: var(--colorBlack);
-  --controlBackgroundColor: var(--colorSecondaryDarken1);
+  --controlTextColor: var(--primary);
+  --controlLabelColor: var(--defaultText);
+  --controlBackgroundColor: var(--primary);
   --controlBorderColor: var(--primary);
-  --controlAccentColor: var(--colorSecondary);
+  --controlAccentColor: var(--primary);
 
-  --controlSelectedTextColor: var(--colorBlack);
-  --controlSelectedBackgroundColor: var(--colorSecondaryDarken1);
+  --controlSelectedTextColor: var(--defaultText);
+  --controlSelectedBackgroundColor: transparent;
   --controlSelectedBorderColor: var(--primary);
 
-  --controlHoverOutlineBackgroundColor: none;
+	--controlHoverOutlineBackgroundColor: none;
+	--controlHoverBorderColor: var(--primaryDark);
   --controlSelectedOutlineBorderColor: var(--primary);
   --controlSelectedOutlineBackgroundColor: none;
 
@@ -116,17 +117,17 @@
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--colorWhite);
-  --popupMenuBorderColor: var(--colorSecondary);
-  --popupMenuTextColor: var(--colorBlack);
+  --popupMenuBackgroundColor: var(--inputBackground);
+  --popupMenuBorderColor: var(--primary);
+  --popupMenuTextColor: var(--defaultText);
 
-  --popupCaretBackgroundColor: var(--popupMenuBorderColor);
+  --popupCaretBackgroundColor: var(--primary);
 
-  --popupMenuItemBackgroundColor: var(--primary);
-  --popupMenuItemHoverBackgroundColor: var(--colorSecondaryLighten3);
-  --popupMenuItemHoverTextColor: var(--colorBlack);
+  --popupMenuItemBackgroundColor: var(--inputBackground);
+  --popupMenuItemHoverBackgroundColor: var(--primaryDark);
+  --popupMenuItemHoverTextColor: var(--primaryElementText);
 
-  --popupMenuItemSeperatorBorderColor: var(--colorQuaternaryDarken2);
+  --popupMenuItemSeperatorBorderColor: var(--defaultText);
 
   /* 
     
@@ -134,13 +135,19 @@
     ==========================================================================
 
   */
-  --sliderThumbBackgroundColor: var(--primary);
-  --sliderThumbBorderColor: var(--colorWhite);
+  --sliderThumbBackgroundColor: var(--primaryDark);
+  --sliderThumbBorderColor: var(--inputBackground);
+	--sliderHoverThumbBackgroundColor: var(--primaryDark);
+	--sliderHoverThumbBorderColor: var(--inputBackground);
 
-  --sliderTrackBorderColor: var(--colorQuaternary);
-  --sliderTrackBackgroundColor: var(--colorWhite);
+  --sliderTrackBorderColor: var(--secondaryText);
+  --sliderTrackBackgroundColor: var(--inputBackground);
 
-  --sliderSelectedTrackBackgroundColor: var(--colorSecondary);
+	--sliderSelectedThumbBorderColor: var(--primaryLight);
+	--sliderSelectedTrackBackgroundColor: var(--primary);
+
+	--sliderThumbBorderSize: 1px;
+	--sliderTrackBorderSize: .25px;
 
   /* 
     
@@ -149,19 +156,17 @@
 
   */
   --segmentedButtonBorderColor: var(--primary);
-  --segmentedButtonBackgroundColor: var(--colorWhite);
+  --segmentedButtonBackgroundColor: none;
   --segmentedButtonTextColor: var(--primary);
 
-  --segmentedButtonHoverBackgroundColor: rgb(0, 90, 143, 0.05);
-  --segmentedButtonHoverTextColor: var(--primary);
+	/* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--primaryDark);
+	--segmentedButtonHoverTextColor: var(--primaryElementText);
+	--segmentedButtonHoverBorderColor: var(--primaryDark);
 
-  --segmentedButtonSelectedBackgroundColor: var(--colorSecondaryDarken1);
-
-  --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1),
-    inset 0 1px 5px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.067s ease-out;
-
-  --segmentedButtonSelectedTextColor: var(--colorWhite);
+	/* Segmented Select */
+  --segmentedButtonSelectedBackgroundColor: var(--primary);
+  --segmentedButtonSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -181,38 +186,36 @@
 
   */
 
-  --toggleButtonBackgroundColor: var(--colorWhite);
-  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25),
-    1px 0 2px rgba(0, 0, 0, 0.3);
+  --toggleButtonBackgroundColor: var(--primary);
+  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
 
   --toggleBaseBackgroundColor: linear-gradient(
     to right,
     var(--colorNormal) 50%,
     var(--colorPrimaryLighten4) 50.1%
   );
-	--toggleBaseBorderColor: var(--primaryLight);
+	--toggleBaseBorderColor: var(--primary);
   --toggleBaseTextColor: var(--primary);
 
   --toggleBaseSelectedTextColor: #007300;
   --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
     -1px 0 2px rgba(0, 0, 0, 0.3);
 
-  /* Alt Toggle */
-  --toggleThumbBorderColor: var(--colorGrayDarken2);
-  --toggleThumbBackgroundColor: var(--colorWhite);
+  /* Default Toggle */
+  --toggleThumbBorderColor: var(--secondaryText);
+	--toggleThumbBackgroundColor: var(--inputBackground);	
+	--toggleTrackBorderColor: var(--secondaryText);
+	--toggleTrackBackgroundColor: var(--backgroundColor);
 
-  --toggleSelectedThumbBorderColor: var(--colorStandbyDarken2);
-  --toggleSelectedThumbBackgroundColor: var(--colorStandby);
+	/* Selected State */
+  --toggleSelectedThumbBorderColor: var(--primary);
+  --toggleSelectedThumbBackgroundColor: var(--primary);
+  --toggleSelectedTrackBorderColor: var(--primary);
+  --toggleSelectedTrackBackgroundColor: var(--primaryLight);
 
-  --toggleTrackBorderColor: var(--colorGrayDarken2);
-  --toggleTrackBackgroundColor: var(--colorGray);
-
-  --toggleSelectedTrackBorderColor: var(--colorStandbyDarken2);
-  --toggleSelectedTrackBackgroundColor: var(--colorStandby);
-
-  --toggleDisabledThumbBorderColor: var(--colorGrayDarken1);
-  --toggleDisabledThumbBackgroundColor: var(--colorWhite);
-  --toggleDisabledSelectedThumbBorderColor: var(--colorPrimaryLighten3);
+  --toggleDisabledThumbBorderColor: var(--secondaryText);
+  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
+  --toggleDisabledSelectedThumbBorderColor: var(--primary);
 
   /* 
     
@@ -221,15 +224,13 @@
 
   */
 
-  --pushbuttonBackgroundColor: var(--colorWhite);
+  --pushbuttonBackgroundColor: none;
   --pushbuttonBorderColor: var(--primary);
   --pushbuttonTextColor: var(--primary);
 
   --pushbuttonSelectedBackgroundColor: var(--colorNormal);
-  --pushbuttonSelectedBorderColor: #3dc100;
-  /* var(--colorNormal); */
-  --pushbuttonSelectedTextColor: #007300;
-  /* var(--colorWhite); */
+  --pushbuttonSelectedBorderColor: var(--colorNormal);
+  --pushbuttonSelectedTextColor: var(--defaultText);
 
   /* 
     
@@ -238,9 +239,10 @@
 
   */
 
-  --clockTextColor: var(--colorBlack);
-  --clockBackgroundColor: var(--colorWhite);
-  --clockBorderColor: var(--colorQuaternary);
+  --clockTextColor: var(--primaryElementText);
+  --clockBackgroundColor: #101923;
+	--clockBorderColor: #1b2d3e;
+	--clockLabelColor: var(--primaryElementText);
 
   /* 
     
@@ -248,9 +250,9 @@
     ==========================================================================
  
   */
-
+	--modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
-  --modalBackgroundColor: var(--colorWhite);
+  --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
   /* 
     
@@ -258,15 +260,15 @@
     ==========================================================================
 
   */
-  --logTextColor: var(--colorBlack);
-  --logBackgroundColor: var(--colorWhite);
-  --logBorderColor: var(--colorQuaternaryLighten2);
+  --logTextColor: var(--defaultText);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--secondaryText);
 
-  --logHeaderTextColor: var(--colorBlack);
-  --logHeaderBackgroundColor: var(--colorQuaternary);
+  --logHeaderTextColor: var(--defaultText);
+  --logHeaderBackgroundColor: var(--backgroundColor);
 
-  --logFilterBackgroundColor: var(--colorStandbyLighten3);
-  --logFilterTextColor: var(--colorStandbyDarken2);
+  --logFilterBackgroundColor: var(--primaryLight);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     
@@ -305,7 +307,15 @@
   --tabHoverTextColor: var(--colorSecondary);
 
   --tabSelectedTextColor: var(--colorBlack);
-  --tabSelectedBorderColor: var(--colorSecondary);
+	--tabSelectedBorderColor: var(--colorSecondary);
+	
+	/* 
+    
+    Notification Colors 
+    ==========================================================================
+
+	*/
+	--notificationTextColor: var(--defaultText);
 
   /* 
     
@@ -325,15 +335,18 @@
     
   */
 
-  --inputBackgroundColor: var(--colorWhite);
-  --inputBorderColor: var(--colorQuaternaryDarken1);
-  --inputTextColor: var(--colorBlack);
+  --inputBackgroundColor: var(--inputBackground);
+  --inputBorderColor: var(--primaryLight);
+  --inputTextColor: var(--defaultText);
 
-  --inputFocusBorderColor: var(--colorSecondary);
-  --inputFocusBoxShadow: none;
+	--inputFocusBorderColor: var(--primary);
+	--inputFocusTextColor: var(--defaultText);
 
-  --inputInvalidBorderColor: var(--colorCritical);
-
+	--inputInvalidBorderColor: var(--colorCritical);
+	
+	--inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%233a87cf' fill-rule='evenodd'/%3E%3C/svg%3E");
+	--inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23004872' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+	
   /* 
     
     Status
