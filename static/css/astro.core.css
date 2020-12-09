@@ -795,7 +795,7 @@
   --tableHeaderAccentColor: var(--primary);
 
   --tableRowBackgroundColor: var(--surfaceElements);
-  --tableRowBorderColor: var(---backgroundColor);
+  --tableRowBorderColor: var(--backgroundColor);
 	--tableRowTextColor: var(--defaultText);
 	
 	--tableRowHoverBackgroundColor: var(--primaryDark);
@@ -2261,9 +2261,9 @@ label {
 }
 
 .rux-table td {
-  border-color: var(--tableRowBorderColor);
-  border-width: 1px 0;
-  border-style: solid;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: var(--tableRowBorderColor) !important;
   padding: 0.625rem 1rem;
   white-space: nowrap;
 

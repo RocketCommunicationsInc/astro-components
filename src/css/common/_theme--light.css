@@ -434,7 +434,7 @@
   --tableHeaderAccentColor: var(--primary);
 
   --tableRowBackgroundColor: var(--surfaceElements);
-  --tableRowBorderColor: var(---backgroundColor);
+  --tableRowBorderColor: var(--backgroundColor);
 	--tableRowTextColor: var(--defaultText);
 	
 	--tableRowHoverBackgroundColor: var(--primaryDark);
