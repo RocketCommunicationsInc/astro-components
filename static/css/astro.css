@@ -2111,9 +2111,9 @@ label {
 
 .rux-form-field input:disabled {
   opacity: 0.4;
-  opacity: var(--disabledOpacity, 0.4);
+  opacity: var(--disabledOpacity);
   cursor: not-allowed;
-  cursor: var(--disabledCursor, not-allowed);
+  cursor: var(--disabledCursor);
 }
 
 .rux-form-field--large,
@@ -2121,7 +2121,7 @@ label {
 .rux-form-field--large input,
 .rux-form-field--large textarea {
   font-size: 1.125rem;
-  font-size: var(--fontSizeXL, 1.125rem);
+  font-size: var(--fontSizeXL);
 }
 
 .rux-form-field--small,
@@ -2129,7 +2129,7 @@ label {
 .rux-form-field--small input,
 .rux-form-field--small textarea {
   font-size: 0.875rem;
-  font-size: var(--fontSizeMD, 0.875rem);
+  font-size: var(--fontSizeMD);
 }
 
 .rux-form-field--large input,

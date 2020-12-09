@@ -167,22 +167,22 @@
 } */
 
 .rux-form-field input:disabled {
-  opacity: var(--disabledOpacity, 0.4);
-  cursor: var(--disabledCursor, not-allowed);
+  opacity: var(--disabledOpacity);
+  cursor: var(--disabledCursor);
 }
 
 .rux-form-field--large,
 .rux-form-field--large label,
 .rux-form-field--large input,
 .rux-form-field--large textarea {
-  font-size: var(--fontSizeXL, 1.125rem);
+  font-size: var(--fontSizeXL);
 }
 
 .rux-form-field--small,
 .rux-form-field--small label,
 .rux-form-field--small input,
 .rux-form-field--small textarea {
-  font-size: var(--fontSizeMD, 0.875rem);
+  font-size: var(--fontSizeMD);
 }
 
 .rux-form-field--large input,
