@@ -16,8 +16,7 @@
   --largeLabelFontSize: 1.125rem;
 
   /* Typography */
-  --fontFamily: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --fontFamily: "Open Sans", sans-serif;
   --fontSize: 1rem; /* 16px */
   --fontSizeXL: 1.125rem;
   --fontSizeLG: 1rem;
@@ -25,9 +24,8 @@
   --fontSizeSM: 0.75rem;
   --fontSizeXS: 0.65rem;
 
-  --fontFamilyLight: "Roboto Light", sans-serif;
-	--fontFamilyMono: "Roboto Mono", SFMono-Regular, Menlo, Monaco,
-										Consolas, "Liberation Mono", "Courier New", monospace;
+  --fontFamilyLight: "Open Sans Light", sans-serif;
+  --fontFamilyMono: "Roboto Mono", monospace;
 
   --colorBlack: rgb(0, 0, 0);
   --colorWhite: rgb(255, 255, 255);

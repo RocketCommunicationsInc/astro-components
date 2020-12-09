@@ -1,6 +1,6 @@
 # Global Status Bar
 
-The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation. The Global Status Bar often includes: Application Name, Monitoring Icons, Top Level Navigation and an Emergency Shut Off Button.
+The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation. The Global Status Bar often includes: Application Name, Monitoring Icons, Top Level Navigation and an Emergency Button.
 
 ## Guidelines
 
@@ -50,7 +50,7 @@ Status bar elements like the [Clock](https://www.astrouxds.com/ui-components/clo
  <rux-global-status-bar class="dark-theme" appname="Astro App" version="3.0">
 	 <rux-clock></rux-clock>
 	 <div><!-- Any HTML here --></div>
-	 <rux-button>Emergency Shut Off</rux-button>
+	 <rux-button>Master Off</rux-button>
  </rux-global-status-bar>
 ```
 

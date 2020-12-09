@@ -86,7 +86,8 @@ nav .css-0 section > div[type="section"] {
 
 /* scrollbars */
 body {
-  scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackCornerBackgroundColor);
+  scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
+    var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
 }
 
 ::-webkit-scrollbar {
@@ -96,7 +97,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--scrollBarThumbBackgroundColor);
+  background-color: var(--scrollBarThumbBackgroundColor, rgb(46, 103, 153));
   border-radius: 10px;
   border: 3px solid transparent;
   background-clip: padding-box;
@@ -112,11 +113,14 @@ body {
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollBarThumbBackgroundHoverColor);
+  background-color: var(
+    --scrollBarThumbBackgroundHoverColor,
+    rgb(58, 129, 191)
+  );
 }
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background-color: var(--scrollBarTrackCornerBackgroundColor);
+  background-color: var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
 }
 ::-webkit-scrollbar-track:vertical {
   box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15);

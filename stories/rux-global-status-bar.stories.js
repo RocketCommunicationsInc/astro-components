@@ -46,7 +46,7 @@ export const GlobalStatusBarWithSlotContent = () => {
       <rux-global-status-bar class="dark-theme" .appname="${appnameKnob}" .version="${versionKnob}">
         <rux-clock></rux-clock>
         <div><!--Any HTML here --></div>
-        <rux-button>Emergency Shut Off</rux-button>
+        <rux-button>Master Off</rux-button>
       </rux-global-status-bar>
     </div>
   `;
@@ -78,7 +78,7 @@ export const GlobalStatusBarWithTabs = () => {
           <rux-tab id="tab-id-1-2">Tab 2</rux-tab>
           <rux-tab id="tab-id-1-3">Tab 3</rux-tab>
         </rux-tabs>
-        <rux-button>Emergency Shut Off</rux-button>
+        <rux-button>Master Off</rux-button>
       </rux-global-status-bar>
       <rux-tab-panels aria-labelledby="tab-set-id-1">
         <rux-tab-panel aria-labelledby="tab-id-1-1">
