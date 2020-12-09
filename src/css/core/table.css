@@ -24,7 +24,8 @@
   border-top-style: solid;
   border-top-color: var(--tableHeaderBorderColor);
   background: var(--tableHeaderBackgroundColor);
-  color: var(--tableHeaderTextColor);
+	color: var(--tableHeaderTextColor);
+	font-size: var(--fontSizeXL);
   font-weight: 600;
   height:  2.625rem;
   padding: 0.625rem 1rem;
@@ -72,4 +73,8 @@
 .rux-table td:last-child {
   padding-right: 1.875rem;
 
+}
+
+.rux-table .rux-checkbox {
+	margin:0;
 }
