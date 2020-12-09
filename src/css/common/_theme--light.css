@@ -262,15 +262,15 @@
     ==========================================================================
 
   */
-  --logTextColor: var(--colorBlack);
-  --logBackgroundColor: var(--colorWhite);
-  --logBorderColor: var(--colorQuaternaryLighten2);
+  --logTextColor: var(--defaultText);
+  --logBackgroundColor: var(--surfaceElements);
+  --logBorderColor: var(--secondaryText);
 
-  --logHeaderTextColor: var(--colorBlack);
-  --logHeaderBackgroundColor: var(--colorQuaternary);
+  --logHeaderTextColor: var(--defaultText);
+  --logHeaderBackgroundColor: var(--backgroundColor);
 
-  --logFilterBackgroundColor: var(--colorStandbyLighten3);
-  --logFilterTextColor: var(--colorStandbyDarken2);
+  --logFilterBackgroundColor: var(--primaryLight);
+  --logFilterTextColor: var(--primaryElementText);
 
   /* 
     
