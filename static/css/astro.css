@@ -4064,6 +4064,8 @@ input:-moz-focusring {
   transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
 }
 
+
+
 .rux-toggle__input:disabled + .rux-toggle__button::after {
   background-color: var(--toggleDisabledThumbBackgroundColor);
 	border-color: var(--toggleDisabledThumbBorderColor);
@@ -4087,6 +4089,13 @@ input:-moz-focusring {
   opacity: var(--disabledOpacity);
   cursor: not-allowed;
   cursor: var(--disabledCursor);
+}
+
+.rux-toggle__input:disabled + .rux-toggle__button {
+	opacity: 0.4;
+	opacity: var(--disabledOpacity);
+	cursor: not-allowed;
+	cursor: var(--disabledCursor);
 }
 
 .rux-tree {

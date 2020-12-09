@@ -81,6 +81,8 @@
   transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
 }
 
+
+
 .rux-toggle__input:disabled + .rux-toggle__button::after {
   background-color: var(--toggleDisabledThumbBackgroundColor);
 	border-color: var(--toggleDisabledThumbBorderColor);
@@ -100,4 +102,9 @@
 .rux-toggle__input:disabled + .rux-toggle__button::before {
   opacity: var(--disabledOpacity);
   cursor: var(--disabledCursor);
+}
+
+.rux-toggle__input:disabled + .rux-toggle__button {
+	opacity: var(--disabledOpacity);
+	cursor: var(--disabledCursor);
 }
