@@ -48,7 +48,8 @@
 .rux-table tr.selected td {
 	border-color:var(--tableRowSelectedBorderColor);
 }
-.rux-table tr:hover {
+.rux-table tr:hover:not([data-selected]),
+.rux-table tr.selected:hover:not([data-selected]) {
 	background: var(--tableRowHoverBackgroundColor);
 	color: var(--tableRowHoverTextColor);
 }
