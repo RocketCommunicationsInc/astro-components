@@ -87,7 +87,6 @@ export class RuxButton extends LitElement {
         .rux-button:not(.rux-button--outline) {
           border: 1px solid var(--buttonBorderColor);
           background-color: var(--buttonBackgroundColor);
-          box-shadow: var(--controlBoxShadow);
         }
 
         /* Outline Button Specific Styles */
@@ -112,9 +111,6 @@ export class RuxButton extends LitElement {
           background-color: var(--buttonOutlineBackgroundColor) !important;
         }
 
-        .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
-          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
-        }
 
         /* 
           
@@ -124,7 +120,6 @@ export class RuxButton extends LitElement {
         .rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
           border-color: var(--buttonHoverBorderColor);
           background-color: var(--buttonHoverBackgroundColor);
-          box-shadow: var(--buttonHoverBoxShadow);
         }
 
         .rux-button--outline:hover:not([disabled]) {
@@ -210,7 +205,7 @@ export class RuxButton extends LitElement {
       >
         <rux-icon
           icon="${this.icon}"
-          fill="${this.outline ? 'var(--buttonOutlineTextColor)' : 'var(--buttonTextColor)'}"
+          color="${this.outline ? 'var(--buttonOutlineTextColor)' : 'var(--buttonTextColor)'}"
           ?hidden="${!this.icon}"
         ></rux-icon>
         <slot></slot>

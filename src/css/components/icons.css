@@ -17,10 +17,3 @@ i.rux-icon {
 
   color: var(--colorSecondary);
 }
-
-svg,
-svg > use {
-	height: 100%;
-	width: auto;
-	fill: yellow;
-}
