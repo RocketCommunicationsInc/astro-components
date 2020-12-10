@@ -36,14 +36,14 @@
   box-shadow: var(--tableHeaderBoxShadow);
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: red;
+  border-top-color: var(--tableHeaderBorderColor);
 }
 
 .rux-table tr[data-selected],
 .rux-table tr.selected {
 	background:var(--tableRowSelectedBackgroundColor);
-	box-shadow: inset 0 2px 0px 0px var(--tableRowSelectedBorderColor),
-	inset 0 -2px 0px 0px var(--tableRowSelectedBorderColor);
+	box-shadow: 0 2px 0px 0px var(--tableRowSelectedBorderColor),
+	0 -2px 0px 0px var(--tableRowSelectedBorderColor);
 }
 
 .rux-table tr[data-selected] td {
