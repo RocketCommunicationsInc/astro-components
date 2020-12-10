@@ -2285,6 +2285,21 @@ label {
 .rux-table .rux-checkbox {
 	margin:0;
 }
+
+.rux-table .rux-checkbox input[type="checkbox"]:checked + label::before,
+.rux-table .rux-radio-button input[type="radio"]:checked + label::before {
+	background-color: var(--controlBackgroundColor);
+  border-color: var(--controlBorderColor);
+}
+
+.rux-table .rux-checkbox input[type="checkbox"]:checked + label::after,
+.rux-table .rux-radio-button input[type="radio"]:checked + label::after {
+  border-color: var(--inputBackground);
+}
+.rux-table tr:hover .rux-checkbox input[type="checkbox"]:not(:checked) + label::before,
+.rux-table tr:hover .rux-checkbox input[type="radio"] + label::before {
+	border-color: var(--controlSelectedBorderColor);
+}
 .rux-advanced-status {
   position: relative;
   margin: 0 0.75rem;

@@ -24,7 +24,7 @@ const columnData = [
 
 const rowData = [
   { control: true, selected: false, currentTag: '999999991', originalTag: '100000001', sensor: '349', astat: 'SP_FULL', obsTime: '2020 158 01:23:45:678', obType: 'OBTYPE_2', azRtAsc: '150.4107', elDec: '10.5204', range: '3541.304', rangeRate: '-1.85068' },
-  { control: true, selected: true, currentTag: '999999992', originalTag: '020000001', sensor: '349', astat: 'SP_FULL', obsTime: '2020 159 02:26:42:478', obType: 'OBTYPE_2', azRtAsc: '275.6166', elDec: '22.2304', range: '2741.404', rangeRate: 'NULL' },
+  { control: true, selected: false, currentTag: '999999992', originalTag: '020000001', sensor: '349', astat: 'SP_FULL', obsTime: '2020 159 02:26:42:478', obType: 'OBTYPE_2', azRtAsc: '275.6166', elDec: '22.2304', range: '2741.404', rangeRate: 'NULL' },
   { control: true, selected: false, currentTag: '999999993', originalTag: '003000001', sensor: '373', astat: 'SP_FULL', obsTime: '2020 158 11:03:35:178', obType: 'OBTYPE_2', azRtAsc: '163.3307', elDec: '76.5604', range: '2641.454', rangeRate: '-34068' },
   { control: true, selected: false, currentTag: '999999994', originalTag: '000400001', sensor: '318', astat: 'FULL', obsTime: '2020 159 03:53:15:178', obType: 'OBTYPE_5', azRtAsc: '141.5507', elDec: '67.5204', range: '6741.3654', rangeRate: '-2.85458' },
   { control: true, selected: true, currentTag: '999999995', originalTag: '000050001', sensor: '432', astat: 'SP_FULL', obsTime: '2020 158 02:21:34:678', obType: 'OBTYPE_6', azRtAsc: '153.4187', elDec: '10.3404', range: '2941.784', rangeRate: '-4.85238' },
