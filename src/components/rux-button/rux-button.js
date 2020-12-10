@@ -210,7 +210,7 @@ export class RuxButton extends LitElement {
       >
         <rux-icon
           icon="${this.icon}"
-          color="${this.outline ? 'rgb(0, 90, 143)' : '#ffffff'}"
+          fill="${this.outline ? 'var(--buttonOutlineTextColor)' : 'var(--buttonTextColor)'}"
           ?hidden="${!this.icon}"
         ></rux-icon>
         <slot></slot>

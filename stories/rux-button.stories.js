@@ -69,7 +69,7 @@ export const slottedIconButton = () => {
         <rux-icon
           icon="custom" 
           library="/icons/custom.svg"
-          color="${outline ? 'rgb(0, 90, 143)' : '#ffffff'}"
+          color="${outline ? 'rgb(0, 90, 143)' : '#ff00ff'}"
         ></rux-icon>
         Slotted Icon Button</rux-button
       >
