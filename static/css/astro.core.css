@@ -784,24 +784,28 @@
       
   */
 
-  --tableBorderColor: var(--colorQuaternary);
+  --tableBorderColor: var(--backgroundColor);
 
-  --tableHeaderBackgroundColor: var(--colorQuaternary);
-  --tableHeaderTextColor: var(--defaultText);
+	--tableHeaderBackgroundColor: var(--globalAppHeader);
+	--tableHeaderBorderColor: var(--surfaceElements);
+  --tableHeaderTextColor: var(--primaryElementText);
   --tableHeaderBoxShadow:  0 0.1rem .45rem rgba(0, 0, 0, 0.2);
-  --tableHeaderAccentColor: var(--colorQuaternaryLighten2);
+  --tableHeaderAccentColor: var(--primary);
 
-  --tableRowBackgroundColor: var(--colorWhite);
-  --tableRowSelectedBackgroundColor:  var(--backgroundColor);
-  --tableRowHoverBackgroundColor: var(--colorQuaternary);
-  --tableRowTextColor: var(--defaultText);
-  --tableRowBorderColor: var(--colorQuaternary);
+  --tableRowBackgroundColor: var(--surfaceElements);
+  --tableRowBorderColor: var(--backgroundColor);
+	--tableRowTextColor: var(--defaultText);
+	
+	--tableRowHoverBackgroundColor: var(--primaryDark);
+	--tableRowHoverTextColor: var(--primaryElementText);
+
+	--tableRowSelectedBackgroundColor:  var(--backgroundColor);
+	--tableRowSelectedBorderColor: var(--primary);
   
-  --tableControlsBackgroundColor: var(--colorQuaternaryLighten2);
-  --tableCellSelectedBorderColor: var(--colorQuaternary);
+  --tableControlsBackgroundColor: var(--primary);
   --tableFilterBorderColor: var(--primary);
-  --tableFilterDisabledBorderColor: var(--colorTertiaryLighten3);
-  --tableFilterDisabledBackgroundColor: var(--colorQuaternaryLighten2);
+  --tableFilterDisabledBorderColor: var(--backgroundColor);
+  --tableFilterDisabledBackgroundColor: var(--surfaceElements);
 }
 
 li.light-theme {
@@ -1217,24 +1221,28 @@ li.light-theme {
       
   */
 
-  --tableBorderColor: var(--colorTertiaryLighten1);
+  --tableBorderColor: var(--backgroundColor);
 
-  --tableHeaderBackgroundColor: var(--globalAppHeader);
-  --tableHeaderTextColor: var(--colorTertiaryLighten3);
+	--tableHeaderBackgroundColor: var(--globalAppHeader);
+	--tableHeaderBorderColor: var(--surfaceElements);
+  --tableHeaderTextColor: var(--defaultText);
   --tableHeaderBoxShadow: 0 0.25rem .5rem rgba(0, 0, 0, 0.45);
-  --tableHeaderAccentColor:  var(--colorTertiary);
+  --tableHeaderAccentColor:  var(--primary);
 
-  --tableRowBackgroundColor: var(--colorTertiaryDarken1);
-  --tableRowSelectedBackgroundColor: var(--colorTertiary);
-  --tableRowHoverBackgroundColor: var(--globalAppHeader);
-  --tableRowTextColor: var(--fontColor);
-  --tableRowBorderColor: var(--globalAppHeader);
+  --tableRowBackgroundColor: var(--surfaceElements);
+  --tableRowTextColor: var(--defaultText);
+	--tableRowBorderColor: var(--backgroundColor);
+	
+	--tableRowHoverBackgroundColor: var(--primaryLight);
+	--tableRowHoverTextColor: var(--primaryElementText);
   
-  --tableControlsBackgroundColor: var(--globalAppHeader);
-  --tableCellSelectedBorderColor: var(--colorSecondaryDarken2);
-  --tableFilterBorderColor: var(--colorTertiaryLighten1);
-  --tableFilterDisabledBorderColor: var(--colorTertiary);
-  --tableFilterDisabledBackgroundColor: var(--colorTertiaryDarken1);
+  --tableRowSelectedBackgroundColor: var(--backgroundColor);
+	--tableRowSelectedBorderColor: var(--primary);
+	
+  --tableControlsBackgroundColor: var(--primary);
+  --tableFilterBorderColor: var(--primary);
+  --tableFilterDisabledBorderColor: var(--backgroundColor);
+  --tableFilterDisabledBackgroundColor: var(--surfaceElements);
 }
 
 li.dark-theme {
@@ -2154,14 +2162,11 @@ label {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0px;
-  color: rgb(255, 255, 255);
-  color: var(--tableRowTextColor, rgb(255, 255, 255));
+  color: var(--tableRowTextColor);
   border-style: solid;
   border-width: 1px;
-  border-color: rgb(83, 101, 121);
-  border-color: var(--tableBorderColor, rgb(83, 101, 121));
-  background: rgb(32, 50, 70);
-  background: var(--tableRowBackgroundColor, rgb(32, 50, 70));
+  border-color: var(--tableBorderColor);
+  background: var(--tableRowBackgroundColor);
   text-align: left;
   overflow: scroll;
 }
@@ -2169,46 +2174,45 @@ label {
 .rux-table th {
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: rgb(40, 63, 88);
-  border-top-color: var(--tableHeaderAccentColor,rgb(40, 63, 88));
-  background: rgb(24, 38, 53);
-  background: var(--tableHeaderBackgroundColor, rgb(24, 38, 53));
-  color: rgb(169, 178, 188);
-  color: var(--tableHeaderTextColor, rgb(169, 178, 188));
-  font-weight: 600;
+  border-top-color: var(--tableHeaderBorderColor);
+  background: var(--tableHeaderBackgroundColor);
+	color: var(--tableHeaderTextColor);
+	font-size: 1.125rem;
+	font-size: var(--fontSizeXL);
+  font-weight: 400;
   height:  2.625rem;
   padding: 0.625rem 1rem;
   white-space: nowrap;
 }
 
 .rux-table__column-head {
-  box-shadow: 0 0.25rem .5rem rgba(0, 0, 0, 0.45);
-  box-shadow: var(--tableHeaderBoxShadow, 0 0.25rem .5rem rgba(0, 0, 0, 0.45));
-  border-top-color: rgb(83, 101, 121);
-  border-top-color: var(--tableBorderColor, rgb(83, 101, 121));
+  box-shadow: var(--tableHeaderBoxShadow);
   border-top-width: 1px;
   border-top-style: solid;
+  border-top-color: var(--tableHeaderBorderColor);
 }
 
 .rux-table tr[data-selected],
 .rux-table tr.selected {
-  background: rgb(40, 63, 88);
-  background: var(--tableRowSelectedBackgroundColor, rgb(40, 63, 88));
+	background:var(--tableRowSelectedBackgroundColor);
 }
 
-.rux-table tr:hover {
-  background: rgb(24, 38, 53);
-  background: var(--tableRowHoverBackgroundColor, rgb(24, 38, 53));
+.rux-table tr[data-selected] td,
+.rux-table tr.selected td {
+	border-color:var(--tableRowSelectedBorderColor);
+}
+.rux-table tr:hover:not([data-selected]),
+.rux-table tr.selected:hover:not([data-selected]) {
+	background: var(--tableRowHoverBackgroundColor);
+	color: var(--tableRowHoverTextColor);
 }
 
 .rux-table td {
-  border-color: rgb(83, 101, 121);
-  border-color: var(--tableRowBorderColor, rgb(83, 101, 121));
-  border-width: 1px 0;
-  border-style: solid;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: var(--tableRowBorderColor);
   padding: 0.625rem 1rem;
   white-space: nowrap;
-
 }
 
 .rux-table__column-head th:first-child,
@@ -2224,6 +2228,21 @@ label {
 
 }
 
-.rux-table tr:last-child td {
+.rux-table .rux-checkbox {
+	margin:0;
+}
 
+.rux-table .rux-checkbox input[type="checkbox"]:checked + label::before,
+.rux-table .rux-radio-button input[type="radio"]:checked + label::before {
+	background-color: var(--controlBackgroundColor);
+  border-color: var(--controlBorderColor);
+}
+
+.rux-table .rux-checkbox input[type="checkbox"]:checked + label::after,
+.rux-table .rux-radio-button input[type="radio"]:checked + label::after {
+  border-color: var(--inputBackground);
+}
+.rux-table tr:hover .rux-checkbox input[type="checkbox"]:not(:checked) + label::before,
+.rux-table tr:hover .rux-checkbox input[type="radio"] + label::before {
+	border-color: var(--controlSelectedBorderColor);
 }
