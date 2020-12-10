@@ -234,6 +234,7 @@ export const AGGrid = () => {
 		.ag-theme-astro .ag-ltr .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected){
 			background-color: var(--tableRowSelectedBackgroundColor);
 			border-color: var(--tableRowSelectedBorderColor);
+			color: var(--tableRowTextColor);
 		}
 		.ag-theme-astro .ag-ltr .ag-has-focus .ag-cell-focus:hover:not(.ag-cell-range-selected) {
 			color: var(--tableRowTextColor);
