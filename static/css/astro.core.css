@@ -1516,7 +1516,6 @@ label {
 .rux-button:not(.rux-button--outline) {
   border: 1px solid var(--buttonBorderColor);
   background-color: var(--buttonBackgroundColor);
-  box-shadow: var(--controlBoxShadow);
 }
 
 /* Outline Button Specific Styles */
@@ -1541,9 +1540,9 @@ label {
   background-color: var(--buttonOutlineBackgroundColor) !important;
 }
 
-.rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+/* .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
-}
+} */
 
 /* 
   
@@ -1553,7 +1552,6 @@ label {
 .rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
   border-color: var(--buttonHoverBorderColor);
   background-color: var(--buttonHoverBackgroundColor);
-  box-shadow: var(--buttonHoverBoxShadow);
 }
 
 .rux-button--outline:hover:not([disabled]) {
@@ -1617,7 +1615,8 @@ label {
 .rux-button__icon .rux-icon {
   height: auto;
   width: 100%;
-  fill: var(--buttonTextColor);
+	fill: var(--buttonTextColor);
+	color: var(--buttonTextColor);
 }
 
 .rux-button.rux-button--critical,
