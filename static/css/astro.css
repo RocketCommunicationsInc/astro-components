@@ -2241,15 +2241,16 @@ label {
 
 .rux-table__column-head {
   box-shadow: var(--tableHeaderBoxShadow);
-  border-top-color: var(--tableHeaderBorderColor);
   border-top-width: 1px;
   border-top-style: solid;
+  border-top-color: red;
 }
 
 .rux-table tr[data-selected],
 .rux-table tr.selected {
-	background: var(--tableRowSelectedBackgroundColor);
-	border-color: var(--tableRowSelectedBorderColor);
+	background:var(--tableRowSelectedBackgroundColor);
+	box-shadow: inset 0 2px 0px 0px var(--tableRowSelectedBorderColor),
+	inset 0 -2px 0px 0px var(--tableRowSelectedBorderColor);
 }
 
 .rux-table tr[data-selected] td {
