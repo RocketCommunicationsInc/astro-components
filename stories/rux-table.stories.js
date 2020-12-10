@@ -59,15 +59,15 @@ export default {
 export const HTMLTable = () => {
   return html`
     <div style="display: flex; padding: 2vh; justify-content: center;">
-      <table class="rux-table">
+			<table class="rux-table">
+			
         <tr class="rux-table__column-head"> 
         ${columnData.map((column) => html`
-          <th>${column.headerName}</th>
+          ${column.headerName == '' ? html` ` : html`<th>${column.headerName}</th>`}
         `,)}
         </tr>
         ${rowData.map((row) => html`
 					<tr ?data-selected="${row.selected}">
-						<td></td>
             <td>${row.currentTag}</td>
             <td>${row.originalTag}</td>
             <td>${row.sensor}</td>
