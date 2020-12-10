@@ -2233,7 +2233,7 @@ label {
 	color: var(--tableHeaderTextColor);
 	font-size: 1.125rem;
 	font-size: var(--fontSizeXL);
-  font-weight: 600;
+  font-weight: 500;
   height:  2.625rem;
   padding: 0.625rem 1rem;
   white-space: nowrap;
