@@ -2249,12 +2249,11 @@ label {
 .rux-table tr[data-selected],
 .rux-table tr.selected {
 	background:var(--tableRowSelectedBackgroundColor);
-	box-shadow: 0 2px 0px 0px var(--tableRowSelectedBorderColor),
-	0 -2px 0px 0px var(--tableRowSelectedBorderColor);
 }
 
-.rux-table tr[data-selected] td {
-	border-color: var(--tableRowSelectedBorderColor);
+.rux-table tr[data-selected] td,
+.rux-table tr.selected td {
+	border-color:var(--tableRowSelectedBorderColor);
 }
 .rux-table tr:hover {
 	background: var(--tableRowHoverBackgroundColor);
@@ -2264,10 +2263,9 @@ label {
 .rux-table td {
 	border-width: 1px 0;
 	border-style: solid;
-	border-color: var(--tableRowBorderColor) !important;
+	border-color: var(--tableRowBorderColor);
   padding: 0.625rem 1rem;
   white-space: nowrap;
-
 }
 
 .rux-table__column-head th:first-child,
