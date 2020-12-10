@@ -194,11 +194,11 @@ export class RuxButton extends LitElement {
           /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
         }
 
-        /* .rux-button__icon .rux-icon {
+        .rux-button__icon .rux-icon {
           height: auto;
           width: 100%;
           fill: var(--buttonTextColor);
-        } */
+        }
       </style>
 
       <button

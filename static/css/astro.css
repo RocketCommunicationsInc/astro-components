@@ -2396,7 +2396,7 @@ label {
 
   fill: rgb(77, 172, 255);
 
-  fill: var(--colorSecondary, rgb(77, 172, 255));
+  fill: var(--colorSecondary);
 }
 
 i.rux-icon {
@@ -2406,7 +2406,7 @@ i.rux-icon {
 
   color: rgb(77, 172, 255);
 
-  color: var(--colorSecondary, rgb(77, 172, 255));
+  color: var(--colorSecondary);
 }
 
 .rux-log {
