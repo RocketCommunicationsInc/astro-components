@@ -64,8 +64,6 @@
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
 
-  /* Default Button State */
-  --buttonDefaultBorderColor: var(--colorWhite);
 
   /* Outline Button Variant */
   --buttonOutlineTextColor: var(--primary);
