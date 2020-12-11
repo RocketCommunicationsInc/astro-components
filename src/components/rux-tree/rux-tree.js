@@ -403,7 +403,7 @@ export class RuxTree extends LitElement {
         background-color: var(--treeSelectedBackgroundColor) !important;
       }
 
-      .rux-tree__tree-item:focus > .rux-tree__parent:not(:hover)::after,
+  
       :not([aria-selected='true']) > .rux-tree__parent:hover::after {
         background-color: var(--treeHoverBackgroundColor);
       }
