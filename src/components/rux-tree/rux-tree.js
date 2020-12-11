@@ -380,7 +380,6 @@ export class RuxTree extends LitElement {
       }
 			
 			.rux-tree__parent:hover{
-				background: var(--treeHoverBackgroundColor);
 				color: var(--treeHoverTextColor)
 			}
 
@@ -413,10 +412,6 @@ export class RuxTree extends LitElement {
 			[aria-selected='true'] > .rux-tree__parent::after {
         border-top: 1px solid var(--treeSelectedBorderColor);
         border-bottom: 1px solid var(--treeSelectedBorderColor);
-      }
-
-      .rux-tree__parent:hover::after {
-        transition: background-color 0.367s ease-out;
       }
 
       .rux-tree__parent:focus,

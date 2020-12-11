@@ -48,10 +48,12 @@
 	padding: 0 0.5rem;
 	height: 2rem;
 }
-.rux-tree__parent:hover{
+.rux-tree__parent:hover,
+:not([aria-selected='true']) > .rux-tree__parent:hover::after {
 	background: var(--treeHoverBackgroundColor);
 	color: var(--treeHoverTextColor);
 }
+
 
 .rux-tree__label {
   flex-grow: 1;
