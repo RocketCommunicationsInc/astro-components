@@ -4179,6 +4179,9 @@ input:-moz-focusring {
 	background: var(--treeHoverBackgroundColor);
 	color: var(--treeHoverTextColor);
 }
+:not([aria-selected='true']) > .rux-tree__parent:hover .rux-tree__arrow::after {
+	border-color: transparent transparent transparent var(--treeHoverTextColor);
+}
 
 
 .rux-tree__label {

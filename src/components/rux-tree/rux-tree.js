@@ -413,6 +413,10 @@ export class RuxTree extends LitElement {
         border-top: 1px solid var(--treeSelectedBorderColor);
         border-bottom: 1px solid var(--treeSelectedBorderColor);
       }
+			
+			:not([aria-selected='true']) > .rux-tree__parent:hover .rux-tree__arrow::after {
+				border-color: transparent transparent transparent var(--treeHoverTextColor);
+			}
 
       .rux-tree__parent:focus,
       .rux-tree__tree-item:focus {
