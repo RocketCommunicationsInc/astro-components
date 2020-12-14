@@ -526,6 +526,9 @@ export class RuxTree extends LitElement {
 			li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover {
 				color: var(--treeHoverTextColor);
 			}
+			li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover .rux-tree__arrow:after {
+				border-color: transparent transparent transparent var(--treeHoverTextColor);
+			}
     `;
   }
 }
