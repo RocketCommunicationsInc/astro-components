@@ -509,11 +509,11 @@ export class RuxTree extends LitElement {
         padding-left: 1.5rem;
       }
 
-			[aria-expanded='true']:not([aria-level='2']) > .rux-tree__parent:after {
-				border-bottom:solid 1px var(--treeExpandedBorderColor) !important;
+			[aria-expanded='true'][aria-level='1'] > .rux-tree__parent:after {
+				border-bottom:solid 1px var(--treeExpandedBorderColor);
 			}
 
-			[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:after {
+			li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:after {
 				background: none !important;
 				box-shadow: none !important;
 				border: none !important;
