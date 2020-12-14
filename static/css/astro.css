@@ -4271,3 +4271,9 @@ input:-moz-focusring {
 	border-bottom: 1px solid var(--treeSelectedBorderColor);
 }
 
+[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:after {
+	background: none !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+

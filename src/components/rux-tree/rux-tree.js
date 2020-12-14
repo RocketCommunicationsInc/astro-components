@@ -512,6 +512,12 @@ export class RuxTree extends LitElement {
 			[aria-expanded='true']:not([aria-level='2']) > .rux-tree__parent:after {
 				border-bottom:solid 1px var(--treeExpandedBorderColor) !important;
 			}
+
+			[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:after {
+				background: none !important;
+				box-shadow: none !important;
+				border: none !important;
+			}
     `;
   }
 }
