@@ -1548,10 +1548,6 @@ label {
   background-color: var(--buttonOutlineBackgroundColor) !important;
 }
 
-/* .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
-} */
-
 /* 
   
   Hover States
