@@ -1583,8 +1583,8 @@ label {
 }
 
 .rux-button--large {
-  font-size: 1.125rem;
-  font-size: var(--largeLabelFontSize);
+  font-size: 1rem;
+  font-size: var(--labelFontSize);
   height: 2.875rem;
   /* min-width: 2.875rem; */
   padding: 0 1.5rem;

@@ -142,7 +142,7 @@ export class RuxButton extends LitElement {
         }
 
         .rux-button--large {
-          font-size: var(--largeLabelTextSize);
+          font-size: var(--labelFontSize);
           height: 2.875rem;
           /* min-width: 2.875rem; */
           padding: 0 1.5rem;
