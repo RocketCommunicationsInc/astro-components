@@ -129,10 +129,10 @@
 }
 
 .rux-button--large {
-  font-size: var(--labelFontSize);
+  font-size: var(--largeLabelFontSize);
   height: 2.875rem;
   /* min-width: 2.875rem; */
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .rux-button__icon {
