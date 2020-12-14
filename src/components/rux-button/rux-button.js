@@ -123,10 +123,11 @@ export class RuxButton extends LitElement {
 				}
 
         .rux-button--outline:hover:not([disabled]) {
-          color: var(--buttonOutlineTextColor);
+          color: var(--buttonOutlineHoverTextColor);
           background-color: var(--buttonOutlineHoverBackgroundColor);
           border-color: var(--buttonOutlineHoverBorderColor);
-        }
+				}
+				
 
         /* 
           
@@ -193,7 +194,7 @@ export class RuxButton extends LitElement {
           height: auto;
           width: 100%;
           fill: var(--buttonTextColor);
-        }
+				}
       </style>
 
       <button
