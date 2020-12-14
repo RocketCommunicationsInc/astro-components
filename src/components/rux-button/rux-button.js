@@ -127,6 +127,21 @@ export class RuxButton extends LitElement {
           background-color: var(--buttonOutlineHoverBackgroundColor);
           border-color: var(--buttonOutlineHoverBorderColor);
 				}
+
+				.rux-button rux-icon {
+					fill: var(--buttonTextColor);
+				}
+				.rux-button:hover rux-icon {
+					fill: var(--buttonHoverTextColor);
+				}
+
+				.rux-button--outline rux-icon {
+					fill: var(--buttonOutlineTextColor);
+				}
+
+				.rux-button--outline:hover rux-icon {
+					fill: var(--buttonOutlineHoverTextColor);
+				}
 				
 
         /* 
