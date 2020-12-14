@@ -65,7 +65,12 @@ export class RuxIcon extends LitElement {
         svg > use {
           height: 100%;
           width: auto;
-        }
+
+				}
+				
+				.rux-button--outline rux-icon {
+
+				}
 
         :host([size='extra-small']) {
           height: 1rem;

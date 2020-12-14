@@ -128,18 +128,14 @@ export class RuxButton extends LitElement {
           border-color: var(--buttonOutlineHoverBorderColor);
 				}
 
-				.rux-button rux-icon {
-					fill: var(--buttonTextColor);
-				}
 				.rux-button:hover rux-icon {
 					fill: var(--buttonHoverTextColor);
 				}
 
-				.rux-button--outline rux-icon {
-					fill: var(--buttonOutlineTextColor);
-				}
-
 				.rux-button--outline:hover rux-icon {
+					fill: var(--buttonOutlineHoverTextColor);
+				}
+				.rux-button--outline:hover ::slotted(rux-icon){
 					fill: var(--buttonOutlineHoverTextColor);
 				}
 				
@@ -203,13 +199,23 @@ export class RuxButton extends LitElement {
           width: 1.75rem;
           margin-left: -0.8rem;
           /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
-        }
-
-        .rux-button__icon .rux-icon {
-          height: auto;
-          width: 100%;
-          fill: var(--buttonTextColor);
 				}
+				
+				.rux-button rux-icon {
+					fill: var(--buttonTextColor);
+				}
+
+				.rux-button--outline rux-icon,
+				.rux-button--outline rux-icon svg > use {
+					fill: var(--buttonOutlineTextColor);
+				}
+				.rux-button ::slotted(rux-icon){
+					fill: var(--buttonTextColor);
+				}
+				.rux-button--outline ::slotted(rux-icon){
+					fill: var(--buttonOutlineTextColor);
+				}
+
       </style>
 
       <button
