@@ -385,7 +385,7 @@
   --fontInvertedBackgroundColor: var(--primary);
 
   --fontLinkColor: var(--primary);
-	--fontLinkHoverColor: var(--colorSecondaryDarken1);
+	--fontLinkHoverColor: var(--primaryDark);
 	
 	
 
@@ -840,7 +840,7 @@ li.light-theme {
   --fontInvertedBackgroundColor: var(--inputBackground);
 
   --fontLinkColor: var(--primary);
-  --fontLinkHoverColor: var(--colorSecondaryLighten1);
+  --fontLinkHoverColor: var(--primaryLight);
 
 	
 

@@ -24,7 +24,7 @@
   --fontInvertedBackgroundColor: var(--inputBackground);
 
   --fontLinkColor: var(--primary);
-  --fontLinkHoverColor: var(--colorSecondaryLighten1);
+  --fontLinkHoverColor: var(--primaryLight);
 
 	
 
