@@ -499,7 +499,7 @@ export class RuxTree extends LitElement {
       [aria-expanded='true'] > .rux-tree__children li {
         font-weight: normal;
         border-top: none;
-      }
+      }			
 
       [aria-expanded='true'] > .rux-tree__parent .rux-tree__arrow {
         transform: rotate(90deg);
@@ -508,6 +508,10 @@ export class RuxTree extends LitElement {
       .rux-tree__children {
         padding-left: 1.5rem;
       }
+
+			[aria-expanded='true']:not([aria-level='2']) > .rux-tree__parent:after {
+				border-bottom:solid 1px var(--treeExpandedBorderColor) !important;
+			}
     `;
   }
 }

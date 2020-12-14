@@ -118,6 +118,10 @@
   height: auto;
 }
 
+[aria-expanded='true']:not([aria-level='2']) > .rux-tree__parent:after {
+	border-bottom:solid 1px var(--treeExpandedBorderColor);
+}
+
 .rux-tree .selected,
 [aria-selected='true'] > .rux-tree__parent::after,
 [aria-selected='true'] > .rux-tree__parent:hover::after {

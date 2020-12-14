@@ -297,7 +297,9 @@
   --treeSelectedTextColor: var(--defaultText);
   --treeSelectedAccentColor: var(--primary);
 
-  --treeChildrenBackgroundColor: var(--surfaceElements);
+	--treeChildrenBackgroundColor: var(--surfaceElements);
+	
+	--treeExpandedBorderColor: var(--backgroundColor);
 
   /* 
     
