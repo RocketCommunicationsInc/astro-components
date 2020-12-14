@@ -123,7 +123,7 @@ export class RuxTimeline extends LitElement {
 
         padding: 0 1em;
 
-        background-color: var(--timelineHeaderBackgroundColor, rgb(32, 50, 70));
+        background-color: var(--timelineHeaderBackgroundColor);
 
         z-index: 10;
       }
@@ -161,7 +161,7 @@ export class RuxTimeline extends LitElement {
       }
 
       rux-timeline-track {
-        background-color: var(--timelineTrackBackgroundColor, rgb(40, 63, 88));
+        background-color: var(--timelineTrackBackgroundColor);
       }
 
       #rux-timeline__ruler {
@@ -169,9 +169,9 @@ export class RuxTimeline extends LitElement {
         justify-content: space-between;
         position: relative;
         margin-top: auto;
-        color: var(--fontColor, rgb(255, 255, 255));
+        color: var(--fontColor);
 
-        background-color: var(--timelineRulerBackgroundColor, rgb(32, 50, 70));
+        background-color: var(--timelineRulerBackgroundColor);
         height: 2em;
         width: 100%;
 
@@ -249,7 +249,7 @@ export class RuxTimeline extends LitElement {
 
       .rux-timeline__track__label-container {
         width: 100%;
-        background-color: var(--timelineTrackLabelBackgroundColor, rgb(40, 63, 88));
+        background-color: var(--timelineTrackLabelBackgroundColor);
         font-size: 0.875rem;
         display: flex;
         justify-content: flex-start;
@@ -273,7 +273,7 @@ export class RuxTimeline extends LitElement {
       }
 
       .rux-timeline__track__label--subtrack {
-        background-color: var(--colorTertiaryDarken2);
+        background-color: var(--timelineTrackLabelBackgroundColor);
         margin: 2px 0;
       }
 

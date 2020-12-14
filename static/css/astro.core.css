@@ -744,25 +744,22 @@
       
   */
 
-  --timelineHeaderBackgroundColor: var(--colorQuaternary);
-  --timelineHeaderTextColor: var(--fontColor);
+  --timelineHeaderBackgroundColor: var(--surfaceElements);
+  --timelineHeaderTextColor: var(--defaultText);
 
-  --timelineRulerBackgroundColor: var(--colorQuaternary);
-  --timelineRulerTextColor: var(--fontColor);
+  --timelineRulerBackgroundColor: var(--surfaceElements);
+  --timelineRulerTextColor: var(--defaultText);
 
-  --timelineTrackLabelBackgroundColor: var(--colorQuaternaryLighten2);
-  --timelineTrackBackgroundColor: var(
-    --colorQuaternaryLighten2,
-    rgb(40, 63, 88)
-  );
+  --timelineTrackLabelBackgroundColor: var(--surfaceElements);
+  --timelineTrackBackgroundColor: var(--surfaceElements);
 
-  --timelineRegionBackgroundColor: var(--primaryLighten4);
-  --timelineRegionTextColor: var(--fontColor);
-  --timelineRegionBorderColor: var(--primaryLighten3);
+  --timelineRegionBackgroundColor: var(--backgroundColor);
+  --timelineRegionTextColor: var(--defaultText);
+  --timelineRegionBorderColor: var(--primary);
 
-  --timelineRegionSelectedBorderColor: var(--colorSecondaryDarken3);
-  --timelineRegionSelectedBackgroundColor: var(--colorSecondaryDarken1);
-  --timelineRegionSelectedTextColor: var(--colorWhite);
+  --timelineRegionSelectedBorderColor: var(--defaultText);
+  --timelineRegionSelectedBackgroundColor: var(--primaryDark);
+  --timelineRegionSelectedTextColor: var(--primaryElementText);
 
   /* 
     
@@ -1186,22 +1183,22 @@ li.light-theme {
       
   */
 
-  --timelineHeaderBackgroundColor: var(--colorTertiaryDarken1);
+  --timelineHeaderBackgroundColor: var(--surfaceElements);
   --timelineHeaderTextColor: var(--defaultText);
 
-  --timelineRulerBackgroundColor: var(--colorTertiaryDarken1);
-  --timelineRulerTextColor: var(--fontColor);
+  --timelineRulerBackgroundColor: var(--surfaceElements);
+  --timelineRulerTextColor: var(--defaultText);
 
-  --timelineTrackLabelBackgroundColor: var(--colorTertiary);
-  --timelineTrackBackgroundColor: var(--colorTertiary);
+  --timelineTrackLabelBackgroundColor: var(--surfaceElements);
+  --timelineTrackBackgroundColor: var(--surfaceElements);
 
-  --timelineRegionBackgroundColor: var(--colorPrimaryDarken3);
-  --timelineRegionTextColor: var(--fontColor);
-  --timelineRegionBorderColor: var(--colorPrimary);
+  --timelineRegionBackgroundColor: var(--backgroundColor);
+  --timelineRegionTextColor: var(--defaultText);
+  --timelineRegionBorderColor: var(--primary);
 
-  --timelineRegionSelectedBorderColor: var(--colorWhite);
-  --timelineRegionSelectedBackgroundColor: var(--colorSecondaryDarken2);
-  --timelineRegionSelectedTextColor: var(--fontColor);
+  --timelineRegionSelectedBorderColor: var(--inputBackground);
+  --timelineRegionSelectedBackgroundColor: var(--primaryDark);
+  --timelineRegionSelectedTextColor: var(--defaultText);
 
   /* 
     
