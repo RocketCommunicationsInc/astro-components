@@ -509,7 +509,7 @@ export class RuxTree extends LitElement {
         padding-left: 1.5rem;
       }
 
-			[aria-expanded='true'][aria-level='1'] > .rux-tree__parent:after {
+			[aria-expanded='true'][aria-level='1']:not([aria-selected="true"]) > .rux-tree__parent:after {
 				border-bottom:solid 1px var(--treeExpandedBorderColor);
 			}
 
