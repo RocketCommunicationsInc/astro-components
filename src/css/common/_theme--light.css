@@ -71,8 +71,8 @@
   --buttonOutlineBorderColor: var(--primary);
 
   /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--primary);
-  --buttonOutlineHoverBackgroundColor: rgba(77, 172, 255, 0.1);
+  --buttonOutlineHoverTextColor: var(--primaryDark);
+  --buttonOutlineHoverBackgroundColor: transparent;
   --buttonOutlineHoverBorderColor: var(--primaryDark);
 
   /* 

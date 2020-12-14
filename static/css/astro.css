@@ -432,8 +432,8 @@
   --buttonOutlineBorderColor: var(--primary);
 
   /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--primary);
-  --buttonOutlineHoverBackgroundColor: rgba(77, 172, 255, 0.1);
+  --buttonOutlineHoverTextColor: var(--primaryDark);
+  --buttonOutlineHoverBackgroundColor: transparent;
   --buttonOutlineHoverBorderColor: var(--primaryDark);
 
   /* 
@@ -865,15 +865,11 @@ li.light-theme {
   --buttonTextColor: var(--primaryElementText);
   --buttonBackgroundColor: var(--primary);
   --buttonBorderColor: transparent;
-  --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Hover State */
   --buttonHoverTextColor: var(--primaryElementText);
   --buttonHoverBackgroundColor: var(--primaryLight);
   --buttonHoverBorderColor: transparent;
-  --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
 
   /* Button Active State */
   --buttonActiveControlTextColor: var(--defaultText);
