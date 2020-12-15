@@ -19,12 +19,12 @@
 
 	/* styles */
   --fontColor: var(--defaultText);
-  --fontLowContrastColor: var(--colorGray);
-  --fontInvertedColor: var(--colorBlack);
-  --fontInvertedBackgroundColor: var(--colorWhite);
+  --fontLowContrastColor: var(--secondaryText);
+  --fontInvertedColor: var(--primary);
+  --fontInvertedBackgroundColor: var(--backgroundColor);
 
   --fontLinkColor: var(--primary);
-  --fontLinkHoverColor: var(--colorSecondaryLighten1);
+  --fontLinkHoverColor: var(--primaryLight);
 
 	
 

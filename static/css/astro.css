@@ -380,12 +380,12 @@
 
   /* styles */
   --fontColor: var(--defaultText);
-  --fontLowContrastColor: var(--colorQuaternaryDarken1);
-  --fontInvertedColor: var(--colorWhite);
-  --fontInvertedBackgroundColor: var(--colorBlack);
+  --fontLowContrastColor: var(--secondaryText);
+  --fontInvertedColor: var(--primary);
+  --fontInvertedBackgroundColor: var(--backgroundColor);
 
   --fontLinkColor: var(--primary);
-	--fontLinkHoverColor: var(--colorSecondaryDarken1);
+	--fontLinkHoverColor: var(--primaryDark);
 	
 	
 
@@ -836,12 +836,12 @@ li.light-theme {
 
 	/* styles */
   --fontColor: var(--defaultText);
-  --fontLowContrastColor: var(--colorGray);
-  --fontInvertedColor: var(--colorBlack);
-  --fontInvertedBackgroundColor: var(--colorWhite);
+  --fontLowContrastColor: var(--secondaryText);
+  --fontInvertedColor: var(--primary);
+  --fontInvertedBackgroundColor: var(--backgroundColor);
 
   --fontLinkColor: var(--primary);
-  --fontLinkHoverColor: var(--colorSecondaryLighten1);
+  --fontLinkHoverColor: var(--primaryLight);
 
 	
 
