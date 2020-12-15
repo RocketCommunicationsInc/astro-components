@@ -123,7 +123,7 @@ export class RuxTimelineRegion extends LitElement {
 
       :host(.current),
       :host([temporality='present']) {
-        border: 1px solid #4dacff;
+        border: 1px solid var(--timelineRegionBorderColor);
         transition: border 0.267s ease-in-out;
       }
 
@@ -164,7 +164,7 @@ export class RuxTimelineRegion extends LitElement {
       :host .rux-region__label {
         white-space: nowrap;
         overflow: hidden;
-        color: var(--fontColor, #fff);
+        color: var(--timelineRegionTextColor);
         text-overflow: ellipsis;
       }
 
@@ -189,7 +189,7 @@ export class RuxTimelineRegion extends LitElement {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        color: var(--fontColor, #fff);
+        color: var(--timelineRegionTextColor);
         height: 50%;
       }
 
