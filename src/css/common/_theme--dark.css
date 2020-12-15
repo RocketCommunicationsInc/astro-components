@@ -265,23 +265,27 @@
     ==========================================================================
 
   */
-  --treeTextColor: var(--colorWhite);
-  --treeBackgroundColor: var(--colorTertiaryDarken1);
-  --treeBorderColor: var(--colorSecondaryDarken2);
-  --treeItemBorderColor: var(--globalAppHeader);
+  --treeTextColor: var(--defaultText);
+  --treeBackgroundColor: var(--surfaceElements);
+  --treeBorderColor: var(--primaryDark);
+  --treeItemBorderColor: var(--primaryDark);
   --treeAccentColor: var(--primary);
 
-  /* --treeFocusedBackgroundColor: var(--colorTertiaryLighten1, green);
-  --treeFocusedAccentColor: var(--colorTertiaryLighten3, green); */
+	/* Hover*/
+	--treeHoverBackgroundColor: var(--primaryLight);
+	--treeHoverTextColor: var(--primaryElementText);
+  --treeHoverAccentColor: var(--primary);
 
-  --treeHoverBackgroundColor: var(--colorPrimaryDarken2);
-  --treeHoverAccentColor: var(--colorPrimaryLighten1);
-
-  --treeSelectedBackgroundColor: var(--colorPrimaryDarken1);
+	/* Selected */
+	--treeSelectedBackgroundColor: var(--surfaceElements);
+	--treeSelectedBorderColor: var(--primaryDark);
+  --treeSelectedTextColor: var(--defaultText);
   --treeSelectedAccentColor: var(--primary);
-  --treeSelectedTextColor: var(--colorWhite);
 
-  --treeChildrenBackgroundColor: var(--globalAppHeader);
+	--treeChildrenBackgroundColor: var(--surfaceElements);
+	
+	--treeExpandedBorderColor: var(--backgroundColor);
+	
   /* 
     
     Tab Colors 
