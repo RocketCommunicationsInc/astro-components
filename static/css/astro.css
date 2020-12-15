@@ -635,23 +635,26 @@
     ==========================================================================
 
   */
-  --treeTextColor: var(--colorBlack);
-  --treeBackgroundColor: var(--colorWhite);
-  --treeBorderColor: var(--colorQuaternary);
-  --treeItemBorderColor: var(--colorQuaternary);
-  --treeAccentColor: var(--colorSecondary);
+  --treeTextColor: var(--defaultText);
+  --treeBackgroundColor: var(--surfaceElements);
+  --treeBorderColor: var(--primaryDark);
+  --treeItemBorderColor: var(--primaryDark);
+  --treeAccentColor: var(--primary);
 
-  --treeHoverBackgroundColor: var(--colorSecondaryLighten4);
-  --treeHoverAccentColor: var(--colorSecondaryLighten3);
+	/* Hover */
+	--treeHoverBackgroundColor: var(--primaryDark);
+	--treeHoverTextColor: var(--primaryElementText);
+  --treeHoverAccentColor: var(--primary);
 
-  --treeSelectedBackgroundColor: var(
-    --colorSecondaryLighten3,
-    rgb(184, 222, 255)
-  );
-  --treeSelectedAccentColor: var(--colorSecondaryLighten1);
-  --treeSelectedTextColor: var(--colorBlack);
+	/* Selected */
+	--treeSelectedBackgroundColor: var(--surfaceElements);
+	--treeSelectedBorderColor: var(--primaryDark);
+  --treeSelectedTextColor: var(--defaultText);
+  --treeSelectedAccentColor: var(--primary);
 
-  --treeChildrenBackgroundColor: var(--backgroundColor);
+	--treeChildrenBackgroundColor: var(--surfaceElements);
+	
+	--treeExpandedBorderColor: var(--backgroundColor);
 
   /* 
     
@@ -1075,23 +1078,27 @@ li.light-theme {
     ==========================================================================
 
   */
-  --treeTextColor: var(--colorWhite);
-  --treeBackgroundColor: var(--colorTertiaryDarken1);
-  --treeBorderColor: var(--colorSecondaryDarken2);
-  --treeItemBorderColor: var(--globalAppHeader);
+  --treeTextColor: var(--defaultText);
+  --treeBackgroundColor: var(--surfaceElements);
+  --treeBorderColor: var(--primaryDark);
+  --treeItemBorderColor: var(--primaryDark);
   --treeAccentColor: var(--primary);
 
-  /* --treeFocusedBackgroundColor: var(--colorTertiaryLighten1, green);
-  --treeFocusedAccentColor: var(--colorTertiaryLighten3, green); */
+	/* Hover*/
+	--treeHoverBackgroundColor: var(--primaryLight);
+	--treeHoverTextColor: var(--primaryElementText);
+  --treeHoverAccentColor: var(--primary);
 
-  --treeHoverBackgroundColor: var(--colorPrimaryDarken2);
-  --treeHoverAccentColor: var(--colorPrimaryLighten1);
-
-  --treeSelectedBackgroundColor: var(--colorPrimaryDarken1);
+	/* Selected */
+	--treeSelectedBackgroundColor: var(--surfaceElements);
+	--treeSelectedBorderColor: var(--primaryDark);
+  --treeSelectedTextColor: var(--defaultText);
   --treeSelectedAccentColor: var(--primary);
-  --treeSelectedTextColor: var(--colorWhite);
 
-  --treeChildrenBackgroundColor: var(--globalAppHeader);
+	--treeChildrenBackgroundColor: var(--surfaceElements);
+	
+	--treeExpandedBorderColor: var(--backgroundColor);
+	
   /* 
     
     Tab Colors 
@@ -4066,9 +4073,9 @@ input:-moz-focusring {
 
   font-size: 1rem;
 
-  background-color: rgb(30, 47, 66);
-
-  background-color: var(--treeBackgroundColor, rgb(30, 47, 66));
+	color: var(--treeTextColor);
+	border:solid 1px var(--treeBorderColor);
+  background-color: var(--treeBackgroundColor);
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -4091,21 +4098,27 @@ input:-moz-focusring {
   margin: 0;
   list-style: none;
 }
-
-.rux-tree li:not(:first-child) {
-  border-top: 1px solid rgb(40, 63, 88);
-  border-top: 1px solid var(--treeItemBorderColor, rgb(40, 63, 88));
+.rux-tree li {
+	font-weight: bold;
 }
+
 
 /* Parent Elements */
-.rux-tree__parent-container {
+.rux-tree__parent {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: stretch;
-  padding: 0 0 0 1.25rem;
-  margin: 0;
+	align-items: center;
+	padding: 0 0.5rem;
+	height: 2rem;
 }
+.rux-tree__parent:hover,
+:not([aria-selected='true']) > .rux-tree__parent:hover::after {
+	background: var(--treeHoverBackgroundColor);
+	color: var(--treeHoverTextColor);
+}
+:not([aria-selected='true']) > .rux-tree__parent:hover .rux-tree__arrow::after {
+	border-color: transparent transparent transparent var(--treeHoverTextColor);
+}
+
 
 .rux-tree__label {
   flex-grow: 1;
@@ -4136,9 +4149,7 @@ input:-moz-focusring {
   border-style: solid;
   border-width: 7px 0 7px 7px;
   border-color: transparent transparent transparent
-    rgb(77, 172, 255);
-  border-color: transparent transparent transparent
-    var(--treeAccentColor, rgb(77, 172, 255));
+    var(--treeAccentColor);
   display: inline-block;
 }
 
@@ -4169,21 +4180,35 @@ input:-moz-focusring {
   height: auto;
 }
 
-.rux-tree .selected {
-  background-color: rgb(0, 68, 107);
-  background-color: var(--treeSelectedBackgroundColor, rgb(0, 68, 107));
-  box-shadow: inset 5px 0 rgb(77, 172, 255);
-  box-shadow: inset 5px 0 var(--treeSelectedAccentColor, rgb(77, 172, 255));
+[aria-expanded='true'][aria-level='1']:not([aria-selected="true"]) > .rux-tree__parent:after {
+	border-bottom:solid 1px var(--treeExpandedBorderColor);
+}
 
-  color: rgb(255, 255, 255);
-
-  color: var(--treeSelectedTextColor, rgb(255, 255, 255));
+.rux-tree .selected,
+[aria-selected='true'] > .rux-tree__parent::after,
+[aria-selected='true'] > .rux-tree__parent:hover::after {
+  background-color: var(--treeSelectedBackgroundColor);
+  box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor);
+  color: var(--treeSelectedTextColor);
 }
 
 .rux-tree .selected .rux-tree__arrow::after {
-  border-color: transparent transparent transparent
-    rgb(77, 172, 255);
-  border-color: transparent transparent transparent
-    var(--treeSelectedAccentColor, rgb(77, 172, 255));
+  border-color: transparent transparent transparent var(--treeSelectedAccentColor);
 }
 
+[aria-selected='true'] > .rux-tree__parent::after {
+	border-top: 1px solid var(--treeSelectedBorderColor);
+	border-bottom: 1px solid var(--treeSelectedBorderColor);
+}
+
+li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover:after {
+	box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor) !important;
+	background-color: var(--treeHoverBackgroundColor) !important;
+	
+}
+li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover {
+	color: var(--treeHoverTextColor);
+}
+li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover .rux-tree__arrow:after {
+	border-color: transparent transparent transparent var(--treeHoverTextColor);
+}
