@@ -4168,9 +4168,6 @@ input:-moz-focusring {
 	font-weight: bold;
 }
 
-.rux-tree li:not(:first-child) {
-  border-top: 1px solid var(--treeItemBorderColor);
-}
 
 /* Parent Elements */
 .rux-tree__parent {

@@ -368,10 +368,6 @@ export class RuxTree extends LitElement {
         font-weight: bold;
       }
 
-			.rux-tree li:not(:first-child) {
-				border-top: 1px solid var(--treeItemBorderColor);
-			}
-
       .rux-tree__parent {
         display: flex;
         align-items: center;
