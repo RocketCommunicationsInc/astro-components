@@ -383,7 +383,15 @@
 
   --timelineRegionSelectedBorderColor: var(--inputBackground);
   --timelineRegionSelectedBackgroundColor: var(--primaryDark);
-  --timelineRegionSelectedTextColor: var(--defaultText);
+	--timelineRegionSelectedTextColor: var(--defaultText);
+	
+	--timelineRegionStatusColorNormal: var(--colorNormal);
+	--timelineRegionStatusColorCritical: var(--colorCritical);
+	--timelineRegionStatusColorSerious: var(--colorSerious);
+	--timelineRegionStatusColorCaution: var(--colorCautiom);
+	--timelineRegionStatusColorStandby: var(--colorStandby);
+	--timelineRegionStatusColorOff: var(--colorOff);
+
 
   /* 
     

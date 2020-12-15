@@ -22,7 +22,7 @@ export const Timeline = () => {
         {
           label: 'NROL-11',
           id: 'LEO1',
-          status: 'caution',
+          status: 'critical',
           startTime: new Date(
               today.getUTCFullYear(),
               today.getUTCMonth(),
@@ -36,7 +36,7 @@ export const Timeline = () => {
               today.getUTCMonth(),
               today.getUTCDate(),
               3,
-              30,
+              15,
               0,
           ).toISOString(),
         },

@@ -756,7 +756,14 @@
 
   --timelineRegionSelectedBorderColor: var(--defaultText);
   --timelineRegionSelectedBackgroundColor: var(--primaryDark);
-  --timelineRegionSelectedTextColor: var(--primaryElementText);
+	--timelineRegionSelectedTextColor: var(--primaryElementText);
+	
+	--timelineRegionStatusColorNormal: var(--colorNormal);
+	--timelineRegionStatusColorCritical: var(--colorCritical);
+	--timelineRegionStatusColorSerious: var(--colorSerious);
+	--timelineRegionStatusColorCaution: var(--colorCautiom);
+	--timelineRegionStatusColorStandby: var(--colorStandby);
+	--timelineRegionStatusColorOff: var(--colorOff);
 
   /* 
     
@@ -1193,7 +1200,15 @@ li.light-theme {
 
   --timelineRegionSelectedBorderColor: var(--inputBackground);
   --timelineRegionSelectedBackgroundColor: var(--primaryDark);
-  --timelineRegionSelectedTextColor: var(--defaultText);
+	--timelineRegionSelectedTextColor: var(--defaultText);
+	
+	--timelineRegionStatusColorNormal: var(--colorNormal);
+	--timelineRegionStatusColorCritical: var(--colorCritical);
+	--timelineRegionStatusColorSerious: var(--colorSerious);
+	--timelineRegionStatusColorCaution: var(--colorCautiom);
+	--timelineRegionStatusColorStandby: var(--colorStandby);
+	--timelineRegionStatusColorOff: var(--colorOff);
+
 
   /* 
     

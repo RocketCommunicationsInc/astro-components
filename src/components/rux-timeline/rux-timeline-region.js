@@ -128,7 +128,7 @@ export class RuxTimelineRegion extends LitElement {
       }
 
       :host([selected]) {
-        border: 1px solid var(--timelineRegionSelectedBorderColor);
+        border: 1px solid var(--timelineRegionSelectedBorderColor) !important;
         background-color: var(--timelineRegionSelectedBackgroundColor);
 
         z-index: 1;
@@ -143,6 +143,30 @@ export class RuxTimelineRegion extends LitElement {
       :host([temporality='future']) {
         border: 1px dotted var(--timelineRegionSelectedBorderColor);
       }
+
+			:host([status="normal"]) {
+				border-color: var(--timelineRegionBorderColor)
+			}
+
+			:host([status="critical"]) {
+				border-color: var(--timelineRegionStatusColorCritical);
+			}
+
+			:host([status="serious"]) {
+				border-color: var(--timelineRegionStatusColorSerious);
+			}
+
+			:host([status="caution"]) {
+				border-color: var(--timelineRegionStatusColorCaution);
+			}
+
+			:host([status="standby"]) {
+				border-color: var(--timelineRegionStatusColorStandby);
+			}
+
+			:host([status="off"]) {
+				border-color: var(--timelineRegionStatusColorOff);
+			}
 
       .rux-region__segment {
         display: flex;
