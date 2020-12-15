@@ -274,23 +274,26 @@
     ==========================================================================
 
   */
-  --treeTextColor: var(--colorBlack);
-  --treeBackgroundColor: var(--colorWhite);
-  --treeBorderColor: var(--colorQuaternary);
-  --treeItemBorderColor: var(--colorQuaternary);
-  --treeAccentColor: var(--colorSecondary);
+  --treeTextColor: var(--defaultText);
+  --treeBackgroundColor: var(--surfaceElements);
+  --treeBorderColor: var(--primaryDark);
+  --treeItemBorderColor: var(--primaryDark);
+  --treeAccentColor: var(--primary);
 
-  --treeHoverBackgroundColor: var(--colorSecondaryLighten4);
-  --treeHoverAccentColor: var(--colorSecondaryLighten3);
+	/* Hover */
+	--treeHoverBackgroundColor: var(--primaryDark);
+	--treeHoverTextColor: var(--primaryElementText);
+  --treeHoverAccentColor: var(--primary);
 
-  --treeSelectedBackgroundColor: var(
-    --colorSecondaryLighten3,
-    rgb(184, 222, 255)
-  );
-  --treeSelectedAccentColor: var(--colorSecondaryLighten1);
-  --treeSelectedTextColor: var(--colorBlack);
+	/* Selected */
+	--treeSelectedBackgroundColor: var(--surfaceElements);
+	--treeSelectedBorderColor: var(--primaryDark);
+  --treeSelectedTextColor: var(--defaultText);
+  --treeSelectedAccentColor: var(--primary);
 
-  --treeChildrenBackgroundColor: var(--backgroundColor);
+	--treeChildrenBackgroundColor: var(--surfaceElements);
+	
+	--treeExpandedBorderColor: var(--backgroundColor);
 
   /* 
     
