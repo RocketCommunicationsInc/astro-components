@@ -190,6 +190,7 @@ export class RuxTimelineRegion extends LitElement {
         overflow: hidden;
         color: var(--timelineRegionTextColor);
         text-overflow: ellipsis;
+				font-size: var(--fontSizeMD);
       }
 
       :host([selected]) .rux-region__label,
@@ -215,6 +216,7 @@ export class RuxTimelineRegion extends LitElement {
         align-items: center;
         color: var(--timelineRegionTextColor);
         height: 50%;
+				font-size: var(--fontSizeSM);
       }
 
       :host(.small) .rux-region__time {
