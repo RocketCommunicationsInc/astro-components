@@ -208,7 +208,7 @@ export class RuxTimeline extends LitElement {
         left: 0;
         height: 100%;
         width: 1px;
-        background-color: #5cb3ff;
+        background-color: var(--timelineRegionBorderColor);
         z-index: 200;
         display: none;
       }
@@ -219,7 +219,7 @@ export class RuxTimeline extends LitElement {
         left: -6px;
         height: 5px;
         width: 13px;
-        background-color: #5cb3ff;
+        background-color: var(--timelineRegionBorderColor);
       }
 
       #rux-timeline__current-time::after {
@@ -231,7 +231,7 @@ export class RuxTimeline extends LitElement {
         width: 13px;
         border-color: #5cb3ff;
 
-        border-top: 6px solid #5cb3ff;
+        border-top: 6px solid var(--timelineRegionBorderColor);
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
       }
