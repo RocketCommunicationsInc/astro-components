@@ -404,7 +404,6 @@ export class RuxTree extends LitElement {
         background-color: var(--treeHoverBackgroundColor);
       }
 
-			.rux-tree__tree-item:focus > .rux-tree__parent:not(:hover)::after,
 			[aria-selected='true'] > .rux-tree__parent::after {
         border-top: 1px solid var(--treeSelectedBorderColor);
         border-bottom: 1px solid var(--treeSelectedBorderColor);
