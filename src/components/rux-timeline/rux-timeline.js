@@ -250,7 +250,7 @@ export class RuxTimeline extends LitElement {
       .rux-timeline__track__label-container {
         width: 100%;
         background-color: var(--timelineTrackLabelBackgroundColor);
-        font-size: 0.875rem;
+        font-size: 1rem;
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;

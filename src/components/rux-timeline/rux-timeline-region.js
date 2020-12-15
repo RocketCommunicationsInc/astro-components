@@ -84,7 +84,7 @@ export class RuxTimelineRegion extends LitElement {
         display: flex;
         flex-direction: column;
 
-        font-size: 0.875rem;
+        font-size: 1rem;
         top: 0;
         background-color: var(--timelineRegionBackgroundColor);
         color: var(--timelineRegionTextColor);
