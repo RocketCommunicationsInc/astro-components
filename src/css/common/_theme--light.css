@@ -318,6 +318,16 @@
 	*/
 	--notificationTextColor: var(--defaultText);
 
+	/* 
+    
+    Classification Colors 
+    ==========================================================================
+
+	*/
+	--classificationTextColorLight: var(--primaryElementText);
+	--classificationTextColorDark: var(--defaultText);
+
+
   /* 
     
     Card Colors 
