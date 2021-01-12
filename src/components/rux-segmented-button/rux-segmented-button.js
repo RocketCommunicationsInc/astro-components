@@ -86,17 +86,16 @@ export class RuxSegmentedButton extends LitElement {
 
           list-style: none;
 
-          border-radius: var(--controlBorderRadius, 3px);
-          border: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
-          background-color: var(--segmentedButtonBackgroundColor, rgb(0, 90, 143));
-        }
+          border-radius: var(--controlBorderRadius);          
+					background-color: var(--segmentedButtonBackgroundColor);
+				}
 
         .rux-segmented-button {
           height: 1.6875rem;
           width: auto;
           margin: 0;
-          padding: 0;
-        }
+					padding: 0;
+				}		
 
         .rux-segmented-button label {
           display: flex;
@@ -109,12 +108,12 @@ export class RuxSegmentedButton extends LitElement {
           margin: 0;
           padding: 0 0.75rem;
 
-          border: none;
-          border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+					border: 1px solid var(--segmentedButtonBorderColor);
+					
 
-          color: var(--segmentedButtonTextColor, #fff);
+          color: var(--segmentedButtonTextColor);
 
-          font-size: 0.875rem;
+          font-size: 1rem;
 
           -webkit-user-select: none;
           -moz-user-select: none;
@@ -122,30 +121,38 @@ export class RuxSegmentedButton extends LitElement {
           user-select: none;
         }
 
-        .rux-segmented-button:last-of-type label {
-          border-right: none !important;
-        }
-
         .rux-segmented-button input {
           display: none !important;
         }
 
         .rux-segmented-button label:hover {
-          background-color: var(--segmentedButtonHoverBackgroundColor, rgb(58, 129, 191));
-          color: var(--segmentedButtonHoverTextColor, #fff);
+					background-color: var(--segmentedButtonHoverBackgroundColor);
+					border-color: var(--segmentedButtonHoverBorderColor);
+          color: var(--segmentedButtonHoverTextColor);
           outline: none;
         }
 
         .rux-segmented-button input:checked + label {
-          background-color: var(--segmentedButtonSelectedBackgroundColor, rgb(58, 129, 191));
-          color: var(--segmentedButtonSelectedTextColor, #fff);
-          box-shadow: var(
-            --segmentedButtonSelectedBoxShadow,
-            inset 0 2px 4px rgba(0, 0, 0, 0.14),
-            inset 0 3px 4px rgba(0, 0, 0, 0.12),
-            inset 0 1px 5px rgba(0, 0, 0, 0.2)
-          );
-        }
+          background-color: var(--segmentedButtonSelectedBackgroundColor);
+          color: var(--segmentedButtonSelectedTextColor);
+          box-shadow: var(--segmentedButtonSelectedBoxShadow);
+				}
+				
+				.rux-segmented-button input:checked:hover + label{
+					border-color: var(--segmentedButtonSelectedBackgroundColor);
+				}
+
+				.rux-segmented-button:nth-child(2):not(:last-child) label {
+					border-right: none;
+					border-left: none;
+				}
+				.rux-segmented-button:first-child label{
+					border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
+
+				}
+				.rux-segmented-button:last-child label{
+					border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
+				}
 
         /* 
           OVERRIDE FOR IE 
@@ -160,7 +167,7 @@ export class RuxSegmentedButton extends LitElement {
           border-radius: 0;
           height: auto;
           border: none;
-          border-right: 1px solid var(--segmentedButtonBorderColor, rgb(30, 47, 66));
+          border-right: 1px solid var(--segmentedButtonBorderColor);
         }
         /* END OVERRDIDE FOR IE EDGE */
       </style>

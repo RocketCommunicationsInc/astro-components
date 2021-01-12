@@ -10,11 +10,11 @@
   width: 100%;
   border-collapse: separate;
   border-spacing: 0px;
-  color: var(--tableRowTextColor, rgb(255, 255, 255));
+  color: var(--tableRowTextColor);
   border-style: solid;
   border-width: 1px;
-  border-color: var(--tableBorderColor, rgb(83, 101, 121));
-  background: var(--tableRowBackgroundColor, rgb(32, 50, 70));
+  border-color: var(--tableBorderColor);
+  background: var(--tableRowBackgroundColor);
   text-align: left;
   overflow: scroll;
 }
@@ -22,38 +22,44 @@
 .rux-table th {
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: var(--tableHeaderAccentColor,rgb(40, 63, 88));
-  background: var(--tableHeaderBackgroundColor, rgb(24, 38, 53));
-  color: var(--tableHeaderTextColor, rgb(169, 178, 188));
-  font-weight: 600;
+  border-top-color: var(--tableHeaderBorderColor);
+  background: var(--tableHeaderBackgroundColor);
+	color: var(--tableHeaderTextColor);
+	font-size: var(--fontSizeXL);
+  font-weight: 400;
   height:  2.625rem;
   padding: 0.625rem 1rem;
   white-space: nowrap;
 }
 
 .rux-table__column-head {
-  box-shadow: var(--tableHeaderBoxShadow, 0 0.25rem .5rem rgba(0, 0, 0, 0.45));
-  border-top-color: var(--tableBorderColor, rgb(83, 101, 121));
+  box-shadow: var(--tableHeaderBoxShadow);
   border-top-width: 1px;
   border-top-style: solid;
+  border-top-color: var(--tableHeaderBorderColor);
 }
 
 .rux-table tr[data-selected],
 .rux-table tr.selected {
-  background: var(--tableRowSelectedBackgroundColor, rgb(40, 63, 88));
+	background:var(--tableRowSelectedBackgroundColor);
 }
 
-.rux-table tr:hover {
-  background: var(--tableRowHoverBackgroundColor, rgb(24, 38, 53));
+.rux-table tr[data-selected] td,
+.rux-table tr.selected td {
+	border-color:var(--tableRowSelectedBorderColor);
+}
+.rux-table tr:hover:not([data-selected]),
+.rux-table tr.selected:hover:not([data-selected]) {
+	background: var(--tableRowHoverBackgroundColor);
+	color: var(--tableRowHoverTextColor);
 }
 
 .rux-table td {
-  border-color: var(--tableRowBorderColor, rgb(83, 101, 121));
-  border-width: 1px 0;
-  border-style: solid;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: var(--tableRowBorderColor);
   padding: 0.625rem 1rem;
   white-space: nowrap;
-
 }
 
 .rux-table__column-head th:first-child,
@@ -69,6 +75,21 @@
 
 }
 
-.rux-table tr:last-child td {
+.rux-table .rux-checkbox {
+	margin:0;
+}
 
+.rux-table .rux-checkbox input[type="checkbox"]:checked + label::before,
+.rux-table .rux-radio-button input[type="radio"]:checked + label::before {
+	background-color: var(--controlBackgroundColor);
+  border-color: var(--controlBorderColor);
+}
+
+.rux-table .rux-checkbox input[type="checkbox"]:checked + label::after,
+.rux-table .rux-radio-button input[type="radio"]:checked + label::after {
+  border-color: var(--inputBackground);
+}
+.rux-table tr:hover .rux-checkbox input[type="checkbox"]:not(:checked) + label::before,
+.rux-table tr:hover .rux-checkbox input[type="radio"] + label::before {
+	border-color: var(--controlSelectedBorderColor);
 }

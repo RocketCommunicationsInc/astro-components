@@ -138,14 +138,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## Revision History
 
-##### **TODO BEFORE RELEASE**
-
-- Test icons when they're finished, possibly change "With Icon" storybook knob to select from list of icons
-- Look at ditching class string manipulation happening in the template render function and replace with `:host`-level attributes. Keep existing class-based styles working for users of previous versions
-- Look at adding `tabindex` property or example/docs
-- Demonstrate adding click handlers/methods to buttons, possibly incorporating Storybook Actions
-- Should `size` property have a default value of `'standard'` for the button size? we don't have classes for it
-
 ##### **4.1**
 - Add styles for and example of using slots for Icon child component
 

@@ -51,10 +51,10 @@ export class RuxButton extends LitElement {
           min-width: 2.25rem;
           /* max-width: 10.125rem; */
 
-          border-radius: var(--buttonBorderRadius, 3px);
+          border-radius: var(--buttonBorderRadius);
 
-          color: var(--buttonTextColor, #fff);
-          font-family: var(--fontFamily, 'Open Sans');
+          color: var(--buttonTextColor);
+          font-family: var(--fontFamily);
           font-size: 1rem;
 
           white-space: nowrap;
@@ -77,29 +77,23 @@ export class RuxButton extends LitElement {
         */
         /* disabled state */
         .rux-button[disabled] {
-          opacity: var(--disabledOpacity, 0.4);
-          cursor: var(--disabledCursor, not-allowed);
+          opacity: var(--disabledOpacity);
+          cursor: var(--disabledCursor);
         }
 
         .rux-button[disabled]:focus {
           outline: none;
         }
         .rux-button:not(.rux-button--outline) {
-          border: 1px solid var(--buttonBackgroundColor, rgb(0, 90, 143));
-          background-color: var(--buttonBorderColor, rgb(0, 90, 143));
-          box-shadow: var(
-            --controlBoxShadow,
-            0 2px 4px rgba(0, 0, 0, 0.14),
-            0 3px 4px rgba(0, 0, 0, 0.12),
-            0 1px 5px rgba(0, 0, 0, 0.2)
-          );
+          border: 1px solid var(--buttonBorderColor);
+          background-color: var(--buttonBackgroundColor);
         }
 
         /* Outline Button Specific Styles */
         .rux-button--outline {
-          color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-          background-color: var(--buttonOutlineBackgroundColor, transparent);
-          border: 1px solid var(--buttonOutlineBorderColor, rgb(0, 90, 143));
+          color: var(--buttonOutlineTextColor);
+          background-color: var(--buttonOutlineBackgroundColor);
+          border: 1px solid var(--buttonOutlineBorderColor);
         }
 
         /* 
@@ -108,21 +102,15 @@ export class RuxButton extends LitElement {
         
         */
         .rux-button:active:not([hover]):not([disabled]) {
-          border-color: var(--buttonActiveBorderColor, rgb(0, 90, 143)) !important;
-          background-color: var(--buttonActiveBackgroundColor, rgb(0, 90, 143)) !important;
+          border-color: var(--buttonActiveBorderColor) !important;
+          background-color: var(--buttonActiveBackgroundColor) !important;
         }
         
         .rux-button--outline:active:not([hover]):not([disabled]) {
-          border-color: var(--buttonOutlineBorderColor, rgb(0, 90, 143)) !important;
-          background-color: var(
-            --buttonOutlineBackgroundColor,
-            transparent
-          ) !important;
+          border-color: var(--buttonOutlineBorderColor) !important;
+          background-color: var(--buttonOutlineBackgroundColor) !important;
         }
 
-        .rux-button:active:not([hover]):not([disabled]):not(.rux-button--outline) {
-          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14) !important;
-        }
 
         /* 
           
@@ -130,21 +118,27 @@ export class RuxButton extends LitElement {
         
         */
         .rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
-          border-color: var(--buttonHoverBorderColor, rgb(58, 129, 191));
-          background-color: var(--buttonHoverBackgroundColor, rgb(58, 129, 191));
-          box-shadow: var(
-            --buttonHoverBoxShadow,
-            0 8px 10px 1px rgba(0, 0, 0, 0.14),
-            0 3px 14px 3px rgba(0, 0, 0, 0.12),
-            0 4px 5px rgba(0, 0, 0, 0.2)
-          );
-        }
+          border-color: var(--buttonHoverBorderColor);
+          background-color: var(--buttonHoverBackgroundColor);
+				}
 
         .rux-button--outline:hover:not([disabled]) {
-          color: var(--buttonOutlineTextColor, rgb(255, 255, 255));
-          background-color: var(--buttonOutlineHoverBackgroundColor, rgba(30, 47, 66, 0.75));
-          border-color: var(--buttonOutlineHoverBorderColor, rgb(58, 129, 191));
-        }
+          color: var(--buttonOutlineHoverTextColor);
+          background-color: var(--buttonOutlineHoverBackgroundColor);
+          border-color: var(--buttonOutlineHoverBorderColor);
+				}
+
+				.rux-button:hover rux-icon {
+					fill: var(--buttonHoverTextColor);
+				}
+
+				.rux-button--outline:hover rux-icon {
+					fill: var(--buttonOutlineHoverTextColor);
+				}
+				.rux-button--outline:hover ::slotted(rux-icon){
+					fill: var(--buttonOutlineHoverTextColor);
+				}
+				
 
         /* 
           
@@ -153,17 +147,17 @@ export class RuxButton extends LitElement {
         */
 
         .rux-button--small {
-          font-size: var(--smallLabelTextSize, 0.875rem);
+          font-size: var(--smallLabelTextSize);
           height: 1.625rem;
           padding: 0 1rem;
           line-height: 1;
         }
 
         .rux-button--large {
-          font-size: var(--largeLabelTextSize, 1.125rem);
+          font-size: var(--largeLabelTextSize);
           height: 2.875rem;
-          /* min-width: 2.875rem; */
-          padding: 0 1.5rem;
+          min-width: 3rem;
+          padding: 0 1rem;
         }
 
         ::slotted(rux-icon),
@@ -205,13 +199,23 @@ export class RuxButton extends LitElement {
           width: 1.75rem;
           margin-left: -0.8rem;
           /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
-        }
+				}
+				
+				.rux-button rux-icon {
+					fill: var(--buttonTextColor);
+				}
 
-        /* .rux-button__icon .rux-icon {
-          height: auto;
-          width: 100%;
-          fill: var(--buttonTextColor, rgb(255, 255, 255));
-        } */
+				.rux-button--outline rux-icon,
+				.rux-button--outline rux-icon svg > use {
+					fill: var(--buttonOutlineTextColor);
+				}
+				.rux-button ::slotted(rux-icon){
+					fill: var(--buttonTextColor);
+				}
+				.rux-button--outline ::slotted(rux-icon){
+					fill: var(--buttonOutlineTextColor);
+				}
+
       </style>
 
       <button
@@ -223,7 +227,7 @@ export class RuxButton extends LitElement {
       >
         <rux-icon
           icon="${this.icon}"
-          color="${this.outline ? 'rgb(0, 90, 143)' : '#ffffff'}"
+          color="${this.outline ? 'var(--buttonOutlineTextColor)' : 'var(--buttonTextColor)'}"
           ?hidden="${!this.icon}"
         ></rux-icon>
         <slot></slot>
