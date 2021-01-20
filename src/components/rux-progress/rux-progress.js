@@ -60,8 +60,8 @@ export class RuxProgress extends LitElement {
       .rux-progress[value] {
         appearance: none;
 
-        background-color: var(--progressDeterminateTrackBackgroundColor, rgba(0, 0, 0, 0.3));
-        border: 1px solid var(--progressDeterminateTrackBorderColor, rgb(20, 32, 44));
+        background-color: var(--progressDeterminateTrackBackgroundColor);
+        border: 1px solid var(--progressDeterminateTrackBorderColor);
         border-radius: var(--progressRadius);
         height: 1.25rem;
         width: 100%;
