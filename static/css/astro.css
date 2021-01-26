@@ -1327,8 +1327,6 @@ body {
   color: rgb(255, 255, 255);
   color: var(--fontColor, rgb(255, 255, 255));
 
-  background-color: rgb(24, 38, 53);
-
   background-color: var(--backgroundColor);
   scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackCornerBackgroundColor);
 }
@@ -1432,8 +1430,7 @@ label {
   border-radius: var(--buttonBorderRadius);
 
   color: var(--buttonTextColor);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
 
@@ -1760,8 +1757,7 @@ label {
   border-radius: var(--buttonBorderRadius);
 
   color: var(--selectTextColor);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   line-height: 1.5;
@@ -1905,8 +1901,7 @@ label {
   border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
 
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
 
   font-family: var(--fontFamily);
   font-size: 1rem;
@@ -2295,8 +2290,7 @@ label {
 .rux-clock__segment__value {
   display: flex;
   align-items: center;
-  font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco,
-										Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: "Roboto Mono", monospace;
   font-family: var(--fontFamilyMono);
   font-weight: 700;
 
@@ -2441,8 +2435,7 @@ i.rux-icon {
 }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-								Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-family: var(--fontFamily);
 }
 
