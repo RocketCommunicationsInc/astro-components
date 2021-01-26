@@ -26,7 +26,6 @@ export class RuxPopUpMenu extends LitElement {
     this.data = [];
     this.selected = {};
     this.expanded = false;
-    this._trigger = this.parentElement.querySelector(`[aria-controls="${this.id}"]`);
 
     this.left = 0;
     this.top = 0;
@@ -38,6 +37,7 @@ export class RuxPopUpMenu extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    this._trigger = this.parentElement.querySelector(`[aria-controls="${this.id}"]`);
 
     this._trigger.addEventListener('mousedown', this._handleClick);
   }
