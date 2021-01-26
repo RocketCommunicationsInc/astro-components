@@ -69,7 +69,7 @@ export const slottedIconButton = () => {
         <rux-icon
           icon="custom" 
           library="/icons/custom.svg"
-          color="${outline ? 'rgb(0, 90, 143)' : '#ffffff'}"
+          color="${outline ? 'var(--buttonOutlineTextColor)' : 'var(--buttonTextColor)'}"
         ></rux-icon>
         Slotted Icon Button</rux-button
       >
@@ -95,17 +95,17 @@ export const GroupedButtons = () => html`
         margin-right: 0.625rem;
       }
       .light-theme {
-        --exampleContainerBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-        --exampleContainerBorderColor: var(--colorQuaternaryLighten1, rgb(217, 222, 233));
+        --exampleContainerBackgroundColor: var(--primaryElementText);
+        --exampleContainerBorderColor: var(--colorQuaternaryLighten1);
       }
       .dark-theme {
-        --exampleContainerBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
-        --exampleContainerBorderColor: var(--colorTertiary, rgb(40, 63, 88));
+        --exampleContainerBackgroundColor: var(--colorTertiaryDarken1);
+        --exampleContainerBorderColor: var(--colorTertiary);
       }
       .example-container {
         min-width: 20rem;
-        background: var(--exampleContainerBackgroundColor, rgb(32, 50, 70));
-        border: 1px solid var(--exampleContainerBorderColor, rgb(40, 63, 88));
+        background: var(--exampleContainerBackgroundColor);
+        border: 1px solid var(--exampleContainerBorderColor);
         padding: 0.625rem;
         display: flex;
       }

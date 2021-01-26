@@ -123,7 +123,7 @@ export class RuxTimeline extends LitElement {
 
         padding: 0 1em;
 
-        background-color: var(--timelineHeaderBackgroundColor, rgb(32, 50, 70));
+        background-color: var(--timelineHeaderBackgroundColor);
 
         z-index: 10;
       }
@@ -161,7 +161,7 @@ export class RuxTimeline extends LitElement {
       }
 
       rux-timeline-track {
-        background-color: var(--timelineTrackBackgroundColor, rgb(40, 63, 88));
+        background-color: var(--timelineTrackBackgroundColor);
       }
 
       #rux-timeline__ruler {
@@ -169,9 +169,9 @@ export class RuxTimeline extends LitElement {
         justify-content: space-between;
         position: relative;
         margin-top: auto;
-        color: var(--fontColor, rgb(255, 255, 255));
+        color: var(--timelineRulerTextColor);
 
-        background-color: var(--timelineRulerBackgroundColor, rgb(32, 50, 70));
+        background-color: var(--timelineRulerBackgroundColor);
         height: 2em;
         width: 100%;
 
@@ -179,16 +179,13 @@ export class RuxTimeline extends LitElement {
       }
 
       #rux-timeline__ruler div {
-        font-size: 0.675rem;
+        font-size: 1rem;
         /* top: 0; */
         height: 20px;
         width: 100%;
         /* position: absolute; */
         border-left: 1px solid rgba(255, 255, 255, 0.1);
         padding-left: 0.25rem;
-
-        /* border: 1px solid red; */
-        /* padding: 0.35rem 0 0 0.35rem; */
       }
 
       #rux-timeline__playhead {
@@ -208,7 +205,7 @@ export class RuxTimeline extends LitElement {
         left: 0;
         height: 100%;
         width: 1px;
-        background-color: #5cb3ff;
+        background-color: var(--timelineRegionBorderColor);
         z-index: 200;
         display: none;
       }
@@ -219,7 +216,7 @@ export class RuxTimeline extends LitElement {
         left: -6px;
         height: 5px;
         width: 13px;
-        background-color: #5cb3ff;
+        background-color: var(--timelineRegionBorderColor);
       }
 
       #rux-timeline__current-time::after {
@@ -231,7 +228,7 @@ export class RuxTimeline extends LitElement {
         width: 13px;
         border-color: #5cb3ff;
 
-        border-top: 6px solid #5cb3ff;
+        border-top: 6px solid var(--timelineRegionBorderColor);
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
       }
@@ -249,12 +246,11 @@ export class RuxTimeline extends LitElement {
 
       .rux-timeline__track__label-container {
         width: 100%;
-        background-color: var(--timelineTrackLabelBackgroundColor, rgb(40, 63, 88));
-        font-size: 0.875rem;
+        background-color: var(--timelineTrackLabelBackgroundColor);
+        font-size: 1rem;
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
-
         height: 60px;
         margin: 2px 1px 2px 0;
       }
@@ -273,7 +269,7 @@ export class RuxTimeline extends LitElement {
       }
 
       .rux-timeline__track__label--subtrack {
-        background-color: var(--colorTertiaryDarken2);
+        background-color: var(--timelineTrackLabelBackgroundColor);
         margin: 2px 0;
       }
 
@@ -283,8 +279,7 @@ export class RuxTimeline extends LitElement {
 
       .rux-timeline__track__label {
         width: 100%;
-
-        font-size: 0.875rem;
+        font-size: 1rem;
         display: flex;
         justify-content: flex-start;
         align-items: center;

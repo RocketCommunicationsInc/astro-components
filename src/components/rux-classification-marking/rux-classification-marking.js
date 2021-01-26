@@ -101,13 +101,12 @@ export class RuxClassificationMarking extends LitElement {
       min-height: 26px;
       box-sizing: border-box;
       font-size: var(--fontSize);
-      font-weight:bold;
+      font-weight: bold;
       font-family: var( --fontFamily);
-      text-transform:uppercase;
+      text-transform: uppercase;
       transition: top 0.5s ease;
       overflow-wrap: anywhere;
-      // white-space: pre-line;
-      color: var(--colorWhite);
+      color: var(--classificationTextColorLight);
       background-color: var(--classificationUnclassifiedBackgroundColor);
 
       position: absolute;
@@ -133,12 +132,12 @@ export class RuxClassificationMarking extends LitElement {
 		:host([classification='${this.marking('topsecretsci').style}']) .rux-classification__marking,
 		:host([classification='topsecretsci']) .rux-classification__marking {
       background-color: var(--classificationTopSecretSCIBackgroundColor);
-      color: var(--colorBlack, rgb(0, 0, 0));
+      color: var(--classificationTextColorDark);
     }
 
     :host([classification='${this.marking('top-secret').style}']) .rux-classification__marking{
       background-color: var(--classificationTopSecretBackgroundColor);
-      color: var(--colorBlack, rgb(0, 0, 0));
+      color: var(--classificationTextColorDark);
     }
 
     :host([classification='${this.marking('secret').style}']) .rux-classification__marking,

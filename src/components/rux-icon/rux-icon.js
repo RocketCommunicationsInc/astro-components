@@ -53,20 +53,24 @@ export class RuxIcon extends LitElement {
       <style>
         :host {
           --iconDefaultSize: 2.7rem;
-          --iconDefaultColor: rgb(77, 172, 255);
+          --iconDefaultColor: var(--buttonTextColor);
 
           display: inline-block;
 
-          height: var(--iconDefaultSize, 2.75rem);
-          width: var(--iconDefaultSize, 2.75rem);
+          height: var(--iconDefaultSize);
+          width: var(--iconDefaultSize);
         }
 
         svg,
         svg > use {
           height: 100%;
           width: auto;
-          fill: var(--iconDefaultColor, rgb(77, 172, 255));
-        }
+
+				}
+				
+				.rux-button--outline rux-icon {
+
+				}
 
         :host([size='extra-small']) {
           height: 1rem;
