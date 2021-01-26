@@ -60,7 +60,7 @@ Create a triggering element to initiate the pop up menu. **Note**: The trigger e
 | Property | Type   | Default | Required | Description                                                                |
 | -------- | ------ | ------- | -------- | -------------------------------------------------------------------------- |
 | `id`     | String | `-`     | Yes      | A unique identifier to associate the pop up menu with a triggering element |
-| `data`   | Array  | `-`     | Yes      | An array of objects that defines the pop up menu’s labels                  |
+| `data`   | Array  | `-`     | Yes      | An array of objects that defines the pop up menu’s labels. **Note:** when used in an Angular environment you may need to stringify the data property |
 
 ### Sample `data` Array
 
