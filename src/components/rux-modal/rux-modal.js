@@ -126,11 +126,11 @@ export class RuxModal extends LitElement {
           flex-direction: column;
           justify-content: space-between;
 
-          background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
+          background-color: var(--modalBackgroundColor);
 
           width: 28rem;
           height: 13.5rem;
-          border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
+          border: 2px solid var(--modalBorderColor);
 
           border-radius: 4px;
           margin: auto;
@@ -152,7 +152,7 @@ export class RuxModal extends LitElement {
           width: 100%;
           height: 2rem;
 
-          background-color: var(--modalBorderColor, rgb(0, 90, 143));
+          background-color: var(--modalBorderColor);
           user-select: none;
           cursor: move;
         }
@@ -163,7 +163,7 @@ export class RuxModal extends LitElement {
           line-height: 1.2;
           padding: 0;
           margin: 0;
-          color: #fff !important;
+          color: var(--modalTitleColor);
         }
 
         .rux-modal__content {
@@ -171,7 +171,7 @@ export class RuxModal extends LitElement {
           flex-direction: column;
           flex-grow: 1;
           padding: 1rem;
-          color: var(--fontColor, #fff);
+          color: var(--defaultText);
         }
 
         rux-icon {

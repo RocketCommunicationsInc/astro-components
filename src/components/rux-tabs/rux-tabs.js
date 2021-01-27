@@ -102,7 +102,10 @@ export class RuxTabs extends LitElement {
           user-select: none;
 
           contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
-        }
+				}
+				.rux-tabs .rux-tab {
+					border-bottom: 5px solid var(--tabBorderColor);
+				}
 
         :host([small]) {
           min-height: 3.125rem;

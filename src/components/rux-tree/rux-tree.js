@@ -333,8 +333,9 @@ export class RuxTree extends LitElement {
 
         font-size: 1rem;
 
-        color: var(--treeTextColor, rgb(255, 255, 255));
-        background-color: var(--treeBackgroundColor, rgb(32, 50, 70));
+        color: var(--treeTextColor);
+				border:solid 1px var(--treeBorderColor);
+        background-color: var(--treeBackgroundColor);
 
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -365,7 +366,6 @@ export class RuxTree extends LitElement {
 
       .rux-tree li {
         font-weight: bold;
-        border-top: 1px solid var(--treeItemBorderColor, rgb(24, 38, 53));
       }
 
       .rux-tree__parent {
@@ -374,6 +374,10 @@ export class RuxTree extends LitElement {
         padding: 0 0.5rem;
         height: 2rem;
       }
+			
+			.rux-tree__parent:hover{
+				color: var(--treeHoverTextColor)
+			}
 
       .rux-tree__parent::after {
         content: '';
@@ -386,29 +390,28 @@ export class RuxTree extends LitElement {
       }
 
       [aria-selected='true'] > .rux-tree__parent {
-        color: var(--treeSelectedTextColor, rgb(255, 255, 255));
+        color: var(--treeSelectedTextColor);
       }
 
       [aria-selected='true'] > .rux-tree__parent::after,
       [aria-selected='true'] > .rux-tree__parent:hover::after {
-        box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor, rgb(77, 172, 255)) !important;
-        background-color: var(--treeSelectedBackgroundColor, rgb(0, 72, 114)) !important;
+        box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor) !important;
+        background-color: var(--treeSelectedBackgroundColor) !important;
       }
 
-      .rux-tree__tree-item:focus > .rux-tree__parent:not(:hover)::after,
+  
       :not([aria-selected='true']) > .rux-tree__parent:hover::after {
-        background-color: var(--treeHoverBackgroundColor, rgb(0, 72, 114));
-        box-shadow: inset 0.25rem 0 0 var(--treeHoverAccentColor, rgb(77, 172, 255));
+        background-color: var(--treeHoverBackgroundColor);
       }
 
-      .rux-tree__tree-item:focus > .rux-tree__parent:not(:hover)::after {
-        border-top: 1px solid var(--treeHoverAccentColor, rgb(77, 172, 255));
-        border-bottom: 1px solid var(--treeHoverAccentColor, rgb(77, 172, 255));
+			[aria-selected='true'] > .rux-tree__parent::after {
+        border-top: 1px solid var(--treeSelectedBorderColor);
+        border-bottom: 1px solid var(--treeSelectedBorderColor);
       }
-
-      .rux-tree__parent:hover::after {
-        transition: background-color 0.367s ease-out;
-      }
+			
+			:not([aria-selected='true']) > .rux-tree__parent:hover .rux-tree__arrow::after {
+				border-color: transparent transparent transparent var(--treeHoverTextColor);
+			}
 
       .rux-tree__parent:focus,
       .rux-tree__tree-item:focus {
@@ -475,7 +478,7 @@ export class RuxTree extends LitElement {
         height: 0;
         border-style: solid;
         border-width: 0.35rem 0 0.35rem 0.35rem;
-        border-color: transparent transparent transparent var(--treeAccentColor, rgb(77, 172, 255));
+        border-color: transparent transparent transparent var(--treeAccentColor);
         display: inline-block;
       }
 
@@ -485,13 +488,13 @@ export class RuxTree extends LitElement {
 
       [aria-expanded='true'] > .rux-tree__children {
         display: block;
-        background-color: var(--treeChildrenBackgroundColor, rgb(24, 38, 53));
+        background-color: var(--treeChildrenBackgroundColor);
       }
 
       [aria-expanded='true'] > .rux-tree__children li {
         font-weight: normal;
         border-top: none;
-      }
+      }			
 
       [aria-expanded='true'] > .rux-tree__parent .rux-tree__arrow {
         transform: rotate(90deg);
@@ -500,6 +503,27 @@ export class RuxTree extends LitElement {
       .rux-tree__children {
         padding-left: 1.5rem;
       }
+
+			[aria-expanded='true'][aria-level='1']:not([aria-selected="true"]) > .rux-tree__parent:after {
+				border-bottom:solid 1px var(--treeExpandedBorderColor);
+			}
+
+			li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:after {
+				background: none !important;
+				box-shadow: none !important;
+				border: none !important;
+			}
+			li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover:after {
+				box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor) !important;
+        background-color: var(--treeHoverBackgroundColor) !important;
+				
+			}
+			li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover {
+				color: var(--treeHoverTextColor);
+			}
+			li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover .rux-tree__arrow:after {
+				border-color: transparent transparent transparent var(--treeHoverTextColor);
+			}
     `;
   }
 }

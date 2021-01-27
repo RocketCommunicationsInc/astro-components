@@ -60,8 +60,8 @@ export class RuxProgress extends LitElement {
       .rux-progress[value] {
         appearance: none;
 
-        background-color: var(--progressDeterminateTrackBackgroundColor, rgba(0, 0, 0, 0.3));
-        border: 1px solid var(--progressDeterminateTrackBorderColor, rgb(20, 32, 44));
+        background-color: var(--progressDeterminateTrackBackgroundColor);
+        border: 1px solid var(--progressDeterminateTrackBorderColor);
         border-radius: var(--progressRadius);
         height: 1.25rem;
         width: 100%;
@@ -72,7 +72,7 @@ export class RuxProgress extends LitElement {
 
         text-align: right;
 
-        color: var(--controlLabelColor, #fff);
+        color: var(--controlLabelColor);
       }
 
       .rux-progress[value]::-webkit-progress-bar {
@@ -86,18 +86,18 @@ export class RuxProgress extends LitElement {
         margin: var(--progressPadding);
         max-width: var(--progressWidth);
 
-        background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+        background: var(--progressDeterminateBarBackgroundColor);
       }
 
       .rux-progress[value]::-ms-fill {
-        border-radius: var(--progressRadius, 0.625rem);
+        border-radius: var(--progressRadius);
 
         border: none;
-        height: var(--progressHeight, 0.875rem);
+        height: var(--progressHeight);
         margin: 0.125rem;
         max-width: calc(100% - 0.375rem);
 
-        background-color: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+        background-color: var(--progressDeterminateBarBackgroundColor);
       }
 
       .rux-progress[value]::-moz-progress-bar {
@@ -107,7 +107,7 @@ export class RuxProgress extends LitElement {
         height: var(--progressHeight);
         max-width: var(--progressWidth);
 
-        background: var(--progressDeterminateBarBackgroundColor, rgb(77, 172, 255));
+        background: var(--progressDeterminateBarBackgroundColor);
       }
 
       /* Indeterminate */

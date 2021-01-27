@@ -28,10 +28,8 @@ body {
   font-size: 1rem;
   color: var(--fontColor, rgb(255, 255, 255));
 
-  background-color: var(--backgroundColor, rgb(24, 38, 53));
-
-  scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(58, 129, 191))
-    var(--scrollBarTrackCornerBackgroundColor, rgb(32, 50, 70));
+  background-color: var(--backgroundColor);
+  scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackCornerBackgroundColor);
 }
 
 label {
