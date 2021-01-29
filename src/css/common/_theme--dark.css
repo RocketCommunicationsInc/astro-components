@@ -30,14 +30,14 @@
 
   /* Status Custom */
   --wcagCompliance: rgba(255, 255, 255, 0);
-  --criticalBorder: var(--colorCritical);
+  --criticalBorder: var(--colorCritical, rgb(255, 56, 56));
 
-  --colorCritical: var(--statusDarkCritical);
-  --colorSerious: var(--statusDarkSerious);
-  --colorCaution: var(--statusDarkCaution);
-  --colorNormal: var(--statusDarkNormal);
-  --colorStandby: var(--statusDarkStandby);
-  --colorOff: var(--statusDarkOff);
+  --colorCritical: var(--statusDarkCritical, rgb(255, 42, 4));
+  --colorSerious: var(--statusDarkSerious, rgb(255, 175, 61));
+  --colorCaution: var(--statusDarkCaution, rgb(250, 216, 0));
+  --colorNormal: var(--statusDarkNormal, rgb(0, 226, 0));
+  --colorStandby: var(--statusDarkStandby, rgb(45, 204, 255));
+  --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
 
   /* 
     
@@ -66,7 +66,7 @@
   /* Outline Button Variant */
   --buttonOutlineTextColor: var(--primary);
   --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--primary);
+  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
   /* Outline Button Variant Hover State */
   --buttonOutlineHoverTextColor: var(--primaryLight);
@@ -98,7 +98,10 @@
     ==========================================================================
 
   */
-  --progressDeterminateBarBackgroundColor: var(--primary);
+  --progressDeterminateBarBackgroundColor: var(
+    --colorSecondary,
+    rgb(77, 172, 255)
+  );
   --progressDeterminateTrackBackgroundColor: rgba(0, 0, 0, 0.3);
   --progressDeterminateTrackBorderColor: var(--primaryDark);
 
@@ -328,8 +331,8 @@
 
   --cardBackgroundColor: var(--colorTertiaryDarken1);
 
-  --cardHeaderBackgroundColor: var(--backgroundColor);
-  --cardHeaderTextColor: var(--colorWhite);
+  --cardHeaderBackgroundColor: var(--colorTertiaryDarken3);
+  --cardHeaderTextColor: var(--colorWhite, #fff);
   /* 
     
     Input/Text Field Colors 
@@ -365,11 +368,19 @@
     
   */
 
-  --scrollBarThumbBackgroundColor: var(--primary);
-	--scrollBarThumbBackgroundHoverColor: var(--primaryLight);
-	--scrollBarTrackBackgroundColor: var(--backgroundColor);
-	--scrollBarTrackCornerBackgroundColor: var(--scrollBarTrackBackgroundColor);
-	--scrollBarTrackBorderColor: var(--primaryDark);
+  --scrollBarThumbBackgroundColor: var(
+    --colorSecondaryDarken2,
+    rgb(46, 103, 153)
+  );
+  --scrollBarThumbBackgroundHoverColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+  --scrollBarTrackBackgroundColor: var(--colorTertiaryDarken1, rgb(32, 50, 70));
+  --scrollBarTrackCornerBackgroundColor: var(
+    --colorTertiaryDarken1,
+    rgb(32, 50, 70)
+  );
 
   /* 
     

@@ -1,9 +1,9 @@
 h1,
 h2,
 h3 {
-	font-family: var(--fontFamily);
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  color: var(--defaultText);
+  color: var(--fontColor, rgb(255, 255, 255));
   margin: 0 0 0.5rem 0;
 }
 
@@ -24,16 +24,16 @@ h3,
 
 p {
   margin: 0 0 1rem 0;
-  color: var(--defaultText);
+  color: var(--fontColor, rgb(255, 255, 255));
 }
 
 a {
-  color: var(--fontLinkColor);
+  color: var(--fontLinkColor, rgb(77, 172, 255));
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--fontLinkHoverColor);
+  color: var(--fontLinkHoverColor, rgb(113, 189, 255));
 }
 
 dt {
@@ -71,8 +71,8 @@ dd {
 
 .invert,
 .inverted {
-  background-color: var(--fontInvertedBackgroundColor);
-  color: var(--fontInvertedColor);
+  background-color: var(--fontInvertedBackgroundColor, rgb(255, 255, 255));
+  color: var(--fontInvertedColor, rgb(0, 0, 0));
   padding: 0 0.25rem;
 }
 
@@ -82,21 +82,21 @@ dd {
 
 /* Size Options */
 .xl {
-  font-size: var(--fontSizeXL);
+  font-size: var(--fontSizeXL, 1.125rem);
 }
 
 .lg {
-  font-size: var(--fontSize);
+  font-size: var(--fontSize, 1rem);
 }
 
 .md {
-  font-size: var(--fontSizeMD);
+  font-size: var(--fontSizeMD, 0.875rem);
 }
 
 .sm {
-  font-size: var(--fontSizeSM);
+  font-size: var(--fontSizeSM, 0.75rem);
 }
 
 .xs {
-  font-size: var(--fontSizeXS);
+  font-size: var(--fontSizeXS, 0.65rem);
 }
