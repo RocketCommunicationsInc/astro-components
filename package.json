@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "ag-grid-community": "^24.0.0",
+    "babel-polyfill": "^6.26.0",
     "date-fns": "^2.16.1",
     "date-fns-tz": "^1.0.11",
     "lit-element": "^2.3.1",
