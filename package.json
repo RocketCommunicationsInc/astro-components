@@ -22,6 +22,7 @@
     "storybook": "gulp build && start-storybook -p 9001 -c .storybook -s ./static "
   },
   "dependencies": {
+    "@webcomponents/custom-elements": "^1.4.3",
     "ag-grid-community": "^24.0.0",
     "date-fns": "^2.16.1",
     "date-fns-tz": "^1.0.11",
