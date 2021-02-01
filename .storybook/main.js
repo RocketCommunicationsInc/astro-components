@@ -1,5 +1,4 @@
-import "@webcomponents/custom-elements/custom-elements.min";
-import "@webcomponents/custom-elements/src/native-shim.js";
+import "airbnb-js-shims";
 
 module.exports = {
   // stories: ['../stories/**/*.stories.js'], // load stories via preview.js per: https://github.com/storybookjs/storybook/issues/9793
