@@ -1,3 +1,4 @@
+//  ie10, 11 shims
 import "airbnb-js-shims";
 
 module.exports = {
