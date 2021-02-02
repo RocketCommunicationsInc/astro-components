@@ -12,7 +12,8 @@
 	--globalAppHeader: #172635;
 	--surfaceElements: #1b2d3e;
 	--primary: #4dacff;
-	--primaryLight: #92cbff;
+  --primaryLight: #92cbff;
+  --primaryLightHover: #92cbff4D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
@@ -460,8 +461,8 @@
   --tableRowTextColor: var(--defaultText);
 	--tableRowBorderColor: var(--backgroundColor);
 	
-	--tableRowHoverBackgroundColor: var(--primaryLight);
-	--tableRowHoverTextColor: var(--primaryElementText);
+	--tableRowHoverBackgroundColor: var(--primaryLightHover);
+	--tableRowHoverTextColor: var(--defaultText);
   
   --tableRowSelectedBackgroundColor: var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
