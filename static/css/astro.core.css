@@ -24,8 +24,9 @@
   --fontSizeSM: 0.75rem;
   --fontSizeXS: 0.65rem;
 
-  --fontFamilyLight: "Roboto Light", sans-serif;
-	--fontFamilyMono: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fontFamilyLight: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --fontFamilyMono: "Roboto Mono", monospace;
+
   --colorBlack: rgb(0, 0, 0);
   --colorWhite: rgb(255, 255, 255);
   --colorGray: rgb(204, 204, 204);
@@ -347,7 +348,8 @@
 	--surfaceElements: #ffffff;
 	--primary: #005A8F;
 	--primaryLight: #2F7AA7;
-	--primaryDark: #004872;
+  --primaryDark: #004872;
+  --primaryDarkHover: #0048724D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryElementText: #ffffff;
 	--inputBackground: #ffffff;
 
@@ -792,8 +794,8 @@
   --tableRowBorderColor: var(--backgroundColor);
 	--tableRowTextColor: var(--defaultText);
 	
-	--tableRowHoverBackgroundColor: var(--primaryDark);
-	--tableRowHoverTextColor: var(--primaryElementText);
+	--tableRowHoverBackgroundColor: var(--primaryDarkHover);
+	--tableRowHoverTextColor: var(--defaultText);
 
 	--tableRowSelectedBackgroundColor:  var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
@@ -822,7 +824,8 @@ li.light-theme {
 	--globalAppHeader: #172635;
 	--surfaceElements: #1b2d3e;
 	--primary: #4dacff;
-	--primaryLight: #92cbff;
+  --primaryLight: #92cbff;
+  --primaryLightHover: #92cbff4D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
@@ -1270,8 +1273,8 @@ li.light-theme {
   --tableRowTextColor: var(--defaultText);
 	--tableRowBorderColor: var(--backgroundColor);
 	
-	--tableRowHoverBackgroundColor: var(--primaryLight);
-	--tableRowHoverTextColor: var(--primaryElementText);
+	--tableRowHoverBackgroundColor: var(--primaryLightHover);
+	--tableRowHoverTextColor: var(--defaultText);
   
   --tableRowSelectedBackgroundColor: var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
