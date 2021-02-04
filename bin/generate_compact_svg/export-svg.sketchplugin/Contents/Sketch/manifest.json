@@ -1,0 +1,24 @@
+{
+  "author" : "Aleksandr Antonov",
+  "commands" : [
+    {
+      "script" : "script.js",
+      "name" : "export-svg",
+      "handlers" : {
+        "run" : "onRun"
+      },
+      "identifier" : "com.bohemiancoding.sketch.runscriptidentifier"
+    }
+  ],
+  "menu" : {
+    "title" : "export-svg",
+    "items" : [
+      "com.bohemiancoding.sketch.runscriptidentifier"
+    ]
+  },
+  "identifier" : "com.example.sketch.39b943b7-516d-4d1a-b2b5-cb3bb21ee4c9",
+  "version" : "1.0",
+  "description" : "",
+  "authorEmail" : "",
+  "name" : "export-svg"
+}
