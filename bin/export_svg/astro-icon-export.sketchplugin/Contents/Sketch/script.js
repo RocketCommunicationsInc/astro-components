@@ -1,3 +1,4 @@
+/* eslint-disable */
 var onRun = function(context) {
   var sketch = require('sketch/dom');
   var document = sketch.getSelectedDocument();

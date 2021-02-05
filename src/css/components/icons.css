@@ -17,3 +17,5 @@ i.rux-icon {
 
   color: var(--colorSecondary);
 }
+
+@import url("./icons-detail.css");
