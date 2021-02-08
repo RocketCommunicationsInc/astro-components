@@ -4,8 +4,10 @@ const Core = require('../core');
 const fs = require("fs");
 
 class AstroGenerateIconCss extends Core{
+
     constructor(){
         super();
+        this.icons = [];
     }
 
     run(){
@@ -18,7 +20,12 @@ class AstroGenerateIconCss extends Core{
             fs.writeFile(`${this.cssPath}components/${cssFileName}`, generatedCss, (err) => {
                 if (err) throw err;
                 this.notify('success', "The css icons file successfully generated!");
-              });
+            });
+
+            fs.writeFile(`${this.staticPath}json/rux-icons.json`, JSON.stringify({"icons": this.icons}), (err) => {
+                if (err) throw err;
+                this.notify('success', "The json icons list file successfully generated!");
+            });
         });
     }
 
@@ -34,7 +41,9 @@ class AstroGenerateIconCss extends Core{
             
             if (hasId > -1 && matches && matches.length > 0 && matches[0].indexOf('-icon') === -1) {
                 const id = matches[0].replace(/\"/g, "");
-                
+                this.icons.push({
+                    "id": id
+                });
                 newArr.push(`.rux-icon-${id}{
                     -webkit-mask: url("/icons/astro.svg#${id}") no-repeat;
                     mask: url("/icons/astro.svg#${id}") no-repeat;
