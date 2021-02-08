@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* eslint-disable */
-const export_svg = require('./export_svg');
-const generate_css = require('./generate_css');
+const astroIconExport = require('./astro-icon-export');
+const astroGenerateIconCss = require('./astro-generate-icon-css');
 
 const yargs = require("yargs");
 
@@ -11,10 +11,10 @@ const options = yargs
     .argv;
 
 switch(options.action){
-    case 'export_svg':
-        export_svg.run();
+    case 'astro-icon-export':
+        astroIconExport.run();
         break;
-    case 'generate_css':
-        generate_css.run();
+    case 'astro-generate-icon-css':
+        astroGenerateIconCss.run();
         break;
 }

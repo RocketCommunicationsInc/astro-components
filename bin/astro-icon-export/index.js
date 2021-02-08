@@ -6,7 +6,7 @@ const fs = require("fs");
 const os = require("os");
 const prompt = require("prompt-sync")();
 
-class ExportSvg extends Core {
+class AstroIconExport extends Core {
   constructor(){
     super();
     this.defaultSvg = '/Documents/astro-exports/Solid.svg';
@@ -189,4 +189,4 @@ class ExportSvg extends Core {
   }
 };
 
-module.exports = new ExportSvg();
+module.exports = new AstroIconExport();

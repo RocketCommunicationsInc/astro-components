@@ -2,9 +2,8 @@
 /* eslint-disable */
 const Core = require('../core');
 const fs = require("fs");
-const os = require("os");
 
-class GenerateCss extends Core{
+class AstroGenerateIconCss extends Core{
     constructor(){
         super();
     }
@@ -48,4 +47,4 @@ class GenerateCss extends Core{
     }
 }
 
-module.exports = new GenerateCss();
+module.exports = new AstroGenerateIconCss();
