@@ -146,7 +146,7 @@ class ExportSvg extends Core {
         fs.writeFile(this.iconsPath + fileName, res.data, (err) => {
           if (err) throw err;
           this.notify('warning', 'Modify svg viewBox to the size of exported icons');
-          this.notify('success', "The file has been successfully generated!");
+          this.notify('success', "The svg file successfully generated!");
         });
       });
     });
@@ -160,7 +160,7 @@ class ExportSvg extends Core {
 
   cleanUpIds(svgStr){
     const arr = svgStr.split("\n");
-    const newArr = [];
+    let newArr = [];
   
     arr.forEach((line) => {
       const hasId = line.indexOf("g id=");
@@ -174,9 +174,19 @@ class ExportSvg extends Core {
       }
       newArr.push(line);
     });
-  
+    newArr = this.insertStyling(newArr);
     return newArr.join('\n');
   };
+
+  insertStyling(arr){
+    const style = '<style>g {display: none;} g:target {display: inline;}</style>';
+    arr.splice(1, 0, style); 
+    // Removes wrapper group that breaks svg
+    // TODO: create cleaner way removeing unnecessar wrapping groups
+    arr.splice(2, 1);
+    arr.splice(arr.length -3, 1);
+    return arr;
+  }
 };
 
 module.exports = new ExportSvg();

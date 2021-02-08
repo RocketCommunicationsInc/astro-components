@@ -10,30 +10,40 @@ class GenerateCss extends Core{
     }
 
     run(){
-        const file = `${this.iconsPath}astro-new.svg`;
+        const file = `${this.iconsPath}astro.svg`;
         fs.readFile(file, "utf-8", (err, data) => {
             if (err) throw err;
-            this.generateCssFile(data);
+            const generatedCss = this.generateCssFile(data);
+            
+            const cssFileName = 'icons-list.css';
+            fs.writeFile(`${this.cssPath}components/${cssFileName}`, generatedCss, (err) => {
+                if (err) throw err;
+                this.notify('success', "The css icons file successfully generated!");
+              });
         });
     }
 
     generateCssFile(svgStr){
         const arr = svgStr.split("\n");
-        const newArr = [];
+        const newArr = [
+            `/**** DO NOT EDIT: AUTO GENERATED CSS ****/`
+        ];
     
         arr.forEach((line) => {
-        const hasId = line.indexOf("g id=");
-        const matches = line.match(/\"(.*?)\"/g);
-        
-        if (hasId > -1 && matches && matches.length > 0 && matches[0].indexOf('-icon') === -1) {
-            const id = matches[0].replace(/\"/g, "");
+            const hasId = line.indexOf("g id=");
+            const matches = line.match(/\"(.*?)\"/g);
             
-            newArr.push(`.rux-icon-${id}{
-
-            }`);
-        }
+            if (hasId > -1 && matches && matches.length > 0 && matches[0].indexOf('-icon') === -1) {
+                const id = matches[0].replace(/\"/g, "");
+                
+                newArr.push(`.rux-icon-${id}{
+                    -webkit-mask: url("/icons/astro.svg#${id}") no-repeat;
+                    mask: url("/icons/astro.svg#${id}") no-repeat;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                }`);
+            }   
         });
-    
         return newArr.join('\n');
     }
 }
