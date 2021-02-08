@@ -16,7 +16,7 @@
   --largeLabelFontSize: 1.125rem;
 
   /* Typography */
-  --fontFamily: "Open Sans", sans-serif;
+  --fontFamily: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --fontSize: 1rem; /* 16px */
   --fontSizeXL: 1.125rem;
   --fontSizeLG: 1rem;
@@ -24,7 +24,7 @@
   --fontSizeSM: 0.75rem;
   --fontSizeXS: 0.65rem;
 
-  --fontFamilyLight: "Open Sans Light", sans-serif;
+  --fontFamilyLight: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --fontFamilyMono: "Roboto Mono", monospace;
 
   --colorBlack: rgb(0, 0, 0);
@@ -218,27 +218,114 @@
   --colorGrayDarken4: rgb(41, 41, 41);
 }
 
+
+/* Thin */
 @font-face {
-  font-family: "Open Sans";
-  src: url("/fonts/opensans-bold-webfont.woff2") format("woff2"),
-    url("/fonts/opensans-bold-webfont.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoThin.woff2') format('woff2'),
+			 url('/fonts/RobotoThin.woff') format('woff');
+	font-weight: 200;
+	font-style: normal;
 }
+
 @font-face {
-  font-family: "Open Sans";
-  src: url("/fonts/opensans-light-webfont.woff2") format("woff2"),
-    url("/fonts/opensans-light-webfont.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoThinItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoThinItalic.woff') format('woff');
+	font-weight: 200;
+	font-style: italic;
 }
+
+
+/* Light */
 @font-face {
-  font-family: "Open Sans";
-  src: url("/fonts/opensans-regular-webfont.woff2") format("woff2"),
-    url("/fonts/opensans-regular-webfont.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoLight.woff2') format('woff2'),
+			 url('/fonts/RobotoLight.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
 }
+
+@font-face {
+	font-family: 'Roboto Light';
+	src: url('/fonts/RobotoLight.woff2') format('woff2'),
+			 url('/fonts/RobotoLight.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoLightItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoLightItalic.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+}
+
+/* Regular */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoRegular.woff2') format('woff2'),
+			 url('/fonts/RobotoRegular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Medium */
+@font-face {
+	font-family: 'Roboto';
+	src: url('fonts/RobotoMedium.woff2') format('woff2'),
+			 url('fonts/RobotoMedium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoMediumItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoMediumItalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+}
+
+
+/* Bold */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBold.woff2') format('woff2'),
+			 url('/fonts/RobotoBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBoldItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoBoldItalic.woff') format('woff');
+	font-weight: 600;
+	font-style: italic;
+}
+
+
+/* Black */
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBlack.woff2') format('woff2'),
+			 url('/fonts/RobotoBlack.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/RobotoBlackItalic.woff2') format('woff2'),
+			 url('/fonts/RobotoBlackItalic.woff') format('woff');
+	font-weight: 800;
+	font-style: italic;
+}
+
+
 @font-face {
   font-family: "Roboto Mono";
   src: url("/fonts/roboto-mono-regular.woff2") format("woff2"),
@@ -246,7 +333,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
 .light-theme {
   /* 
     
@@ -262,7 +348,8 @@
 	--surfaceElements: #ffffff;
 	--primary: #005A8F;
 	--primaryLight: #2F7AA7;
-	--primaryDark: #004872;
+  --primaryDark: #004872;
+  --primaryDarkHover: #0048724D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryElementText: #ffffff;
 	--inputBackground: #ffffff;
 
@@ -607,9 +694,18 @@
 	--inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%233a87cf' fill-rule='evenodd'/%3E%3C/svg%3E");
 	--inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23004872' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
 	
-  /* 
+	/* 
     
-    Status
+    Icon Default Colors 
+    ==========================================================================
+    
+	*/
+	
+	--iconDefaultColor: var(--primary);
+	
+	/* 
+    
+    Status Symbols
     ==========================================================================
 
   */
@@ -698,8 +794,8 @@
   --tableRowBorderColor: var(--backgroundColor);
 	--tableRowTextColor: var(--defaultText);
 	
-	--tableRowHoverBackgroundColor: var(--primaryDark);
-	--tableRowHoverTextColor: var(--primaryElementText);
+	--tableRowHoverBackgroundColor: var(--primaryDarkHover);
+	--tableRowHoverTextColor: var(--defaultText);
 
 	--tableRowSelectedBackgroundColor:  var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
@@ -728,7 +824,8 @@ li.light-theme {
 	--globalAppHeader: #172635;
 	--surfaceElements: #1b2d3e;
 	--primary: #4dacff;
-	--primaryLight: #92cbff;
+  --primaryLight: #92cbff;
+  --primaryLightHover: #92cbff4D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
@@ -1069,7 +1166,19 @@ li.light-theme {
 	--inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a92' fill-rule='evenodd'/%3E%3C/svg%3E");
 	--inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%233a87cf' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
 	
-  /* 
+	
+	/* 
+    
+    Icon Default Colors 
+    ==========================================================================
+    
+	*/
+	
+	--iconDefaultColor: var(--primary);
+	
+	
+	
+	/* 
     
     Status Symbols
     ==========================================================================
@@ -1164,8 +1273,8 @@ li.light-theme {
   --tableRowTextColor: var(--defaultText);
 	--tableRowBorderColor: var(--backgroundColor);
 	
-	--tableRowHoverBackgroundColor: var(--primaryLight);
-	--tableRowHoverTextColor: var(--primaryElementText);
+	--tableRowHoverBackgroundColor: var(--primaryLightHover);
+	--tableRowHoverTextColor: var(--defaultText);
   
   --tableRowSelectedBackgroundColor: var(--backgroundColor);
 	--tableRowSelectedBorderColor: var(--primary);
@@ -1183,10 +1292,10 @@ li.dark-theme {
 h1,
 h2,
 h3 {
-  font-family: "Open Sans", sans-serif;
+	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: var(--fontFamily);
   font-weight: 300;
-  color: rgb(255, 255, 255);
-  color: var(--fontColor, rgb(255, 255, 255));
+  color: var(--defaultText);
   margin: 0 0 0.5rem 0;
 }
 
@@ -1207,19 +1316,16 @@ h3,
 
 p {
   margin: 0 0 1rem 0;
-  color: rgb(255, 255, 255);
-  color: var(--fontColor, rgb(255, 255, 255));
+  color: var(--defaultText);
 }
 
 a {
-  color: rgb(77, 172, 255);
-  color: var(--fontLinkColor, rgb(77, 172, 255));
+  color: var(--fontLinkColor);
   text-decoration: none;
 }
 
 a:hover {
-  color: rgb(113, 189, 255);
-  color: var(--fontLinkHoverColor, rgb(113, 189, 255));
+  color: var(--fontLinkHoverColor);
 }
 
 dt {
@@ -1257,10 +1363,8 @@ dd {
 
 .invert,
 .inverted {
-  background-color: rgb(255, 255, 255);
-  background-color: var(--fontInvertedBackgroundColor, rgb(255, 255, 255));
-  color: rgb(0, 0, 0);
-  color: var(--fontInvertedColor, rgb(0, 0, 0));
+  background-color: var(--fontInvertedBackgroundColor);
+  color: var(--fontInvertedColor);
   padding: 0 0.25rem;
 }
 
@@ -1271,29 +1375,28 @@ dd {
 /* Size Options */
 .xl {
   font-size: 1.125rem;
-  font-size: var(--fontSizeXL, 1.125rem);
+  font-size: var(--fontSizeXL);
 }
 
 .lg {
   font-size: 1rem;
-  font-size: var(--fontSize, 1rem);
+  font-size: var(--fontSize);
 }
 
 .md {
   font-size: 0.875rem;
-  font-size: var(--fontSizeMD, 0.875rem);
+  font-size: var(--fontSizeMD);
 }
 
 .sm {
   font-size: 0.75rem;
-  font-size: var(--fontSizeSM, 0.75rem);
+  font-size: var(--fontSizeSM);
 }
 
 .xs {
   font-size: 0.65rem;
-  font-size: var(--fontSizeXS, 0.65rem);
+  font-size: var(--fontSizeXS);
 }
-
 /*
 **	This is as close as we get to a CSS reset in Astro, moving everything to
 **	the old IE border-box model of including padding in the overall size.
@@ -1320,9 +1423,9 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-family: var(--fontFamily);
   font-size: 1rem;
   color: rgb(255, 255, 255);
   color: var(--fontColor, rgb(255, 255, 255));
@@ -1430,7 +1533,7 @@ label {
   border-radius: var(--buttonBorderRadius);
 
   color: var(--buttonTextColor);
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
 
@@ -1757,7 +1860,7 @@ label {
   border-radius: var(--buttonBorderRadius);
 
   color: var(--selectTextColor);
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   line-height: 1.5;
@@ -1843,7 +1946,7 @@ label {
   flex-wrap: wrap;
   align-items: flex-start;
 
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   font-family: var(--fontFamily);
   font-size: 1rem;
@@ -1901,7 +2004,7 @@ label {
   border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
 
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   font-family: var(--fontFamily);
   font-size: 1rem;
@@ -2343,9 +2446,10 @@ label {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  fill: rgb(77, 172, 255);
-
-  fill: var(--colorSecondary);
+  fill: var(--iconDefaultColor);
+}
+.rux-icon svg {
+	fill: var(--iconDefaultColor);
 }
 
 i.rux-icon {
@@ -8767,7 +8871,7 @@ i.rux-icon {
 }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
 }
 

@@ -7,7 +7,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  fill: var(--colorSecondary);
+  fill: var(--iconDefaultColor);
+}
+.rux-icon svg {
+	fill: var(--iconDefaultColor);
 }
 
 i.rux-icon {
