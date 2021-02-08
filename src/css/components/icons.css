@@ -15,7 +15,7 @@ i.rux-icon {
   width: 2.8rem;
   height: 2.8rem;
 
-  color: var(--colorSecondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--colorSecondary);
 }
-
-@import url("./icons-detail.css");
