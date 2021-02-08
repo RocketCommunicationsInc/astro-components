@@ -165,6 +165,8 @@ class AstroIconExport extends Core {
     arr.forEach((line) => {
       const hasId = line.indexOf("g id=");
       const matches = line.match(/\"(.*?)\"/g);
+      const isPath = line.indexOf('path d=');
+      
       if (hasId > -1 && matches && matches.length > 0) {
         const originalId = matches[0].replace(/\"/g, "");
         const newId = originalId
@@ -172,6 +174,13 @@ class AstroIconExport extends Core {
           .toLowerCase();
         line = line.replace(originalId, newId);
       }
+
+      if (isPath > -1){
+        if(line.length < 60){
+          line = '';
+        }
+      }
+
       newArr.push(line);
     });
     newArr = this.insertStyling(newArr);
