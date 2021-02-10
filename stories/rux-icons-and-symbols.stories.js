@@ -6,6 +6,8 @@ import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-mon
 import { RuxMonitoringProgressIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-progress-icon.js';
 import Readme from '../src/components/rux-icon/README.md';
 import ReadmeMonitoring from '../src/components/rux-monitoring-icon/README.md';
+import ruxIconsJson from '../static/json/rux-icons.json';
+
 
 export default {
   title: 'Components|Icons & Symbols',
@@ -30,39 +32,15 @@ export const AllIcons = () => {
 
   const colorKnob = select('Color', colors, '#4dacff');
   const sizeKnob = select('Size', sizes, 'normal');
-  const icons = [
-    'altitude',
-    'antenna',
-    'antenna-off',
-    'antenna-receive',
-    'antenna-transmit',
-    'equipment',
-    'mission',
-    'netcom',
-    'payload',
-    'processor',
-    'processor-alt',
-    'propulsion-power',
-    'satellite-off',
-    'satellite-receive',
-    'satellite-transmit',
-    'solar',
-    'thermal',
-    'add-large',
-    'add-small',
-    'close-large',
-    'close-small',
-    'collapse',
-    'expand',
-    'lock',
-    'unlock',
-    'search',
-    'notifications',
-    'settings',
-    'caution',
-    'maintenance',
-    'resources',
-  ];
+  const icons = ruxIconsJson.icons.sort((a, b) => {
+    if (a.id < b.id) {
+      return -1;
+    }
+    if (a.id > b.id) {
+      return 1;
+    }
+    return 0;
+  });
 
   return html`
     <style>
@@ -92,13 +70,8 @@ export const AllIcons = () => {
         ${icons.map(
       (icon) => html`
             <li>
-              <rux-icon
-                library="/icons/astro.svg"
-                icon="${icon}"
-                color="${colorKnob}"
-                size="${sizeKnob}"
-              ></rux-icon>
-              <div class="icon-name">${icon}</div>
+              <i class="rux-icon rux-icon-${icon.id}"></i>
+              <div class="icon-name">${icon.id}</div>
             </li>
           `,
   )}
