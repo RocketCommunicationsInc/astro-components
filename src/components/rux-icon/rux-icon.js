@@ -39,12 +39,12 @@ export class RuxIcon extends LitElement {
   }
 
   firstUpdated() {
-    this.style.setProperty('--iconDefaultColor', this.color);
+    this.style.setProperty('--iconColor', this.color);
   }
 
   updated(changedProperties) {
     if (changedProperties.get('color')) {
-      this.style.setProperty('--iconDefaultColor', this.color);
+      this.style.setProperty('--iconColor', this.color);
     }
   }
 
@@ -53,7 +53,7 @@ export class RuxIcon extends LitElement {
       <style>
         :host {
           --iconDefaultSize: 2.7rem;
-          --iconDefaultColor: var(--buttonTextColor);
+          --iconColor: var(--iconDefaultColor);
 
           display: inline-block;
 
@@ -64,7 +64,8 @@ export class RuxIcon extends LitElement {
         svg,
         svg > use {
           height: 100%;
-          width: auto;
+					width: auto;
+					fill: var(--iconColor);
 				}
 				
 				.rux-button--outline rux-icon {
