@@ -163,9 +163,9 @@ class AstroIconExport extends Core {
     let newArr = [];
   
     arr.forEach((line) => {
-      const hasId = line.indexOf("g id=");
+      const hasId = line.indexOf("<g id=");
       const matches = line.match(/\"(.*?)\"/g);
-      const isPath = line.indexOf('path d=');
+      const isPath = line.indexOf('<path d=');
       
       if (hasId > -1 && matches && matches.length > 0) {
         const originalId = matches[0].replace(/\"/g, "");
@@ -176,7 +176,7 @@ class AstroIconExport extends Core {
       }
 
       if (isPath > -1){
-        if(line.length < 60){
+        if(line.trim().length < 60){
           line = '';
         }
       }
