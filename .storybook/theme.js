@@ -13,7 +13,7 @@ let light = create({
   appBorderRadius: 3,
 
   // Typography
-  fontBase: '"Open Sans", sans-serif',
+  fontBase: '"Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;y',
   fontCode: '"Roboto Mono", monospace',
 
   // Text colors
@@ -49,7 +49,7 @@ let dark = create({
   appBorderRadius: 0,
 
   // // Typography
-  fontBase: '"Open Sans", sans-serif',
+  fontBase: '"Roboto", sans-serif',
   fontCode: '"Roboto Mono", monospace',
 
   // // Text colors
