@@ -6,26 +6,24 @@
 */
 
 .rux-select {
+  position: relative;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  
-
   border: 1px solid var(--selectBorderColor);
-  border-radius: var(--buttonBorderRadius);
+  border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
 
   color: var(--selectTextColor);
   font-family: var(--fontFamily);
+  font-weight: normal;
   font-size: 1rem;
-  line-height: 1.5;
-  height: 2.125rem;
-  padding: 0 1.2rem 0 0.625rem;
+  padding: 0.438rem 3.125rem 0.438rem 0.5rem;
 
   background-color: var(--selectBackgroundColor);
   background-image: var(--selectCaret);
   background-position: center right 0.625rem;
   background-repeat: no-repeat;
-
   user-select: none;
 }
 
@@ -43,11 +41,13 @@
 .rux-select:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+  border-color:rgb(41, 42, 45)
 }
 
 .rux-select:focus {
-	border-color: var(--selectActiveBorderColor);
-	outline-color: var(--selectActiveBorderColor);
+	outline: none;
+  border: 1px solid var(--selectActiveBorderColor);
+  border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
 }
 
 .rux-select::-ms-expand {
@@ -56,5 +56,4 @@
 
 .rux-select:focus::-ms-value {
 	background: transparent;
-	
 }

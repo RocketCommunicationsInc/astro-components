@@ -504,15 +504,13 @@
     ==========================================================================
     
   */
-	--selectBackgroundColor: var(--primary);
+	--selectBackgroundColor: var(--inputBackground);
   --selectBorderColor: var(--primary);
-	--selectTextColor: var(--primaryElementText);
+	--selectTextColor: rgb(41,42,45);
 	--selectOptBackground: var(--inputBackground);
 	--selectHoverOptBackgroundColor: var(--primaryDark);
-	--selectCaret: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
-	
+	--selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
 	--selectActiveBorderColor: var(--primary);
-
   /* 
     
     Toggle Colors 
@@ -966,15 +964,13 @@ li.light-theme {
     ==========================================================================
     
   */
-	--selectBackgroundColor: var(--primary);
+	--selectBackgroundColor: var(--inputBackground);
   --selectBorderColor: var(--primary);
 	--selectTextColor: var(--primaryElementText);
 	--selectOptBackground: var(--inputBackground);
 	--selectHoverOptBackgroundColor: var(--primaryLight);
 	--selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-	
 	--selectActiveBorderColor: var(--primary);
-
   /* 
     
     Toggle Colors 
@@ -1850,28 +1846,26 @@ label {
 */
 
 .rux-select {
+  position: relative;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  
-
   border: 1px solid var(--selectBorderColor);
-  border-radius: 3px;
-  border-radius: var(--buttonBorderRadius);
+  border-radius: 3px 3px 0 0;
+  border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
 
   color: var(--selectTextColor);
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
+  font-weight: normal;
   font-size: 1rem;
-  line-height: 1.5;
-  height: 2.125rem;
-  padding: 0 1.2rem 0 0.625rem;
+  padding: 0.438rem 3.125rem 0.438rem 0.5rem;
 
   background-color: var(--selectBackgroundColor);
   background-image: var(--selectCaret);
   background-position: center right 0.625rem;
   background-repeat: no-repeat;
-
   user-select: none;
 }
 
@@ -1889,11 +1883,14 @@ label {
 .rux-select:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+  border-color:rgb(41, 42, 45)
 }
 
 .rux-select:focus {
-	border-color: var(--selectActiveBorderColor);
-	outline-color: var(--selectActiveBorderColor);
+	outline: none;
+  border: 1px solid var(--selectActiveBorderColor);
+  border-radius: 3px 3px 0 0;
+  border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
 }
 
 .rux-select::-ms-expand {
@@ -1902,9 +1899,7 @@ label {
 
 .rux-select:focus::-ms-value {
 	background: transparent;
-	
 }
-
 .rux-form-element {
   display: flex;
   align-items: baseline;
