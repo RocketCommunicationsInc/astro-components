@@ -1,24 +1,24 @@
 import { html, render } from 'lit-html';
 import { boolean, withKnobs } from '@storybook/addon-knobs';
-import { RuxToggle } from '../src/components/rux-toggle/rux-toggle.js';
-import Readme from '../src/components/rux-toggle/README.md';
+import { RuxSwitch } from '../src/components/rux-switch/rux-switch.js';
+import Readme from '../src/components/rux-switch/README.md';
 
 export default {
-  title: 'Components|Toggle',
+  title: 'Components|Switch',
   decorators: [withKnobs],
 };
 
-export const Toggle = () => {
+export const Switch = () => {
   const disabled = boolean('Disabled', false);
   const checked = boolean('Checked', false);
   return html`
     <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-      <rux-toggle .disabled=${disabled} .checked=${checked}></rux-toggle>
+      <rux-switch .disabled=${disabled} .checked=${checked}></rux-switch>
     </div>
   `;
 };
 
-Toggle.story = {
+Switch.story = {
   parameters: {
     exports: {
       render,

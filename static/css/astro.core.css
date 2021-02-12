@@ -520,36 +520,37 @@
 
   */
 
-  --toggleButtonBackgroundColor: var(--primary);
-  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
+  --switchButtonBackgroundColor: var(--primary);
+  --switchButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
 
-  --toggleBaseBackgroundColor: linear-gradient(
+  --switchBaseBackgroundColor: linear-gradient(
     to right,
     var(--colorNormal) 50%,
     var(--colorPrimaryLighten4) 50.1%
   );
-	--toggleBaseBorderColor: var(--primary);
-  --toggleBaseTextColor: var(--primary);
+	--switchBaseBorderColor: var(--primary);
+  --switchBaseTextColor: var(--primary);
 
-  --toggleBaseSelectedTextColor: #007300;
-  --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
+  --switchBaseSelectedTextColor: #007300;
+  --switchButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
     -1px 0 2px rgba(0, 0, 0, 0.3);
 
   /* Default Toggle */
-  --toggleThumbBorderColor: var(--secondaryText);
-	--toggleThumbBackgroundColor: var(--inputBackground);	
-	--toggleTrackBorderColor: var(--secondaryText);
-	--toggleTrackBackgroundColor: var(--backgroundColor);
+  --switchThumbBorderColor: var(--secondaryText);
+	--switchThumbBackgroundColor: var(--inputBackground);	
+	--switchTrackBorderColor: var(--secondaryText);
+	--switchTrackBackgroundColor: var(--backgroundColor);
 
 	/* Selected State */
-  --toggleSelectedThumbBorderColor: var(--primary);
-  --toggleSelectedThumbBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--primary);
-  --toggleSelectedTrackBackgroundColor: var(--primaryLight);
+  --switchSelectedThumbBorderColor: var(--primary);
+  --switchSelectedThumbBackgroundColor: var(--primary);
+  --switchSelectedTrackBorderColor: var(--primary);
+  --switchSelectedTrackBackgroundColor: var(--primaryLight);
 
-  --toggleDisabledThumbBorderColor: var(--secondaryText);
-  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-  --toggleDisabledSelectedThumbBorderColor: var(--primary);
+
+  --switchDisabledThumbBorderColor: var(--secondaryText);
+  --switchDisabledThumbBackgroundColor: var(--inputBackground);
+  --switchDisabledSelectedThumbBorderColor: var(--primary);
 
   /* 
     
@@ -982,27 +983,27 @@ li.light-theme {
 
   */
 	
-  --toggleButtonBackgroundColor: var(--primary);
-  --toggleBaseBackgroundColor: var(--primary);
-  --toggleBaseBorderColor: var(--primary);
-  --toggleBaseTextColor: var(--primaryElementText);
-  --toggleBaseSelectedTextColor: var(--colorNormal);
+  --switchButtonBackgroundColor: var(--primary);
+  --switchBaseBackgroundColor: var(--primary);
+  --switchBaseBorderColor: var(--primary);
+  --switchBaseTextColor: var(--primaryElementText);
+  --switchBaseSelectedTextColor: var(--colorNormal);
 
   /* Default Toggle */
-  --toggleThumbBorderColor: var(--secondaryText);
-  --toggleThumbBackgroundColor: var(--inputBackground);
-  --toggleTrackBorderColor: var(--secondaryText);
-  --toggleTrackBackgroundColor: var(--backgroundColor);
+  --switchThumbBorderColor: var(--secondaryText);
+  --switchThumbBackgroundColor: var(--inputBackground);
+  --switchTrackBorderColor: var(--secondaryText);
+  --switchTrackBackgroundColor: var(--backgroundColor);
 
   /* Selected State */
-  --toggleSelectedThumbBorderColor:var(--primaryDark);
-  --toggleSelectedTrackBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--primaryDark);
+  --switchSelectedThumbBorderColor:var(--primaryDark);
+  --switchSelectedTrackBackgroundColor: var(--primary);
+  --switchSelectedTrackBorderColor: var(--primaryDark);
 
   /* Disabled State */
-  --toggleDisabledThumbBorderColor: var(--secondaryText);
-  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-  --toggleDisabledSelectedThumbBorderColor: var(--primary);
+  --switchDisabledThumbBorderColor: var(--secondaryText);
+  --switchDisabledThumbBackgroundColor: var(--inputBackground);
+  --switchDisabledSelectedThumbBorderColor: var(--primary);
 
   /* 
     

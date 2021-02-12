@@ -520,36 +520,37 @@
 
   */
 
-  --toggleButtonBackgroundColor: var(--primary);
-  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
+  --switchButtonBackgroundColor: var(--primary);
+  --switchButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
 
-  --toggleBaseBackgroundColor: linear-gradient(
+  --switchBaseBackgroundColor: linear-gradient(
     to right,
     var(--colorNormal) 50%,
     var(--colorPrimaryLighten4) 50.1%
   );
-	--toggleBaseBorderColor: var(--primary);
-  --toggleBaseTextColor: var(--primary);
+	--switchBaseBorderColor: var(--primary);
+  --switchBaseTextColor: var(--primary);
 
-  --toggleBaseSelectedTextColor: #007300;
-  --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
+  --switchBaseSelectedTextColor: #007300;
+  --switchButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
     -1px 0 2px rgba(0, 0, 0, 0.3);
 
   /* Default Toggle */
-  --toggleThumbBorderColor: var(--secondaryText);
-	--toggleThumbBackgroundColor: var(--inputBackground);	
-	--toggleTrackBorderColor: var(--secondaryText);
-	--toggleTrackBackgroundColor: var(--backgroundColor);
+  --switchThumbBorderColor: var(--secondaryText);
+	--switchThumbBackgroundColor: var(--inputBackground);	
+	--switchTrackBorderColor: var(--secondaryText);
+	--switchTrackBackgroundColor: var(--backgroundColor);
 
 	/* Selected State */
-  --toggleSelectedThumbBorderColor: var(--primary);
-  --toggleSelectedThumbBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--primary);
-  --toggleSelectedTrackBackgroundColor: var(--primaryLight);
+  --switchSelectedThumbBorderColor: var(--primary);
+  --switchSelectedThumbBackgroundColor: var(--primary);
+  --switchSelectedTrackBorderColor: var(--primary);
+  --switchSelectedTrackBackgroundColor: var(--primaryLight);
 
-  --toggleDisabledThumbBorderColor: var(--secondaryText);
-  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-  --toggleDisabledSelectedThumbBorderColor: var(--primary);
+
+  --switchDisabledThumbBorderColor: var(--secondaryText);
+  --switchDisabledThumbBackgroundColor: var(--inputBackground);
+  --switchDisabledSelectedThumbBorderColor: var(--primary);
 
   /* 
     
@@ -982,27 +983,27 @@ li.light-theme {
 
   */
 	
-  --toggleButtonBackgroundColor: var(--primary);
-  --toggleBaseBackgroundColor: var(--primary);
-  --toggleBaseBorderColor: var(--primary);
-  --toggleBaseTextColor: var(--primaryElementText);
-  --toggleBaseSelectedTextColor: var(--colorNormal);
+  --switchButtonBackgroundColor: var(--primary);
+  --switchBaseBackgroundColor: var(--primary);
+  --switchBaseBorderColor: var(--primary);
+  --switchBaseTextColor: var(--primaryElementText);
+  --switchBaseSelectedTextColor: var(--colorNormal);
 
   /* Default Toggle */
-  --toggleThumbBorderColor: var(--secondaryText);
-  --toggleThumbBackgroundColor: var(--inputBackground);
-  --toggleTrackBorderColor: var(--secondaryText);
-  --toggleTrackBackgroundColor: var(--backgroundColor);
+  --switchThumbBorderColor: var(--secondaryText);
+  --switchThumbBackgroundColor: var(--inputBackground);
+  --switchTrackBorderColor: var(--secondaryText);
+  --switchTrackBackgroundColor: var(--backgroundColor);
 
   /* Selected State */
-  --toggleSelectedThumbBorderColor:var(--primaryDark);
-  --toggleSelectedTrackBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--primaryDark);
+  --switchSelectedThumbBorderColor:var(--primaryDark);
+  --switchSelectedTrackBackgroundColor: var(--primary);
+  --switchSelectedTrackBorderColor: var(--primaryDark);
 
   /* Disabled State */
-  --toggleDisabledThumbBorderColor: var(--secondaryText);
-  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-  --toggleDisabledSelectedThumbBorderColor: var(--primary);
+  --switchDisabledThumbBorderColor: var(--secondaryText);
+  --switchDisabledThumbBackgroundColor: var(--inputBackground);
+  --switchDisabledSelectedThumbBorderColor: var(--primary);
 
   /* 
     
@@ -4003,7 +4004,7 @@ input:-moz-focusring {
 **  - Updated transition speed
 */
 
-.rux-toggle {
+.rux-switch {
   position: relative;
   display: flex;
   justify-content: center;
@@ -4019,26 +4020,26 @@ input:-moz-focusring {
   overflow: hidden;
 }
 
-.rux-toggle__input {
+.rux-switch__input {
   display: none !important;
 }
 
-.rux-toggle__button {
+.rux-switch__button {
   display: flex;
   /* justify-content: center;
   align-content: center; */
   align-items: center;
 }
 
-.rux-toggle__button::before {
+.rux-switch__button::before {
   position: relative;
 
   display: flex;
   content: "";
 
   border-radius: 5.5px;
-  border: 1px solid var(--toggleTrackBorderColor);
-  background-color: var(--toggleTrackBackgroundColor);
+  border: 1px solid var(--switchTrackBorderColor);
+  background-color: var(--switchTrackBackgroundColor);
 
   height: 11px;
   width: 32px;
@@ -4047,12 +4048,12 @@ input:-moz-focusring {
 }
 
 /* Track */
-.rux-toggle__input:checked + .rux-toggle__button::before {
-  background-color: var(--toggleSelectedTrackBackgroundColor);
-  border-color: var(--toggleSelectedTrackBorderColor);
+.rux-switch__input:checked + .rux-switch__button::before {
+  background-color: var(--switchSelectedTrackBackgroundColor);
+  border-color: var(--switchSelectedTrackBorderColor);
 }
 
-.rux-toggle__button::after {
+.rux-switch__button::after {
   position: absolute;
   content: "";
   top: 1px;
@@ -4062,40 +4063,38 @@ input:-moz-focusring {
   width: 19px;
 
   border-radius: 50%;
-  border: 1px solid var(--toggleThumbBorderColor);
-  background-color: var(--toggleThumbBackgroundColor);
+  border: 1px solid var(--switchThumbBorderColor);
+  background-color: var(--switchThumbBackgroundColor);
 
   transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
 }
 
-
-
-.rux-toggle__input:disabled + .rux-toggle__button::after {
-  background-color: var(--toggleDisabledThumbBackgroundColor);
-	border-color: var(--toggleDisabledThumbBorderColor);
+.rux-switch__input:disabled + .rux-switch__button::after {
+  background-color: var(--switchDisabledThumbBackgroundColor);
+	border-color: var(--switchDisabledThumbBorderColor);
 	cursor: not-allowed;
 	cursor: var(--disabledCursor);
 }
 
-.rux-toggle__input:checked + .rux-toggle__button::after {
+.rux-switch__input:checked + .rux-switch__button::after {
   left: calc(50% + 2px);
-  border-color: var(--toggleSelectedThumbBorderColor);
+  border-color: var(--switchSelectedThumbBorderColor);
 }
 
-.rux-toggle__input:checked:disabled + .rux-toggle__button::after {
-  border-color: var(--toggleDisabledSelectedThumbBorderColor);
+.rux-switch__input:checked:disabled + .rux-switch__button::after {
+  border-color: var(--switchDisabledSelectedThumbBorderColor);
   cursor: not-allowed;
   cursor: var(--disabledCursor);
 }
 
-.rux-toggle__input:disabled + .rux-toggle__button::before {
+.rux-switch__input:disabled + .rux-switch__button::before {
   opacity: 0.4;
   opacity: var(--disabledOpacity);
   cursor: not-allowed;
   cursor: var(--disabledCursor);
 }
 
-.rux-toggle__input:disabled + .rux-toggle__button {
+.rux-switch__input:disabled + .rux-switch__button {
 	opacity: 0.4;
 	opacity: var(--disabledOpacity);
 	cursor: not-allowed;

@@ -16,7 +16,7 @@
 **  - Updated transition speed
 */
 
-.rux-toggle {
+.rux-switch {
   position: relative;
   display: flex;
   justify-content: center;
@@ -32,26 +32,26 @@
   overflow: hidden;
 }
 
-.rux-toggle__input {
+.rux-switch__input {
   display: none !important;
 }
 
-.rux-toggle__button {
+.rux-switch__button {
   display: flex;
   /* justify-content: center;
   align-content: center; */
   align-items: center;
 }
 
-.rux-toggle__button::before {
+.rux-switch__button::before {
   position: relative;
 
   display: flex;
   content: "";
 
   border-radius: 5.5px;
-  border: 1px solid var(--toggleTrackBorderColor);
-  background-color: var(--toggleTrackBackgroundColor);
+  border: 1px solid var(--switchTrackBorderColor);
+  background-color: var(--switchTrackBackgroundColor);
 
   height: 11px;
   width: 32px;
@@ -60,12 +60,12 @@
 }
 
 /* Track */
-.rux-toggle__input:checked + .rux-toggle__button::before {
-  background-color: var(--toggleSelectedTrackBackgroundColor);
-  border-color: var(--toggleSelectedTrackBorderColor);
+.rux-switch__input:checked + .rux-switch__button::before {
+  background-color: var(--switchSelectedTrackBackgroundColor);
+  border-color: var(--switchSelectedTrackBorderColor);
 }
 
-.rux-toggle__button::after {
+.rux-switch__button::after {
   position: absolute;
   content: "";
   top: 1px;
@@ -75,36 +75,34 @@
   width: 19px;
 
   border-radius: 50%;
-  border: 1px solid var(--toggleThumbBorderColor);
-  background-color: var(--toggleThumbBackgroundColor);
+  border: 1px solid var(--switchThumbBorderColor);
+  background-color: var(--switchThumbBackgroundColor);
 
   transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
 }
 
-
-
-.rux-toggle__input:disabled + .rux-toggle__button::after {
-  background-color: var(--toggleDisabledThumbBackgroundColor);
-	border-color: var(--toggleDisabledThumbBorderColor);
+.rux-switch__input:disabled + .rux-switch__button::after {
+  background-color: var(--switchDisabledThumbBackgroundColor);
+	border-color: var(--switchDisabledThumbBorderColor);
 	cursor: var(--disabledCursor);
 }
 
-.rux-toggle__input:checked + .rux-toggle__button::after {
+.rux-switch__input:checked + .rux-switch__button::after {
   left: calc(50% + 2px);
-  border-color: var(--toggleSelectedThumbBorderColor);
+  border-color: var(--switchSelectedThumbBorderColor);
 }
 
-.rux-toggle__input:checked:disabled + .rux-toggle__button::after {
-  border-color: var(--toggleDisabledSelectedThumbBorderColor);
+.rux-switch__input:checked:disabled + .rux-switch__button::after {
+  border-color: var(--switchDisabledSelectedThumbBorderColor);
   cursor: var(--disabledCursor);
 }
 
-.rux-toggle__input:disabled + .rux-toggle__button::before {
+.rux-switch__input:disabled + .rux-switch__button::before {
   opacity: var(--disabledOpacity);
   cursor: var(--disabledCursor);
 }
 
-.rux-toggle__input:disabled + .rux-toggle__button {
+.rux-switch__input:disabled + .rux-switch__button {
 	opacity: var(--disabledOpacity);
 	cursor: var(--disabledCursor);
 }
