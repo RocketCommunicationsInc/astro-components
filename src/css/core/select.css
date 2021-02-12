@@ -4,24 +4,25 @@
 ** 	==========================================================================
 **	2.0.1 Notes
 */
-
 .rux-select {
+  --select-inactive-caret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --select-active-caret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+
   position: relative;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  border: 1px solid var(--selectBorderColor);
+  border: 1px solid var(--inputBorderColorAlt);
   border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
-
-  color: var(--selectTextColor);
+  color: var(--primaryElementText);
   font-family: var(--fontFamily);
   font-weight: normal;
   font-size: 1rem;
   padding: 0.438rem 3.125rem 0.438rem 0.5rem;
 
-  background-color: var(--selectBackgroundColor);
-  background-image: var(--selectCaret);
+  background-color: var(--inputBackground);
+  background-image: var(--select-inactive-caret);
   background-position: center right 0.625rem;
   background-repeat: no-repeat;
   user-select: none;
@@ -30,7 +31,7 @@
 .rux-select .rux-select optgroup,
 .rux-select option {
   color: rgb(0, 0, 0);
-  background-color: var(--selectOptBackground);
+  background-color: var(--inputBackground);
 }
 
 .rux-select .rux-select optgroup:hover,
@@ -46,8 +47,16 @@
 
 .rux-select:focus {
 	outline: none;
-  border: 1px solid var(--selectActiveBorderColor);
+  border: 1px solid var(--primary);
   border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
+}
+
+.rux-select:active{
+  background-image: var(--select-active-caret);
+}
+
+.rux-select:hover {
+  cursor: pointer;
 }
 
 .rux-select::-ms-expand {
