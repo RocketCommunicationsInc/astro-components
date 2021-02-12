@@ -1847,7 +1847,7 @@ label {
   border: 1px solid var(--inputBorderColorAlt);
   border-radius: 3px 3px 0 0;
   border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
-  color: var(--primaryElementText);
+  color: rgb(8,12,17);
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;

@@ -15,7 +15,7 @@
 
   border: 1px solid var(--inputBorderColorAlt);
   border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
-  color: var(--primaryElementText);
+  color: rgb(8,12,17);
   font-family: var(--fontFamily);
   font-weight: normal;
   font-size: 1rem;
