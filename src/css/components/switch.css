@@ -32,8 +32,12 @@
   overflow: hidden;
 }
 
-.rux-switch__input {
-  display: none !important;
+.rux-switch:hover{
+  cursor: pointer;
+}
+
+.rux-switch__input{
+  display: none;
 }
 
 .rux-switch__button {
@@ -43,6 +47,7 @@
   align-items: center;
 }
 
+/* Track */
 .rux-switch__button::before {
   position: relative;
 
@@ -50,21 +55,22 @@
   content: "";
 
   border-radius: 5.5px;
-  border: 1px solid var(--switchTrackBorderColor);
-  background-color: var(--switchTrackBackgroundColor);
+  border: 1px solid var(--inputBackgroundAlt);
+  background-color: var(--inputBackgroundAlt);
 
   height: 11px;
-  width: 32px;
+  width: 38px;
 
   transition: 0.167s background-color ease-in-out;
 }
 
-/* Track */
+/* Track Checked */
 .rux-switch__input:checked + .rux-switch__button::before {
-  background-color: var(--switchSelectedTrackBackgroundColor);
-  border-color: var(--switchSelectedTrackBorderColor);
+  border-color: var(--primary) !important;
+  background-color: var(--primary);
 }
 
+/* Button */
 .rux-switch__button::after {
   position: absolute;
   content: "";
@@ -75,21 +81,28 @@
   width: 19px;
 
   border-radius: 50%;
-  border: 1px solid var(--switchThumbBorderColor);
-  background-color: var(--switchThumbBackgroundColor);
+  border: 1px solid var(--inputBackgroundAlt);
+  background-color: var(--inputBackground);
 
   transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
+}
+
+/* Button Active */
+.rux-switch__input:checked + .rux-switch__button::after {
+  left: 50%;
+  border:1px solid var(--primary);
+  background-color: var(--inputBackground);
+}
+
+/* Hover */
+.rux-switch:hover, .rux-switch__button:hover{
+  cursor: pointer;
 }
 
 .rux-switch__input:disabled + .rux-switch__button::after {
   background-color: var(--switchDisabledThumbBackgroundColor);
 	border-color: var(--switchDisabledThumbBorderColor);
 	cursor: var(--disabledCursor);
-}
-
-.rux-switch__input:checked + .rux-switch__button::after {
-  left: calc(50% + 2px);
-  border-color: var(--switchSelectedThumbBorderColor);
 }
 
 .rux-switch__input:checked:disabled + .rux-switch__button::after {

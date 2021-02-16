@@ -830,6 +830,7 @@ li.light-theme {
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
+  --inputBackgroundAlt: #d4d8dd;
 
 	/* styles */
   --fontColor: var(--defaultText);
