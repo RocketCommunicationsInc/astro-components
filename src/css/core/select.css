@@ -1,6 +1,6 @@
 /*
 **
-** 	ASTRO DROP DOWN
+** 	ASTRO SELECT
 ** 	==========================================================================
 **	2.0.1 Notes
 */
@@ -15,7 +15,7 @@
 
   border: 1px solid var(--inputBorderColorAlt);
   border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
-  color: rgb(8,12,17);
+  color: var(--inputDark);
   font-family: var(--fontFamily);
   font-weight: normal;
   font-size: 1rem;
@@ -30,7 +30,7 @@
 
 .rux-select .rux-select optgroup,
 .rux-select option {
-  color: rgb(0, 0, 0);
+  color: var(--inputDark);
   background-color: var(--inputBackground);
 }
 
@@ -42,7 +42,7 @@
 .rux-select:disabled {
   opacity: 0.4;
   cursor: not-allowed;
-  border-color:rgb(41, 42, 45)
+  border-color: var(--inputBorderColorDisabled);
 }
 
 .rux-select:focus {
