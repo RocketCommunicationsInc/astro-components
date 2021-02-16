@@ -4,7 +4,7 @@ Select Menus allow users to select a value from a list of values.
 
 ## Guidelines
 
-- [Astro UXDS: Select](https://www.astrouxds.com/ui-components/drop-down)
+- [Astro UXDS: Select](https://www.astrouxds.com/ui-components/select)
 - [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
 ## Basic HTML Usage
