@@ -336,7 +336,7 @@
 
   --inputBackgroundColor: var(--inputBackground);
   --inputBorderColor: var(--surfaceElements);
-  --inputBorderColorAlt: var(var(--inputDark));
+  --inputBorderColorAlt: var(--inputDark);
   --inputBorderColorDisabled: rgb(41, 42, 45);
   --inputTextColor: var(--primaryElementText);
 	 

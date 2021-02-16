@@ -45,13 +45,17 @@
   border-color: var(--inputBorderColorDisabled);
 }
 
+.rux-select:disabled:hover{
+  cursor: not-allowed;
+}
+
 .rux-select:focus {
 	outline: none;
   border: 1px solid var(--primary);
-  border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
+  border-radius: var(--buttonBorderRadius);
 }
 
-.rux-select:active{
+.rux-select:active:not(:disabled){
   background-image: var(--select-active-caret);
 }
 
