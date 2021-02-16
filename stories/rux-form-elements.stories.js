@@ -351,7 +351,7 @@ export const SelectMenu = () => html`
 
       <div class="demo-row">
         <label>Disabled</label>
-        <select class="rux-select" placeholder="Select and Option" disabled>
+        <select class="rux-select" disabled>
           <option value="">Select an Option</option>
           <optgroup label="Group One">
             <option value="1.1">Option 1.1</option>
