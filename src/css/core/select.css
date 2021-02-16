@@ -14,7 +14,7 @@
   -moz-appearance: none;
 
   border: 1px solid var(--inputBorderColorAlt);
-  border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
+  border-radius: var(--buttonBorderRadius);
   color: var(--inputDark);
   font-family: var(--fontFamily);
   font-weight: normal;
