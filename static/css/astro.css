@@ -5583,9 +5583,9 @@ i.rux-icon {
                     -webkit-mask-size: cover;
                     mask-size: cover;
                 }
-.rux-icon-battery-80{
-                    -webkit-mask: url("/icons/astro.svg#battery-80") no-repeat;
-                    mask: url("/icons/astro.svg#battery-80") no-repeat;
+.rux-icon-battery-80x{
+                    -webkit-mask: url("/icons/astro.svg#battery-80x") no-repeat;
+                    mask: url("/icons/astro.svg#battery-80x") no-repeat;
                     -webkit-mask-size: cover;
                     mask-size: cover;
                 }
