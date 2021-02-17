@@ -18,8 +18,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "private": false,
   "scripts": {
-    "build-storybook": "gulp build && build-storybook -c .storybook -s ./static",
-    "storybook": "gulp build && start-storybook -p 9001 -c .storybook -s ./static "
+    "build-storybook": "lerna bootstrap && gulp build && build-storybook -c .storybook -s ./static",
+    "storybook": "lerna bootstrap && gulp build && start-storybook -p 9001 -c .storybook -s ./static "
   },
   "dependencies": {
     "ag-grid-community": "^24.0.0",
