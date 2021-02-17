@@ -352,6 +352,7 @@
   --primaryDarkHover: #0048724D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryElementText: #ffffff;
 	--inputBackground: #ffffff;
+  --inputDark: #080c11;
 
   /* styles */
   --fontColor: var(--defaultText);
@@ -678,6 +679,8 @@
 
   --inputBackgroundColor: var(--inputBackground);
   --inputBorderColor: var(--primaryLight);
+  --inputBorderColorAlt: var(--inputDark);
+  --inputBorderColorDisabled: #292a2d;
   --inputTextColor: var(--defaultText);
 
 	--inputFocusBorderColor: var(--primary);
@@ -823,6 +826,7 @@ li.light-theme {
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
+  --inputDark: #080c11;
 
 	/* styles */
   --fontColor: var(--defaultText);
@@ -1141,7 +1145,8 @@ li.light-theme {
 
   --inputBackgroundColor: var(--inputBackground);
   --inputBorderColor: var(--surfaceElements);
-  --inputBorderColorAlt: rgb(8, 12, 17);
+  --inputBorderColorAlt: var(--inputDark);
+  --inputBorderColorDisabled: #292a2d;
   --inputTextColor: var(--primaryElementText);
 	 
 	/* Input Focus */
@@ -1831,7 +1836,7 @@ label {
 
 /*
 **
-** 	ASTRO DROP DOWN
+** 	ASTRO SELECT
 ** 	==========================================================================
 **	2.0.1 Notes
 */
@@ -1845,9 +1850,9 @@ label {
   -moz-appearance: none;
 
   border: 1px solid var(--inputBorderColorAlt);
-  border-radius: 3px 3px 0 0;
-  border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
-  color: rgb(8,12,17);
+  border-radius: 3px;
+  border-radius: var(--buttonBorderRadius);
+  color: var(--inputDark);
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
@@ -1863,7 +1868,7 @@ label {
 
 .rux-select .rux-select optgroup,
 .rux-select option {
-  color: rgb(0, 0, 0);
+  color: var(--inputDark);
   background-color: var(--inputBackground);
 }
 
@@ -1875,17 +1880,21 @@ label {
 .rux-select:disabled {
   opacity: 0.4;
   cursor: not-allowed;
-  border-color:rgb(41, 42, 45)
+  border-color: var(--inputBorderColorDisabled);
+}
+
+.rux-select:disabled:hover{
+  cursor: not-allowed;
 }
 
 .rux-select:focus {
 	outline: none;
   border: 1px solid var(--primary);
-  border-radius: 3px 3px 0 0;
-  border-radius: var(--buttonBorderRadius) var(--buttonBorderRadius) 0 0;
+  border-radius: 3px;
+  border-radius: var(--buttonBorderRadius);
 }
 
-.rux-select:active{
+.rux-select:active:not(:disabled){
   background-image: var(--select-active-caret);
 }
 
