@@ -15,13 +15,14 @@ export default {
 };
 
 export const AllIcons = () => {
-  const colors = {
-    Primary: '#005a8f',
-    Secondary: '#4dacff',
-    Tertiary: '#52667a',
-    Quaternary: '#ced6e4',
-    White: '#ffffff',
-  };
+
+	const colors = {
+		Primary: '#4dacff',
+		Secondary: '#92cbff',
+		Tertiary: '#52667a',
+		Quaternary: '#ced6e4',
+		White: '#ffffff',
+	};
 
   const sizes = {
     'Extra Small': 'extra-small',
