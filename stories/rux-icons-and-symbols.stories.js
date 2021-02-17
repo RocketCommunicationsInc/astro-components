@@ -15,14 +15,13 @@ export default {
 };
 
 export const AllIcons = () => {
-
-	const colors = {
-		Primary: '#4dacff',
-		Secondary: '#92cbff',
-		Tertiary: '#52667a',
-		Quaternary: '#ced6e4',
-		White: '#ffffff',
-	};
+  const colors = {
+    Primary: '#4dacff',
+    Secondary: '#92cbff',
+    Tertiary: '#52667a',
+    Quaternary: '#ced6e4',
+    White: '#ffffff',
+  };
 
   const sizes = {
     'Extra Small': 'extra-small',
@@ -33,6 +32,7 @@ export const AllIcons = () => {
 
   const colorKnob = select('Color', colors, '#4dacff');
   const sizeKnob = select('Size', sizes, 'normal');
+
   const icons = ruxIconsJson.icons.sort((a, b) => {
     if (a.id < b.id) {
       return -1;
@@ -51,18 +51,23 @@ export const AllIcons = () => {
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-
         justify-content: center;
       }
 
       .icon-container li {
         display: block;
         margin: 1rem 1.5rem;
+        max-width: 5rem;
       }
 
       .icon-name {
+        display: block;
         margin-top: 0.5rem;
         font-size: 0.75rem;
+        width: 5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
     </style>
 
@@ -70,8 +75,8 @@ export const AllIcons = () => {
       <ul class="icon-container">
         ${icons.map(
       (icon) => html`
-            <li>
-              <i class="rux-icon rux-icon-${icon.id}"></i>
+            <li title="${icon.id}" style="width: ${sizeKnob}; height: ${sizeKnob};">
+              <i class="rux-icon rux-icon-${icon.id}" style="color: ${colorKnob};"></i>
               <div class="icon-name">${icon.id}</div>
             </li>
           `,
