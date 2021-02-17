@@ -17,7 +17,7 @@
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
-  --inputDark: rgb(8,12,17);
+  --inputDark: #080c11;
 
 	/* styles */
   --fontColor: var(--defaultText);
@@ -337,7 +337,7 @@
   --inputBackgroundColor: var(--inputBackground);
   --inputBorderColor: var(--surfaceElements);
   --inputBorderColorAlt: var(--inputDark);
-  --inputBorderColorDisabled: rgb(41, 42, 45);
+  --inputBorderColorDisabled: #292a2d;
   --inputTextColor: var(--primaryElementText);
 	 
 	/* Input Focus */
