@@ -109,3 +109,5 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 ```xml
 <rux-icon library="/icons/my-namespaced-custom-icons.svg" icon="my-namespaced-prefix_settings"></rux-icon>
 ```
+
+Material icons License (https://github.com/google/material-design-icons/blob/master/LICENSE)
