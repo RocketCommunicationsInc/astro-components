@@ -4187,10 +4187,6 @@
   -webkit-mask: url("/icons/astro.svg#processor-alt") no-repeat;
   mask: url("/icons/astro.svg#processor-alt") no-repeat;
 }
-.rux-icon--solar{
-  -webkit-mask: url("/icons/astro.svg#solar") no-repeat;
-  mask: url("/icons/astro.svg#solar") no-repeat;
-}
 .rux-icon--processor{
   -webkit-mask: url("/icons/astro.svg#processor") no-repeat;
   mask: url("/icons/astro.svg#processor") no-repeat;
