@@ -24,10 +24,10 @@ export const AllIcons = () => {
   };
 
   const sizes = {
-    'Extra Small': 'extra-small',
-    'Small': 'small',
-    'Normal': 'normal',
-    'Large': 'large',
+    'Extra Small': '1rem',
+    'Small': '1.8rem',
+    'Normal': '2.8rem',
+    'Large': '3.5rem',
   };
 
   const colorKnob = select('Color', colors, '#4dacff');
@@ -76,8 +76,8 @@ export const AllIcons = () => {
         ${icons.map(
       (icon) => html`
             <li title="${icon.id}" style="width: ${sizeKnob}; height: ${sizeKnob};">
-              <i class="rux-icon rux-icon--${icon.id}" style="color: ${colorKnob};"></i>
-              <div class="icon-name">${icon.id}</div>
+              <i class="rux-icon rux-icon--${icon.id}" style="width: ${sizeKnob}; height: ${sizeKnob}; background-color: ${colorKnob};"></i>
+              <div class="icon-name" style="width: ${sizeKnob}">${icon.id}</div>
             </li>
           `,
   )}
