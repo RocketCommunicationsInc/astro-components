@@ -44,11 +44,9 @@ class AstroGenerateIconCss extends Core{
                 this.icons.push({
                     "id": id
                 });
-                newArr.push(`.rux-icon-${id}{
+                newArr.push(`.rux-icon--${id}{
                     -webkit-mask: url("/icons/astro.svg#${id}") no-repeat;
                     mask: url("/icons/astro.svg#${id}") no-repeat;
-                    -webkit-mask-size: cover;
-                    mask-size: cover;
                 }`);
             }   
         });
