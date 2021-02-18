@@ -76,7 +76,7 @@ export const AllIcons = () => {
         ${icons.map(
       (icon) => html`
             <li title="${icon.id}" style="width: ${sizeKnob}; height: ${sizeKnob};">
-              <i class="rux-icon rux-icon-${icon.id}" style="color: ${colorKnob};"></i>
+              <i class="rux-icon rux-icon--${icon.id}" style="color: ${colorKnob};"></i>
               <div class="icon-name">${icon.id}</div>
             </li>
           `,
