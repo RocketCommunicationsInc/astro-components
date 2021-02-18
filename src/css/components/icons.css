@@ -8,6 +8,9 @@
   -moz-osx-font-smoothing: grayscale;
 
   fill: var(--iconDefaultColor);
+
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
 .rux-icon svg {
 	fill: var(--iconDefaultColor);
