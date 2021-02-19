@@ -1,39 +1,10 @@
-/*
-**
-** 	ASTRO TOGGLE BUTTONS
-** 	==========================================================================
-**  3.0 Notes
-**  - Breaking change to markup of toggle button
-**  2.1 Notes
-**	- Moved Pushbuttons to its own style sheet
-**	1.4 Notes
-**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
-**	- Removed prefixed linear gradients
-**	- Removed prefixed transition
-**  - Fixed added colon to checked pseudo class (e.g., checked became :checked)
-**  - Alignment issue fixed on toggle button label
-**  - Updated to WCAG colors
-**  - Updated transition speed
-*/
-
 .rux-switch {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
 
-  /* height: 1.175rem; */
-  /* width: 2.3875rem; */
   height: 22px;
   width: 42px;
-
-  user-select: none;
   overflow: hidden;
-}
-
-.rux-switch:hover{
-  cursor: pointer;
 }
 
 .rux-switch__input{
@@ -42,9 +13,8 @@
 
 .rux-switch__button {
   display: flex;
-  /* justify-content: center;
-  align-content: center; */
   align-items: center;
+  cursor: pointer;
 }
 
 /* Track */
@@ -55,19 +25,31 @@
   content: "";
 
   border-radius: 5.5px;
-  border: 1px solid var(--inputBackgroundAlt);
-  background-color: var(--inputBackgroundAlt);
+  border: 1px solid var(--switchOffColor);
+  background-color: var(--switchOffColor);
 
   height: 11px;
   width: 38px;
-
   transition: 0.167s background-color ease-in-out;
+  z-index: 2;
 }
 
-/* Track Checked */
+/* Track Active */
 .rux-switch__input:checked + .rux-switch__button::before {
-  border-color: var(--primary) !important;
-  background-color: var(--primary);
+  border-color: var(--switchOnColor);
+  background-color: var(--switchOnColor);
+}
+
+ /* Track Hover Unchecked */
+ .rux-switch:hover .rux-switch__input + .rux-switch__button:before {
+  border: 1px solid var(--switchHoverOffColor);
+  background-color: var(--switchHoverOffColor);
+}
+
+/* Track Hover Checked */
+.rux-switch:hover .rux-switch__input:checked + .rux-switch__button:before {
+  border: 1px solid var(--switchHoverOnColor);
+  background-color: var(--switchHoverOnColor);
 }
 
 /* Button */
@@ -76,12 +58,12 @@
   content: "";
   top: 1px;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   height: 19px;
   width: 19px;
 
   border-radius: 50%;
-  border: 1px solid var(--inputBackgroundAlt);
+  border: 1px solid var(--switchOffColor);
   background-color: var(--inputBackground);
 
   transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
@@ -90,23 +72,28 @@
 /* Button Active */
 .rux-switch__input:checked + .rux-switch__button::after {
   left: 50%;
-  border:1px solid var(--primary);
+  border:1px solid var(--switchOnColor);
   background-color: var(--inputBackground);
 }
 
-/* Hover */
-.rux-switch:hover, .rux-switch__button:hover{
-  cursor: pointer;
+/* Button Hover Unchecked */
+.rux-switch:hover .rux-switch__input + .rux-switch__button:after {
+  border: 1px solid var(--switchHoverOffColor);
+}
+
+/* Button Hover Checked */
+.rux-switch:hover .rux-switch__input:checked + .rux-switch__button:after {
+  border: 1px solid var(--switchHoverOnColor);
 }
 
 .rux-switch__input:disabled + .rux-switch__button::after {
-  background-color: var(--switchDisabledThumbBackgroundColor);
-	border-color: var(--switchDisabledThumbBorderColor);
-	cursor: var(--disabledCursor);
+  background-color: var(--inputBackground);
+  border-color: var(--switchDisabledOffColor);
+  cursor: var(--disabledCursor);
 }
 
 .rux-switch__input:checked:disabled + .rux-switch__button::after {
-  border-color: var(--switchDisabledSelectedThumbBorderColor);
+  border-color: var(--switchDisabledOnColor);
   cursor: var(--disabledCursor);
 }
 
@@ -116,6 +103,6 @@
 }
 
 .rux-switch__input:disabled + .rux-switch__button {
-	opacity: var(--disabledOpacity);
-	cursor: var(--disabledCursor);
+  opacity: var(--disabledOpacity);
+  cursor: var(--disabledCursor);
 }

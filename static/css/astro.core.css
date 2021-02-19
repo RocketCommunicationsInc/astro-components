@@ -515,43 +515,18 @@
 
   /* 
     
-    Toggle Colors 
+    Switch Colors 
     ==========================================================================
 
   */
 
-  --switchButtonBackgroundColor: var(--primary);
-  --switchButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
-
-  --switchBaseBackgroundColor: linear-gradient(
-    to right,
-    var(--colorNormal) 50%,
-    var(--colorPrimaryLighten4) 50.1%
-  );
-	--switchBaseBorderColor: var(--primary);
-  --switchBaseTextColor: var(--primary);
-
-  --switchBaseSelectedTextColor: #007300;
-  --switchButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
-    -1px 0 2px rgba(0, 0, 0, 0.3);
-
   /* Default Toggle */
-  --switchThumbBorderColor: var(--secondaryText);
-	--switchThumbBackgroundColor: var(--inputBackground);	
-	--switchTrackBorderColor: var(--secondaryText);
-	--switchTrackBackgroundColor: var(--backgroundColor);
-
-	/* Selected State */
-  --switchSelectedThumbBorderColor: var(--primary);
-  --switchSelectedThumbBackgroundColor: var(--primary);
-  --switchSelectedTrackBorderColor: var(--primary);
-  --switchSelectedTrackBackgroundColor: var(--primaryLight);
-
-
-  --switchDisabledThumbBorderColor: var(--secondaryText);
-  --switchDisabledThumbBackgroundColor: var(--inputBackground);
-  --switchDisabledSelectedThumbBorderColor: var(--primary);
-
+  --switchOffColor: var(--secondaryText);
+  --switchOnColor: var(--primary);
+  --switchHoverOnColor: var(--primaryDark);
+  --switchHoverOffColor: var(--primaryDarkHover);
+  --switchDisabledOnColor: #005a8f;
+  --switchDisabledOffColor: var(--secondaryText);
   /* 
     
     Pushbutton Colors 
@@ -828,9 +803,9 @@ li.light-theme {
   --primaryLight: #92cbff;
   --primaryLightHover: #92cbff4D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryDark: #3a87cf;
+  --primaryDarkHover: #6b8ca5;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
-  --inputBackgroundAlt: #d4d8dd;
 
 	/* styles */
   --fontColor: var(--defaultText);
@@ -979,33 +954,16 @@ li.light-theme {
 
   /* 
     
-    Toggle Colors 
+    Switch Colors 
     ==========================================================================
 
   */
-	
-  --switchButtonBackgroundColor: var(--primary);
-  --switchBaseBackgroundColor: var(--primary);
-  --switchBaseBorderColor: var(--primary);
-  --switchBaseTextColor: var(--primaryElementText);
-  --switchBaseSelectedTextColor: var(--colorNormal);
-
-  /* Default Toggle */
-  --switchThumbBorderColor: var(--secondaryText);
-  --switchThumbBackgroundColor: var(--inputBackground);
-  --switchTrackBorderColor: var(--secondaryText);
-  --switchTrackBackgroundColor: var(--backgroundColor);
-
-  /* Selected State */
-  --switchSelectedThumbBorderColor:var(--primaryDark);
-  --switchSelectedTrackBackgroundColor: var(--primary);
-  --switchSelectedTrackBorderColor: var(--primaryDark);
-
-  /* Disabled State */
-  --switchDisabledThumbBorderColor: var(--secondaryText);
-  --switchDisabledThumbBackgroundColor: var(--inputBackground);
-  --switchDisabledSelectedThumbBorderColor: var(--primary);
-
+  --switchOffColor: var(--secondaryText);
+  --switchOnColor: var(--primary);
+  --switchHoverOnColor: var(--primaryDark);
+  --switchHoverOffColor: var(--primaryDarkHover);
+  --switchDisabledOnColor: #4dacff;
+  --switchDisabledOffColor: var(--secondaryText);
   /* 
     
     Popup Menu Colors 

@@ -1,5 +1,4 @@
 import { LitElement, html } from 'lit-element';
-
 /** Class representing a single Toggle instance. */
 
 export class RuxSwitch extends LitElement {
@@ -29,116 +28,121 @@ export class RuxSwitch extends LitElement {
   render() {
     return html`
       <style>
-      .rux-switch {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-      
-        /* height: 1.175rem; */
-        /* width: 2.3875rem; */
-        height: 22px;
-        width: 42px;
-      
-        user-select: none;
-        overflow: hidden;
-      }
-      
-      .rux-switch:hover{
-        cursor: pointer;
-      }
+        .rux-switch {
+          position: relative;
+          display: flex;
+        
+          height: 22px;
+          width: 42px;
+          overflow: hidden;
+        }
 
-      .rux-switch__input{
-        display: none;
-      }
-      
-      .rux-switch__button {
-        display: flex;
-        /* justify-content: center;
-        align-content: center; */
-        align-items: center;
-      }
-      
-      /* Track */
-      .rux-switch__button::before {
-        position: relative;
-      
-        display: flex;
-        content: "";
-      
-        border-radius: 5.5px;
-        border: 1px solid var(--inputBackgroundAlt);
-        background-color: var(--inputBackgroundAlt);
-      
-        height: 11px;
-        width: 38px;
-      
-        transition: 0.167s background-color ease-in-out;
-      }
-      
-      /* Track Checked */
-      .rux-switch__input:checked + .rux-switch__button::before {
-        border-color: var(--primary) !important;
-        background-color: var(--primary);
-      }
-      
-      /* Button */
-      .rux-switch__button::after {
-        position: absolute;
-        content: "";
-        top: 1px;
-        left: 0;
-        z-index: 1;
-        height: 19px;
-        width: 19px;
-      
-        border-radius: 50%;
-        border: 1px solid var(--inputBackgroundAlt);
-        background-color: var(--inputBackground);
-      
-        transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
-      }
-      
-      /* Button Active */
-      .rux-switch__input:checked + .rux-switch__button::after {
-        left: 50%;
-        border:1px solid var(--primary);
-        background-color: var(--inputBackground);
-      }
-      
-      /* Hover */
-      .rux-switch:hover, .rux-switch__button:hover{
-        cursor: pointer;
-      }
-      
-      .rux-switch__input:disabled + .rux-switch__button::after {
-        background-color: var(--switchDisabledThumbBackgroundColor);
-        border-color: var(--switchDisabledThumbBorderColor);
-        cursor: var(--disabledCursor);
-      }
-      
-      .rux-switch__input:checked:disabled + .rux-switch__button::after {
-        border-color: var(--switchDisabledSelectedThumbBorderColor);
-        cursor: var(--disabledCursor);
-      }
-      
-      .rux-switch__input:disabled + .rux-switch__button::before {
-        opacity: var(--disabledOpacity);
-        cursor: var(--disabledCursor);
-      }
-      
-      .rux-switch__input:disabled + .rux-switch__button {
-        opacity: var(--disabledOpacity);
-        cursor: var(--disabledCursor);
-      }
-      </style>      
+        .rux-switch__input{
+          display: none;
+        }
+        
+        .rux-switch__button {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+        
+        /* Track */
+        .rux-switch__button::before {
+          position: relative;
+        
+          display: flex;
+          content: "";
+        
+          border-radius: 5.5px;
+          border: 1px solid var(--switchOffColor);
+          background-color: var(--switchOffColor);
+        
+          height: 11px;
+          width: 38px;
+          transition: 0.167s background-color ease-in-out;
+          z-index: 2;
+        }
+        
+        /* Track Active */
+        .rux-switch__input:checked + .rux-switch__button::before {
+          border-color: var(--switchOnColor);
+          background-color: var(--switchOnColor);
+        }
+
+         /* Track Hover Unchecked */
+         .rux-switch:hover .rux-switch__input + .rux-switch__button:before {
+          border: 1px solid var(--switchHoverOffColor);
+          background-color: var(--switchHoverOffColor);
+        }
+
+        /* Track Hover Checked */
+        .rux-switch:hover .rux-switch__input:checked + .rux-switch__button:before {
+          border: 1px solid var(--switchHoverOnColor);
+          background-color: var(--switchHoverOnColor);
+        }
+        
+        /* Button */
+        .rux-switch__button::after {
+          position: absolute;
+          content: "";
+          top: 1px;
+          left: 0;
+          z-index: 3;
+          height: 19px;
+          width: 19px;
+        
+          border-radius: 50%;
+          border: 1px solid var(--switchOffColor);
+          background-color: var(--inputBackground);
+        
+          transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
+        }
+        
+        /* Button Active */
+        .rux-switch__input:checked + .rux-switch__button::after {
+          left: 50%;
+          border:1px solid var(--switchOnColor);
+          background-color: var(--inputBackground);
+        }
+        
+        /* Button Hover Unchecked */
+        .rux-switch:hover .rux-switch__input + .rux-switch__button:after {
+          border: 1px solid var(--switchHoverOffColor);
+        }
+
+        /* Button Hover Checked */
+        .rux-switch:hover .rux-switch__input:checked + .rux-switch__button:after {
+          border: 1px solid var(--switchHoverOnColor);
+        }
+        
+        .rux-switch__input:disabled + .rux-switch__button::after {
+          background-color: var(--inputBackground);
+          border-color: var(--switchDisabledOffColor);
+          cursor: var(--disabledCursor);
+        }
+        
+        .rux-switch__input:checked:disabled + .rux-switch__button::after {
+          border-color: var(--switchDisabledOnColor);
+          cursor: var(--disabledCursor);
+        }
+        
+        .rux-switch__input:disabled + .rux-switch__button::before {
+          opacity: var(--disabledOpacity);
+          cursor: var(--disabledCursor);
+        }
+        
+        .rux-switch__input:disabled + .rux-switch__button {
+          opacity: var(--disabledOpacity);
+          cursor: var(--disabledCursor);
+        }
+      </style>
       <div class="rux-switch">
         <input class="rux-switch__input" type="checkbox" 
           id="${this._id}" 
           ?disabled="${this.disabled}"
           ?checked="${this.checked}"
-        ></input>
+        >
         <label class="rux-switch__button" for="${this._id}" class="rux-switch__button">
         </label> 
       </div>

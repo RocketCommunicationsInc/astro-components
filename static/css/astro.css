@@ -515,43 +515,18 @@
 
   /* 
     
-    Toggle Colors 
+    Switch Colors 
     ==========================================================================
 
   */
 
-  --switchButtonBackgroundColor: var(--primary);
-  --switchButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
-
-  --switchBaseBackgroundColor: linear-gradient(
-    to right,
-    var(--colorNormal) 50%,
-    var(--colorPrimaryLighten4) 50.1%
-  );
-	--switchBaseBorderColor: var(--primary);
-  --switchBaseTextColor: var(--primary);
-
-  --switchBaseSelectedTextColor: #007300;
-  --switchButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
-    -1px 0 2px rgba(0, 0, 0, 0.3);
-
   /* Default Toggle */
-  --switchThumbBorderColor: var(--secondaryText);
-	--switchThumbBackgroundColor: var(--inputBackground);	
-	--switchTrackBorderColor: var(--secondaryText);
-	--switchTrackBackgroundColor: var(--backgroundColor);
-
-	/* Selected State */
-  --switchSelectedThumbBorderColor: var(--primary);
-  --switchSelectedThumbBackgroundColor: var(--primary);
-  --switchSelectedTrackBorderColor: var(--primary);
-  --switchSelectedTrackBackgroundColor: var(--primaryLight);
-
-
-  --switchDisabledThumbBorderColor: var(--secondaryText);
-  --switchDisabledThumbBackgroundColor: var(--inputBackground);
-  --switchDisabledSelectedThumbBorderColor: var(--primary);
-
+  --switchOffColor: var(--secondaryText);
+  --switchOnColor: var(--primary);
+  --switchHoverOnColor: var(--primaryDark);
+  --switchHoverOffColor: var(--primaryDarkHover);
+  --switchDisabledOnColor: #005a8f;
+  --switchDisabledOffColor: var(--secondaryText);
   /* 
     
     Pushbutton Colors 
@@ -828,9 +803,9 @@ li.light-theme {
   --primaryLight: #92cbff;
   --primaryLightHover: #92cbff4D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryDark: #3a87cf;
+  --primaryDarkHover: #6b8ca5;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
-  --inputBackgroundAlt: #d4d8dd;
 
 	/* styles */
   --fontColor: var(--defaultText);
@@ -979,33 +954,16 @@ li.light-theme {
 
   /* 
     
-    Toggle Colors 
+    Switch Colors 
     ==========================================================================
 
   */
-	
-  --switchButtonBackgroundColor: var(--primary);
-  --switchBaseBackgroundColor: var(--primary);
-  --switchBaseBorderColor: var(--primary);
-  --switchBaseTextColor: var(--primaryElementText);
-  --switchBaseSelectedTextColor: var(--colorNormal);
-
-  /* Default Toggle */
-  --switchThumbBorderColor: var(--secondaryText);
-  --switchThumbBackgroundColor: var(--inputBackground);
-  --switchTrackBorderColor: var(--secondaryText);
-  --switchTrackBackgroundColor: var(--backgroundColor);
-
-  /* Selected State */
-  --switchSelectedThumbBorderColor:var(--primaryDark);
-  --switchSelectedTrackBackgroundColor: var(--primary);
-  --switchSelectedTrackBorderColor: var(--primaryDark);
-
-  /* Disabled State */
-  --switchDisabledThumbBorderColor: var(--secondaryText);
-  --switchDisabledThumbBackgroundColor: var(--inputBackground);
-  --switchDisabledSelectedThumbBorderColor: var(--primary);
-
+  --switchOffColor: var(--secondaryText);
+  --switchOnColor: var(--primary);
+  --switchHoverOnColor: var(--primaryDark);
+  --switchHoverOffColor: var(--primaryDarkHover);
+  --switchDisabledOnColor: #4dacff;
+  --switchDisabledOffColor: var(--secondaryText);
   /* 
     
     Popup Menu Colors 
@@ -3987,42 +3945,13 @@ input:-moz-focusring {
   );
 }
 
-/*
-**
-** 	ASTRO TOGGLE BUTTONS
-** 	==========================================================================
-**  3.0 Notes
-**  - Breaking change to markup of toggle button
-**  2.1 Notes
-**	- Moved Pushbuttons to its own style sheet
-**	1.4 Notes
-**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
-**	- Removed prefixed linear gradients
-**	- Removed prefixed transition
-**  - Fixed added colon to checked pseudo class (e.g., checked became :checked)
-**  - Alignment issue fixed on toggle button label
-**  - Updated to WCAG colors
-**  - Updated transition speed
-*/
-
 .rux-switch {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
 
-  /* height: 1.175rem; */
-  /* width: 2.3875rem; */
   height: 22px;
   width: 42px;
-
-  user-select: none;
   overflow: hidden;
-}
-
-.rux-switch:hover{
-  cursor: pointer;
 }
 
 .rux-switch__input{
@@ -4031,9 +3960,8 @@ input:-moz-focusring {
 
 .rux-switch__button {
   display: flex;
-  /* justify-content: center;
-  align-content: center; */
   align-items: center;
+  cursor: pointer;
 }
 
 /* Track */
@@ -4044,19 +3972,31 @@ input:-moz-focusring {
   content: "";
 
   border-radius: 5.5px;
-  border: 1px solid var(--inputBackgroundAlt);
-  background-color: var(--inputBackgroundAlt);
+  border: 1px solid var(--switchOffColor);
+  background-color: var(--switchOffColor);
 
   height: 11px;
   width: 38px;
-
   transition: 0.167s background-color ease-in-out;
+  z-index: 2;
 }
 
-/* Track Checked */
+/* Track Active */
 .rux-switch__input:checked + .rux-switch__button::before {
-  border-color: var(--primary) !important;
-  background-color: var(--primary);
+  border-color: var(--switchOnColor);
+  background-color: var(--switchOnColor);
+}
+
+ /* Track Hover Unchecked */
+ .rux-switch:hover .rux-switch__input + .rux-switch__button:before {
+  border: 1px solid var(--switchHoverOffColor);
+  background-color: var(--switchHoverOffColor);
+}
+
+/* Track Hover Checked */
+.rux-switch:hover .rux-switch__input:checked + .rux-switch__button:before {
+  border: 1px solid var(--switchHoverOnColor);
+  background-color: var(--switchHoverOnColor);
 }
 
 /* Button */
@@ -4065,12 +4005,12 @@ input:-moz-focusring {
   content: "";
   top: 1px;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   height: 19px;
   width: 19px;
 
   border-radius: 50%;
-  border: 1px solid var(--inputBackgroundAlt);
+  border: 1px solid var(--switchOffColor);
   background-color: var(--inputBackground);
 
   transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
@@ -4079,24 +4019,29 @@ input:-moz-focusring {
 /* Button Active */
 .rux-switch__input:checked + .rux-switch__button::after {
   left: 50%;
-  border:1px solid var(--primary);
+  border:1px solid var(--switchOnColor);
   background-color: var(--inputBackground);
 }
 
-/* Hover */
-.rux-switch:hover, .rux-switch__button:hover{
-  cursor: pointer;
+/* Button Hover Unchecked */
+.rux-switch:hover .rux-switch__input + .rux-switch__button:after {
+  border: 1px solid var(--switchHoverOffColor);
+}
+
+/* Button Hover Checked */
+.rux-switch:hover .rux-switch__input:checked + .rux-switch__button:after {
+  border: 1px solid var(--switchHoverOnColor);
 }
 
 .rux-switch__input:disabled + .rux-switch__button::after {
-  background-color: var(--switchDisabledThumbBackgroundColor);
-	border-color: var(--switchDisabledThumbBorderColor);
-	cursor: not-allowed;
-	cursor: var(--disabledCursor);
+  background-color: var(--inputBackground);
+  border-color: var(--switchDisabledOffColor);
+  cursor: not-allowed;
+  cursor: var(--disabledCursor);
 }
 
 .rux-switch__input:checked:disabled + .rux-switch__button::after {
-  border-color: var(--switchDisabledSelectedThumbBorderColor);
+  border-color: var(--switchDisabledOnColor);
   cursor: not-allowed;
   cursor: var(--disabledCursor);
 }
@@ -4109,10 +4054,10 @@ input:-moz-focusring {
 }
 
 .rux-switch__input:disabled + .rux-switch__button {
-	opacity: 0.4;
-	opacity: var(--disabledOpacity);
-	cursor: not-allowed;
-	cursor: var(--disabledCursor);
+  opacity: 0.4;
+  opacity: var(--disabledOpacity);
+  cursor: not-allowed;
+  cursor: var(--disabledCursor);
 }
 .rux-tree {
   display: inline-block;
