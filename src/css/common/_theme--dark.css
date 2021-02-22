@@ -174,7 +174,7 @@
   --switchOnColor: var(--primary);
   --switchHoverOnColor: var(--primaryDark);
   --switchHoverOffColor: var(--primaryDarkHover);
-  --switchDisabledOnColor: #4dacff;
+  --switchDisabledOnColor: var(--primary);
   --switchDisabledOffColor: var(--secondaryText);
   /* 
     
