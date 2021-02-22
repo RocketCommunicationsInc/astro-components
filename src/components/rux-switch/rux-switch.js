@@ -137,8 +137,8 @@ export class RuxSwitch extends LitElement {
       <div class="rux-switch">
         <input class="rux-switch__input" type="checkbox" 
           id="${this._id}" 
-          ?disabled="${this.disabled}"
-          ?checked="${this.checked}"
+          ?disabled=${this.disabled}
+          ?checked=${this.checked}
         >
         <label class="rux-switch__button" for="${this._id}" class="rux-switch__button">
         </label> 
