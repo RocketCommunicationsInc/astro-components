@@ -96,7 +96,7 @@ export class RuxSwitch extends LitElement {
           border: 1px solid var(--switchOffColor);
           background-color: var(--inputBackground);
         
-          transition: 0.167s left ease-in-out;
+          transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
         }
         
         /* Button Active */
