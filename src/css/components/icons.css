@@ -8,7 +8,6 @@
   -moz-osx-font-smoothing: grayscale;
 
   fill: var(--iconDefaultColor);
-
   -webkit-mask-size: cover;
   mask-size: cover;
 }
