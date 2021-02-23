@@ -31,7 +31,7 @@ export class RuxSwitch extends LitElement {
         .rux-switch {
           position: relative;
           display: flex;
-        
+
           height: 22px;
           width: 42px;
           overflow: hidden;
@@ -40,38 +40,39 @@ export class RuxSwitch extends LitElement {
         .rux-switch__input{
           display: none;
         }
-        
+
         .rux-switch__button {
           display: flex;
           align-items: center;
           cursor: pointer;
         }
-        
+
         /* Track */
         .rux-switch__button::before {
           position: relative;
-        
+
           display: flex;
           content: "";
-        
+
           border-radius: 5.5px;
           border: 1px solid;
           border-color: var(--switchOffColor);
           background-color: var(--switchOffColor);
-        
+
           height: 11px;
           width: 38px;
           z-index: 2;
+          transition: 0.1s background-color linear;
         }
-        
+
         /* Track Active */
         .rux-switch__input:checked + .rux-switch__button::before {
           border-color: var(--switchOnColor);
           background-color: var(--switchOnColor);
         }
 
-         /* Track Hover Unchecked */
-         .rux-switch:hover .rux-switch__input:not(:disabled) + .rux-switch__button:before {
+        /* Track Hover Unchecked */
+        .rux-switch:hover .rux-switch__input:not(:disabled) + .rux-switch__button:before {
           border-color: var(--switchHoverOffColor);
           background-color: var(--switchHoverOffColor);
         }
@@ -81,7 +82,7 @@ export class RuxSwitch extends LitElement {
           border-color: var(--switchHoverOnColor);
           background-color: var(--switchHoverOnColor);
         }
-        
+
         /* Button */
         .rux-switch__button::after {
           position: absolute;
@@ -91,21 +92,21 @@ export class RuxSwitch extends LitElement {
           z-index: 3;
           height: 19px;
           width: 19px;
-        
+
           border-radius: 50%;
           border: 1px solid var(--switchOffColor);
           background-color: var(--inputBackground);
-        
-          transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
+
+          transition: 0.1s left linear, 0.1s border-color linear;
         }
-        
+
         /* Button Active */
         .rux-switch__input:checked + .rux-switch__button::after {
           left: 50%;
           border-color: var(--switchOnColor);
           background-color: var(--inputBackground);
         }
-        
+
         /* Button Hover Unchecked */
         .rux-switch:hover .rux-switch__input:not(:disabled) + .rux-switch__button:after {
           border-color: var(--switchHoverOffColor);
@@ -120,15 +121,15 @@ export class RuxSwitch extends LitElement {
         .rux-switch__input:disabled + .rux-switch__button::after {
           cursor: var(--disabledCursor);
         }
-        
+
         .rux-switch__input:checked:disabled + .rux-switch__button::after {
           cursor: var(--disabledCursor);
         }
-        
+
         .rux-switch__input:disabled + .rux-switch__button::before {
           cursor: var(--disabledCursor);
         }
-        
+
         .rux-switch__input:disabled + .rux-switch__button {
           opacity: var(--disabledOpacity);
           cursor: var(--disabledCursor);
