@@ -88,14 +88,15 @@
   border-color: var(--controlSelectedOutlineBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:hover + label::before,
-.rux-radio-button input[type="radio"]:hover + label::before {
+.rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
+.rux-radio-button input[type="radio"]:not(:disabled):hover + label:before,
+.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before,
+.rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:before {
 	border-color: var(--controlHoverBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:checked:hover + label::before,
-.rux-radio-button input[type="radio"]:checked:hover + label::before {
-	border-color: var(--controlSelectedBorderColor);
+.rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:after{
+  background-color: var(--controlHoverBorderColor);
 }
 
 .rux-checkbox input[type="checkbox"]:checked + label::after,
