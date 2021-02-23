@@ -16,8 +16,8 @@ export default {
 
 export const AllIcons = () => {
   const colors = {
-    Primary: '#4dacff',
-    Secondary: '#92cbff',
+    Primary: 'var(--primary)',
+    Secondary: 'var(--primaryLight)',
     Tertiary: '#52667a',
     Quaternary: '#ced6e4',
     White: '#ffffff',
