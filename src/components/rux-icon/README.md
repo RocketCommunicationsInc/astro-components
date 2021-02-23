@@ -83,6 +83,7 @@ In the SVG icon library file:
 - Replaced the DOM manipulation library for loading icons in favor of an HTML5 template TODO: add support for template outside of WebComponents when browser’s support shadowDOM piercing
 - Moved Astro Status Icons to their own package, `rux-status`
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+- Extended icon set with Google material design icons. Material icons License (https://github.com/google/material-design-icons/blob/master/LICENSE)
 
 <a name="astro-4-migration">
 
@@ -109,5 +110,3 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 ```xml
 <rux-icon library="/icons/my-namespaced-custom-icons.svg" icon="my-namespaced-prefix_settings"></rux-icon>
 ```
-
-Material icons License (https://github.com/google/material-design-icons/blob/master/LICENSE)
