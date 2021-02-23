@@ -191,7 +191,7 @@ class AstroIconExport extends Core {
     const style = '<style>g {display: none;} g:target {display: inline;}</style>';
     arr.splice(1, 0, style); 
     // Removes outer wrapper group that breaks svg
-    // TODO: create cleaner way removing unnecessar wrapping groups
+    // TODO: create cleaner way of removing unnecessary wrapping groups
     arr.splice(2, 1);
     arr.splice(arr.length -3, 1);
     return arr;
