@@ -1,6 +1,6 @@
 /*
 **
-** 	ASTRO CHECKBOX & RADIO BUTTONS
+** 	ASTRO RADIO BUTTONS
 ** 	==========================================================================
 **  3.0 Notes
 **  Added Custom CSS Properties to support light/dark theming
@@ -16,7 +16,6 @@
 **  - Removed user-select and placed it in astro.css to apply to all input types
 */
 
-.rux-checkbox,
 .rux-radio-button {
   display: flex;
   position: relative;
@@ -37,13 +36,11 @@
   ); */
 }
 
-.rux-checkbox input[type="checkbox"],
 .rux-radio-button input[type="radio"] {
   -webkit-appearance: none;
   display: none;
 }
 
-.rux-checkbox input[type="checkbox"] + label,
 .rux-radio-button input[type="radio"] + label {
   position: relative;
   display: flex;
@@ -56,7 +53,6 @@
   cursor: pointer;
 }
 
-.rux-checkbox input[type="checkbox"] + label::before,
 .rux-radio-button input[type="radio"] + label::before {
   display: flex;
   flex-shrink: 0;
@@ -73,24 +69,17 @@
   border: 1px solid var(--controlBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"] + label::before {
-  border-radius: 2px;
-}
-
 .rux-radio-button input[type="radio"] + label::before {
   border-radius: 100%;
   background-color: transparent;
 }
 
-.rux-checkbox input[type="checkbox"]:checked + label::before,
 .rux-radio-button input[type="radio"]:checked + label::before {
   background-color: var(--controlSelectedOutlineBackgroundColor);
   border-color: var(--controlSelectedOutlineBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
 .rux-radio-button input[type="radio"]:not(:disabled):hover + label:before,
-.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before,
 .rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:before {
 	border-color: var(--controlHoverBorderColor);
 }
@@ -99,21 +88,11 @@
   background-color: var(--controlHoverBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:checked + label::after,
 .rux-radio-button input[type="radio"]:checked + label::after{
   position: absolute;
   top: 5px;
   display: flex;
   content: "";
-}
-
-.rux-checkbox input[type="checkbox"]:checked + label::after{
-  height: 6px;
-  width: 12px;
-  left: 4px;
-  border-right: 2px solid var(--controlTextColor);
-  border-top: 2px solid var(--controlTextColor);
-  transform: rotate(125deg);
 }
 
 .rux-radio-button input[type="radio"]:checked + label::after {
@@ -126,7 +105,6 @@
   background-color: var(--primary);
 }
 
-.rux-checkbox input[type="checkbox"]:disabled + label,
 .rux-radio-button input[type="radio"]:disabled + label {
   cursor: var(--disabledCursor);
   opacity: var(--disabledOpacity);
