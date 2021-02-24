@@ -414,7 +414,7 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--primary);
+  --controlTextColor: var(--primaryElementText);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
   --controlBorderColor: var(--primary);
@@ -893,7 +893,7 @@ li.light-theme {
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--primary);
+  --controlTextColor: var(--primaryElementText);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
   --controlBorderColor: var(--primary);
@@ -1708,7 +1708,7 @@ label {
 
 /*
 **
-** 	ASTRO CHECKBOX & RADIO BUTTONS
+** 	ASTRO RADIO BUTTONS
 ** 	==========================================================================
 **  3.0 Notes
 **  Added Custom CSS Properties to support light/dark theming
@@ -1724,7 +1724,6 @@ label {
 **  - Removed user-select and placed it in astro.css to apply to all input types
 */
 
-.rux-checkbox,
 .rux-radio-button {
   display: flex;
   position: relative;
@@ -1745,13 +1744,11 @@ label {
   ); */
 }
 
-.rux-checkbox input[type="checkbox"],
 .rux-radio-button input[type="radio"] {
   -webkit-appearance: none;
   display: none;
 }
 
-.rux-checkbox input[type="checkbox"] + label,
 .rux-radio-button input[type="radio"] + label {
   position: relative;
   display: flex;
@@ -1764,7 +1761,6 @@ label {
   cursor: pointer;
 }
 
-.rux-checkbox input[type="checkbox"] + label::before,
 .rux-radio-button input[type="radio"] + label::before {
   display: flex;
   flex-shrink: 0;
@@ -1784,24 +1780,17 @@ label {
   border: 1px solid var(--controlBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"] + label::before {
-  border-radius: 2px;
-}
-
 .rux-radio-button input[type="radio"] + label::before {
   border-radius: 100%;
   background-color: transparent;
 }
 
-.rux-checkbox input[type="checkbox"]:checked + label::before,
 .rux-radio-button input[type="radio"]:checked + label::before {
   background-color: var(--controlSelectedOutlineBackgroundColor);
   border-color: var(--controlSelectedOutlineBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
 .rux-radio-button input[type="radio"]:not(:disabled):hover + label:before,
-.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before,
 .rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:before {
 	border-color: var(--controlHoverBorderColor);
 }
@@ -1810,21 +1799,11 @@ label {
   background-color: var(--controlHoverBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:checked + label::after,
 .rux-radio-button input[type="radio"]:checked + label::after{
   position: absolute;
   top: 5px;
   display: flex;
   content: "";
-}
-
-.rux-checkbox input[type="checkbox"]:checked + label::after{
-  height: 6px;
-  width: 12px;
-  left: 4px;
-  border-right: 2px solid var(--controlTextColor);
-  border-top: 2px solid var(--controlTextColor);
-  transform: rotate(125deg);
 }
 
 .rux-radio-button input[type="radio"]:checked + label::after {
@@ -1837,8 +1816,136 @@ label {
   background-color: var(--primary);
 }
 
-.rux-checkbox input[type="checkbox"]:disabled + label,
 .rux-radio-button input[type="radio"]:disabled + label {
+  cursor: not-allowed;
+  cursor: var(--disabledCursor);
+  opacity: 0.4;
+  opacity: var(--disabledOpacity);
+}
+
+/*
+**
+** 	ASTRO CHECKBOX BUTTON
+** 	==========================================================================
+**  3.0 Notes
+**  Added Custom CSS Properties to support light/dark theming
+**  Added fallback properties for IE11
+**  2.0 Notes
+**  - Removed hand cursor on checkbox
+**  - Updated styles to Astro 2.0
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed linear gradients
+**  - Added line-height to label to fix minor alignment issue
+**  - Moved user-select to parent element
+**  - Removed user-select and placed it in astro.css to apply to all input types
+*/
+
+.rux-checkbox {
+  display: flex;
+  position: relative;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+
+  /* DEBUG */
+  /* padding: 1rem; */
+  /* outline: 1px solid red;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 0) 49.5%,
+    rgba(255, 0, 0, 1) 50%,
+    rgba(255, 0, 0, 1) 51.5%,
+    rgba(255, 0, 0, 0) 51%,
+    rgba(255, 0, 0, 0)
+  ); */
+}
+
+.rux-checkbox input[type="checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.rux-checkbox input[type="checkbox"] + label {
+  position: relative;
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  color: var(--controlLabelColor);
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+/* Box */
+.rux-checkbox input[type="checkbox"] + label::before {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  content: "";
+
+  align-self: start;
+
+  height: 1.125rem;
+
+  height: var(--controlOptionSize);
+  width: 1.125rem;
+  width: var(--controlOptionSize);
+
+  margin: 0 0.625rem 0 0;
+
+  border: 1px solid var(--controlBorderColor);
+  border-radius: 2px;
+}
+
+.rux-checkbox input[type="checkbox"] + label::before {
+  border-radius: 2px;
+}
+
+.rux-checkbox input[type="checkbox"]:checked + label::before {
+  background-color: var(--primary);
+  border-color: var(--controlSelectedOutlineBorderColor);
+}
+
+.rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
+.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before{
+	border-color: var(--controlHoverBorderColor);
+}
+
+.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before{
+	background-color: var(--controlHoverBorderColor);
+}
+
+
+/* Checkmark */
+.rux-checkbox input[type="checkbox"]:checked + label::after {
+  position: absolute;
+  top: 5px;
+  display: flex;
+  content: "";
+}
+
+.rux-checkbox input[type="checkbox"]:checked + label::after{
+  height: 6px;
+  width: 12px;
+  left: 4px;
+  border-right: 2px solid var(--controlTextColor);
+  border-top: 2px solid var(--controlTextColor);
+
+  transform: rotate(125deg);
+}
+
+.rux-checkbox--indeterminate input[type="checkbox"]:checked + label::after{
+  width: 10px;
+  height: 5px;
+  transform: rotate(0deg);
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid var(--controlTextColor);
+}
+
+.rux-checkbox input[type="checkbox"]:disabled + label {
   cursor: not-allowed;
   cursor: var(--disabledCursor);
   opacity: 0.4;
