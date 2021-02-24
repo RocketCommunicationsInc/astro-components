@@ -8,7 +8,7 @@
   --buttonBorderRadius: 3px;
   --defaultBorderRadius: 3px;
 
-  --controlOptionSize: 1.25rem;
+  --controlOptionSize: 1.125rem; /* 18px */
   --controlBorderRadius: 3px;
 
   --labelFontSize: 1rem;
@@ -1760,6 +1760,8 @@ label {
   justify-content: flex-start;
 
   color: var(--controlLabelColor);
+  letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
 .rux-checkbox input[type="checkbox"] + label::before,
@@ -1771,10 +1773,10 @@ label {
 
   align-self: start;
 
-  height: 1.25rem;
+  height: 1.125rem;
 
   height: var(--controlOptionSize);
-  width: 1.25rem;
+  width: 1.125rem;
   width: var(--controlOptionSize);
 
   margin: 0 0.625rem 0 0;
@@ -1797,14 +1799,15 @@ label {
   border-color: var(--controlSelectedOutlineBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:hover + label::before,
-.rux-radio-button input[type="radio"]:hover + label::before {
+.rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
+.rux-radio-button input[type="radio"]:not(:disabled):hover + label:before,
+.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before,
+.rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:before {
 	border-color: var(--controlHoverBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:checked:hover + label::before,
-.rux-radio-button input[type="radio"]:checked:hover + label::before {
-	border-color: var(--controlSelectedBorderColor);
+.rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:after{
+  background-color: var(--controlHoverBorderColor);
 }
 
 .rux-checkbox input[type="checkbox"]:checked + label::after,
@@ -1826,8 +1829,8 @@ label {
 
 .rux-radio-button input[type="radio"]:checked + label::after {
   left: 5px;
-  height: 10px;
-  width: 10px;
+  height: 8px;
+  width: 8px;
   border-radius: 100%;
   /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
 
@@ -3477,13 +3480,13 @@ input[type="range"]:focus {
   -webkit-appearance: none;
 
 	position: relative;
-	top: calc( 1.25rem / -2);
+	top: calc( 1.125rem / -2);
 	top: calc( var(--thumbSize) / -2);
 
-  height: 1.25rem;
+  height: 1.125rem;
 
   height: var(--thumbSize);
-  width: 1.25rem;
+  width: 1.125rem;
   width: var(--thumbSize);
 
   border-radius: 100%;
@@ -3509,13 +3512,13 @@ input:-moz-focusring {
   -moz-appearance: none;
 
 	position: relative;
-	top: calc( 1.25rem / -2);
+	top: calc( 1.125rem / -2);
 	top: calc( var(--thumbSize) / -2);
 
-  height: 1.25rem;
+  height: 1.125rem;
 
   height: var(--thumbSize);
-  width: 1.25rem;
+  width: 1.125rem;
   width: var(--thumbSize);
 
   border-radius: 100%;
