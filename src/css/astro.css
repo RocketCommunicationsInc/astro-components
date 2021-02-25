@@ -8,13 +8,14 @@
 @import url("core/card.css");
 @import url("core/radio.css");
 @import url("core/checkbox.css");
-@import url("core/drop-down.css");
+@import url("core/select.css");
 @import url("core/forms.css");
 @import url("core/input.css");
 @import url("core/table.css");
 @import url("components/advanced-status.css");
 @import url("components/clock.css");
 @import url("components/icons.css");
+@import url("components/icons-list.css");
 @import url("components/log.css");
 @import url("components/modal.css");
 @import url("components/notification.css");
