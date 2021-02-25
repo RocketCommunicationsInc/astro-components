@@ -17,6 +17,7 @@
 	--primaryDark: #3a87cf;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
+  --inputDark: #080c11;
 
 	/* styles */
   --fontColor: var(--defaultText);
@@ -154,15 +155,7 @@
     ==========================================================================
     
   */
-	--selectBackgroundColor: var(--primary);
-  --selectBorderColor: var(--primary);
-	--selectTextColor: var(--primaryElementText);
-	--selectOptBackground: var(--inputBackground);
 	--selectHoverOptBackgroundColor: var(--primaryLight);
-	--selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-	
-	--selectActiveBorderColor: var(--primary);
-
   /* 
     
     Toggle Colors 
@@ -207,7 +200,7 @@
   --popupMenuItemBackgroundColor: var(--primary);
   --popupMenuItemHoverBackgroundColor: var(--primaryLight);
   --popupMenuItemHoverTextColor: var(--primaryElementText);
-
+  
   --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
 
   /* 
@@ -343,6 +336,8 @@
 
   --inputBackgroundColor: var(--inputBackground);
   --inputBorderColor: var(--surfaceElements);
+  --inputBorderColorAlt: var(--inputDark);
+  --inputBorderColorDisabled: #292a2d;
   --inputTextColor: var(--primaryElementText);
 	 
 	/* Input Focus */
