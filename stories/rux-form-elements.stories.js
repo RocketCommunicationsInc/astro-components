@@ -13,7 +13,7 @@ export default {
 
 export const Checkboxes = () => {
   const form = {
-    allChecked: boolean('all checked', false),
+    allChecked: false,
     checkOne: {
       value: true,
     },
@@ -34,29 +34,11 @@ export const Checkboxes = () => {
         padding: 10vh 5vw 0;
       }
 
-      section:last-child{
-        padding: 0 5vw 10vh;
-      }
-
       section ul{
         margin-right: 1rem; 
         margin-bottom: 0;
       }
-
-      section:last-child ul{
-        margin-top: 0;
-        margin-bottom: 1rem;
-        margin-right: 0;
-      }
     </style>
-    <section>
-      <ul>
-        <li class="rux-checkbox ${!form.allChecked ? 'rux-checkbox--indeterminate' : ''}">
-          <input type="checkbox" name="checkboxGroup" id="checkbox3c" checked/>
-          <label for="checkbox3c">Indeterminate</label>
-        </li>
-      </ul>
-    </section>
     <section>
       <ul>
         <li class="rux-checkbox">
@@ -70,6 +52,10 @@ export const Checkboxes = () => {
         <li class="rux-checkbox">
           <input type="checkbox" name="checkboxGroup" id="checkbox3c" ?checked=${form.checkThree.value} ?disabled=${form.checkThree.disabled} />
           <label for="checkbox3c">Disabled</label>
+        </li>
+        <li class="rux-checkbox rux-checkbox--indeterminate">
+          <input type="checkbox" name="checkboxGroup" id="checkbox4c" checked/>
+          <label for="checkbox4c">Indeterminate</label>
         </li>
       </ul>
     </section>
