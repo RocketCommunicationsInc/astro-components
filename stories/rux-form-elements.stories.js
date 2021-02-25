@@ -4,33 +4,77 @@ import inputFieldsReadme from '../src/css/documentation/input-fields-README.md';
 import checkboxesReadme from '../src/css/documentation/checkboxes-README.md';
 import radioButtonsReadme from '../src/css/documentation/radio-buttons-README.md';
 import selectMenuReadme from '../src/css/documentation/select-menu-README.md';
+import { boolean } from '@storybook/addon-knobs';
 
 export default {
   title: 'Components|Form Elements',
 };
 
-export const Checkboxes = () => html`
-    <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
+
+export const Checkboxes = () => {
+  const form = {
+    allChecked: boolean('all checked', false),
+    checkOne: {
+      value: true,
+    },
+    checkTwo: {
+      value: false,
+    },
+    checkThree: {
+      value: true,
+      disabled: true,
+    },
+  };
+
+  return html `
+    <style>
+      section {
+        display: flex;
+        justify-content: center;
+        padding: 10vh 5vw 0;
+      }
+
+      section:last-child{
+        padding: 0 5vw 10vh;
+      }
+
+      section ul{
+        margin-right: 1rem; 
+        margin-bottom: 0;
+      }
+
+      section:last-child ul{
+        margin-top: 0;
+        margin-bottom: 1rem;
+        margin-right: 0;
+      }
+    </style>
+    <section>
       <ul>
-        <li class="rux-checkbox">
-          <input type="checkbox" name="checkbox1c" id="checkbox1c" />
-          <label for="checkbox1c">Checkbox</label>
-        </li>
-        <li class="rux-checkbox">
-          <input type="checkbox" name="checkbox2c" id="checkbox2c" checked />
-          <label for="checkbox2c">Checkbox checked</label>
-        </li>
-        <li class="rux-checkbox">
-          <input type="checkbox" name="checkbox3c" id="checkbox3c" disabled />
-          <label for="checkbox3c">Checkbox disabled</label>
-        </li>
-        <li class="rux-checkbox">
-          <input type="checkbox" name="checkbox4c" id="checkbox4c" checked disabled />
-          <label for="checkbox4c">Checkbox disabled checked</label>
+        <li class="rux-checkbox ${!form.allChecked ? 'rux-checkbox--indeterminate' : ''}">
+          <input type="checkbox" name="checkboxGroup" id="checkbox3c" checked/>
+          <label for="checkbox3c">Indeterminate</label>
         </li>
       </ul>
-    </div>
+    </section>
+    <section>
+      <ul>
+        <li class="rux-checkbox">
+          <input type="checkbox" name="checkboxGroup" id="checkbox1c" ?checked=${form.checkOne.value} />
+          <label for="checkbox1c">Checked</label>
+        </li>
+        <li class="rux-checkbox">
+          <input type="checkbox" name="checkboxGroup" id="checkbox2c" ?checked=${form.checkTwo.value} />
+          <label for="checkbox2c">Unchecked</label>
+        </li>
+        <li class="rux-checkbox">
+          <input type="checkbox" name="checkboxGroup" id="checkbox3c" ?checked=${form.checkThree.value} ?disabled=${form.checkThree.disabled} />
+          <label for="checkbox3c">Disabled</label>
+        </li>
+      </ul>
+    </section>
   `;
+};
 
 Checkboxes.story = {
   parameters: {
@@ -45,7 +89,7 @@ Checkboxes.story = {
 };
 
 export const RadioButtons = () => html`
-    <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
+    <div style="padding: 10vh 5vw; display: flex; justify-content: center;" id="hey">
       <ul>
         <li class="rux-radio-button">
           <input type="radio" name="radio1c" id="radio1c" />
