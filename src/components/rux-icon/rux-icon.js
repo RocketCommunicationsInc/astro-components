@@ -66,7 +66,6 @@ export class RuxIcon extends LitElement {
           height: 100%;
 					width: auto;
 					fill: var(--iconColor);
-
 				}
 				
 				.rux-button--outline rux-icon {
@@ -92,7 +91,7 @@ export class RuxIcon extends LitElement {
       <span id="rux-icon" title="${this.label}">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 128 128"
+          viewBox="0 0 24 24"
           preserveAspectRatio="xMidYMid meet"
           focusable="false"
         >
