@@ -30,7 +30,7 @@ export const AllIcons = () => {
     'Large': '3.5rem',
   };
 
-  const colorKnob = select('Color', colors, '#4dacff');
+  const colorKnob = select('Color', colors, 'var(--primary)');
   const sizeKnob = select('Size', sizes, 'normal');
 
   const icons = ruxIconsJson.icons.sort((a, b) => {
