@@ -12,7 +12,17 @@ export class RuxSwitch extends LitElement {
         type: Boolean,
         reflect: true,
       },
+      id: {
+        type: String,
+        reflect: true,
+      },
     };
+  }
+
+  updateChecked() {
+    this.checked = !this.checked;
+    const event = new CustomEvent(`checked-${this.id}`, { detail: this.checked });
+    window.dispatchEvent(event);
   }
 
   constructor() {
@@ -140,6 +150,7 @@ export class RuxSwitch extends LitElement {
           id="${this._id}" 
           ?disabled=${this.disabled}
           ?checked="${this.checked}"
+          @change="${this.updateChecked}"
         >
         <label class="rux-switch__button" for="${this._id}" class="rux-switch__button">
         </label> 

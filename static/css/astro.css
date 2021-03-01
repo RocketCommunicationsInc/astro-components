@@ -517,7 +517,7 @@
   --switchOffColor: var(--secondaryText);
   --switchOnColor: var(--primary);
   --switchHoverOnColor: var(--primaryDark);
-  --switchHoverOffColor: var(--primaryDarkHover);
+  --switchHoverOffColor: var(--primaryDark);
   --switchDisabledOnColor: var(--primary);
   --switchDisabledOffColor: var(--secondaryText);
   /* 
@@ -947,8 +947,8 @@ li.light-theme {
   */
   --switchOffColor: var(--secondaryText);
   --switchOnColor: var(--primary);
-  --switchHoverOnColor: var(--primaryDark);
-  --switchHoverOffColor: var(--primaryDarkHover);
+  --switchHoverOnColor: var(--primaryLight);
+  --switchHoverOffColor: var(--primaryLight);
   --switchDisabledOnColor: var(--primary);
   --switchDisabledOffColor: var(--secondaryText);
   /* 

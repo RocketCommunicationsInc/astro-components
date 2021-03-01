@@ -166,7 +166,7 @@
   --switchOffColor: var(--secondaryText);
   --switchOnColor: var(--primary);
   --switchHoverOnColor: var(--primaryLight);
-  --switchHoverOffColor: var(--primaryDarkHover);
+  --switchHoverOffColor: var(--primaryLight);
   --switchDisabledOnColor: var(--primary);
   --switchDisabledOffColor: var(--secondaryText);
   /* 
