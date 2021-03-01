@@ -192,8 +192,7 @@ export class RuxSlider extends LitElement {
           -webkit-appearance: none;
 
           position: relative;
-          /* top: calc( var(--thumbSize) / -2); */
-          top: 0px;
+          top: calc( var(--thumbSize) / -2);
 
           height: var(--thumbSize);
           width: var(--thumbSize);
@@ -222,6 +221,12 @@ export class RuxSlider extends LitElement {
         .rux-range:not(:disabled)::-webkit-slider-thumb:active {
           border-color: var(--sliderSelectedThumbBorderColor);
           background-color: var(--inputBackground);
+          background: radial-gradient(circle, 
+            rgba(255,255,255,1) 40%, 
+            var(--primaryDark) 40%);
+          -webkit-radial-gradient: radial-gradient(circle, 
+            rgba(255,255,255,1) 40%, 
+            var(--primaryDark) 40%);
           box-shadow: var(--thumbShadowActive);
         }
 
@@ -258,6 +263,15 @@ export class RuxSlider extends LitElement {
 
           cursor: pointer;
           box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
+        }
+
+        .rux-range:not(:disabled)::-moz-range-thumb:active{
+          background: radial-gradient(circle, 
+            rgba(255,255,255,1) 40%, 
+            var(--primaryDark) 40%);
+          -webkit-radial-gradient: radial-gradient(circle, 
+            rgba(255,255,255,1) 40%, 
+            var(--primaryDark) 40%);
         }
 
         .rux-range::-moz-range-thumb:hover{
