@@ -68,6 +68,7 @@ export class RuxSlider extends LitElement {
           display: flex;
           flex-grow: 1;
           flex-flow: column;
+          --step:9; --min:19.8; --max:110; --ticksThickness: 2px; --ticksHeight: 4px; --ticksColor: var(--primaryDark);
         }
 
         *[hidden] {
@@ -91,6 +92,7 @@ export class RuxSlider extends LitElement {
           flex-direction: column;
           width: 100%;
           flex-grow: 1;
+          position: relative;
         }
 
         .rux-slider label input {
@@ -109,6 +111,8 @@ export class RuxSlider extends LitElement {
           margin: 0px;
         }
 
+
+
         input[type='range']:focus {
           outline: none;
         }
@@ -119,6 +123,7 @@ export class RuxSlider extends LitElement {
         .rux-range::-webkit-slider-runnable-track {
           display: flex;
           align-items: center;
+          max-width: 100%;
 
           /* width: 100%; */
           height: var(--trackHeight, 2px);
@@ -130,8 +135,8 @@ export class RuxSlider extends LitElement {
           background-image: linear-gradient(
             to right,
             var(--sliderSelectedTrackBackgroundColor) 0%,
-            var(--sliderSelectedTrackBackgroundColor) calc(1% * var(--value)),
-            var(--sliderTrackBackgroundColor) calc(1% * var(--value)),
+            var(--sliderSelectedTrackBackgroundColor) calc(0.99% * var(--value)),
+            var(--sliderTrackBackgroundColor) calc(0.99% * var(--value)),
             var(--sliderTrackBackgroundColor) 100%
           );
         }
@@ -193,6 +198,7 @@ export class RuxSlider extends LitElement {
 
           position: relative;
           top: calc( var(--thumbSize) / -2);
+          transform: translateX(-35%);
 
           height: var(--thumbSize);
           width: var(--thumbSize);
@@ -203,6 +209,7 @@ export class RuxSlider extends LitElement {
 
           cursor: pointer;
           box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
+          z-index: 6;
         }
 
         .rux-range::-webkit-slider-thumb:hover{
@@ -315,7 +322,7 @@ export class RuxSlider extends LitElement {
           justify-content: space-between;
 
           list-style: none;
-          padding: 0 0.1rem;
+          padding: 0;
           margin: 0.5em 0 0 0;
 
           color: var(--fontColor);
@@ -323,8 +330,21 @@ export class RuxSlider extends LitElement {
           font-family: var(--fontFamily);
         }
 
-        .rux-slider__control__labels li {
+        .rux-slider__control__labels option{
+          padding: 0px;
           text-align: left;
+        }
+
+        .rux-slider__control__ticks {
+          position: absolute;
+          top: 9px;
+          left: 0px;
+          width: 100%;
+          height: var(--ticksHeight);
+          background: linear-gradient(to right, var(--ticksColor) var(--ticksThickness), transparent 1px) repeat-x;
+          background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .1%) var(--ticksHeight);
+          background-position: 0 0;
+          z-index: 5;
         }
 
         .rux-slider__input {
@@ -376,15 +396,18 @@ export class RuxSlider extends LitElement {
             .value="${this.val.toString()}"
             aria-labelledby="ruxSlider"
             ?disabled="${this.disabled}"
+            list="steplist"
           />
-          <ol
+          <div class="rux-slider__control__ticks"></div>
+          <datalist
             class="rux-slider__control__labels"
             data-count="${this.axisLabels.length}"
             ?hidden="${!this.axisLabels.length}"
+            id="steplist"
           >
             ${this.axisLabels.map(
       (item) => html`
-                <li>${item}</li>
+                <option>${item}</option>
               `
   )}
           </ol>
