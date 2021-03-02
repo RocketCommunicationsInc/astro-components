@@ -230,33 +230,27 @@ export class RuxMonitoringIcon extends LitElement {
       }
 
       :host([status='off']) {
-        stroke: var(--colorOff, rgb(158, 167, 173));
         fill: var(--colorOff, rgb(158, 167, 173));
       }
 
       :host([status='standby']) {
-        stroke: var(--colorStandby, rgb(45, 204, 255));
         fill: var(--colorStandby, rgb(45, 204, 255));
       }
 
       /* .rux-status--normal { */
       :host([status='normal']) {
-        stroke: var(--colorNormal, rgb(86, 240, 0));
         fill: var(--colorNormal, rgb(86, 240, 0));
       }
 
       :host([status='caution']) {
-        stroke: var(--colorCaution, rgb(252, 232, 58));
         fill: var(--colorCaution, rgb(252, 232, 58));
       }
 
       :host([status='serious']) {
-        stroke: var(--colorSerious, rgb(255, 179, 0));
         fill: var(--colorSerious, rgb(255, 179, 0));
       }
 
       :host([status='critical']) {
-        stroke: var(--colorCritical, rgb(255, 56, 56));
         fill: var(--colorCritical, rgb(255, 56, 56));
       }
     `;

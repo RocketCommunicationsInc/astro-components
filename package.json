@@ -15,6 +15,7 @@
     "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
   },
   "description": "Astro Web Component for buttons",
+  "main": "bin/index.js",
   "license": "SEE LICENSE IN LICENSE.md",
   "private": false,
   "scripts": {
