@@ -152,6 +152,11 @@ export class RuxSlider extends LitElement {
           );
         }
 
+        .rux-range:disabled::-webkit-slider-runnable-track {
+          opacity: var(--disabledOpacity, 0.4);
+          cursor: var(--disabledCursor);
+        }
+
         /* Track -> Moz */
         .rux-range::-moz-range-track {
           display: flex;
@@ -163,6 +168,12 @@ export class RuxSlider extends LitElement {
 
           background-color: var(--sliderTrackBackgroundColor);
           outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
+        }
+
+        .rux-range:disabled::-moz-range-track, 
+        .rux-range:disabled::-moz-range-progress {
+          opacity: var(--disabledOpacity, 0.4);
+          cursor: var(--disabledCursor);
         }
 
         .rux-range::-moz-range-progress {
@@ -299,6 +310,7 @@ export class RuxSlider extends LitElement {
         }
 
         .rux-range:disabled::-moz-range-thumb {
+          opacity: var(--disabledOpacity, 0.4);
           cursor: var(--disabledCursor);
         }
 
@@ -339,6 +351,10 @@ export class RuxSlider extends LitElement {
           font-family: var(--fontFamily);
         }
 
+        .rux-range:disabled + .rux-slider__control__labels{
+          opacity: var(--disabledOpacity, 0.4);
+        }
+
         .rux-slider__control__labels li{
           padding: 0px;
           text-align: left;
@@ -359,6 +375,18 @@ export class RuxSlider extends LitElement {
           background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .18%) var(--ticksHeight);
           background-position: 0;
           z-index: 5;
+        }
+
+        .disabled {
+          opacity: var(--disabledOpacity, 0.4);
+          cursor: var(--disabledCursor);
+
+          -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+              -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
         }
 
         .rux-slider__input {
@@ -398,7 +426,8 @@ export class RuxSlider extends LitElement {
             ?disabled="${this.disabled}"
           />
         </div>
-        <div class="rux-slider__control">
+        <div class="rux-slider__control ${this.disabled ? 'disabled' : ''}">
+          ${ this.disabled ? `` : html`<div class="rux-slider__control-ticks"></div>` } 
           <input
             type="range"
             @input="${this._updateValue}"
@@ -412,7 +441,7 @@ export class RuxSlider extends LitElement {
             ?disabled="${this.disabled}"
             list="steplist"
           />
-          <div class="rux-slider__control-ticks"></div>
+          
           <ol
             class="rux-slider__control__labels"
             data-count="${this.axisLabels.length}"
