@@ -34,6 +34,8 @@
 
   --trackHeight: 2px;
   --trackCursor: pointer;
+
+  --step:1; --min:0; --max:100; --ticksThickness: 1px; --ticksHeight: 3px; --ticksColor: var(--primaryDark);
 }
 
 .rux-slider {
@@ -70,6 +72,7 @@
   background: none;
   width: 100%;
   margin: 0px;
+  color: transparent;
 }
 
 
@@ -296,6 +299,11 @@ input:-moz-focusring {
   text-align: left;
 }
 
+.rux-slider__control__labels option:first-child,
+.rux-slider__control__labels option:last-child{
+  margin: 0px;
+}
+
 .rux-slider__control__ticks {
   position: absolute;
   top: 9px;
@@ -303,8 +311,8 @@ input:-moz-focusring {
   width: 100%;
   height: var(--ticksHeight);
   background: linear-gradient(to right, var(--ticksColor) var(--ticksThickness), transparent 1px) repeat-x;
-  background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .1%) var(--ticksHeight);
-  background-position: 0 0;
+  background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .18%) var(--ticksHeight);
+  background-position: 0;
   z-index: 5;
 }
 

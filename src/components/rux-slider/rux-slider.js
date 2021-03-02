@@ -62,13 +62,13 @@ export class RuxSlider extends LitElement {
           --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary), 0 1px 3px rgba(0, 0, 0, 0.14),
             0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.2);
 
-          --trackHeight: 2px;
+          --trackHeight: 3px;
           --trackCursor: pointer;
           --value: 50;
           display: flex;
           flex-grow: 1;
           flex-flow: column;
-          --step:9; --min:20.7; --max:110; --ticksThickness: 2px; --ticksHeight: 4px; --ticksColor: var(--primaryDark);
+          --step:${this.step}; --min:${this.min}; --max:${this.max}; --ticksThickness: 1px; --ticksHeight: 3px; --ticksColor: var(--primaryDark);
         }
 
         *[hidden] {
@@ -199,6 +199,7 @@ export class RuxSlider extends LitElement {
 
           position: relative;
           top: calc( var(--thumbSize) / -2);
+          transform: translateX(-35%);
 
           height: var(--thumbSize);
           width: var(--thumbSize);
@@ -333,7 +334,6 @@ export class RuxSlider extends LitElement {
         .rux-slider__control__labels option{
           padding: 0px;
           text-align: left;
-          margin-left: 1%;
         }
 
         .rux-slider__control__labels option:first-child,
@@ -348,8 +348,8 @@ export class RuxSlider extends LitElement {
           width: 100%;
           height: var(--ticksHeight);
           background: linear-gradient(to right, var(--ticksColor) var(--ticksThickness), transparent 1px) repeat-x;
-          background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .1%) var(--ticksHeight);
-          background-position: 0 0;
+          background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .18%) var(--ticksHeight);
+          background-position: 0;
           z-index: 5;
         }
 
@@ -413,10 +413,10 @@ export class RuxSlider extends LitElement {
           >
             ${this.axisLabels.map(
       (item) => html`
-                <option>${item}</option>
+                <option .value="${item}">${item}</option>
               `
   )}
-          </ol>
+          </datalist>
         </div>
       </div>
     `;
