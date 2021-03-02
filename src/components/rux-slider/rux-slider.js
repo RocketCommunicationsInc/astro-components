@@ -39,10 +39,21 @@ export class RuxSlider extends LitElement {
     this.label = '';
     (this.axisLabels = []), (this.disabled = false);
     this.hideInput = false;
+    this.browser = this.getBrowser(navigator.userAgent.toLowerCase());
   }
 
   firstUpdated() {
     this._updateValue();
+  }
+
+  getBrowser(ua) {
+    if (ua.indexOf('chrome') > -1) {
+      return 'chrome';
+    } else if (ua.indexOf('safari') > -1) {
+      return 'safari';
+    } else if (ua.indexOf('firefox') > -1) {
+      return 'firefox';
+    }
   }
 
   _updateValue(e) {
@@ -85,6 +96,7 @@ export class RuxSlider extends LitElement {
           justify-content: space-between;
           align-items: center;
           font-size: 1.25rem;
+          margin-bottom: 9px;
         }
 
         .rux-slider__control {
@@ -111,8 +123,6 @@ export class RuxSlider extends LitElement {
           margin: 0px;
           color: transparent;
         }
-
-
 
         input[type='range']:focus {
           outline: none;
@@ -198,7 +208,7 @@ export class RuxSlider extends LitElement {
           -webkit-appearance: none;
 
           position: relative;
-          top: calc( var(--thumbSize) / -2);
+          margin-top: ${ this.browser === 'safari' ? '0px' : 'calc( var(--thumbSize) / -2)' };
           transform: translateX(-35%);
 
           height: var(--thumbSize);
@@ -261,6 +271,7 @@ export class RuxSlider extends LitElement {
 
           position: relative;
           top: calc( var(--thumbSize) / -2);
+          transform: translateX(-35%);
 
           height: var(--thumbSize);
           width: var(--thumbSize);
@@ -275,9 +286,6 @@ export class RuxSlider extends LitElement {
 
         .rux-range:not(:disabled)::-moz-range-thumb:active{
           background: radial-gradient(circle, 
-            rgba(255,255,255,1) 40%, 
-            var(--primaryDark) 40%);
-          -webkit-radial-gradient: radial-gradient(circle, 
             rgba(255,255,255,1) 40%, 
             var(--primaryDark) 40%);
         }
@@ -324,26 +332,26 @@ export class RuxSlider extends LitElement {
 
           list-style: none;
           padding: 0;
-          margin: 0.5em 0 0 0;
+          margin: 10px 0 0 0;
 
           color: var(--fontColor);
           font-size: 0.875rem;
           font-family: var(--fontFamily);
         }
 
-        .rux-slider__control__labels option{
+        .rux-slider__control__labels li{
           padding: 0px;
           text-align: left;
         }
 
-        .rux-slider__control__labels option:first-child,
-        .rux-slider__control__labels option:last-child{
+        .rux-slider__control__labels li:first-child,
+        .rux-slider__control__labels li:last-child{
           margin: 0px;
         }
 
-        .rux-slider__control__ticks {
+        .rux-slider__control-ticks {
           position: absolute;
-          top: 9px;
+          top: ${this.browser === 'firefox' ? '6px' : '0px'};
           left: 0px;
           width: 100%;
           height: var(--ticksHeight);
@@ -404,8 +412,8 @@ export class RuxSlider extends LitElement {
             ?disabled="${this.disabled}"
             list="steplist"
           />
-          <div class="rux-slider__control__ticks"></div>
-          <datalist
+          <div class="rux-slider__control-ticks"></div>
+          <ol
             class="rux-slider__control__labels"
             data-count="${this.axisLabels.length}"
             ?hidden="${!this.axisLabels.length}"
@@ -413,10 +421,10 @@ export class RuxSlider extends LitElement {
           >
             ${this.axisLabels.map(
       (item) => html`
-                <option .value="${item}">${item}</option>
+                <li>${item}</li>
               `
   )}
-          </datalist>
+          </ol>
         </div>
       </div>
     `;
