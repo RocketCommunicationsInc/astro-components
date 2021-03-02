@@ -68,7 +68,7 @@ export class RuxSlider extends LitElement {
           display: flex;
           flex-grow: 1;
           flex-flow: column;
-          --step:9; --min:19.8; --max:110; --ticksThickness: 2px; --ticksHeight: 4px; --ticksColor: var(--primaryDark);
+          --step:9; --min:20.7; --max:110; --ticksThickness: 2px; --ticksHeight: 4px; --ticksColor: var(--primaryDark);
         }
 
         *[hidden] {
@@ -109,6 +109,7 @@ export class RuxSlider extends LitElement {
           background: none;
           width: 100%;
           margin: 0px;
+          color: transparent;
         }
 
 
@@ -198,7 +199,6 @@ export class RuxSlider extends LitElement {
 
           position: relative;
           top: calc( var(--thumbSize) / -2);
-          transform: translateX(-35%);
 
           height: var(--thumbSize);
           width: var(--thumbSize);
@@ -333,6 +333,12 @@ export class RuxSlider extends LitElement {
         .rux-slider__control__labels option{
           padding: 0px;
           text-align: left;
+          margin-left: 1%;
+        }
+
+        .rux-slider__control__labels option:first-child,
+        .rux-slider__control__labels option:last-child{
+          margin: 0px;
         }
 
         .rux-slider__control__ticks {
