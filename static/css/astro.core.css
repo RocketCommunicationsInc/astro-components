@@ -1929,7 +1929,7 @@ label {
 .rux-checkbox input[type="checkbox"]:checked + label::after{
   height: 6px;
   width: 12px;
-  left: 4px;
+  left: 3px;
   border-right: 2px solid var(--controlTextColor);
   border-top: 2px solid var(--controlTextColor);
 
