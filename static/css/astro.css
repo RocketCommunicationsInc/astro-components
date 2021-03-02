@@ -7615,6 +7615,7 @@ i.rux-icon {
     justify-content: space-between;
     align-items: center;
     font-size: 1.25rem;
+    margin-bottom: 9px;
   }
 
   .rux-slider__control {
@@ -7673,6 +7674,13 @@ i.rux-icon {
     );
   }
 
+  .rux-range:disabled::-webkit-slider-runnable-track {
+    opacity: 0.4;
+    opacity: var(--disabledOpacity, 0.4);
+    cursor: not-allowed;
+    cursor: var(--disabledCursor);
+  }
+
   /* Track -> Moz */
   .rux-range::-moz-range-track {
     display: flex;
@@ -7686,6 +7694,14 @@ i.rux-icon {
 
     background-color: var(--sliderTrackBackgroundColor);
     outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
+  }
+
+  .rux-range:disabled::-moz-range-track, 
+  .rux-range:disabled::-moz-range-progress {
+    opacity: 0.4;
+    opacity: var(--disabledOpacity, 0.4);
+    cursor: not-allowed;
+    cursor: var(--disabledCursor);
   }
 
   .rux-range::-moz-range-progress {
@@ -7733,7 +7749,8 @@ i.rux-icon {
     -webkit-appearance: none;
 
     position: relative;
-    top: 0px;
+    margin-top: calc( 1.25rem / -2);
+    margin-top: calc( var(--thumbSize) / -2);
     transform: translateX(-35%);
 
     height: 1.25rem;
@@ -7846,6 +7863,8 @@ i.rux-icon {
   }
 
   .rux-range:disabled::-moz-range-thumb {
+    opacity: 0.4;
+    opacity: var(--disabledOpacity, 0.4);
     cursor: not-allowed;
     cursor: var(--disabledCursor);
   }
@@ -7888,6 +7907,11 @@ i.rux-icon {
     font-family: var(--fontFamily);
   }
 
+  .rux-range:disabled + .rux-slider__control__labels{
+    opacity: 0.4;
+    opacity: var(--disabledOpacity, 0.4);
+  }
+
   .rux-slider__control__labels li{
     padding: 0px;
     text-align: left;
@@ -7911,6 +7935,20 @@ i.rux-icon {
     background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .18%) var(--ticksHeight);
     background-position: 0;
     z-index: 5;
+  }
+
+  .disabled {
+    opacity: 0.4;
+    opacity: var(--disabledOpacity, 0.4);
+    cursor: not-allowed;
+    cursor: var(--disabledCursor);
+
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+        -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
   }
 
   .rux-slider__input {
