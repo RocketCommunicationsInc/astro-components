@@ -17,6 +17,7 @@
   --primaryDarkHover: #0048724D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryElementText: #ffffff;
 	--inputBackground: #ffffff;
+  --inputDark: #080c11;
 
   /* styles */
   --fontColor: var(--defaultText);
@@ -169,15 +170,9 @@
     ==========================================================================
     
   */
-	--selectBackgroundColor: var(--primary);
-  --selectBorderColor: var(--primary);
-	--selectTextColor: var(--primaryElementText);
-	--selectOptBackground: var(--inputBackground);
 	--selectHoverOptBackgroundColor: var(--primaryDark);
-	--selectCaret: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
+	--selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
 	
-	--selectActiveBorderColor: var(--primary);
-
   /* 
     
     Toggle Colors 
@@ -349,6 +344,8 @@
 
   --inputBackgroundColor: var(--inputBackground);
   --inputBorderColor: var(--primaryLight);
+  --inputBorderColorAlt: var(--inputDark);
+  --inputBorderColorDisabled: #292a2d;
   --inputTextColor: var(--defaultText);
 
 	--inputFocusBorderColor: var(--primary);

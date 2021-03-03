@@ -309,35 +309,42 @@ export const SelectMenu = () => html`
         display: flex;
         flex-direction: column;
         justify-content: center;
-      }
-
-      .demo-row {
-        display: flex;
-        margin-bottom: 1rem;
-        justify-content: center;
         align-items: center;
       }
 
-      .demo-row label {
-        margin-right: 0.5rem;
-        width: 5rem;
+      .demo-row{
+        width: 178px;
+      }
+      .demo-row:not(:last-child){
+        margin-bottom: 15px;
+      }
+
+      .demo-row > * {
+        display: block;
+      }
+
+      .demo-row label{
+        margin-bottom: 5px;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
       }
     </style>
     <div class="demo-rows">
       <div class="demo-row">
         <label>Enabled</label>
         <select class="rux-select">
+          <option value="">Select an Option</option>
           <optgroup label="Group One">
-            <option>Option 1.1</option>
-            <option>Option 1.2</option>
-            <option>Option 1.3</option>
-            <option>Option 1.4</option>
+            <option value="1.1">Option 1.1</option>
+            <option value="1.2">Option 1.2</option>
+            <option value="1.3">Option 1.3</option>
+            <option value="1.4">Option 1.4</option>
           </optgroup>
           <optgroup label="Group Two">
-            <option>Option 2.1</option>
-            <option>Option 2.2</option>
-            <option>Option 2.3</option>
-            <option>Option 2.4</option>
+            <option value="2.1">Option 2.1</option>
+            <option value="2.2">Option 2.2</option>
+            <option value="2.3">Option 2.3</option>
+            <option value="2.4">Option 2.4</option>
           </optgroup>
         </select>
       </div>
@@ -345,17 +352,18 @@ export const SelectMenu = () => html`
       <div class="demo-row">
         <label>Disabled</label>
         <select class="rux-select" disabled>
+          <option value="">Select an Option</option>
           <optgroup label="Group One">
-            <option>Option 1.1</option>
-            <option>Option 1.2</option>
-            <option>Option 1.3</option>
-            <option>Option 1.4</option>
+            <option value="1.1">Option 1.1</option>
+            <option value="1.2">Option 1.2</option>
+            <option value="1.3">Option 1.3</option>
+            <option value="1.4">Option 1.4</option>
           </optgroup>
           <optgroup label="Group Two">
-            <option>Option 2.1</option>
-            <option>Option 2.2</option>
-            <option>Option 2.3</option>
-            <option>Option 2.4</option>
+            <option value="2.1">Option 2.1</option>
+            <option value="2.2">Option 2.2</option>
+            <option value="2.3">Option 2.3</option>
+            <option value="2.4">Option 2.4</option>
           </optgroup>
         </select>
       </div>
