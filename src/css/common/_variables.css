@@ -8,7 +8,7 @@
   --buttonBorderRadius: 3px;
   --defaultBorderRadius: 3px;
 
-  --controlOptionSize: 1.25rem;
+  --controlOptionSize: 1.125rem; /* 18px */
   --controlBorderRadius: 3px;
 
   --labelFontSize: 1rem;
