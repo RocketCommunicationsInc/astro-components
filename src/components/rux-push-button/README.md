@@ -72,7 +72,7 @@ Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming
 ```xml
  <div class="rux-push-button">
   <input class="rux-push-button__input" id="pb1" type="checkbox"></input>
-  <label class="rux-push-button__button" for="pb1">Push Button Label</label>
+  <label class="rux-push-button__button" for="pb1">Push button label</label>
 </div>
 ```
 
@@ -81,7 +81,7 @@ Apply attributes such as `disabled` and/or `checked` on the `<input>` element.
 ```xml
  <div class="rux-push-button">
   <input class="rux-push-button__input" id="pb1" type="checkbox" disabled checked></input>
-  <label class="rux-push-button__button" for="pb1">Push Button Label</label>
+  <label class="rux-push-button__button" for="pb1">Push button label</label>
 </div>
 ```
 

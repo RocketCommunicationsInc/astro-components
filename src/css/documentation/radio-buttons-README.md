@@ -27,7 +27,7 @@ Wrap an input field and its associated label in an element with the `rux-radio-b
 ```xml
 <div class="rux-radio-button">
   <input type="radio" name="radio1c" id="radio1c">
-  <label for="radio1c">Radio Button</label>
+  <label for="radio1c">Radio button</label>
 </div>
 ```
 

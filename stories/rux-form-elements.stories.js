@@ -49,19 +49,19 @@ export const RadioButtons = () => html`
       <ul>
         <li class="rux-radio-button">
           <input type="radio" name="radio1c" id="radio1c" />
-          <label for="radio1c">Radio Button</label>
+          <label for="radio1c">Radio button</label>
         </li>
         <li class="rux-radio-button">
           <input type="radio" name="radio1c" id="radio2c" checked />
-          <label for="radio2c">Radio Button checked</label>
+          <label for="radio2c">Radio button checked</label>
         </li>
         <li class="rux-radio-button">
           <input type="radio" name="radio2c" id="radio3c" disabled />
-          <label for="radio3c">Radio Button disabled</label>
+          <label for="radio3c">Radio button disabled</label>
         </li>
         <li class="rux-radio-button">
           <input type="radio" name="radio2c" id="radio4c" checked disabled />
-          <label for="radio4c">Radio Button disabled checked</label>
+          <label for="radio4c">Radio button disabled checked</label>
         </li>
       </ul>
     </div>
@@ -96,11 +96,11 @@ export const InputFields = () => html`
     <div style="padding: 10vh 5vw; display: flex; flex-flow: column; justify-content: center;">
       <ul class="rux-form">
         <li class="rux-form-field">
-          <label for="input__text">Text Input</label>
+          <label for="input__text">Text input</label>
           <input id="input__text" class="rux-input" type="text" placeholder="Text input" />
         </li>
         <li class="rux-form-field">
-          <label for="input__required">Is Required</label>
+          <label for="input__required">Is required</label>
           <input id="input__required" class="rux-input" type="text" value=" " required />
         </li>
         <li class="rux-form-field">
@@ -116,15 +116,15 @@ export const InputFields = () => html`
           <input id="input__password" class="rux-input" type="password" placeholder="********" />
         </li>
         <li class="rux-form-field">
-          <label for="input__url">Web Address</label>
+          <label for="input__url">Web address</label>
           <input id="input__url" class="rux-input" type="url" placeholder="https://domain.com" />
         </li>
         <li class="rux-form-field">
-          <label for="input__email">Email Address</label>
+          <label for="input__email">Email address</label>
           <input id="input__email" class="rux-input" type="email" placeholder="user@domain.com" />
         </li>
         <li class="rux-form-field">
-          <label for="input__tel">Phone Number</label>
+          <label for="input__tel">Phone number</label>
           <input id="input__tel" class="rux-input" type="tel" placeholder="(999) 999-9999" />
         </li>
         <li class="rux-form-field">
@@ -137,7 +137,7 @@ export const InputFields = () => html`
           />
         </li>
         <li class="rux-form-field">
-          <label for="input__number">Number Input</label>
+          <label for="input__number">Number input</label>
           <input
             id="input__number"
             class="rux-input"
@@ -207,23 +207,23 @@ export const InputFields = () => html`
       </ul>
       <ul class="rux-form">
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__text-smaller">Smaller Text Input</label>
+          <label for="input__text-smaller">Smaller text input</label>
           <input id="input__text-smaller" class="rux-input" type="text" placeholder="Text input" />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__required-smaller">Smaller Is Required</label>
+          <label for="input__required-smaller">Smaller is required</label>
           <input id="input__required-smaller" class="rux-input" type="text" value=" " required />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__invalid-smaller">Smaller Invalid</label>
+          <label for="input__invalid-smaller">Smaller invalid</label>
           <input id="input__invalid-smaller" class="rux-input" type="text" required />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__disabled-smaller">Smaller Disabled</label>
+          <label for="input__disabled-smaller">Smaller disabled</label>
           <input id="input__disabled-smaller" class="rux-input" type="text" disabled />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__password-smaller">Smaller Password</label>
+          <label for="input__password-smaller">Smaller password</label>
           <input
             id="input__password-smaller"
             class="rux-input"
@@ -232,7 +232,7 @@ export const InputFields = () => html`
           />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__url-smaller">Smaller Web Address</label>
+          <label for="input__url-smaller">Smaller web address</label>
           <input
             id="input__url-smaller"
             class="rux-input"
@@ -241,7 +241,7 @@ export const InputFields = () => html`
           />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__email-smaller">Smaller Email Address</label>
+          <label for="input__email-smaller">Smaller email address</label>
           <input
             id="input__email-smaller"
             class="rux-input"
@@ -250,7 +250,7 @@ export const InputFields = () => html`
           />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__tel-smaller">Smaller Phone Number</label>
+          <label for="input__tel-smaller">Smaller phone number</label>
           <input
             id="input__tel-smaller"
             class="rux-input"
@@ -259,7 +259,7 @@ export const InputFields = () => html`
           />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__search-smaller">Smaller Search</label>
+          <label for="input__search-smaller">Smaller search</label>
           <input
             id="input__search-smaller"
             class="rux-input"
@@ -268,7 +268,7 @@ export const InputFields = () => html`
           />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__number-smaller">Smaller Number Input</label>
+          <label for="input__number-smaller">Smaller number input</label>
           <input
             id="input__number-smaller"
             class="rux-input"
@@ -279,7 +279,7 @@ export const InputFields = () => html`
           />
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <label for="input__textarea-smaller">Smaller Textarea</label>
+          <label for="input__textarea-smaller">Smaller textarea</label>
           <textarea
             id="input__textarea-smaller"
             class="rux-input"

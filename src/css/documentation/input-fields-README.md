@@ -25,7 +25,7 @@ Wrap an input field and its associated label in an element with the `rux-form-fi
 
 ```xml
 <div class="rux-form-field">
-  <label for="input__text">Text Input Label</label>
+  <label for="input__text">Text input label</label>
   <input id="input__text" class="rux-input" type="text" required placeholder="Text input">
 </div>
 ```
@@ -34,7 +34,7 @@ Apply the class `rux-form-field--small` to style the input element and label sma
 
 ```xml
 <div class="rux-form-field rux-form-field--small">
-  <label for="input__text">Smaller Text Input Label</label>
+  <label for="input__text">Smaller text input label</label>
   <input id="input__text" class="rux-input" type="text" required placeholder="Text input">
 </div>
 ```
