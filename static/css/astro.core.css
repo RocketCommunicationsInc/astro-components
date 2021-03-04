@@ -1703,8 +1703,8 @@ label {
 ** 	ASTRO RADIO BUTTONS
 ** 	==========================================================================
 **  3.0 Notes
-**  Added Custom CSS Properties to support light/dark theming
-**  Added fallback properties for IE11
+**  - Added Custom CSS Properties to support light/dark theming
+**  - Added fallback properties for IE11
 **  2.0 Notes
 **  - Removed hand cursor on checkbox
 **  - Updated styles to Astro 2.0
@@ -1721,19 +1721,6 @@ label {
   position: relative;
   margin: 0 0 1rem 0;
   line-height: 1.2;
-
-  /* DEBUG */
-  /* padding: 1rem; */
-  /* outline: 1px solid red;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 0, 0, 0),
-    rgba(255, 0, 0, 0) 49.5%,
-    rgba(255, 0, 0, 1) 50%,
-    rgba(255, 0, 0, 1) 51.5%,
-    rgba(255, 0, 0, 0) 51%,
-    rgba(255, 0, 0, 0)
-  ); */
 }
 
 .rux-radio-button input[type="radio"] {
@@ -1818,8 +1805,8 @@ label {
 ** 	ASTRO CHECKBOX BUTTON
 ** 	==========================================================================
 **  3.0 Notes
-**  Added Custom CSS Properties to support light/dark theming
-**  Added fallback properties for IE11
+**  - Added Custom CSS Properties to support light/dark theming
+**  - Added fallback properties for IE11
 **  2.0 Notes
 **  - Removed hand cursor on checkbox
 **  - Updated styles to Astro 2.0
@@ -1836,19 +1823,6 @@ label {
   position: relative;
   margin: 0 0 1rem 0;
   line-height: 1.2;
-
-  /* DEBUG */
-  /* padding: 1rem; */
-  /* outline: 1px solid red;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 0, 0, 0),
-    rgba(255, 0, 0, 0) 49.5%,
-    rgba(255, 0, 0, 1) 50%,
-    rgba(255, 0, 0, 1) 51.5%,
-    rgba(255, 0, 0, 0) 51%,
-    rgba(255, 0, 0, 0)
-  ); */
 }
 
 .rux-checkbox input[type="checkbox"] {
@@ -1922,7 +1896,6 @@ label {
   left: 3px;
   border-right: 2px solid var(--controlTextColor);
   border-top: 2px solid var(--controlTextColor);
-
   transform: rotate(125deg);
 }
 
@@ -1933,6 +1906,7 @@ label {
   border-right: 0px;
   border-top: 0px;
   border-bottom: 2px solid var(--controlTextColor);
+  left: 4px;
 }
 
 .rux-checkbox input[type="checkbox"]:disabled + label {

@@ -101,6 +101,7 @@
   border-right: 0px;
   border-top: 0px;
   border-bottom: 2px solid var(--controlTextColor);
+  left: 4px;
 }
 
 .rux-checkbox input[type="checkbox"]:disabled + label {
