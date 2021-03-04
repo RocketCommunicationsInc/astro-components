@@ -14,7 +14,7 @@ export const Slider = () => {
   const maxKnob = number('Max', 100);
   const stepKnob = number('Step', 10);
   const valKnob = number('Value', 50);
-  const labelKnob = text('Label', 'Slider Label');
+  const labelKnob = text('Label', 'Slider label');
   const axisLabelsKnob = array('Axis Labels', [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
   const disabledKnob = boolean('Disabled', false);
   const hideInputKnob = boolean('Hide Input Field', false);

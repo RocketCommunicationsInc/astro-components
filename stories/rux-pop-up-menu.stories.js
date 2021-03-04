@@ -58,7 +58,7 @@ export const PopUpMenu = () => {
     },
     {
       id: 'b5',
-      label: 'Item 5 with a Really Long Title …',
+      label: 'Item 5 with a really long title …',
       value: '',
     },
     {
