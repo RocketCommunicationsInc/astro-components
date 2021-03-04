@@ -333,7 +333,7 @@ export const SelectMenu = () => html`
       <div class="demo-row">
         <label>Enabled</label>
         <select class="rux-select">
-          <option value="">Select an Option</option>
+          <option value="">Select an option</option>
           <optgroup label="Group One">
             <option value="1.1">Option 1.1</option>
             <option value="1.2">Option 1.2</option>
@@ -352,7 +352,7 @@ export const SelectMenu = () => html`
       <div class="demo-row">
         <label>Disabled</label>
         <select class="rux-select" disabled>
-          <option value="">Select an Option</option>
+          <option value="">Select an option</option>
           <optgroup label="Group One">
             <option value="1.1">Option 1.1</option>
             <option value="1.2">Option 1.2</option>
