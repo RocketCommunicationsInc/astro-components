@@ -4,7 +4,6 @@ import inputFieldsReadme from '../src/css/documentation/input-fields-README.md';
 import checkboxesReadme from '../src/css/documentation/checkboxes-README.md';
 import radioButtonsReadme from '../src/css/documentation/radio-buttons-README.md';
 import selectMenuReadme from '../src/css/documentation/select-menu-README.md';
-import { boolean } from '@storybook/addon-knobs';
 
 export default {
   title: 'Components|Form Elements',
@@ -75,7 +74,7 @@ Checkboxes.story = {
 };
 
 export const RadioButtons = () => html`
-    <div style="padding: 10vh 5vw; display: flex; justify-content: center;" id="hey">
+    <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
       <ul>
         <li class="rux-radio-button">
           <input type="radio" name="radio1c" id="radio1c" />
