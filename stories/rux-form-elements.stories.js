@@ -97,7 +97,7 @@ export const InputFields = () => html`
       <ul class="rux-form">
         <li class="rux-form-field">
           <label for="input__text">Text Input</label>
-          <input id="input__text" class="rux-input" type="text" placeholder="Text Input" />
+          <input id="input__text" class="rux-input" type="text" placeholder="Text input" />
         </li>
         <li class="rux-form-field">
           <label for="input__required">Is Required</label>
@@ -133,7 +133,7 @@ export const InputFields = () => html`
             id="input__search"
             class="rux-input"
             type="search"
-            placeholder="Enter Search Term"
+            placeholder="Enter search term"
           />
         </li>
         <li class="rux-form-field">
@@ -144,7 +144,7 @@ export const InputFields = () => html`
             type="number"
             min="0"
             max="10"
-            placeholder="Enter a Number between 0 and 10"
+            placeholder="Enter a number between 0 and 10"
           />
         </li>
         <li class="rux-form-field">
@@ -208,7 +208,7 @@ export const InputFields = () => html`
       <ul class="rux-form">
         <li class="rux-form-field rux-form-field--small">
           <label for="input__text-smaller">Smaller Text Input</label>
-          <input id="input__text-smaller" class="rux-input" type="text" placeholder="Text Input" />
+          <input id="input__text-smaller" class="rux-input" type="text" placeholder="Text input" />
         </li>
         <li class="rux-form-field rux-form-field--small">
           <label for="input__required-smaller">Smaller Is Required</label>
@@ -264,7 +264,7 @@ export const InputFields = () => html`
             id="input__search-smaller"
             class="rux-input"
             type="search"
-            placeholder="Enter Search Term"
+            placeholder="Enter search term"
           />
         </li>
         <li class="rux-form-field rux-form-field--small">
@@ -275,7 +275,7 @@ export const InputFields = () => html`
             type="number"
             min="0"
             max="10"
-            placeholder="Enter a Number between 0 and 10"
+            placeholder="Enter a number between 0 and 10"
           />
         </li>
         <li class="rux-form-field rux-form-field--small">
