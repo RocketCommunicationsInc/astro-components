@@ -63,9 +63,7 @@
 
   height: var(--controlOptionSize);
   width: var(--controlOptionSize);
-
   margin: 0 0.625rem 0 0;
-
   border: 1px solid var(--controlBorderColor);
 }
 
