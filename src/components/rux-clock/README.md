@@ -59,9 +59,15 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 | `timezone`     | String  | `'UTC'` | No       | Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.  |
 | `hideTimezone` | Boolean | `false` | No       | Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS.                                                                                                                                                                                                                     |
 | `hideDate`     | Boolean | `false` | No       | Hides the day of the year.                                                                                                                                                                                                                                                                              |
+| `hideLabel`    | Boolean | `false` | No       | Hides the label under the field.                                                                                                                                                                                                                                                                             |
 | `small`        | Boolean | `false` | No       | Applies a smaller clock style. Previously `compact`                                                                                                                                                                                                                                                     |
+| `tiny`         | Boolean | `false` | No       | Applies a very small clock style.                                                                                                                                                                                                                                                        |
 
 ## Revision History
+
+##### **4.2**
+- Added tiny for a 1.0rem size in the clock
+- Added hideLabel to remove the label from under the field
 
 ##### **4.1**
 - Added moment.js for date/time calculations, fixing Day of Year count error at EOD
