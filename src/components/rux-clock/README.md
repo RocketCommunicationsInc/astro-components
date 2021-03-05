@@ -65,7 +65,7 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 
 ## Revision History
 
-##### **4.2**
+##### **5.0**
 - Added tiny for a 1.0rem size in the clock
 - Added hideLabel to remove the label from under the field
 
