@@ -29,7 +29,9 @@ export const Clock = () => {
   const timezoneKnob = select('Timezone', timezones, 'UTC');
   const hideTimezoneKnob = boolean('Hide Timezone', false);
   const hideDateKnob = boolean('Hide DOY', false);
+  const hideLabel = boolean('Hide Label', false);
   const smallKnob = boolean('Small Version', false);
+  const tinyKnob = boolean('Tiny Version', false);
 
   return html`
     <div style="padding: 10%; display: flex; justify-content: center;">
@@ -37,7 +39,9 @@ export const Clock = () => {
         .timezone="${timezoneKnob}"
         ?hideTimezone="${hideTimezoneKnob}"
         ?hideDate="${hideDateKnob}"
+        ?hideLabel="${hideLabel}"
         ?small="${smallKnob}"
+        ?tiny="${tinyKnob}"
       ></rux-clock>
     </div>
   `;
@@ -79,7 +83,9 @@ export const ClockWithAosLos = () => {
   const losKnob = dateWrapper('LOS', new Date('2019-05-10T16:21:12.000Z'));
   const hideTimezoneKnob = boolean('Hide Timezone', false);
   const hideDateKnob = boolean('Hide DOY', false);
+  const hideLabel= boolean('Hide Label', false);
   const smallKnob = boolean('Small Version', false);
+  const tinyKnob = boolean('Tiny Version', false);
   return html`
     <div style="padding: 10%; display: flex; justify-content: center;">
       <rux-clock
@@ -88,7 +94,9 @@ export const ClockWithAosLos = () => {
         los="${losKnob.toString()}"
         ?hideTimezone="${hideTimezoneKnob}"
         ?hideDate="${hideDateKnob}"
+        ?hideLabel="${hideLabel}"
         ?small="${smallKnob}"
+        ?tiny="${tinyKnob}"
       ></rux-clock>
     </div>
   `;
