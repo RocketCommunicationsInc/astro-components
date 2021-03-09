@@ -38,6 +38,17 @@ Apply the class `rux-form-field--small` to style the input element and label sma
   <input id="input__text" class="rux-input" type="text" required placeholder="Text input">
 </div>
 ```
+
+Apply the class `.help` to help or explanation text.
+
+```xml
+<div class="rux-form-field">
+  <label for="input__text">Text Input Label</label>
+  <input id="input__text" class="rux-input" type="text" required placeholder="Text Input">
+  <span class="help">Help Text</span>
+</div>
+```
+
 ### Attributes
 | Attribute | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
