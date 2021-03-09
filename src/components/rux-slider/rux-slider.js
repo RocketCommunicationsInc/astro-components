@@ -281,7 +281,6 @@ export class RuxSlider extends LitElement {
 
           position: relative;
           top: calc( var(--thumbSize) / -2);
-          transform: translateX(-35%);
 
           height: var(--thumbSize);
           width: var(--thumbSize);
@@ -318,8 +317,8 @@ export class RuxSlider extends LitElement {
           position: relative;
           top: -10px;
 
-          height: 1.25rem;
-          width: 1.25rem;
+          height: var(--thumbSize);
+          width: var(--thumbSize);
 
           border-radius: 100%;
           border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);

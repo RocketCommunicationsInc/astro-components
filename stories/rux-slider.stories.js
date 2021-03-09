@@ -49,10 +49,6 @@ Slider.story = {
 };
 
 export const AllSliderVariants = () => {
-  const value1 = 50;
-  const step1 = 10;
-  const axisLabels1 = ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'];
-
   const value2 = 70;
   const axisLabels2 = ['min', 'middle', 'max'];
   const label2 = 'Slider Label';
@@ -64,9 +60,6 @@ export const AllSliderVariants = () => {
   const axisLabels4 = ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'];
 
   return html`
-    <div style="display: flex; padding: 10vh 5vw; justify-content: center;">
-      <rux-slider .axisLabels="${axisLabels1}" step="${step1}" val="${value1}"> </rux-slider>
-    </div>
     <div style="display: flex; padding: 5vh 5vw; justify-content: center;">
       <rux-slider label="${label2}" .axisLabels="${axisLabels2}" val="${value2}"> </rux-slider>
     </div>
