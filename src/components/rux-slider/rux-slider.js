@@ -191,7 +191,7 @@ export class RuxSlider extends LitElement {
           align-items: center;
 
           /* width: 100%; */
-          height: 1.25rem;
+          height: var(--trackHeight);
           padding: 2px 0;
 
           cursor: pointer;
@@ -315,7 +315,7 @@ export class RuxSlider extends LitElement {
         /* Thumb -> Ms */
         .rux-range::-ms-thumb {
           position: relative;
-          top: -10px;
+          top: calc( var(--thumbSize) / -2);
 
           height: var(--thumbSize);
           width: var(--thumbSize);
