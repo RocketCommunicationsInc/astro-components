@@ -79,7 +79,7 @@ export class RuxSlider extends LitElement {
           display: flex;
           flex-grow: 1;
           flex-flow: column;
-          --step:${this.step}; --min:${this.min}; --max:${this.max}; --ticksThickness: 1px; --ticksHeight: 3px; --ticksColor: var(--primaryDark);
+          --step:${this.step}; --min:${this.min}; --max:${this.max};
         }
 
         *[hidden] {
@@ -365,18 +365,6 @@ export class RuxSlider extends LitElement {
           margin: 0px;
         }
 
-        .rux-slider__control-ticks {
-          position: absolute;
-          top: ${this.browser === 'firefox' ? '6px' : '0px'};
-          left: 0px;
-          width: 100%;
-          height: var(--ticksHeight);
-          background: linear-gradient(to right, var(--ticksColor) var(--ticksThickness), transparent 1px) repeat-x;
-          background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .18%) var(--ticksHeight);
-          background-position: 0;
-          z-index: 5;
-        }
-
         .disabled {
           opacity: var(--disabledOpacity, 0.4);
           cursor: var(--disabledCursor);
@@ -427,7 +415,7 @@ export class RuxSlider extends LitElement {
           />
         </div>
         <div class="rux-slider__control ${this.disabled ? 'disabled' : ''}">
-          ${ this.disabled ? `` : html`<div class="rux-slider__control-ticks"></div>` } 
+          
           <input
             type="range"
             @input="${this._updateValue}"
