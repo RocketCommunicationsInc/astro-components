@@ -146,8 +146,8 @@ export class RuxSlider extends LitElement {
           background-image: linear-gradient(
             to right,
             var(--sliderSelectedTrackBackgroundColor) 0%,
-            var(--sliderSelectedTrackBackgroundColor) calc(0.99% * var(--value)),
-            var(--sliderTrackBackgroundColor) calc(0.99% * var(--value)),
+            var(--sliderSelectedTrackBackgroundColor) calc(1% * var(--value)),
+            var(--sliderTrackBackgroundColor) calc(1% * var(--value)),
             var(--sliderTrackBackgroundColor) 100%
           );
         }
@@ -219,8 +219,7 @@ export class RuxSlider extends LitElement {
           -webkit-appearance: none;
 
           position: relative;
-          margin-top: ${ this.browser === 'safari' ? '0px' : 'calc( var(--thumbSize) / -2)' };
-          transform: translateX(-35%);
+          top: ${ this.browser === 'safari' ? '0px' : 'calc( var(--thumbSize) / -2)' };
 
           height: var(--thumbSize);
           width: var(--thumbSize);
