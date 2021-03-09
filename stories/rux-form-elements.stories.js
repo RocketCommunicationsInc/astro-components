@@ -147,6 +147,11 @@ export const InputFields = () => html`
           <span class="rux-help-text">Help text</span>
         </li>
         <li class="rux-form-field">
+          <label for="input__text">Text Input</label>
+          <input id="input__text" class="rux-input" type="text" placeholder="Text Input" />
+          <span class="help">Help Text</span>
+        </li>
+        <li class="rux-form-field">
           <label for="input__required">Is Required</label>
           <input id="input__required" class="rux-input" type="text" value=" " required />
         </li>
