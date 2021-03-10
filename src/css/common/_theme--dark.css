@@ -83,7 +83,7 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--primary);
+  --controlTextColor: var(--primaryElementText);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
   --controlBorderColor: var(--primary);
