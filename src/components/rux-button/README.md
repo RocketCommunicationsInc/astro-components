@@ -42,7 +42,7 @@ Pass properties as attributes of the Astro Button custom element:
 
 ```xml
 <rux-button size="large" disabled outline>
-  Large Disabled Outline Button
+  Large disabled outline button
 </rux-button>
 
 ```
@@ -51,7 +51,7 @@ The component auto-imports the default Astro Icon Web Component for icons, if yo
 
 ```xml
 <rux-button icon="caution">
-  Button with Icon using Astro UXDS Icon Web Component
+  Button with icon using astro UXDS icon web component
 </rux-button>
 ```
 Also, you can use [Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#Adding_flexibility_with_slots) to define icons within buttons. This method is best if you need to override the default icon library SVG file:
@@ -59,7 +59,7 @@ Also, you can use [Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Compo
 ```xml
   <rux-button>
     <rux-icon icon="custom" library="/icons/custom.svg"></rux-icon>
-    Slotted Icon Button
+    Slotted icon button
   </rux-button>
 ```
 In this situation, you do not need to specify a size for the icon component -- the button's size attribute will define the appropriate size of the icon.
