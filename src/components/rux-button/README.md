@@ -98,7 +98,7 @@ Configure the component using native HTML attributes or [BEM-style](http://getbe
 <button class="rux-button">Submit</button>
 
 <button class="rux-button rux-button--large rux-button--outline" disabled>
-  Large Disabled Outline Button
+  Large disabled outline button
 </button>
 ```
 
@@ -107,7 +107,7 @@ The basic HTML/CSS usage supports icons if using Web Components (and importing t
 ```xml
 <button class="rux-button rux-button--icon">
   <rux-icon class="rux-icon rux-button__icon" icon="caution" color="white"></rux-icon>
-  Button with Icon using Astro UXDS Icon Web Component
+  Button with icon using astro UXDS icon web component
 </button>
 ```
 
@@ -118,7 +118,7 @@ Otherwise, wrap your icon SVG in an HTML element with the [BEM-style](http://get
   <div class="rux-icon rux-button__icon">
     <svg ... ></svg>
   </div>
-  Button with Local Icon
+  Button with local icon
 </button>
 ```
 

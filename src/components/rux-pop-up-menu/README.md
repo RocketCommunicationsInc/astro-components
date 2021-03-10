@@ -51,7 +51,7 @@ Create a triggering element to initiate the pop up menu. **Note**: The trigger e
 <button
  aria-controls="popup-menu-1"
  aria-haspopup="true"
->Open Pop Up Menu
+>Open pop up menu
 </button>
 ```
 
