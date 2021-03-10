@@ -57,7 +57,7 @@ export const AllSliderVariants = () => {
 
   const value4 = 50;
   const label4 = 'Disabled Slider Label ';
-  const axisLabels4 = ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'];
+  const axisLabels4 = ['min', 'middle', 'max'];
 
   return html`
     <div style="display: flex; padding: 5vh 5vw; justify-content: center;">
