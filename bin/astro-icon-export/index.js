@@ -163,9 +163,9 @@ class AstroIconExport extends Core {
     let newArr = [];
   
     arr.forEach((line) => {
-      const hasId = line.indexOf("g id=");
+      const hasId = line.indexOf("<g id=");
       const matches = line.match(/\"(.*?)\"/g);
-      const isPath = line.indexOf('path d=');
+      const isPath = line.indexOf('<path d=');
       
       if (hasId > -1 && matches && matches.length > 0) {
         const originalId = matches[0].replace(/\"/g, "");
@@ -176,7 +176,7 @@ class AstroIconExport extends Core {
       }
 
       if (isPath > -1){
-        if(line.length < 60){
+        if(line.trim().length < 60){
           line = '';
         }
       }
@@ -190,8 +190,8 @@ class AstroIconExport extends Core {
   insertStyling(arr){
     const style = '<style>g {display: none;} g:target {display: inline;}</style>';
     arr.splice(1, 0, style); 
-    // Removes wrapper group that breaks svg
-    // TODO: create cleaner way removeing unnecessar wrapping groups
+    // Removes outer wrapper group that breaks svg
+    // TODO: create cleaner way of removing unnecessary wrapping groups
     arr.splice(2, 1);
     arr.splice(arr.length -3, 1);
     return arr;
