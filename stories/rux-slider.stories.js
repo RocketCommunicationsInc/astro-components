@@ -15,7 +15,7 @@ export const Slider = () => {
   const stepKnob = number('Step', 10);
   const valKnob = number('Value', 50);
   const labelKnob = text('Label', 'Slider Label');
-  const axisLabelsKnob = array('Axis Labels', [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
+  const axisLabelsKnob = array('Axis Labels', ['min', 'middle', 'max']);
   const disabledKnob = boolean('Disabled', false);
   const hideInputKnob = boolean('Hide Input Field', false);
 
@@ -49,10 +49,6 @@ Slider.story = {
 };
 
 export const AllSliderVariants = () => {
-  const value1 = 50;
-  const step1 = 10;
-  const axisLabels1 = ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'];
-
   const value2 = 70;
   const axisLabels2 = ['min', 'middle', 'max'];
   const label2 = 'Slider Label';
@@ -61,12 +57,9 @@ export const AllSliderVariants = () => {
 
   const value4 = 50;
   const label4 = 'Disabled Slider Label ';
-  const axisLabels4 = ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'];
+  const axisLabels4 = ['min', 'middle', 'max'];
 
   return html`
-    <div style="display: flex; padding: 10vh 5vw; justify-content: center;">
-      <rux-slider .axisLabels="${axisLabels1}" step="${step1}" val="${value1}"> </rux-slider>
-    </div>
     <div style="display: flex; padding: 5vh 5vw; justify-content: center;">
       <rux-slider label="${label2}" .axisLabels="${axisLabels2}" val="${value2}"> </rux-slider>
     </div>

@@ -22,194 +22,341 @@
     between the three
   */
 
-:root {
-  --thumbSize: var(--controlOptionSize);
-  --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
-    0 1px 3px rgba(0, 0, 0, 0.2);
-  --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
-    0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
-  --thumbShadowActive: inset 0 0 0 4px var(--primary),
-    0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
-    0 1px 1px rgba(0, 0, 0, 0.2);
+  :root {
+    --thumbSize: var(--controlOptionSize);
+    --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
+      0 1px 3px rgba(0, 0, 0, 0.2);
+    --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
+      0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+    --thumbShadowActive: inset 0 0 0 4px var(--primary),
+      0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
+      0 1px 1px rgba(0, 0, 0, 0.2);
+  
+    --trackHeight: 3px;
+    --trackCursor: pointer;
+  
+    --step:1; --min:0; --max:100; --ticksThickness: 1px; --ticksHeight: 3px; --ticksColor: var(--primaryDark);
+  }
 
-  --trackHeight: 2px;
-  --trackCursor: pointer;
-}
+  .rux-slider {
+    display: flex;
+    flex-direction: column;
+  }
 
-.rux-slider label input {
-  margin-left: auto;
-  margin-right: 0;
-}
+  .rux-slider__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    margin-bottom: 9px;
+  }
 
-.rux-range {
-  -webkit-appearance: none;
-  appearance: none;
+  .rux-slider__control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+  }
 
-  background: none;
+  .rux-slider label input {
+    margin-left: auto;
+    margin-right: 0;
+  }
 
-  width: 100%;
-}
+  .rux-range {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
 
-input[type="range"]:focus {
-  outline: none;
-}
+    background: none;
+    width: 100%;
+    margin: 0px;
+    color: transparent;
+  }
 
-.rux-range::-webkit-slider-runnable-track {
-  display: flex;
-  align-items: center;
+  input[type='range']:focus {
+    outline: none;
+  }
 
-  /* width: 100%; */
-  height: var(--trackHeight);
-  cursor: var(--trackCursor);
+  /****** Track ******/
 
-  background-color: var(--sliderTrackBackgroundColor);
-  outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
+  /* Track -> WebKit */
+  .rux-range::-webkit-slider-runnable-track {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
 
-  background-image: linear-gradient(
-    to right,
-    var(--sliderSelectedTrackBackgroundColor) 0%,
-    var(--sliderSelectedTrackBackgroundColor)
-      calc(1% * var(--value)),
-    var(--sliderTrackBackgroundColor)
-      calc(1% * var(--value)),
-    var(--sliderTrackBackgroundColor) 100%
-  );
-}
+    /* width: 100%; */
+    height: var(--trackHeight, 2px);
+    cursor: var(--trackCursor, pointer);
 
-.rux-range::-moz-range-track {
-  display: flex;
-  align-items: center;
+    background-color: var(--sliderTrackBackgroundColor);
+    outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor, transparent);
 
-  /* width: 100%; */
-  height: var(--trackHeight);
-  cursor: var(--trackCursor);
+    background-image: linear-gradient(
+      to right,
+      var(--sliderSelectedTrackBackgroundColor) 0%,
+      var(--sliderSelectedTrackBackgroundColor) calc(0.99% * var(--value)),
+      var(--sliderTrackBackgroundColor) calc(0.99% * var(--value)),
+      var(--sliderTrackBackgroundColor) 100%
+    );
+  }
 
-  background-color: var(--sliderTrackBackgroundColor);
-  outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
-}
+  .rux-range:disabled::-webkit-slider-runnable-track {
+    opacity: var(--disabledOpacity, 0.4);
+    cursor: var(--disabledCursor);
+  }
 
-.rux-range::-moz-range-progress {
-  background-color: var(--sliderSelectedTrackBackgroundColor);
-}
+  /* Track -> Moz */
+  .rux-range::-moz-range-track {
+    display: flex;
+    align-items: center;
 
-.rux-range:disabled {
-  opacity: var(--disabledOpacity);
-  cursor: var(--disabledCursor);
-}
+    /* width: 100%; */
+    height: var(--trackHeight);
+    cursor: var(--trackCursor, pointer);
 
-.rux-range::-ms-track {
-  display: flex;
-  align-items: center;
+    background-color: var(--sliderTrackBackgroundColor);
+    outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
+  }
 
-  /* width: 100%; */
-  height: 1.25rem;
-  padding: 2px 0;
+  .rux-range:disabled::-moz-range-track, 
+  .rux-range:disabled::-moz-range-progress {
+    opacity: var(--disabledOpacity, 0.4);
+    cursor: var(--disabledCursor);
+  }
 
-  cursor: pointer;
-  color: transparent;
-  background-color: transparent;
-  border: none;
-  /* background-color: var(--sliderTrackBackgroundColor); */
-  outline: var(--sliderTrackBorderSize) solid transparent;
-}
+  .rux-range::-moz-range-progress {
+    background-color: var(--sliderSelectedTrackBackgroundColor);
+  }
 
-.rux-range::-ms-fill-lower {
-  height: 2px;
-  background-color: var(--sliderTrackBackgroundColor);
-}
+  .rux-input:disabled {
+    opacity: var(--disabledOpacity, 0.4);
+    cursor: var(--disabledCursor);
+  }
 
-.rux-range::-ms-fill-upper {
-  height: 2px;
-  background-color: var(--sliderTrackBackgroundColor);
-}
+  /* Track -> Ms */
+  .rux-range::-ms-track {
+    display: flex;
+    align-items: center;
 
-.rux-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
+    /* width: 100%; */
+    height: 1.25rem;
+    padding: 2px 0;
 
-	position: relative;
-	top: calc( var(--thumbSize) / -2);
+    cursor: pointer;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+    /* background-color: var(--sliderTrackBackgroundColor); */
+    outline: var(--sliderTrackBorderSize) solid transparent;
+  }
 
-  height: var(--thumbSize);
-  width: var(--thumbSize);
+  .rux-range::-ms-fill-lower {
+    height: 2px;
+    background-color: rgb(77, 172, 255);
+  }
 
-  border-radius: 100%;
-  border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
-  background-color: var(--sliderThumbBackgroundColor);
+  .rux-range::-ms-fill-upper {
+    height: 2px;
+    background-color: var(--sliderTrackBackgroundColor);
+  }
 
-  cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
+  /*****  Thumb ******/
 
-  outline: none !important;
-}
-.rux-range::-webkit-slider-thumb:hover{
-	border-color: var(--sliderHoverThumbBorderColor);
-}
+  /* Thumb -> Webkit */
+  .rux-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
 
-input:-moz-focusring {
-  outline: none;
-}
+    position: relative;
+    margin-top: calc( var(--thumbSize) / -2);
+    transform: translateX(-35%);
 
-.rux-range::-moz-range-thumb {
-  -moz-appearance: none;
+    height: var(--thumbSize);
+    width: var(--thumbSize);
 
-	position: relative;
-	top: calc( var(--thumbSize) / -2);
+    border-radius: 100%;
+    border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
+    background-color: var(--sliderThumbBackgroundColor);
 
-  height: var(--thumbSize);
-  width: var(--thumbSize);
+    cursor: pointer;
+    box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
+    z-index: 6;
+  }
 
-  border-radius: 100%;
-  border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
-  background-color: var(--sliderThumbBackgroundColor);
+  .rux-range::-webkit-slider-thumb:hover{
+    border-color: var(--sliderHoverThumbBorderColor);
+  }
 
-  cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
-}
-.rux-range::-moz-range-thumb:hover{
-	border-color:var(--sliderHoverThumbBorderColor);
-}
+  .rux-range:disabled::-webkit-slider-runnable-track {
+    opacity: var(--disabledOpacity);
+    cursor: var(--disabledCursor);
+  }
 
-.rux-range:disabled::-moz-range-thumb {
-  cursor: var(--disabledCursor);
-}
+  .rux-range:disabled::-webkit-slider-thumb {
+    cursor: var(--disabledCursor);
+  }
 
-.rux-range::-ms-thumb {
-	position: relative;
-	top: -10px;
+  .rux-range:not(:disabled)::-webkit-slider-thumb:active {
+    border-color: var(--sliderSelectedThumbBorderColor);
+    background-color: var(--inputBackground);
+    background: radial-gradient(circle, 
+      rgba(255,255,255,1) 40%, 
+      var(--primaryDark) 40%);
+    -webkit-radial-gradient: radial-gradient(circle, 
+      rgba(255,255,255,1) 40%, 
+      var(--primaryDark) 40%);
+    box-shadow: var(--thumbShadowActive);
+  }
 
-  height: 1.25rem;
-  width: 1.25rem;
+  .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
+  .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
+    background-color: var(--sliderHoverThumbBackgroundColor);
+  }
 
-  border-radius: 100%;
-  border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
-  background-color: var(--sliderThumbBackgroundColor);
+  .rux-range:not(:disabled)::-webkit-slider-thumb:active {
+    border-color: var(--sliderSelectedThumbBorderColor);
+    background-color: var(--inputBackground);
+    box-shadow: var(--thumbShadowActive);
+  }
 
-  cursor: pointer;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
-}
+  .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
+  .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
+    background-color: var(--sliderHoverThumbBackgroundColor);
+    box-shadow: var(--thumbShadowHover);
+  }
 
-.rux-range:disabled::-webkit-slider-runnable-track {
-  opacity: var(--disabledOpacity);
-  cursor: var(--disabledCursor);
-}
+  /* Thumb -> Moz */
+  .rux-range::-moz-range-thumb {
+    -moz-appearance: none;
 
-.rux-range:disabled::-webkit-slider-thumb {
-  cursor: var(--disabledCursor);
-}
+    position: relative;
+    top: calc( var(--thumbSize) / -2);
+    transform: translateX(-35%);
 
-.rux-range:disabled::-ms-thumb {
-  opacity: var(--disabledOpacity);
-  cursor: var(--disabledCursor);
-}
+    height: var(--thumbSize);
+    width: var(--thumbSize);
 
-.rux-range:not(:disabled)::-webkit-slider-thumb:active {
-  border-color: var(--sliderSelectedThumbBorderColor);
-  background-color: var(--inputBackground);
-	box-shadow: var(--thumbShadowActive);
-}
+    border-radius: 100%;
+    border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
+    background-color: var(--sliderThumbBackgroundColor);
 
-.rux-range:not(:disabled)::-webkit-slider-thumb:focus,
-.rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-  background-color: var(--sliderHoverThumbBackgroundColor);
-  box-shadow: var(--thumbShadowHover);
-}
+    cursor: pointer;
+    box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
+  }
+
+  .rux-range:not(:disabled)::-moz-range-thumb:active{
+    background: radial-gradient(circle, 
+      rgba(255,255,255,1) 40%, 
+      var(--primaryDark) 40%);
+  }
+
+  .rux-range::-moz-range-thumb:hover{
+    border-color:var(--sliderHoverThumbBorderColor);
+  }
+
+  input:-moz-focusring {
+    outline: none;
+  }
+
+  .rux-range:disabled::-moz-range-thumb {
+    opacity: var(--disabledOpacity, 0.4);
+    cursor: var(--disabledCursor);
+  }
+
+  /* Thumb -> Ms */
+  .rux-range::-ms-thumb {
+    position: relative;
+    top: -10px;
+
+    height: 1.25rem;
+    width: 1.25rem;
+
+    border-radius: 100%;
+    border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
+    background-color: var(--sliderThumbBackgroundColor);
+
+    cursor: pointer;
+    box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14),
+      0 1px 9px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .rux-range:disabled::-ms-thumb {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* Labels */
+  .rux-slider__control__labels {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+
+    color: var(--fontColor);
+    font-size: 0.875rem;
+    font-family: var(--fontFamily);
+  }
+
+  .rux-range:disabled + .rux-slider__control__labels{
+    opacity: var(--disabledOpacity, 0.4);
+  }
+
+  .rux-slider__control__labels li{
+    padding: 0px;
+    text-align: left;
+  }
+
+  .rux-slider__control__labels li:first-child,
+  .rux-slider__control__labels li:last-child{
+    margin: 0px;
+  }
+
+  .rux-slider__control-ticks {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: var(--ticksHeight);
+    background: linear-gradient(to right, var(--ticksColor) var(--ticksThickness), transparent 1px) repeat-x;
+    background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .18%) var(--ticksHeight);
+    background-position: 0;
+    z-index: 5;
+  }
+
+  .disabled {
+    opacity: var(--disabledOpacity, 0.4);
+    cursor: var(--disabledCursor);
+
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+        -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+  }
+
+  .rux-slider__input {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+
+    width: 4rem !important;
+  }
+
+  /*
+  Fake tick marks, sort of works, but label using flex are imprecise
+  .rux-slider__control__labels li::before {
+    position: absolute;
+    content: "|";
+    font-size: 0.5rem;
+    top: -100%;
+  } */
+
+  input[type='range']::-moz-focus-outer {
+    border: 0;
+  }
