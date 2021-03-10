@@ -43,7 +43,7 @@ Pass properties as attributes of the Astro Push Button custom element.
 Provide a label for the Push Button inside the component node using the component’s [slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).
 
 ```xml
-<rux-push-button checked>Push Button Label</rux-push-button>
+<rux-push-button checked>Push button label</rux-push-button>
 ```
 
 ### Properties
