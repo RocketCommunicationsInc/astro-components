@@ -284,7 +284,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="mission"
           label="Mission"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="off"
           notifications="4"
         ></rux-monitoring-icon>
@@ -293,7 +293,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="equipment"
           label="Equipment"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="standby"
           notifications="100"
         ></rux-monitoring-icon>
@@ -302,7 +302,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="processor"
           label="Processor"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="normal"
         ></rux-monitoring-icon>
       </li>
@@ -310,7 +310,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="antenna"
           label="Antenna"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="caution"
           notifications="1200"
         ></rux-monitoring-icon>
@@ -319,7 +319,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="antenna-transmit"
           label="NROL"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="serious"
           notifications="1000000"
         ></rux-monitoring-icon>
