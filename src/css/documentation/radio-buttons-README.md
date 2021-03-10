@@ -5,7 +5,7 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 ## Guidelines
 
 - [Astro UXDS: Radio Buttons](https://www.astrouxds.com/ui-components/radio-button)
-- [Astro UXDS: Toggle & Push Button](http://www.astrouxds.com/ui-components/toggle)
+- [Astro UXDS: Toggles](http://www.astrouxds.com/ui-components/toggle)
 - [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
 ## Basic HTML Usage

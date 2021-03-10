@@ -64,13 +64,13 @@ export class RuxIcon extends LitElement {
         svg,
         svg > use {
           height: 100%;
-					width: auto;
-					fill: var(--iconColor);
-				}
-				
-				.rux-button--outline rux-icon {
+          width: auto;
+          fill: var(--iconColor);
+        }
 
-				}
+        .rux-button--outline rux-icon {
+
+        }
 
         :host([size='extra-small']) {
           height: 1rem;

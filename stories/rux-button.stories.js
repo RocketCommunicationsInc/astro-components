@@ -28,7 +28,7 @@ export const StandardButton = () => {
         ?disabled="${disabled}"
         ?outline="${outline}"
         ?iconOnly="${iconOnly}"
-        .icon="${withIcon ? 'caution' : null}"
+        .icon="${withIcon ? 'settings' : null}"
         >Button</rux-button
       >
     </div>
