@@ -190,7 +190,7 @@ export const MonitoringIcons = () => {
       <rux-monitoring-icon
         library="/icons/custom.svg"
         icon="custom"
-        label="Custom Icon"
+        label="Custom icon"
         sublabel="${sublabel}"
         status="${status}"
         notifications="${notifications}"

@@ -43,7 +43,7 @@ Pass properties as attributes of the Astro Monitoring Icon custom element:
 ```xml
 <rux-monitoring-icon
  icon="altitude"
- label="Altitude for Satellite X"
+ label="Altitude for satellite x"
  sublabel="10000m"
  status="normal"
  notifications="10">
@@ -105,7 +105,7 @@ Pass properties as attributes of the Astro Monitoring Progress Icon custom eleme
 
 ```xml
 <rux-monitoring-progress-icon
- label="Battery Level"
+ label="Battery level"
  progress="50">
 </rux-monitoring-progress-icon>
 ```
@@ -188,8 +188,8 @@ To upgrade to Astro 4 any instance of `<rux-status>` used as an "Advanced Status
 <rux-status
   icon="some-icon"
   status="critical"
-  label="Icon Label"
-  sublabel="Sub Lobel"
+  label="Icon label"
+  sublabel="Sub label"
   notifications="10">
 </rux-status>
 ```
@@ -200,8 +200,8 @@ Would become this
 <rux-monitoring-icon
   icon="some-icon"
   status="critical"
-  label="Icon Label"
-  sublabel="Sub Lobel"
+  label="Icon label"
+  sublabel="Sub label"
   notifications="10">
 </rux-monitoring-icon>
 ```
