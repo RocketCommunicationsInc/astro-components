@@ -15,6 +15,7 @@
   --primaryLight: #92cbff;
   --primaryLightHover: #92cbff4D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryDark: #3a87cf;
+  --primaryDarkHover: #6b8ca5;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
   --inputDark: #080c11;
@@ -158,33 +159,16 @@
 	--selectHoverOptBackgroundColor: var(--primaryLight);
   /* 
     
-    Toggle Colors 
+    Switch Colors 
     ==========================================================================
 
   */
-	
-  --toggleButtonBackgroundColor: var(--primary);
-  --toggleBaseBackgroundColor: var(--primary);
-  --toggleBaseBorderColor: var(--primary);
-  --toggleBaseTextColor: var(--primaryElementText);
-  --toggleBaseSelectedTextColor: var(--colorNormal);
-
-  /* Default Toggle */
-  --toggleThumbBorderColor: var(--secondaryText);
-  --toggleThumbBackgroundColor: var(--inputBackground);
-  --toggleTrackBorderColor: var(--secondaryText);
-  --toggleTrackBackgroundColor: var(--backgroundColor);
-
-  /* Selected State */
-  --toggleSelectedThumbBorderColor:var(--primaryDark);
-  --toggleSelectedTrackBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--primaryDark);
-
-  /* Disabled State */
-  --toggleDisabledThumbBorderColor: var(--secondaryText);
-  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-  --toggleDisabledSelectedThumbBorderColor: var(--primary);
-
+  --switchOffColor: var(--secondaryText);
+  --switchOnColor: var(--primary);
+  --switchHoverOnColor: var(--primaryLight);
+  --switchHoverOffColor: var(--primaryLight);
+  --switchDisabledOnColor: var(--primary);
+  --switchDisabledOffColor: var(--secondaryText);
   /* 
     
     Popup Menu Colors 

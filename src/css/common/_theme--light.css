@@ -175,49 +175,22 @@
 	
   /* 
     
-    Toggle Colors 
+    Switch Colors 
     ==========================================================================
 
   */
-
-  --toggleButtonBackgroundColor: var(--primary);
-  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
-
-  --toggleBaseBackgroundColor: linear-gradient(
-    to right,
-    var(--colorNormal) 50%,
-    var(--colorPrimaryLighten4) 50.1%
-  );
-	--toggleBaseBorderColor: var(--primary);
-  --toggleBaseTextColor: var(--primary);
-
-  --toggleBaseSelectedTextColor: #007300;
-  --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
-    -1px 0 2px rgba(0, 0, 0, 0.3);
-
-  /* Default Toggle */
-  --toggleThumbBorderColor: var(--secondaryText);
-	--toggleThumbBackgroundColor: var(--inputBackground);	
-	--toggleTrackBorderColor: var(--secondaryText);
-	--toggleTrackBackgroundColor: var(--backgroundColor);
-
-	/* Selected State */
-  --toggleSelectedThumbBorderColor: var(--primary);
-  --toggleSelectedThumbBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--primary);
-  --toggleSelectedTrackBackgroundColor: var(--primaryLight);
-
-  --toggleDisabledThumbBorderColor: var(--secondaryText);
-  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-  --toggleDisabledSelectedThumbBorderColor: var(--primary);
-
+  --switchOffColor: var(--secondaryText);
+  --switchOnColor: var(--primary);
+  --switchHoverOnColor: var(--primaryDark);
+  --switchHoverOffColor: var(--primaryDark);
+  --switchDisabledOnColor: var(--primary);
+  --switchDisabledOffColor: var(--secondaryText);
   /* 
     
-    Pushbutton Colors 
+    Push Button Colors 
     ==========================================================================
 
   */
-
   --pushbuttonBackgroundColor: none;
   --pushbuttonBorderColor: var(--primary);
   --pushbuttonTextColor: var(--primary);
