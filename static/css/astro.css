@@ -415,7 +415,7 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--primary);
+  --controlTextColor: var(--primaryElementText);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
   --controlBorderColor: var(--primary);
@@ -510,49 +510,22 @@
 	
   /* 
     
-    Toggle Colors 
+    Switch Colors 
     ==========================================================================
 
   */
-
-  --toggleButtonBackgroundColor: var(--primary);
-  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25), 1px 0 2px rgba(0, 0, 0, 0.3);
-
-  --toggleBaseBackgroundColor: linear-gradient(
-    to right,
-    var(--colorNormal) 50%,
-    var(--colorPrimaryLighten4) 50.1%
-  );
-	--toggleBaseBorderColor: var(--primary);
-  --toggleBaseTextColor: var(--primary);
-
-  --toggleBaseSelectedTextColor: #007300;
-  --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
-    -1px 0 2px rgba(0, 0, 0, 0.3);
-
-  /* Default Toggle */
-  --toggleThumbBorderColor: var(--secondaryText);
-	--toggleThumbBackgroundColor: var(--inputBackground);	
-	--toggleTrackBorderColor: var(--secondaryText);
-	--toggleTrackBackgroundColor: var(--backgroundColor);
-
-	/* Selected State */
-  --toggleSelectedThumbBorderColor: var(--primary);
-  --toggleSelectedThumbBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--primary);
-  --toggleSelectedTrackBackgroundColor: var(--primaryLight);
-
-  --toggleDisabledThumbBorderColor: var(--secondaryText);
-  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-  --toggleDisabledSelectedThumbBorderColor: var(--primary);
-
+  --switchOffColor: var(--secondaryText);
+  --switchOnColor: var(--primary);
+  --switchHoverOnColor: var(--primaryDark);
+  --switchHoverOffColor: var(--primaryDark);
+  --switchDisabledOnColor: var(--primary);
+  --switchDisabledOffColor: var(--secondaryText);
   /* 
     
-    Pushbutton Colors 
+    Popup Menu Colors 
     ==========================================================================
 
   */
-
   --pushbuttonBackgroundColor: none;
   --pushbuttonBorderColor: var(--primary);
   --pushbuttonTextColor: var(--primary);
@@ -824,6 +797,7 @@ li.light-theme {
   --primaryLight: #92cbff;
   --primaryLightHover: #92cbff4D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
 	--primaryDark: #3a87cf;
+  --primaryDarkHover: #6b8ca5;
 	--primaryElementText: #080c11;
 	--inputBackground: #FFFFFF;
   --inputDark: #080c11;
@@ -891,7 +865,7 @@ li.light-theme {
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--primary);
+  --controlTextColor: var(--primaryElementText);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
   --controlBorderColor: var(--primary);
@@ -967,33 +941,16 @@ li.light-theme {
 	--selectHoverOptBackgroundColor: var(--primaryLight);
   /* 
     
-    Toggle Colors 
+    Switch Colors 
     ==========================================================================
 
   */
-	
-  --toggleButtonBackgroundColor: var(--primary);
-  --toggleBaseBackgroundColor: var(--primary);
-  --toggleBaseBorderColor: var(--primary);
-  --toggleBaseTextColor: var(--primaryElementText);
-  --toggleBaseSelectedTextColor: var(--colorNormal);
-
-  /* Default Toggle */
-  --toggleThumbBorderColor: var(--secondaryText);
-  --toggleThumbBackgroundColor: var(--inputBackground);
-  --toggleTrackBorderColor: var(--secondaryText);
-  --toggleTrackBackgroundColor: var(--backgroundColor);
-
-  /* Selected State */
-  --toggleSelectedThumbBorderColor:var(--primaryDark);
-  --toggleSelectedTrackBackgroundColor: var(--primary);
-  --toggleSelectedTrackBorderColor: var(--primaryDark);
-
-  /* Disabled State */
-  --toggleDisabledThumbBorderColor: var(--secondaryText);
-  --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-  --toggleDisabledSelectedThumbBorderColor: var(--primary);
-
+  --switchOffColor: var(--secondaryText);
+  --switchOnColor: var(--primary);
+  --switchHoverOnColor: var(--primaryLight);
+  --switchHoverOffColor: var(--primaryLight);
+  --switchDisabledOnColor: var(--primary);
+  --switchDisabledOffColor: var(--secondaryText);
   /* 
     
     Popup Menu Colors 
@@ -1700,11 +1657,11 @@ label {
 
 /*
 **
-** 	ASTRO CHECKBOX & RADIO BUTTONS
+** 	ASTRO RADIO BUTTONS
 ** 	==========================================================================
 **  3.0 Notes
-**  Added Custom CSS Properties to support light/dark theming
-**  Added fallback properties for IE11
+**  - Added Custom CSS Properties to support light/dark theming
+**  - Added fallback properties for IE11
 **  2.0 Notes
 **  - Removed hand cursor on checkbox
 **  - Updated styles to Astro 2.0
@@ -1716,34 +1673,18 @@ label {
 **  - Removed user-select and placed it in astro.css to apply to all input types
 */
 
-.rux-checkbox,
 .rux-radio-button {
   display: flex;
   position: relative;
   margin: 0 0 1rem 0;
   line-height: 1.2;
-
-  /* DEBUG */
-  /* padding: 1rem; */
-  /* outline: 1px solid red;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 0, 0, 0),
-    rgba(255, 0, 0, 0) 49.5%,
-    rgba(255, 0, 0, 1) 50%,
-    rgba(255, 0, 0, 1) 51.5%,
-    rgba(255, 0, 0, 0) 51%,
-    rgba(255, 0, 0, 0)
-  ); */
 }
 
-.rux-checkbox input[type="checkbox"],
 .rux-radio-button input[type="radio"] {
   -webkit-appearance: none;
   display: none;
 }
 
-.rux-checkbox input[type="checkbox"] + label,
 .rux-radio-button input[type="radio"] + label {
   position: relative;
   display: flex;
@@ -1756,7 +1697,6 @@ label {
   cursor: pointer;
 }
 
-.rux-checkbox input[type="checkbox"] + label::before,
 .rux-radio-button input[type="radio"] + label::before {
   display: flex;
   flex-shrink: 0;
@@ -1774,24 +1714,17 @@ label {
   border: 1px solid var(--controlBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"] + label::before {
-  border-radius: 2px;
-}
-
 .rux-radio-button input[type="radio"] + label::before {
   border-radius: 100%;
   background-color: transparent;
 }
 
-.rux-checkbox input[type="checkbox"]:checked + label::before,
 .rux-radio-button input[type="radio"]:checked + label::before {
   background-color: var(--controlSelectedOutlineBackgroundColor);
   border-color: var(--controlSelectedOutlineBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
 .rux-radio-button input[type="radio"]:not(:disabled):hover + label:before,
-.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before,
 .rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:before {
 	border-color: var(--controlHoverBorderColor);
 }
@@ -1800,21 +1733,11 @@ label {
   background-color: var(--controlHoverBorderColor);
 }
 
-.rux-checkbox input[type="checkbox"]:checked + label::after,
 .rux-radio-button input[type="radio"]:checked + label::after{
   position: absolute;
   top: 5px;
   display: flex;
   content: "";
-}
-
-.rux-checkbox input[type="checkbox"]:checked + label::after{
-  height: 6px;
-  width: 12px;
-  left: 4px;
-  border-right: 2px solid var(--controlTextColor);
-  border-top: 2px solid var(--controlTextColor);
-  transform: rotate(125deg);
 }
 
 .rux-radio-button input[type="radio"]:checked + label::after {
@@ -1827,8 +1750,123 @@ label {
   background-color: var(--primary);
 }
 
-.rux-checkbox input[type="checkbox"]:disabled + label,
 .rux-radio-button input[type="radio"]:disabled + label {
+  cursor: not-allowed;
+  cursor: var(--disabledCursor);
+  opacity: 0.4;
+  opacity: var(--disabledOpacity);
+}
+
+/*
+**
+** 	ASTRO CHECKBOX BUTTON
+** 	==========================================================================
+**  3.0 Notes
+**  - Added Custom CSS Properties to support light/dark theming
+**  - Added fallback properties for IE11
+**  2.0 Notes
+**  - Removed hand cursor on checkbox
+**  - Updated styles to Astro 2.0
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed linear gradients
+**  - Added line-height to label to fix minor alignment issue
+**  - Moved user-select to parent element
+**  - Removed user-select and placed it in astro.css to apply to all input types
+*/
+
+.rux-checkbox {
+  display: flex;
+  position: relative;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.rux-checkbox input[type="checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.rux-checkbox input[type="checkbox"] + label {
+  position: relative;
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  color: var(--controlLabelColor);
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+/* Box */
+.rux-checkbox input[type="checkbox"] + label::before {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  content: "";
+
+  align-self: start;
+
+  height: 1.125rem;
+
+  height: var(--controlOptionSize);
+  width: 1.125rem;
+  width: var(--controlOptionSize);
+
+  margin: 0 0.625rem 0 0;
+
+  border: 1px solid var(--controlBorderColor);
+  border-radius: 2px;
+}
+
+.rux-checkbox input[type="checkbox"] + label::before {
+  border-radius: 2px;
+}
+
+.rux-checkbox input[type="checkbox"]:checked + label::before {
+  background-color: var(--primary);
+  border-color: var(--controlSelectedOutlineBorderColor);
+}
+
+.rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
+.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before{
+	border-color: var(--controlHoverBorderColor);
+}
+
+.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before{
+	background-color: var(--controlHoverBorderColor);
+}
+
+
+/* Checkmark */
+.rux-checkbox input[type="checkbox"]:checked + label::after {
+  position: absolute;
+  top: 5px;
+  display: flex;
+  content: "";
+}
+
+.rux-checkbox input[type="checkbox"]:checked + label::after{
+  height: 6px;
+  width: 12px;
+  left: 3px;
+  border-right: 2px solid var(--controlTextColor);
+  border-top: 2px solid var(--controlTextColor);
+  transform: rotate(125deg);
+}
+
+.rux-checkbox--indeterminate input[type="checkbox"]:checked + label::after{
+  width: 10px;
+  height: 5px;
+  transform: rotate(0deg);
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid var(--controlTextColor);
+  left: 4px;
+}
+
+.rux-checkbox input[type="checkbox"]:disabled + label {
   cursor: not-allowed;
   cursor: var(--disabledCursor);
   opacity: 0.4;
@@ -8237,123 +8275,117 @@ input:-moz-focusring {
   );
 }
 
-/*
-**
-** 	ASTRO TOGGLE BUTTONS
-** 	==========================================================================
-**  3.0 Notes
-**  - Breaking change to markup of toggle button
-**  2.1 Notes
-**	- Moved Pushbuttons to its own style sheet
-**	1.4 Notes
-**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
-**	- Removed prefixed linear gradients
-**	- Removed prefixed transition
-**  - Fixed added colon to checked pseudo class (e.g., checked became :checked)
-**  - Alignment issue fixed on toggle button label
-**  - Updated to WCAG colors
-**  - Updated transition speed
-*/
-
-.rux-toggle {
+.rux-switch {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
 
-  /* height: 1.175rem; */
-  /* width: 2.3875rem; */
   height: 22px;
   width: 42px;
-
-  user-select: none;
   overflow: hidden;
 }
 
-.rux-toggle__input {
-  display: none !important;
+.rux-switch__input{
+  display: none;
 }
 
-.rux-toggle__button {
+.rux-switch__button {
   display: flex;
-  /* justify-content: center;
-  align-content: center; */
   align-items: center;
+  cursor: pointer;
 }
 
-.rux-toggle__button::before {
+/* Track */
+.rux-switch__button::before {
   position: relative;
 
   display: flex;
   content: "";
 
   border-radius: 5.5px;
-  border: 1px solid var(--toggleTrackBorderColor);
-  background-color: var(--toggleTrackBackgroundColor);
+  border: 1px solid;
+  border-color: var(--switchOffColor);
+  background-color: var(--switchOffColor);
 
   height: 11px;
-  width: 32px;
-
-  transition: 0.167s background-color ease-in-out;
+  width: 38px;
+  z-index: 2;
+  transition: 0.1s background-color linear;
 }
 
-/* Track */
-.rux-toggle__input:checked + .rux-toggle__button::before {
-  background-color: var(--toggleSelectedTrackBackgroundColor);
-  border-color: var(--toggleSelectedTrackBorderColor);
+/* Track Active */
+.rux-switch__input:checked + .rux-switch__button::before {
+  border-color: var(--switchOnColor);
+  background-color: var(--switchOnColor);
 }
 
-.rux-toggle__button::after {
+/* Track Hover Unchecked */
+.rux-switch:hover .rux-switch__input:not(:disabled) + .rux-switch__button:before {
+  border-color: var(--switchHoverOffColor);
+  background-color: var(--switchHoverOffColor);
+}
+
+/* Track Hover Checked */
+.rux-switch:hover .rux-switch__input:checked:not(:disabled) + .rux-switch__button:before {
+  border-color: var(--switchHoverOnColor);
+  background-color: var(--switchHoverOnColor);
+}
+
+/* Button */
+.rux-switch__button::after {
   position: absolute;
   content: "";
   top: 1px;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   height: 19px;
   width: 19px;
 
   border-radius: 50%;
-  border: 1px solid var(--toggleThumbBorderColor);
-  background-color: var(--toggleThumbBackgroundColor);
+  border: 1px solid var(--switchOffColor);
+  background-color: var(--inputBackground);
 
-  transition: 0.167s left ease-in-out, 0.167s border-color ease-in-out;
+  transition: 0.1s left linear, 0.1s border-color linear;
 }
 
-
-
-.rux-toggle__input:disabled + .rux-toggle__button::after {
-  background-color: var(--toggleDisabledThumbBackgroundColor);
-	border-color: var(--toggleDisabledThumbBorderColor);
-	cursor: not-allowed;
-	cursor: var(--disabledCursor);
+/* Button Active */
+.rux-switch__input:checked + .rux-switch__button::after {
+  left: 50%;
+  border-color: var(--switchOnColor);
+  background-color: var(--inputBackground);
 }
 
-.rux-toggle__input:checked + .rux-toggle__button::after {
-  left: calc(50% + 2px);
-  border-color: var(--toggleSelectedThumbBorderColor);
+/* Button Hover Unchecked */
+.rux-switch:hover .rux-switch__input:not(:disabled) + .rux-switch__button:after {
+  border-color: var(--switchHoverOffColor);
 }
 
-.rux-toggle__input:checked:disabled + .rux-toggle__button::after {
-  border-color: var(--toggleDisabledSelectedThumbBorderColor);
+/* Button Hover Checked */
+.rux-switch:hover .rux-switch__input:checked:not(:disabled) + .rux-switch__button:after {
+  border-color: var(--switchHoverOnColor);
+}
+
+/* Disabled */
+.rux-switch__input:disabled + .rux-switch__button::after {
   cursor: not-allowed;
   cursor: var(--disabledCursor);
 }
 
-.rux-toggle__input:disabled + .rux-toggle__button::before {
+.rux-switch__input:checked:disabled + .rux-switch__button::after {
+  cursor: not-allowed;
+  cursor: var(--disabledCursor);
+}
+
+.rux-switch__input:disabled + .rux-switch__button::before {
+  cursor: not-allowed;
+  cursor: var(--disabledCursor);
+}
+
+.rux-switch__input:disabled + .rux-switch__button {
   opacity: 0.4;
   opacity: var(--disabledOpacity);
   cursor: not-allowed;
   cursor: var(--disabledCursor);
 }
-
-.rux-toggle__input:disabled + .rux-toggle__button {
-	opacity: 0.4;
-	opacity: var(--disabledOpacity);
-	cursor: not-allowed;
-	cursor: var(--disabledCursor);
-}
-
 .rux-tree {
   display: inline-block;
   box-sizing: border-box;

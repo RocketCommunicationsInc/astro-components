@@ -1,19 +1,19 @@
-# Toggle
+# Switch
 
-A Toggle describes a state or value. Similar to a checkbox, a toggle allow users to change a setting between two states such as “On" or "Off.” Unlike a checkbox, a toggle button initiates an action with immediate effect.
+A Switch describes a state or value. Similar to a checkbox, a switch allow users to change a setting between two states such as “On" or "Off.” Unlike a checkbox, a switch button initiates an action with immediate effect.
 
 ## Guidelines
 
-- [Astro UXDS: Toggle](http://www.astrouxds.com/ui-components/toggle)
+- [Astro UXDS: Switch](http://www.astrouxds.com/ui-components/switch)
 
 ## Web Components Usage
 
 ### 1. Installation
 
-#### ** Install the Astro UXDS Toggle package via Command Line** (Preferred Method)
+#### ** Install the Astro UXDS Switch package via Command Line** (Preferred Method)
 
 ```sh
-npm i --save @astrouxds/rux-toggle
+npm i --save @astrouxds/rux-switch
 ```
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
@@ -28,19 +28,19 @@ git clone https://bitbucket.org/rocketcom/astro-components.git
 
 Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketcom/astro-components/get/master.zip)
 
-### 2. Import the Astro Toggle Web Component
+### 2. Import the Astro Switch Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxToggle } from "@astro-components/rux-toggle/rux-toggle.js";
+import { RuxSwitch } from "@astro-components/rux-switch/rux-switch.js";
 ```
 
-### 3. Render the Astro Toggle Web Component
-Pass properties as attributes of the Astro Toggle custom element:
+### 3. Render the Astro Switch Web Component
+Pass properties as attributes of the Astro Switch custom element:
 
 ```xml
-<rux-toggle disabled="false" checked="false"></rux-toggle>
+<rux-switch disabled="false" checked="false"></rux-switch>
 ```
 
 ### Properties
@@ -68,9 +68,9 @@ Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming
 Configure the component using native HTML attributes.
 
 ```xml
- <div class="rux-toggle">
-    <input class="rux-toggle__input" disabled id="toggle1" type="checkbox">
-    <label class="rux-toggle__button" for="toggle1"></label>
+ <div class="rux-switch">
+    <input class="rux-switch__input" disabled id="switch1" type="checkbox">
+    <label class="rux-switch__button" for="switch1"></label>
 </div>
 ```
 ### Attributes
@@ -91,7 +91,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ##### **3.0**
 
-- Breaking change to markup of toggle button
+- Breaking change to markup of switch button
 
 ##### **2.1**
 
@@ -103,6 +103,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 - Removed prefixed linear gradients
 - Removed prefixed transition
 - Fixed added colon to checked pseudo class (e.g., checked became :checked)
-- Alignment issue fixed on toggle button label
+- Alignment issue fixed on switch button label
 - Updated to WCAG colors
 - Updated transition speed
