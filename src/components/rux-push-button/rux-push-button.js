@@ -87,12 +87,12 @@ export class RuxPushButton extends LitElement {
 
       <input
         class="rux-push-button__input"
-        id="ruxToggle"
+        id="ruxSwitch"
         type="checkbox"
         ?disabled=${this.disabled}
         ?checked="${this.checked}"
       />
-      <label class="rux-push-button__button" for="ruxToggle"><slot></slot></label>
+      <label class="rux-push-button__button" for="ruxSwitch"><slot></slot></label>
     `;
   }
 }

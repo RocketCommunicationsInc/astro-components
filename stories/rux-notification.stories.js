@@ -87,7 +87,7 @@ export const AllNotificationBanners = () => html`
         <rux-notification
           open
           status="standby"
-          message="Standby Notification Banner"
+          message="Standby notification banner"
         ></rux-notification>
       </div>
       <div
@@ -96,7 +96,7 @@ export const AllNotificationBanners = () => html`
         <rux-notification
           open
           status="normal"
-          message="Normal Notification Banner"
+          message="Normal notification banner"
         ></rux-notification>
       </div>
       <div
@@ -105,7 +105,7 @@ export const AllNotificationBanners = () => html`
         <rux-notification
           open
           status="caution"
-          message="Caution Notification Banner"
+          message="Caution notification banner"
         ></rux-notification>
       </div>
       <div
@@ -114,7 +114,7 @@ export const AllNotificationBanners = () => html`
         <rux-notification
           open
           status="critical"
-          message="Critical Notification Banner"
+          message="Critical notification banner"
         ></rux-notification>
       </div>
     </div>

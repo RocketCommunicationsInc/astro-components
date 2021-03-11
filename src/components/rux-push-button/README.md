@@ -43,7 +43,7 @@ Pass properties as attributes of the Astro Push Button custom element.
 Provide a label for the Push Button inside the component node using the component’s [slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).
 
 ```xml
-<rux-push-button checked>Push Button Label</rux-push-button>
+<rux-push-button checked>Push button label</rux-push-button>
 ```
 
 ### Properties
@@ -72,7 +72,7 @@ Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming
 ```xml
  <div class="rux-push-button">
   <input class="rux-push-button__input" id="pb1" type="checkbox"></input>
-  <label class="rux-push-button__button" for="pb1">Push Button Label</label>
+  <label class="rux-push-button__button" for="pb1">Push button label</label>
 </div>
 ```
 
@@ -81,7 +81,7 @@ Apply attributes such as `disabled` and/or `checked` on the `<input>` element.
 ```xml
  <div class="rux-push-button">
   <input class="rux-push-button__input" id="pb1" type="checkbox" disabled checked></input>
-  <label class="rux-push-button__button" for="pb1">Push Button Label</label>
+  <label class="rux-push-button__button" for="pb1">Push button label</label>
 </div>
 ```
 

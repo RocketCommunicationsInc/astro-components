@@ -6,6 +6,8 @@ import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-mon
 import { RuxMonitoringProgressIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-progress-icon.js';
 import Readme from '../src/components/rux-icon/README.md';
 import ReadmeMonitoring from '../src/components/rux-monitoring-icon/README.md';
+import ruxIconsJson from '../static/json/rux-icons.json';
+
 
 export default {
   title: 'Components|Icons & Symbols',
@@ -13,58 +15,33 @@ export default {
 };
 
 export const AllIcons = () => {
-
-	const colors = {
-		Primary: '#4dacff',
-		Secondary: '#92cbff',
-		Tertiary: '#52667a',
-		Quaternary: '#ced6e4',
-		White: '#ffffff',
-	};
-
-  const sizes = {
-    'Extra Small': 'extra-small',
-    'Small': 'small',
-    'Normal': 'normal',
-    'Large': 'large',
+  const colors = {
+    Primary: 'var(--primary)',
+    Secondary: 'var(--primaryLight)',
+    Tertiary: '#52667a',
+    Quaternary: '#ced6e4',
+    White: '#ffffff',
   };
 
+  const sizes = {
+    'Extra Small': '1rem',
+    'Small': '1.8rem',
+    'Normal': '2.8rem',
+    'Large': '3.5rem',
+  };
 
-	const colorKnob = select('Color', colors, '#4dacff');
-	const sizeKnob = select('Size', sizes, 'normal');
-  const icons = [
-    'altitude',
-    'antenna',
-    'antenna-off',
-    'antenna-receive',
-    'antenna-transmit',
-    'equipment',
-    'mission',
-    'netcom',
-    'payload',
-    'processor',
-    'processor-alt',
-    'propulsion-power',
-    'satellite-off',
-    'satellite-receive',
-    'satellite-transmit',
-    'solar',
-    'thermal',
-    'add-large',
-    'add-small',
-    'close-large',
-    'close-small',
-    'collapse',
-    'expand',
-    'lock',
-    'unlock',
-    'search',
-    'notifications',
-    'settings',
-    'caution',
-    'maintenance',
-    'resources',
-  ];
+  const colorKnob = select('Color', colors, 'var(--primary)');
+  const sizeKnob = select('Size', sizes, 'normal');
+
+  const icons = ruxIconsJson.icons.sort((a, b) => {
+    if (a.id < b.id) {
+      return -1;
+    }
+    if (a.id > b.id) {
+      return 1;
+    }
+    return 0;
+  });
 
   return html`
     <style>
@@ -74,18 +51,23 @@ export const AllIcons = () => {
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-
         justify-content: center;
       }
 
       .icon-container li {
         display: block;
         margin: 1rem 1.5rem;
+        max-width: 5rem;
       }
 
       .icon-name {
+        display: block;
         margin-top: 0.5rem;
         font-size: 0.75rem;
+        width: 5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
     </style>
 
@@ -93,14 +75,9 @@ export const AllIcons = () => {
       <ul class="icon-container">
         ${icons.map(
       (icon) => html`
-            <li>
-              <rux-icon
-                library="/icons/astro.svg"
-                icon="${icon}"
-                color="${colorKnob}"
-                size="${sizeKnob}"
-              ></rux-icon>
-              <div class="icon-name">${icon}</div>
+            <li title="${icon.id}" style="width: ${sizeKnob}; height: ${sizeKnob};">
+              <i class="rux-icon rux-icon--${icon.id}" style="width: ${sizeKnob}; height: ${sizeKnob}; background-color: ${colorKnob};"></i>
+              <div class="icon-name" style="width: ${sizeKnob}">${icon.id}</div>
             </li>
           `,
   )}
@@ -190,7 +167,7 @@ export const MonitoringIcons = () => {
       <rux-monitoring-icon
         library="/icons/custom.svg"
         icon="custom"
-        label="Custom Icon"
+        label="Custom icon"
         sublabel="${sublabel}"
         status="${status}"
         notifications="${notifications}"
@@ -284,7 +261,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="mission"
           label="Mission"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="off"
           notifications="4"
         ></rux-monitoring-icon>
@@ -293,7 +270,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="equipment"
           label="Equipment"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="standby"
           notifications="100"
         ></rux-monitoring-icon>
@@ -302,7 +279,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="processor"
           label="Processor"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="normal"
         ></rux-monitoring-icon>
       </li>
@@ -310,7 +287,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="antenna"
           label="Antenna"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="caution"
           notifications="1200"
         ></rux-monitoring-icon>
@@ -319,7 +296,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="antenna-transmit"
           label="NROL"
-          sublabel="Sub Label"
+          sublabel="Sub label"
           status="serious"
           notifications="1000000"
         ></rux-monitoring-icon>

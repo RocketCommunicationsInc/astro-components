@@ -4,7 +4,7 @@ import { RuxTimeline } from '../src/components/rux-timeline/rux-timeline.js';
 import { RuxSlider } from '../src/components/rux-slider/rux-slider.js';
 import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 
-import Readme from '../src/components/rux-toggle/README.md';
+import Readme from '../src/components/rux-switch/README.md';
 
 export default {
   title: 'Components|Timeline',

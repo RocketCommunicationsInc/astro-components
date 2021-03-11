@@ -64,14 +64,13 @@ export class RuxIcon extends LitElement {
         svg,
         svg > use {
           height: 100%;
-					width: auto;
-					fill: var(--iconColor);
+          width: auto;
+          fill: var(--iconColor);
+        }
 
-				}
-				
-				.rux-button--outline rux-icon {
+        .rux-button--outline rux-icon {
 
-				}
+        }
 
         :host([size='extra-small']) {
           height: 1rem;
@@ -92,7 +91,7 @@ export class RuxIcon extends LitElement {
       <span id="rux-icon" title="${this.label}">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 128 128"
+          viewBox="0 0 24 24"
           preserveAspectRatio="xMidYMid meet"
           focusable="false"
         >

@@ -26,7 +26,7 @@ export default class AstroApp extends LitElement {
   render() {
     return html`
       <h2>${this.heading}</h2>
-      <rux-icon icon="caution"></rux-icon>
+      <rux-icon icon="settings"></rux-icon>
       <div>
         <slot></slot>
       </div>

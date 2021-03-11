@@ -1,10 +1,10 @@
-# Drop Down Menu
+# Select Menu
 
-Drop Down Menus allow users to select a value from a list of values.
+Select Menus allow users to select a value from a list of values.
 
 ## Guidelines
 
-- [Astro UXDS: Drop Down](https://www.astrouxds.com/ui-components/drop-down)
+- [Astro UXDS: Select](https://www.astrouxds.com/ui-components/select)
 - [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
 ## Basic HTML Usage
@@ -21,7 +21,7 @@ Latest release is available in the [static css directory](https://github.com/Roc
 
 Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. 
 
-List drop down choices as Option elements within a Select menu with the `rux-fselect` class.
+List select choices as Option elements within a Select menu with the `rux-select` class.
 
 ```xml
 <select class="rux-select">
@@ -32,17 +32,17 @@ List drop down choices as Option elements within a Select menu with the `rux-fse
 </select>
 ```
 
-Add native HTML form attributes like `disabled` or `required` , or wrap options in an `optgroup` element to group them within the drop down.
+Add native HTML form attributes like `disabled` or `required` , or wrap options in an `optgroup` element to group them within the select.
 
 ```xml
 <select class="rux-select" disabled>
-  <optgroup label="Group One">
+  <optgroup label="Group one">
     <option>Option 1.1</option>
     <option>Option 1.2</option>
     <option>Option 1.3</option>
     <option>Option 1.4</option>
   </optgroup>
-  <optgroup label="Group Two">
+  <optgroup label="Group two">
     <option>Option 2.1</option>
     <option>Option 2.2</option>
     <option>Option 2.3</option>

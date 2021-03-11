@@ -18,9 +18,9 @@
   },
   "description": "Astro Web Component for toggles",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "rux-toggle.js",
-  "module": "rux-toggle.js",
-  "name": "@astrouxds/rux-toggle",
+  "main": "rux-switch.js",
+  "module": "rux-switch.js",
+  "name": "@astrouxds/rux-switch",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
