@@ -51,15 +51,15 @@ The Astro UXDS Tabs pattern is configured using properties passed into the custo
 
 ```xml
 <rux-tabs id="tab-set-id-1">
-  <rux-tab id="tab-id-1">Tab 1 Title</rux-tab>
-  <rux-tab id="tab-id-2">Tab 2 Title</rux-tab>
-  <rux-tab id="tab-id-3">Tab 3 Title</rux-tab>
+  <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+  <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+  <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
 </rux-tabs>
 
 <rux-tab-panels aria-labelledby="tab-set-id-1">
-  <rux-tab-panel aria-labelledby="tab-id-1">Tab 1 HTML Content</rux-tab-panel>
-  <rux-tab-panel aria-labelledby="tab-id-2">Tab 2 HTML Content</rux-tab-panel>
-  <rux-tab-panel aria-labelledby="tab-id-3">Tab 3 HTML Content</rux-tab-panel>
+  <rux-tab-panel aria-labelledby="tab-id-1">Tab 1 HTML content</rux-tab-panel>
+  <rux-tab-panel aria-labelledby="tab-id-2">Tab 2 HTML content</rux-tab-panel>
+  <rux-tab-panel aria-labelledby="tab-id-3">Tab 3 HTML content</rux-tab-panel>
 </rux-tab-panels>
 ```
 
@@ -76,9 +76,9 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 ```xml
 <rux-tabs id="tab-set-id-1">
-  <rux-tab id="tab-id-1">Tab 1 Title</rux-tab>
-  <rux-tab id="tab-id-2" selected>Tab 2 Title</rux-tab>
-  <rux-tab id="tab-id-3" disabled>Tab 3 Title</rux-tab>
+  <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+  <rux-tab id="tab-id-2" selected>Tab 2 title</rux-tab>
+  <rux-tab id="tab-id-3" disabled>Tab 3 title</rux-tab>
 </rux-tabs>
 ...
 ```
