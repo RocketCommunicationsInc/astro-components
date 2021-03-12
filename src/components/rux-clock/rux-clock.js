@@ -158,9 +158,9 @@ export class RuxClock extends LitElement {
         }
 
         :host([tiny]) .rux-clock__segment__value {
-          height: 1.0rem;
+          height: 1.15rem;
           padding: 0 0.75rem;
-          font-size: 1.15rem;
+          font-size: 1.0rem;
           font-weight: 500;
         }
 
