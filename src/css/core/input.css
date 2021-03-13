@@ -90,6 +90,20 @@
   color: var(--inputTextColor);
 }
 
+
+/* input */
+.rux-form-field input::-webkit-input-placeholder,
+.rux-form-field input::-moz-placeholder ,
+.rux-form-field input:-ms-input-placeholder,
+/* textarea */
+.rux-form-field textarea::-webkit-input-placeholder,
+.rux-form-field textarea::-moz-placeholder ,
+.rux-form-field textarea:-ms-input-placeholder {
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: var(--fontFamily);
+}
+
 .rux-form-field input[type="number"]::-webkit-inner-spin-button,
 .rux-form-field input[type="number"]::-webkit-outer-spin-button,
 .rux-form-field input[type="date"]::-webkit-inner-spin-button,
