@@ -64,7 +64,7 @@
   padding: 0 0.625rem;
 
   border: 1px solid var(--inputBorderColor);
-  border-radius: 3px;
+  border-radius: 4px;
 
   font-size: var(--fontSize, 1rem);
   color: var(--inputTextColor);
