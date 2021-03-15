@@ -1,4 +1,6 @@
-import { LitElement, html} from 'lit-element';
+import { LitElement, html } from 'lit-element';
+import { RuxIcon } from '@astrouxds/rux-icon';
+import { RuxButton } from '@astrouxds/rux-button';
 
 export class RuxLogin extends LitElement {
   static get properties() {
@@ -20,9 +22,19 @@ export class RuxLogin extends LitElement {
 
   render() {
     return html`
-        <h1>Login Component</h1>
-        <p>Username: ${this.username}</p>
-        <p>Password: ${this.password}</p>
+        <form name="ruxLogin" id="ruxLogin" class="rux-form">
+            <div class="rux-form-field">
+              <label for="username">Username</label>
+              <input id="username" class="rux-input" type="text" placeholder="username" />
+            </div>
+            <div class="rux-form-field">
+              <label for="pass">Password</label>
+              <input id="pass" class="rux-input" type="password"/>
+            </div>
+            <div class="rux-form-field">
+              <rux-button size="large" type="submit">Submit</rux-button>
+            </div>
+        </form>
     `;
   }
 }
