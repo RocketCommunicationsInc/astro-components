@@ -50,14 +50,14 @@ Slider.story = {
 
 export const AllSliderVariants = () => {
   const value2 = 70;
-  const axisLabels2 = ['min', 'middle', 'max'];
+  const axisLabels2 = ['Min', 'Middle', 'Max'];
   const label2 = 'Slider label';
 
   const value3 = 42;
 
   const value4 = 50;
-  const label4 = 'Disabled slider label ';
-  const axisLabels4 = ['min', 'middle', 'max'];
+  const label4 = 'Disabled slider label';
+  const axisLabels4 = ['Min', 'Middle', 'Max'];
 
   return html`
     <div style="display: flex; padding: 5vh 5vw; justify-content: center;">
