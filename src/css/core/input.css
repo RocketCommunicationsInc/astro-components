@@ -263,14 +263,16 @@
   background-color: var(--inputInvalidBorderColor);
 }
 
-.rux-form-field .help {
-  -webkit-order: 3;
-  order: 3;
-
-  margin-top: 0.625rem;
-  color: var(--inputHelpTextColor);
-  font-size: 0.875rem;
-  font-family: Roboto-Regular;
+.rux-help-text {
+  color: var(--secondaryText);
+  font-size: var(--fontSizeMD);
+  font-family: var(--fontFamily);
   font-weight: normal;
   letter-spacing: 0.5px;
+}
+
+.rux-form-field .rux-help-text {
+  -webkit-order: 3;
+  order: 3;
+  margin-top: 0.625rem;
 }
