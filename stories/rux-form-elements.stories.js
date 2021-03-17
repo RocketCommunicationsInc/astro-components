@@ -132,10 +132,6 @@ export const InputFields = () => html`
       }
     </style>
     <div style="padding: 10vh 5vw; display: flex; flex-flow: column; justify-content: center;">
-      
-      <div class="rux-form__invalid">
-        <p>There were 2 errors found. Please complete all required fields.</p>
-      </div>
 
       <ul class="rux-form">
         <li class="rux-form-field">
