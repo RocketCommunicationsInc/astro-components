@@ -1,6 +1,6 @@
 # Switch
 
-A Switch describes a state or value. Similar to a checkbox, a switch allow users to change a setting between two states such as “On" or "Off.” Unlike a checkbox, a switch button initiates an action with immediate effect.
+A Switch toggles between two mutually exclusive states such as "On" or "Off." Unlike a checkbox, a switch initiates an action with immediate effect without requiring a "Save" or "Submit" action.
 
 ## Guidelines
 
@@ -63,7 +63,7 @@ Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/ro
 ```
 
 ### 2. Markup the component using HTML and the Astro CSS classes
-Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. 
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention.
 
 Configure the component using native HTML attributes.
 
