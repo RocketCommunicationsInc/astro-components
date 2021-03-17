@@ -111,15 +111,14 @@ RadioButtons.story = {
 export const InputFields = () => html`
     <style>
       ul {
-        column-count: 1;
-        column-gap: 3rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 4rem;
+        align-items: start;
         margin: 0 0 4rem;
         padding: 0;
         width: 100%;
-      }
-      li {
-        margin: 0 0 1rem;
-        -webkit-column-break-inside: avoid;
+        row-gap: 1rem;
       }
 
       @media screen and (min-width: 550px){
