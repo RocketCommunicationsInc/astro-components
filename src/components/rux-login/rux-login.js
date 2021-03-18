@@ -14,6 +14,9 @@ export class RuxLogin extends LitElement {
       sso: {
         type: Boolean,
       },
+      passwordVisible: {
+        type: Boolean,
+      },
     };
   }
 
@@ -22,6 +25,7 @@ export class RuxLogin extends LitElement {
     this.username = '';
     this.password = '';
     this.sso = false;
+    this.passwordVisible = false;
   }
 
   _updateValue(e) {
@@ -30,6 +34,11 @@ export class RuxLogin extends LitElement {
 
   _changeSSO() {
     this.sso = !this.sso;
+  }
+
+  _changePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+    console.log('_changePasswordVisibility', this.passwordVisible);
   }
 
   render() {
@@ -52,6 +61,8 @@ export class RuxLogin extends LitElement {
               font-family: var(--fontFamily);
               font-size: var(--fontSize);
               color: var(--fontColor);
+
+              min-width: 330px;
             }
             
             .rux-form-field input:required + label::after {
@@ -237,6 +248,24 @@ export class RuxLogin extends LitElement {
               margin-right: 6px;
             }
 
+            .rux-form-field--withIcon{
+              position: relative;
+            }
+
+            .rux-form-field--withIcon input{
+              padding-right: 2rem;
+            }
+
+            .rux-form-field--withIcon rux-icon{
+              position: absolute;
+              right: 5px;
+              bottom: 9px;
+            }
+
+            .rux-form-field--withIcon rux-icon:hover{
+              cursor: pointer;
+            }
+
             .ml-auto{
               margin-left: auto;
             }
@@ -269,14 +298,19 @@ export class RuxLogin extends LitElement {
 
             ${!this.sso ? html`
               <div class="rux-form__group">
-                <div class="rux-form-field">
-                  <label for="pass">Password</label>
+                <div class="rux-form-field rux-form-field--withIcon">
+                  <label for="pass">Password ${this.passwordVisible}</label>
                   <input
-                   type="password"
-                   id="pass"
-                   class="rux-input"
-                   .value="${this.password}"
-                   @input="${this._updateValue}"  />
+                    type="${this.passwordVisible ? 'text' : 'password'}"
+                    id="pass"
+                    class="rux-input"  />
+                  <rux-icon
+                    @click="${this._changePasswordVisibility}"
+                    icon="${this.passwordVisible ? 'visibility-off' : 'visibility'}"
+                    size="extra-small"
+                    color="var(--primary)">
+                  </rux-icon>
+                  
                 </div>
                 <div class="rux-form-field">
                   <div class="rux-checkbox">
