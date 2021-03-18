@@ -16,7 +16,7 @@ export const Notification = () => {
 
   const messageKnob = text(
       'Banner Message',
-      `This is a notification banner. It won’t disappear until the user dimisses it.`,
+      `This is a notification banner. It won’t disappear until the user dismisses it.`,
   );
   return html`
     <div style="display: flex; flex-flow: column; justify-content: center;">
@@ -50,7 +50,7 @@ export const NotificationAutoClose = () => {
   });
   const messageKnob = text(
       'Banner Message',
-      `This is a notification banner. It will disappear in ${closeDelay}000ms.`,
+      `This is a notification banner. It will disappear in ${closeDelay}000 ms.`,
   );
   return html`
     <div style="display: flex; flex-flow: column; justify-content: center;">
