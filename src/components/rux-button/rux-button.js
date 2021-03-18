@@ -19,6 +19,13 @@ export class RuxButton extends LitElement {
     this.disabled = false;
     this.outline = false;
     this.type = 'button';
+    this.addEventListener('click', this.clickHandler);
+  }
+
+  clickHandler(e) {
+    if (this.disabled) {
+      e.stopImmediatePropagation();
+    }
   }
 
   render() {
