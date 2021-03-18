@@ -1,5 +1,5 @@
 import { html, render } from 'lit-html';
-import { boolean, select, date, withKnobs } from '@storybook/addon-knobs';
+import { boolean, select, date, withKnobs, text } from '@storybook/addon-knobs';
 import { RuxLogin } from '../src/components/rux-login/rux-login';
 import Readme from '../src/components/rux-login/README.md';
 
@@ -9,14 +9,18 @@ export default {
 };
 
 export const Login = () => {
-  const username = 'username@astro.com';
-  const password = 'astroTesting';
+  const config = {
+    username: '',
+    password: '',
+    sso: false,
+  };
 
   return html`
     <div style="padding: 10%; display: flex; justify-content: center;">
       <rux-login
-        ?username="${username}"
-        ?password="${password}"
+        ?username="${config.username}"
+        ?password="${config.password}"
+        ?sso="${config.sso}"
       ></rux-login>
     </div>
   `;
