@@ -77,17 +77,17 @@ export const TabsCompact = () => html`
           <rux-tab-panel aria-labelledby="tab-id-2-1">
             <pre
               style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-            ><<span>!-- Small Tab 1 HTML content --</span>></pre>
+            ><<span>!-- Small tab 1 HTML content --</span>></pre>
           </rux-tab-panel>
           <rux-tab-panel aria-labelledby="tab-id-2-2">
             <pre
               style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-            ><<span>!-- Small Tab 2 HTML content --</span>></pre>
+            ><<span>!-- Small tab 2 HTML content --</span>></pre>
           </rux-tab-panel>
           <rux-tab-panel aria-labelledby="tab-id-2-3">
             <pre
               style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-            ><<span>!-- Small Tab 3 HTML content --</span>></pre>
+            ><<span>!-- Small tab 3 HTML content --</span>></pre>
           </rux-tab-panel>
         </rux-tab-panels>
       </div>
