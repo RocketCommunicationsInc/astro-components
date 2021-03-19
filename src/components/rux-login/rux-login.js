@@ -38,7 +38,6 @@ export class RuxLogin extends LitElement {
 
   _changePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
-    console.log('_changePasswordVisibility', this.passwordVisible);
   }
 
   render() {
