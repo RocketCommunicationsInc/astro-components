@@ -34,7 +34,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 
 Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip)
 
-### 2. Import the Astro Notiication Banner Web Component
+### 2. Import the Astro Notification Banner Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
