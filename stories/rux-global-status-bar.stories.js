@@ -84,17 +84,17 @@ export const GlobalStatusBarWithTabs = () => {
         <rux-tab-panel aria-labelledby="tab-id-1-1">
           <pre
             style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-          ><<span>!-- Tab 1 HTML Content --</span>></pre>
+          ><<span>!-- Tab 1 HTML content --</span>></pre>
         </rux-tab-panel>
         <rux-tab-panel aria-labelledby="tab-id-1-2">
           <pre
             style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-          ><<span>!-- Tab 2 HTML Content --</span>></pre>
+          ><<span>!-- Tab 2 HTML content --</span>></pre>
         </rux-tab-panel>
         <rux-tab-panel aria-labelledby="tab-id-1-3">
           <pre
             style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-          ><<span>!-- Tab 3 HTML Content --</span>></pre>
+          ><<span>!-- Tab 3 HTML content --</span>></pre>
         </rux-tab-panel>
       </rux-tab-panels>
     </div>
