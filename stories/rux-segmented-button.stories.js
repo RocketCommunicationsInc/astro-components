@@ -12,13 +12,13 @@ export default {
 
 export const SegmentedButton = () => {
   const segmentButtonArray = [
-    { label: 'First Item' },
-    { label: 'Second Item'},
-    { label: 'Third Item', selected: true },
+    { label: 'First item' },
+    { label: 'Second item'},
+    { label: 'Third item', selected: true },
   ];
-  const segments = radios('Initially Selected Segment',
-      ['First Item', 'Second Item', 'Third Item', 'Missing Item'],
-      'Second Item' );
+  const segments = radios('Initially selected segment',
+      ['First item', 'Second item', 'Third item', 'Missing item'],
+      'Second item' );
 
   document.addEventListener('change', (e) => action('change')(e.target));
 

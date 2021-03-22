@@ -44,9 +44,9 @@ Pass an Array of segments via the `data` attribute on the Segmented Button custo
 import { RuxSegmentedButton } from '@astrouxds/rux-segmented-button/rux-segmented-button.js';
 
 const myButtonSegments = [
-  { label: "First Segment" },
-  { label: "Second Segment" },
-  { label: "Third Segment" }
+  { label: "First segment" },
+  { label: "Second segment" },
+  { label: "Third segment" }
 ];
 
 // ...
@@ -67,7 +67,7 @@ render() {
 ### Sample Astro UXDS Segmented Button `data` Array
 
 ```js
-[{ label: 'First Segment' }, { label: 'Second Segment' }, { label: 'Third Segment' }];
+[{ label: 'First segment' }, { label: 'Second segment' }, { label: 'Third segment' }];
 ```
 
 ### Properties for items within the `data` Array

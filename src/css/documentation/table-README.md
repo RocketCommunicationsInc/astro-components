@@ -25,12 +25,12 @@ List data within the `rux-table` class.
 ```xml
 <table class="rux-table">
   <tr>
-    <td>Cell 1A</td>
-    <td>Cell 2A</td>
+    <td>Cell 1a</td>
+    <td>Cell 2a</td>
   </tr>
     <tr>
-    <td>Cell 1B</td>
-    <td>Cell 2B</td>
+    <td>Cell 1b</td>
+    <td>Cell 2b</td>
   </tr>
 </table>
 ```
@@ -40,16 +40,16 @@ Add a data attribute to indicate selected rows, and define column header cells u
 ```xml
 <table class="rux-table">
   <tr class="rux-table__column-head"> 
-    <th>Column A</th>
-    <th>Column B</th>
+    <th>Column a</th>
+    <th>Column b</th>
   </tr>
   <tr data-selected>
-    <td>Cell 1A</td>
-    <td>Cell 2A</td>
+    <td>Cell 1a</td>
+    <td>Cell 2a</td>
   </tr>
     <tr>
-    <td>Cell 1B</td>
-    <td>Cell 2B</td>
+    <td>Cell 1b</td>
+    <td>Cell 2b</td>
   </tr>
 </table>
 ```

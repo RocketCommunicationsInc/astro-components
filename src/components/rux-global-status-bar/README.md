@@ -50,7 +50,7 @@ Status bar elements like the [Clock](https://www.astrouxds.com/ui-components/clo
  <rux-global-status-bar class="dark-theme" appname="Astro App" version="3.0">
 	 <rux-clock></rux-clock>
 	 <div><!-- Any HTML here --></div>
-	 <rux-button>Master Off</rux-button>
+	 <rux-button>Master off</rux-button>
  </rux-global-status-bar>
 ```
 
