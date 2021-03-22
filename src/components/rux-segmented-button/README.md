@@ -67,7 +67,7 @@ render() {
 ### Sample Astro UXDS Segmented Button `data` Array
 
 ```js
-[{ label: 'First Segment' }, { label: 'Second Segment' }, { label: 'Third Segment' }];
+[{ label: 'First segment' }, { label: 'Second segment' }, { label: 'Third segment' }];
 ```
 
 ### Properties for items within the `data` Array
