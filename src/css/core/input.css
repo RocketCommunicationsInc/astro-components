@@ -90,7 +90,6 @@
   color: var(--inputTextColor);
 }
 
-
 /* input */
 .rux-form-field input::-webkit-input-placeholder,
 .rux-form-field input::-moz-placeholder ,
@@ -104,8 +103,6 @@
   font-family: var(--fontFamily);
 }
 
-.rux-form-field input[type="number"]::-webkit-inner-spin-button,
-.rux-form-field input[type="number"]::-webkit-outer-spin-button,
 .rux-form-field input[type="date"]::-webkit-inner-spin-button,
 .rux-form-field input[type="date"]::-webkit-outer-spin-button,
 .rux-form-field input[type="date"]::-webkit-calendar-picker-indicator {

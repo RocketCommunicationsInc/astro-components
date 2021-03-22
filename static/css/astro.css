@@ -2057,7 +2057,6 @@ label {
   color: var(--inputTextColor);
 }
 
-
 /* input */
 .rux-form-field input::-webkit-input-placeholder,
 .rux-form-field input::-moz-placeholder ,
@@ -2070,10 +2069,7 @@ label {
   font-weight: normal;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
-}
 
-.rux-form-field input[type="number"]::-webkit-inner-spin-button,
-.rux-form-field input[type="number"]::-webkit-outer-spin-button,
 .rux-form-field input[type="date"]::-webkit-inner-spin-button,
 .rux-form-field input[type="date"]::-webkit-outer-spin-button,
 .rux-form-field input[type="date"]::-webkit-calendar-picker-indicator {
