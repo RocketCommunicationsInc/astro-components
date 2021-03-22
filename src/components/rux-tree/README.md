@@ -96,10 +96,10 @@ Tree emits a `tree-updated` event whenever the selected tree item changes. Event
 ```javascript
 window.addEventListener('tree-updated', (event) => {
   // an array that reflects the current state of the tree
-  console.log('Tree Data', event.detail.data);
+  console.log('Tree data', event.detail.data);
 
   // an object representing the currently selected tree item
-  console.log('Selected Tree Item', event.detail.selected);
+  console.log('Selected tree item', event.detail.selected);
 });
 ```
 
