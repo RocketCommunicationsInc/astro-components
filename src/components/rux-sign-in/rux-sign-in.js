@@ -1,11 +1,11 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html } from 'lit-element';
 import { RuxIcon } from '@astrouxds/rux-icon';
 import { RuxButton } from '@astrouxds/rux-button';
 
-export class RuxLogin extends LitElement {
+export class RuxSignIn extends LitElement {
   static get properties() {
     return {
-      username: {
+      email: {
         type: String,
       },
       password: {
@@ -22,7 +22,7 @@ export class RuxLogin extends LitElement {
 
   constructor() {
     super();
-    this.username = '';
+    this.email = '';
     this.password = '';
     this.sso = false;
     this.passwordVisible = false;
@@ -277,12 +277,12 @@ export class RuxLogin extends LitElement {
         <form name="ruxLogin" id="ruxLogin" class="rux-form">
             <div class="rux-form__group">
               <div class="rux-form-field">
-                <label for="username">Username</label>
+                <label for="email">Email</label>
                 <input 
                   type="email"
-                  id="username"
+                  id="email"
                   class="rux-input"
-                  .value="${this.username}"
+                  .value="${this.email}"
                   @input="${this._updateValue}"
                   placeholder="Email@astro.com"
                 />
@@ -298,7 +298,7 @@ export class RuxLogin extends LitElement {
             ${!this.sso ? html`
               <div class="rux-form__group">
                 <div class="rux-form-field rux-form-field--withIcon">
-                  <label for="pass">Password ${this.passwordVisible}</label>
+                  <label for="pass">Password</label>
                   <input
                     type="${this.passwordVisible ? 'text' : 'password'}"
                     id="pass"
@@ -329,4 +329,4 @@ export class RuxLogin extends LitElement {
   }
 }
 
-customElements.define('rux-login', RuxLogin);
+customElements.define('rux-sign-in', RuxSignIn);

@@ -1,32 +1,32 @@
 import { html, render } from 'lit-html';
-import { boolean, select, date, withKnobs, text } from '@storybook/addon-knobs';
-import { RuxLogin } from '../src/components/rux-login/rux-login';
-import Readme from '../src/components/rux-login/README.md';
+import { withKnobs } from '@storybook/addon-knobs';
+import { RuxSignIn } from '../src/components/rux-sign-in/rux-sign-in';
+import Readme from '../src/components/rux-sign-in/README.md';
 
 export default {
-  title: 'Components|Login',
+  title: 'Components|Sign In',
   decorators: [withKnobs],
 };
 
-export const Login = () => {
+export const SignIn = () => {
   const config = {
-    username: '',
+    email: '',
     password: '',
     sso: false,
   };
 
   return html`
     <div style="padding: 10%; display: flex; justify-content: center;">
-      <rux-login
-        ?username="${config.username}"
+      <rux-sign-in
+        ?email="${config.email}"
         ?password="${config.password}"
         ?sso="${config.sso}"
-      ></rux-login>
+      ></rux-sign-in>
     </div>
   `;
 };
 
-Login.story = {
+SignIn.story = {
   parameters: {
     exports: {
       render,

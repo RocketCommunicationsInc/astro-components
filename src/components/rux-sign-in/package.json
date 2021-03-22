@@ -18,11 +18,11 @@
     "type": "git",
     "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
   },
-  "description": "Astro Web Component for login",
+  "description": "Astro Web Component for sign in",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "rux-login.js",
-  "module": "rux-login.js",
-  "name": "@astrouxds/rux-login",
+  "main": "rux-sign-in.js",
+  "module": "rux-sign-in.js",
+  "name": "@astrouxds/rux-sign-in",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
