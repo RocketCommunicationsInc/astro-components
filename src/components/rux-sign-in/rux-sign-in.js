@@ -229,10 +229,12 @@ export class RuxSignIn extends LitElement {
             }
 
             .rux-form__help{
-              font-size: 14px;
-              color: var(--secondaryText);
+              font-size: 16px;
+              color: var(--controlLabelColor);
               display: flex;
               align-items: center;
+              margin: 0px;
+              margin-top: 8px;
             }
 
             .rux-form__help:hover{
@@ -284,7 +286,7 @@ export class RuxSignIn extends LitElement {
               </div>
               ${this.sso ? html `
                 <div class="rux-form-field">
-                  <p class="rux-form__help" style="color: var(--primary)">
+                  <p class="rux-form__help">
                     <rux-icon icon="lock" size="base" color="var(--primary)"></rux-icon>
                     SSO Enabled
                   </p>
