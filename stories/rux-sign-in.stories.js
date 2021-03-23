@@ -1,5 +1,5 @@
 import { html, render } from 'lit-html';
-import { withKnobs } from '@storybook/addon-knobs';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
 import { RuxSignIn } from '../src/components/rux-sign-in/rux-sign-in';
 import Readme from '../src/components/rux-sign-in/README.md';
 
@@ -12,7 +12,7 @@ export const SignIn = () => {
   const config = {
     email: '',
     password: '',
-    sso: false,
+    sso: boolean('SSO Enabled', false),
   };
 
   return html`

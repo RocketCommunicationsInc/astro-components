@@ -288,7 +288,7 @@ export class RuxSignIn extends LitElement {
                 />
               </div>
               <div class="rux-form-field">
-                <p class="rux-form__help" style="color: ${this.sso? 'var(--primary)': ''}" @click="${this._changeSSO}">
+                <p class="rux-form__help" style="color: ${this.sso? 'var(--primary)': ''}">
                   <rux-icon icon="lock" size="extra-small" color="${this.sso ? 'var(--primary)':'var(--secondaryText)'}"></rux-icon>
                   SSO Enabled
                 </p>
