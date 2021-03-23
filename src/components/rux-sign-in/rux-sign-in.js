@@ -257,8 +257,8 @@ export class RuxSignIn extends LitElement {
 
             .rux-form-field--withIcon rux-icon{
               position: absolute;
-              right: 5px;
-              bottom: 9px;
+              right: 6px;
+              bottom: 5px;
             }
 
             .rux-form-field--withIcon rux-icon:hover{
@@ -287,12 +287,14 @@ export class RuxSignIn extends LitElement {
                   placeholder="Email@astro.com"
                 />
               </div>
-              <div class="rux-form-field">
-                <p class="rux-form__help" style="color: ${this.sso? 'var(--primary)': ''}">
-                  <rux-icon icon="lock" size="extra-small" color="${this.sso ? 'var(--primary)':'var(--secondaryText)'}"></rux-icon>
-                  SSO Enabled
-                </p>
-              </div>
+              ${this.sso ? html `
+                <div class="rux-form-field">
+                  <p class="rux-form__help" style="color: var(--primary)">
+                    <rux-icon icon="lock" size="base" color="var(--primary)"></rux-icon>
+                    SSO Enabled
+                  </p>
+                </div>
+                `: ``}
             </div>
 
             ${!this.sso ? html`
@@ -306,7 +308,7 @@ export class RuxSignIn extends LitElement {
                   <rux-icon
                     @click="${this._changePasswordVisibility}"
                     icon="${this.passwordVisible ? 'visibility-off' : 'visibility'}"
-                    size="extra-small"
+                    size="base"
                     color="var(--primary)">
                   </rux-icon>
                   
