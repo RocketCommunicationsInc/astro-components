@@ -28,10 +28,6 @@ export class RuxSignIn extends LitElement {
     this.passwordVisible = false;
   }
 
-  _updateValue(e) {
-    e ? e.target.value : this.val;
-  }
-
   _changeSSO() {
     this.sso = !this.sso;
   }
@@ -283,7 +279,6 @@ export class RuxSignIn extends LitElement {
                   id="email"
                   class="rux-input"
                   .value="${this.email}"
-                  @input="${this._updateValue}"
                   placeholder="Email@astro.com"
                 />
               </div>
