@@ -111,25 +111,23 @@ RadioButtons.story = {
 export const InputFields = () => html`
     <style>
       ul {
-        column-count: 1;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
         column-gap: 3rem;
+        align-items: start;
         margin: 0 0 4rem;
         padding: 0;
         width: 100%;
+        row-gap: 1rem;
       }
-      li {
-        margin: 0 0 1rem;
-        -webkit-column-break-inside: avoid;
-      }
-
       @media screen and (min-width: 550px){
         ul {
-          column-count: 2;
+          grid-template-columns: repeat(2, 1fr);
         }
       }
       @media screen and (min-width: 800px){
         ul {
-          column-count: 3;
+          grid-template-columns: repeat(3, 1fr);
         }
       }
     </style>
@@ -142,6 +140,11 @@ export const InputFields = () => html`
         <li class="rux-form-field">
           <label for="input__number">Number input</label>
           <input id="input__number" class="rux-input" type="number" placeholder="Number Input" />
+        </li>
+        <li class="rux-form-field">
+          <label for="input__text">Text input</label>
+          <input id="input__text" class="rux-input" type="text" placeholder="Text input" />
+          <span class="rux-help-text">Help text</span>
         </li>
         <li class="rux-form-field">
           <label for="input__required">Is Required</label>
