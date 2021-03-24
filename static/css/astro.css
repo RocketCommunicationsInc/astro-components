@@ -2637,10 +2637,6 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#thumb-up-alt") no-repeat;
                     mask: url("/icons/astro.svg#thumb-up-alt") no-repeat;
                 }
-.rux-icon--people{
-                    -webkit-mask: url("/icons/astro.svg#people") no-repeat;
-                    mask: url("/icons/astro.svg#people") no-repeat;
-                }
 .rux-icon--pages{
                     -webkit-mask: url("/icons/astro.svg#pages") no-repeat;
                     mask: url("/icons/astro.svg#pages") no-repeat;
@@ -3109,9 +3105,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#local-taxi") no-repeat;
                     mask: url("/icons/astro.svg#local-taxi") no-repeat;
                 }
-.rux-icon--ocal-activity{
-                    -webkit-mask: url("/icons/astro.svg#ocal-activity") no-repeat;
-                    mask: url("/icons/astro.svg#ocal-activity") no-repeat;
+.rux-icon--local-activity{
+                    -webkit-mask: url("/icons/astro.svg#local-activity") no-repeat;
+                    mask: url("/icons/astro.svg#local-activity") no-repeat;
                 }
 .rux-icon--flight{
                     -webkit-mask: url("/icons/astro.svg#flight") no-repeat;
@@ -3173,9 +3169,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#zoom-out-map") no-repeat;
                     mask: url("/icons/astro.svg#zoom-out-map") no-repeat;
                 }
-.rux-icon--ocal-printshop{
-                    -webkit-mask: url("/icons/astro.svg#ocal-printshop") no-repeat;
-                    mask: url("/icons/astro.svg#ocal-printshop") no-repeat;
+.rux-icon--zoom-in-map{
+                    -webkit-mask: url("/icons/astro.svg#zoom-in-map") no-repeat;
+                    mask: url("/icons/astro.svg#zoom-in-map") no-repeat;
                 }
 .rux-icon--local-phone{
                     -webkit-mask: url("/icons/astro.svg#local-phone") no-repeat;
@@ -3189,9 +3185,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#beenhere") no-repeat;
                     mask: url("/icons/astro.svg#beenhere") no-repeat;
                 }
-.rux-icon--ocal-movies{
-                    -webkit-mask: url("/icons/astro.svg#ocal-movies") no-repeat;
-                    mask: url("/icons/astro.svg#ocal-movies") no-repeat;
+.rux-icon--local-movies{
+                    -webkit-mask: url("/icons/astro.svg#local-movies") no-repeat;
+                    mask: url("/icons/astro.svg#local-movies") no-repeat;
                 }
 .rux-icon--directions-bike{
                     -webkit-mask: url("/icons/astro.svg#directions-bike") no-repeat;
@@ -3289,9 +3285,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#directions-walk") no-repeat;
                     mask: url("/icons/astro.svg#directions-walk") no-repeat;
                 }
-.rux-icon--ocal-post-office{
-                    -webkit-mask: url("/icons/astro.svg#ocal-post-office") no-repeat;
-                    mask: url("/icons/astro.svg#ocal-post-office") no-repeat;
+.rux-icon--local-post-office{
+                    -webkit-mask: url("/icons/astro.svg#local-post-office") no-repeat;
+                    mask: url("/icons/astro.svg#local-post-office") no-repeat;
                 }
 .rux-icon--navigation{
                     -webkit-mask: url("/icons/astro.svg#navigation") no-repeat;
@@ -3317,9 +3313,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#directions-subway") no-repeat;
                     mask: url("/icons/astro.svg#directions-subway") no-repeat;
                 }
-.rux-icon--tm{
-                    -webkit-mask: url("/icons/astro.svg#tm") no-repeat;
-                    mask: url("/icons/astro.svg#tm") no-repeat;
+.rux-icon--atm{
+                    -webkit-mask: url("/icons/astro.svg#atm") no-repeat;
+                    mask: url("/icons/astro.svg#atm") no-repeat;
                 }
 .rux-icon--local-see{
                     -webkit-mask: url("/icons/astro.svg#local-see") no-repeat;
@@ -3345,9 +3341,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#local-convenience-store") no-repeat;
                     mask: url("/icons/astro.svg#local-convenience-store") no-repeat;
                 }
-.rux-icon--ocal-laundry-service{
-                    -webkit-mask: url("/icons/astro.svg#ocal-laundry-service") no-repeat;
-                    mask: url("/icons/astro.svg#ocal-laundry-service") no-repeat;
+.rux-icon--local-laundry-service{
+                    -webkit-mask: url("/icons/astro.svg#local-laundry-service") no-repeat;
+                    mask: url("/icons/astro.svg#local-laundry-service") no-repeat;
                 }
 .rux-icon--local-grocery-store{
                     -webkit-mask: url("/icons/astro.svg#local-grocery-store") no-repeat;
@@ -3389,9 +3385,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#not-listed-location") no-repeat;
                     mask: url("/icons/astro.svg#not-listed-location") no-repeat;
                 }
-.rux-icon--ocal-offer{
-                    -webkit-mask: url("/icons/astro.svg#ocal-offer") no-repeat;
-                    mask: url("/icons/astro.svg#ocal-offer") no-repeat;
+.rux-icon--local-offer{
+                    -webkit-mask: url("/icons/astro.svg#local-offer") no-repeat;
+                    mask: url("/icons/astro.svg#local-offer") no-repeat;
                 }
 .rux-icon--streetview{
                     -webkit-mask: url("/icons/astro.svg#streetview") no-repeat;
@@ -3413,6 +3409,10 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#pin-drop") no-repeat;
                     mask: url("/icons/astro.svg#pin-drop") no-repeat;
                 }
+.rux-icon--local-printshop{
+                    -webkit-mask: url("/icons/astro.svg#local-printshop") no-repeat;
+                    mask: url("/icons/astro.svg#local-printshop") no-repeat;
+                }
 .rux-icon--timelapse{
                     -webkit-mask: url("/icons/astro.svg#timelapse") no-repeat;
                     mask: url("/icons/astro.svg#timelapse") no-repeat;
@@ -3421,9 +3421,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#filter-4") no-repeat;
                     mask: url("/icons/astro.svg#filter-4") no-repeat;
                 }
-.rux-icon--imer-3{
-                    -webkit-mask: url("/icons/astro.svg#imer-3") no-repeat;
-                    mask: url("/icons/astro.svg#imer-3") no-repeat;
+.rux-icon--timer-3{
+                    -webkit-mask: url("/icons/astro.svg#timer-3") no-repeat;
+                    mask: url("/icons/astro.svg#timer-3") no-repeat;
                 }
 .rux-icon--picture-as-pdf{
                     -webkit-mask: url("/icons/astro.svg#picture-as-pdf") no-repeat;
@@ -3461,9 +3461,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#assistant") no-repeat;
                     mask: url("/icons/astro.svg#assistant") no-repeat;
                 }
-.rux-icon--ransform{
-                    -webkit-mask: url("/icons/astro.svg#ransform") no-repeat;
-                    mask: url("/icons/astro.svg#ransform") no-repeat;
+.rux-icon--transform{
+                    -webkit-mask: url("/icons/astro.svg#transform") no-repeat;
+                    mask: url("/icons/astro.svg#transform") no-repeat;
                 }
 .rux-icon--straighten{
                     -webkit-mask: url("/icons/astro.svg#straighten") no-repeat;
@@ -3473,9 +3473,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#monochrome-photos") no-repeat;
                     mask: url("/icons/astro.svg#monochrome-photos") no-repeat;
                 }
-.rux-icon--imer-10{
-                    -webkit-mask: url("/icons/astro.svg#imer-10") no-repeat;
-                    mask: url("/icons/astro.svg#imer-10") no-repeat;
+.rux-icon--timer-10{
+                    -webkit-mask: url("/icons/astro.svg#timer-10") no-repeat;
+                    mask: url("/icons/astro.svg#timer-10") no-repeat;
                 }
 .rux-icon--crop-portrait{
                     -webkit-mask: url("/icons/astro.svg#crop-portrait") no-repeat;
@@ -3489,9 +3489,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#crop-square") no-repeat;
                     mask: url("/icons/astro.svg#crop-square") no-repeat;
                 }
-.rux-icon--lash-off{
-                    -webkit-mask: url("/icons/astro.svg#lash-off") no-repeat;
-                    mask: url("/icons/astro.svg#lash-off") no-repeat;
+.rux-icon--flash-off{
+                    -webkit-mask: url("/icons/astro.svg#flash-off") no-repeat;
+                    mask: url("/icons/astro.svg#flash-off") no-repeat;
                 }
 .rux-icon--color-lens{
                     -webkit-mask: url("/icons/astro.svg#color-lens") no-repeat;
@@ -3593,17 +3593,17 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#portrait") no-repeat;
                     mask: url("/icons/astro.svg#portrait") no-repeat;
                 }
-.rux-icon--otate-right{
-                    -webkit-mask: url("/icons/astro.svg#otate-right") no-repeat;
-                    mask: url("/icons/astro.svg#otate-right") no-repeat;
+.rux-icon--rotate-right{
+                    -webkit-mask: url("/icons/astro.svg#rotate-right") no-repeat;
+                    mask: url("/icons/astro.svg#rotate-right") no-repeat;
                 }
-.rux-icon--ooks-5{
-                    -webkit-mask: url("/icons/astro.svg#ooks-5") no-repeat;
-                    mask: url("/icons/astro.svg#ooks-5") no-repeat;
+.rux-icon--looks-5{
+                    -webkit-mask: url("/icons/astro.svg#looks-5") no-repeat;
+                    mask: url("/icons/astro.svg#looks-5") no-repeat;
                 }
-.rux-icon--mage{
-                    -webkit-mask: url("/icons/astro.svg#mage") no-repeat;
-                    mask: url("/icons/astro.svg#mage") no-repeat;
+.rux-icon--image{
+                    -webkit-mask: url("/icons/astro.svg#image") no-repeat;
+                    mask: url("/icons/astro.svg#image") no-repeat;
                 }
 .rux-icon--dehaze{
                     -webkit-mask: url("/icons/astro.svg#dehaze") no-repeat;
@@ -3681,9 +3681,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#audiotrack") no-repeat;
                     mask: url("/icons/astro.svg#audiotrack") no-repeat;
                 }
-.rux-icon--ilter-hdr{
-                    -webkit-mask: url("/icons/astro.svg#ilter-hdr") no-repeat;
-                    mask: url("/icons/astro.svg#ilter-hdr") no-repeat;
+.rux-icon--filter-hdr{
+                    -webkit-mask: url("/icons/astro.svg#filter-hdr") no-repeat;
+                    mask: url("/icons/astro.svg#filter-hdr") no-repeat;
                 }
 .rux-icon--view-compact{
                     -webkit-mask: url("/icons/astro.svg#view-compact") no-repeat;
@@ -3701,17 +3701,17 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#panorama-horizontal") no-repeat;
                     mask: url("/icons/astro.svg#panorama-horizontal") no-repeat;
                 }
-.rux-icon--looks-two{
-                    -webkit-mask: url("/icons/astro.svg#looks-two") no-repeat;
-                    mask: url("/icons/astro.svg#looks-two") no-repeat;
+.rux-icon--looks-2{
+                    -webkit-mask: url("/icons/astro.svg#looks-2") no-repeat;
+                    mask: url("/icons/astro.svg#looks-2") no-repeat;
                 }
 .rux-icon--gradient{
                     -webkit-mask: url("/icons/astro.svg#gradient") no-repeat;
                     mask: url("/icons/astro.svg#gradient") no-repeat;
                 }
-.rux-icon--ilter-center-focus{
-                    -webkit-mask: url("/icons/astro.svg#ilter-center-focus") no-repeat;
-                    mask: url("/icons/astro.svg#ilter-center-focus") no-repeat;
+.rux-icon--filter-center-focus{
+                    -webkit-mask: url("/icons/astro.svg#filter-center-focus") no-repeat;
+                    mask: url("/icons/astro.svg#filter-center-focus") no-repeat;
                 }
 .rux-icon--crop-original{
                     -webkit-mask: url("/icons/astro.svg#crop-original") no-repeat;
@@ -3873,9 +3873,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#looks") no-repeat;
                     mask: url("/icons/astro.svg#looks") no-repeat;
                 }
-.rux-icon--looks-one{
-                    -webkit-mask: url("/icons/astro.svg#looks-one") no-repeat;
-                    mask: url("/icons/astro.svg#looks-one") no-repeat;
+.rux-icon--looks-1{
+                    -webkit-mask: url("/icons/astro.svg#looks-1") no-repeat;
+                    mask: url("/icons/astro.svg#looks-1") no-repeat;
                 }
 .rux-icon--nature-people{
                     -webkit-mask: url("/icons/astro.svg#nature-people") no-repeat;
@@ -3949,9 +3949,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#brightness-2") no-repeat;
                     mask: url("/icons/astro.svg#brightness-2") no-repeat;
                 }
-.rux-icon--so{
-                    -webkit-mask: url("/icons/astro.svg#so") no-repeat;
-                    mask: url("/icons/astro.svg#so") no-repeat;
+.rux-icon--iso{
+                    -webkit-mask: url("/icons/astro.svg#iso") no-repeat;
+                    mask: url("/icons/astro.svg#iso") no-repeat;
                 }
 .rux-icon--add-to-photos{
                     -webkit-mask: url("/icons/astro.svg#add-to-photos") no-repeat;
@@ -4321,9 +4321,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#insert-drive-file") no-repeat;
                     mask: url("/icons/astro.svg#insert-drive-file") no-repeat;
                 }
-.rux-icon--nsert-photo{
-                    -webkit-mask: url("/icons/astro.svg#nsert-photo") no-repeat;
-                    mask: url("/icons/astro.svg#nsert-photo") no-repeat;
+.rux-icon--insert-photo{
+                    -webkit-mask: url("/icons/astro.svg#insert-photo") no-repeat;
+                    mask: url("/icons/astro.svg#insert-photo") no-repeat;
                 }
 .rux-icon--format-align-center{
                     -webkit-mask: url("/icons/astro.svg#format-align-center") no-repeat;
@@ -4413,9 +4413,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#bar-chart") no-repeat;
                     mask: url("/icons/astro.svg#bar-chart") no-repeat;
                 }
-.rux-icon--ormat-italic{
-                    -webkit-mask: url("/icons/astro.svg#ormat-italic") no-repeat;
-                    mask: url("/icons/astro.svg#ormat-italic") no-repeat;
+.rux-icon--format-italic{
+                    -webkit-mask: url("/icons/astro.svg#format-italic") no-repeat;
+                    mask: url("/icons/astro.svg#format-italic") no-repeat;
                 }
 .rux-icon--border-inner{
                     -webkit-mask: url("/icons/astro.svg#border-inner") no-repeat;
@@ -4597,10 +4597,6 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#signal-cellular-no-sim") no-repeat;
                     mask: url("/icons/astro.svg#signal-cellular-no-sim") no-repeat;
                 }
-.rux-icon--battery-80x{
-                    -webkit-mask: url("/icons/astro.svg#battery-80x") no-repeat;
-                    mask: url("/icons/astro.svg#battery-80x") no-repeat;
-                }
 .rux-icon--add-alarm{
                     -webkit-mask: url("/icons/astro.svg#add-alarm") no-repeat;
                     mask: url("/icons/astro.svg#add-alarm") no-repeat;
@@ -4609,45 +4605,13 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#sd-storage") no-repeat;
                     mask: url("/icons/astro.svg#sd-storage") no-repeat;
                 }
-.rux-icon--signal-cellular-connected-no-internet-2-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-2-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-2-bar") no-repeat;
-                }
-.rux-icon--wifi-tethering{
-                    -webkit-mask: url("/icons/astro.svg#wifi-tethering") no-repeat;
-                    mask: url("/icons/astro.svg#wifi-tethering") no-repeat;
-                }
 .rux-icon--screen-lock-landscape{
                     -webkit-mask: url("/icons/astro.svg#screen-lock-landscape") no-repeat;
                     mask: url("/icons/astro.svg#screen-lock-landscape") no-repeat;
                 }
-.rux-icon--signal-wifi-1-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-wifi-1-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-wifi-1-bar") no-repeat;
-                }
-.rux-icon--signal-cellular-off{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-off") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-off") no-repeat;
-                }
 .rux-icon--location-searching{
                     -webkit-mask: url("/icons/astro.svg#location-searching") no-repeat;
                     mask: url("/icons/astro.svg#location-searching") no-repeat;
-                }
-.rux-icon--network-wifi{
-                    -webkit-mask: url("/icons/astro.svg#network-wifi") no-repeat;
-                    mask: url("/icons/astro.svg#network-wifi") no-repeat;
-                }
-.rux-icon--battery-charging-20{
-                    -webkit-mask: url("/icons/astro.svg#battery-charging-20") no-repeat;
-                    mask: url("/icons/astro.svg#battery-charging-20") no-repeat;
-                }
-.rux-icon--battery-charging-30{
-                    -webkit-mask: url("/icons/astro.svg#battery-charging-30") no-repeat;
-                    mask: url("/icons/astro.svg#battery-charging-30") no-repeat;
-                }
-.rux-icon--battery-std{
-                    -webkit-mask: url("/icons/astro.svg#battery-std") no-repeat;
-                    mask: url("/icons/astro.svg#battery-std") no-repeat;
                 }
 .rux-icon--nfc{
                     -webkit-mask: url("/icons/astro.svg#nfc") no-repeat;
@@ -4673,18 +4637,6 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#data-usage") no-repeat;
                     mask: url("/icons/astro.svg#data-usage") no-repeat;
                 }
-.rux-icon--signal-wifi-off{
-                    -webkit-mask: url("/icons/astro.svg#signal-wifi-off") no-repeat;
-                    mask: url("/icons/astro.svg#signal-wifi-off") no-repeat;
-                }
-.rux-icon--signal-wifi-0-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-wifi-0-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-wifi-0-bar") no-repeat;
-                }
-.rux-icon--signal-cellular-connected-no-internet-3-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-3-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-3-bar") no-repeat;
-                }
 .rux-icon--brightness-high{
                     -webkit-mask: url("/icons/astro.svg#brightness-high") no-repeat;
                     mask: url("/icons/astro.svg#brightness-high") no-repeat;
@@ -4692,14 +4644,6 @@ i.rux-icon {
 .rux-icon--developer-mode{
                     -webkit-mask: url("/icons/astro.svg#developer-mode") no-repeat;
                     mask: url("/icons/astro.svg#developer-mode") no-repeat;
-                }
-.rux-icon--signal-wifi-1-bar-lock{
-                    -webkit-mask: url("/icons/astro.svg#signal-wifi-1-bar-lock") no-repeat;
-                    mask: url("/icons/astro.svg#signal-wifi-1-bar-lock") no-repeat;
-                }
-.rux-icon--access-alarm{
-                    -webkit-mask: url("/icons/astro.svg#access-alarm") no-repeat;
-                    mask: url("/icons/astro.svg#access-alarm") no-repeat;
                 }
 .rux-icon--wallpaper{
                     -webkit-mask: url("/icons/astro.svg#wallpaper") no-repeat;
@@ -4709,37 +4653,177 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#screen-rotation") no-repeat;
                     mask: url("/icons/astro.svg#screen-rotation") no-repeat;
                 }
+.rux-icon--wifi-tethering{
+                    -webkit-mask: url("/icons/astro.svg#wifi-tethering") no-repeat;
+                    mask: url("/icons/astro.svg#wifi-tethering") no-repeat;
+                }
+.rux-icon--wifi-lock{
+                    -webkit-mask: url("/icons/astro.svg#wifi-lock") no-repeat;
+                    mask: url("/icons/astro.svg#wifi-lock") no-repeat;
+                }
+.rux-icon--signal-wifi-4-bar-lock{
+                    -webkit-mask: url("/icons/astro.svg#signal-wifi-4-bar-lock") no-repeat;
+                    mask: url("/icons/astro.svg#signal-wifi-4-bar-lock") no-repeat;
+                }
+.rux-icon--signal-wifi-3-bar-lock{
+                    -webkit-mask: url("/icons/astro.svg#signal-wifi-3-bar-lock") no-repeat;
+                    mask: url("/icons/astro.svg#signal-wifi-3-bar-lock") no-repeat;
+                }
+.rux-icon--signal-wifi-2-bar-lock{
+                    -webkit-mask: url("/icons/astro.svg#signal-wifi-2-bar-lock") no-repeat;
+                    mask: url("/icons/astro.svg#signal-wifi-2-bar-lock") no-repeat;
+                }
+.rux-icon--signal-wifi-1-bar-lock{
+                    -webkit-mask: url("/icons/astro.svg#signal-wifi-1-bar-lock") no-repeat;
+                    mask: url("/icons/astro.svg#signal-wifi-1-bar-lock") no-repeat;
+                }
+.rux-icon--signal-wifi-off{
+                    -webkit-mask: url("/icons/astro.svg#signal-wifi-off") no-repeat;
+                    mask: url("/icons/astro.svg#signal-wifi-off") no-repeat;
+                }
+.rux-icon--network-wifi{
+                    -webkit-mask: url("/icons/astro.svg#network-wifi") no-repeat;
+                    mask: url("/icons/astro.svg#network-wifi") no-repeat;
+                }
+.rux-icon--signal-wifi-4-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-wifi-4-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-wifi-4-bar") no-repeat;
+                }
+.rux-icon--signal-wifi-3-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-wifi-3-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-wifi-3-bar") no-repeat;
+                }
 .rux-icon--signal-wifi-2-bar{
                     -webkit-mask: url("/icons/astro.svg#signal-wifi-2-bar") no-repeat;
                     mask: url("/icons/astro.svg#signal-wifi-2-bar") no-repeat;
                 }
-.rux-icon--battery-charging-80{
-                    -webkit-mask: url("/icons/astro.svg#battery-charging-80") no-repeat;
-                    mask: url("/icons/astro.svg#battery-charging-80") no-repeat;
+.rux-icon--signal-wifi-1-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-wifi-1-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-wifi-1-bar") no-repeat;
                 }
-.rux-icon--battery-60{
-                    -webkit-mask: url("/icons/astro.svg#battery-60") no-repeat;
-                    mask: url("/icons/astro.svg#battery-60") no-repeat;
+.rux-icon--signal-wifi-0-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-wifi-0-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-wifi-0-bar") no-repeat;
+                }
+.rux-icon--signal-cellular-null{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-null") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-null") no-repeat;
+                }
+.rux-icon--signal-cellular-connected-no-internet-4-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-4-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-4-bar") no-repeat;
+                }
+.rux-icon--signal-cellular-connected-no-internet-3-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-3-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-3-bar") no-repeat;
+                }
+.rux-icon--signal-cellular-connected-no-internet-2-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-2-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-2-bar") no-repeat;
                 }
 .rux-icon--signal-cellular-connected-no-internet-1-bar{
                     -webkit-mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-1-bar") no-repeat;
                     mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-1-bar") no-repeat;
                 }
+.rux-icon--signal-cellular-connected-no-internet-0-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-0-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-0-bar") no-repeat;
+                }
+.rux-icon--signal-cellular-off{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-off") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-off") no-repeat;
+                }
+.rux-icon--network-cell{
+                    -webkit-mask: url("/icons/astro.svg#network-cell") no-repeat;
+                    mask: url("/icons/astro.svg#network-cell") no-repeat;
+                }
 .rux-icon--signal-cellular-4-bar{
                     -webkit-mask: url("/icons/astro.svg#signal-cellular-4-bar") no-repeat;
                     mask: url("/icons/astro.svg#signal-cellular-4-bar") no-repeat;
+                }
+.rux-icon--signal-cellular-3-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-3-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-3-bar") no-repeat;
+                }
+.rux-icon--signal-cellular-2-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-2-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-2-bar") no-repeat;
+                }
+.rux-icon--signal-cellular-1-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-1-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-1-bar") no-repeat;
+                }
+.rux-icon--signal-cellular-0-bar{
+                    -webkit-mask: url("/icons/astro.svg#signal-cellular-0-bar") no-repeat;
+                    mask: url("/icons/astro.svg#signal-cellular-0-bar") no-repeat;
+                }
+.rux-icon--battery-alert{
+                    -webkit-mask: url("/icons/astro.svg#battery-alert") no-repeat;
+                    mask: url("/icons/astro.svg#battery-alert") no-repeat;
+                }
+.rux-icon--battery-unknown{
+                    -webkit-mask: url("/icons/astro.svg#battery-unknown") no-repeat;
+                    mask: url("/icons/astro.svg#battery-unknown") no-repeat;
+                }
+.rux-icon--battery-full{
+                    -webkit-mask: url("/icons/astro.svg#battery-full") no-repeat;
+                    mask: url("/icons/astro.svg#battery-full") no-repeat;
+                }
+.rux-icon--battery-90{
+                    -webkit-mask: url("/icons/astro.svg#battery-90") no-repeat;
+                    mask: url("/icons/astro.svg#battery-90") no-repeat;
+                }
+.rux-icon--battery-80{
+                    -webkit-mask: url("/icons/astro.svg#battery-80") no-repeat;
+                    mask: url("/icons/astro.svg#battery-80") no-repeat;
+                }
+.rux-icon--battery-60{
+                    -webkit-mask: url("/icons/astro.svg#battery-60") no-repeat;
+                    mask: url("/icons/astro.svg#battery-60") no-repeat;
+                }
+.rux-icon--battery-50{
+                    -webkit-mask: url("/icons/astro.svg#battery-50") no-repeat;
+                    mask: url("/icons/astro.svg#battery-50") no-repeat;
+                }
+.rux-icon--battery-30{
+                    -webkit-mask: url("/icons/astro.svg#battery-30") no-repeat;
+                    mask: url("/icons/astro.svg#battery-30") no-repeat;
+                }
+.rux-icon--battery-20{
+                    -webkit-mask: url("/icons/astro.svg#battery-20") no-repeat;
+                    mask: url("/icons/astro.svg#battery-20") no-repeat;
+                }
+.rux-icon--battery-std{
+                    -webkit-mask: url("/icons/astro.svg#battery-std") no-repeat;
+                    mask: url("/icons/astro.svg#battery-std") no-repeat;
+                }
+.rux-icon--battery-charging-full{
+                    -webkit-mask: url("/icons/astro.svg#battery-charging-full") no-repeat;
+                    mask: url("/icons/astro.svg#battery-charging-full") no-repeat;
                 }
 .rux-icon--battery-charging-90{
                     -webkit-mask: url("/icons/astro.svg#battery-charging-90") no-repeat;
                     mask: url("/icons/astro.svg#battery-charging-90") no-repeat;
                 }
-.rux-icon--signal-cellular-connected-no-internet-0-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-0-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-0-bar") no-repeat;
+.rux-icon--battery-charging-80{
+                    -webkit-mask: url("/icons/astro.svg#battery-charging-80") no-repeat;
+                    mask: url("/icons/astro.svg#battery-charging-80") no-repeat;
                 }
-.rux-icon--signal-wifi-3-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-wifi-3-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-wifi-3-bar") no-repeat;
+.rux-icon--battery-charging-60{
+                    -webkit-mask: url("/icons/astro.svg#battery-charging-60") no-repeat;
+                    mask: url("/icons/astro.svg#battery-charging-60") no-repeat;
+                }
+.rux-icon--battery-charging-50{
+                    -webkit-mask: url("/icons/astro.svg#battery-charging-50") no-repeat;
+                    mask: url("/icons/astro.svg#battery-charging-50") no-repeat;
+                }
+.rux-icon--battery-charging-30{
+                    -webkit-mask: url("/icons/astro.svg#battery-charging-30") no-repeat;
+                    mask: url("/icons/astro.svg#battery-charging-30") no-repeat;
+                }
+.rux-icon--battery-charging-20{
+                    -webkit-mask: url("/icons/astro.svg#battery-charging-20") no-repeat;
+                    mask: url("/icons/astro.svg#battery-charging-20") no-repeat;
                 }
 .rux-icon--access-time{
                     -webkit-mask: url("/icons/astro.svg#access-time") no-repeat;
@@ -4757,10 +4841,6 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#widgets") no-repeat;
                     mask: url("/icons/astro.svg#widgets") no-repeat;
                 }
-.rux-icon--battery-charging-50{
-                    -webkit-mask: url("/icons/astro.svg#battery-charging-50") no-repeat;
-                    mask: url("/icons/astro.svg#battery-charging-50") no-repeat;
-                }
 .rux-icon--bluetooth{
                     -webkit-mask: url("/icons/astro.svg#bluetooth") no-repeat;
                     mask: url("/icons/astro.svg#bluetooth") no-repeat;
@@ -4777,21 +4857,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#screen-lock-rotation") no-repeat;
                     mask: url("/icons/astro.svg#screen-lock-rotation") no-repeat;
                 }
-.rux-icon--signal-wifi-2-bar-lock{
-                    -webkit-mask: url("/icons/astro.svg#signal-wifi-2-bar-lock") no-repeat;
-                    mask: url("/icons/astro.svg#signal-wifi-2-bar-lock") no-repeat;
-                }
 .rux-icon--signal-cellular-alt{
                     -webkit-mask: url("/icons/astro.svg#signal-cellular-alt") no-repeat;
                     mask: url("/icons/astro.svg#signal-cellular-alt") no-repeat;
-                }
-.rux-icon--battery-charging-60{
-                    -webkit-mask: url("/icons/astro.svg#battery-charging-60") no-repeat;
-                    mask: url("/icons/astro.svg#battery-charging-60") no-repeat;
-                }
-.rux-icon--wifi-lock{
-                    -webkit-mask: url("/icons/astro.svg#wifi-lock") no-repeat;
-                    mask: url("/icons/astro.svg#wifi-lock") no-repeat;
                 }
 .rux-icon--bluetooth-disabled{
                     -webkit-mask: url("/icons/astro.svg#bluetooth-disabled") no-repeat;
@@ -4805,25 +4873,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#airplanemode-inactive") no-repeat;
                     mask: url("/icons/astro.svg#airplanemode-inactive") no-repeat;
                 }
-.rux-icon--signal-cellular-1-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-1-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-1-bar") no-repeat;
-                }
-.rux-icon--network-cell{
-                    -webkit-mask: url("/icons/astro.svg#network-cell") no-repeat;
-                    mask: url("/icons/astro.svg#network-cell") no-repeat;
-                }
 .rux-icon--screen-lock-portrait{
                     -webkit-mask: url("/icons/astro.svg#screen-lock-portrait") no-repeat;
                     mask: url("/icons/astro.svg#screen-lock-portrait") no-repeat;
-                }
-.rux-icon--battery-alert{
-                    -webkit-mask: url("/icons/astro.svg#battery-alert") no-repeat;
-                    mask: url("/icons/astro.svg#battery-alert") no-repeat;
-                }
-.rux-icon--signal-cellular-connected-no-internet-4-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-4-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-connected-no-internet-4-bar") no-repeat;
                 }
 .rux-icon--settings-system-daydream{
                     -webkit-mask: url("/icons/astro.svg#settings-system-daydream") no-repeat;
@@ -4833,53 +4885,21 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#bluetooth-connected") no-repeat;
                     mask: url("/icons/astro.svg#bluetooth-connected") no-repeat;
                 }
-.rux-icon--signal-cellular-0-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-0-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-0-bar") no-repeat;
-                }
-.rux-icon--battery-50{
-                    -webkit-mask: url("/icons/astro.svg#battery-50") no-repeat;
-                    mask: url("/icons/astro.svg#battery-50") no-repeat;
-                }
 .rux-icon--bluetooth-searching{
                     -webkit-mask: url("/icons/astro.svg#bluetooth-searching") no-repeat;
                     mask: url("/icons/astro.svg#bluetooth-searching") no-repeat;
-                }
-.rux-icon--signal-wifi-4-bar-lock{
-                    -webkit-mask: url("/icons/astro.svg#signal-wifi-4-bar-lock") no-repeat;
-                    mask: url("/icons/astro.svg#signal-wifi-4-bar-lock") no-repeat;
                 }
 .rux-icon--mobile-friendly{
                     -webkit-mask: url("/icons/astro.svg#mobile-friendly") no-repeat;
                     mask: url("/icons/astro.svg#mobile-friendly") no-repeat;
                 }
-.rux-icon--signal-wifi-3-bar-lock{
-                    -webkit-mask: url("/icons/astro.svg#signal-wifi-3-bar-lock") no-repeat;
-                    mask: url("/icons/astro.svg#signal-wifi-3-bar-lock") no-repeat;
-                }
 .rux-icon--brightness-auto{
                     -webkit-mask: url("/icons/astro.svg#brightness-auto") no-repeat;
                     mask: url("/icons/astro.svg#brightness-auto") no-repeat;
                 }
-.rux-icon--battery-90{
-                    -webkit-mask: url("/icons/astro.svg#battery-90") no-repeat;
-                    mask: url("/icons/astro.svg#battery-90") no-repeat;
-                }
 .rux-icon--graphic-eq{
                     -webkit-mask: url("/icons/astro.svg#graphic-eq") no-repeat;
                     mask: url("/icons/astro.svg#graphic-eq") no-repeat;
-                }
-.rux-icon--battery-20{
-                    -webkit-mask: url("/icons/astro.svg#battery-20") no-repeat;
-                    mask: url("/icons/astro.svg#battery-20") no-repeat;
-                }
-.rux-icon--signal-cellular-null{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-null") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-null") no-repeat;
-                }
-.rux-icon--signal-cellular-2-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-2-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-2-bar") no-repeat;
                 }
 .rux-icon--gps-fixed{
                     -webkit-mask: url("/icons/astro.svg#gps-fixed") no-repeat;
@@ -4893,37 +4913,13 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#add-to-home-screen") no-repeat;
                     mask: url("/icons/astro.svg#add-to-home-screen") no-repeat;
                 }
-.rux-icon--battery-full{
-                    -webkit-mask: url("/icons/astro.svg#battery-full") no-repeat;
-                    mask: url("/icons/astro.svg#battery-full") no-repeat;
-                }
-.rux-icon--battery-unknown{
-                    -webkit-mask: url("/icons/astro.svg#battery-unknown") no-repeat;
-                    mask: url("/icons/astro.svg#battery-unknown") no-repeat;
-                }
-.rux-icon--battery-charging-full{
-                    -webkit-mask: url("/icons/astro.svg#battery-charging-full") no-repeat;
-                    mask: url("/icons/astro.svg#battery-charging-full") no-repeat;
-                }
-.rux-icon--signal-wifi-4-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-wifi-4-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-wifi-4-bar") no-repeat;
-                }
 .rux-icon--mobile-off{
                     -webkit-mask: url("/icons/astro.svg#mobile-off") no-repeat;
                     mask: url("/icons/astro.svg#mobile-off") no-repeat;
                 }
-.rux-icon--battery-30{
-                    -webkit-mask: url("/icons/astro.svg#battery-30") no-repeat;
-                    mask: url("/icons/astro.svg#battery-30") no-repeat;
-                }
 .rux-icon--access-alarms{
                     -webkit-mask: url("/icons/astro.svg#access-alarms") no-repeat;
                     mask: url("/icons/astro.svg#access-alarms") no-repeat;
-                }
-.rux-icon--signal-cellular-3-bar{
-                    -webkit-mask: url("/icons/astro.svg#signal-cellular-3-bar") no-repeat;
-                    mask: url("/icons/astro.svg#signal-cellular-3-bar") no-repeat;
                 }
 .rux-icon--how-to-reg{
                     -webkit-mask: url("/icons/astro.svg#how-to-reg") no-repeat;
@@ -4989,9 +4985,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#mail") no-repeat;
                     mask: url("/icons/astro.svg#mail") no-repeat;
                 }
-.rux-icon--lag{
-                    -webkit-mask: url("/icons/astro.svg#lag") no-repeat;
-                    mask: url("/icons/astro.svg#lag") no-repeat;
+.rux-icon--flag{
+                    -webkit-mask: url("/icons/astro.svg#flag") no-repeat;
+                    mask: url("/icons/astro.svg#flag") no-repeat;
                 }
 .rux-icon--move-to-inbox{
                     -webkit-mask: url("/icons/astro.svg#move-to-inbox") no-repeat;
@@ -5009,9 +5005,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#text-format") no-repeat;
                     mask: url("/icons/astro.svg#text-format") no-repeat;
                 }
-.rux-icon--ow-priority{
-                    -webkit-mask: url("/icons/astro.svg#ow-priority") no-repeat;
-                    mask: url("/icons/astro.svg#ow-priority") no-repeat;
+.rux-icon--low-priority{
+                    -webkit-mask: url("/icons/astro.svg#low-priority") no-repeat;
+                    mask: url("/icons/astro.svg#low-priority") no-repeat;
                 }
 .rux-icon--add{
                     -webkit-mask: url("/icons/astro.svg#add") no-repeat;
@@ -5137,6 +5133,10 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#print-disabled") no-repeat;
                     mask: url("/icons/astro.svg#print-disabled") no-repeat;
                 }
+.rux-icon--call-made{
+                    -webkit-mask: url("/icons/astro.svg#call-made") no-repeat;
+                    mask: url("/icons/astro.svg#call-made") no-repeat;
+                }
 .rux-icon--alternate-email{
                     -webkit-mask: url("/icons/astro.svg#alternate-email") no-repeat;
                     mask: url("/icons/astro.svg#alternate-email") no-repeat;
@@ -5160,6 +5160,10 @@ i.rux-icon {
 .rux-icon--voicemail{
                     -webkit-mask: url("/icons/astro.svg#voicemail") no-repeat;
                     mask: url("/icons/astro.svg#voicemail") no-repeat;
+                }
+.rux-icon--call-missed-outgoing{
+                    -webkit-mask: url("/icons/astro.svg#call-missed-outgoing") no-repeat;
+                    mask: url("/icons/astro.svg#call-missed-outgoing") no-repeat;
                 }
 .rux-icon--live-help{
                     -webkit-mask: url("/icons/astro.svg#live-help") no-repeat;
@@ -5197,6 +5201,10 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#forum") no-repeat;
                     mask: url("/icons/astro.svg#forum") no-repeat;
                 }
+.rux-icon--call-received{
+                    -webkit-mask: url("/icons/astro.svg#call-received") no-repeat;
+                    mask: url("/icons/astro.svg#call-received") no-repeat;
+                }
 .rux-icon--email{
                     -webkit-mask: url("/icons/astro.svg#email") no-repeat;
                     mask: url("/icons/astro.svg#email") no-repeat;
@@ -5216,6 +5224,10 @@ i.rux-icon {
 .rux-icon--dialpad{
                     -webkit-mask: url("/icons/astro.svg#dialpad") no-repeat;
                     mask: url("/icons/astro.svg#dialpad") no-repeat;
+                }
+.rux-icon--call-missed{
+                    -webkit-mask: url("/icons/astro.svg#call-missed") no-repeat;
+                    mask: url("/icons/astro.svg#call-missed") no-repeat;
                 }
 .rux-icon--invert-colors-off{
                     -webkit-mask: url("/icons/astro.svg#invert-colors-off") no-repeat;
@@ -5289,6 +5301,10 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#no-sim") no-repeat;
                     mask: url("/icons/astro.svg#no-sim") no-repeat;
                 }
+.rux-icon--call{
+                    -webkit-mask: url("/icons/astro.svg#call") no-repeat;
+                    mask: url("/icons/astro.svg#call") no-repeat;
+                }
 .rux-icon--pause-presentation{
                     -webkit-mask: url("/icons/astro.svg#pause-presentation") no-repeat;
                     mask: url("/icons/astro.svg#pause-presentation") no-repeat;
@@ -5336,6 +5352,10 @@ i.rux-icon {
 .rux-icon--phonelink-ring{
                     -webkit-mask: url("/icons/astro.svg#phonelink-ring") no-repeat;
                     mask: url("/icons/astro.svg#phonelink-ring") no-repeat;
+                }
+.rux-icon--call-end{
+                    -webkit-mask: url("/icons/astro.svg#call-end") no-repeat;
+                    mask: url("/icons/astro.svg#call-end") no-repeat;
                 }
 .rux-icon--sentiment-satisfied-alt{
                     -webkit-mask: url("/icons/astro.svg#sentiment-satisfied-alt") no-repeat;
@@ -5765,9 +5785,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#perm-media") no-repeat;
                     mask: url("/icons/astro.svg#perm-media") no-repeat;
                 }
-.rux-icon--assignment-ind{
-                    -webkit-mask: url("/icons/astro.svg#assignment-ind") no-repeat;
-                    mask: url("/icons/astro.svg#assignment-ind") no-repeat;
+.rux-icon--assignment-find{
+                    -webkit-mask: url("/icons/astro.svg#assignment-find") no-repeat;
+                    mask: url("/icons/astro.svg#assignment-find") no-repeat;
                 }
 .rux-icon--perm-contact-calendar{
                     -webkit-mask: url("/icons/astro.svg#perm-contact-calendar") no-repeat;
@@ -6017,9 +6037,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#track-changes") no-repeat;
                     mask: url("/icons/astro.svg#track-changes") no-repeat;
                 }
-.rux-icon--nvert-colors{
-                    -webkit-mask: url("/icons/astro.svg#nvert-colors") no-repeat;
-                    mask: url("/icons/astro.svg#nvert-colors") no-repeat;
+.rux-icon--invert-colors{
+                    -webkit-mask: url("/icons/astro.svg#invert-colors") no-repeat;
+                    mask: url("/icons/astro.svg#invert-colors") no-repeat;
                 }
 .rux-icon--assignment-turned-in{
                     -webkit-mask: url("/icons/astro.svg#assignment-turned-in") no-repeat;
@@ -6093,9 +6113,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#line-style") no-repeat;
                     mask: url("/icons/astro.svg#line-style") no-repeat;
                 }
-.rux-icon--ine-weight{
-                    -webkit-mask: url("/icons/astro.svg#ine-weight") no-repeat;
-                    mask: url("/icons/astro.svg#ine-weight") no-repeat;
+.rux-icon--line-weight{
+                    -webkit-mask: url("/icons/astro.svg#line-weight") no-repeat;
+                    mask: url("/icons/astro.svg#line-weight") no-repeat;
                 }
 .rux-icon--flight-land{
                     -webkit-mask: url("/icons/astro.svg#flight-land") no-repeat;
@@ -6141,9 +6161,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#tab-unselected") no-repeat;
                     mask: url("/icons/astro.svg#tab-unselected") no-repeat;
                 }
-.rux-icon--ind-in-page{
-                    -webkit-mask: url("/icons/astro.svg#ind-in-page") no-repeat;
-                    mask: url("/icons/astro.svg#ind-in-page") no-repeat;
+.rux-icon--find-in-page{
+                    -webkit-mask: url("/icons/astro.svg#find-in-page") no-repeat;
+                    mask: url("/icons/astro.svg#find-in-page") no-repeat;
                 }
 .rux-icon--label-important{
                     -webkit-mask: url("/icons/astro.svg#label-important") no-repeat;
@@ -6501,9 +6521,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#settings-power") no-repeat;
                     mask: url("/icons/astro.svg#settings-power") no-repeat;
                 }
-.rux-icon--ccessibility-new{
-                    -webkit-mask: url("/icons/astro.svg#ccessibility-new") no-repeat;
-                    mask: url("/icons/astro.svg#ccessibility-new") no-repeat;
+.rux-icon--accessibility-new{
+                    -webkit-mask: url("/icons/astro.svg#accessibility-new") no-repeat;
+                    mask: url("/icons/astro.svg#accessibility-new") no-repeat;
                 }
 .rux-icon--assignment-late{
                     -webkit-mask: url("/icons/astro.svg#assignment-late") no-repeat;
@@ -6545,9 +6565,9 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#help") no-repeat;
                     mask: url("/icons/astro.svg#help") no-repeat;
                 }
-.rux-icon--vent-seat{
-                    -webkit-mask: url("/icons/astro.svg#vent-seat") no-repeat;
-                    mask: url("/icons/astro.svg#vent-seat") no-repeat;
+.rux-icon--seat{
+                    -webkit-mask: url("/icons/astro.svg#seat") no-repeat;
+                    mask: url("/icons/astro.svg#seat") no-repeat;
                 }
 .rux-icon--settings-applications{
                     -webkit-mask: url("/icons/astro.svg#settings-applications") no-repeat;
@@ -6693,6 +6713,18 @@ i.rux-icon {
                     -webkit-mask: url("/icons/astro.svg#altitude") no-repeat;
                     mask: url("/icons/astro.svg#altitude") no-repeat;
                 }
+.rux-icon--processor{
+                    -webkit-mask: url("/icons/astro.svg#processor") no-repeat;
+                    mask: url("/icons/astro.svg#processor") no-repeat;
+                }
+.rux-icon--mission{
+                    -webkit-mask: url("/icons/astro.svg#mission") no-repeat;
+                    mask: url("/icons/astro.svg#mission") no-repeat;
+                }
+.rux-icon--equipment{
+                    -webkit-mask: url("/icons/astro.svg#equipment") no-repeat;
+                    mask: url("/icons/astro.svg#equipment") no-repeat;
+                }
 .rux-icon--satellite-transmit{
                     -webkit-mask: url("/icons/astro.svg#satellite-transmit") no-repeat;
                     mask: url("/icons/astro.svg#satellite-transmit") no-repeat;
@@ -6708,22 +6740,6 @@ i.rux-icon {
 .rux-icon--processor-alt{
                     -webkit-mask: url("/icons/astro.svg#processor-alt") no-repeat;
                     mask: url("/icons/astro.svg#processor-alt") no-repeat;
-                }
-.rux-icon--solar{
-                    -webkit-mask: url("/icons/astro.svg#solar") no-repeat;
-                    mask: url("/icons/astro.svg#solar") no-repeat;
-                }
-.rux-icon--processor{
-                    -webkit-mask: url("/icons/astro.svg#processor") no-repeat;
-                    mask: url("/icons/astro.svg#processor") no-repeat;
-                }
-.rux-icon--mission{
-                    -webkit-mask: url("/icons/astro.svg#mission") no-repeat;
-                    mask: url("/icons/astro.svg#mission") no-repeat;
-                }
-.rux-icon--equipment{
-                    -webkit-mask: url("/icons/astro.svg#equipment") no-repeat;
-                    mask: url("/icons/astro.svg#equipment") no-repeat;
                 }
 .rux-icon--antenna-receive{
                     -webkit-mask: url("/icons/astro.svg#antenna-receive") no-repeat;
