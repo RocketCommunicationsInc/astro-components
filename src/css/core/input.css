@@ -64,7 +64,7 @@
   padding: 0 0.625rem;
 
   border: 1px solid var(--inputBorderColor);
-  border-radius: 3px;
+  border-radius: 4px;
 
   font-size: var(--fontSize, 1rem);
   color: var(--inputTextColor);
@@ -261,4 +261,18 @@
   width: 20px;
   height: 20px;
   background-color: var(--inputInvalidBorderColor);
+}
+
+.rux-help-text {
+  color: var(--secondaryText);
+  font-size: var(--fontSizeMD);
+  font-family: var(--fontFamily);
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.rux-form-field .rux-help-text {
+  -webkit-order: 3;
+  order: 3;
+  margin-top: 0.625rem;
 }
