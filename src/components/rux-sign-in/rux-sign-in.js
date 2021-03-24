@@ -245,6 +245,10 @@ export class RuxSignIn extends LitElement {
               position: relative;
             }
 
+            .rux-form-field--withIcon rux-icon:hover{
+              cursor: pointer;
+            }
+
             .rux-form-field--withIcon input{
               padding-right: 2rem;
             }
