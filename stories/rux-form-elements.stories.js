@@ -112,23 +112,22 @@ export const InputFields = () => html`
     <style>
       ul {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 4rem;
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 3rem;
         align-items: start;
         margin: 0 0 4rem;
         padding: 0;
         width: 100%;
         row-gap: 1rem;
       }
-
       @media screen and (min-width: 550px){
         ul {
-          column-count: 2;
+          grid-template-columns: repeat(2, 1fr);
         }
       }
       @media screen and (min-width: 800px){
         ul {
-          column-count: 3;
+          grid-template-columns: repeat(3, 1fr);
         }
       }
     </style>
