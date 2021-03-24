@@ -45,7 +45,12 @@ export const AllIcons = () => {
 
   return html`
     <style>
-      .icon-container {
+      .icon__wrapper{
+        margin: 3rem auto; 
+        text-align: center;
+      }
+
+      .icon__list {
         list-style: none;
         margin: 1rem 2rem;
         padding: 0;
@@ -54,13 +59,21 @@ export const AllIcons = () => {
         justify-content: center;
       }
 
-      .icon-container li {
+      .icon__list-item {
         display: block;
         margin: 1rem 1.5rem;
         max-width: 5rem;
+        width: ${sizeKnob};
+        height: ${sizeKnob};
       }
 
-      .icon-name {
+      .icon__list-item .rux-icon {
+        width: ${sizeKnob};
+        height: ${sizeKnob};
+        background-color: ${colorKnob};
+      }
+
+      .icon__name {
         display: block;
         margin-top: 0.5rem;
         font-size: 0.75rem;
@@ -68,16 +81,17 @@ export const AllIcons = () => {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        width: ${sizeKnob};
       }
     </style>
 
-    <div style="margin: 3rem auto; text-align: center;">
-      <ul class="icon-container">
+    <div class="icon__wrapper">
+      <ul class="icon__list">
         ${icons.map(
       (icon) => html`
-            <li title="${icon.id}" style="width: ${sizeKnob}; height: ${sizeKnob};">
-              <i class="rux-icon rux-icon--${icon.id}" style="width: ${sizeKnob}; height: ${sizeKnob}; background-color: ${colorKnob};"></i>
-              <div class="icon-name" style="width: ${sizeKnob}">${icon.id}</div>
+            <li class="icon__list-item" title="${icon.id}">
+              <i class="rux-icon rux-icon--${icon.id}"></i>
+              <div class="icon__name">${icon.id}</div>
             </li>
           `,
   )}
