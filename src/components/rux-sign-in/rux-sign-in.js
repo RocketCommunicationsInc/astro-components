@@ -237,10 +237,6 @@ export class RuxSignIn extends LitElement {
               margin-top: 8px;
             }
 
-            .rux-form__help:hover{
-              cursor: pointer;
-            }
-
             .rux-form__help rux-icon{
               margin-right: 6px;
             }
