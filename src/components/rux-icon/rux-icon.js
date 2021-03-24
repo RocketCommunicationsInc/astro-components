@@ -88,7 +88,7 @@ export class RuxIcon extends LitElement {
         }
       </style>
 
-      <span id="rux-icon" title="${this.label}">
+      <span id="rux-icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
