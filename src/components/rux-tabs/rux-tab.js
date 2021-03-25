@@ -18,8 +18,15 @@ export class RuxTab extends LitElement {
     super();
     this.selected = false;
     this.disabled = false;
+    this.addEventListener('click', this.clickHandler);
   }
 
+  clickHandler(e) {
+    if (this.disabled) {
+      e.stopImmediatePropagation();
+    }
+  }
+  
   connectedCallback() {
     super.connectedCallback();
 
