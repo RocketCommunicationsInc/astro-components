@@ -115,7 +115,7 @@ export const InputFields = () => html`
         grid-template-columns: repeat(1, 1fr);
         column-gap: 3rem;
         align-items: start;
-        margin: 0 0 4rem;
+        margin: 4rem 0;
         padding: 0;
         width: 100%;
         row-gap: 1rem;
@@ -132,6 +132,7 @@ export const InputFields = () => html`
       }
     </style>
     <div style="padding: 10vh 5vw; display: flex; flex-flow: column; justify-content: center;">
+
       <ul class="rux-form">
         <li class="rux-form-field">
           <label for="input__text">Text input</label>
@@ -147,12 +148,18 @@ export const InputFields = () => html`
           <span class="rux-help-text">Help text</span>
         </li>
         <li class="rux-form-field">
+          <label for="input__text">Text input</label>
+          <input id="input__text" class="rux-input" type="text" placeholder="Text input" />
+          <span class="rux-help-text">Help text</span>
+        </li>
+        <li class="rux-form-field">
           <label for="input__required">Is Required</label>
           <input id="input__required" class="rux-input" type="text" value=" " required />
         </li>
         <li class="rux-form-field">
           <label for="input__invalid">Invalid</label>
           <input id="input__invalid" class="rux-input" type="text" required />
+          <span class="rux-error-text">Error text</span>
         </li>
         <li class="rux-form-field">
           <label for="input__disabled">Disabled</label>
@@ -161,6 +168,11 @@ export const InputFields = () => html`
         <li class="rux-form-field">
           <label for="input__password">Password</label>
           <input id="input__password" class="rux-input" type="password" placeholder="********" />
+        </li>
+        <li class="rux-form-field">
+          <label for="input__invalid">Invalid password</label>
+          <input id="input__invalid" class="rux-input" type="password" required />
+          <span class="rux-error-text">Error text</span>
         </li>
         <li class="rux-form-field">
           <label for="input__url">Web address</label>
@@ -184,6 +196,17 @@ export const InputFields = () => html`
           />
         </li>
         <li class="rux-form-field">
+          <label for="input__search">Invalid search</label>
+          <input
+            id="input__search"
+            class="rux-input"
+            type="search"
+            required
+            placeholder="Enter search term"
+          />
+          <span class="rux-error-text">Error text</span>
+        </li>
+        <li class="rux-form-field">
           <label for="input__number">Number input</label>
           <input
             id="input__number"
@@ -193,6 +216,19 @@ export const InputFields = () => html`
             max="10"
             placeholder="Enter a number between 0 and 10"
           />
+        </li>
+        <li class="rux-form-field">
+          <label for="input__number">Invalid number</label>
+          <input
+            id="input__number"
+            class="rux-input"
+            type="number"
+            min="0"
+            max="10"
+            required
+            placeholder="Enter a number between 0 and 10"
+          />
+          <span class="rux-error-text">Error text</span>
         </li>
         <li class="rux-form-field">
           <label for="input__textarea">Textarea</label>
@@ -268,6 +304,7 @@ export const InputFields = () => html`
         <li class="rux-form-field rux-form-field--small">
           <label for="input__invalid-smaller">Smaller invalid</label>
           <input id="input__invalid-smaller" class="rux-input" type="text" required />
+          <span class="rux-error-text">Error text</span>
         </li>
         <li class="rux-form-field rux-form-field--small">
           <label for="input__disabled-smaller">Smaller disabled</label>
@@ -417,6 +454,26 @@ export const SelectMenu = () => html`
             <option value="2.4">Option 2.4</option>
           </optgroup>
         </select>
+      </div>
+
+      <div class="demo-row">
+        <label>Invalid</label>
+        <select class="rux-select" required>
+          <option value="">Select an option</option>
+          <optgroup label="Group one">
+            <option value="1.1">Option 1.1</option>
+            <option value="1.2">Option 1.2</option>
+            <option value="1.3">Option 1.3</option>
+            <option value="1.4">Option 1.4</option>
+          </optgroup>
+          <optgroup label="Group two">
+            <option value="2.1">Option 2.1</option>
+            <option value="2.2">Option 2.2</option>
+            <option value="2.3">Option 2.3</option>
+            <option value="2.4">Option 2.4</option>
+          </optgroup>
+        </select>
+        <span class="rux-error-text">Error text</span>
       </div>
     </div>
   `;
