@@ -86,6 +86,11 @@ export class RuxIcon extends LitElement {
           height: 4rem;
           width: 4rem;
         }
+
+        :host([size="base"]) {
+          height: 24px;
+          width: auto;
+        }
       </style>
 
       <span id="rux-icon">

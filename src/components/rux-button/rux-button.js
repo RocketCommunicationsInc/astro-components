@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
-// eslint-disable-next-line no-unused-vars
-import { RuxIcon } from '../rux-icon/rux-icon.js';
+import { RuxIcon } from '@astrouxds/rux-icon';
+
 export class RuxButton extends LitElement {
   static get properties() {
     return {
@@ -9,6 +9,7 @@ export class RuxButton extends LitElement {
       iconOnly: { type: Boolean },
       disabled: { type: Boolean },
       outline: { type: Boolean },
+      type: {type: String},
     };
   }
   constructor() {
@@ -17,6 +18,7 @@ export class RuxButton extends LitElement {
     (this.icon = ''), (this.iconOnly = false);
     this.disabled = false;
     this.outline = false;
+    this.type = 'button';
     this.addEventListener('click', this.clickHandler);
   }
 
@@ -231,6 +233,7 @@ export class RuxButton extends LitElement {
           ${this.iconOnly ? `rux-button--icon-only` : ''} 
           ${this.outline ? 'rux-button--outline' : ''}"
         ?disabled="${this.disabled}"
+        ?type="${this.type}"
       >
         <rux-icon
           icon="${this.icon}"
