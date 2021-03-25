@@ -30,6 +30,13 @@ export class RuxSwitch extends LitElement {
     this._id = `switch-${Math.floor(Math.random() * 1000)}`;
     this.disabled = false;
     this.checked = false;
+    this.addEventListener('click', this.clickHandler);
+  }
+  
+  clickHandler(e) {
+    if (this.disabled) {
+      e.stopImmediatePropagation();
+    }
   }
 
   /*
