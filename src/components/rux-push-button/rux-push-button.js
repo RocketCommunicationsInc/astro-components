@@ -26,6 +26,13 @@ export class RuxPushButton extends LitElement {
     this.checkedLabel = 'Enabled';
     this.uncheckedLabel = 'Disabled';
     this._label = '';
+    this.addEventListener('click', this.clickHandler);
+  }
+
+  clickHandler(e) {
+    if (this.disabled) {
+      e.stopImmediatePropagation();
+    }
   }
 
   render() {
