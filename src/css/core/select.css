@@ -70,3 +70,7 @@
 .rux-select:focus::-ms-value {
 	background: transparent;
 }
+
+.rux-select:invalid {
+  border: 1px solid var(--inputInvalidBorderColor);
+}

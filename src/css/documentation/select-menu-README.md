@@ -36,13 +36,13 @@ Add native HTML form attributes like `disabled` or `required` , or wrap options 
 
 ```xml
 <select class="rux-select" disabled>
-  <optgroup label="Group One">
+  <optgroup label="Group one">
     <option>Option 1.1</option>
     <option>Option 1.2</option>
     <option>Option 1.3</option>
     <option>Option 1.4</option>
   </optgroup>
-  <optgroup label="Group Two">
+  <optgroup label="Group two">
     <option>Option 2.1</option>
     <option>Option 2.2</option>
     <option>Option 2.3</option>

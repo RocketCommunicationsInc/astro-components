@@ -14,10 +14,10 @@ export const Slider = () => {
   const maxKnob = number('Max', 100);
   const stepKnob = number('Step', 10);
   const valKnob = number('Value', 50);
-  const labelKnob = text('Label', 'Slider Label');
-  const axisLabelsKnob = array('Axis Labels', ['min', 'middle', 'max']);
+  const labelKnob = text('Label', 'Slider label');
+  const axisLabelsKnob = array('Axis labels', ['Min', 'Middle', 'Max']);
   const disabledKnob = boolean('Disabled', false);
-  const hideInputKnob = boolean('Hide Input Field', false);
+  const hideInputKnob = boolean('Hide input field', false);
 
   return html`
     <div style="display: flex; padding: 10vh 5vw; justify-content: center;">
@@ -50,14 +50,14 @@ Slider.story = {
 
 export const AllSliderVariants = () => {
   const value2 = 70;
-  const axisLabels2 = ['min', 'middle', 'max'];
-  const label2 = 'Slider Label';
+  const axisLabels2 = ['Min', 'Middle', 'Max'];
+  const label2 = 'Slider label';
 
   const value3 = 42;
 
   const value4 = 50;
-  const label4 = 'Disabled Slider Label ';
-  const axisLabels4 = ['min', 'middle', 'max'];
+  const label4 = 'Disabled slider label';
+  const axisLabels4 = ['Min', 'Middle', 'Max'];
 
   return html`
     <div style="display: flex; padding: 5vh 5vw; justify-content: center;">
