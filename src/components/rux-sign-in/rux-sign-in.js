@@ -17,6 +17,9 @@ export class RuxSignIn extends LitElement {
       passwordVisible: {
         type: Boolean,
       },
+      invalid: {
+        type: Boolean,
+      },
     };
   }
 
@@ -25,11 +28,8 @@ export class RuxSignIn extends LitElement {
     this.email = '';
     this.password = '';
     this.sso = false;
+    this.invalid = false;
     this.passwordVisible = false;
-  }
-
-  _changeSSO() {
-    this.sso = !this.sso;
   }
 
   _changePasswordVisibility() {
@@ -56,8 +56,6 @@ export class RuxSignIn extends LitElement {
               font-family: var(--fontFamily);
               font-size: var(--fontSize);
               color: var(--fontColor);
-
-              min-width: 330px;
             }
             
             .rux-form-field input:required + label::after {
@@ -84,11 +82,10 @@ export class RuxSignIn extends LitElement {
             /* VALIDATION */
             .rux-form-field input:invalid {
               border: 1px solid var(--inputInvalidBorderColor);
-            
-              background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
-              background-repeat: no-repeat;
-              background-size: 1.125rem;
-              background-position: center right 0.5rem;
+            }
+
+            .rux-form-field input:invalid + .rux-error-text{
+              display: block;
             }
             
             /* FOCUS RULES */
@@ -223,6 +220,42 @@ export class RuxSignIn extends LitElement {
               opacity: var(--disabledOpacity);
             }
 
+            /* Error Styles  */
+            .rux-help-text {
+              color: var(--secondaryText);
+              font-size: var(--fontSizeMD);
+              font-family: var(--fontFamily);
+              font-weight: normal;
+              letter-spacing: 0.5px;
+            }
+
+            .rux-form-field .rux-help-text {
+              -webkit-order: 3;
+              order: 3;
+              margin-top: 0.625rem;
+            }
+
+            .rux-error-text {
+              color: var(--colorCritical);
+              font-size: var(--fontSizeMD);
+              font-family: var(--fontFamily);
+              font-weight: bold;
+              display: none;
+            }
+
+            .rux-form-field .rux-error-text, .rux-select + .rux-error-text {
+              padding-left: 1.625rem;
+              background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
+              background-repeat: no-repeat;
+              background-size: 1rem;
+              background-position: center left 0rem;
+              text-align: left;
+              width: fit-content;
+              -webkit-order: 3;
+              order: 3;
+              margin-top: 0.625rem;
+            }
+
             /* Cutom Sytles */
             .rux-form__group{
               margin-bottom: 2.25rem;
@@ -266,10 +299,22 @@ export class RuxSignIn extends LitElement {
             .rux-form-field > label {
               margin-bottom: 0.5rem
             }
+
+            .rux-form-field--invalid {
+              margin-bottom: 0.6rem;
+            }
+
+            .rux-form-field--invalid .rux-error-text {
+              display: block;
+            }
+
+            .mb-0{
+              margin-bottom: 0px;
+            }
         </style>
 
         <form name="ruxLogin" id="ruxLogin" class="rux-form">
-            <div class="rux-form__group">
+            <div class="rux-form__group ${this.invalid && this.sso ? 'mb-0': ''}">
               <div class="rux-form-field">
                 <label for="email">Email</label>
                 <input 
@@ -279,6 +324,7 @@ export class RuxSignIn extends LitElement {
                   .value="${this.email}"
                   placeholder="Email@astro.com"
                 />
+                <span class="rux-error-text">Invalid email format</span>
               </div>
               ${this.sso ? html `
                 <div class="rux-form-field">
@@ -291,20 +337,21 @@ export class RuxSignIn extends LitElement {
             </div>
 
             ${!this.sso ? html`
-              <div class="rux-form__group">
+              <div class="rux-form__group ${this.invalid ? 'mb-0': ''}">
                 <div class="rux-form-field rux-form-field--withIcon">
                   <label for="pass">Password</label>
                   <input
                     type="${this.passwordVisible ? 'text' : 'password'}"
                     id="pass"
-                    class="rux-input"  />
+                    class="rux-input"
+                    minlength="3"
+                     />
                   <rux-icon
                     @click="${this._changePasswordVisibility}"
                     icon="${this.passwordVisible ? 'visibility-off' : 'visibility'}"
                     size="base"
                     color="var(--primary)">
                   </rux-icon>
-                  
                 </div>
                 <div class="rux-form-field">
                   <div class="rux-checkbox">
@@ -315,6 +362,11 @@ export class RuxSignIn extends LitElement {
               </div>
             ` : ``}
             
+            ${this.invalid ? html`
+              <div class="rux-form-field rux-form-field--invalid">
+                <span class="rux-error-text">Email or password not found</span>
+              </div>
+            ` : ``}
             
             <div class="rux-form-field">
               <rux-button class="ml-auto" size="medium" type="submit">Sign in</rux-button>

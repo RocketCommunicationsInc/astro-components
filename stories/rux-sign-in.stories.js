@@ -12,15 +12,18 @@ export const SignIn = () => {
   const config = {
     email: '',
     password: '',
-    sso: boolean('SSO Enabled', false),
+    sso: boolean('SSO nabled', false),
+    invalid: boolean('Not a valid login', false),
   };
 
   return html`
-    <div style="padding: 10%; display: flex; justify-content: center;">
+    <div style="padding: 10% 0; margin: 0 auto; display: block;">
       <rux-sign-in
+        style="margin: 0 auto; max-width: 330px; display: block;"
         ?email="${config.email}"
         ?password="${config.password}"
         ?sso="${config.sso}"
+        ?invalid="${config.invalid}"
       ></rux-sign-in>
     </div>
   `;
