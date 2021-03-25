@@ -5,7 +5,7 @@ import {
   addParameters,
   addDecorator,
 } from '@storybook/web-components';
-import {withA11y} from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 import { addReadme } from 'storybook-readme/html';
 
 addDecorator(withA11y);
