@@ -40,6 +40,13 @@ export class RuxSlider extends LitElement {
     (this.axisLabels = []), (this.disabled = false);
     this.hideInput = false;
     this.browser = this.getBrowser(navigator.userAgent.toLowerCase());
+    this.addEventListener('click', this.clickHandler);
+  }
+
+  clickHandler(e) {
+    if (this.disabled) {
+      e.stopImmediatePropagation();
+    }
   }
 
   firstUpdated() {
