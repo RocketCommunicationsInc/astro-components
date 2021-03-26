@@ -58,7 +58,7 @@ Also, you can use [Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Compo
 
 ```xml
   <rux-button>
-    <rux-icon icon="custom" library="/icons/custom.svg"></rux-icon>
+    <rux-icon icon="custom" library="/icons/custom.svg" viewBox="0 0 128 128"></rux-icon>
     Slotted icon button
   </rux-button>
 ```
