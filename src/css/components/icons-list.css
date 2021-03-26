@@ -795,9 +795,9 @@
                     -webkit-mask: url("/icons/astro.svg#directions-subway") no-repeat;
                     mask: url("/icons/astro.svg#directions-subway") no-repeat;
                 }
-.rux-icon--tm{
-                    -webkit-mask: url("/icons/astro.svg#tm") no-repeat;
-                    mask: url("/icons/astro.svg#tm") no-repeat;
+.rux-icon--atm{
+                    -webkit-mask: url("/icons/astro.svg#atm") no-repeat;
+                    mask: url("/icons/astro.svg#atm") no-repeat;
                 }
 .rux-icon--local-see{
                     -webkit-mask: url("/icons/astro.svg#local-see") no-repeat;
@@ -891,9 +891,9 @@
                     -webkit-mask: url("/icons/astro.svg#pin-drop") no-repeat;
                     mask: url("/icons/astro.svg#pin-drop") no-repeat;
                 }
-.rux-icon--ocal-printshop{
-                    -webkit-mask: url("/icons/astro.svg#ocal-printshop") no-repeat;
-                    mask: url("/icons/astro.svg#ocal-printshop") no-repeat;
+.rux-icon--local-printshop{
+                    -webkit-mask: url("/icons/astro.svg#local-printshop") no-repeat;
+                    mask: url("/icons/astro.svg#local-printshop") no-repeat;
                 }
 .rux-icon--timelapse{
                     -webkit-mask: url("/icons/astro.svg#timelapse") no-repeat;
@@ -943,9 +943,9 @@
                     -webkit-mask: url("/icons/astro.svg#assistant") no-repeat;
                     mask: url("/icons/astro.svg#assistant") no-repeat;
                 }
-.rux-icon--ransform{
-                    -webkit-mask: url("/icons/astro.svg#ransform") no-repeat;
-                    mask: url("/icons/astro.svg#ransform") no-repeat;
+.rux-icon--transform{
+                    -webkit-mask: url("/icons/astro.svg#transform") no-repeat;
+                    mask: url("/icons/astro.svg#transform") no-repeat;
                 }
 .rux-icon--straighten{
                     -webkit-mask: url("/icons/astro.svg#straighten") no-repeat;
@@ -971,9 +971,9 @@
                     -webkit-mask: url("/icons/astro.svg#crop-square") no-repeat;
                     mask: url("/icons/astro.svg#crop-square") no-repeat;
                 }
-.rux-icon--lash-off{
-                    -webkit-mask: url("/icons/astro.svg#lash-off") no-repeat;
-                    mask: url("/icons/astro.svg#lash-off") no-repeat;
+.rux-icon--flash-off{
+                    -webkit-mask: url("/icons/astro.svg#flash-off") no-repeat;
+                    mask: url("/icons/astro.svg#flash-off") no-repeat;
                 }
 .rux-icon--color-lens{
                     -webkit-mask: url("/icons/astro.svg#color-lens") no-repeat;
@@ -1431,9 +1431,9 @@
                     -webkit-mask: url("/icons/astro.svg#brightness-2") no-repeat;
                     mask: url("/icons/astro.svg#brightness-2") no-repeat;
                 }
-.rux-icon--so{
-                    -webkit-mask: url("/icons/astro.svg#so") no-repeat;
-                    mask: url("/icons/astro.svg#so") no-repeat;
+.rux-icon--iso{
+                    -webkit-mask: url("/icons/astro.svg#iso") no-repeat;
+                    mask: url("/icons/astro.svg#iso") no-repeat;
                 }
 .rux-icon--add-to-photos{
                     -webkit-mask: url("/icons/astro.svg#add-to-photos") no-repeat;
@@ -2126,10 +2126,6 @@
 .rux-icon--developer-mode{
                     -webkit-mask: url("/icons/astro.svg#developer-mode") no-repeat;
                     mask: url("/icons/astro.svg#developer-mode") no-repeat;
-                }
-.rux-icon--access-alarm{
-                    -webkit-mask: url("/icons/astro.svg#access-alarm") no-repeat;
-                    mask: url("/icons/astro.svg#access-alarm") no-repeat;
                 }
 .rux-icon--wallpaper{
                     -webkit-mask: url("/icons/astro.svg#wallpaper") no-repeat;
@@ -4238,8 +4234,4 @@
 .rux-icon--antenna-off{
                     -webkit-mask: url("/icons/astro.svg#antenna-off") no-repeat;
                     mask: url("/icons/astro.svg#antenna-off") no-repeat;
-                }
-.rux-icon--section-titles{
-                    -webkit-mask: url("/icons/astro.svg#section-titles") no-repeat;
-                    mask: url("/icons/astro.svg#section-titles") no-repeat;
                 }
