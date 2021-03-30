@@ -16,7 +16,7 @@ export class RuxTabPanels extends LitElement {
       window.addEventListener('DOMContentLoaded', this._registerTabPanelsListener);
     } else {
       // Register Tab Panels if DOMContentLoaded event was already fired
-      this._registerTabPanelsListener;
+      this._registerTabPanelsListener();
     }
   }
 
