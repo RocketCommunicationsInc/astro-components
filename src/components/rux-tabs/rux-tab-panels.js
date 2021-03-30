@@ -11,8 +11,13 @@ export class RuxTabPanels extends LitElement {
 
     this.setAttribute('style', 'position: relative; width: 100%;');
 
-    // Add event listener to wait for DOM to be completely loaded. This was needed for Angular
-    window.addEventListener('DOMContentLoaded', this._registerTabPanelsListener );
+    if (document.readyState === 'loading') {
+      // Add event listener to wait for DOM to be completely loaded. This was needed for Angular
+      window.addEventListener('DOMContentLoaded', this._registerTabPanelsListener);
+    } else {
+      // Register Tab Panels if DOMContentLoaded event was already fired
+      this._registerTabPanelsListener;
+    }
   }
 
   disconnectedCallback() {
