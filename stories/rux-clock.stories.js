@@ -70,8 +70,9 @@ export const ClockWithAosLos = () => {
   };
 
   const timezoneKnob = select('Timezone', timezones, 'UTC');
-  const aosKnob = '1557503698781';
-  const losKnob = '2019-05-10T16:21:12.000Z';
+  const aosKnob = date('AOS', new Date());
+  const losKnob = date('LOS', new Date());
+  const losAsISO = new Date(losKnob).toISOString();
   const hideTimezoneKnob = boolean('Hide Timezone', false);
   const hideDateKnob = boolean('Hide DOY', false);
   const smallKnob = boolean('Small Version', false);
@@ -80,7 +81,7 @@ export const ClockWithAosLos = () => {
       <rux-clock
         .timezone="${timezoneKnob}"
         aos="${aosKnob}"
-        los="${losKnob}"
+        los="${losAsISO}"
         ?hideTimezone="${hideTimezoneKnob}"
         ?hideDate="${hideDateKnob}"
         ?small="${smallKnob}"
