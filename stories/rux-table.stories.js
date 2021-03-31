@@ -55,7 +55,7 @@ const rowData = agRowData.slice(0).map((item) => {
 rowData[4].selected = true;
 
 export default {
-  title: 'Components|Table',
+  title: 'Components/Table',
   decorators: [
     withKnobs,
   ],

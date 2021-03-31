@@ -4,7 +4,7 @@ import { RuxPushButton } from '../src/components/rux-push-button/rux-push-button
 import Readme from '../src/components/rux-push-button/README.md';
 
 export default {
-  title: 'Components|Push Button',
+  title: 'Components/Push Button',
   decorators: [withKnobs],
 };
 

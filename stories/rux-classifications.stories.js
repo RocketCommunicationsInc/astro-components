@@ -5,8 +5,8 @@ import Readme from '../src/components/rux-classification-marking/README.md';
 
 
 export default {
-  title: 'Components|Classification Markings',
-  decorators: [withKnobs]
+  title: 'Components/Classification Markings',
+  decorators: [withKnobs],
 };
 
 

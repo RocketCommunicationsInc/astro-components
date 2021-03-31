@@ -4,7 +4,7 @@ import { RuxProgress } from '../src/components/rux-progress/rux-progress.js';
 import Readme from '../src/components/rux-progress/README.md';
 
 export default {
-  title: 'Components|Progress',
+  title: 'Components/Progress',
   decorators: [withKnobs],
 };
 

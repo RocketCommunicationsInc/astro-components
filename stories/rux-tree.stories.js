@@ -5,7 +5,7 @@ import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 import Readme from '../src/components/rux-tree/README.md';
 
 export default {
-  title: 'Components|Tree',
+  title: 'Components/Tree',
   decorators: [withKnobs],
 };
 

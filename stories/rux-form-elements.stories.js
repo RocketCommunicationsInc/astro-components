@@ -6,7 +6,7 @@ import radioButtonsReadme from '../src/css/documentation/radio-buttons-README.md
 import selectMenuReadme from '../src/css/documentation/select-menu-README.md';
 
 export default {
-  title: 'Components|Form Elements',
+  title: 'Components/Form Elements',
 };
 
 

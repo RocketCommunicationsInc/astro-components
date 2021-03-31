@@ -4,7 +4,7 @@ import { RuxTabs } from '../src/components/rux-tabs/rux-tabs.js';
 import Readme from '../src/components/rux-tabs/README.md';
 
 export default {
-  title: 'Components|Tabs',
+  title: 'Components/Tabs',
   decorators: [withKnobs],
 };
 

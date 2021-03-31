@@ -10,7 +10,7 @@ import ruxIconsJson from '../static/json/rux-icons.json';
 
 
 export default {
-  title: 'Components|Icons & Symbols',
+  title: 'Components/Icons & Symbols',
   decorators: [withKnobs],
 };
 

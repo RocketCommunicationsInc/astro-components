@@ -5,7 +5,7 @@ import { RuxIcon } from '../src/components/rux-icon/rux-icon.js'; // not finishe
 import Readme from '../src/components/rux-button/README.md';
 
 export default {
-  title: 'Components|Buttons',
+  title: 'Components/Buttons',
   decorators: [withKnobs],
 };
 

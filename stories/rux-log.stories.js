@@ -4,7 +4,7 @@ import { RuxLog } from '../src/components/rux-log/rux-log.js';
 import Readme from '../src/components/rux-log/README.md';
 
 export default {
-  title: 'Components|Log',
+  title: 'Components/Log',
   decorators: [withKnobs],
 };
 
