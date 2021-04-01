@@ -1,0 +1,27 @@
+{
+"author": {
+  "name": "Rocket Communications",
+  "email": "uxsupport@rocketcom.com"
+},
+"homepage": "https://www.astrouxds.com",
+"bugs": {
+  "email": "uxsupport@rocketcom.com",
+  "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
+},
+"repository": {
+  "type": "git",
+  "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
+},
+"description": "Astro Web Component for global styles",
+"license": "SEE LICENSE IN LICENSE.md",
+"main": "rux-core.js",
+"module": "rux-core.js",
+"name": "@astrouxds/rux-core",
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+"publishConfig": {
+  "access": "public"
+},
+"version": "1.0.0"
+}
