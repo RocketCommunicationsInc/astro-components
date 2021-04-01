@@ -74,7 +74,7 @@ export class RuxNotification extends LitElement {
           align-items: center;
           align-content: center;
 
-          top: -4.25rem;
+          top: -4.375rem;
           left: 0;
 
           height: 4.375rem;
