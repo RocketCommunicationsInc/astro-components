@@ -46,6 +46,7 @@
     "@webcomponents/webcomponentsjs": "^2.4.0",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^6.1.1",
+    "css-loader": "^5.2.0",
     "del": "^4.1.1",
     "eslint": "^5.16.0",
     "eslint-config-google": "^0.13.0",
@@ -67,7 +68,8 @@
     "postcss-custom-properties": "^8.0.10",
     "prettier": "^1.19.1",
     "storybook-addon-themes": "^6.0.1",
-    "storybook-readme": "^5.0.9"
+    "storybook-readme": "^5.0.9",
+    "style-loader": "^2.0.0"
   },
   "hooks": {
     "pre-commit": "lint-staged"
