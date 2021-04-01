@@ -98,7 +98,6 @@ export class RuxClassificationMarking extends LitElement {
       justify-content: center;
       align-items: center;
       align-content: center; 
-      min-height: 26px;
       box-sizing: border-box;
       font-size: var(--fontSize);
       font-weight: bold;
@@ -123,10 +122,10 @@ export class RuxClassificationMarking extends LitElement {
       top: auto;		
       left: auto;
       width: fit-content;
-      height: 22px;
-      padding: 0 15px;
+      line-height: 1;
+      padding: 0.25rem 0.9375rem;
       border-radius:3px;
-      font-size: var(--fontSizeMD);			
+      font-size: var(--fontSizeMD);		
     }
 
 		:host([classification='${this.marking('topsecretsci').style}']) .rux-classification__marking,
