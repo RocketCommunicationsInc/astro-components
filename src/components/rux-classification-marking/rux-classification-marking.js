@@ -98,6 +98,7 @@ export class RuxClassificationMarking extends LitElement {
       justify-content: center;
       align-items: center;
       align-content: center; 
+      min-height: 26px;
       box-sizing: border-box;
       font-size: var(--fontSize);
       font-weight: bold;
@@ -121,6 +122,7 @@ export class RuxClassificationMarking extends LitElement {
       align-items:center;
       top: auto;		
       left: auto;
+      min-height: auto;
       width: fit-content;
       line-height: 1;
       padding: 0.25rem 0.9375rem;
