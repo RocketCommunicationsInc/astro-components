@@ -3,9 +3,9 @@ import { RuxIcon } from '@astrouxds/rux-icon';
 import { RuxButton } from '@astrouxds/rux-button';
 
 
-import inputStyles from '!!css-loader!../../css/core/input.css';
-import checkboxStyles from '!!css-loader!../../css/core/checkbox.css';
-import formsStyles from '!!css-loader!../../css/core/forms.css';
+import inputStyles from '!!css-loader!sass-loader!../../scss/core/input.scss';
+import checkboxStyles from '!!css-loader!sass-loader!../../scss/core/checkbox.scss';
+import formsStyles from '!!css-loader!sass-loader!../../scss/core/forms.scss';
 
 
 export class RuxSignIn extends LitElement {

@@ -20,7 +20,7 @@
   "private": false,
   "scripts": {
     "build-storybook": "lerna bootstrap && gulp build && build-storybook -c .storybook -s ./static",
-    "storybook": "lerna bootstrap && gulp build && start-storybook -p 9001 -c .storybook -s ./static "
+    "storybook": "lerna bootstrap && start-storybook -p 9001 -c .storybook -s ./static "
   },
   "dependencies": {
     "ag-grid-community": "^24.0.0",
@@ -64,9 +64,12 @@
     "husky": "^2.3.0",
     "lerna": "^3.16.4",
     "lint-staged": "^8.1.6",
+    "node-sass": "^5.0.0",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-custom-properties": "^8.0.10",
     "prettier": "^1.19.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1",
     "storybook-addon-themes": "^6.0.1",
     "storybook-readme": "^5.0.9",
     "style-loader": "^2.0.0"
