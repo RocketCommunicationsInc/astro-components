@@ -38,14 +38,16 @@ export class RuxNotification extends LitElement {
 
   updated() {
     if (this._closeAfter && this.open) {
-      this._closeAfter = setTimeout(() => {
+      this.timerId = setTimeout(() => {
         this.open = false;
       }, this._closeAfter);
     }
   }
 
   _onClick() {
-    clearTimeout(this._closeAfter);
+    if (this.timerId) {
+      clearTimeout(this.timerId);
+    }
     this.open = false;
   }
 
