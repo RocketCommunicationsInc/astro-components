@@ -5,7 +5,7 @@ class Core{
     constructor(){
         this.rootPath = `${__dirname}/../../`;
         this.srcPath = `${this.rootPath}src/`;
-        this.cssPath = `${this.srcPath}css/`;
+        this.cssPath = `${this.srcPath}scss/`;
         this.staticPath = `${this.rootPath}static/`;
         this.iconsPath = `${this.staticPath}icons/`;
     }
