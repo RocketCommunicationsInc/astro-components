@@ -20,7 +20,7 @@
   "private": false,
   "scripts": {
     "build-storybook": "lerna bootstrap && gulp build && build-storybook -c .storybook -s ./static",
-    "storybook": "lerna bootstrap && start-storybook -p 9001 -c .storybook -s ./static "
+    "storybook": "lerna bootstrap && gulp build && start-storybook -p 9001 -c .storybook -s ./static "
   },
   "dependencies": {
     "ag-grid-community": "^24.0.0",
@@ -59,6 +59,7 @@
     "gulp-if": "^2.0.2",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "html-webpack-plugin": "^4.0.4",
     "husky": "^2.3.0",
