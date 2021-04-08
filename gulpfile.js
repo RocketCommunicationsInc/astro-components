@@ -13,7 +13,7 @@ sass.compiler = require('node-sass');
 const packageDist = './src/modules/rux-core/dist';
 
 gulp.task('rux-core-static', () => {
-  const folders = ['fonts', 'icons', 'img'];
+  const folders = ['fonts', 'icons'];
   return gulp.src(folders.map((folder) => `./static/${folder}/*`), {base: './static/'})
       .pipe(gulp.dest(packageDist + '/static'));
 });
@@ -82,10 +82,11 @@ function watch() {
   );
 }
 
+// only used during pre lerna publish
 gulp.task('build-rux-core', gulp.series('rux-core-static', 'rux-core-scss', 'rux-core-dist'));
 
 gulp.task('default', gulp.series('sass', watch));
 gulp.task('css:colors', gulp.series('color', 'sass'));
 
 exports.watch = watch;
-exports.build = gulp.series('color', 'sass', 'build-rux-core');
+exports.build = gulp.series('color', 'sass');
