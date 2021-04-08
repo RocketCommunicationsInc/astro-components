@@ -18,8 +18,8 @@
   "module": "rux-core.js",
   "name": "@astrouxds/rux-core",
   "scripts": {
-    "preinstall": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "gulp build-rux-core",
+    "test": "echo testing rux-core, version: $npm_package_version"
   },
   "publishConfig": {
     "access": "public"
