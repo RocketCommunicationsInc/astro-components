@@ -1,4 +1,8 @@
 {
+  "name": "@astrouxds/rux-core",
+  "main": "rux-core.js",
+  "module": "rux-core.js",
+  "style": "dist/css/astro.min.css",
   "author": {
     "name": "Rocket Communications",
     "email": "uxsupport@rocketcom.com"
@@ -14,9 +18,6 @@
   },
   "description": "Astro Web Module for global styles",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "rux-core.js",
-  "module": "rux-core.js",
-  "name": "@astrouxds/rux-core",
   "scripts": {
     "prepublish": "gulp build-rux-core",
     "test": "echo testing rux-core, version: $npm_package_version"
