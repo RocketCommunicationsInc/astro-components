@@ -7,7 +7,7 @@ import { RuxTabs } from '../src/components/rux-tabs/rux-tabs.js';
 import Readme from '../src/components/rux-global-status-bar/README.md';
 
 export default {
-  title: 'Components|Global Status Bar',
+  title: 'Components/Global Status Bar',
   decorators: [withKnobs],
 };
 

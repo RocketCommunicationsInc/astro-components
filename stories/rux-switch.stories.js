@@ -4,7 +4,7 @@ import { RuxSwitch } from '../src/components/rux-switch/rux-switch.js';
 import Readme from '../src/components/rux-switch/README.md';
 
 export default {
-  title: 'Components|Switch',
+  title: 'Components/Switch',
   decorators: [withKnobs],
 };
 

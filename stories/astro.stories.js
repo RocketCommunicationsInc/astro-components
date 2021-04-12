@@ -2,7 +2,7 @@ import { html, render } from 'lit-html';
 import TemplateReadme from '../src/components/__rux-template/README.md';
 
 export default {
-  title: 'Astro UXDS|Welcome',
+  title: 'Astro UXDS/Welcome',
 };
 
 export const StartHere = () => {

@@ -1,6 +1,12 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css, unsafeCSS } from 'lit-element';
 import { RuxIcon } from '@astrouxds/rux-icon';
 import { RuxButton } from '@astrouxds/rux-button';
+
+
+import inputStyles from '!!style-loader!css-loader!sass-loader!../../scss/core/input.scss';
+import checkboxStyles from '!!style-loader!css-loader!sass-loader!../../scss/core/checkbox.scss';
+import formsStyles from '!!style-loader!css-loader!sass-loader!../../scss/core/forms.scss';
+
 
 export class RuxSignIn extends LitElement {
   static get properties() {
@@ -23,6 +29,14 @@ export class RuxSignIn extends LitElement {
     };
   }
 
+  static get styles() {
+    return css`
+      ${unsafeCSS(inputStyles.toString())}
+      ${unsafeCSS(checkboxStyles.toString())}
+      ${unsafeCSS(formsStyles.toString())}
+    `;
+  }
+
   constructor() {
     super();
     this.email = '';
@@ -37,226 +51,45 @@ export class RuxSignIn extends LitElement {
   }
 
   render() {
+    const passwordField = !this.sso ? html`
+        <div class="rux-form__group ${this.invalid ? 'mb-0': ''}">
+          <div class="rux-form-field rux-form-field--withIcon">
+            <label for="pass">Password</label>
+            <input
+              type="${this.passwordVisible ? 'text' : 'password'}"
+              id="pass"
+              class="rux-input"
+              minlength="3"
+              />
+            <rux-icon
+              @click="${this._changePasswordVisibility}"
+              icon="${this.passwordVisible ? 'visibility-off' : 'visibility'}"
+              size="base"
+              color="var(--primary)">
+            </rux-icon>
+          </div>
+          <div class="rux-form-field">
+            <div class="rux-checkbox">
+              <input type="checkbox" name="remember" id="remember" />
+              <label for="remember">Remember me</label>
+            </div>
+          </div>
+        </div>
+      `: null;
+
+    const formError = this.invalid ? html`
+      <div class="rux-form-field rux-form-field--invalid">
+        <span class="rux-error-text">Email ${!this.sso ? 'or password' : null} not found</span>
+      </div>
+    ` : null;
+
     return html`
         <style>
-           :root {
-              --padding: 0.5rem;
-              --paddingLeft: 0.5rem;
-              --paddingRight: 0.5rem;
-              --paddingTop: 0.25rem;
-              --paddingBottom: 0.25rem;
-            }
-            
-            .rux-form-field {
-              display: flex;
-              flex-direction: row;
-              flex-wrap: wrap;
-              align-items: flex-start;
-            
-              font-family: var(--fontFamily);
-              font-size: var(--fontSize);
-              color: var(--fontColor);
-            }
-            
-            .rux-form-field input:required + label::after {
-              content: "*";
-                margin-left: 0.25rem;
-                color: var(--inputTextColor);
-            }
-            
-            .rux-form-field input {
-              box-sizing: border-box;
-              order: 2;
-            
-              height: 2.125rem;
-              width: 100%;
-              padding: 0 1rem;
-            
-              border: 1px solid var(--inputBorderColor);
-              border-radius: 3px;
-            
-              font-size: var(--fontSize);
-              color: var(--inputTextColor);
-            }
-            
-            /* VALIDATION */
-            .rux-form-field input:invalid {
-              border: 1px solid var(--inputInvalidBorderColor);
-            }
-
-            .rux-form-field input:invalid + .rux-error-text{
-              display: block;
-            }
-            
-            /* FOCUS RULES */
-            .rux-form-field input:not([type="search"]):focus,
-            .rux-form-field input:not([type="search"]):invalid:focus {
-              border: 1px solid var(--inputFocusBorderColor) !important;
-            }
-            
-            .rux-form-field input::selection {
-              background-color: var(--colorSecondaryLighten3);
-            }
-            
-            .rux-form-field__validation-message {
-              display: none;
-              position: absolute;
-              max-width: 16rem;
-              background-color: var(--colorCritical);
-              width: 100%;
-              padding: 0.25rem;
-              right: 0;
-              font-size: var(--fontSizeMD);
-            }
-            
-            .rux-form-field input:invalid .rux-form-field__validation-message {
-              display: block;
-            }
-            
-            .rux-form-field input:disabled {
-              opacity: var(--disabledOpacity);
-              cursor: var(--disabledCursor);
-            }
-            
-            .rux-form-field input:focus,
-            .rux-form-field input:invalid:focus {
-              border-color: var(--inputFocusBorderColor);
-              outline: none;
-              color: var(--inputFocusTextColor);
-            }
-
-            /* Checkbox */
-
-            .rux-checkbox {
-              display: flex;
-              position: relative;
-              margin: 0.5rem 0 1rem 0;
+             .rux-checkbox {
+              margin: 0.5rem 0 1rem 0 !important;
               line-height: 1.2;
             }
 
-            .rux-checkbox input[type="checkbox"] {
-              -webkit-appearance: none;
-              display: none;
-            }
-
-            .rux-checkbox input[type="checkbox"] + label {
-              position: relative;
-              display: flex;
-
-              align-items: center;
-              justify-content: flex-start;
-
-              color: var(--controlLabelColor);
-              letter-spacing: 0.5px;
-              cursor: pointer;
-            }
-
-            /* Box */
-            .rux-checkbox input[type="checkbox"] + label::before {
-              display: flex;
-              flex-shrink: 0;
-              flex-grow: 0;
-              content: "";
-
-              align-self: start;
-
-              height: var(--controlOptionSize);
-              width: var(--controlOptionSize);
-
-              margin: 0 0.625rem 0 0;
-
-              border: 1px solid var(--controlBorderColor);
-              border-radius: 2px;
-            }
-
-            .rux-checkbox input[type="checkbox"] + label::before {
-              border-radius: 2px;
-            }
-
-            .rux-checkbox input[type="checkbox"]:checked + label::before {
-              background-color: var(--primary);
-              border-color: var(--controlSelectedOutlineBorderColor);
-            }
-
-            .rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
-            .rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before{
-              border-color: var(--controlHoverBorderColor);
-            }
-
-            .rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before{
-              background-color: var(--controlHoverBorderColor);
-            }
-
-
-            /* Checkmark */
-            .rux-checkbox input[type="checkbox"]:checked + label::after {
-              position: absolute;
-              top: 5px;
-              display: flex;
-              content: "";
-            }
-
-            .rux-checkbox input[type="checkbox"]:checked + label::after{
-              height: 6px;
-              width: 12px;
-              left: 3px;
-              border-right: 2px solid var(--controlTextColor);
-              border-top: 2px solid var(--controlTextColor);
-              transform: rotate(125deg);
-            }
-
-            .rux-checkbox--indeterminate input[type="checkbox"]:checked + label::after{
-              width: 10px;
-              height: 5px;
-              transform: rotate(0deg);
-              border-right: 0px;
-              border-top: 0px;
-              border-bottom: 2px solid var(--controlTextColor);
-              left: 4px;
-            }
-
-            .rux-checkbox input[type="checkbox"]:disabled + label {
-              cursor: var(--disabledCursor);
-              opacity: var(--disabledOpacity);
-            }
-
-            /* Error Styles  */
-            .rux-help-text {
-              color: var(--secondaryText);
-              font-size: var(--fontSizeMD);
-              font-family: var(--fontFamily);
-              font-weight: normal;
-              letter-spacing: 0.5px;
-            }
-
-            .rux-form-field .rux-help-text {
-              -webkit-order: 3;
-              order: 3;
-              margin-top: 0.625rem;
-            }
-
-            .rux-error-text {
-              color: var(--colorCritical);
-              font-size: var(--fontSizeMD);
-              font-family: var(--fontFamily);
-              font-weight: bold;
-              display: none;
-            }
-
-            .rux-form-field .rux-error-text, .rux-select + .rux-error-text {
-              padding-left: 1.625rem;
-              background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
-              background-repeat: no-repeat;
-              background-size: 1rem;
-              background-position: center left 0rem;
-              text-align: left;
-              width: fit-content;
-              -webkit-order: 3;
-              order: 3;
-              margin-top: 0.625rem;
-            }
-
-            /* Cutom Sytles */
             .rux-form__group{
               margin-bottom: 2.25rem;
             }
@@ -311,6 +144,19 @@ export class RuxSignIn extends LitElement {
             .mb-0{
               margin-bottom: 0px;
             }
+
+            /* VALIDATION */
+            .rux-error-text {
+              display: none;
+            }
+
+            .rux-form-field input:invalid {
+              border: 1px solid var(--inputInvalidBorderColor);
+            }
+
+            .rux-form-field input:invalid + .rux-error-text{
+              display: block;
+            }
         </style>
 
         <form name="ruxLogin" id="ruxLogin" class="rux-form">
@@ -336,37 +182,9 @@ export class RuxSignIn extends LitElement {
                 `: ``}
             </div>
 
-            ${!this.sso ? html`
-              <div class="rux-form__group ${this.invalid ? 'mb-0': ''}">
-                <div class="rux-form-field rux-form-field--withIcon">
-                  <label for="pass">Password</label>
-                  <input
-                    type="${this.passwordVisible ? 'text' : 'password'}"
-                    id="pass"
-                    class="rux-input"
-                    minlength="3"
-                     />
-                  <rux-icon
-                    @click="${this._changePasswordVisibility}"
-                    icon="${this.passwordVisible ? 'visibility-off' : 'visibility'}"
-                    size="base"
-                    color="var(--primary)">
-                  </rux-icon>
-                </div>
-                <div class="rux-form-field">
-                  <div class="rux-checkbox">
-                    <input type="checkbox" name="remember" id="remember" />
-                    <label for="remember">Remember me</label>
-                  </div>
-                </div>
-              </div>
-            ` : ``}
-            
-            ${this.invalid ? html`
-              <div class="rux-form-field rux-form-field--invalid">
-                <span class="rux-error-text">Email or password not found</span>
-              </div>
-            ` : ``}
+            ${passwordField}
+
+            ${formError}
             
             <div class="rux-form-field">
               <rux-button class="ml-auto" size="medium" type="submit">Sign in</rux-button>

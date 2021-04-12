@@ -2,10 +2,10 @@
 import { html, render } from 'lit-html';
 import { boolean, number, text, array, withKnobs } from '@storybook/addon-knobs';
 import { Grid } from 'ag-grid-community';
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import '../story-assets/ag-grid-astro.css';
-import TableReadme from '../src/css/documentation/table-README.md';
-import agGridReadme from '../src/css/documentation/ag-grid-README.md';
+import '!!style-loader!css-loader!ag-grid-community/dist/styles/ag-grid.css';
+import '!!style-loader!css-loader!../story-assets/ag-grid-astro.css';
+import TableReadme from '../src/documentation/table-README.md';
+import agGridReadme from '../src/documentation/ag-grid-README.md';
 /* eslint-enable no-unused-vars */
 
 
@@ -55,7 +55,7 @@ const rowData = agRowData.slice(0).map((item) => {
 rowData[4].selected = true;
 
 export default {
-  title: 'Components|Table',
+  title: 'Components/Table',
   decorators: [
     withKnobs,
   ],

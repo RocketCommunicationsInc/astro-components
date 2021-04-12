@@ -5,7 +5,7 @@ import Readme from '../src/components/rux-slider/README.md';
 import { RuxSlider } from '../src/components/rux-slider/rux-slider.js';
 
 export default {
-  title: 'Components|Slider',
+  title: 'Components/Slider',
   decorators: [withKnobs],
 };
 

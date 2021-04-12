@@ -5,7 +5,7 @@ import {action} from '@storybook/addon-actions';
 import Readme from '../src/components/rux-segmented-button/README.md';
 
 export default {
-  title: 'Components|Segmented Button',
+  title: 'Components/Segmented Button',
   decorators: [withKnobs],
 
 };

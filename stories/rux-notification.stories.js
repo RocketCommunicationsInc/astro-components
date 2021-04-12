@@ -5,7 +5,7 @@ import { RuxNotification } from '../src/components/rux-notification/rux-notifica
 import Readme from '../src/components/rux-notification/README.md';
 
 export default {
-  title: 'Components|Notification',
+  title: 'Components/Notification',
   decorators: [withKnobs, withKnobs],
 };
 

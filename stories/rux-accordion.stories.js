@@ -4,7 +4,7 @@ import { RuxAccordion } from '../src/components/rux-accordion/rux-accordion.js';
 import Readme from '../src/components/rux-accordion/README.md';
 
 export default {
-  title: 'Components|Accordion',
+  title: 'Components',
   decorators: [withKnobs],
 };
 

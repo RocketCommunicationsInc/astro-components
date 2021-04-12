@@ -62,6 +62,7 @@ node_modules/
 /build 
 /dist
 /storybook-static
+/src/modules/rux-core/dist
 
 # ignore OS generated files
 ehthumbs.db

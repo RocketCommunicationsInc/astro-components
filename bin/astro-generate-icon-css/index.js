@@ -16,8 +16,8 @@ class AstroGenerateIconCss extends Core{
             if (err) throw err;
             const generatedCss = this.generateCssFile(data);
             
-            const cssFileName = 'icons-list.css';
-            fs.writeFile(`${this.cssPath}components/${cssFileName}`, generatedCss, (err) => {
+            const cssFileName = 'astro-icons.scss';
+            fs.writeFile(`${this.cssPath}/${cssFileName}`, generatedCss, (err) => {
                 if (err) throw err;
                 this.notify('success', "The css icons file successfully generated!");
             });
@@ -44,10 +44,7 @@ class AstroGenerateIconCss extends Core{
                 this.icons.push({
                     "id": id
                 });
-                newArr.push(`.rux-icon--${id}{
-                    -webkit-mask: url("/icons/astro.svg#${id}") no-repeat;
-                    mask: url("/icons/astro.svg#${id}") no-repeat;
-                }`);
+                newArr.push(`.rux-icon--${id}{-webkit-mask: url("../icons/astro.svg#${id}") no-repeat;mask: url("../icons/astro.svg#${id}") no-repeat;}`);
             }   
         });
         return newArr.join('\n');

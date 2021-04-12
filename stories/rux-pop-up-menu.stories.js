@@ -5,7 +5,7 @@ import { RuxPopUpMenu } from '../src/components/rux-pop-up-menu/rux-pop-up-menu.
 import Readme from '../src/components/rux-pop-up-menu/README.md';
 
 export default {
-  title: 'Components|Pop Up Menu',
+  title: 'Components/Pop Up Menu',
   decorators: [withKnobs],
 };
 

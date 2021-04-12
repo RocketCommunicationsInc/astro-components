@@ -7,7 +7,7 @@ import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 import Readme from '../src/components/rux-switch/README.md';
 
 export default {
-  title: 'Components|Timeline',
+  title: 'Components/Timeline',
   decorators: [withKnobs],
 };
 

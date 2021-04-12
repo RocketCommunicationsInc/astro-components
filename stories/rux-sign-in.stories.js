@@ -4,7 +4,7 @@ import { RuxSignIn } from '../src/components/rux-sign-in/rux-sign-in';
 import Readme from '../src/components/rux-sign-in/README.md';
 
 export default {
-  title: 'Components|Sign In',
+  title: 'Components/Sign In',
   decorators: [withKnobs],
 };
 

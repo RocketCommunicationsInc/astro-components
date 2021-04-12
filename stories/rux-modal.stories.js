@@ -6,7 +6,7 @@ import { RuxModal } from '../src/components/rux-modal/rux-modal.js';
 import Readme from '../src/components/rux-modal/README.md';
 
 export default {
-  title: 'Components|Dialog Box',
+  title: 'Components/Dialog Box',
   decorators: [withKnobs],
   decorators: [withActions('modalClosed', { depth: 100 }), withKnobs],
 };

@@ -1,13 +1,11 @@
 {
+  "name": "@astrouxds/rux-core",
+  "main": "rux-core.js",
+  "module": "rux-core.js",
+  "style": "dist/css/astro.min.css",
   "author": {
     "name": "Rocket Communications",
     "email": "uxsupport@rocketcom.com"
-  },
-  "dependencies": {
-    "@astrouxds/rux-icon": "^5.0.0",
-    "@astrouxds/rux-button": "^5.0.0",
-    "@webcomponents/webcomponentsjs": "^2.2.10",
-    "lit-element": "^2.1.0"
   },
   "homepage": "https://www.astrouxds.com",
   "bugs": {
@@ -18,16 +16,14 @@
     "type": "git",
     "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
   },
-  "description": "Astro Web Component for sign in",
+  "description": "Astro Web Module for global styles",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "rux-sign-in.js",
-  "module": "rux-sign-in.js",
-  "name": "@astrouxds/rux-sign-in",
   "scripts": {
-    "test": "echo testing rux-sign-in, version: $npm_package_version"
+    "prepublish": "gulp build-rux-core",
+    "test": "echo testing rux-core, version: $npm_package_version"
   },
   "publishConfig": {
     "access": "public"
   },
-  "version": "5.0.0"
+  "version": "1.0.0"
 }
