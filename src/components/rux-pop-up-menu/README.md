@@ -55,6 +55,17 @@ Create a triggering element to initiate the pop up menu. **Note**: The trigger e
 </button>
 ```
 
+Extending Astro Pop Up Menu with custom content. Any additional content that is passed into Astro Pop Up Menu will not be styled and will require cutom styling.
+
+```xml
+<rux-pop-up-menu id="popup-menu-7" .data="${data}">
+  <div class="demo-slot">
+      <a href="/sign-up">Sign Up</a>
+      <rux-button @click="${login()}">Login</rux-button>
+  </div>
+</rux-pop-up-menu>
+```
+
 ### Properties
 
 | Property | Type   | Default | Required | Description                                                                |
