@@ -41,8 +41,8 @@ Pass properties as attributes of the Astro Pop Up Menu custom element:
 ```xml
 <rux-pop-up-menu
  id="popup-menu-1"
- .popUpMenuItemSelected="${_onItemUpdated}" 
- .popUpMenuExpandedChange="${_onMenuExpanded}"
+ .onPopUpMenuItemSelected="${_onItemUpdated}" 
+ .onPopUpMenuExpandedChange="${_onMenuExpanded}"
  .data="${data}">
 </rux-pop-up-menu>
 ```

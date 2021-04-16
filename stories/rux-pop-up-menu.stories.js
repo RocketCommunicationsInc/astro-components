@@ -161,8 +161,8 @@ export const PopUpMenu = () => {
       <rux-pop-up-menu id="popup-menu-6" .data="${data}"></rux-pop-up-menu>
       <rux-pop-up-menu 
         id="popup-menu-7" 
-        .popUpMenuItemSelected="${_onItemUpdated}" 
-        .popUpMenuExpandedChange="${_onMenuExpanded}"
+        .onPopUpMenuItemSelected="${_onItemUpdated}" 
+        .onPopUpMenuExpandedChange="${_onMenuExpanded}"
         .data="${data}">
       </rux-pop-up-menu>
     </div>
