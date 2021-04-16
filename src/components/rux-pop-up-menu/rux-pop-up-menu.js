@@ -16,6 +16,12 @@ export class RuxPopUpMenu extends LitElement {
       _trigger: {
         type: Object,
       },
+      popUpMenuItemSelected: {
+        type: Function
+      },
+      popUpMenuExpandedChange: {
+        type: Function
+      }
     };
   }
 
@@ -74,7 +80,7 @@ export class RuxPopUpMenu extends LitElement {
 
   handleMenuItemClick(e) {
     this.selected =  this.data.find((item) => item.id === e.currentTarget.dataset.key);
-
+    this.popUpMenuItemSelected(this.selected);
     this.dispatchEvent(
         new CustomEvent('pop-up-menu-item-selected', {
           detail: {
@@ -89,8 +95,8 @@ export class RuxPopUpMenu extends LitElement {
 
   show() {
     this._setMenuPosition();
-
     this.expanded = true;
+    this.popUpMenuExpandedChange(true);
 
     const debounce = setTimeout(() => {
       window.addEventListener('resize', () => this._setMenuPosition());
@@ -108,6 +114,7 @@ export class RuxPopUpMenu extends LitElement {
 
   hide() {
     this.expanded = false;
+    this.popUpMenuExpandedChange(false);
 
     window.removeEventListener('mousedown', this._handleOutsideClick);
     window.removeEventListener('resize', this);
