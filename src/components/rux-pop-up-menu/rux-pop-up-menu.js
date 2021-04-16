@@ -80,7 +80,9 @@ export class RuxPopUpMenu extends LitElement {
 
   handleMenuItemClick(e) {
     this.selected =  this.data.find((item) => item.id === e.currentTarget.dataset.key);
-    this.onPopUpMenuItemSelected(this.selected);
+    if(!!this.onPopUpMenuItemSelected){
+      this.onPopUpMenuItemSelected(this.selected);
+    }
     this.dispatchEvent(
         new CustomEvent('pop-up-menu-item-selected', {
           detail: {
@@ -96,7 +98,9 @@ export class RuxPopUpMenu extends LitElement {
   show() {
     this._setMenuPosition();
     this.expanded = true;
-    this.onPopUpMenuExpandedChange(true);
+    if(!!this.onPopUpMenuExpandedChange){
+      this.onPopUpMenuExpandedChange(true);
+    }
 
     const debounce = setTimeout(() => {
       window.addEventListener('resize', () => this._setMenuPosition());
@@ -114,7 +118,9 @@ export class RuxPopUpMenu extends LitElement {
 
   hide() {
     this.expanded = false;
-    this.onPopUpMenuExpandedChange(false);
+    if(!!this.onPopUpMenuExpandedChange){
+      this.onPopUpMenuExpandedChange(false);
+    }
 
     window.removeEventListener('mousedown', this._handleOutsideClick);
     window.removeEventListener('resize', this);
@@ -156,7 +162,7 @@ export class RuxPopUpMenu extends LitElement {
 
   render() {
     const list = this.data.map((item, index) => {
-      return item.role === 'separator' ? 
+      return item.hasOwnProperty('role') && item.role === 'seperator' ? 
         html`<li role="seperator"></li>` :
         html`<li 
                 data-key="${item.hasOwnProperty('id') ? item.id : index }" 
