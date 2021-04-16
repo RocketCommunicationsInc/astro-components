@@ -156,7 +156,7 @@ export class RuxPopUpMenu extends LitElement {
 
   render() {
     const list = this.data.map((item, index) => {
-      return item.rule === 'separator' ? 
+      return item.role === 'separator' ? 
         html`<li role="seperator"></li>` :
         html`<li 
                 data-key="${item.hasOwnProperty('id') ? item.id : index }" 
