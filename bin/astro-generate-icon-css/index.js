@@ -21,11 +21,6 @@ class AstroGenerateIconCss extends Core{
                 if (err) throw err;
                 this.notify('success', "The css icons file successfully generated!");
             });
-
-            fs.writeFile(`${this.staticPath}json/rux-icons.json`, JSON.stringify({"icons": this.icons}), (err) => {
-                if (err) throw err;
-                this.notify('success', "The json icons list file successfully generated!");
-            });
         });
     }
 
