@@ -63,7 +63,7 @@ export default {
 
 export const HTMLTable = () => {
   return html`
-    <div style="display: flex; padding: 2vh; justify-content: center;">
+    <div style="padding: 2rem;">
 			<table class="rux-table">
 			
         <tr class="rux-table__column-head"> 
@@ -203,7 +203,7 @@ export const AGGrid = () => {
 				color: var(--tableRowTextColor);
 			}
 		</style>
-    <div style="display: flex; padding: 2vh; justify-content: center;">
+    <div style="padding: 2rem;">
       <div id="myGrid" class="ag-theme-astro" style="width: 100%; height: 96vh"></div> 
     </div>
   `;
