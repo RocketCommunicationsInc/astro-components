@@ -137,7 +137,8 @@ class AstroIconExport extends Core {
     const filePath = this.getInputFilePath();
     fs.readFile(filePath, "utf-8", (err, data) => {
       if (err) throw err;
-      
+      this.generateIconsJson(data);
+
       this.svgo_inst.optimize(data).then((res) => {
         res.data = this.cleanUpIds(res.data);
 
@@ -151,6 +152,61 @@ class AstroIconExport extends Core {
       });
     });
   };
+
+  generateIconsJson(data){
+    const arr = data.split('\n');
+    const iconsJson = {};
+
+    arr.forEach(line => {
+      const hasId = line.indexOf("<g id=");
+      
+      if(hasId > -1){
+        const attrs = RegExp(/\"([^"]*)\"/);
+        const matches = line.match(attrs);
+        if(matches && matches.length){
+            let iconIdAttrs = matches[1].split('/');
+            if(iconIdAttrs.length === 3){
+              iconIdAttrs = iconIdAttrs.map(attr => attr.toLowerCase())
+              const category = iconIdAttrs[0];
+              const style = iconIdAttrs[1];
+              const name = iconIdAttrs[2];
+
+              if(!iconsJson.hasOwnProperty(style)){
+                iconsJson[style] = {};
+              }
+
+              if(!iconsJson[style].hasOwnProperty(category)){
+                iconsJson[style][category] = [];
+              }
+
+              iconsJson[style][category].push({name});
+            }
+        }
+      }
+    });
+
+    Object.keys(iconsJson).forEach(style => {
+      iconsJson[style] = this.sortObject(iconsJson[style]);
+      // console.log('style', iconsJson[style]);
+      Object.keys(iconsJson[style]).forEach(category => {
+        iconsJson[style][category] = iconsJson[style][category].sort((a, b) => {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
+      })
+      
+    })
+
+    fs.writeFile(`${this.staticPath}json/rux-icons.json`, JSON.stringify(iconsJson), (err) => {
+          if (err) throw err;
+          this.notify('success', "The json icons list file successfully generated!");
+      });
+  }
   
   getInputFilePath(){
     const homedir = os.homedir();
@@ -161,6 +217,7 @@ class AstroIconExport extends Core {
   cleanUpIds(svgStr){
     const arr = svgStr.split("\n");
     let newArr = [];
+
   
     arr.forEach((line) => {
       const hasId = line.indexOf("<g id=");
@@ -195,6 +252,13 @@ class AstroIconExport extends Core {
     arr.splice(2, 1);
     arr.splice(arr.length -3, 1);
     return arr;
+  }
+
+  sortObject(obj) {
+      return Object.keys(obj).sort().reduce(function (result, key) {
+          result[key] = obj[key];
+          return result;
+      }, {});
   }
 };
 
