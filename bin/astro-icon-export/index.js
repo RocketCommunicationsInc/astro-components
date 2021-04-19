@@ -167,9 +167,7 @@ class AstroIconExport extends Core {
             let iconIdAttrs = matches[1].split('/');
             if(iconIdAttrs.length === 3){
               iconIdAttrs = iconIdAttrs.map(attr => attr.toLowerCase())
-              const category = iconIdAttrs[0];
-              const style = iconIdAttrs[1];
-              const name = iconIdAttrs[2];
+              const [category, style, name] = iconIdAttrs;
 
               if(!iconsJson.hasOwnProperty(style)){
                 iconsJson[style] = {};
