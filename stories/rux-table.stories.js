@@ -102,7 +102,7 @@ export default {
 
 export const HTMLTable = () => {
   return html`
-    <div style="display: flex; padding: 2vh; justify-content: center;">
+    <div style="padding: 1rem;">
 			<table class="rux-table">
 			
         <tr class="rux-table__column-head"> 
@@ -155,7 +155,7 @@ export const HTMLControlsTable= () => {
 		return checkInput;
   }
 	return html`
-		<div style="display: flex; padding: 2vh; justify-content: center;">
+		<div style="padding: 1rem;">
 			<table class="rux-table">
 				<tr class="rux-table__column-head"> 
 				${columnData.map((column) => html`
