@@ -59,24 +59,21 @@ export const AllIcons = () => {
   return html`
     <style>
       .icon__wrapper{
-        margin: 3rem auto; 
+        margin: 3rem 4rem; 
         text-align: center;
       }
 
       .icon__list {
         list-style: none;
-        margin: 1rem 2rem;
+        margin: 1rem -1rem;
         padding: 0;
         display: flex;
         flex-wrap: wrap;
+        justify-content: flex-start;
       }
 
       .icon__list-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 1rem 1.5rem;
-        flex:1 1 ${sizeKnob};
+        padding: 1rem;
       }
 
       .icon__list-item .rux-icon {
@@ -91,8 +88,6 @@ export const AllIcons = () => {
 
       .icon__section h3 {
         text-align: left;
-        margin-left: 4rem;
-        margin-right: 4rem;
         position: relative;
         
         font-size: 1.5rem;
