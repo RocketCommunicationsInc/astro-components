@@ -25,52 +25,84 @@ export const AllIcons = () => {
 
   const sizes = {
     'Extra Small': '1rem',
-    'Small': '1.8rem',
-    'Normal': '2.8rem',
-    'Large': '3.5rem',
+    'Small': '2rem',
+    'Normal': '3rem',
+    'Large': '5rem',
   };
 
   const colorKnob = select('Color', colors, 'var(--primary)');
-  const sizeKnob = select('Size', sizes, 'normal');
+  const sizeKnob = select('Size', sizes, '3rem');
 
-  const icons = ruxIconsJson.icons.sort((a, b) => {
-    if (a.id < b.id) {
-      return -1;
-    }
-    if (a.id > b.id) {
-      return 1;
-    }
-    return 0;
-  });
+
+  const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+  };
+
+  const displaySection = (section) => {
+    return html`
+            <div class="icon__section">
+              <h3>${capitalize(section)}</h3>
+              <ul class="icon__list">
+                ${ruxIconsJson['solid'][section].map(icon => {
+                  return html`
+                  <li class="icon__list-item" title="${icon.name}">
+                    <i class="rux-icon rux-icon--${icon.name}"></i>
+                    <div class="icon__name">${icon.name}</div>
+                  </li>`
+                })}
+              </ul>
+            </div>
+            `;
+  };
 
   return html`
     <style>
       .icon__wrapper{
-        margin: 3rem auto; 
+        margin: 3rem 4rem; 
         text-align: center;
       }
 
       .icon__list {
         list-style: none;
-        margin: 1rem 2rem;
+        margin: 1rem -1rem;
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
       }
 
       .icon__list-item {
-        display: block;
-        margin: 1rem 1.5rem;
-        max-width: 5rem;
-        width: ${sizeKnob};
-        height: ${sizeKnob};
+        padding: 1rem;
       }
 
       .icon__list-item .rux-icon {
         width: ${sizeKnob};
         height: ${sizeKnob};
         background-color: ${colorKnob};
+      }
+
+      .icon__section {
+        margin: 1rem 0 2rem;
+      }
+
+      .icon__section h3 {
+        text-align: left;
+        position: relative;
+        
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .icon__section h3:after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        bottom: -1rem;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
       }
 
       .icon__name {
@@ -81,21 +113,14 @@ export const AllIcons = () => {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        width: ${sizeKnob};
+        width: calc(${sizeKnob} + 1rem);
       }
     </style>
-
     <div class="icon__wrapper">
-      <ul class="icon__list">
-        ${icons.map(
-      (icon) => html`
-            <li class="icon__list-item" title="${icon.id}">
-              <i class="rux-icon rux-icon--${icon.id}"></i>
-              <div class="icon__name">${icon.id}</div>
-            </li>
-          `,
-  )}
-      </ul>
+      ${displaySection('astro')}
+      ${Object.keys(ruxIconsJson['solid']).map(
+          (section) => section !== 'astro' ? displaySection(section) : null,
+      )}
     </div>
   `;
 };
