@@ -10,7 +10,7 @@ export class RuxClock extends LitElement {
   static get properties() {
     return {
       aos: {
-        type: String,
+        type: Number,
       },
       los: {
         type: String,
