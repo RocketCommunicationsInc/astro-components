@@ -122,11 +122,12 @@ export class RuxClassificationMarking extends LitElement {
       align-items:center;
       top: auto;		
       left: auto;
+      min-height: auto;
       width: fit-content;
-      height: 22px;
-      padding: 0 15px;
+      line-height: 1;
+      padding: 0.25rem 0.9375rem;
       border-radius:3px;
-      font-size: var(--fontSizeMD);			
+      font-size: var(--fontSizeMD);		
     }
 
 		:host([classification='${this.marking('topsecretsci').style}']) .rux-classification__marking,

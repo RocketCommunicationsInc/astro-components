@@ -60,13 +60,13 @@ Copy the contents of the `static` directory (css, fonts, icons, img, favicon.ico
 **For development**
 
 ```html
-<link rel="stylsheet" href="./css/astro.css" />
+<link rel="stylesheet" href="./css/astro.css" />
 ```
 
 **For production**
 
 ```html
-<link rel="stylsheet" href="./css/astro.min.css" />
+<link rel="stylesheet" href="./css/astro.min.css" />
 ```
 
 ## Using NPM
