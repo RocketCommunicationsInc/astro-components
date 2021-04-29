@@ -34,29 +34,32 @@ export class RuxNotification extends LitElement {
     this.target = 'local';
     this.closeAfter = null;
     this.open = false;
+    this.timeoutRef = null;
   }
 
   updated() {
     if (this._closeAfter && this.open) {
-      this._closeAfter = setTimeout(() => {
+      this.timeoutRef = setTimeout(() => {
         this.open = false;
       }, this._closeAfter);
     }
   }
 
   _onClick() {
-    clearTimeout(this._closeAfter);
+    if (this.timeoutRef) {
+      clearTimeout(this.timeoutRef);
+    }
     this.open = false;
   }
 
-  // convert given time to miliseconds, enforce default 2s minimum delay
+  // convert given time to milliseconds, enforce default 2s minimum delay
   get _closeAfter() {
     if (this.closeAfter && this.closeAfter <= 10) {
       // if the number is 10 or less, it must be ms
     }
 
     if ((this.closeAfter && this.closeAfter > 10000) || (this.closeAfter && this.closeAfter < 2000)) {
-      // if this numner is larger than 10s or smaller than 2s, enforce minimum 2s delay
+      // if this number is larger than 10s or smaller than 2s, enforce minimum 2s delay
       this.closeAfter = 2000;
     }
 
@@ -74,7 +77,7 @@ export class RuxNotification extends LitElement {
           align-items: center;
           align-content: center;
 
-          top: -4.25rem;
+          top: -4.375rem;
           left: 0;
 
           height: 4.375rem;
