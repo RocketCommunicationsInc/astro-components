@@ -11,6 +11,10 @@ const properties = require('postcss-custom-properties');
 // const autoprefixer = require('gulp-autoprefixer');
 
 /*
+ * * NOTE
+ * * The following code seems to introduce minor off-by-one RGB
+ * * values. Avoid using. Removed from standard build. 
+ * *
  * * The color method handles the generation of the tint/shade
  * * color palettes using the CSS4 color-mod function (no longer)
  * * part of the spec. It takes a base color and increases the
@@ -74,7 +78,7 @@ gulp.task('css:colors', gulp.series(color, css));
 exports.css = css;
 exports.color = color;
 exports.watch = watch;
-exports.build = gulp.series(clean, css, color);
+exports.build = gulp.series(clean, css);
 // exports.start = start;
 // exports.dev = dev;
 exports.clean = clean;
