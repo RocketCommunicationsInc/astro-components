@@ -144,7 +144,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 ##### **4.0**
 
 - Swapped kebab-cased `icon-only` attribute for standard camelCase `iconOnly`
-- Deprecated `type` attribute in favor of separate `size`, `iconOnly`, and `outline` attributes. `default` type is No longer supoprted.
+- Deprecated `type` attribute in favor of separate `size`, `iconOnly`, and `outline` attributes. `default` type is No longer supported.
 - Fixed the width of the small icon-only button and ensured icon-only buttons show No text, even if text is provided
 - Fixed outline button icon color
 - Re-enabled missing focus styles on buttons.

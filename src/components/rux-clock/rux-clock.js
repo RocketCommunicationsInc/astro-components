@@ -161,7 +161,7 @@ export class RuxClock extends LitElement {
         }
 
         .rux-clock__segment--secondary .rux-clock__segment__value {
-          font-weight: 100;
+          font-weight: 400;
         }
 
         .rux-clock__aos {
