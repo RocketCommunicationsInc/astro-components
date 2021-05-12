@@ -7,6 +7,7 @@
 
 	/* Astro 5 Simplified Colors */
   --backgroundColor: var(--colorTertiaryDarken3, #101923);
+	--backgroundColor: var(--colorTertiaryDarken3, #101923);
 	--defaultText: var(--colorWhite, #FFFFFF);
 	--secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
 	--globalAppHeader: var(--colorTertiaryDarken2, #172635);
