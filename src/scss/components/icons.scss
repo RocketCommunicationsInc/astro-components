@@ -1,0 +1,26 @@
+.rux-icon {
+  margin: 0 auto;
+
+  width: 2.8rem;
+  height: 2.8rem;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  fill: var(--iconDefaultColor);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+.rux-icon svg {
+	fill: var(--iconDefaultColor);
+}
+
+i.rux-icon {
+  display: block;
+  width: 2.8rem;
+  height: 2.8rem;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--colorSecondary);
+}

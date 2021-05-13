@@ -5,10 +5,48 @@ const sourcemaps = require('gulp-sourcemaps');
 const csso = require('gulp-csso');
 const postcss = require('gulp-postcss');
 const postcssColor = require('postcss-color-mod-function');
-const del = require('del');
-const gulpif = require('gulp-if');
 const properties = require('postcss-custom-properties');
-// const autoprefixer = require('gulp-autoprefixer');
+const sass = require('gulp-sass');
+
+
+sass.compiler = require('node-sass');
+const packageDist = './src/modules/rux-core/dist';
+
+gulp.task('rux-core-static', () => {
+  const folders = ['fonts', 'icons'];
+  return gulp.src(folders.map((folder) => `./static/${folder}/*`), {base: './static/'})
+      .pipe(gulp.dest(packageDist + '/static'));
+});
+
+gulp.task('rux-core-scss', () => {
+  return gulp.src('./src/scss/**/*.scss', {base: './src/scss'})
+      .pipe(gulp.dest(packageDist + '/scss'));
+});
+
+gulp.task('rux-core-dist', () => {
+  return gulp.src('./src/scss/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(sourcemaps.init())
+      .pipe(cssimport())
+      .pipe(postcss([properties()]))
+      .pipe(gulp.dest(packageDist + '/css'))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(csso())
+      .pipe(gulp.dest(packageDist + '/css'));
+});
+
+gulp.task('sass', () => {
+  return gulp.src('./src/scss/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(sourcemaps.init())
+      .pipe(cssimport())
+      .pipe(postcss([properties()]))
+      .pipe(gulp.dest('./static/css'))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(csso())
+      .pipe(gulp.dest('./static/css'));
+});
+
 
 /*
  * * The color method handles the generation of the tint/shade
@@ -16,65 +54,39 @@ const properties = require('postcss-custom-properties');
  * * part of the spec. It takes a base color and increases the
  * * tint or shade by 20% increments
  */
-function color() {
+
+gulp.task('color', () => {
   return gulp
-      .src('./src/css/common/__variables.css')
+      .src('./src/scss/common/__variables.scss')
+      .pipe(sass().on('error', sass.logError))
       .pipe(postcss([postcssColor()]))
-      .pipe(rename('_variables.css'))
-      .pipe(gulp.dest('./src/css/common'));
-}
+      .pipe(rename('_variables.scss'))
+      .pipe(gulp.dest('./src/scss/common'));
+});
 
-function css() {
-  const condition = (file) => file !== 'astro.css';
-
-  return gulp
-      .src('./src/css/*.css')
-      .pipe(sourcemaps.init())
-      .pipe(cssimport())
-      .pipe(gulpif(condition, postcss([properties()])))
-      .pipe(gulp.dest('./static/css'))
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(csso())
-      .pipe(gulp.dest('./static/css'))
-      .pipe(sourcemaps.write('./'));
-}
-
-/*
- * TODO: readd browser prefix
- */
-
-/*
- * * Cleans the distribution folder before building
- */
-function clean() {
-  return del(['./static/css/dist/']);
-}
 
 /*
  * * Handles watching for file changes and triggering a browser reload
  */
 function watch() {
   // watch for color changes and generate palette
-  gulp.watch('./src/css/common/__variables.css', gulp.series('color'));
+  gulp.watch('./src/css/common/__variables.scss', gulp.series('color'));
 
   // compile and minify css
   gulp.watch(
-      './src/css/**/*.css',
+      './src/scss/**/*.scss',
       {
-        ignored: ['./src/css/common/__variables.css', './src/css/astro.core.css', './src/css/astro.css'],
+        ignored: ['./src/scss/common/__variables.scss'],
       },
-      gulp.series(css)
+      gulp.series('sass')
   );
 }
 
-const defaultTasks = gulp.series(clean, watch);
-gulp.task('default', defaultTasks);
-gulp.task('css:colors', gulp.series(color, css));
+// only used during pre lerna publish
+gulp.task('build-rux-core', gulp.series('rux-core-static', 'rux-core-scss', 'rux-core-dist'));
 
-exports.css = css;
-exports.color = color;
+gulp.task('default', gulp.series('sass', watch));
+gulp.task('css:colors', gulp.series('color', 'sass'));
+
 exports.watch = watch;
-exports.build = gulp.series(clean, css, color);
-// exports.start = start;
-// exports.dev = dev;
-exports.clean = clean;
+exports.build = gulp.series('color', 'sass');

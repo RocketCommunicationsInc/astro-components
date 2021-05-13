@@ -4,7 +4,7 @@ import { RuxPushButton } from '../src/components/rux-push-button/rux-push-button
 import Readme from '../src/components/rux-push-button/README.md';
 
 export default {
-  title: 'Components|Push Button',
+  title: 'Components/Push Button',
   decorators: [withKnobs],
 };
 
@@ -14,7 +14,7 @@ export const PushButton = () => {
   return html`
     <div style="padding: 10%; display: flex; justify-content: center;">
       <rux-push-button ?disabled="${disabled}" ?checked="${checked}"
-        >Push Button Label</rux-push-button
+        >Push button label</rux-push-button
       >
     </div>
   `;
@@ -53,15 +53,15 @@ export const AllPushButtonVariants = () => html`
       style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;"
     >
       <ul class="button-list">
-        <li><rux-push-button>Push Button</rux-push-button></li>
+        <li><rux-push-button>Push button</rux-push-button></li>
         <li>
-          <rux-push-button checked>Push Button Checked</rux-push-button>
+          <rux-push-button checked>Push button checked</rux-push-button>
         </li>
         <li>
-          <rux-push-button disabled>Push Button Disabled</rux-push-button>
+          <rux-push-button disabled>Push button disabled</rux-push-button>
         </li>
         <li>
-          <rux-push-button checked disabled>Push Button Disabled Checked</rux-push-button>
+          <rux-push-button checked disabled>Push button disabled checked</rux-push-button>
         </li>
       </ul>
     </div>

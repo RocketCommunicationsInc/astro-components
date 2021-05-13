@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   // stories: ['../stories/**/*.stories.js'], // load stories via preview.js per: https://github.com/storybookjs/storybook/issues/9793
   addons: [

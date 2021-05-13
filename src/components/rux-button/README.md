@@ -42,7 +42,7 @@ Pass properties as attributes of the Astro Button custom element:
 
 ```xml
 <rux-button size="large" disabled outline>
-  Large Disabled Outline Button
+  Large disabled outline button
 </rux-button>
 
 ```
@@ -50,16 +50,16 @@ Pass properties as attributes of the Astro Button custom element:
 The component auto-imports the default Astro Icon Web Component for icons, if you specify one:
 
 ```xml
-<rux-button icon="caution">
-  Button with Icon using Astro UXDS Icon Web Component
+<rux-button icon="settings">
+  Button with icon using astro UXDS icon web component
 </rux-button>
 ```
 Also, you can use [Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#Adding_flexibility_with_slots) to define icons within buttons. This method is best if you need to override the default icon library SVG file:
 
 ```xml
   <rux-button>
-    <rux-icon icon="custom" library="/icons/custom.svg"></rux-icon>
-    Slotted Icon Button
+    <rux-icon icon="custom" library="/icons/custom.svg" viewBox="0 0 128 128"></rux-icon>
+    Slotted icon button
   </rux-button>
 ```
 In this situation, you do not need to specify a size for the icon component -- the button's size attribute will define the appropriate size of the icon.
@@ -98,7 +98,7 @@ Configure the component using native HTML attributes or [BEM-style](http://getbe
 <button class="rux-button">Submit</button>
 
 <button class="rux-button rux-button--large rux-button--outline" disabled>
-  Large Disabled Outline Button
+  Large disabled outline button
 </button>
 ```
 
@@ -106,8 +106,8 @@ The basic HTML/CSS usage supports icons if using Web Components (and importing t
 
 ```xml
 <button class="rux-button rux-button--icon">
-  <rux-icon class="rux-icon rux-button__icon" icon="caution" color="white"></rux-icon>
-  Button with Icon using Astro UXDS Icon Web Component
+  <rux-icon class="rux-icon rux-button__icon" icon="settings" color="white"></rux-icon>
+  Button with icon using astro UXDS icon web component
 </button>
 ```
 
@@ -118,7 +118,7 @@ Otherwise, wrap your icon SVG in an HTML element with the [BEM-style](http://get
   <div class="rux-icon rux-button__icon">
     <svg ... ></svg>
   </div>
-  Button with Local Icon
+  Button with local icon
 </button>
 ```
 

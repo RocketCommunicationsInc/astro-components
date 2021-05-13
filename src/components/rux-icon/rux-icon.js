@@ -27,6 +27,9 @@ export class RuxIcon extends LitElement {
       label: {
         type: String,
       },
+      viewBox: {
+        type: String,
+      },
     };
   }
 
@@ -36,6 +39,7 @@ export class RuxIcon extends LitElement {
     this.library = '/icons/astro.svg';
     /* TODO: a non-presumptive way to assign a better default label if the user doesn’t provide one */
     this.label = 'icon';
+    this.viewBox = '0 0 24 24';
   }
 
   firstUpdated() {
@@ -64,14 +68,13 @@ export class RuxIcon extends LitElement {
         svg,
         svg > use {
           height: 100%;
-					width: auto;
-					fill: var(--iconColor);
+          width: auto;
+          fill: var(--iconColor);
+        }
 
-				}
-				
-				.rux-button--outline rux-icon {
+        .rux-button--outline rux-icon {
 
-				}
+        }
 
         :host([size='extra-small']) {
           height: 1rem;
@@ -87,12 +90,17 @@ export class RuxIcon extends LitElement {
           height: 4rem;
           width: 4rem;
         }
+
+        :host([size="base"]) {
+          height: 24px;
+          width: auto;
+        }
       </style>
 
-      <span id="rux-icon" title="${this.label}">
+      <span id="rux-icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 128 128"
+          viewBox="${this.viewBox}"
           preserveAspectRatio="xMidYMid meet"
           focusable="false"
         >

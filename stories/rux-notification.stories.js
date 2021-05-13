@@ -5,7 +5,7 @@ import { RuxNotification } from '../src/components/rux-notification/rux-notifica
 import Readme from '../src/components/rux-notification/README.md';
 
 export default {
-  title: 'Components|Notification',
+  title: 'Components/Notification',
   decorators: [withKnobs, withKnobs],
 };
 
@@ -16,7 +16,7 @@ export const Notification = () => {
 
   const messageKnob = text(
       'Banner Message',
-      `This is a notification banner. It won’t disappear until the user dimisses it.`,
+      `This is a notification banner. It won’t disappear until the user dismisses it.`,
   );
   return html`
     <div style="display: flex; flex-flow: column; justify-content: center;">
@@ -50,7 +50,7 @@ export const NotificationAutoClose = () => {
   });
   const messageKnob = text(
       'Banner Message',
-      `This is a notification banner. It will disappear in ${closeDelay}000ms.`,
+      `This is a notification banner. It will disappear in ${closeDelay}000 ms.`,
   );
   return html`
     <div style="display: flex; flex-flow: column; justify-content: center;">
@@ -87,7 +87,7 @@ export const AllNotificationBanners = () => html`
         <rux-notification
           open
           status="standby"
-          message="Standby Notification Banner"
+          message="Standby notification banner"
         ></rux-notification>
       </div>
       <div
@@ -96,7 +96,7 @@ export const AllNotificationBanners = () => html`
         <rux-notification
           open
           status="normal"
-          message="Normal Notification Banner"
+          message="Normal notification banner"
         ></rux-notification>
       </div>
       <div
@@ -105,7 +105,7 @@ export const AllNotificationBanners = () => html`
         <rux-notification
           open
           status="caution"
-          message="Caution Notification Banner"
+          message="Caution notification banner"
         ></rux-notification>
       </div>
       <div
@@ -114,7 +114,7 @@ export const AllNotificationBanners = () => html`
         <rux-notification
           open
           status="critical"
-          message="Critical Notification Banner"
+          message="Critical notification banner"
         ></rux-notification>
       </div>
     </div>

@@ -41,6 +41,8 @@ Pass properties as attributes of the Astro Pop Up Menu custom element:
 ```xml
 <rux-pop-up-menu
  id="popup-menu-1"
+ .onPopUpMenuItemSelected="${_onItemUpdated}" 
+ .onPopUpMenuExpandedChange="${_onMenuExpanded}"
  .data="${data}">
 </rux-pop-up-menu>
 ```
@@ -51,8 +53,19 @@ Create a triggering element to initiate the pop up menu. **Note**: The trigger e
 <button
  aria-controls="popup-menu-1"
  aria-haspopup="true"
->Open Pop Up Menu
+>Open pop up menu
 </button>
+```
+
+Extending Astro Pop Up Menu with custom content. Any additional content that is passed into Astro Pop Up Menu will not be styled and will require cutom styling.
+
+```xml
+<rux-pop-up-menu id="popup-menu-7" .data="${data}">
+  <div class="demo-slot">
+      <a href="/sign-up">Sign Up</a>
+      <rux-button @click="${login()}">Login</rux-button>
+  </div>
+</rux-pop-up-menu>
 ```
 
 ### Properties

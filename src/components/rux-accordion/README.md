@@ -43,15 +43,15 @@ The Boolean `open` attribute of the Astro UXDS Accordion custom element expands 
 
 ```xml
 <rux-accordion open>
-  <span slot="label">Accordion Title</span>
-  <span slot="content">Accordion Content</span>
+  <span slot="label">Accordion title</span>
+  <span slot="content">Accordion content</span>
 </rux-accordion>
 <rux-accordion>
   <span slot="label">
-    Another Accordion Title, with <b>HTML</b>
+    Another accordion title, with <b>HTML</b>
   </span>
   <span slot="content">
-    <div>Accordion <b>HTML</b> Here</div>
+    <div>Accordion <b>HTML</b> here</div>
   </span>
 </rux-accordion>
 ```
@@ -84,10 +84,10 @@ The Boolean `open` attribute of the`<details>` HTML element sets an accordion's 
  <div class="rux-accordion">
   <details class="rux-accordion__item" open>
     <summary class="rux-accordion__label">
-      Accordion Title
+      Accordion title
     </summary>
     <div class="rux-accordion__content">
-      Accordion Content
+      Accordion content
     </div>
   </details>
 </div>

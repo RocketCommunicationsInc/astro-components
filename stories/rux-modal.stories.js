@@ -6,17 +6,17 @@ import { RuxModal } from '../src/components/rux-modal/rux-modal.js';
 import Readme from '../src/components/rux-modal/README.md';
 
 export default {
-  title: 'Components|Dialog Box',
+  title: 'Components/Dialog Box',
   decorators: [withKnobs],
   decorators: [withActions('modalClosed', { depth: 100 }), withKnobs],
 };
 
 export const DialogBox = () => {
-  const toggleModal = boolean('Enable Modal', true);
-  const message = text('Modal Message', 'Modal Message');
-  const title = text('Modal Title', 'Modal Title');
-  const confirmText = text('Confirm Button Text', 'Release');
-  const denyText = text('Deny Button Text', 'Cancel');
+  const toggleModal = boolean('Enable modal', true);
+  const message = text('Modal message', 'Modal message');
+  const title = text('Modal title', 'Modal title');
+  const confirmText = text('Confirm button text', 'Release');
+  const denyText = text('Deny button text', 'Cancel');
   return html`
     <div style="display: flex; flex-flow: column; justify-content: center;">
       <rux-modal

@@ -4,7 +4,7 @@ import { RuxTabs } from '../src/components/rux-tabs/rux-tabs.js';
 import Readme from '../src/components/rux-tabs/README.md';
 
 export default {
-  title: 'Components|Tabs',
+  title: 'Components/Tabs',
   decorators: [withKnobs],
 };
 
@@ -30,21 +30,21 @@ export const Tabs = () => {
           <div
             style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;"
           >
-            <pre><<span>!-- Tab 1 HTML Content --</span>></pre>
+            <pre><<span>!-- Tab 1 HTML content --</span>></pre>
           </div>
         </rux-tab-panel>
         <rux-tab-panel aria-labelledby="tab-id-2">
           <div
             style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;"
           >
-            <pre><<span>!-- Tab 2 HTML Content --</span>></pre>
+            <pre><<span>!-- Tab 2 HTML content --</span>></pre>
           </div>
         </rux-tab-panel>
         <rux-tab-panel aria-labelledby="tab-id-3">
           <div
             style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;"
           >
-            <pre><<span>!-- Tab 3 HTML Content --</span>></pre>
+            <pre><<span>!-- Tab 3 HTML content --</span>></pre>
           </div>
         </rux-tab-panel>
       </rux-tab-panels>
@@ -77,17 +77,17 @@ export const TabsCompact = () => html`
           <rux-tab-panel aria-labelledby="tab-id-2-1">
             <pre
               style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-            ><<span>!-- Small Tab 1 HTML Content --</span>></pre>
+            ><<span>!-- Small tab 1 HTML content --</span>></pre>
           </rux-tab-panel>
           <rux-tab-panel aria-labelledby="tab-id-2-2">
             <pre
               style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-            ><<span>!-- Small Tab 2 HTML Content --</span>></pre>
+            ><<span>!-- Small tab 2 HTML content --</span>></pre>
           </rux-tab-panel>
           <rux-tab-panel aria-labelledby="tab-id-2-3">
             <pre
               style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-            ><<span>!-- Small Tab 3 HTML Content --</span>></pre>
+            ><<span>!-- Small tab 3 HTML content --</span>></pre>
           </rux-tab-panel>
         </rux-tab-panels>
       </div>

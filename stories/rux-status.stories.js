@@ -3,7 +3,7 @@ import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 import Readme from '../src/components/rux-status/README.md';
 
 export default {
-  title: 'Components|Status',
+  title: 'Components/Status',
 };
 
 export const Status = () => html`

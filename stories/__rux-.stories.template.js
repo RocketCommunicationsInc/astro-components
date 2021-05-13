@@ -6,7 +6,7 @@ import Readme from '../src/components/__rux-template/README.md';
 /* eslint-enable no-unused-vars */
 
 export default {
-  title: 'Components|Template',
+  title: 'Components/Template',
   decorators: [
     withKnobs,
   ],

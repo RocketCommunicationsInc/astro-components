@@ -4,7 +4,7 @@ import { RuxClock } from '../src/components/rux-clock/rux-clock.js';
 import Readme from '../src/components/rux-clock/README.md';
 
 export default {
-  title: 'Components|Clock',
+  title: 'Components/Clock',
   decorators: [withKnobs],
 };
 

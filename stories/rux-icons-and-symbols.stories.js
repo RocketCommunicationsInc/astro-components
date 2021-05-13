@@ -6,105 +6,121 @@ import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-mon
 import { RuxMonitoringProgressIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-progress-icon.js';
 import Readme from '../src/components/rux-icon/README.md';
 import ReadmeMonitoring from '../src/components/rux-monitoring-icon/README.md';
+import ruxIconsJson from '../static/json/rux-icons.json';
+
 
 export default {
-  title: 'Components|Icons & Symbols',
+  title: 'Components/Icons & Symbols',
   decorators: [withKnobs],
 };
 
 export const AllIcons = () => {
-
-	const colors = {
-		Primary: '#4dacff',
-		Secondary: '#92cbff',
-		Tertiary: '#52667a',
-		Quaternary: '#ced6e4',
-		White: '#ffffff',
-	};
-
-  const sizes = {
-    'Extra Small': 'extra-small',
-    'Small': 'small',
-    'Normal': 'normal',
-    'Large': 'large',
+  const colors = {
+    Primary: 'var(--primary)',
+    Secondary: 'var(--primaryLight)',
+    Tertiary: '#52667a',
+    Quaternary: '#ced6e4',
+    White: '#ffffff',
   };
 
+  const sizes = {
+    'Extra Small': '1rem',
+    'Small': '2rem',
+    'Normal': '3rem',
+    'Large': '5rem',
+  };
 
-	const colorKnob = select('Color', colors, '#4dacff');
-	const sizeKnob = select('Size', sizes, 'normal');
-  const icons = [
-    'altitude',
-    'antenna',
-    'antenna-off',
-    'antenna-receive',
-    'antenna-transmit',
-    'equipment',
-    'mission',
-    'netcom',
-    'payload',
-    'processor',
-    'processor-alt',
-    'propulsion-power',
-    'satellite-off',
-    'satellite-receive',
-    'satellite-transmit',
-    'solar',
-    'thermal',
-    'add-large',
-    'add-small',
-    'close-large',
-    'close-small',
-    'collapse',
-    'expand',
-    'lock',
-    'unlock',
-    'search',
-    'notifications',
-    'settings',
-    'caution',
-    'maintenance',
-    'resources',
-  ];
+  const colorKnob = select('Color', colors, 'var(--primary)');
+  const sizeKnob = select('Size', sizes, '3rem');
+
+
+  const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+  };
+
+  const displaySection = (section) => {
+    return html`
+            <div class="icon__section">
+              <h3>${capitalize(section)}</h3>
+              <ul class="icon__list">
+                ${ruxIconsJson['solid'][section].map(icon => {
+                  return html`
+                  <li class="icon__list-item" title="${icon.name}">
+                    <i class="rux-icon rux-icon--${icon.name}"></i>
+                    <div class="icon__name">${icon.name}</div>
+                  </li>`
+                })}
+              </ul>
+            </div>
+            `;
+  };
 
   return html`
     <style>
-      .icon-container {
+      .icon__wrapper{
+        margin: 3rem 4rem; 
+        text-align: center;
+      }
+
+      .icon__list {
         list-style: none;
-        margin: 1rem 2rem;
+        margin: 1rem -1rem;
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-
-        justify-content: center;
+        justify-content: flex-start;
       }
 
-      .icon-container li {
+      .icon__list-item {
+        padding: 1rem;
+      }
+
+      .icon__list-item .rux-icon {
+        width: ${sizeKnob};
+        height: ${sizeKnob};
+        background-color: ${colorKnob};
+      }
+
+      .icon__section {
+        margin: 1rem 0 2rem;
+      }
+
+      .icon__section h3 {
+        text-align: left;
+        position: relative;
+        
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .icon__section h3:after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        bottom: -1rem;
         display: block;
-        margin: 1rem 1.5rem;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
       }
 
-      .icon-name {
+      .icon__name {
+        display: block;
         margin-top: 0.5rem;
         font-size: 0.75rem;
+        width: 5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: calc(${sizeKnob} + 1rem);
       }
     </style>
-
-    <div style="margin: 3rem auto; text-align: center;">
-      <ul class="icon-container">
-        ${icons.map(
-      (icon) => html`
-            <li>
-              <rux-icon
-                library="/icons/astro.svg"
-                icon="${icon}"
-                color="${colorKnob}"
-                size="${sizeKnob}"
-              ></rux-icon>
-              <div class="icon-name">${icon}</div>
-            </li>
-          `,
-  )}
-      </ul>
+    <div class="icon__wrapper">
+      ${displaySection('astro')}
+      ${Object.keys(ruxIconsJson['solid']).map(
+          (section) => section !== 'astro' ? displaySection(section) : null,
+      )}
     </div>
   `;
 };
@@ -190,7 +206,7 @@ export const MonitoringIcons = () => {
       <rux-monitoring-icon
         library="/icons/custom.svg"
         icon="custom"
-        label="Custom Icon"
+        label="Custom icon"
         sublabel="${sublabel}"
         status="${status}"
         notifications="${notifications}"
@@ -284,7 +300,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="mission"
           label="Mission"
-          sublabel="Sub Label"
+          sublabel="Sub-label"
           status="off"
           notifications="4"
         ></rux-monitoring-icon>
@@ -293,7 +309,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="equipment"
           label="Equipment"
-          sublabel="Sub Label"
+          sublabel="Sub-label"
           status="standby"
           notifications="100"
         ></rux-monitoring-icon>
@@ -302,7 +318,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="processor"
           label="Processor"
-          sublabel="Sub Label"
+          sublabel="Sub-label"
           status="normal"
         ></rux-monitoring-icon>
       </li>
@@ -310,7 +326,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="antenna"
           label="Antenna"
-          sublabel="Sub Label"
+          sublabel="Sub-label"
           status="caution"
           notifications="1200"
         ></rux-monitoring-icon>
@@ -319,7 +335,7 @@ export const MonitoringIconSet = () => html`
         <rux-monitoring-icon
           icon="antenna-transmit"
           label="NROL"
-          sublabel="Sub Label"
+          sublabel="Sub-label"
           status="serious"
           notifications="1000000"
         ></rux-monitoring-icon>

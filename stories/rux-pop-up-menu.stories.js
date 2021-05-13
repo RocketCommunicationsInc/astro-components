@@ -5,7 +5,7 @@ import { RuxPopUpMenu } from '../src/components/rux-pop-up-menu/rux-pop-up-menu.
 import Readme from '../src/components/rux-pop-up-menu/README.md';
 
 export default {
-  title: 'Components|Pop Up Menu',
+  title: 'Components/Pop Up Menu',
   decorators: [withKnobs],
 };
 
@@ -16,6 +16,14 @@ export const PopUpMenu = () => {
   window.addEventListener('pop-up-menu-item-selected', (e) => {
     console.log('Pop Up Menu Item Selected', e.detail.selected);
   });
+
+  const _onItemUpdated = (e) => {
+    console.log('_onItemUpdated', e);
+  }
+
+  const _onMenuExpanded = (e) => {
+    console.log('_onMenuExpanded', e);
+  }
 
   const data = [
     {
@@ -58,7 +66,7 @@ export const PopUpMenu = () => {
     },
     {
       id: 'b5',
-      label: 'Item 5 with a Really Long Title …',
+      label: 'Item 5 with a really long title …',
       value: '',
     },
     {
@@ -151,7 +159,12 @@ export const PopUpMenu = () => {
       <rux-pop-up-menu id="popup-menu-4" .data="${data}"></rux-pop-up-menu>
       <rux-pop-up-menu id="popup-menu-5" .data="${data}"></rux-pop-up-menu>
       <rux-pop-up-menu id="popup-menu-6" .data="${data}"></rux-pop-up-menu>
-      <rux-pop-up-menu id="popup-menu-7" .data="${data}"></rux-pop-up-menu>
+      <rux-pop-up-menu 
+        id="popup-menu-7" 
+        .onPopUpMenuItemSelected="${_onItemUpdated}" 
+        .onPopUpMenuExpandedChange="${_onMenuExpanded}"
+        .data="${data}">
+      </rux-pop-up-menu>
     </div>
   `;
 };
