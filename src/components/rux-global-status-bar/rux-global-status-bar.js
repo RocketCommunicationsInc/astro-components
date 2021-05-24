@@ -68,8 +68,8 @@ export class RuxGlobalStatusBar extends LitElement {
         }
 
         .app-meta h1 {
-          font-size: 2rem;
-          font-weight: 300;
+          font-size: 2.125rem;
+          font-weight: 400;
         }
 
         .app-version {
