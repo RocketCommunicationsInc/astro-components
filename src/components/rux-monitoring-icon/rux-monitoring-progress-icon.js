@@ -57,7 +57,7 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
             status: 'serious',
           },
           {
-            threshold: 100,
+            threshold: 101,
             status: 'critical',
           },
         ];
