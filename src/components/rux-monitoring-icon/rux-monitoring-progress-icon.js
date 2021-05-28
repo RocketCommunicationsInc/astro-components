@@ -103,7 +103,7 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
         svg {
           margin: 0 auto;
           width: 3rem;
-          height: rem;
+          height: 3rem;
         }
         svg.rux-status--off {
           stroke: var(--colorOff, rgb(158, 167, 173));
