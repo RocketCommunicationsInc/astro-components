@@ -57,7 +57,7 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
             status: 'serious',
           },
           {
-            threshold: 100,
+            threshold: 101,
             status: 'critical',
           },
         ];
@@ -84,7 +84,12 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
 
   get iconTemplate() {
     return html`
-      <rux-icon icon="progress" class="rux-status--${this.status}"></rux-icon>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" style="" class="rux-status--${this.status}">
+      <g id="progress">
+        <circle cx="60" cy="60" r="56" fill="transparent" stroke="rgba(40, 63, 88, 1)" stroke-width="10" transform="rotate(-90 61 60)"/>
+        <circle cx="60" cy="60" r="56" fill="transparent" stroke-dasharray="351.8583772 351.8583772" stroke-dashoffset="var(--monitoring-progress, 1)" stroke-linecap="round" stroke-width="10" class="progress-ring__circle" transform="rotate(-90 61 60)"/>
+      </g>
+    </svg>
       <div class="rux-advanced-status__progress">
         ${Math.ceil((this.progress / this.max) * 100)}%
       </div>
@@ -95,6 +100,41 @@ export class RuxMonitoringProgressIcon extends RuxMonitoringIcon {
     return [
       super.styles,
       css`
+        svg {
+          margin: 0 auto;
+          width: 3rem;
+          height: 3rem;
+        }
+        svg.rux-status--off {
+          stroke: var(--colorOff, rgb(158, 167, 173));
+          fill: var(--colorOff, rgb(158, 167, 173));
+        }
+
+        svg.rux-status--standby {
+          stroke: var(--colorStandby, rgb(45, 204, 255));
+          fill: var(--colorStandby, rgb(45, 204, 255));
+        }
+
+        svg.rux-status--normal {
+          stroke: var(--colorNormal, rgb(86, 240, 0));
+          fill: var(--colorNormal, rgb(86, 240, 0));
+        }
+
+        svg.rux-status--caution {
+          stroke: var(--colorCaution, rgb(252, 232, 58));
+          fill: var(--colorCaution, rgb(252, 232, 58));
+        }
+
+        svg.rux-status--serious {
+          stroke: var(--colorSerious, rgb(255, 179, 0));
+          fill: var(--colorSerious, rgb(255, 179, 0));
+        }
+
+        svg.rux-status--critical {
+          stroke: var(--colorCritical, rgb(255, 56, 56));
+          fill: var(--colorCritical, rgb(255, 56, 56));
+        }
+
         [data-progress] rux-icon {
           transition: stroke-dashoffset 0.367s, stroke 0.367s;
           transform-origin: 50% 50%;
