@@ -658,7 +658,7 @@ li.light-theme {
   --primaryLight: var(--colorSecondaryLighten2, #92cbff);
   --primaryLightHover: #92cbff4D;
   /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
-  --primaryDark: var(--colorSecondaryLighten2, #3a87cf);
+  --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
   --primaryDarkHover: #6b8ca5;
   --primaryElementText: var(--colorTertiaryDarken4, #080c11);
   --inputBackground: var(--colorWhite, #FFFFFF);
