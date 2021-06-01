@@ -18,7 +18,7 @@
   --primaryDarkHover: #6b8ca5;
 	--primaryElementText: var(--colorTertiaryDarken4, #080c11);
 	--inputBackground: var(--colorWhite, #FFFFFF);
-  --inputDark: #080c11;
+  --inputDark: var(--colorTertiaryDarken4, #080c11);
 
 	/* styles */
   --fontColor: var(--defaultText);
