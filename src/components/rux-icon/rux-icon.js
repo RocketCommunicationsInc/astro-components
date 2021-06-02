@@ -36,7 +36,7 @@ export class RuxIcon extends LitElement {
   constructor() {
     super();
 
-    this.library = '/icons/astro.svg';
+    this.library = './icons/astro.svg';
     /* TODO: a non-presumptive way to assign a better default label if the user doesn’t provide one */
     this.label = 'icon';
     this.viewBox = '0 0 24 24';
@@ -70,10 +70,6 @@ export class RuxIcon extends LitElement {
           height: 100%;
           width: auto;
           fill: var(--iconColor);
-        }
-
-        .rux-button--outline rux-icon {
-
         }
 
         :host([size='extra-small']) {
