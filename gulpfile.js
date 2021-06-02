@@ -18,6 +18,12 @@ gulp.task('rux-core-static', () => {
       .pipe(gulp.dest(packageDist + '/static'));
 });
 
+gulp.task('rux-icon-svg', () => {
+  const folders = ['fonts', 'icons'];
+  return gulp.src('./static/icons/astro.svg', {base: './static/'})
+      .pipe(gulp.dest('./src/components/rux-icon'));
+});
+
 gulp.task('rux-core-scss', () => {
   return gulp.src('./src/scss/**/*.scss', {base: './src/scss'})
       .pipe(gulp.dest(packageDist + '/scss'));
