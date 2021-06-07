@@ -119,9 +119,9 @@ A sample of a `range` Array. This sample is also the default value for `range`. 
 
 ## Important Astro 4 Migration Note:
 
-Prior to Astro 4, the Astro UXDS Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 seperates these two use cases in to distinct components. The [Astro UXDS Status Component](../rux-status/) is solely responsible for the status indicators. This component, Astro UXDS Monitoring Icon, replaces the previous "Advanced Status" features of Astro UXDS Status.
+Prior to Astro 4, the Astro UXDS Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 seperates these two use cases into distinct components. The [Astro UXDS Status Component](../rux-status/) is solely responsible for the status indicators. This component, Astro UXDS Monitoring Icon, replaces the previous "Advanced Status" features of Astro UXDS Status.
 
-To upgrade to Astro 4 any instance of `<rux-status>` used as an "Advanced Status" or "Monitoring Icon" should replace `<rux-status>` with `<rux-monitoring-icon>`. For example:
+To upgrade to Astro 4, any instance of `<rux-status>` used as an "Advanced Status" or "Monitoring Icon" should replace `<rux-status>` with `<rux-monitoring-icon>`. For example:
 
 ```xml
 <rux-status
