@@ -6,6 +6,7 @@ import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-mon
 import { RuxMonitoringProgressIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-progress-icon.js';
 import Readme from '../src/components/rux-icon/README.md';
 import ReadmeMonitoring from '../src/components/rux-monitoring-icon/README.md';
+import ReadmeMonitoringProgress from '../src/components/rux-monitoring-icon/MonitoringProgressReadme.md';
 import ruxIconsJson from '../static/json/rux-icons.json';
 
 
@@ -274,7 +275,7 @@ ProgressIcon.story = {
       html,
     },
     readme: {
-      sidebar: Readme,
+      sidebar: ReadmeMonitoringProgress,
     },
   },
 };
