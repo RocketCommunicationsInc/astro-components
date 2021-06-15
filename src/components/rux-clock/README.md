@@ -18,7 +18,7 @@ npm i --save @astrouxds/rux-clock
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxClock } from '@astrouxds/rux-clock/rux-clock.js';
+import { RuxClock } from "@astrouxds/rux-clock/rux-clock.js";
 ```
 
 ### 3. Render the Astro Clock Web Component
@@ -52,18 +52,19 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 
 ### Properties
 
-| Property       | Type    | Default | Required | Description                                                                                                                                                                                                                                                                                             |
-| -------------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `aos`          | String  | —       | No       | When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax) displays a timestamp labeled "AOS" next to the standard clock.                                                                                          |
-| `los`          | String  | —       | No       | When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), displays a timestamp labeled "LOS" next to the standard clock.                                                                                         |
-| `timezone`     | String  | `'UTC'` | No       | Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.  |
-| `hideTimezone` | Boolean | `false` | No       | Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS.                                                                                                                                                                                                                     |
-| `hideDate`     | Boolean | `false` | No       | Hides the day of the year.                                                                                                                                                                                                                                                                              |
-| `small`        | Boolean | `false` | No       | Applies a smaller clock style. Previously `compact`                                                                                                                                                                                                                                                     |
+| Property       | Type    | Default | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| -------------- | ------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `aos`          | String  | —       | No       | When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax) displays a timestamp labeled "AOS" next to the standard clock.                                                                                                                                                                                                                                                                                                                               |
+| `los`          | String  | —       | No       | When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), displays a timestamp labeled "LOS" next to the standard clock.                                                                                                                                                                                                                                                                                                                              |
+| `timezone`     | String  | `'UTC'` | No       | Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details. |
+| `hideTimezone` | Boolean | `false` | No       | Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `hideDate`     | Boolean | `false` | No       | Hides the day of the year.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `small`        | Boolean | `false` | No       | Applies a smaller clock style. Previously `compact`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 ## Revision History
 
 ##### **4.1**
+
 - Added moment.js for date/time calculations, fixing Day of Year count error at EOD
 - Added the 24 military timezone designations
 

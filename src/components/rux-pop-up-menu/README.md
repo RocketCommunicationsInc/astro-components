@@ -16,7 +16,7 @@ npm i --save @astrouxds/rux-pop-up-menu
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -31,7 +31,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxPopUpMenu } from '@astrouxds/rux-pop-up-menu/rux-pop-up-menu.js';
+import { RuxPopUpMenu } from "@astrouxds/rux-pop-up-menu/rux-pop-up-menu.js";
 ```
 
 ### 3. Render the Astro Pop Up Menu Web Component
@@ -41,7 +41,7 @@ Pass properties as attributes of the Astro Pop Up Menu custom element:
 ```xml
 <rux-pop-up-menu
  id="popup-menu-1"
- .onPopUpMenuItemSelected="${_onItemUpdated}" 
+ .onPopUpMenuItemSelected="${_onItemUpdated}"
  .onPopUpMenuExpandedChange="${_onMenuExpanded}"
  .data="${data}">
 </rux-pop-up-menu>
@@ -70,9 +70,9 @@ Extending Astro Pop Up Menu with custom content. Any additional content that is 
 
 ### Properties
 
-| Property | Type   | Default | Required | Description                                                                |
-| -------- | ------ | ------- | -------- | -------------------------------------------------------------------------- |
-| `id`     | String | `-`     | Yes      | A unique identifier to associate the pop up menu with a triggering element |
+| Property | Type   | Default | Required | Description                                                                                                                                          |
+| -------- | ------ | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`     | String | `-`     | Yes      | A unique identifier to associate the pop up menu with a triggering element                                                                           |
 | `data`   | Array  | `-`     | Yes      | An array of objects that defines the pop up menu’s labels. **Note:** when used in an Angular environment you may need to stringify the data property |
 
 ### Sample `data` Array
@@ -114,8 +114,8 @@ Pop Up Menu emits a `pop-up-menu-item-selected` event whenever a user clicks on 
 #### Sample Tree event
 
 ```javascript
-window.addEventListener('pop-up-menu-item-selected', (e) => {
-  console.log('Pop Up Menu Item Selected', e.detail.selected);
+window.addEventListener("pop-up-menu-item-selected", (e) => {
+  console.log("Pop Up Menu Item Selected", e.detail.selected);
 });
 ```
 
