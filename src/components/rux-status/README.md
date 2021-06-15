@@ -18,7 +18,7 @@ npm i --save @astrouxds/rux-status
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxStatus } from '@astrouxds/rux-status/rux-status.js';
+import { RuxStatus } from "@astrouxds/rux-status/rux-status.js";
 ```
 
 ### 3. Render the Astro Status Web Component
@@ -108,4 +108,5 @@ Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming
 <a name="astro-4-migration">
 
 ## Important Astro 4 Migration Note:
+
 Prior to Astro 4, the Astro UXDS Status Component was responsible for both the [small status indicators](https://astrouxds.com/ui-components/status-symbol) and the more complicated [monitoring icon](https://astrouxds.com/ui-components/icons-and-symbols). Astro 4 separates these two use cases into distinct components. The Astro UXDS Status Component is solely responsible for the status indicators. This component, [Astro UXDS Monitoring Icon Component](../rux-monitoring-icon/), replaces the previous "Advanced Status" features of Astro UXDS Status.

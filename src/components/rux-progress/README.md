@@ -16,7 +16,7 @@ npm i --save @astrouxds/rux-progress
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -31,7 +31,7 @@ Or, [download Astro Components as a .zip](https://github.com/RocketCommunication
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxProgress } from '@astrouxds/rux-progress/rux-progress.js';
+import { RuxProgress } from "@astrouxds/rux-progress/rux-progress.js";
 ```
 
 ### 3. Render the Astro Template Web Component
@@ -97,6 +97,7 @@ Indeterminate progress
 ## Revision History
 
 ##### **4.0.2**
+
 - fixed broken property `hideLabel`
 
 ##### **4.0**

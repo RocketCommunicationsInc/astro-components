@@ -18,7 +18,7 @@ npm i --save @astrouxds/rux-button
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxButton } from '@astrouxds/rux-button/rux-button.js';
+import { RuxButton } from "@astrouxds/rux-button/rux-button.js";
 ```
 
 ### 3. Render the Astro Button Web Component
@@ -54,6 +54,7 @@ The component auto-imports the default Astro Icon Web Component for icons, if yo
   Button with icon using astro UXDS icon web component
 </rux-button>
 ```
+
 Also, you can use [Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#Adding_flexibility_with_slots) to define icons within buttons. This method is best if you need to override the default icon library SVG file:
 
 ```xml
@@ -62,19 +63,18 @@ Also, you can use [Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Compo
     Slotted icon button
   </rux-button>
 ```
+
 In this situation, you do not need to specify a size for the icon component -- the button's size attribute will define the appropriate size of the icon.
-
-
 
 ### Properties
 
-| Property   | Type    | Default | Required | Description                                                                                                                                                                                                                                                                |
-| ---------- | ------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.                                                                                  |
-| `outline`  | Boolean | `false` | No       | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use an outline button for the less preferred option in Ok/Cancel button pairings.                     |
-| `iconOnly` | Boolean | `false` | No       | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Requires the `icon` attribute to be set as well.                                                                 |
+| Property   | Type    | Default | Required | Description                                                                                                                                                                                                                                                                                                                    |
+| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.                                                                                                                                      |
+| `outline`  | Boolean | `false` | No       | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use an outline button for the less preferred option in Ok/Cancel button pairings.                                                                         |
+| `iconOnly` | Boolean | `false` | No       | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Requires the `icon` attribute to be set as well.                                                                                                                     |
 | `icon`     | String  | `''`    | No       | Displays an Astro icon matching this string to the left of the button text. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols). Required when the `iconOnly` attribute is `true`. Note that you can also use the Slot to add an icon. |
-| `size`     | String  | `''`    | No       | Displays the button as a `'small'` or `'large'` variant.                                                                                                                                                                                                                   |
+| `size`     | String  | `''`    | No       | Displays the button as a `'small'` or `'large'` variant.                                                                                                                                                                                                                                                                       |
 
 ---
 
@@ -139,6 +139,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 ## Revision History
 
 ##### **4.1**
+
 - Add styles for and example of using slots for Icon child component
 
 ##### **4.0**

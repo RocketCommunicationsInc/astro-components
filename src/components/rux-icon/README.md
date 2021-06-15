@@ -22,7 +22,7 @@ npm i --save @astrouxds/rux-icon
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -37,7 +37,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxIcon } from '@astrouxds/rux-icon/rux-icon.js';
+import { RuxIcon } from "@astrouxds/rux-icon/rux-icon.js";
 ```
 
 ### 3. Render the Astro Icon Web Component
@@ -88,6 +88,7 @@ In the SVG icon library file:
 <a name="astro-4-migration">
 
 ## Important Astro 4 Migration Note:
+
 Prior to Astro 4.0, the Astro UXDS Icon Component imported icons from a single SVG file where icons were identified by `id` under specific groups. In that method, icons were accessed via a namespaced value for the `icon` property, such as `"group-id:icon-id"`.
 
 ### Prior to Astro 4.0:
