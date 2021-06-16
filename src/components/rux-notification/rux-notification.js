@@ -127,7 +127,7 @@ export class RuxNotification extends LitElement {
         role="button"
         label="Close notification"
         @click="${this._onClick}"
-        icon="close-large"
+        icon="close"
         size="small"
       ></rux-icon>
     `;
