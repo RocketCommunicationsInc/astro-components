@@ -108,3 +108,4 @@ Thumbs.db
 !.eslintrc
 !.storybook
 !.husky
+!.prettierrc
