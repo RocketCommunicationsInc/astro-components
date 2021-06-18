@@ -109,3 +109,4 @@ Thumbs.db
 !.storybook
 !.husky
 !.prettierrc
+!.prettierignore
