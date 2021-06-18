@@ -22,6 +22,7 @@
     "build-storybook": "lerna bootstrap && gulp build && build-storybook -c .storybook -s ./static",
     "storybook": "lerna bootstrap && gulp build && start-storybook -p 9001 -c .storybook -s ./static ",
     "prepare": "husky install",
+    "prettier": "prettier --write --loglevel warn .",
     "pretty-quick": "pretty-quick"
   },
   "dependencies": {
