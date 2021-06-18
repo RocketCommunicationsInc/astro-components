@@ -7,7 +7,7 @@ For the most up-to-date policies, see the [ISOO Training Aids](https://www.archi
 
 ## Guidelines
 
-- [Astro UXDS: Classification Markings](https://www.astrouxds.com/components/readme/)
+- [Astro UXDS: Classification Markings](https://astrouxds.com/components/classification-markings/)
 
 
 ## Web Components Usage
@@ -56,7 +56,7 @@ Pass properties as attributes of the Astro Classification custom element:
 
 
 #### Marking Type Declaration
- By default classification markings rendered in banner format. Applying the ```tag``` property attribute sets the marking type. The `tag` attribute property defines the classification marking as a tag.
+ By default, classification markings are rendered in banner format. Applying the ```tag``` property attribute sets the marking type. The `tag` attribute property defines the classification marking as a tag.
 
 ##### Banner Marking Type
 ```javascript
