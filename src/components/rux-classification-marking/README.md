@@ -6,7 +6,7 @@ For the most up-to-date policies, see the [ISOO Training Aids](https://www.archi
 
 ## Guidelines
 
-- [Astro UXDS: Classification Markings](https://www.astrouxds.com/components/readme/)
+- [Astro UXDS: Classification Markings](https://astrouxds.com/components/classification-markings/)
 
 ## Web Components Usage
 
