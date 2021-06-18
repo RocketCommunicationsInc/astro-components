@@ -1,6 +1,6 @@
 # ag-Grid for Astro
 
-For more complex tables, we recommend using either the community or enterprise tier of [ag-Grid](https://www.ag-grid.com/). While we cannot provide support for ag-Grid or its many features, we do provide light and dark variants of Astro in a theme file consumable by ag-grid.
+For more complex tables, we recommend using either the community or enterprise tier of [ag-Grid](https://www.ag-grid.com/). While we cannot provide support for ag-Grid or its many features, we do provide light and dark variants of Astro in a theme file consumable by ag-Grid.
 
 ## Guidelines
 
