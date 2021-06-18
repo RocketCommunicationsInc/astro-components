@@ -209,7 +209,7 @@ export const AGGrid = () => {
   `;
 };
 AGGrid.story = {
-  name: 'ag-grid',
+  name: 'ag-Grid',
   parameters: {
     exports: {
       render,
