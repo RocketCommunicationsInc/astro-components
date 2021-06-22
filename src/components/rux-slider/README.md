@@ -19,7 +19,7 @@ npm i -save @astrouxds/rux-slider
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -34,7 +34,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxSlider } from '@astrouxds/rux-slider/rux-slider.js';
+import { RuxSlider } from "@astrouxds/rux-slider/rux-slider.js";
 ```
 
 ### 3. Render the Astro Slider Web Component
@@ -69,8 +69,10 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | `disabled`   | Boolean | `false` | No       | Sets a disabled state on the component, which prevents typical user action from changing the value.                                                                                                                   |
 
 ## Revision History
+
 ##### **5.0**
- - Removed fallback CSS properties
+
+- Removed fallback CSS properties
 
 ##### **4.0**
 

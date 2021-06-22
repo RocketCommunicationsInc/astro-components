@@ -19,7 +19,7 @@ npm i --save @astrouxds/rux-log
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -34,7 +34,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxLog } from '@astrouxds/rux-log/rux-log.js';
+import { RuxLog } from "@astrouxds/rux-log/rux-log.js";
 ```
 
 ### 3. Render the Astro Log Web Component
@@ -78,28 +78,28 @@ render() {
 [
   {
     timestamp: new Date(1557503698781), // date from Unix Time Stamp number
-    status: 'off',
-    message: 'Antenna DGS 1 went offline.',
+    status: "off",
+    message: "Antenna DGS 1 went offline.",
   },
   {
-    timestamp: new Date('2019-05-10T16:21:12.000Z'), // date from ISO 8601 string format
-    status: 'serious',
-    message: 'USA-177 experienced solar panel misalignment.',
-  },
-  {
-    timestamp: new Date(1557503698781),
-    status: 'caution',
-    message: 'USA-168 suffered power degradation.',
+    timestamp: new Date("2019-05-10T16:21:12.000Z"), // date from ISO 8601 string format
+    status: "serious",
+    message: "USA-177 experienced solar panel misalignment.",
   },
   {
     timestamp: new Date(1557503698781),
-    status: 'standby',
-    message: 'Antenna DGS 2 has weak signal.',
+    status: "caution",
+    message: "USA-168 suffered power degradation.",
   },
   {
     timestamp: new Date(1557503698781),
-    status: 'off',
-    message: 'Black FEP 121 is offline.',
+    status: "standby",
+    message: "Antenna DGS 2 has weak signal.",
+  },
+  {
+    timestamp: new Date(1557503698781),
+    status: "off",
+    message: "Black FEP 121 is offline.",
   },
 ];
 ```

@@ -18,7 +18,7 @@ npm i --save @astrouxds/rux-accordion
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxAccordion } from '@astrouxds/rux-accordion/rux-accordion.js';
+import { RuxAccordion } from "@astrouxds/rux-accordion/rux-accordion.js";
 ```
 
 ### 3. Render the Astro Accordion Web Component

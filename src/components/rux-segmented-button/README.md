@@ -18,7 +18,7 @@ npm i --save @astrouxds/rux-segmented-button
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxSegmentedButton } from '@astrouxds/rux-segmented-button/rux-segmented-button.js';
+import { RuxSegmentedButton } from "@astrouxds/rux-segmented-button/rux-segmented-button.js";
 ```
 
 ### 3. Render the Astro Segmented Button Web Component
@@ -58,41 +58,49 @@ render() {
 
 ### Properties (for the Segmented Button component)
 
-| Property | Type  | Default | Required | Description                                             |
-| -------- | ----- | ------- | -------- | ------------------------------------------------------- |
-| `data`   | Array | `[]`    | Yes      | Items in this Array are the individual button segments. |
-| `selected` | String | —       | No    | When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting `selected` boolean property on the items in the `data` array. |
-
+| Property   | Type   | Default | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------- | ------ | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `data`     | Array  | `[]`    | Yes      | Items in this Array are the individual button segments.                                                                                                                                                                                                                                                                                                                                                            |
+| `selected` | String | —       | No       | When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting `selected` boolean property on the items in the `data` array. |
 
 ### Sample Astro UXDS Segmented Button `data` Array
 
 ```js
-[{ label: 'First segment' }, { label: 'Second segment' }, { label: 'Third segment' }];
+[
+  { label: "First segment" },
+  { label: "Second segment" },
+  { label: "Third segment" },
+];
 ```
 
 ### Properties for items within the `data` Array
 
-| Property   | Type    | Default | Required | Description |
-| ---------- | ------- | ------- | -------- | ------------------------------------------------------- |
-| `label`    | String  | —       | Yes      | Defines the label for the button segment. |
-| `selected` | Boolean | —       | No       | If true, selects this segment rather than the first segment in the `data` Array on mount. If more than one segment has a truthy `selected` value, the earliest one in the Array will register and the rest are ignored. Note that if the `selected` string property of the parent `rux-segmented-button` takes priority. When the selected segment changes within the component, this property updates with `true` or `false` if selected or not selected, on each segment.|
+| Property   | Type    | Default | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ---------- | ------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`    | String  | —       | Yes      | Defines the label for the button segment.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `selected` | Boolean | —       | No       | If true, selects this segment rather than the first segment in the `data` Array on mount. If more than one segment has a truthy `selected` value, the earliest one in the Array will register and the rest are ignored. Note that if the `selected` string property of the parent `rux-segmented-button` takes priority. When the selected segment changes within the component, this property updates with `true` or `false` if selected or not selected, on each segment. |
 
 ### Events
 
-| Event Name | Description |
-| --- | ---|
-| `change` | Fires when a button segment is changed. Inspect the Event target to find the `data` and `selected` component properties. See [HTMLElement `change` event on MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) for more information. |
+| Event Name | Description                                                                                                                                                                                                                                                       |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `change`   | Fires when a button segment is changed. Inspect the Event target to find the `data` and `selected` component properties. See [HTMLElement `change` event on MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) for more information. |
 
-```js 
-  document.addEventListener('change', (e) => console.log('Target element:', e.target)); 
-  // > Target element: <rux-segmented-button>
+```js
+document.addEventListener("change", (e) =>
+  console.log("Target element:", e.target)
+);
+// > Target element: <rux-segmented-button>
 
-  document.addEventListener('change', (e) => console.log('Selected Segment:', e.target.selected));
-  // > Selected Segment: Second Segment
+document.addEventListener("change", (e) =>
+  console.log("Selected Segment:", e.target.selected)
+);
+// > Selected Segment: Second Segment
 
-  document.addEventListener('change', (e) => console.log('Array of Segments:', e.target.data));
-  // > Array of Segments: [{ label: "First Segment", selected: false }, { label: "Second Segment", selected: true }, { label: "Third Segment", selected: false }]
-
+document.addEventListener("change", (e) =>
+  console.log("Array of Segments:", e.target.data)
+);
+// > Array of Segments: [{ label: "First Segment", selected: false }, { label: "Second Segment", selected: true }, { label: "Third Segment", selected: false }]
 ```
 
 ---
@@ -141,6 +149,7 @@ Configure the component using native HTML attributes. For each group of radio bu
 ## Revision History
 
 ##### **4.1**
+
 - Exposed `selected` attribute on component to reflect currently selected segment to an attribute on the component
 - Added `change` event to notify document of segment selection change within component
 

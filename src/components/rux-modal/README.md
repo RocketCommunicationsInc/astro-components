@@ -20,7 +20,7 @@ npm i --save @astrouxds/rux-modal
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -35,7 +35,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxModal } from '@astrouxds/rux-modal/rux-modal.js';
+import { RuxModal } from "@astrouxds/rux-modal/rux-modal.js";
 ```
 
 ### 3. Render the Astro Dialog Box Web Component
@@ -60,22 +60,26 @@ Pass properties as attributes of the Astro Dialog Box custom element:
 
 ### Properties
 
-| Property      | Type   | Default     | Required | Description                                                                                                                                                                                                                                                                                                                                                                             |
-| ------------- | ------ | ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `message`     | String | `''`        | Yes      | Displays a text for the message area of the dialog box.                                                                                                                                                                                                                                                                                                                                 |
-| `title`       | String | `''`        | No       | Displays a title for the top of the dialog box.                                                                                                                                                                                                                                                                                                                                         |
-| `confirmText` | String | `''`        | No       | Displays a confirmation button with the given text. If both `confirmText` and `denyText` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirmText` or `denyText` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event. |
-| `denyText`    | String | `''`        | No       | Displays a deny button with the given text. If both `confirmText` and `denyText` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirmText` or `denyText` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event.         |
+| Property      | Type   | Default | Required | Description                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------- | ------ | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `message`     | String | `''`    | Yes      | Displays a text for the message area of the dialog box.                                                                                                                                                                                                                                                                                                                                 |
+| `title`       | String | `''`    | No       | Displays a title for the top of the dialog box.                                                                                                                                                                                                                                                                                                                                         |
+| `confirmText` | String | `''`    | No       | Displays a confirmation button with the given text. If both `confirmText` and `denyText` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirmText` or `denyText` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event. |
+| `denyText`    | String | `''`    | No       | Displays a deny button with the given text. If both `confirmText` and `denyText` parameters are set, the confirm button will have a solid style and the deny button will have a secondary outline style. If neither `confirmText` or `denyText` parameters are set, a deny button labeled "Cancel" will be provided to the user to dismiss the dialog and emit the close event.         |
 
 ### Event Listener
 
 When closed, the Dialog Box Web Component will emit a message using the `'modalClosed'` event name and a detail message of `confirm` with a value of `true` (confirm) or `false` (deny) depending on whether the user clicks the confirm or deny button.
 
 ## Revision History
+
 ##### **5.0**
+
 - Added `--modalTitleColor` color variable for Modal Title Color
 - Removed CSS Fallback properties
+
 ##### **4.1**
+
 - Removed mention of Icon component
 
 ##### **4.0**

@@ -20,7 +20,7 @@ npm i --save @astrouxds/rux-tree
 
 You may use Yarn, NPM, or your Node package manager of choice. The `--save` flag adds this component as a dependency in your `package.json` file.
 
-#### **Alternatively**, download the [Astro Component Library](https://github.com/RocketCommunicationsInc/astro-components/src/master/) source to your project.
+#### **Alternatively**, download the [Astro Component Library](https://github.com/RocketCommunicationsInc/astro-components/) source to your project.
 
 Via CLI:
 
@@ -35,7 +35,7 @@ Or, [download Astro Components as a .zip](https://github.com/RocketCommunication
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxTree } from '@astrouxds/rux-tree/rux-tree.js';
+import { RuxTree } from "@astrouxds/rux-tree/rux-tree.js";
 ```
 
 ### 3. Render the Astro Tree Web Component
@@ -48,7 +48,7 @@ import { RuxTree } from '@astrouxds/rux-tree/rux-tree.js';
 
 | Property | Type  | Default | Required | Description                                                                 |
 | -------- | ----- | ------- | -------- | --------------------------------------------------------------------------- |
-| `data`   | Array | `[]`     | yes      | An array of objects defining the tree structure. See a sample object below. |
+| `data`   | Array | `[]`    | yes      | An array of objects defining the tree structure. See a sample object below. |
 
 #### Sample `data` object
 
@@ -78,14 +78,14 @@ import { RuxTree } from '@astrouxds/rux-tree/rux-tree.js';
 
 ### Object Properties
 
-| Property   | Type   | Required | Description                                                                                                                                 |
-| ---------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `label`    | String | yes      | The label for the tree item                                                                                                                 |
-| `id`       | String | no       | An optional property to help identify individual tree elements                                                                              |
-| `selected` | Boolean | no      | If set to `true`, this item shows a selected style. When a new item is selected by user click, all other selected items are unselected. |
-| `expanded` | Boolean | no      | If set to `true`, this item is expanded. Multiple items can be expanded at the same time. |
-| `status`   | String | no       | An optional property to assign status. See [Astro Status](http://www.astrouxds.com/library/tree) for valid status options                   |
-| `children` | Array  | no       | An array of child elements. Children use the same structure as parents and may include their own `children` array to create nested elements |
+| Property   | Type    | Required | Description                                                                                                                                 |
+| ---------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`    | String  | yes      | The label for the tree item                                                                                                                 |
+| `id`       | String  | no       | An optional property to help identify individual tree elements                                                                              |
+| `selected` | Boolean | no       | If set to `true`, this item shows a selected style. When a new item is selected by user click, all other selected items are unselected.     |
+| `expanded` | Boolean | no       | If set to `true`, this item is expanded. Multiple items can be expanded at the same time.                                                   |
+| `status`   | String  | no       | An optional property to assign status. See [Astro Status](http://www.astrouxds.com/library/tree) for valid status options                   |
+| `children` | Array   | no       | An array of child elements. Children use the same structure as parents and may include their own `children` array to create nested elements |
 
 ### Component Events
 
@@ -94,12 +94,12 @@ Tree emits a `tree-updated` event whenever the selected tree item changes. Event
 #### Sample Tree event
 
 ```javascript
-window.addEventListener('tree-updated', (event) => {
+window.addEventListener("tree-updated", (event) => {
   // an array that reflects the current state of the tree
-  console.log('Tree data', event.detail.data);
+  console.log("Tree data", event.detail.data);
 
   // an object representing the currently selected tree item
-  console.log('Selected tree item', event.detail.selected);
+  console.log("Selected tree item", event.detail.selected);
 });
 ```
 

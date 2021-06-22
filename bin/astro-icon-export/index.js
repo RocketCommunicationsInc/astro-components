@@ -142,9 +142,7 @@ class AstroIconExport extends Core {
       this.svgo_inst.optimize(data).then((res) => {
         res.data = this.cleanUpIds(res.data);
 
-        const fileName = prompt("Please enter desired file name: ", 'astro.svg');
-    
-        fs.writeFile(this.iconsPath + fileName, res.data, (err) => {
+        fs.writeFile(`${this.iconsPath}astro.svg`, res.data, (err) => {
           if (err) throw err;
           this.notify('warning', 'Modify svg viewBox to the size of exported icons');
           this.notify('success', "The svg file successfully generated!");

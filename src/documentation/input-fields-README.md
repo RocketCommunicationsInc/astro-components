@@ -5,7 +5,7 @@ Input Fields allow users to enter text or numeric data.
 ## Guidelines
 
 - [Astro UXDS: Input Fields](https://www.astrouxds.com/ui-components/input-field)
-- [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+- [Astro UXDS: Forms and Validation](https://www.astrouxds.com/patterns/forms-and-validation/)
 
 ## Basic HTML Usage
 
