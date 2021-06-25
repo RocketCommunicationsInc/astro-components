@@ -5,22 +5,22 @@
     =========================================================================
 	*/
 
-	/* Astro 5 Simplified Colors */
-	--backgroundColor: var(--colorTertiaryDarken3, #101923);
-	--defaultText: var(--colorWhite, #FFFFFF);
-	--secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
-	--globalAppHeader: var(--colorTertiaryDarken2, #172635);
-	--surfaceElements: #1b2d3e; /* TODO: this is an unofficial Astro color, but a required KM color */
-	--primary: var(--colorSecondary, #4dacff);
+  /* Astro 5 Simplified Colors */
+  --backgroundColor: var(--colorTertiaryDarken3, #101923);
+  --defaultText: var(--colorWhite, #ffffff);
+  --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
+  --globalAppHeader: var(--colorTertiaryDarken2, #172635);
+  --surfaceElements: #1b2d3e; /* TODO: this is an unofficial Astro color, but a required KM color */
+  --primary: var(--colorSecondary, #4dacff);
   --primaryLight: var(--colorSecondaryLighten2, #92cbff);
-  --primaryLightHover: #92cbff4D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
+  --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
   --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
   --primaryDarkHover: #6b8ca5;
-	--primaryElementText: var(--colorTertiaryDarken4, #080c11);
-	--inputBackground: var(--colorWhite, #FFFFFF);
+  --primaryElementText: var(--colorTertiaryDarken4, #080c11);
+  --inputBackground: var(--colorWhite, #ffffff);
   --inputDark: var(--colorTertiaryDarken4, #080c11);
 
-	/* styles */
+  /* styles */
   --fontColor: var(--defaultText);
   --fontLowContrastColor: var(--secondaryText);
   --fontInvertedColor: var(--primary);
@@ -28,8 +28,6 @@
 
   --fontLinkColor: var(--primary);
   --fontLinkHoverColor: var(--primaryLight);
-
-	
 
   /* Status Custom */
   --wcagCompliance: rgba(255, 255, 255, 0);
@@ -46,7 +44,7 @@
     
     Button Colors 
     ==========================================================================
-    For standard and outline buttons
+    For standard and secondary buttons
 
   */
 
@@ -65,16 +63,15 @@
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
 
+  /* Secondary Button Variant */
+  --buttonSecondaryTextColor: var(--primary);
+  --buttonSecondaryBackgroundColor: transparent;
+  --buttonSecondaryBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
-  /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--primary);
-  --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-
-  /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--primaryLight);
-  --buttonOutlineHoverBackgroundColor: transparent;
-  --buttonOutlineHoverBorderColor: var(--primaryLight);
+  /* Secondary Button Variant Hover State */
+  --buttonSecondaryHoverTextColor: var(--primaryLight);
+  --buttonSecondaryHoverBackgroundColor: transparent;
+  --buttonSecondaryHoverBorderColor: var(--primaryLight);
 
   /* 
     
@@ -91,9 +88,9 @@
 
   --controlSelectedTextColor: var(--defaultText);
   --controlSelectedBackgroundColor: var(--primaryDark);
-	--controlSelectedBorderColor: var(--primary);
-	--controlHoverBorderColor: var(--primaryLight);
-	--controlSelectedOutlineBorderColor: var(--primary);
+  --controlSelectedBorderColor: var(--primary);
+  --controlHoverBorderColor: var(--primaryLight);
+  --controlSelectedOutlineBorderColor: var(--primary);
 
   /* 
     
@@ -118,17 +115,17 @@
   */
   --sliderThumbBackgroundColor: var(--primaryDark);
   --sliderThumbBorderColor: var(--inputBackground);
-	--sliderHoverThumbBackgroundColor: var(--primaryDark);
-	--sliderHoverThumbBorderColor: var(--inputBackground);
+  --sliderHoverThumbBackgroundColor: var(--primaryDark);
+  --sliderHoverThumbBorderColor: var(--inputBackground);
 
   --sliderTrackBorderColor: transparent;
   --sliderTrackBackgroundColor: var(--secondaryText);
 
-	--sliderSelectedThumbBorderColor: var(--primaryLight);
-	--sliderSelectedTrackBackgroundColor: var(--primary);
+  --sliderSelectedThumbBorderColor: var(--primaryLight);
+  --sliderSelectedTrackBackgroundColor: var(--primary);
 
-	--sliderThumbBorderSize: 1px;
-	--sliderTrackBorderSize: 1px;
+  --sliderThumbBorderSize: 1px;
+  --sliderTrackBorderSize: 1px;
 
   /* 
     
@@ -140,12 +137,12 @@
   --segmentedButtonBackgroundColor: none;
   --segmentedButtonTextColor: var(--primary);
 
-	/* Segmented Hover */
+  /* Segmented Hover */
   --segmentedButtonHoverBackgroundColor: var(--primaryLight);
-	--segmentedButtonHoverTextColor: var(--primaryElementText);
-	--segmentedButtonHoverBorderColor: var(--primaryLight);
+  --segmentedButtonHoverTextColor: var(--primaryElementText);
+  --segmentedButtonHoverBorderColor: var(--primaryLight);
 
-	/* Segmented Select */
+  /* Segmented Select */
   --segmentedButtonSelectedBackgroundColor: var(--primary);
 
   --segmentedButtonSelectedTextColor: var(--primaryElementText);
@@ -156,7 +153,7 @@
     ==========================================================================
     
   */
-	--selectHoverOptBackgroundColor: var(--primaryLight);
+  --selectHoverOptBackgroundColor: var(--primaryLight);
   /* 
     
     Switch Colors 
@@ -184,7 +181,7 @@
   --popupMenuItemBackgroundColor: var(--primary);
   --popupMenuItemHoverBackgroundColor: var(--primaryLight);
   --popupMenuItemHoverTextColor: var(--primaryElementText);
-  
+
   --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
 
   /* 
@@ -209,16 +206,16 @@
   */
   --clockTextColor: var(--defaultText);
   --clockBackgroundColor: var(--backgroundColor);
-	--clockBorderColor: var(--surfaceElements);
-	--clockLabelColor: var(--defaultText);
+  --clockBorderColor: var(--surfaceElements);
+  --clockLabelColor: var(--defaultText);
 
-	/* 
+  /* 
     
     Modal Colors 
     ==========================================================================
 
   */
-	--modalTitleColor: var(--primaryElementText);
+  --modalTitleColor: var(--primaryElementText);
   --modalTextColor: var(--defaultText);
   --modalBackgroundColor: var(--surfaceElements);
   --modalBorderColor: var(--primary);
@@ -252,21 +249,21 @@
   --treeItemBorderColor: var(--primaryDark);
   --treeAccentColor: var(--primary);
 
-	/* Hover*/
-	--treeHoverBackgroundColor: var(--primaryLight);
-	--treeHoverTextColor: var(--primaryElementText);
+  /* Hover*/
+  --treeHoverBackgroundColor: var(--primaryLight);
+  --treeHoverTextColor: var(--primaryElementText);
   --treeHoverAccentColor: var(--primary);
 
-	/* Selected */
-	--treeSelectedBackgroundColor: var(--surfaceElements);
-	--treeSelectedBorderColor: var(--primaryDark);
+  /* Selected */
+  --treeSelectedBackgroundColor: var(--surfaceElements);
+  --treeSelectedBorderColor: var(--primaryDark);
   --treeSelectedTextColor: var(--defaultText);
   --treeSelectedAccentColor: var(--primary);
 
-	--treeChildrenBackgroundColor: var(--surfaceElements);
-	
-	--treeExpandedBorderColor: var(--backgroundColor);
-	
+  --treeChildrenBackgroundColor: var(--surfaceElements);
+
+  --treeExpandedBorderColor: var(--backgroundColor);
+
   /* 
     
     Tab Colors 
@@ -275,30 +272,29 @@
   */
   --tabTextColor: var(--primary);
   --tabBackgroundColor: transparent;
-	--tabBorderColor: transparent;
-	
-	--tabHoverTextColor: var(--defaultText);
+  --tabBorderColor: transparent;
+
+  --tabHoverTextColor: var(--defaultText);
 
   --tabSelectedTextColor: var(--defaultText);
-	--tabSelectedBorderColor: var(--primary);
-	
-	/* 
+  --tabSelectedBorderColor: var(--primary);
+
+  /* 
     
     Notification Colors 
     ==========================================================================
 
 	*/
-	--notificationTextColor: var(--primaryElementText);
+  --notificationTextColor: var(--primaryElementText);
 
-	/* 
+  /* 
     
     Classification Colors 
     ==========================================================================
 
 	*/
-	--classificationTextColorLight: var(--defaultText);
-	--classificationTextColorDark: var(--primaryElementText);
-
+  --classificationTextColorLight: var(--defaultText);
+  --classificationTextColorDark: var(--primaryElementText);
 
   /* 
     
@@ -323,36 +319,33 @@
   --inputBorderColorAlt: var(--inputDark);
   --inputBorderColorDisabled: #292a2d;
   --inputTextColor: var(--primaryElementText);
-	 
-	/* Input Focus */
-	--inputFocusBorderColor: var(--primary);
-	--inputFocusTextColor: var(--primaryElementText);
 
-	--inputInvalidBorderColor: var(--colorCritical);
-	
-	--inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a92' fill-rule='evenodd'/%3E%3C/svg%3E");
-	--inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%233a87cf' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+  /* Input Focus */
+  --inputFocusBorderColor: var(--primary);
+  --inputFocusTextColor: var(--primaryElementText);
 
-  
-	/* 
+  --inputInvalidBorderColor: var(--colorCritical);
+
+  --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a92' fill-rule='evenodd'/%3E%3C/svg%3E");
+  --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%233a87cf' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+
+  /* 
     
     Icon Default Colors 
     ==========================================================================
     
 	*/
-	
-	--iconDefaultColor: var(--primary);
-	
-	
-	
-	/* 
+
+  --iconDefaultColor: var(--primary);
+
+  /* 
     
     Status Symbols
     ==========================================================================
     
   */
 
-  --statusSymbols: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC');
+  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC");
   /* 
     
     Scrollbar Colors -- Dark
@@ -396,15 +389,14 @@
 
   --timelineRegionSelectedBorderColor: var(--inputBackground);
   --timelineRegionSelectedBackgroundColor: var(--primaryDark);
-	--timelineRegionSelectedTextColor: var(--defaultText);
-	
-	--timelineRegionStatusColorNormal: var(--colorNormal);
-	--timelineRegionStatusColorCritical: var(--colorCritical);
-	--timelineRegionStatusColorSerious: var(--colorSerious);
-	--timelineRegionStatusColorCaution: var(--colorCautiom);
-	--timelineRegionStatusColorStandby: var(--colorStandby);
-	--timelineRegionStatusColorOff: var(--colorOff);
+  --timelineRegionSelectedTextColor: var(--defaultText);
 
+  --timelineRegionStatusColorNormal: var(--colorNormal);
+  --timelineRegionStatusColorCritical: var(--colorCritical);
+  --timelineRegionStatusColorSerious: var(--colorSerious);
+  --timelineRegionStatusColorCaution: var(--colorCautiom);
+  --timelineRegionStatusColorStandby: var(--colorStandby);
+  --timelineRegionStatusColorOff: var(--colorOff);
 
   /* 
     
@@ -419,8 +411,6 @@
   --accordionHoverLabelBackground: rgb(46, 103, 153);
   --accordionColor: rgb(255, 255, 255);
 
-
-
   /* 
     
     TABLE COLORS
@@ -430,22 +420,22 @@
 
   --tableBorderColor: var(--backgroundColor);
 
-	--tableHeaderBackgroundColor: var(--globalAppHeader);
-	--tableHeaderBorderColor: var(--surfaceElements);
+  --tableHeaderBackgroundColor: var(--globalAppHeader);
+  --tableHeaderBorderColor: var(--surfaceElements);
   --tableHeaderTextColor: var(--defaultText);
-  --tableHeaderBoxShadow: 0 0.25rem .5rem rgba(0, 0, 0, 0.45);
-  --tableHeaderAccentColor:  var(--primary);
+  --tableHeaderBoxShadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+  --tableHeaderAccentColor: var(--primary);
 
   --tableRowBackgroundColor: var(--surfaceElements);
   --tableRowTextColor: var(--defaultText);
-	--tableRowBorderColor: var(--backgroundColor);
-	
-	--tableRowHoverBackgroundColor: var(--primaryLightHover);
-	--tableRowHoverTextColor: var(--defaultText);
-  
+  --tableRowBorderColor: var(--backgroundColor);
+
+  --tableRowHoverBackgroundColor: var(--primaryLightHover);
+  --tableRowHoverTextColor: var(--defaultText);
+
   --tableRowSelectedBackgroundColor: var(--backgroundColor);
-	--tableRowSelectedBorderColor: var(--primary);
-	
+  --tableRowSelectedBorderColor: var(--primary);
+
   --tableControlsBackgroundColor: var(--primary);
   --tableFilterBorderColor: var(--primary);
   --tableFilterDisabledBorderColor: var(--backgroundColor);

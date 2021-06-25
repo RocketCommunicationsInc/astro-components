@@ -1,5 +1,5 @@
-import { LitElement, html } from 'lit-element';
-import { RuxIcon } from '@astrouxds/rux-icon';
+import { LitElement, html } from "lit-element";
+import { RuxIcon } from "@astrouxds/rux-icon";
 
 export class RuxButton extends LitElement {
   static get properties() {
@@ -8,18 +8,18 @@ export class RuxButton extends LitElement {
       icon: { type: String },
       iconOnly: { type: Boolean },
       disabled: { type: Boolean },
-      outline: { type: Boolean },
-      type: {type: String},
+      secondary: { type: Boolean },
+      type: { type: String },
     };
   }
   constructor() {
     super();
-    this.size = '';
-    (this.icon = ''), (this.iconOnly = false);
+    this.size = "";
+    (this.icon = ""), (this.iconOnly = false);
     this.disabled = false;
-    this.outline = false;
-    this.type = 'button';
-    this.addEventListener('click', this.clickHandler);
+    this.secondary = false;
+    this.type = "button";
+    this.addEventListener("click", this.clickHandler);
   }
 
   clickHandler(e) {
@@ -93,16 +93,16 @@ export class RuxButton extends LitElement {
         .rux-button[disabled]:focus {
           outline: none;
         }
-        .rux-button:not(.rux-button--outline) {
+        .rux-button:not(.rux-button--secondary) {
           border: 1px solid var(--buttonBorderColor);
           background-color: var(--buttonBackgroundColor);
         }
 
-        /* Outline Button Specific Styles */
-        .rux-button--outline {
-          color: var(--buttonOutlineTextColor);
-          background-color: var(--buttonOutlineBackgroundColor);
-          border: 1px solid var(--buttonOutlineBorderColor);
+        /* Secondary Button Specific Styles */
+        .rux-button--secondary {
+          color: var(--buttonSecondaryTextColor);
+          background-color: var(--buttonSecondaryBackgroundColor);
+          border: 1px solid var(--buttonSecondaryBorderColor);
         }
 
         /* 
@@ -114,40 +114,38 @@ export class RuxButton extends LitElement {
           border-color: var(--buttonActiveBorderColor) !important;
           background-color: var(--buttonActiveBackgroundColor) !important;
         }
-        
-        .rux-button--outline:active:not([hover]):not([disabled]) {
-          border-color: var(--buttonOutlineBorderColor) !important;
-          background-color: var(--buttonOutlineBackgroundColor) !important;
-        }
 
+        .rux-button--secondary:active:not([hover]):not([disabled]) {
+          border-color: var(--buttonSecondaryBorderColor) !important;
+          background-color: var(--buttonSecondaryBackgroundColor) !important;
+        }
 
         /* 
           
           Hover States
         
         */
-        .rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
+        .rux-button:hover:not([active]):not([disabled]):not(.rux-button--secondary) {
           border-color: var(--buttonHoverBorderColor);
           background-color: var(--buttonHoverBackgroundColor);
-				}
+        }
 
-        .rux-button--outline:hover:not([disabled]) {
-          color: var(--buttonOutlineHoverTextColor);
-          background-color: var(--buttonOutlineHoverBackgroundColor);
-          border-color: var(--buttonOutlineHoverBorderColor);
-				}
+        .rux-button--secondary:hover:not([disabled]) {
+          color: var(--buttonSecondaryHoverTextColor);
+          background-color: var(--buttonSecondaryHoverBackgroundColor);
+          border-color: var(--buttonSecondaryHoverBorderColor);
+        }
 
-				.rux-button:hover rux-icon {
-					fill: var(--buttonHoverTextColor);
-				}
+        .rux-button:hover rux-icon {
+          fill: var(--buttonHoverTextColor);
+        }
 
-				.rux-button--outline:hover rux-icon {
-					fill: var(--buttonOutlineHoverTextColor);
-				}
-				.rux-button--outline:hover ::slotted(rux-icon){
-					fill: var(--buttonOutlineHoverTextColor);
-				}
-				
+        .rux-button--secondary:hover rux-icon {
+          fill: var(--buttonSecondaryHoverTextColor);
+        }
+        .rux-button--secondary:hover ::slotted(rux-icon) {
+          fill: var(--buttonSecondaryHoverTextColor);
+        }
 
         /* 
           
@@ -208,36 +206,37 @@ export class RuxButton extends LitElement {
           width: 1.75rem;
           margin-left: -0.8rem;
           /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
-				}
-				
-				.rux-button rux-icon {
-					fill: var(--buttonTextColor);
-				}
+        }
 
-				.rux-button--outline rux-icon,
-				.rux-button--outline rux-icon svg > use {
-					fill: var(--buttonOutlineTextColor);
-				}
-				.rux-button ::slotted(rux-icon){
-					fill: var(--buttonTextColor);
-				}
-				.rux-button--outline ::slotted(rux-icon){
-					fill: var(--buttonOutlineTextColor);
-				}
+        .rux-button rux-icon {
+          fill: var(--buttonTextColor);
+        }
 
+        .rux-button--secondary rux-icon,
+        .rux-button--secondary rux-icon svg > use {
+          fill: var(--buttonSecondaryTextColor);
+        }
+        .rux-button ::slotted(rux-icon) {
+          fill: var(--buttonTextColor);
+        }
+        .rux-button--secondary ::slotted(rux-icon) {
+          fill: var(--buttonSecondaryTextColor);
+        }
       </style>
 
       <button
         class="rux-button
-          ${this.size ? `rux-button--${this.size}` : ''} 
-          ${this.iconOnly ? `rux-button--icon-only` : ''} 
-          ${this.outline ? 'rux-button--outline' : ''}"
+          ${this.size ? `rux-button--${this.size}` : ""} 
+          ${this.iconOnly ? `rux-button--icon-only` : ""} 
+          ${this.secondary ? "rux-button--secondary" : ""}"
         ?disabled="${this.disabled}"
         ?type="${this.type}"
       >
         <rux-icon
           icon="${this.icon}"
-          color="${this.outline ? 'var(--buttonOutlineTextColor)' : 'var(--buttonTextColor)'}"
+          color="${this.secondary
+            ? "var(--buttonSecondaryTextColor)"
+            : "var(--buttonTextColor)"}"
           ?hidden="${!this.icon}"
         ></rux-icon>
         <slot></slot>
@@ -245,4 +244,4 @@ export class RuxButton extends LitElement {
     `;
   }
 }
-customElements.define('rux-button', RuxButton);
+customElements.define("rux-button", RuxButton);

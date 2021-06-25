@@ -41,8 +41,8 @@ import { RuxButton } from "@astrouxds/rux-button/rux-button.js";
 Pass properties as attributes of the Astro Button custom element:
 
 ```xml
-<rux-button size="large" disabled outline>
-  Large disabled outline button
+<rux-button size="large" disabled secondary>
+  Large disabled secondary button
 </rux-button>
 
 ```
@@ -68,13 +68,13 @@ In this situation, you do not need to specify a size for the icon component -- t
 
 ### Properties
 
-| Property   | Type    | Default | Required | Description                                                                                                                                                                                                                                                                                                                    |
-| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.                                                                                                                                      |
-| `outline`  | Boolean | `false` | No       | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use an outline button for the less preferred option in Ok/Cancel button pairings.                                                                         |
-| `iconOnly` | Boolean | `false` | No       | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Requires the `icon` attribute to be set as well.                                                                                                                     |
-| `icon`     | String  | `''`    | No       | Displays an Astro icon matching this string to the left of the button text. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols). Required when the `iconOnly` attribute is `true`. Note that you can also use the Slot to add an icon. |
-| `size`     | String  | `''`    | No       | Displays the button as a `'small'` or `'large'` variant.                                                                                                                                                                                                                                                                       |
+| Property    | Type    | Default | Required | Description                                                                                                                                                                                                                                                                                                                    |
+| ----------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `disabled`  | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.                                                                                                                                      |
+| `secondary` | Boolean | `false` | No       | Displays an button visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use a secondary button for the less preferred option in Ok/Cancel button pairings.                                                                          |
+| `iconOnly`  | Boolean | `false` | No       | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Requires the `icon` attribute to be set as well.                                                                                                                     |
+| `icon`      | String  | `''`    | No       | Displays an Astro icon matching this string to the left of the button text. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols). Required when the `iconOnly` attribute is `true`. Note that you can also use the Slot to add an icon. |
+| `size`      | String  | `''`    | No       | Displays the button as a `'small'` or `'large'` variant.                                                                                                                                                                                                                                                                       |
 
 ---
 
@@ -97,8 +97,8 @@ Configure the component using native HTML attributes or [BEM-style](http://getbe
 ```xml
 <button class="rux-button">Submit</button>
 
-<button class="rux-button rux-button--large rux-button--outline" disabled>
-  Large disabled outline button
+<button class="rux-button rux-button--large rux-button--secondary" disabled>
+  Large disabled secondary button
 </button>
 ```
 
@@ -127,7 +127,7 @@ Otherwise, wrap your icon SVG in an HTML element with the [BEM-style](http://get
 | Attribute               | Type    | Default | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ----------------------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `disabled`              | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Icon takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.                                                                                                                                                                                                                                 |
-| `outline`               | Boolean | `false` | No       | Displays an outlined visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use an outline button for the less preferred option in Ok/Cancel button pairings.                                                                                                                                                                    |
+| `secondary`             | Boolean | `false` | No       | Displays a button visual treatment suitable for secondary actions, such as a non-preferred alternative to an action identified by a standard button. For example, use an secondary button for the less preferred option in Ok/Cancel button pairings.                                                                                                                                                                     |
 | `rux-button--icon-only` | Class   | —       | No       | Visually hides all text on the button, suitable for use cases where space is at a premium and the button intent is unambiguous, like a Play/Pause button. Must be used with the `rux-button--icon` class.                                                                                                                                                                                                                 |
 | `rux-button--icon`      | Class   | —       | No       | Displays an Astro icon matching this string to the left of the button text. Required when element also has the class `rux-button--icon-only`. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) Note: Astro UXDS icons are only available when using the Web Component usage pattern, which imports the `<rux-icon>` component. |
 | `rux-button--size`      | Class   | —       | No       | Displays the button as a `'small'` or `'large'` variant.                                                                                                                                                                                                                                                                                                                                                                  |
@@ -145,9 +145,9 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 ##### **4.0**
 
 - Swapped kebab-cased `icon-only` attribute for standard camelCase `iconOnly`
-- Deprecated `type` attribute in favor of separate `size`, `iconOnly`, and `outline` attributes. `default` type is No longer supported.
+- Deprecated `type` attribute in favor of separate `size`, `iconOnly`, and `secondary` attributes. `default` type is No longer supported.
 - Fixed the width of the small icon-only button and ensured icon-only buttons show No text, even if text is provided
-- Fixed outline button icon color
+- Fixed secondary button icon color
 - Re-enabled missing focus styles on buttons.
 - Removed undocumented critical button style.
 - Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
