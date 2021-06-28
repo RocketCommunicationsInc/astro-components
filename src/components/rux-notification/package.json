@@ -4,7 +4,7 @@
     "email": "uxsupport@rocketcom.com"
   },
   "dependencies": {
-    "@astrouxds/rux-icon": "^5.0.0",
+    "@astrouxds/rux-icon": "^5.0.2",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "lit-element": "^2.1.0"
   },
@@ -28,6 +28,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "5.0.0",
+  "version": "5.0.1",
   "gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }
