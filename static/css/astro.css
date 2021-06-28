@@ -313,7 +313,7 @@
     
     Button Colors 
     ==========================================================================
-    For standard and outline buttons
+    For standard and secondary buttons
     
   */
   /* Button */
@@ -328,14 +328,14 @@
   --buttonActiveControlTextColor: var(--defaultText);
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
-  /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--primaryDark);
-  --buttonOutlineHoverBackgroundColor: transparent;
-  --buttonOutlineHoverBorderColor: var(--primaryDark);
+  /* Secondary Button Variant */
+  --buttonSecondaryTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonSecondaryBackgroundColor: transparent;
+  --buttonSecondaryBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  /* Secondary Button Variant Hover State */
+  --buttonSecondaryHoverTextColor: var(--primaryDark);
+  --buttonSecondaryHoverBackgroundColor: transparent;
+  --buttonSecondaryHoverBorderColor: var(--primaryDark);
   /* 
     
     Control Colors 
@@ -649,19 +649,19 @@ li.light-theme {
 	*/
   /* Astro 5 Simplified Colors */
   --backgroundColor: var(--colorTertiaryDarken3, #101923);
-  --defaultText: var(--colorWhite, #FFFFFF);
+  --defaultText: var(--colorWhite, #ffffff);
   --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
   --globalAppHeader: var(--colorTertiaryDarken2, #172635);
   --surfaceElements: #1b2d3e;
   /* TODO: this is an unofficial Astro color, but a required KM color */
   --primary: var(--colorSecondary, #4dacff);
   --primaryLight: var(--colorSecondaryLighten2, #92cbff);
-  --primaryLightHover: #92cbff4D;
+  --primaryLightHover: #92cbff4d;
   /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
   --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
   --primaryDarkHover: #6b8ca5;
   --primaryElementText: var(--colorTertiaryDarken4, #080c11);
-  --inputBackground: var(--colorWhite, #FFFFFF);
+  --inputBackground: var(--colorWhite, #ffffff);
   --inputDark: var(--colorTertiaryDarken4, #080c11);
   /* styles */
   --fontColor: var(--defaultText);
@@ -683,7 +683,7 @@ li.light-theme {
     
     Button Colors 
     ==========================================================================
-    For standard and outline buttons
+    For standard and secondary buttons
 
   */
   /* Button */
@@ -698,14 +698,14 @@ li.light-theme {
   --buttonActiveControlTextColor: var(--defaultText);
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
-  /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--primary);
-  --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--primaryLight);
-  --buttonOutlineHoverBackgroundColor: transparent;
-  --buttonOutlineHoverBorderColor: var(--primaryLight);
+  /* Secondary Button Variant */
+  --buttonSecondaryTextColor: var(--primary);
+  --buttonSecondaryBackgroundColor: transparent;
+  --buttonSecondaryBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  /* Secondary Button Variant Hover State */
+  --buttonSecondaryHoverTextColor: var(--primaryLight);
+  --buttonSecondaryHoverBackgroundColor: transparent;
+  --buttonSecondaryHoverBorderColor: var(--primaryLight);
   /* 
     
     Control Colors 
@@ -936,7 +936,7 @@ li.light-theme {
     ==========================================================================
     
   */
-  --statusSymbols: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC');
+  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC");
   /* 
     
     Scrollbar Colors -- Dark
@@ -1002,8 +1002,8 @@ li.light-theme {
   --tableHeaderBackgroundColor: var(--globalAppHeader);
   --tableHeaderBorderColor: var(--surfaceElements);
   --tableHeaderTextColor: var(--defaultText);
-  --tableHeaderBoxShadow: 0 0.25rem .5rem rgba(0, 0, 0, 0.45);
-  --tableHeaderAccentColor:  var(--primary);
+  --tableHeaderBoxShadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+  --tableHeaderAccentColor: var(--primary);
   --tableRowBackgroundColor: var(--surfaceElements);
   --tableRowTextColor: var(--defaultText);
   --tableRowBorderColor: var(--backgroundColor);
@@ -1246,15 +1246,15 @@ label {
 .rux-button:focus {
   outline: none; }
 
-.rux-button:not(.rux-button--outline) {
+.rux-button:not(.rux-button--secondary) {
   border: 1px solid var(--buttonBorderColor);
   background-color: var(--buttonBackgroundColor); }
 
-/* Outline Button Specific Styles */
-.rux-button--outline {
-  color: var(--buttonOutlineTextColor);
-  background-color: var(--buttonOutlineBackgroundColor);
-  border: 1px solid var(--buttonOutlineBorderColor); }
+/* Secondary Button Specific Styles */
+.rux-button--secondary {
+  color: var(--buttonSecondaryTextColor);
+  background-color: var(--buttonSecondaryBackgroundColor);
+  border: 1px solid var(--buttonSecondaryBorderColor); }
 
 /* 
   
@@ -1265,23 +1265,23 @@ label {
   border-color: var(--buttonActiveBorderColor) !important;
   background-color: var(--buttonActiveBackgroundColor) !important; }
 
-.rux-button--outline:active:not([hover]):not([disabled]) {
-  border-color: var(--buttonOutlineBorderColor) !important;
-  background-color: var(--buttonOutlineBackgroundColor) !important; }
+.rux-button--secondary:active:not([hover]):not([disabled]) {
+  border-color: var(--buttonSecondaryBorderColor) !important;
+  background-color: var(--buttonSecondaryBackgroundColor) !important; }
 
 /* 
   
   Hover States
 
 */
-.rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
+.rux-button:hover:not([active]):not([disabled]):not(.rux-button--secondary) {
   border-color: var(--buttonHoverBorderColor);
   background-color: var(--buttonHoverBackgroundColor); }
 
-.rux-button--outline:hover:not([disabled]) {
-  color: var(--buttonOutlineTextColor);
-  background-color: var(--buttonOutlineHoverBackgroundColor);
-  border-color: var(--buttonOutlineHoverBorderColor); }
+.rux-button--secondary:hover:not([disabled]) {
+  color: var(--buttonSecondaryTextColor);
+  background-color: var(--buttonSecondaryHoverBackgroundColor);
+  border-color: var(--buttonSecondaryHoverBorderColor); }
 
 /* 
   
@@ -1333,7 +1333,7 @@ label {
   color: var(--buttonTextColor); }
 
 .rux-button.rux-button--critical,
-.rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+.rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--secondary) {
   background-color: rgb(204, 45, 45) !important;
   background-color: var(--colorCriticalDarken1) !important;
   border-color: rgb(204, 45, 45) !important;
