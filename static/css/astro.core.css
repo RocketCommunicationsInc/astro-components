@@ -13,7 +13,8 @@
   --smallLabelFontSize: 0.875rem;
   --largeLabelFontSize: 1.125rem;
   /* Typography */
-  --fontFamily: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --fontFamily: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --fontSize: 1rem;
   /* 16px */
   --fontSizeXL: 1.125rem;
@@ -21,7 +22,8 @@
   --fontSizeMD: 0.875rem;
   --fontSizeSM: 0.75rem;
   --fontSizeXS: 0.65rem;
-  --fontFamilyLight: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --fontFamilyLight: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --fontFamilyMono: "Roboto Mono", monospace;
   --colorBlack: rgb(0, 0, 0);
   --colorWhite: rgb(255, 255, 255);
@@ -42,12 +44,12 @@
   --statusLightNormal: rgb(0, 226, 0);
   --statusLightStandby: rgb(100, 217, 255);
   --statusLightOff: rgb(142, 154, 163);
-  --classificationTopSecretSCIBackgroundColor: rgba(252,232,58);
-  --classificationTopSecretBackgroundColor: rgba(255,140,0);
-  --classificationSecretBackgroundColor: rgba(200,16,46);
-  --classificationConfidentialBackgroundColor: rgba(0,51,160);
-  --classificationControlledBackgroundColor: rgba(80,43,133);
-  --classificationUnclassifiedBackgroundColor: rgba(0,122,51);
+  --classificationTopSecretSCIBackgroundColor: rgba(252, 232, 58);
+  --classificationTopSecretBackgroundColor: rgba(255, 140, 0);
+  --classificationSecretBackgroundColor: rgba(200, 16, 46);
+  --classificationConfidentialBackgroundColor: rgba(0, 51, 160);
+  --classificationControlledBackgroundColor: rgba(80, 43, 133);
+  --classificationUnclassifiedBackgroundColor: rgba(0, 122, 51);
   --colorTag1: rgb(25, 199, 202);
   --colorTag2: rgb(120, 112, 208);
   --colorTag3: rgb(160, 13, 190);
@@ -62,7 +64,7 @@
   --colorPrimaryDarken3: rgb(0, 36, 57);
   --colorPrimaryDarken4: rgb(0, 18, 29);
   --colorSecondaryLighten1: rgb(113, 189, 255);
-  --colorSecondaryLighten2: rgb(146,203,255);
+  --colorSecondaryLighten2: rgb(146, 203, 255);
   --colorSecondaryLighten3: rgb(184, 222, 255);
   --colorSecondaryLighten4: rgb(219, 238, 255);
   --colorSecondaryDarken1: rgb(62, 138, 204);
@@ -74,7 +76,7 @@
   --colorTertiaryLighten3: rgb(169, 178, 188);
   --colorTertiaryLighten4: rgb(212, 217, 222);
   --colorTertiaryDarken1: rgb(31, 51, 71);
-  --colorTertiaryDarken2: rgb(24, 38, 53);
+  --colorTertiaryDarken2: rgb(23, 38, 53);
   --colorTertiaryDarken3: rgb(16, 25, 35);
   --colorTertiaryDarken4: rgb(8, 13, 18);
   --colorQuaternaryLighten1: rgb(217, 222, 233);
@@ -649,19 +651,19 @@ li.light-theme {
 	*/
   /* Astro 5 Simplified Colors */
   --backgroundColor: var(--colorTertiaryDarken3, #101923);
-  --defaultText: var(--colorWhite, #FFFFFF);
+  --defaultText: var(--colorWhite, #ffffff);
   --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
   --globalAppHeader: var(--colorTertiaryDarken2, #172635);
   --surfaceElements: #1b2d3e;
   /* TODO: this is an unofficial Astro color, but a required KM color */
   --primary: var(--colorSecondary, #4dacff);
   --primaryLight: var(--colorSecondaryLighten2, #92cbff);
-  --primaryLightHover: #92cbff4D;
+  --primaryLightHover: #92cbff4d;
   /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
   --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
   --primaryDarkHover: #6b8ca5;
   --primaryElementText: var(--colorTertiaryDarken4, #080c11);
-  --inputBackground: var(--colorWhite, #FFFFFF);
+  --inputBackground: var(--colorWhite, #ffffff);
   --inputDark: var(--colorTertiaryDarken4, #080c11);
   /* styles */
   --fontColor: var(--defaultText);
@@ -781,10 +783,12 @@ li.light-theme {
     ==========================================================================
 
   */
-  --switchOffColor: var(--secondaryText);
+  --switchOffColor: rgb(16, 25, 35);
+  --switchOffBorderColor: rgb(43, 101, 155);
   --switchOnColor: var(--primary);
-  --switchHoverOnColor: var(--primaryLight);
-  --switchHoverOffColor: var(--primaryLight);
+  /* changed below */
+  --switchHoverOnColor: var(--primary);
+  --switchHoverOffColor: rgb(77, 172, 255);
   --switchDisabledOnColor: var(--primary);
   --switchDisabledOffColor: var(--secondaryText);
   /* 
@@ -936,7 +940,7 @@ li.light-theme {
     ==========================================================================
     
   */
-  --statusSymbols: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC');
+  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC");
   /* 
     
     Scrollbar Colors -- Dark
@@ -1002,8 +1006,8 @@ li.light-theme {
   --tableHeaderBackgroundColor: var(--globalAppHeader);
   --tableHeaderBorderColor: var(--surfaceElements);
   --tableHeaderTextColor: var(--defaultText);
-  --tableHeaderBoxShadow: 0 0.25rem .5rem rgba(0, 0, 0, 0.45);
-  --tableHeaderAccentColor:  var(--primary);
+  --tableHeaderBoxShadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+  --tableHeaderAccentColor: var(--primary);
   --tableRowBackgroundColor: var(--surfaceElements);
   --tableRowTextColor: var(--defaultText);
   --tableRowBorderColor: var(--backgroundColor);
@@ -1022,7 +1026,8 @@ li.dark-theme {
 h1,
 h2,
 h3 {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-weight: 400;
   color: var(--defaultText);
@@ -1133,7 +1138,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   color: white;
@@ -1221,7 +1227,8 @@ label {
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
   color: var(--buttonTextColor);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   white-space: nowrap;
@@ -1483,7 +1490,8 @@ label {
   color: var(--colorCritical);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-weight: bold;
   margin: 0;
@@ -1498,7 +1506,8 @@ label {
   color: var(--secondaryText);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   letter-spacing: 0.5px; }
@@ -1512,7 +1521,8 @@ label {
   color: var(--colorCritical);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-weight: bold; }
 
@@ -1555,7 +1565,8 @@ label {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize);
@@ -1598,7 +1609,8 @@ label {
   border: 1px solid transparent;
   border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
@@ -1614,7 +1626,8 @@ label {
 .rux-form-field textarea:-ms-input-placeholder {
   font-size: 1rem;
   font-weight: normal;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily); }
 
 .rux-form-field input[type="date"]::-webkit-inner-spin-button,
@@ -1855,7 +1868,8 @@ label {
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
   color: var(--inputDark);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   font-size: 1rem;
