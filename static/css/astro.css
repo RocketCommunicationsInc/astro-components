@@ -315,7 +315,7 @@
     
     Button Colors 
     ==========================================================================
-    For standard and outline buttons
+    For standard and secondary buttons
     
   */
   /* Button */
@@ -330,14 +330,14 @@
   --buttonActiveControlTextColor: var(--defaultText);
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
-  /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--colorPrimary, rgb(0, 90, 143));
-  --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--primaryDark);
-  --buttonOutlineHoverBackgroundColor: transparent;
-  --buttonOutlineHoverBorderColor: var(--primaryDark);
+  /* Secondary Button Variant */
+  --buttonSecondaryTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonSecondaryBackgroundColor: transparent;
+  --buttonSecondaryBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  /* Secondary Button Variant Hover State */
+  --buttonSecondaryHoverTextColor: var(--primaryDark);
+  --buttonSecondaryHoverBackgroundColor: transparent;
+  --buttonSecondaryHoverBorderColor: var(--primaryDark);
   /* 
     
     Control Colors 
@@ -687,7 +687,7 @@ li.light-theme {
     
     Button Colors 
     ==========================================================================
-    For standard and outline buttons
+    For standard and secondary buttons
 
   */
   /* Button */
@@ -702,14 +702,14 @@ li.light-theme {
   --buttonActiveControlTextColor: var(--defaultText);
   --buttonActiveBackgroundColor: var(--primary);
   --buttonActiveBorderColor: var(--primary);
-  /* Outline Button Variant */
-  --buttonOutlineTextColor: var(--primary);
-  --buttonOutlineBackgroundColor: transparent;
-  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
-  /* Outline Button Variant Hover State */
-  --buttonOutlineHoverTextColor: var(--primaryLight);
-  --buttonOutlineHoverBackgroundColor: transparent;
-  --buttonOutlineHoverBorderColor: var(--primaryLight);
+  /* Secondary Button Variant */
+  --buttonSecondaryTextColor: var(--primary);
+  --buttonSecondaryBackgroundColor: transparent;
+  --buttonSecondaryBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  /* Secondary Button Variant Hover State */
+  --buttonSecondaryHoverTextColor: var(--primaryLight);
+  --buttonSecondaryHoverBackgroundColor: transparent;
+  --buttonSecondaryHoverBorderColor: var(--primaryLight);
   /* 
     
     Control Colors 
@@ -1255,15 +1255,15 @@ label {
 .rux-button:focus {
   outline: none; }
 
-.rux-button:not(.rux-button--outline) {
+.rux-button:not(.rux-button--secondary) {
   border: 1px solid var(--buttonBorderColor);
   background-color: var(--buttonBackgroundColor); }
 
-/* Outline Button Specific Styles */
-.rux-button--outline {
-  color: var(--buttonOutlineTextColor);
-  background-color: var(--buttonOutlineBackgroundColor);
-  border: 1px solid var(--buttonOutlineBorderColor); }
+/* Secondary Button Specific Styles */
+.rux-button--secondary {
+  color: var(--buttonSecondaryTextColor);
+  background-color: var(--buttonSecondaryBackgroundColor);
+  border: 1px solid var(--buttonSecondaryBorderColor); }
 
 /* 
   
@@ -1274,23 +1274,23 @@ label {
   border-color: var(--buttonActiveBorderColor) !important;
   background-color: var(--buttonActiveBackgroundColor) !important; }
 
-.rux-button--outline:active:not([hover]):not([disabled]) {
-  border-color: var(--buttonOutlineBorderColor) !important;
-  background-color: var(--buttonOutlineBackgroundColor) !important; }
+.rux-button--secondary:active:not([hover]):not([disabled]) {
+  border-color: var(--buttonSecondaryBorderColor) !important;
+  background-color: var(--buttonSecondaryBackgroundColor) !important; }
 
 /* 
   
   Hover States
 
 */
-.rux-button:hover:not([active]):not([disabled]):not(.rux-button--outline) {
+.rux-button:hover:not([active]):not([disabled]):not(.rux-button--secondary) {
   border-color: var(--buttonHoverBorderColor);
   background-color: var(--buttonHoverBackgroundColor); }
 
-.rux-button--outline:hover:not([disabled]) {
-  color: var(--buttonOutlineTextColor);
-  background-color: var(--buttonOutlineHoverBackgroundColor);
-  border-color: var(--buttonOutlineHoverBorderColor); }
+.rux-button--secondary:hover:not([disabled]) {
+  color: var(--buttonSecondaryTextColor);
+  background-color: var(--buttonSecondaryHoverBackgroundColor);
+  border-color: var(--buttonSecondaryHoverBorderColor); }
 
 /* 
   
@@ -1342,7 +1342,7 @@ label {
   color: var(--buttonTextColor); }
 
 .rux-button.rux-button--critical,
-.rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+.rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--secondary) {
   background-color: rgb(204, 45, 45) !important;
   background-color: var(--colorCriticalDarken1) !important;
   border-color: rgb(204, 45, 45) !important;

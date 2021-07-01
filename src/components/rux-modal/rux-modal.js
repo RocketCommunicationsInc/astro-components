@@ -1,6 +1,6 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from "lit-element";
 /* eslint-disable no-unused-vars */
-import { RuxButton } from '../rux-button/rux-button.js';
+import { RuxButton } from "../rux-button/rux-button.js";
 /* eslint-enable no-unused-vars */
 
 export class RuxModal extends LitElement {
@@ -29,10 +29,10 @@ export class RuxModal extends LitElement {
   constructor() {
     super();
     this.open = false;
-    this.message = '';
-    this.title = '';
-    this.confirmText = '';
-    this.denyText = '';
+    this.message = "";
+    this.title = "";
+    this.confirmText = "";
+    this.denyText = "";
   }
   connectedCallback() {
     super.connectedCallback();
@@ -40,19 +40,21 @@ export class RuxModal extends LitElement {
     // in the event neither Confirm/Deny text is supplied provide
     // a default cancel button to get out of the modal
     if (!this.denyText && !this.confirmText) {
-      this.denyText = 'Cancel';
+      this.denyText = "Cancel";
       console.warn(
-          'No confirm or deny actions have been passed to the modal dialog box. User has been presented with a Cancel button'
+        "No confirm or deny actions have been passed to the modal dialog box. User has been presented with a Cancel button"
       );
     }
   }
   updated() {
     // get the total button set and set the last button as default
     // and add focus
-    const buttonSet = this.shadowRoot.querySelectorAll('rux-button:not([hidden])');
+    const buttonSet = this.shadowRoot.querySelectorAll(
+      "rux-button:not([hidden])"
+    );
     if (buttonSet.length > 0) {
       const defaultButton = buttonSet[buttonSet.length - 1];
-      defaultButton.setAttribute('tabindex', 0);
+      defaultButton.setAttribute("tabindex", 0);
       defaultButton.focus();
     } else {
     }
@@ -60,15 +62,15 @@ export class RuxModal extends LitElement {
 
   _handleModalChoice(e) {
     // convert string value to boolean
-    const choice = e.currentTarget.dataset.value === 'true';
+    const choice = e.currentTarget.dataset.value === "true";
 
     // dispatch event
     this.dispatchEvent(
-        new CustomEvent('modalClosed', {
-          detail: { confirm: choice },
-          bubbles: true,
-          composed: true,
-        })
+      new CustomEvent("modalClosed", {
+        detail: { confirm: choice },
+        bubbles: true,
+        composed: true,
+      })
     );
 
     // close dialog
@@ -138,8 +140,8 @@ export class RuxModal extends LitElement {
 
           user-select: none;
 
-          box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 3px rgba(0, 0, 0, 0.12),
-            0 4px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+            0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
         }
 
         .rux-modal__titlebar {
@@ -187,7 +189,7 @@ export class RuxModal extends LitElement {
         }
 
         .rux-modal::before {
-          content: '';
+          content: "";
           position: fixed;
           top: 0;
           left: 0;
@@ -204,12 +206,10 @@ export class RuxModal extends LitElement {
             <h1>${this.title}</h1>
           </header>
           <div class="rux-modal__content">
-            <div class="rux-modal__message">
-              ${this.message}
-            </div>
+            <div class="rux-modal__message">${this.message}</div>
             <div class="rux-button-group">
               <rux-button
-                ?outline="${this.confirmText.length > 0}"
+                ?secondary="${this.confirmText.length > 0}"
                 @click="${this._handleModalChoice}"
                 data-value="false"
                 ?hidden="${!this.denyText}"
@@ -232,4 +232,4 @@ export class RuxModal extends LitElement {
     `;
   }
 }
-customElements.define('rux-modal', RuxModal);
+customElements.define("rux-modal", RuxModal);
