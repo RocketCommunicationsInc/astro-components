@@ -284,14 +284,14 @@
 	*/
   /* Astro 5 Simplified Color Palette */
   --backgroundColor: var(--colorQuaternaryLighten3, #eaeef4);
-  --defaultText: var(--colorQuaternaryDarken4 ,#292A2D);
-  --secondaryText: var(--colorQuaternaryDarken3, #51555B);
+  --defaultText: var(--colorQuaternaryDarken4, #292a2d);
+  --secondaryText: var(--colorQuaternaryDarken3, #51555b);
   --globalAppHeader: var(--colorTertiaryDarken2, #172635);
   --surfaceElements: var(--colorWhite, #ffffff);
-  --primary: var(--colorPrimary, #005A8F);
-  --primaryLight: var(--colorPrimaryLighten1, #2F7AA7);
+  --primary: var(--colorPrimary, #005a8f);
+  --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
   --primaryDark: var(--colorPrimaryDarken1, #004872);
-  --primaryDarkHover: #0048724D;
+  --primaryDarkHover: #0048724d;
   /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
   --primaryElementText: var(--colorWhite, #ffffff);
   --inputBackground: var(--colorWhite, #ffffff);
@@ -396,7 +396,7 @@
   --sliderSelectedThumbBorderColor: var(--primaryLight);
   --sliderSelectedTrackBackgroundColor: var(--primary);
   --sliderThumbBorderSize: 1px;
-  --sliderTrackBorderSize: .25px;
+  --sliderTrackBorderSize: 0.25px;
   /* 
     
     Segmented Button Colors 
@@ -420,19 +420,21 @@
     
   */
   --selectHoverOptBackgroundColor: var(--primaryDark);
-  --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --selectCaret: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
   /* 
     
     Switch Colors 
     ==========================================================================
 
   */
-  --switchOffColor: var(--secondaryText);
+  --switchOffColor: rgb(234, 238, 244);
+  --switchOffBorderColor: rgb(100, 156, 189);
   --switchOnColor: var(--primary);
-  --switchHoverOnColor: var(--primaryDark);
-  --switchHoverOffColor: var(--primaryDark);
+  --switchHoverOnColor: rgb(0, 90, 143);
+  --switchHoverOffColor: var(--primary);
   --switchDisabledOnColor: var(--primary);
   --switchDisabledOffColor: var(--secondaryText);
+  --switchButtonHoverOffColor: rgb(0, 72, 114);
   /* 
     
     Push Button Colors 
@@ -626,14 +628,14 @@
   --tableHeaderBackgroundColor: var(--globalAppHeader);
   --tableHeaderBorderColor: var(--surfaceElements);
   --tableHeaderTextColor: var(--primaryElementText);
-  --tableHeaderBoxShadow:  0 0.1rem .45rem rgba(0, 0, 0, 0.2);
+  --tableHeaderBoxShadow: 0 0.1rem 0.45rem rgba(0, 0, 0, 0.2);
   --tableHeaderAccentColor: var(--primary);
   --tableRowBackgroundColor: var(--surfaceElements);
   --tableRowBorderColor: var(--backgroundColor);
   --tableRowTextColor: var(--defaultText);
   --tableRowHoverBackgroundColor: var(--primaryDarkHover);
   --tableRowHoverTextColor: var(--defaultText);
-  --tableRowSelectedBackgroundColor:  var(--backgroundColor);
+  --tableRowSelectedBackgroundColor: var(--backgroundColor);
   --tableRowSelectedBorderColor: var(--primary);
   --tableControlsBackgroundColor: var(--primary);
   --tableFilterBorderColor: var(--primary);
@@ -786,9 +788,9 @@ li.light-theme {
   --switchOffColor: rgb(16, 25, 35);
   --switchOffBorderColor: rgb(43, 101, 155);
   --switchOnColor: var(--primary);
-  /* changed below */
   --switchHoverOnColor: var(--primary);
-  --switchHoverOffColor: rgb(77, 172, 255);
+  --switchHoverOffColor: var(--primary);
+  --switchButtonHoverOffColor: rgb(146, 203, 255);
   --switchDisabledOnColor: var(--primary);
   --switchDisabledOffColor: var(--secondaryText);
   /* 

@@ -160,15 +160,12 @@
     ==========================================================================
 
   */
-  // --switchOffColor: var(--secondaryText);
-  --switchOffColor: rgb(16, 25, 35);
+  --switchOffColor: var(--backgroundColor);
   --switchOffBorderColor: rgb(43, 101, 155);
   --switchOnColor: var(--primary);
-  /* changed below */
-  // --switchHoverOnColor: var(--primaryLight);
   --switchHoverOnColor: var(--primary);
-  // --switchHoverOffColor: var(--primaryLight);
-  --switchHoverOffColor: rgb(77, 172, 255);
+  --switchHoverOffColor: var(--primary);
+  --switchButtonHoverOffColor: var(--primaryLight);
   --switchDisabledOnColor: var(--primary);
   --switchDisabledOffColor: var(--secondaryText);
   /* 
