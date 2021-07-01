@@ -4,8 +4,8 @@ A Slider allows users to choose from a range of continuous and discrete values. 
 
 ## Guidelines
 
-- [Astro UXDS: Slider](http://www.astrouxds.com/ui-components/slider)
-- [MDN: HTML Input Range](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+-   [Astro UXDS: Slider](http://www.astrouxds.com/ui-components/slider)
+-   [MDN: HTML Input Range](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
 
 ## Web Components Usage
 
@@ -34,7 +34,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxSlider } from "@astrouxds/rux-slider/rux-slider.js";
+import { RuxSlider } from '@astrouxds/rux-slider/rux-slider.js'
 ```
 
 ### 3. Render the Astro Slider Web Component
@@ -72,12 +72,12 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 ##### **5.0**
 
-- Removed fallback CSS properties
+-   Removed fallback CSS properties
 
 ##### **4.0**
 
-- clarified docs/code regarding `value` vs `val` property name
-- added flex styling to make Astro UXDS Slider inherit width of containing element.
-- renamed `axis-labels` property to `axisLabels`, and changed the type from comma-delimited String to Array.
-- documented `hideInput` property
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   clarified docs/code regarding `value` vs `val` property name
+-   added flex styling to make Astro UXDS Slider inherit width of containing element.
+-   renamed `axis-labels` property to `axisLabels`, and changed the type from comma-delimited String to Array.
+-   documented `hideInput` property
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

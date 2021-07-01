@@ -4,12 +4,12 @@ For more complex tables, we recommend using either the community or enterprise t
 
 ## Guidelines
 
-- [Astro UXDS: Table Pattern](https://www.astrouxds.com/patterns/table/)
+-   [Astro UXDS: Table Pattern](https://www.astrouxds.com/patterns/table/)
 
-## Installation 
+## Installation
 
 We maintain a [separate repo for the ag-Grid Astro theme](https://github.com/RocketCommunicationsInc/astro-ag-Grid). Please visit the following links to get started:
 
-* [Documentation](https://github.com/RocketCommunicationsInc/astro-ag-Grid/#astro-ag-grid-theme)
-* [Astro Theme SASS files](https://github.com/RocketCommunicationsInc/astro-ag-Grid/tree/master/src/css)
-* Working [example](https://astro-ag-grid-example.netlify.app/) of a complex table using the Astro theme
+-   [Documentation](https://github.com/RocketCommunicationsInc/astro-ag-Grid/#astro-ag-grid-theme)
+-   [Astro Theme SASS files](https://github.com/RocketCommunicationsInc/astro-ag-Grid/tree/master/src/css)
+-   Working [example](https://astro-ag-grid-example.netlify.app/) of a complex table using the Astro theme

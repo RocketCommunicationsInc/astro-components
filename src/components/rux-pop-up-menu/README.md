@@ -4,7 +4,7 @@ A Pop-Up Menu provides users with a quick way to access common actions for a hig
 
 ## Guidelines
 
-- [Astro UXDS: Pop Up Menu](http://www.astrouxds.com/library/pop-up-menu)
+-   [Astro UXDS: Pop Up Menu](http://www.astrouxds.com/library/pop-up-menu)
 
 ### 1. Installation
 
@@ -31,7 +31,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxPopUpMenu } from "@astrouxds/rux-pop-up-menu/rux-pop-up-menu.js";
+import { RuxPopUpMenu } from '@astrouxds/rux-pop-up-menu/rux-pop-up-menu.js'
 ```
 
 ### 3. Render the Astro Pop Up Menu Web Component
@@ -81,21 +81,21 @@ A sample of a `data` Array.
 
 ```json
 [
-  {
-    "id": "item1",
-    "label": "Item 1"
-  },
-  {
-    "id": "item2",
-    "label": "Item 2"
-  },
-  {
-    "role": "seperator"
-  },
-  {
-    "id": "item3",
-    "label": "Item 3"
-  }
+    {
+        "id": "item1",
+        "label": "Item 1"
+    },
+    {
+        "id": "item2",
+        "label": "Item 2"
+    },
+    {
+        "role": "seperator"
+    },
+    {
+        "id": "item3",
+        "label": "Item 3"
+    }
 ]
 ```
 
@@ -114,9 +114,9 @@ Pop Up Menu emits a `pop-up-menu-item-selected` event whenever a user clicks on 
 #### Sample Tree event
 
 ```javascript
-window.addEventListener("pop-up-menu-item-selected", (e) => {
-  console.log("Pop Up Menu Item Selected", e.detail.selected);
-});
+window.addEventListener('pop-up-menu-item-selected', (e) => {
+    console.log('Pop Up Menu Item Selected', e.detail.selected)
+})
 ```
 
 #### Event Properties

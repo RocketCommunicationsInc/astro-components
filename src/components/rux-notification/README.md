@@ -8,7 +8,7 @@ If another Notification Banner is waiting, it appears when the current Banner is
 
 ## Guidelines
 
-- [Astro UXDS: Notification Banner](https://www.astrouxds.com/ui-components/notification-banner)
+-   [Astro UXDS: Notification Banner](https://www.astrouxds.com/ui-components/notification-banner)
 
 ## Web Components Usage
 
@@ -39,7 +39,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxNotification } from "@astrouxds/rux-notification/rux-notification.js";
+import { RuxNotification } from '@astrouxds/rux-notification/rux-notification.js'
 ```
 
 ### 3. Render the Astro Notification Banner Web Component
@@ -78,7 +78,7 @@ The Astro UXDS Notification Banner hides from view using absolute positioning in
 
 ##### **4.0**
 
-- Swapped kebab-cased `close-after` attribute for standard camelCase `closeAfter`
-- Removed `target` property and associated work-arounds to enforce parent element positioning. Added language to direct users to apply `position: relative` and `overflow: hidden` CSS declarations to containing elements themselves.
-- Enforced minimum 2000ms and maximum 10000ms close delay duration.
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Swapped kebab-cased `close-after` attribute for standard camelCase `closeAfter`
+-   Removed `target` property and associated work-arounds to enforce parent element positioning. Added language to direct users to apply `position: relative` and `overflow: hidden` CSS declarations to containing elements themselves.
+-   Enforced minimum 2000ms and maximum 10000ms close delay duration.
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
