@@ -8,81 +8,81 @@
 */
 
 .rux-segmented-button {
-  display: inline-flex;
-  height: 1.6875rem;
+    display: inline-flex;
+    height: 1.6875rem;
 
-  overflow: hidden;
+    overflow: hidden;
 
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 
-  list-style: none;
+    list-style: none;
 
-  border-radius: var(--controlBorderRadius);
-  border: 1px solid var(--segmentedButtonBorderColor);
-}
-
-.rux-segmented-button:hover{
-	border-color: var(--segmentedButtonHoverBorderColor);
+    border-radius: var(--controlBorderRadius);
+    border: 1px solid var(--segmentedButtonBorderColor);
 }
 
 .rux-segmented-button__segment {
-  height: 1.6875rem;
-  width: auto;
-  margin: 0;
-  padding: 0;
+    height: 1.6875rem;
+    width: auto;
+    margin: 0;
+    padding: 0;
 }
 
 .rux-segmented-button__segment label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  width: auto;
-  height: 1.5625rem;
+    width: auto;
+    height: 1.5625rem;
 
-  margin: 0;
-  padding: 0 0.75rem;
+    margin: 0;
+    padding: 0 0.75rem;
 
-  border: none;
-  border-right: 1px solid var(--segmentedButtonBorderColor);
+    border-right: 1px solid var(--segmentedButtonBorderColor);
 
-  color: var(--segmentedButtonTextColor);
-  background-color: var(--segmentedButtonBackgroundColor);
+    color: var(--segmentedButtonTextColor);
+    background-color: var(--segmentedButtonBackgroundColor);
 
-  font-size: 1rem;
+    font-size: 1rem;
 
-  user-select: none;
+    user-select: none;
 }
 
 .rux-segmented-button__segment:nth-child(2):not(:last-child) label {
-  border-right: none !important;
+    border-right: none !important;
 }
 
 .rux-segmented-button__segment input {
-  display: none !important;
+    display: none !important;
 }
 
 .rux-segmented-button__segment label:hover {
-	background-color: var(--segmentedButtonHoverBackgroundColor);
-	border-color: var( --segmentedButtonHoverBorderColor);
-  color: var(--segmentedButtonHoverTextColor);
-  outline: none;
+    background-color: var(--segmentedButtonHoverBackgroundColor);
+    border-color: var(--segmentedButtonHoverBorderColor);
+    color: var(--segmentedButtonHoverTextColor);
+    outline: none;
 }
 
 .rux-segmented-button__segment input:checked + label {
-  background-color: var(--segmentedButtonSelectedBackgroundColor);
-  color: var(--segmentedButtonSelectedTextColor);
+    background-color: var(--segmentedButtonSelectedBackgroundColor);
+    color: var(--segmentedButtonSelectedTextColor);
 }
 
-.rux-segmented-button:nth-child(2):not(:last-child) label {
-	border-right: none;
-	border-left: none;
+.rux-segmented-button__segment input:checked:hover + label {
+    background-color: var(--segmentedButtonSelectedHoverBackgroundColor);
+    color: var(--segmentedButtonSelectedHoverTextColor);
+    border-color: var(--segmentedButtonSelectedHoverBorderColor);
 }
-.rux-segmented-button:first-child label{
-	border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
 
+.rux-segmented-button__segment:nth-child(2):not(:last-child) label {
+    border-right: none;
+    border-left: none;
 }
-.rux-segmented-button:last-child label{
-	border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
+.rux-segmented-button__segment:first-child label {
+    border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
+}
+.rux-segmented-button__segment:last-child label {
+    border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
 }
