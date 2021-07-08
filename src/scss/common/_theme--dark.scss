@@ -17,7 +17,7 @@
     --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
     --primaryDarkHover: var(--colorTemp6b8ca5) #6b8ca5;
     --primaryElementText: var(--colorTertiaryDarken4, #080c11);
-    --inputBackground: var(--colorWhite, #ffffff);
+    --inputBackground: var(--colorTertiaryDarken3, #101923);
     --inputDark: var(--colorTertiaryDarken4, #080c11);
 
     /* styles */
@@ -321,7 +321,7 @@
 
     /* Input Focus */
     --inputFocusBorderColor: var(--colorSecondaryLighten2);
-    --inputFocusTextColor: var(--colorWhite);
+    --inputFocusTextColor: var(--defaultText);
 
     --inputInvalidBorderColor: var(--colorCritical);
 
