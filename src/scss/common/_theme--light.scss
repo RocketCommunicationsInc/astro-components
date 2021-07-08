@@ -25,6 +25,9 @@
     --fontInvertedColor: var(--primary);
     --fontInvertedBackgroundColor: var(--backgroundColor);
 
+    --lightBorderColor: rgb(100, 156, 189);
+    --lightBackgroundColor: rgb(234, 238, 244);
+
     --fontLinkColor: var(--primary);
     --fontLinkHoverColor: var(--primaryDark);
 
@@ -176,13 +179,11 @@
     ==========================================================================
 
   */
-    --switchOffColor: rgb(234, 238, 244);
-    --switchOffBorderColor: rgb(100, 156, 189);
+    --switchBackgroundColor: var(--lightBorderColor, #eaeef4);
+    --switchBorderColor: var(--colorPrimary);
+    --switchOffBorderColor: var(--lightBorderColor, #649cbd);
     --switchOnColor: var(--primary);
     --switchHoverOnColor: var(--primary);
-    --switchHoverOffColor: var(--primary);
-    --switchDisabledOnColor: var(--primary);
-    --switchDisabledOffColor: var(--secondaryText);
     --switchButtonHoverOffColor: var(--primaryDark);
     /* 
     

@@ -160,14 +160,13 @@
     ==========================================================================
 
   */
-    --switchOffColor: var(--backgroundColor);
-    --switchOffBorderColor: rgb(43, 101, 155);
+    --switchBackgroundColor: var(--backgroundColor);
+    --switchOffBorderColor: #2b659b;
     --switchOnColor: var(--primary);
     --switchHoverOnColor: var(--primary);
     --switchHoverOffColor: var(--primary);
+    --switchBorderColor: var(--primary);
     --switchButtonHoverOffColor: var(--primaryLight);
-    --switchDisabledOnColor: var(--primary);
-    --switchDisabledOffColor: var(--secondaryText);
     /* 
     
     Popup Menu Colors 
