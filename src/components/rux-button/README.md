@@ -4,7 +4,7 @@ Buttons allow users to trigger actions.
 
 ## Guidelines
 
-- [Astro UXDS: Buttons](http://www.astrouxds.com/ui-components/buttons)
+-   [Astro UXDS: Buttons](http://www.astrouxds.com/ui-components/buttons)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxButton } from "@astrouxds/rux-button/rux-button.js";
+import { RuxButton } from '@astrouxds/rux-button/rux-button.js'
 ```
 
 ### 3. Render the Astro Button Web Component
@@ -140,32 +140,32 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ##### **4.1**
 
-- Add styles for and example of using slots for Icon child component
+-   Add styles for and example of using slots for Icon child component
 
 ##### **4.0**
 
-- Swapped kebab-cased `icon-only` attribute for standard camelCase `iconOnly`
-- Deprecated `type` attribute in favor of separate `size`, `iconOnly`, and `secondary` attributes. `default` type is No longer supported.
-- Fixed the width of the small icon-only button and ensured icon-only buttons show No text, even if text is provided
-- Fixed secondary button icon color
-- Re-enabled missing focus styles on buttons.
-- Removed undocumented critical button style.
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Swapped kebab-cased `icon-only` attribute for standard camelCase `iconOnly`
+-   Deprecated `type` attribute in favor of separate `size`, `iconOnly`, and `secondary` attributes. `default` type is No longer supported.
+-   Fixed the width of the small icon-only button and ensured icon-only buttons show No text, even if text is provided
+-   Fixed secondary button icon color
+-   Re-enabled missing focus styles on buttons.
+-   Removed undocumented critical button style.
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
 ##### **3.0**
 
-- Removed Master Off Button Style
-- Replaced various properties with css custom properties to support
-- Removed `.satcom` class definition
-- Removed `narrow`/`short` definitions
+-   Removed Master Off Button Style
+-   Replaced various properties with css custom properties to support
+-   Removed `.satcom` class definition
+-   Removed `narrow`/`short` definitions
 
 ##### **1.4**
 
-- Added `rux_` prefixes and BEM-compatible classes to all `satcom_`-prefixed elements. NOTE: `satcom_` will be removed in a future version
-- Disabled user selection of text on all buttons
-- Removed redundant background hover from `disabled` state by using `:not()` on the `:hover` state
-- Removed redundant background hover from `master off` by using `:not()` on the `:hover` state // deprecate after 1.4
-- Fixed Firefox alignment issue where text was misaligned vertically
-- Renamed `half-height` to `short` and `half-width` to `narrow` (Note: `rux_` only, `satcom_` retains old syntax)
-- Removed `user-select` and placed it in astro.css to apply to all input types
-- Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
+-   Added `rux_` prefixes and BEM-compatible classes to all `satcom_`-prefixed elements. NOTE: `satcom_` will be removed in a future version
+-   Disabled user selection of text on all buttons
+-   Removed redundant background hover from `disabled` state by using `:not()` on the `:hover` state
+-   Removed redundant background hover from `master off` by using `:not()` on the `:hover` state // deprecate after 1.4
+-   Fixed Firefox alignment issue where text was misaligned vertically
+-   Renamed `half-height` to `short` and `half-width` to `narrow` (Note: `rux_` only, `satcom_` retains old syntax)
+-   Removed `user-select` and placed it in astro.css to apply to all input types
+-   Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
