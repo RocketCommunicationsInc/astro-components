@@ -15,6 +15,7 @@
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
+    --primaryDarker: var(--colorSecondaryDarken2);
     --primaryDarkHover: #6b8ca5;
     --primaryElementText: var(--colorTertiaryDarken4, #080c11);
     --inputBackground: var(--colorWhite, #ffffff);
@@ -161,7 +162,7 @@
 
   */
     --switchBackgroundColor: var(--backgroundColor);
-    --switchOffBorderColor: var(--colorSecondaryDarken2);
+    --switchOffBorderColor: var(--primaryDarker);
     --switchOnColor: var(--primary);
     --switchHoverOnColor: var(--primary);
     --switchHoverOffColor: var(--primary);
