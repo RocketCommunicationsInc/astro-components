@@ -17,7 +17,7 @@
     --primaryDarkHover: #0048724d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryElementText: var(--colorWhite, #ffffff);
     --inputBackground: var(--colorWhite, #ffffff);
-    --inputDark: #080c11;
+    --inputDark: var(--colorTertiaryDarken4, #080c11);
 
     /* styles */
     --fontColor: var(--defaultText);
@@ -314,7 +314,6 @@
     --inputBackgroundColor: var(--colorQuaternaryLighten3);
     --inputBorderColor: var(--colorTemp649cbd, #649cbd);
     --inputBorderColorAlt: var(--inputDark);
-    --inputBorderColorDisabled: #292a2d;
     --inputTextColor: var(--defaultText);
 
     --inputFocusBorderColor: var(--colorPrimaryDarken1);
