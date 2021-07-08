@@ -179,12 +179,13 @@
     ==========================================================================
 
   */
-    --switchBackgroundColor: var(--lightBorderColor, #eaeef4);
+    --switchBackgroundColor: var(--lightBackgroundColor, #eaeef4);
     --switchBorderColor: var(--colorPrimary);
     --switchOffBorderColor: var(--lightBorderColor, #649cbd);
     --switchOnColor: var(--primary);
     --switchHoverOnColor: var(--primary);
     --switchButtonHoverOffColor: var(--primaryDark);
+
     /* 
     
     Push Button Colors 
