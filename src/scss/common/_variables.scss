@@ -221,8 +221,8 @@
     // Temporary Colors /* TODO: this is an unofficial Astro color, but a required KM color update when naming convention has been decided */
     //Dark Theme
     --colorTemp1b2d3e: #1b2d3e;
-    --colorTemp6b8ca5: #6b8ca5;
-    --colorTemp2b659b: #2b659b;
+    --colorTemp6b8ca5: #6b8ca5; //incorrect
+    --colorTemp2b659b: #2b659b; //correct, shoudl be secondaryDarken2
 
     //Light Theme
     --colorTemp649cbd: #649cbd;
