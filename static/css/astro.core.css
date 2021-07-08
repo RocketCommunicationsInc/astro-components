@@ -971,10 +971,6 @@ li.light-theme {
         rgb(58, 129, 191)
     );
   --scrollBarTrackBackgroundColor: rgb(27, 45, 62);
-  --scrollBarTrackCornerBackgroundColor: var(
-        --colorTertiaryDarken1,
-        rgb(32, 50, 70)
-    );
   /* 
     
     Timeline Colors -- Dark
@@ -1158,7 +1154,8 @@ body {
   color: white;
   color: var(--fontColor, white);
   background-color: var(--backgroundColor);
-  scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackCornerBackgroundColor); }
+  scrollbar-color: #2b659b #1b2d3e;
+  scrollbar-color: var(--scrollBarThumbBackgroundColor, #2b659b) var(--scrollBarTrackBackgroundColor, #1b2d3e); }
 
 label {
   user-select: none; }
@@ -1195,13 +1192,13 @@ label {
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
   background-color: #1b2d3e;
-  background-color: var(--scrollBarTrackCornerBackgroundColor, #1b2d3e); }
+  background-color: var(--scrollBarTrackBackgroundColor, #1b2d3e); }
 
 ::-webkit-scrollbar-track:vertical {
-  box-shadow: var(--scrollBarBoxShadow); }
+  box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5); }
 
 ::-webkit-scrollbar-track:horizontal {
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15); }
+  box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5); }
 
 /*
 **
