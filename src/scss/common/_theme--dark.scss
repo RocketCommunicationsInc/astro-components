@@ -161,7 +161,7 @@
 
   */
     --switchBackgroundColor: var(--backgroundColor);
-    --switchOffBorderColor: #2b659b; /* This color does not exist globably and will most likely be used in the future for more components. Until those compoenents design is done, just using the value here for now.*/
+    --switchOffBorderColor: var(--colorSecondaryDarken2);
     --switchOnColor: var(--primary);
     --switchHoverOnColor: var(--primary);
     --switchHoverOffColor: var(--primary);

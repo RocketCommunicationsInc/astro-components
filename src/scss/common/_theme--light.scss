@@ -13,6 +13,7 @@
     --surfaceElements: var(--colorWhite, #ffffff);
     --primary: var(--colorPrimary, #005a8f);
     --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
+    --primaryLighter: var(--colorPrimaryLighten2);
     --primaryDark: var(--colorPrimaryDarken1, #004872);
     --primaryDarkHover: #0048724d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryElementText: var(--colorWhite, #ffffff);
@@ -24,9 +25,6 @@
     --fontLowContrastColor: var(--secondaryText);
     --fontInvertedColor: var(--primary);
     --fontInvertedBackgroundColor: var(--backgroundColor);
-
-    --lightBorderColor: rgb(100, 156, 189);
-    --lightBackgroundColor: rgb(234, 238, 244);
 
     --fontLinkColor: var(--primary);
     --fontLinkHoverColor: var(--primaryDark);
@@ -179,9 +177,9 @@
     ==========================================================================
 
   */
-    --switchBackgroundColor: var(--lightBackgroundColor, #eaeef4);
+    --switchBackgroundColor: var(--backgroundColor);
     --switchBorderColor: var(--colorPrimary);
-    --switchOffBorderColor: var(--lightBorderColor, #649cbd);
+    --switchOffBorderColor: var(--primaryLighter);
     --switchOnColor: var(--primary);
     --switchHoverOnColor: var(--primary);
     --switchButtonHoverOffColor: var(--primaryDark);
