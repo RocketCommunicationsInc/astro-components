@@ -290,7 +290,7 @@
   --surfaceElements: var(--colorWhite, #ffffff);
   --primary: var(--colorPrimary, #005a8f);
   --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
-  --primaryLighter: var(--colorPrimaryLighten2);
+  --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
   --primaryDark: var(--colorPrimaryDarken1, #004872);
   --primaryDarkHover: #0048724d;
   /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
@@ -665,7 +665,7 @@ li.light-theme {
   --primaryLightHover: #92cbff4d;
   /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
   --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
-  --primaryDarker: var(--colorSecondaryDarken2);
+  --primaryDarker: var(--colorSecondaryDarken2, #2e6799);
   --primaryDarkHover: #6b8ca5;
   --primaryElementText: var(--colorTertiaryDarken4, #080c11);
   --inputBackground: var(--colorWhite, #ffffff);
