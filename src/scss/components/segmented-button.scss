@@ -9,7 +9,7 @@
 
 .rux-segmented-button {
     display: inline-flex;
-    height: 1.6875rem;
+    height: 1.625rem;
 
     overflow: hidden;
 
@@ -23,7 +23,7 @@
 }
 
 .rux-segmented-button__segment {
-    height: 1.6875rem;
+    height: 1.625rem;
     width: auto;
     margin: 0;
     padding: 0;
@@ -67,6 +67,7 @@
 
 .rux-segmented-button__segment input:checked + label {
     background-color: var(--segmentedButtonSelectedBackgroundColor);
+    border-color: var(--segmentedButtonSelectedBorderColor);
     color: var(--segmentedButtonSelectedTextColor);
 }
 

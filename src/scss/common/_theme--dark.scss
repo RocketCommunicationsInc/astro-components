@@ -144,12 +144,16 @@
     --segmentedButtonHoverBorderColor: var(--primaryLight);
 
     /* Segmented Selected */
-    --segmentedButtonSelectedBackgroundColor: #1c3f5e;
+    --segmentedButtonSelectedBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
     --segmentedButtonSelectedTextColor: var(--defaultText);
     --segmentedButtonSelectedBorderColor: var(--primary);
 
     /* Segmented Selected & Hover */
-    --segmentedButtonSelectedHoverBackgroundColor: #1c3f5e;
+    --segmentedButtonSelectedHoverBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
     --segmentedButtonSelectedHoverTextColor: var(--defaultText);
     --segmentedButtonSelectedHoverBorderColor: var(--primary);
 

@@ -143,7 +143,6 @@ export class RuxSegmentedButton extends LitElement {
                         --segmentedButtonSelectedBackgroundColor
                     );
                     color: var(--segmentedButtonSelectedTextColor);
-                    box-shadow: var(--segmentedButtonSelectedBoxShadow);
                 }
 
                 .rux-segmented-button__segment input:checked:hover + label {
