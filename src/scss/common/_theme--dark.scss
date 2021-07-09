@@ -314,13 +314,13 @@
     
   */
 
-    --inputBackgroundColor: var(--colorTertiaryDarken3);
+    --inputBackgroundColor: var(--inputBackground);
     --inputBorderColor: var(--colorSecondaryDarken2, #2b659b);
     --inputBorderColorAlt: var(--inputDark);
-    --inputTextColor: var(--colorWhite);
+    --inputTextColor: var(--defaultText);
 
     /* Input Focus */
-    --inputFocusBorderColor: var(--colorSecondaryLighten2);
+    --inputFocusBorderColor: var(--primaryLight);
     --inputFocusTextColor: var(--defaultText);
 
     --inputInvalidBorderColor: var(--colorCritical);
