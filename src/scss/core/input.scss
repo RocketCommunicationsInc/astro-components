@@ -64,7 +64,7 @@
     padding: 0 0.625rem;
 
     border: 1px solid var(--inputBorderColor);
-    border-radius: 4px;
+    border-radius: 3px;
 
     font-size: var(--fontSize, 1rem);
     color: var(--inputTextColor);
@@ -128,7 +128,7 @@
 }
 
 .rux-form-field input::selection {
-    background-color: var(--colorSecondaryLighten3);
+    background-color: var(--inputSelectionBackgroundColor);
 }
 /* 
 .rux-form-field input:invalid + label::before {
