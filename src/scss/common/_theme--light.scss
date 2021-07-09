@@ -13,6 +13,7 @@
     --surfaceElements: var(--colorWhite, #ffffff);
     --primary: var(--colorPrimary, #005a8f);
     --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
+    --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
     --primaryDark: var(--colorPrimaryDarken1, #004872);
     --primaryDarkHover: #0048724d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryElementText: var(--colorWhite, #ffffff);
@@ -177,12 +178,13 @@
     ==========================================================================
 
   */
-    --switchOffColor: var(--secondaryText);
+    --switchBackgroundColor: var(--backgroundColor);
+    --switchBorderColor: var(--colorPrimary);
+    --switchOffBorderColor: var(--primaryLighter);
     --switchOnColor: var(--primary);
-    --switchHoverOnColor: var(--primaryDark);
-    --switchHoverOffColor: var(--primaryDark);
-    --switchDisabledOnColor: var(--primary);
-    --switchDisabledOffColor: var(--secondaryText);
+    --switchHoverOnColor: var(--primary);
+    --switchButtonHoverOffColor: var(--primaryDark);
+
     /* 
     
     Push Button Colors 
