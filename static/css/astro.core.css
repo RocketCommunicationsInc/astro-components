@@ -584,7 +584,8 @@
   --scrollBarThumbBackgroundColor: var(--primary, rgb(0, 90, 143));
   --scrollBarThumbBackgroundHoverColor: var(--colorPrimaryLighten1);
   --scrollBarTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --scrollBarBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);
+  --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);
+  --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(47, 72, 99, 0.5);
   /* 
     
     Timeline Colors -- Dark
@@ -967,7 +968,8 @@ li.light-theme {
         rgb(58, 129, 191)
     );
   --scrollBarTrackBackgroundColor: rgb(27, 45, 62);
-  --scrollBarBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+  --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+  --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
   /* 
     
     Timeline Colors -- Dark
@@ -1188,10 +1190,10 @@ label {
   background-color: var(--scrollBarTrackBackgroundColor); }
 
 ::-webkit-scrollbar-track:vertical {
-  box-shadow: var(--scrollBarBoxShadow); }
+  box-shadow: var(--scrollBarVerticalBoxShadow); }
 
 ::-webkit-scrollbar-track:horizontal {
-  box-shadow: var(--scrollBarBoxShadow); }
+  box-shadow: var(--scrollBarHorizontalBoxShadow); }
 
 /*
 **

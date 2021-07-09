@@ -369,7 +369,9 @@
         rgb(58, 129, 191)
     );
     --scrollBarTrackBackgroundColor: rgb(27, 45, 62);
-    --scrollBarBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+
     /* 
     
     Timeline Colors -- Dark

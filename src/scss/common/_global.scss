@@ -69,14 +69,13 @@ label {
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--scrollBarThumbBackgroundHoverColor);
 }
-
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
     background-color: var(--scrollBarTrackBackgroundColor);
 }
 ::-webkit-scrollbar-track:vertical {
-    box-shadow: var(--scrollBarBoxShadow);
+    box-shadow: var(--scrollBarVerticalBoxShadow);
 }
 ::-webkit-scrollbar-track:horizontal {
-    box-shadow: var(--scrollBarBoxShadow);
+    box-shadow: var(--scrollBarHorizontalBoxShadow);
 }
