@@ -73,10 +73,10 @@ label {
     );
 }
 
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner {
-    background-color: var(--scrollBarTrackBackgroundColor, rgb(27, 45, 62));
-}
+// ::-webkit-scrollbar-track,
+// ::-webkit-scrollbar-corner {
+//     background-color: var(--scrollBarTrackBackgroundColor, rgb(27, 45, 62));
+// }
 ::-webkit-scrollbar-track:vertical {
     box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
 }

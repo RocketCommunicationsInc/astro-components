@@ -1189,11 +1189,6 @@ label {
   background-color: #3a81bf;
   background-color: var(--scrollBarThumbBackgroundHoverColor, #3a81bf); }
 
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner {
-  background-color: #1b2d3e;
-  background-color: var(--scrollBarTrackBackgroundColor, #1b2d3e); }
-
 ::-webkit-scrollbar-track:vertical {
   box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5); }
 
