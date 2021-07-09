@@ -50,7 +50,9 @@ label {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--scrollBarThumbBackgroundColor, rgb(43, 101, 155));
+    // background-color: var(--scrollBarThumbBackgroundColor, rgb(43, 101, 155));
+    background-color: var(--scrollBarThumbBackgroundColor);
+
     border-radius: 10px;
     // border-radius: 4px;
     border: 3px solid transparent;
@@ -67,19 +69,21 @@ label {
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(
-        --scrollBarThumbBackgroundHoverColor,
-        rgb(58, 129, 191)
-    );
+    // background-color: var(
+    //     --scrollBarThumbBackgroundHoverColor,
+    //     rgb(58, 129, 191)
+    // );
+    background-color: var(--scrollBarThumbBackgroundHoverColor);
 }
 
-// ::-webkit-scrollbar-track,
-// ::-webkit-scrollbar-corner {
-//     background-color: var(--scrollBarTrackBackgroundColor, rgb(27, 45, 62));
-// }
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+    // background-color: var(--scrollBarTrackBackgroundColor, rgb(27, 45, 62));
+    background-color: var(--scrollBarTrackBackgroundColor);
+}
 ::-webkit-scrollbar-track:vertical {
-    box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--scrollBarBoxShadow);
 }
 ::-webkit-scrollbar-track:horizontal {
-    box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--scrollBarBoxShadow);
 }

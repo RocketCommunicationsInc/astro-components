@@ -360,7 +360,7 @@
   */
 
     // --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1, #9ba0aa);
-    --scrollBarThumbBackgroundColor: rgb(0, 90, 143);
+    --scrollBarThumbBackgroundColor: var(--primary, rgb(0, 90, 143));
     // --scrollBarThumbBackgroundHoverColor: var(
     //     --colorQuaternaryDarken2,
     //     #676a71
@@ -369,10 +369,10 @@
     // --scrollBarTrackBackgroundColor: transparent;
     --scrollBarTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
 
-    --scrollBarTrackCornerBackgroundColor: var(
-        --colorQuaternaryLighten4,
-        #f2f4f7
-    );
+    // --scrollBarTrackCornerBackgroundColor: var(
+    //     --colorQuaternaryLighten4,
+    //     #f2f4f7
+    // );
     --scrollBarBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);
     /* 
     
