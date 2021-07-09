@@ -10,12 +10,12 @@
     --defaultText: var(--colorWhite, #ffffff);
     --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
     --globalAppHeader: var(--colorTertiaryDarken2, #172635);
-    --surfaceElements: var(--colorTemp1b2d3e, #1b2d3e);
+    --surfaceElements: var(--colorSnowflakesDarkSurface, #1b2d3e);
     --primary: var(--colorSecondary, #4dacff);
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
-    --primaryDarkHover: var(--colorTemp6b8ca5) #6b8ca5;
+    --primaryDarkHover: #6b8ca5;
     --primaryElementText: var(--colorTertiaryDarken4, #080c11);
     --inputBackground: var(--colorTertiaryDarken3, #101923);
     --inputDark: var(--colorTertiaryDarken4, #080c11);
@@ -315,7 +315,7 @@
   */
 
     --inputBackgroundColor: var(--colorTertiaryDarken3);
-    --inputBorderColor: var(--colorTemp2b659b, #2b659b);
+    --inputBorderColor: var(--colorSecondaryDarken2, #2b659b);
     --inputBorderColorAlt: var(--inputDark);
     --inputTextColor: var(--colorWhite);
 
