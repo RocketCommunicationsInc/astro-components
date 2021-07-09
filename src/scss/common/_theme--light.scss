@@ -13,6 +13,7 @@
     --surfaceElements: var(--colorWhite, #ffffff);
     --primary: var(--colorPrimary, #005a8f);
     --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
+    --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
     --primaryDark: var(--colorPrimaryDarken1, #004872);
     --primaryDarkHover: #0048724d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryElementText: var(--colorWhite, #ffffff);
@@ -167,30 +168,22 @@
     ==========================================================================
     
   */
-    --selectHoverOptBackgroundColor: rgb(28, 63, 94);
-    --selectMenuBorderColor: rgb(100, 156, 189);
-    --selectMenuCaretBackgroundColor: linear-gradient(
-        rgba(206, 233, 252, 1),
-        rgba(206, 233, 252, 1)
-    );
-    --selectMenuBackgroundColor: rgb(234, 238, 244);
-    --selectMenuTextColor: var(--primary);
-    --selectMenuInvalidBorder: var(--criticalBorder);
-    --selectMenuTextHoverColor: rgb(0, 72, 114);
-    --selectInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23005a8f%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-    --selectActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23005a8f%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+    --selectHoverOptBackgroundColor: var(--primaryDark);
+    --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+
     /* 
     
     Switch Colors 
     ==========================================================================
 
   */
-    --switchOffColor: var(--secondaryText);
+    --switchBackgroundColor: var(--backgroundColor);
+    --switchBorderColor: var(--colorPrimary);
+    --switchOffBorderColor: var(--primaryLighter);
     --switchOnColor: var(--primary);
-    --switchHoverOnColor: var(--primaryDark);
-    --switchHoverOffColor: var(--primaryDark);
-    --switchDisabledOnColor: var(--primary);
-    --switchDisabledOffColor: var(--secondaryText);
+    --switchHoverOnColor: var(--primary);
+    --switchButtonHoverOffColor: var(--primaryDark);
+
     /* 
     
     Push Button Colors 
