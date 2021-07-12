@@ -10,11 +10,8 @@
     --defaultText: var(--colorWhite, #ffffff);
     --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
     --globalAppHeader: var(--colorTertiaryDarken2, #172635);
-    --surfaceElements: var(--colorSnowflakesDarkSurface, #1b2d3e);
     --primary: var(--colorSecondary, #4dacff);
-    --primaryLight: var(--colorSecondaryLighten2, #92cbff);
-    --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
-    --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
+    --primaryDarker: var(--colorSecondaryDarken2, #2e6799);
     --primaryDarkHover: #6b8ca5;
     --primaryElementText: var(--colorTertiaryDarken4, #080c11);
     --inputBackground: var(--colorTertiaryDarken3, #101923);
@@ -160,12 +157,13 @@
     ==========================================================================
 
   */
-    --switchOffColor: var(--secondaryText);
+    --switchBackgroundColor: var(--backgroundColor);
+    --switchOffBorderColor: var(--primaryDarker);
     --switchOnColor: var(--primary);
-    --switchHoverOnColor: var(--primaryLight);
-    --switchHoverOffColor: var(--primaryLight);
-    --switchDisabledOnColor: var(--primary);
-    --switchDisabledOffColor: var(--secondaryText);
+    --switchHoverOnColor: var(--primary);
+    --switchHoverOffColor: var(--primary);
+    --switchBorderColor: var(--primary);
+    --switchButtonHoverOffColor: var(--primaryLight);
     /* 
     
     Popup Menu Colors 
