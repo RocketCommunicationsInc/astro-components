@@ -19,39 +19,39 @@
 */
 
 .rux-button-group {
-  display: flex;
+    display: flex;
 }
 
 .rux-button-group .rux-button:not(:last-child) {
-  margin-right: 0.625rem;
+    margin-right: 0.625rem;
 }
 
 /* Global Button Styles */
 .rux-button {
-  display: flex;
-  position: relative;
+    display: flex;
+    position: relative;
 
-  margin: 0;
-  padding: 0 1rem;
+    margin: 0;
+    padding: 0 1rem;
 
-  height: 2.125rem;
-  min-width: 2.25rem;
-  /* max-width: 10.125rem; */
+    height: 2.125rem;
+    min-width: 2.25rem;
+    /* max-width: 10.125rem; */
 
-  border-radius: var(--buttonBorderRadius);
+    border-radius: var(--buttonBorderRadius);
 
-  color: var(--buttonTextColor);
-  font-family: var(--fontFamily);
-  font-size: 1rem;
+    color: var(--buttonTextColor);
+    font-family: var(--fontFamily);
+    font-size: 1rem;
 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
-  user-select: none;
+    user-select: none;
 }
 
 /* 
@@ -61,23 +61,23 @@
 */
 /* disabled state */
 .rux-button:disabled {
-  opacity: var(--disabledOpacity);
-  cursor: var(--disabledCursor);
+    opacity: var(--disabledOpacity);
+    cursor: var(--disabledCursor);
 }
 
 .rux-button:focus {
-  outline: none;
+    outline: none;
 }
 .rux-button:not(.rux-button--secondary) {
-  border: 1px solid var(--buttonBorderColor);
-  background-color: var(--buttonBackgroundColor);
+    border: 1px solid var(--buttonBorderColor);
+    background-color: var(--buttonBackgroundColor);
 }
 
 /* Secondary Button Specific Styles */
 .rux-button--secondary {
-  color: var(--buttonSecondaryTextColor);
-  background-color: var(--buttonSecondaryBackgroundColor);
-  border: 1px solid var(--buttonSecondaryBorderColor);
+    color: var(--buttonSecondaryTextColor);
+    background-color: var(--buttonSecondaryBackgroundColor);
+    border: 1px solid var(--buttonSecondaryBorderColor);
 }
 
 /* 
@@ -86,13 +86,13 @@
 
 */
 .rux-button:active:not([hover]):not([disabled]) {
-  border-color: var(--buttonActiveBorderColor) !important;
-  background-color: var(--buttonActiveBackgroundColor) !important;
+    border-color: var(--buttonActiveBorderColor) !important;
+    background-color: var(--buttonActiveBackgroundColor) !important;
 }
 
 .rux-button--secondary:active:not([hover]):not([disabled]) {
-  border-color: var(--buttonSecondaryBorderColor) !important;
-  background-color: var(--buttonSecondaryBackgroundColor) !important;
+    border-color: var(--buttonSecondaryBorderColor) !important;
+    background-color: var(--buttonSecondaryBackgroundColor) !important;
 }
 
 /* 
@@ -101,14 +101,14 @@
 
 */
 .rux-button:hover:not([active]):not([disabled]):not(.rux-button--secondary) {
-  border-color: var(--buttonHoverBorderColor);
-  background-color: var(--buttonHoverBackgroundColor);
+    border-color: var(--buttonHoverBorderColor);
+    background-color: var(--buttonHoverBackgroundColor);
 }
 
 .rux-button--secondary:hover:not([disabled]) {
-  color: var(--buttonSecondaryTextColor);
-  background-color: var(--buttonSecondaryHoverBackgroundColor);
-  border-color: var(--buttonSecondaryHoverBorderColor);
+    color: var(--buttonSecondaryTextColor);
+    background-color: var(--buttonSecondaryHoverBackgroundColor);
+    border-color: var(--buttonSecondaryHoverBorderColor);
 }
 
 /* 
@@ -118,63 +118,63 @@
 */
 
 .rux-button--small {
-  font-size: var(--smallLabelFontSize);
-  height: 1.625rem;
-  padding: 0 1rem;
-  line-height: 1;
+    font-size: var(--smallLabelFontSize);
+    height: 1.625rem;
+    padding: 0 1rem;
+    line-height: 1;
 }
 
 .rux-button--large {
-  font-size: var(--largeLabelFontSize);
-  height: 2.875rem;
-  min-width: 3rem;
-  padding: 0 1rem;
+    font-size: var(--largeLabelFontSize);
+    height: 2.875rem;
+    min-width: 3rem;
+    padding: 0 1rem;
 }
 
 .rux-button__icon {
-  height: 1.5rem;
-  width: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
 
-  margin-right: 0.625rem;
-  margin-left: -0.625rem;
+    margin-right: 0.625rem;
+    margin-left: -0.625rem;
 }
 
 .rux-button--icon-only .rux-button__icon {
-  margin-left: -0.625rem;
-  margin-right: -0.625rem;
+    margin-left: -0.625rem;
+    margin-right: -0.625rem;
 }
 
 .rux-button--large.rux-button--icon-only .rux-button__icon {
-  margin-left: -1rem;
-  margin-right: -1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
 }
 
 .rux-button--small .rux-button__icon {
-  height: 0.875rem;
-  width: 0.875rem;
+    height: 0.875rem;
+    width: 0.875rem;
 }
 
 .rux-button--large .rux-button__icon {
-  height: 1.75rem;
-  width: 1.75rem;
-  margin-left: -0.8rem;
-  /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
+    height: 1.75rem;
+    width: 1.75rem;
+    margin-left: -0.8rem;
+    /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
 }
 
 .rux-button__icon .rux-icon {
-  height: auto;
-  width: 100%;
-  fill: var(--buttonTextColor);
-  color: var(--buttonTextColor);
+    height: auto;
+    width: 100%;
+    fill: var(--buttonTextColor);
+    color: var(--buttonTextColor);
 }
 
 .rux-button.rux-button--critical,
 .rux-button.rux-button--critical:active:not([hover]):not([disabled]):not(.rux-button--secondary) {
-  background-color: var(--colorCriticalDarken1) !important;
-  border-color: var(--colorCriticalDarken1) !important;
+    background-color: var(--colorCriticalDarken1) !important;
+    border-color: var(--colorCriticalDarken1) !important;
 }
 
 .rux-button.rux-button--critical:hover:not([active]):not([disabled]) {
-  background-color: var(--colorCritical);
-  border-color: var(--colorCritical);
+    background-color: var(--colorCritical);
+    border-color: var(--colorCritical);
 }
