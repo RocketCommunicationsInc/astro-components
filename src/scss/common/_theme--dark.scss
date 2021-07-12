@@ -15,7 +15,7 @@
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
-    --primaryDarker: var(--colorSecondaryDarken2, #2e6799);
+    --primaryDarker: var(--colorSecondaryDarken2, #2b659b);
     --primaryDarkHover: #6b8ca5;
     --primaryElementText: var(--colorTertiaryDarken4, #080c11);
     --inputBackground: var(--colorWhite, #ffffff);
@@ -174,17 +174,18 @@
     ==========================================================================
 
   */
-    --popupMenuBackgroundColor: var(--inputBackground);
-    --popupMenuBorderColor: var(--primary);
-    --popupMenuTextColor: var(--primaryElementText);
+    --popupMenuBackgroundColor: var(--backgroundColor);
+    --popupMenuBorderColor: var(--primaryDarker);
+    --popupMenuTextColor: var(--primary);
 
-    --popupCaretBackgroundColor: var(--primary);
+    --popupCaretBackgroundColor: var(--primaryDarker);
 
-    --popupMenuItemBackgroundColor: var(--primary);
-    --popupMenuItemHoverBackgroundColor: var(--primaryLight);
-    --popupMenuItemHoverTextColor: var(--primaryElementText);
+    --popupMenuItemBackgroundColor: var(--backgroundColor);
+    //equates to --colorSnowflakesDarkSelected with alpha of 0.3
+    --popupMenuItemHoverBackgroundColor: rgba(28, 63, 94, 0.3);
+    --popupMenuItemHoverTextColor: var(--primaryLight);
 
-    --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
+    --popupMenuItemSeperatorBorderColor: var(--primaryDarker);
 
     /* 
     
