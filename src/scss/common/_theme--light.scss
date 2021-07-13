@@ -129,18 +129,16 @@
     ==========================================================================
 
   */
-    --sliderThumbBackgroundColor: var(--primaryDark);
-    --sliderThumbBorderColor: var(--inputBackground);
+
+    --sliderThumbBackgroundColor: var(--backgroundColor);
+    --sliderThumbBorderColor: var(--primary);
     --sliderHoverThumbBackgroundColor: var(--primaryDark);
     --sliderHoverThumbBorderColor: var(--inputBackground);
-
     --sliderTrackBorderColor: var(--secondaryText);
-    --sliderTrackBackgroundColor: var(--inputBackground);
-
+    --sliderTrackBackgroundColor: var(--primary);
     --sliderSelectedThumbBorderColor: var(--primaryLight);
     --sliderSelectedTrackBackgroundColor: var(--primary);
-
-    --sliderThumbBorderSize: 1px;
+    --sliderThumbBorderSize: 2px;
     --sliderTrackBorderSize: 0.25px;
 
     /* 
@@ -351,18 +349,11 @@
     ==========================================================================
     
   */
-
-    --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1, #9ba0aa);
-    --scrollBarThumbBackgroundHoverColor: var(
-        --colorQuaternaryDarken2,
-        #676a71
-    );
-    --scrollBarTrackBackgroundColor: transparent;
-    --scrollBarTrackCornerBackgroundColor: var(
-        --colorQuaternaryLighten4,
-        #f2f4f7
-    );
-
+    --scrollBarThumbBackgroundColor: var(--primary, rgb(0, 90, 143));
+    --scrollBarThumbBackgroundHoverColor: var(--colorPrimaryLighten1);
+    --scrollBarTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+    --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);
+    --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(47, 72, 99, 0.5);
     /* 
     
     Timeline Colors -- Dark

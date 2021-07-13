@@ -10,7 +10,7 @@
     --defaultText: var(--colorWhite, #ffffff);
     --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
     --globalAppHeader: var(--colorTertiaryDarken2, #172635);
-    --surfaceElements: #1b2d3e; /* TODO: this is an unofficial Astro color, but a required KM color */
+    --surfaceElements: var(--colorSnowflakesDarkSurface, #1b2d3e);
     --primary: var(--colorSecondary, #4dacff);
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
@@ -114,18 +114,15 @@
     ==========================================================================
 
   */
-    --sliderThumbBackgroundColor: var(--primaryDark);
-    --sliderThumbBorderColor: var(--inputBackground);
+    --sliderThumbBackgroundColor: var(--backgroundColor);
+    --sliderThumbBorderColor: var(--primary);
     --sliderHoverThumbBackgroundColor: var(--primaryDark);
     --sliderHoverThumbBorderColor: var(--inputBackground);
-
     --sliderTrackBorderColor: transparent;
-    --sliderTrackBackgroundColor: var(--secondaryText);
-
+    --sliderTrackBackgroundColor: var(--primary);
     --sliderSelectedThumbBorderColor: var(--primaryLight);
     --sliderSelectedTrackBackgroundColor: var(--primary);
-
-    --sliderThumbBorderSize: 1px;
+    --sliderThumbBorderSize: 2px;
     --sliderTrackBorderSize: 1px;
 
     /* 
@@ -354,23 +351,14 @@
     ==========================================================================
     
   */
-
-    --scrollBarThumbBackgroundColor: var(
-        --colorSecondaryDarken2,
-        rgb(46, 103, 153)
-    );
+    --scrollBarThumbBackgroundColor: rgb(43, 101, 155);
     --scrollBarThumbBackgroundHoverColor: var(
         --colorSecondaryDarken1,
         rgb(58, 129, 191)
     );
-    --scrollBarTrackBackgroundColor: var(
-        --colorTertiaryDarken1,
-        rgb(32, 50, 70)
-    );
-    --scrollBarTrackCornerBackgroundColor: var(
-        --colorTertiaryDarken1,
-        rgb(32, 50, 70)
-    );
+    --scrollBarTrackBackgroundColor: rgb(27, 45, 62);
+    --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
 
     /* 
     
