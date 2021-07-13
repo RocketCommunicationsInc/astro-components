@@ -10,6 +10,7 @@
     --defaultText: var(--colorWhite, #ffffff);
     --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
     --globalAppHeader: var(--colorTertiaryDarken2, #172635);
+    --surfaceElements: #1b2d3e; /* TODO: this is an unofficial Astro color, but a required KM color */
     --primary: var(--colorSecondary, #4dacff);
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
@@ -17,7 +18,7 @@
     --primaryDarker: var(--colorSecondaryDarken2, #2e6799);
     --primaryDarkHover: #6b8ca5;
     --primaryElementText: var(--colorTertiaryDarken4, #080c11);
-    --inputBackground: var(--colorTertiaryDarken3, #101923);
+    --inputBackground: var(--colorWhite, #ffffff);
     --inputDark: var(--colorTertiaryDarken4, #080c11);
 
     /* styles */
@@ -315,14 +316,14 @@
     
   */
 
-    --inputBackgroundColor: var(--inputBackground);
+    --inputBackgroundColor: var(--colorTertiaryDarken3);
     --inputBorderColor: var(--colorSecondaryDarken2, #2b659b);
-    --inputBorderColorAlt: var(--inputDark);
-    --inputTextColor: var(--defaultText);
+    --inputBorderColorAlt: var(--colorTertiaryDarken4);
+    --inputTextColor: var(--colorWhite, #ffffff);
 
     /* Input Focus */
-    --inputFocusBorderColor: var(--primaryLight);
-    --inputFocusTextColor: var(--defaultText);
+    --inputFocusBorderColor: var(--colorSecondaryLighten2);
+    --inputFocusTextColor: var(--colorWhite, #ffffff);
 
     --inputInvalidBorderColor: var(--colorCritical);
 
