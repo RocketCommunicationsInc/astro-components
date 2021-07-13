@@ -13,8 +13,8 @@
   --smallLabelFontSize: 0.875rem;
   --largeLabelFontSize: 1.125rem;
   /* Typography */
-  --fontFamily: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --fontFamily: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --fontSize: 1rem;
   /* 16px */
   --fontSizeXL: 1.125rem;
@@ -22,9 +22,9 @@
   --fontSizeMD: 0.875rem;
   --fontSizeSM: 0.75rem;
   --fontSizeXS: 0.65rem;
-  --fontFamilyLight: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  --fontFamilyMono: "Roboto Mono", monospace;
+  --fontFamilyLight: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --fontFamilyMono: 'Roboto Mono', monospace;
   --colorBlack: rgb(0, 0, 0);
   --colorWhite: rgb(255, 255, 255);
   --colorGray: rgb(204, 204, 204);
@@ -574,16 +574,11 @@
     ==========================================================================
     
   */
-  --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1, #9ba0aa);
-  --scrollBarThumbBackgroundHoverColor: var(
-        --colorQuaternaryDarken2,
-        #676a71
-    );
-  --scrollBarTrackBackgroundColor: transparent;
-  --scrollBarTrackCornerBackgroundColor: var(
-        --colorQuaternaryLighten4,
-        #f2f4f7
-    );
+  --scrollBarThumbBackgroundColor: var(--primary, rgb(0, 90, 143));
+  --scrollBarThumbBackgroundHoverColor: var(--colorPrimaryLighten1);
+  --scrollBarTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);
+  --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(47, 72, 99, 0.5);
   /* 
     
     Timeline Colors -- Dark
@@ -951,22 +946,14 @@ li.light-theme {
     ==========================================================================
     
   */
-  --scrollBarThumbBackgroundColor: var(
-        --colorSecondaryDarken2,
-        rgb(46, 103, 153)
-    );
+  --scrollBarThumbBackgroundColor: rgb(43, 101, 155);
   --scrollBarThumbBackgroundHoverColor: var(
         --colorSecondaryDarken1,
         rgb(58, 129, 191)
     );
-  --scrollBarTrackBackgroundColor: var(
-        --colorTertiaryDarken1,
-        rgb(32, 50, 70)
-    );
-  --scrollBarTrackCornerBackgroundColor: var(
-        --colorTertiaryDarken1,
-        rgb(32, 50, 70)
-    );
+  --scrollBarTrackBackgroundColor: rgb(27, 45, 62);
+  --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+  --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
   /* 
     
     Timeline Colors -- Dark
@@ -1033,8 +1020,8 @@ li.dark-theme {
 h1,
 h2,
 h3 {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: 400;
   color: var(--defaultText);
@@ -1145,14 +1132,14 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   color: white;
   color: var(--fontColor, white);
   background-color: var(--backgroundColor);
-  scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackCornerBackgroundColor); }
+  scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackBackgroundColor); }
 
 label {
   user-select: none; }
@@ -1168,8 +1155,7 @@ label {
   background-color: transparent; }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #2e6799;
-  background-color: var(--scrollBarThumbBackgroundColor, #2e6799);
+  background-color: var(--scrollBarThumbBackgroundColor);
   border-radius: 10px;
   border: 3px solid transparent;
   background-clip: padding-box; }
@@ -1183,19 +1169,17 @@ label {
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #3a81bf;
-  background-color: var(--scrollBarThumbBackgroundHoverColor, #3a81bf); }
+  background-color: var(--scrollBarThumbBackgroundHoverColor); }
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background-color: #203246;
-  background-color: var(--scrollBarTrackCornerBackgroundColor, #203246); }
+  background-color: var(--scrollBarTrackBackgroundColor); }
 
 ::-webkit-scrollbar-track:vertical {
-  box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.15); }
+  box-shadow: var(--scrollBarVerticalBoxShadow); }
 
 ::-webkit-scrollbar-track:horizontal {
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15); }
+  box-shadow: var(--scrollBarHorizontalBoxShadow); }
 
 /*
 **
@@ -1234,8 +1218,8 @@ label {
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
   color: var(--buttonTextColor);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   white-space: nowrap;
@@ -1497,8 +1481,8 @@ label {
   color: var(--colorCritical);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: bold;
   margin: 0;
@@ -1513,8 +1497,8 @@ label {
   color: var(--secondaryText);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   letter-spacing: 0.5px; }
@@ -1528,8 +1512,8 @@ label {
   color: var(--colorCritical);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: bold; }
 
@@ -1572,8 +1556,8 @@ label {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize);
@@ -1616,8 +1600,8 @@ label {
   border: 1px solid transparent;
   border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
@@ -1633,8 +1617,8 @@ label {
 .rux-form-field textarea:-ms-input-placeholder {
   font-size: 1rem;
   font-weight: normal;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily); }
 
 .rux-form-field input[type="date"]::-webkit-inner-spin-button,
@@ -1865,35 +1849,37 @@ label {
 **	2.0.1 Notes
 */
 .rux-select {
-  --selectInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-  --selectActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
   position: relative;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: 1px solid var(--inputBorderColorAlt);
+  width: 100%;
+  border: 1px solid var(--selectMenuBorderColor);
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
-  color: var(--inputDark);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: var(--selectMenuTextColor);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   font-size: 1rem;
   padding: 0.438rem 3.125rem 0.438rem 0.5rem;
-  background-color: var(--inputBackground);
-  background-image: var(--selectInactiveCaret);
-  background-position: center right 0.625rem;
+  background-color: var(--selectMenuBackgroundColor);
+  background-image: var(--selectInactiveCaret), var(--selectMenuCaretBackgroundColor);
+  background-position: center right 0.625rem, center left 9.105rem;
   background-repeat: no-repeat;
   user-select: none; }
 
 .rux-select .rux-select optgroup,
 .rux-select option {
-  color: var(--inputDark);
-  background-color: var(--inputBackground); }
+  background-color: var(--selectMenuBackgroundColor);
+  border: 1px solid var(--selectMenuBorderColor);
+  border-radius: 3px;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5); }
 
 .rux-select .rux-select optgroup:hover,
 .rux-select option:hover {
+  color: var(--selectMenuTextHoverColor);
   background-color: var(--selectHoverOptBackgroundColor); }
 
 .rux-select:disabled {
@@ -1914,7 +1900,8 @@ label {
   background-image: var(--selectActiveCaret); }
 
 .rux-select:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  border: 1px solid var(--selectMenuTextHoverColor); }
 
 .rux-select::-ms-expand {
   display: none; }
@@ -1923,7 +1910,7 @@ label {
   background: transparent; }
 
 .rux-select:invalid {
-  border: 1px solid var(--inputInvalidBorderColor); }
+  border: 1px solid var(--selectMenuInvalidBorder); }
 
 /*
 **
@@ -2106,7 +2093,7 @@ label {
 .rux-clock__segment__value {
   display: flex;
   align-items: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-family: var(--fontFamilyMono);
   font-weight: 700;
   border: 1px solid var(--clockBorderColor);
@@ -2224,8 +2211,8 @@ i.rux-icon {
   margin: 0 0.5rem 0 0; }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily); }
 
 .log-event__status {
@@ -3114,8 +3101,8 @@ input:-moz-focusring {
   margin: 10px 0 0 0;
   color: var(--fontColor);
   font-size: 0.875rem;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily); }
 
 .rux-range:disabled + .rux-slider__control__labels {
