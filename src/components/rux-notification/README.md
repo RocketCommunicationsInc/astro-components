@@ -8,7 +8,7 @@ If another Notification Banner is waiting, it appears when the current Banner is
 
 ## Guidelines
 
-- [Astro UXDS: Notification Banner](https://www.astrouxds.com/ui-components/notification-banner)
+-   [Astro UXDS: Notification Banner](https://www.astrouxds.com/ui-components/notification-banner)
 
 ## Web Components Usage
 
@@ -39,7 +39,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxNotification } from "@astrouxds/rux-notification/rux-notification.js";
+import { RuxNotification } from '@astrouxds/rux-notification/rux-notification.js'
 ```
 
 ### 3. Render the Astro Notification Banner Web Component
@@ -72,13 +72,13 @@ The Astro UXDS Notification Banner hides from view using absolute positioning in
 | `open`       | Boolean | `false`     | Yes      | Set to true to display the Banner and begin countdown to close (if a `close-after` Number value is provided).                                                                                                                                                                                                                                                                                                                                                                                    |
 | `message`    | String  | `''`        | Yes      | Message for the notification banner.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `closeAfter` | Number  | `2000`      | No       | If provided, the banner will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the banner will stay open until the user closes it. |
-| `status`     | String  | `'standby'` | No       | Displays an icon from the [Astro UXDS Status System](https://astrouxds.com/design-guidelines/status-system) in the log entry's row. Possible values include `'off'`, `'standby'`, `'normal'`, `'caution'`, `'serious'`, and `'critical'`                                                                                                                                                                                                                                                         |
+| `status`     | String  | `'standby'` | No       | The background color. Possible values include 'standby', 'normal', 'caution', and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).                                                                                                                                                                                                                                                                                                                     |
 
 ## Revision History
 
 ##### **4.0**
 
-- Swapped kebab-cased `close-after` attribute for standard camelCase `closeAfter`
-- Removed `target` property and associated work-arounds to enforce parent element positioning. Added language to direct users to apply `position: relative` and `overflow: hidden` CSS declarations to containing elements themselves.
-- Enforced minimum 2000ms and maximum 10000ms close delay duration.
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Swapped kebab-cased `close-after` attribute for standard camelCase `closeAfter`
+-   Removed `target` property and associated work-arounds to enforce parent element positioning. Added language to direct users to apply `position: relative` and `overflow: hidden` CSS declarations to containing elements themselves.
+-   Enforced minimum 2000ms and maximum 10000ms close delay duration.
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
