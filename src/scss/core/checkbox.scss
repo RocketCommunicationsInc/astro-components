@@ -60,10 +60,10 @@
 
 .rux-checkbox input[type="checkbox"] + label::before {
   border-radius: 2px;
+  background-color: var(--controlSelectedBackgroundColor);
 }
 
 .rux-checkbox input[type="checkbox"]:checked + label::before {
-  background-color: var(--primary);
   border-color: var(--controlSelectedOutlineBorderColor);
 }
 
@@ -73,7 +73,7 @@
 }
 
 .rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before{
-	background-color: var(--controlHoverBorderColor);
+	border-color: var(--controlHoverBorderColor);
 }
 
 

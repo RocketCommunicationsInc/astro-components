@@ -81,17 +81,15 @@
     For checkboxes, radio buttons etc …
 
   */
-    --controlTextColor: var(--primaryElementText);
+    --controlTextColor: var(--colorSecondary500);
     --controlLabelColor: var(--defaultText);
     --controlBackgroundColor: var(--primary);
-    --controlBorderColor: var(--primary);
-    --controlAccentColor: var(--primary);
+    --controlBorderColor: var(--colorSecondary700);
 
     --controlSelectedTextColor: var(--defaultText);
-    --controlSelectedBackgroundColor: var(--primaryDark);
-    --controlSelectedBorderColor: var(--primary);
-    --controlHoverBorderColor: var(--primaryLight);
-    --controlSelectedOutlineBorderColor: var(--primary);
+    --controlSelectedBackgroundColor: var(--colorTertiary800);
+    --controlHoverBorderColor: var(--colorSecondary300);
+    --controlSelectedOutlineBorderColor: var(--colorSecondary700);
 
     /* 
     
