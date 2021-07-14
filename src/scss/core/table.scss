@@ -91,5 +91,5 @@
 }
 .rux-table tr:hover .rux-checkbox input[type="checkbox"]:not(:checked) + label::before,
 .rux-table tr:hover .rux-checkbox input[type="radio"] + label::before {
-	border-color: var(--controlSelectedBorderColor);
+	border-color: var(--primary);
 }

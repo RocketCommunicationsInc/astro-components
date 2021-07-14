@@ -13,8 +13,8 @@
   --smallLabelFontSize: 0.875rem;
   --largeLabelFontSize: 1.125rem;
   /* Typography */
-  --fontFamily: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --fontFamily: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --fontSize: 1rem;
   /* 16px */
   --fontSizeXL: 1.125rem;
@@ -22,9 +22,9 @@
   --fontSizeMD: 0.875rem;
   --fontSizeSM: 0.75rem;
   --fontSizeXS: 0.65rem;
-  --fontFamilyLight: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  --fontFamilyMono: "Roboto Mono", monospace;
+  --fontFamilyLight: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --fontFamilyMono: 'Roboto Mono', monospace;
   --colorBlack: rgb(0, 0, 0);
   --colorWhite: rgb(255, 255, 255);
   --colorGray: rgb(204, 204, 204);
@@ -190,7 +190,47 @@
   --colorGrayDarken1: rgb(163, 163, 163);
   --colorGrayDarken2: rgb(122, 122, 122);
   --colorGrayDarken3: rgb(82, 82, 82);
-  --colorGrayDarken4: rgb(41, 41, 41); }
+  --colorGrayDarken4: rgb(41, 41, 41);
+  --colorSnowflakesDarkSurface: #1b2d3e;
+  --colorSnowflakesLightShadow: #828181;
+  --colorSnowflakesDarkSelected: #1c3f5e;
+  --colorSnowflakesLightSelected: #cee9fc;
+  --colorPrimary100: #CBDEE9;
+  --colorPrimary200: #98BDD3;
+  --colorPrimary300: #649CBD;
+  --colorPrimary400: #2F7AA7;
+  --colorPrimary500: #005A8F;
+  --colorPrimary600: #004872;
+  --colorPrimary700: #003655;
+  --colorPrimary800: #002439;
+  --colorPrimary900: #00121C;
+  --colorSecondary100: #DAEEFF;
+  --colorSecondary200: #B7DCFF;
+  --colorSecondary300: #92CBFF;
+  --colorSecondary400: #6EBAFF;
+  --colorSecondary500: #4DACFF;
+  --colorSecondary600: #3A87CF;
+  --colorSecondary700: #2B659B;
+  --colorSecondary800: #1D4367;
+  --colorSecondary900: #0E2234;
+  --colorTertiary100: #D4D8DD;
+  --colorTertiary200: #A9B2BC;
+  --colorTertiary300: #7E8C9B;
+  --colorTertiary400: #52667A;
+  --colorTertiary500: #274059;
+  --colorTertiary600: #1F3347;
+  --colorTertiary700: #172635;
+  --colorTertiary800: #101923;
+  --colorTertiary900: #080C11;
+  --colorQuaternary100: #F5F6F9;
+  --colorQuaternary200: #EAEEF4;
+  --colorQuaternary300: #E1E6EF;
+  --colorQuaternary400: #D7DEE9;
+  --colorQuaternary500: #CED6E4;
+  --colorQuaternary600: #A4ABB6;
+  --colorQuaternary700: #7B8089;
+  --colorQuaternary800: #51555B;
+  --colorQuaternary900: #292A2D; }
 
 /* Thin */
 @font-face {
@@ -346,16 +386,13 @@
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--primaryElementText);
+  --controlTextColor: var(--colorPrimary500);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
-  --controlBorderColor: var(--primary);
-  --controlAccentColor: var(--primary);
+  --controlBorderColor: var(--colorPrimary600);
   --controlSelectedTextColor: var(--defaultText);
-  --controlSelectedBackgroundColor: transparent;
-  --controlSelectedBorderColor: var(--primary);
-  --controlHoverOutlineBackgroundColor: none;
-  --controlHoverBorderColor: var(--primaryDark);
+  --controlSelectedBackgroundColor: var(--colorQuaternary200);
+  --controlHoverBorderColor: var(--colorPrimary300);
   --controlSelectedOutlineBorderColor: var(--primary);
   --controlSelectedOutlineBackgroundColor: none;
   /* 
@@ -720,16 +757,14 @@ li.light-theme {
     For checkboxes, radio buttons etc …
 
   */
-  --controlTextColor: var(--primaryElementText);
+  --controlTextColor: var(--colorSecondary500);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
-  --controlBorderColor: var(--primary);
-  --controlAccentColor: var(--primary);
+  --controlBorderColor: var(--colorSecondary700);
   --controlSelectedTextColor: var(--defaultText);
-  --controlSelectedBackgroundColor: var(--primaryDark);
-  --controlSelectedBorderColor: var(--primary);
-  --controlHoverBorderColor: var(--primaryLight);
-  --controlSelectedOutlineBorderColor: var(--primary);
+  --controlSelectedBackgroundColor: var(--colorTertiary800);
+  --controlHoverBorderColor: var(--colorSecondary300);
+  --controlSelectedOutlineBorderColor: var(--colorSecondary700);
   /* 
     
     Progress Colors 
@@ -1033,8 +1068,8 @@ li.dark-theme {
 h1,
 h2,
 h3 {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: 400;
   color: var(--defaultText);
@@ -1145,8 +1180,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   color: white;
@@ -1234,8 +1269,8 @@ label {
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
   color: var(--buttonTextColor);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   white-space: nowrap;
@@ -1433,10 +1468,10 @@ label {
   border-radius: 2px; }
 
 .rux-checkbox input[type="checkbox"] + label::before {
-  border-radius: 2px; }
+  border-radius: 2px;
+  background-color: var(--controlSelectedBackgroundColor); }
 
 .rux-checkbox input[type="checkbox"]:checked + label::before {
-  background-color: var(--primary);
   border-color: var(--controlSelectedOutlineBorderColor); }
 
 .rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
@@ -1444,7 +1479,7 @@ label {
   border-color: var(--controlHoverBorderColor); }
 
 .rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before {
-  background-color: var(--controlHoverBorderColor); }
+  border-color: var(--controlHoverBorderColor); }
 
 /* Checkmark */
 .rux-checkbox input[type="checkbox"]:checked + label::after {
@@ -1497,8 +1532,8 @@ label {
   color: var(--colorCritical);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: bold;
   margin: 0;
@@ -1513,8 +1548,8 @@ label {
   color: var(--secondaryText);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   letter-spacing: 0.5px; }
@@ -1528,8 +1563,8 @@ label {
   color: var(--colorCritical);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: bold; }
 
@@ -1572,8 +1607,8 @@ label {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize);
@@ -1616,8 +1651,8 @@ label {
   border: 1px solid transparent;
   border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
@@ -1633,8 +1668,8 @@ label {
 .rux-form-field textarea:-ms-input-placeholder {
   font-size: 1rem;
   font-weight: normal;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily); }
 
 .rux-form-field input[type="date"]::-webkit-inner-spin-button,
@@ -1875,8 +1910,8 @@ label {
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
   color: var(--inputDark);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   font-size: 1rem;
@@ -2006,7 +2041,7 @@ label {
 
 .rux-table tr:hover .rux-checkbox input[type="checkbox"]:not(:checked) + label::before,
 .rux-table tr:hover .rux-checkbox input[type="radio"] + label::before {
-  border-color: var(--controlSelectedBorderColor); }
+  border-color: var(--primary); }
 
 .rux-advanced-status {
   position: relative;
@@ -2106,7 +2141,7 @@ label {
 .rux-clock__segment__value {
   display: flex;
   align-items: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-family: var(--fontFamilyMono);
   font-weight: 700;
   border: 1px solid var(--clockBorderColor);
@@ -2224,8 +2259,8 @@ i.rux-icon {
   margin: 0 0.5rem 0 0; }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily); }
 
 .log-event__status {
@@ -3114,8 +3149,8 @@ input:-moz-focusring {
   margin: 10px 0 0 0;
   color: var(--fontColor);
   font-size: 0.875rem;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily); }
 
 .rux-range:disabled + .rux-slider__control__labels {
