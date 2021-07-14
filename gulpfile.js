@@ -53,10 +53,20 @@ gulp.task('sass', () => {
       .pipe(gulp.dest('./static/css'));
 });
 
+/*
+ * * Handles watching for file changes and triggering a browser reload
+ */
+function watch() {
+  // compile and minify css
+  gulp.watch(
+      './src/scss/**/*.scss',
+      gulp.series('sass')
+  );
+}
 
 // only used during pre lerna publish
 gulp.task('build-rux-core', gulp.series('rux-core-static', 'rux-core-scss', 'rux-core-dist'));
 
-gulp.task('default', gulp.series('sass'));
+gulp.task('default', gulp.series('sass', watch));
 
 exports.build = gulp.series('sass');
