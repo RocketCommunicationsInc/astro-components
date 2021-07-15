@@ -56,7 +56,6 @@
 
 .rux-radio-button input[type='radio'] + label::before {
     border-radius: 100%;
-    background-color: transparent;
 }
 
 .rux-radio-button input[type='radio']:checked + label::before {

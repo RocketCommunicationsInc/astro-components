@@ -85,8 +85,8 @@
     --controlAccentColor: var(--primary);
 
     --controlSelectedTextColor: var(--defaultText);
-    --controlSelectedBackgroundColor: transparent;
-    --controlSelectedBorderColor: var(--primary);
+    --controlSelectedBackgroundColor: var(--primary);
+    --controlSelectedBorderColor: var(--colorPrimaryLighten2);
     --controlHoverBorderColor: var(--primaryDark);
 
     --controlSelectedOutlineBorderColor: var(--primary);
