@@ -78,7 +78,7 @@ export class RuxSegmentedButton extends LitElement {
                 .rux-segmented-button {
                     display: inline-flex;
 
-                    height: 1.6875rem;
+                    height: 1.625rem;
                     overflow: hidden;
 
                     padding: 0;
@@ -91,7 +91,7 @@ export class RuxSegmentedButton extends LitElement {
                 }
 
                 .rux-segmented-button__segment {
-                    height: 1.6875rem;
+                    height: 1.625rem;
                     width: auto;
                     margin: 0;
                     padding: 0;
