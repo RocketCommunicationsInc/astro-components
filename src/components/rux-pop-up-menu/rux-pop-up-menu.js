@@ -175,8 +175,8 @@ export class RuxPopUpMenu extends LitElement {
 
     render() {
         const list = this.data.map((item, index) => {
-            return item.hasOwnProperty('role') && item.role === 'seperator'
-                ? html`<li role="seperator"></li>`
+            return item.hasOwnProperty('role') && item.role === 'separator'
+                ? html`<li role="separator"></li>`
                 : html`<li
                       data-key="${item.hasOwnProperty('id') ? item.id : index}"
                       role="menuitem"
@@ -272,7 +272,7 @@ export class RuxPopUpMenu extends LitElement {
                 border-radius: 2px 2px 0 0;
             }
 
-            li:not([role='seperator']) {
+            li:not([role='separator']) {
                 display: block;
                 padding: 0.15rem 0.75rem;
                 color: var(--popupMenuTextColor);
@@ -287,7 +287,7 @@ export class RuxPopUpMenu extends LitElement {
                 overflow: hidden;
             }
 
-            li:not([role='seperator']):hover {
+            li:not([role='separator']):hover {
                 background-color: var(--popupMenuItemHoverBackgroundColor);
                 color: var(--popupMenuItemHoverTextColor);
             }
@@ -303,10 +303,10 @@ export class RuxPopUpMenu extends LitElement {
                 transform: rotate(180deg);
             }
 
-            [role='seperator'] {
+            [role='separator'] {
                 pointer-events: none;
                 height: 6px;
-                border-top: 1px dashed var(--popupMenuItemSeperatorBorderColor) !important;
+                border-top: 1px dashed var(--popupMenuItemSeparatorBorderColor) !important;
                 margin: 6px 0.5rem 0 0.5rem;
             }
         `
