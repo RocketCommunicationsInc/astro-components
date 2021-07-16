@@ -84,6 +84,7 @@
     --controlTextColor: var(--primaryElementText);
     --controlLabelColor: var(--defaultText);
     --controlBackgroundColor: var(--primary);
+    --controlOutlineBackgroundColor: var(--backgroundColor);
     --controlBorderColor: var(--colorSecondaryDarken2);
     --controlAccentColor: var(--primary);
 
@@ -94,8 +95,8 @@
 
     --controlSelectedOutlineBorderColor: var(--primary);
 
-    --controlHoverOutlineBackgroundColor: none;
-    --controlSelectedOutlineBackgroundColor: none;
+    --controlHoverOutlineBackgroundColor: var(--backgroundColor);
+    --controlSelectedOutlineBackgroundColor: var(--backgroundColor);
 
     /* 
     
