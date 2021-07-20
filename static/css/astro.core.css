@@ -190,7 +190,11 @@
   --colorGrayDarken1: rgb(163, 163, 163);
   --colorGrayDarken2: rgb(122, 122, 122);
   --colorGrayDarken3: rgb(82, 82, 82);
-  --colorGrayDarken4: rgb(41, 41, 41); }
+  --colorGrayDarken4: rgb(41, 41, 41);
+  --colorSnowflakesDarkSurface: #1b2d3e;
+  --colorSnowflakesLightShadow: #828181;
+  --colorSnowflakesDarkSelected: #1c3f5e;
+  --colorSnowflakesLightSelected: #cee9fc; }
 
 /* Thin */
 @font-face {
@@ -288,8 +292,9 @@
   --secondaryText: var(--colorQuaternaryDarken3, #51555b);
   --globalAppHeader: var(--colorTertiaryDarken2, #172635);
   --surfaceElements: var(--colorWhite, #ffffff);
-  --primary: var(--colorPrimary, #005a8f);
+  --primary: var(--colorPrimary, #035d91);
   --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
+  --primaryWithOpacity: rgba(var(--primary), 0.7);
   --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
   --primaryDark: var(--colorPrimaryDarken1, #004872);
   --primaryDarkHover: #0048724d;
@@ -574,7 +579,7 @@
     ==========================================================================
     
   */
-  --scrollBarThumbBackgroundColor: var(--primary, rgb(0, 90, 143));
+  --scrollBarThumbBackgroundColor: var(--primaryWithOpacity);
   --scrollBarThumbBackgroundHoverColor: var(--colorPrimaryLighten1);
   --scrollBarTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);
@@ -653,8 +658,7 @@ li.light-theme {
   --defaultText: var(--colorWhite, #ffffff);
   --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
   --globalAppHeader: var(--colorTertiaryDarken2, #172635);
-  --surfaceElements: #1b2d3e;
-  /* TODO: this is an unofficial Astro color, but a required KM color */
+  --surfaceElements: var(--colorSnowflakesDarkSurface, #1b2d3e);
   --primary: var(--colorSecondary, #4dacff);
   --primaryLight: var(--colorSecondaryLighten2, #92cbff);
   --primaryLightHover: #92cbff4d;
@@ -946,12 +950,12 @@ li.light-theme {
     ==========================================================================
     
   */
-  --scrollBarThumbBackgroundColor: rgb(43, 101, 155);
+  --scrollBarThumbBackgroundColor: var(--primaryDarker);
   --scrollBarThumbBackgroundHoverColor: var(
         --colorSecondaryDarken1,
         rgb(58, 129, 191)
     );
-  --scrollBarTrackBackgroundColor: rgb(27, 45, 62);
+  --scrollBarTrackBackgroundColor: var(--surfaceElements);
   --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
   --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
   /* 
@@ -1849,37 +1853,35 @@ label {
 **	2.0.1 Notes
 */
 .rux-select {
+  --selectInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --selectActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
   position: relative;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 100%;
-  border: 1px solid var(--selectMenuBorderColor);
+  border: 1px solid var(--inputBorderColorAlt);
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
-  color: var(--selectMenuTextColor);
+  color: var(--inputDark);
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   font-size: 1rem;
   padding: 0.438rem 3.125rem 0.438rem 0.5rem;
-  background-color: var(--selectMenuBackgroundColor);
-  background-image: var(--selectInactiveCaret), var(--selectMenuCaretBackgroundColor);
-  background-position: center right 0.625rem, center left 9.105rem;
+  background-color: var(--inputBackground);
+  background-image: var(--selectInactiveCaret);
+  background-position: center right 0.625rem;
   background-repeat: no-repeat;
   user-select: none; }
 
 .rux-select .rux-select optgroup,
 .rux-select option {
-  background-color: var(--selectMenuBackgroundColor);
-  border: 1px solid var(--selectMenuBorderColor);
-  border-radius: 3px;
-  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5); }
+  color: var(--inputDark);
+  background-color: var(--inputBackground); }
 
 .rux-select .rux-select optgroup:hover,
 .rux-select option:hover {
-  color: var(--selectMenuTextHoverColor);
   background-color: var(--selectHoverOptBackgroundColor); }
 
 .rux-select:disabled {
@@ -1900,8 +1902,7 @@ label {
   background-image: var(--selectActiveCaret); }
 
 .rux-select:hover {
-  cursor: pointer;
-  border: 1px solid var(--selectMenuTextHoverColor); }
+  cursor: pointer; }
 
 .rux-select::-ms-expand {
   display: none; }
@@ -1910,7 +1911,7 @@ label {
   background: transparent; }
 
 .rux-select:invalid {
-  border: 1px solid var(--selectMenuInvalidBorder); }
+  border: 1px solid var(--inputInvalidBorderColor); }
 
 /*
 **
