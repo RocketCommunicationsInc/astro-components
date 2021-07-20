@@ -84,12 +84,19 @@
     --controlTextColor: var(--colorSecondary500);
     --controlLabelColor: var(--defaultText);
     --controlBackgroundColor: var(--primary);
-    --controlBorderColor: var(--colorSecondary700);
+    --controlOutlineBackgroundColor: var(--backgroundColor);
+    --controlBorderColor: var(--colorSecondaryDarken2);
+    --controlAccentColor: var(--primary);
 
     --controlSelectedTextColor: var(--defaultText);
-    --controlSelectedBackgroundColor: var(--colorTertiary800);
-    --controlHoverBorderColor: var(--colorSecondary300);
-    --controlSelectedOutlineBorderColor: var(--colorSecondary700);
+    --controlSelectedBackgroundColor: var(--primaryDark);
+    --controlSelectedBorderColor: var(--colorSecondaryDarken2);
+    --controlHoverBorderColor: var(--primaryLight);
+
+    --controlSelectedOutlineBorderColor: var(--primary);
+
+    --controlHoverOutlineBackgroundColor: var(--backgroundColor);
+    --controlSelectedOutlineBackgroundColor: var(--backgroundColor);
 
     /* 
     

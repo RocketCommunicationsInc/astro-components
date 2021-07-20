@@ -26,7 +26,7 @@
     "storybook": "npm-run-all --parallel bootstrap gulp storybook-dev",
     "prepare": "husky install",
     "prettier": "prettier --write --loglevel warn .",
-    "pretty-quick": "pretty-quick"
+    "pretty-quick": "pretty-quick --staged"
   },
   "dependencies": {
     "ag-grid-community": "^24.0.0",
