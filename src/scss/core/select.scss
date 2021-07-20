@@ -36,7 +36,7 @@
 .rux-select .rux-select optgroup:hover,
 .rux-select option:hover {
     color: var(--selectMenuTextHoverColor);
-    background-color: var(--selectHoverOptBackgroundColor);
+    background-color: var(--selectMenuHoverOptBackgroundColor);
 }
 
 .rux-select:disabled {
