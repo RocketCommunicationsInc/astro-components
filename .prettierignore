@@ -3,4 +3,4 @@ node_modules
 *.md
 *.css
 package.json
-package-lock.json 
+package-lock.json
