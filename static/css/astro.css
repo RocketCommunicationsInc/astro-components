@@ -294,7 +294,7 @@
   --surfaceElements: var(--colorWhite, #ffffff);
   --primary: var(--colorPrimary, #035d91);
   --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
-  --primaryWithOpacity: rgba(var(--primary), 0.7);
+  --primaryWithOpacity: 3, 93, 145;
   --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
   --primaryDark: var(--colorPrimaryDarken1, #004872);
   --primaryDarkHover: #0048724d;
@@ -579,7 +579,7 @@
     ==========================================================================
     
   */
-  --scrollBarThumbBackgroundColor: var(--primaryWithOpacity);
+  --scrollBarThumbBackgroundColor: rgba(var(--primaryWithOpacity), 0.7);
   --scrollBarThumbBackgroundHoverColor: var(--colorPrimaryLighten1);
   --scrollBarTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
   --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);
@@ -1160,7 +1160,7 @@ label {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollBarThumbBackgroundColor);
-  border-radius: 10px;
+  border-radius: 8px;
   border: 3px solid transparent;
   background-clip: padding-box; }
 
