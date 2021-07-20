@@ -1,26 +1,26 @@
 {
-  "author": {
-    "name": "Rocket Communications",
-    "email": "uxsupport@rocketcom.com"
-  },
-  "homepage": "https://www.astrouxds.com",
-  "bugs": {
-    "email": "uxsupport@rocketcom.com",
-    "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
-  },
-  "description": "Utilities for Astro Components",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "name": "@astrouxds/rux-utils",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "version": "4.0.4",
-  "gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
+    "author": {
+        "name": "Rocket Communications",
+        "email": "uxsupport@rocketcom.com"
+    },
+    "homepage": "https://www.astrouxds.com",
+    "bugs": {
+        "email": "uxsupport@rocketcom.com",
+        "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
+    },
+    "description": "Utilities for Astro Components",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "name": "@astrouxds/rux-utils",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "version": "4.0.4",
+    "gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }

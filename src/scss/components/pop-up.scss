@@ -10,29 +10,29 @@
 
 /* 	REQUIRED CLASSES */
 .rux-pop-up {
-  font-size: 1rem;
-  display: inline-block;
+    font-size: 1rem;
+    display: inline-block;
 
-  margin: 1em;
+    margin: 1em;
 
-  min-width: 15em;
-  position: relative;
+    min-width: 15em;
+    position: relative;
 
-  border: 1px solid var(--colorSecondary);
-  background-color: var(--colorSecondary);
-  border-radius: 3px;
+    border: 1px solid var(--colorSecondary);
+    background-color: var(--colorSecondary);
+    border-radius: 3px;
 }
 
 .rux-pop-up ul {
-  position: relative;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background: none;
-  background-color: var(--colorWhite);
-  border-radius: 2px;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    background-color: var(--colorWhite);
+    border-radius: 2px;
 
-  z-index: 2;
+    z-index: 2;
 }
 
 /* .rux-pop-up li,
@@ -41,104 +41,105 @@
 } */
 
 .rux-pop-up a {
-  display: block;
-  padding: 0.5em;
-  color: var(--popupMenuTextColor);
-  text-decoration: none;
+    display: block;
+    padding: 0.5em;
+    color: var(--popupMenuTextColor);
+    text-decoration: none;
 
-  min-width: 15em;
-  max-width: 20em;
+    min-width: 15em;
+    max-width: 20em;
 }
 
-.rux-pop-up a:hover,.rux-pop-up li:hover {
-	background-color: var(--colorSecondaryLighten3);
-	color: var(--popupMenuItemHoverTextColor);
+.rux-pop-up a:hover,
+.rux-pop-up li:hover {
+    background-color: var(--colorSecondaryLighten3);
+    color: var(--popupMenuItemHoverTextColor);
 }
 
 .rux-pop-up li:first-child a {
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
 }
 
 .rux-pop-up li:last-child a {
-  border: none;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
+    border: none;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
 
 .rux-pop-up--top {
-  border-top: 3px solid var(--colorSecondary);
+    border-top: 3px solid var(--colorSecondary);
 }
 
 .rux-pop-up--top::before {
-  content: "";
-  display: block;
-  position: absolute;
+    content: '';
+    display: block;
+    position: absolute;
 
-  width: 1.1875rem;
-  height: 1.1875rem;
+    width: 1.1875rem;
+    height: 1.1875rem;
 
-  background-color: var(--colorSecondary);
-  z-index: 1;
+    background-color: var(--colorSecondary);
+    z-index: 1;
 
-  margin: -12px 0 0 16px;
-  transform: rotate(45deg);
+    margin: -12px 0 0 16px;
+    transform: rotate(45deg);
 }
 
-.rux-pop-up--bottom{
-  border-bottom: 3px solid var(--colorSecondary);
+.rux-pop-up--bottom {
+    border-bottom: 3px solid var(--colorSecondary);
 }
 
 .rux-pop-up--bottom::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-bottom: 1px solid var(--colorSecondary);
-  border-right: 1px solid var(--colorSecondary);
-  width: 1.1875rem;
-  height: 1.1875rem;
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid var(--colorSecondary);
+    border-right: 1px solid var(--colorSecondary);
+    width: 1.1875rem;
+    height: 1.1875rem;
 
-  background-color: var(--colorSecondary);
+    background-color: var(--colorSecondary);
 
-  margin: -7px 0 0 16px;
-  transform: rotate(45deg);
+    margin: -7px 0 0 16px;
+    transform: rotate(45deg);
 }
 
 .rux-pop-up--left {
-  border-left: 3px solid var(--colorSecondary);
+    border-left: 3px solid var(--colorSecondary);
 }
 
 .rux-pop-up--left::before {
-  content: "";
-  display: block;
-  position: absolute;
-  border-bottom: 1px solid var(--colorSecondary);
-  border-left: 1px solid var(--colorSecondary);
-  width: 1.1875rem;
-  height: 1.1875rem;
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid var(--colorSecondary);
+    border-left: 1px solid var(--colorSecondary);
+    width: 1.1875rem;
+    height: 1.1875rem;
 
-  background-color: var(--colorSecondary);
+    background-color: var(--colorSecondary);
 
-  margin: 16px 0 0 -12px;
-  transform: rotate(45deg);
+    margin: 16px 0 0 -12px;
+    transform: rotate(45deg);
 }
 
 .rux-pop-up--right {
-  border-right: 3px solid var(--colorSecondary);
+    border-right: 3px solid var(--colorSecondary);
 }
 
-.rux-pop-up--right::before{
-  content: "";
-  display: block;
-  position: absolute;
-  border-top: 1px solid var(--colorSecondary);
-  border-right: 1px solid var(--colorSecondary);
-  width: 1.1875rem;
-  height: 1.1875rem;
+.rux-pop-up--right::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-top: 1px solid var(--colorSecondary);
+    border-right: 1px solid var(--colorSecondary);
+    width: 1.1875rem;
+    height: 1.1875rem;
 
-  background-color: var(--colorSecondary);
+    background-color: var(--colorSecondary);
 
-  right: 0;
-  margin: 16px -12px 0 0;
-  transform: rotate(45deg);
+    right: 0;
+    margin: 16px -12px 0 0;
+    transform: rotate(45deg);
 }

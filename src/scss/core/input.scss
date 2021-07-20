@@ -17,77 +17,76 @@
 /* 	REQUIRED CLASSES */
 
 :root {
-  --padding: 0.5rem;
-  --paddingLeft: 0.5rem;
-  --paddingRight: 0.5rem;
-  --paddingTop: 0.25rem;
-  --paddingBottom: 0.25rem;
+    --padding: 0.5rem;
+    --paddingLeft: 0.5rem;
+    --paddingRight: 0.5rem;
+    --paddingTop: 0.25rem;
+    --paddingBottom: 0.25rem;
 }
 
 .rux-form-field {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
 
-  font-family: var(--fontFamily);
-  font-size: var(--fontSize);
-  color: var(--fontColor);
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    color: var(--fontColor);
 }
 
 .rux-form-field input:required + label::after {
-  content: "*";
-	margin-left: 0.25rem;
-	color: var(--inputTextColor);
+    content: '*';
+    margin-left: 0.25rem;
+    color: var(--inputTextColor);
 }
 
-
 .rux-form-field__label {
-  display: flex;
-  order: 1;
+    display: flex;
+    order: 1;
 
-  margin: 0 0 0.15rem 0;
-  width: 100%;
-  align-content: center;
-  align-items: center;
+    margin: 0 0 0.15rem 0;
+    width: 100%;
+    align-content: center;
+    align-items: center;
 
-  color: var(--defaultText);
-  user-select: none;
+    color: var(--defaultText);
+    user-select: none;
 }
 
 .rux-form-field input {
-  box-sizing: border-box;
-  order: 2;
+    box-sizing: border-box;
+    order: 2;
 
-  height: 2.125rem;
-  width: 100%;
-  padding: 0 0.625rem;
+    height: 2.125rem;
+    width: 100%;
+    padding: 0 0.625rem;
 
-  border: 1px solid var(--inputBorderColor);
-  border-radius: 4px;
+    border: 1px solid var(--inputBorderColor);
+    border-radius: 4px;
 
-  font-size: var(--fontSize, 1rem);
-  color: var(--inputTextColor);
+    font-size: var(--fontSize, 1rem);
+    color: var(--inputTextColor);
 }
 
 .rux-form-field textarea {
-  box-sizing: border-box;
-  -webkit-order: 2;
-  order: 2;
+    box-sizing: border-box;
+    -webkit-order: 2;
+    order: 2;
 
-  min-height: 4.25rem;
-  width: 100%;
-  padding: 0.5rem;
+    min-height: 4.25rem;
+    width: 100%;
+    padding: 0.5rem;
 
-  border: 1px solid transparent;
+    border: 1px solid transparent;
 
-  border: 1px solid var(--inputBorderColor);
-  border-radius: 3px;
+    border: 1px solid var(--inputBorderColor);
+    border-radius: 3px;
 
-  font-family: var(--fontFamily);
-  font-size: var(--fontSize, 1rem);
-  color: rgb(0, 0, 0);
-  color: var(--inputTextColor);
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize, 1rem);
+    color: rgb(0, 0, 0);
+    color: var(--inputTextColor);
 }
 
 /* input */
@@ -98,36 +97,36 @@
 .rux-form-field textarea::-webkit-input-placeholder,
 .rux-form-field textarea::-moz-placeholder ,
 .rux-form-field textarea:-ms-input-placeholder {
-  font-size: 1rem;
-  font-weight: normal;
-  font-family: var(--fontFamily);
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: var(--fontFamily);
 }
 
-.rux-form-field input[type="date"]::-webkit-inner-spin-button,
-.rux-form-field input[type="date"]::-webkit-outer-spin-button,
-.rux-form-field input[type="date"]::-webkit-calendar-picker-indicator {
-  -webkit-appearance: none;
-  display: none;
+.rux-form-field input[type='date']::-webkit-inner-spin-button,
+.rux-form-field input[type='date']::-webkit-outer-spin-button,
+.rux-form-field input[type='date']::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    display: none;
 }
 
 /* VALIDATION */
 .rux-form-field input:invalid {
-  border: 1px solid var(--inputInvalidBorderColor);
+    border: 1px solid var(--inputInvalidBorderColor);
 }
 
 /* FOCUS RULES */
 .rux-form-field input:focus,
 .rux-form-field input:invalid:focus {
-  /* outline: none; */
+    /* outline: none; */
 }
 
-.rux-form-field input:not([type="search"]):focus,
-.rux-form-field input:not([type="search"]):invalid:focus {
-  border: 1px solid var(--inputFocusBorderColor) !important;
+.rux-form-field input:not([type='search']):focus,
+.rux-form-field input:not([type='search']):invalid:focus {
+    border: 1px solid var(--inputFocusBorderColor) !important;
 }
 
 .rux-form-field input::selection {
-  background-color: var(--colorSecondaryLighten3);
+    background-color: var(--colorSecondaryLighten3);
 }
 /* 
 .rux-form-field input:invalid + label::before {
@@ -144,18 +143,18 @@
 } */
 
 .rux-form-field__validation-message {
-  display: none;
-  position: absolute;
-  max-width: 16rem;
-  background-color: var(--colorCritical);
-  width: 100%;
-  padding: 0.25rem;
-  right: 0;
-  font-size: var(--fontSizeMD);
+    display: none;
+    position: absolute;
+    max-width: 16rem;
+    background-color: var(--colorCritical);
+    width: 100%;
+    padding: 0.25rem;
+    right: 0;
+    font-size: var(--fontSizeMD);
 }
 
 .rux-form-field input:invalid .rux-form-field__validation-message {
-  display: block;
+    display: block;
 }
 
 /* .rux-form-field
@@ -170,90 +169,91 @@
 } */
 
 .rux-form-field input:disabled {
-  opacity: var(--disabledOpacity);
-  cursor: var(--disabledCursor);
+    opacity: var(--disabledOpacity);
+    cursor: var(--disabledCursor);
 }
 
 .rux-form-field--large,
 .rux-form-field--large label,
 .rux-form-field--large input,
 .rux-form-field--large textarea {
-  font-size: var(--fontSizeXL);
+    font-size: var(--fontSizeXL);
 }
 
 .rux-form-field--small,
 .rux-form-field--small label,
 .rux-form-field--small input,
 .rux-form-field--small textarea {
-  font-size: var(--fontSizeMD);
+    font-size: var(--fontSizeMD);
 }
 
 .rux-form-field--large input,
 .rux-form-field--large textarea {
-  padding: 0.5rem;
+    padding: 0.5rem;
 }
 
 .rux-form-field--large input {
-  height: 2.5rem;
+    height: 2.5rem;
 }
 
 .rux-form-field--small input,
 .rux-form-field--small textarea {
-  padding: 0.3rem;
+    padding: 0.3rem;
 }
 
 .rux-form-field--small input {
-  height: 1.625rem;
+    height: 1.625rem;
 }
 
 .rux-form-field--large input:invalid {
-  background-size: 1.375rem;
-  background-position: center right 0.5rem;
-  padding: 0.5rem 1.875rem 0.5rem 0.5rem;
+    background-size: 1.375rem;
+    background-position: center right 0.5rem;
+    padding: 0.5rem 1.875rem 0.5rem 0.5rem;
 }
 
 .rux-form-field input:focus,
 .rux-form-field input:invalid:focus,
 .rux-form-field textarea:focus {
-  border-color: var(--inputFocusBorderColor);
-  outline: none;
-  color: var(--inputFocusTextColor);
+    border-color: var(--inputFocusBorderColor);
+    outline: none;
+    color: var(--inputFocusTextColor);
 }
 
-.rux-form-field input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: textfield;
+.rux-form-field input[type='search']::-webkit-search-decoration {
+    -webkit-appearance: textfield;
 }
 
 /* SEARCH VARIANT */
-.rux-form-field input[type="search"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding: 0.5rem 0.5rem 0.5rem 2rem;
-	background: var(--inputBackgroundColor) var(--inputSearchIcon) 10px/0.975rem no-repeat;
+.rux-form-field input[type='search'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    background: var(--inputBackgroundColor) var(--inputSearchIcon) 10px/0.975rem
+        no-repeat;
 }
 
-.rux-form-field--large input[type="search"] {
-  padding: 0.5rem 0 0.5rem 2rem;
+.rux-form-field--large input[type='search'] {
+    padding: 0.5rem 0 0.5rem 2rem;
 }
 
-.rux-form-field--small input[type="search"] {
-  padding: 0.3rem 0 0.3rem 2rem;
+.rux-form-field--small input[type='search'] {
+    padding: 0.3rem 0 0.3rem 2rem;
 }
 
-.rux-form-field input[type="search"]::-webkit-search-cancel-button {
-  position: relative;
+.rux-form-field input[type='search']::-webkit-search-cancel-button {
+    position: relative;
 
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-	background-image: var(--inputSearchCancel);
-	background-repeat: no-repeat;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-image: var(--inputSearchCancel);
+    background-repeat: no-repeat;
 }
 
-.rux-form-field input[type="search"]::-ms-clear {
-  position: relative;
-  right: 0.25rem;
-  width: 20px;
-  height: 20px;
-  background-color: var(--inputInvalidBorderColor);
+.rux-form-field input[type='search']::-ms-clear {
+    position: relative;
+    right: 0.25rem;
+    width: 20px;
+    height: 20px;
+    background-color: var(--inputInvalidBorderColor);
 }

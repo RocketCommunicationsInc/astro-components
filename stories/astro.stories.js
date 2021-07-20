@@ -1,117 +1,150 @@
-import { html, render } from 'lit-html';
-import TemplateReadme from '../src/components/__rux-template/README.md';
+import { html, render } from 'lit-html'
+import TemplateReadme from '../src/components/__rux-template/README.md'
 
 export default {
-  title: 'Astro UXDS/Welcome',
-};
+    title: 'Astro UXDS/Welcome',
+}
 
 export const StartHere = () => {
-  return html`
-  <style>
-    #root {
-      font-weight: 300;
-      line-height: 1.6;
-      font-size: 17px;
-    }
-    .light-theme #root {
-      background: white;
-      font-weight: 400;
-    }
-    .welcome-wrap {
-      padding: 5vh 2vw 0;
-      font-size: 19px;
-    }
-    .content-wrap {
-      padding: 2vh 2vw;
-    }
-    code {
-      font-size: 14px;
-      line-height: 1.375;
-      direction: ltr;
-      text-align: left;
-      white-space: pre;
-      word-spacing: normal;
-      word-break: normal;
-      tab-size: 4;
-      hyphens: none;
-      background: #060708;
-      color: #ccd5e0;
-      padding: 1em;
-      margin: .5em 0;
-      overflow: auto;
-      display: block;
-    }
-  </style>
-  <div class="welcome-wrap">
-    <h1>Welcome to the Astro Storybook</h1>
-    <p>
-      This is the Astro UXDS Storybook, a sandbox for demonstrating and developing components and patterns built for
-      the Astro Space UX Design System ("Astro UXDS"). This demonstration is built using the open source tool
-      <a href="https://storybook.js.org/" target="_blank">Storybook</a> using JavaScript and Node.js. Most Astro
-      UXDS patterns exist as HTML Web Components using
-      <a href="https://lit-element.polymer-project.org/" target="_blank">LitElement</a> and
-      <a href="https://lit-html.polymer-project.org/" target="_blank">LitHTML</a>; others are simply HTML and CSS.
-      For more about the Astro UXDS purpose and approach to space app experiences, check out
-      <a href="https://www.astrouxds.com/" target="_blank">AstroUXDS.com</a>.
-    </p>
-  </div>
-  <div class="content-wrap">
-    <p>
-      In the Sidebar to the left, you can browse the components and patterns within Astro. Each example will
-      be demonstrated in what is called a "story" within the Canvas (the area of the window you're
-      reading now). Across the top of the Canvas area, you will see zoom controls, a color blindness
-      simulator, and a light/dark theme toggle.
-    </p>
-    <p>
-      To the right of the Canvas, there is a tabbed Panel which displays Knobs, Readme files for each component, as well as an Accessibilty audit, and any
-      Actions outputs associated with that demonstration.
-    </p>
-    <ul>
-      <li>
-        The <b>Knobs</b> options allow you to change content in the demonstration area by altering the data given to
-        the component via its properties.
-      </li>
-      <li>
-        The <b>Readme</b> tab shows developer documentation for the patterns or components, whether available as a Web Component or
-        simply HTML and CSS styles.
-      </li>
-      <li>
-        The <b>Accessibilty</b> tab displays a11y violations of WCAG 2.0 Levels A and AA, WCAG 2.1 Level AA, Section
-        508, and other best practices through the
-        <a href="https://github.com/dequelabs/axe-core" target="_blank">aXe accessibilty engine</a>.
-      </li>
-      <li>
-        The <b>Actions</b> tab provides console output where user actions like clicking or selecting should produce
-        event target information.
-      </li>
-      <li>Note: Not every component uses all three tabs.</li>
-    </ul>
-    <p>
-      Display options and keyboard shortcuts are available via the ellipsis menu icon next to the Astro UXDS logo at
-      the top of the sidebar.
-    </p>
-    <p>
-      If you would like to download and run the Astro UXDS Components Storybook yourself, you may clone <a 
-      href="https://github.com/RocketCommunicationsInc/astro-components.git" target="_blank">the repository</a>:
-    </p>
-    <code class="language-sh">git clone https://github.com/RocketCommunicationsInc/astro-components.git</code>
-
-  </div>
-`;
-};
+    return html`
+        <style>
+            #root {
+                font-weight: 300;
+                line-height: 1.6;
+                font-size: 17px;
+            }
+            .light-theme #root {
+                background: white;
+                font-weight: 400;
+            }
+            .welcome-wrap {
+                padding: 5vh 2vw 0;
+                font-size: 19px;
+            }
+            .content-wrap {
+                padding: 2vh 2vw;
+            }
+            code {
+                font-size: 14px;
+                line-height: 1.375;
+                direction: ltr;
+                text-align: left;
+                white-space: pre;
+                word-spacing: normal;
+                word-break: normal;
+                tab-size: 4;
+                hyphens: none;
+                background: #060708;
+                color: #ccd5e0;
+                padding: 1em;
+                margin: 0.5em 0;
+                overflow: auto;
+                display: block;
+            }
+        </style>
+        <div class="welcome-wrap">
+            <h1>Welcome to the Astro Storybook</h1>
+            <p>
+                This is the Astro UXDS Storybook, a sandbox for demonstrating
+                and developing components and patterns built for the Astro Space
+                UX Design System ("Astro UXDS"). This demonstration is built
+                using the open source tool
+                <a href="https://storybook.js.org/" target="_blank"
+                    >Storybook</a
+                >
+                using JavaScript and Node.js. Most Astro UXDS patterns exist as
+                HTML Web Components using
+                <a
+                    href="https://lit-element.polymer-project.org/"
+                    target="_blank"
+                    >LitElement</a
+                >
+                and
+                <a href="https://lit-html.polymer-project.org/" target="_blank"
+                    >LitHTML</a
+                >; others are simply HTML and CSS. For more about the Astro UXDS
+                purpose and approach to space app experiences, check out
+                <a href="https://www.astrouxds.com/" target="_blank"
+                    >AstroUXDS.com</a
+                >.
+            </p>
+        </div>
+        <div class="content-wrap">
+            <p>
+                In the Sidebar to the left, you can browse the components and
+                patterns within Astro. Each example will be demonstrated in what
+                is called a "story" within the Canvas (the area of the window
+                you're reading now). Across the top of the Canvas area, you will
+                see zoom controls, a color blindness simulator, and a light/dark
+                theme toggle.
+            </p>
+            <p>
+                To the right of the Canvas, there is a tabbed Panel which
+                displays Knobs, Readme files for each component, as well as an
+                Accessibilty audit, and any Actions outputs associated with that
+                demonstration.
+            </p>
+            <ul>
+                <li>
+                    The <b>Knobs</b> options allow you to change content in the
+                    demonstration area by altering the data given to the
+                    component via its properties.
+                </li>
+                <li>
+                    The <b>Readme</b> tab shows developer documentation for the
+                    patterns or components, whether available as a Web Component
+                    or simply HTML and CSS styles.
+                </li>
+                <li>
+                    The <b>Accessibilty</b> tab displays a11y violations of WCAG
+                    2.0 Levels A and AA, WCAG 2.1 Level AA, Section 508, and
+                    other best practices through the
+                    <a
+                        href="https://github.com/dequelabs/axe-core"
+                        target="_blank"
+                        >aXe accessibilty engine</a
+                    >.
+                </li>
+                <li>
+                    The <b>Actions</b> tab provides console output where user
+                    actions like clicking or selecting should produce event
+                    target information.
+                </li>
+                <li>Note: Not every component uses all three tabs.</li>
+            </ul>
+            <p>
+                Display options and keyboard shortcuts are available via the
+                ellipsis menu icon next to the Astro UXDS logo at the top of the
+                sidebar.
+            </p>
+            <p>
+                If you would like to download and run the Astro UXDS Components
+                Storybook yourself, you may clone
+                <a
+                    href="https://github.com/RocketCommunicationsInc/astro-components.git"
+                    target="_blank"
+                    >the repository</a
+                >:
+            </p>
+            <code class="language-sh"
+                >git clone
+                https://github.com/RocketCommunicationsInc/astro-components.git</code
+            >
+        </div>
+    `
+}
 
 StartHere.story = {
-  parameters: {
-    exports: {
-      render,
-      html,
+    parameters: {
+        exports: {
+            render,
+            html,
+        },
     },
-  },
-};
-
+}
 
 export const Contributing = () => {
-  return html`
+    return html`
   <style>
       #root {
         font-weight: 300;
@@ -203,17 +236,17 @@ export const Contributing = () => {
       </ol>
 
     </div>
-  `;
-};
+  `
+}
 
 Contributing.story = {
-  parameters: {
-    exports: {
-      render,
-      html,
+    parameters: {
+        exports: {
+            render,
+            html,
+        },
+        readme: {
+            sidebar: TemplateReadme,
+        },
     },
-    readme: {
-      sidebar: TemplateReadme,
-    },
-  },
-};
+}

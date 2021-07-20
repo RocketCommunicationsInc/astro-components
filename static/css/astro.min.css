@@ -91,7 +91,7 @@
     --colorQuaternaryDarken1: rgb(166, 171, 182);
     --colorQuaternaryDarken2: rgb(124, 128, 136);
     --colorQuaternaryDarken3: rgb(83, 86, 91);
-    --colorQuaternaryDarken4: rgb(41, 43, 45);
+    --colorQuaternaryDarken4: rgb(41, 42, 45);
     --colorCriticalLighten1: rgb(255, 96, 96);
     --colorCriticalLighten2: rgb(255, 136, 136);
     --colorCriticalLighten3: rgb(255, 175, 175);
@@ -196,6 +196,10 @@
     --colorGrayDarken2: rgb(122, 122, 122);
     --colorGrayDarken3: rgb(82, 82, 82);
     --colorGrayDarken4: rgb(41, 41, 41);
+    --colorSnowflakesDarkSurface: #1b2d3e;
+    --colorSnowflakesLightShadow: #828181;
+    --colorSnowflakesDarkSelected: #1c3f5e;
+    --colorSnowflakesLightSelected: #cee9fc;
 }
 @font-face {
     font-family: 'Roboto';
@@ -321,12 +325,15 @@
     --sliderSelectedThumbBorderColor: var(--primaryLight);
     --sliderSelectedTrackBackgroundColor: var(--primary);
     --sliderThumbBorderSize: 1px;
-    --segmentedButtonBorderColor: var(--primary);
-    --segmentedButtonBackgroundColor: none;
+    --segmentedButtonBackgroundColor: var(--backgroundColor);
     --segmentedButtonTextColor: var(--primary);
-    --segmentedButtonHoverTextColor: var(--primaryElementText);
-    --segmentedButtonSelectedBackgroundColor: var(--primary);
-    --segmentedButtonSelectedTextColor: var(--primaryElementText);
+    --segmentedButtonBorderColor: var(--primary);
+    --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
+    --segmentedButtonHoverTextColor: var(--primary);
+    --segmentedButtonSelectedTextColor: var(--defaultText);
+    --segmentedButtonSelectedBorderColor: var(--primary);
+    --segmentedButtonSelectedHoverTextColor: var(--defaultText);
+    --segmentedButtonSelectedHoverBorderColor: var(--primary);
     --switchBackgroundColor: var(--backgroundColor);
     --switchOnColor: var(--primary);
     --switchHoverOnColor: var(--primary);
@@ -445,8 +452,13 @@
     --sliderTrackBorderColor: var(--secondaryText);
     --sliderTrackBackgroundColor: var(--inputBackground);
     --sliderTrackBorderSize: 0.25px;
-    --segmentedButtonHoverBackgroundColor: var(--primaryDark);
     --segmentedButtonHoverBorderColor: var(--primaryDark);
+    --segmentedButtonSelectedBackgroundColor: var(
+        --colorSnowflakesLightSelected
+    );
+    --segmentedButtonSelectedHoverBackgroundColor: var(
+        --colorSnowflakesLightSelected
+    );
     --selectHoverOptBackgroundColor: var(--primaryDark);
     --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
     --switchBorderColor: var(--colorPrimary);
@@ -537,8 +549,13 @@ li.light-theme {
     --sliderTrackBorderColor: transparent;
     --sliderTrackBackgroundColor: var(--secondaryText);
     --sliderTrackBorderSize: 1px;
-    --segmentedButtonHoverBackgroundColor: var(--primaryLight);
     --segmentedButtonHoverBorderColor: var(--primaryLight);
+    --segmentedButtonSelectedBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
+    --segmentedButtonSelectedHoverBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
     --selectHoverOptBackgroundColor: var(--primaryLight);
     --switchOffBorderColor: var(--primaryDarker);
     --switchHoverOffColor: var(--primary);
@@ -2071,7 +2088,7 @@ i.rux-icon {
 }
 .rux-segmented-button {
     display: inline-flex;
-    height: 1.6875rem;
+    height: 1.625rem;
     overflow: hidden;
     padding: 0;
     margin: 0;
@@ -2080,11 +2097,8 @@ i.rux-icon {
     border-radius: var(--controlBorderRadius);
     border: 1px solid var(--segmentedButtonBorderColor);
 }
-.rux-segmented-button:hover {
-    border-color: var(--segmentedButtonHoverBorderColor);
-}
 .rux-segmented-button__segment {
-    height: 1.6875rem;
+    height: 1.625rem;
     width: auto;
     margin: 0;
     padding: 0;
@@ -2097,7 +2111,6 @@ i.rux-icon {
     height: 1.5625rem;
     margin: 0;
     padding: 0 0.75rem;
-    border: 0;
     border-right: 1px solid var(--segmentedButtonBorderColor);
     color: var(--segmentedButtonTextColor);
     background-color: var(--segmentedButtonBackgroundColor);
@@ -2106,6 +2119,7 @@ i.rux-icon {
 }
 .rux-segmented-button__segment:nth-child(2):not(:last-child) label {
     border-right: none !important;
+    border-left: none;
 }
 .rux-segmented-button__segment input,
 .rux-tabs li::before {
@@ -2119,17 +2133,19 @@ i.rux-icon {
 }
 .rux-segmented-button__segment input:checked + label {
     background-color: var(--segmentedButtonSelectedBackgroundColor);
+    border-color: var(--segmentedButtonSelectedBorderColor);
     color: var(--segmentedButtonSelectedTextColor);
 }
-.rux-segmented-button:nth-child(2):not(:last-child) label {
-    border-right: none;
-    border-left: none;
+.rux-segmented-button__segment input:checked:hover + label {
+    background-color: var(--segmentedButtonSelectedHoverBackgroundColor);
+    color: var(--segmentedButtonSelectedHoverTextColor);
+    border-color: var(--segmentedButtonSelectedHoverBorderColor);
 }
-.rux-segmented-button:first-child label {
+.rux-segmented-button__segment:first-child label {
     border-radius: 3px 0 0 3px;
     border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
 }
-.rux-segmented-button:last-child label {
+.rux-segmented-button__segment:last-child label {
     border-radius: 0 3px 3px 0;
     border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
 }

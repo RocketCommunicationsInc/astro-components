@@ -1,43 +1,47 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from 'lit-element'
 
 export class RuxTabPanels extends LitElement {
-  constructor() {
-    super();
-  }
+    constructor() {
+        super()
+    }
 
-  firstUpdated() {
-    this._registerTabPanels();
-  }
+    firstUpdated() {
+        this._registerTabPanels()
+    }
 
-  get _slottedChildren() {
-    const slot = this.shadowRoot.querySelector('slot');
-    const childNodes = slot.assignedNodes({flatten: true});
-    return Array.prototype.filter.call(childNodes, (node) => node.nodeType == Node.ELEMENT_NODE);
-  }
+    get _slottedChildren() {
+        const slot = this.shadowRoot.querySelector('slot')
+        const childNodes = slot.assignedNodes({ flatten: true })
+        return Array.prototype.filter.call(
+            childNodes,
+            (node) => node.nodeType == Node.ELEMENT_NODE
+        )
+    }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.setAttribute('style', 'position: relative; width: 100%;');
-  }
+    connectedCallback() {
+        super.connectedCallback()
+        this.setAttribute('style', 'position: relative; width: 100%;')
+    }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-  }
+    disconnectedCallback() {
+        super.disconnectedCallback()
+    }
 
-  _registerTabPanels() {
-    const _panels = this._slottedChildren;
-    window.dispatchEvent(
-      new CustomEvent('register-panels', {
-        detail: { panels: _panels, for: this.getAttribute('aria-labelledby') },
-      })
-    );
-  }
+    _registerTabPanels() {
+        const _panels = this._slottedChildren
+        window.dispatchEvent(
+            new CustomEvent('register-panels', {
+                detail: {
+                    panels: _panels,
+                    for: this.getAttribute('aria-labelledby'),
+                },
+            })
+        )
+    }
 
-  render() {
-    return html`
-      <slot></slot>
-    `;
-  }
+    render() {
+        return html` <slot></slot> `
+    }
 }
 
-customElements.define('rux-tab-panels', RuxTabPanels);
+customElements.define('rux-tab-panels', RuxTabPanels)
