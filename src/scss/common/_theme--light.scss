@@ -111,17 +111,18 @@
     ==========================================================================
 
   */
-    --popupMenuBackgroundColor: var(--inputBackground);
-    --popupMenuBorderColor: var(--primary);
-    --popupMenuTextColor: var(--defaultText);
+    --popupMenuBackgroundColor: var(--backgroundColor);
+    --popupMenuBorderColor: var(--primaryLighter);
+    --popupMenuTextColor: var(--primary);
 
-    --popupCaretBackgroundColor: var(--primary);
+    --popupCaretBackgroundColor: var(--primaryLighter);
 
-    --popupMenuItemBackgroundColor: var(--inputBackground);
-    --popupMenuItemHoverBackgroundColor: var(--primaryDark);
-    --popupMenuItemHoverTextColor: var(--primaryElementText);
+    --popupMenuItemBackgroundColor: var(--backgroundColor);
+    //equates to --colorSnowflakesLightSelected with alpha of 0.3
+    --popupMenuItemHoverBackgroundColor: rgba(206, 233, 252, 0.3);
+    --popupMenuItemHoverTextColor: var(--primaryDark);
 
-    --popupMenuItemSeperatorBorderColor: var(--defaultText);
+    --popupMenuItemSeparatorBorderColor: var(--primaryLighter);
 
     /* 
     
