@@ -90,7 +90,7 @@ A sample of a `data` Array.
     "label": "Item 2"
   },
   {
-    "role": "seperator"
+    "role": "separator"
   },
   {
     "id": "item3",
@@ -105,7 +105,7 @@ A sample of a `data` Array.
 | -------- | ------ | ------- | -------- | ----------------------------------------------------------------------------------------------------- |
 | `id`     | String | `-`     | Yes      | A unique identifier. If not supplied the component will auto-generate and `id`                        |
 | `label`  | String | `-`     | Yes      | The menu item’s label                                                                                 |
-| `role`   | String | `-`     | No       | Add `"role": "seperator"` property to an empty object to create a cosmetic seperator line in the menu |
+| `role`   | String | `-`     | No       | Add `"role": "separator"` property to an empty object to create a cosmetic separator line in the menu |
 
 ### Component Events
 
