@@ -1914,14 +1914,11 @@ label {
 
 .rux-select:disabled:hover {
   cursor: not-allowed;
-  opacity: 0.4;
   border: 1px solid var(--selectMenuBorderColor); }
 
 .rux-select:focus {
   outline: none;
-  border: 1px solid var(--primary);
-  border-radius: 3px;
-  border-radius: var(--buttonBorderRadius); }
+  border: 1px solid var(--primaryLight); }
 
 .rux-select:active:not(:disabled) {
   background-image: var(--selectMenuActiveCaret); }
