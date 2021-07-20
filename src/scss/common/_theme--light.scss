@@ -352,7 +352,10 @@
     ==========================================================================
     
   */
-    --scrollBarThumbBackgroundColor: var(--primaryWithOpacity);
+    --scrollBarThumbBackgroundColor: var(
+        --primaryWithOpacity,
+        rgba(3, 93, 145, 0.7)
+    );
     --scrollBarThumbBackgroundHoverColor: var(--colorPrimaryLighten1);
     --scrollBarTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
     --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);
