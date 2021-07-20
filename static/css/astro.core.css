@@ -56,7 +56,7 @@
   --colorTag4: rgb(216, 83, 30);
   --colorPrimaryLighten5: rgb(51, 123, 165);
   --colorPrimaryLighten1: rgb(51, 123, 165);
-  --colorPrimaryLighten2: rgb(102, 156, 188);
+  --colorPrimaryLighten2: rgb(100, 156, 189);
   --colorPrimaryLighten3: rgb(153, 189, 210);
   --colorPrimaryLighten4: rgb(204, 222, 233);
   --colorPrimaryDarken1: rgb(0, 72, 114);
@@ -68,7 +68,7 @@
   --colorSecondaryLighten3: rgb(184, 222, 255);
   --colorSecondaryLighten4: rgb(219, 238, 255);
   --colorSecondaryDarken1: rgb(62, 138, 204);
-  --colorSecondaryDarken2: rgb(46, 103, 153);
+  --colorSecondaryDarken2: rgb(43, 101, 155);
   --colorSecondaryDarken3: rgb(31, 69, 102);
   --colorSecondaryDarken4: rgb(15, 34, 51);
   --colorTertiaryLighten1: rgb(82, 102, 122);
@@ -389,12 +389,16 @@
   --controlTextColor: var(--colorPrimary500);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
-  --controlBorderColor: var(--colorPrimary600);
+  --controlOutlineBackgroundColor: var(--backgroundColor);
+  --controlBorderColor: var(--colorPrimaryLighten2);
+  --controlAccentColor: var(--primary);
   --controlSelectedTextColor: var(--defaultText);
-  --controlSelectedBackgroundColor: var(--colorQuaternary200);
-  --controlHoverBorderColor: var(--colorPrimary300);
+  --controlSelectedBackgroundColor: var(--primary);
+  --controlSelectedBorderColor: var(--colorPrimaryLighten2);
+  --controlHoverBorderColor: var(--primaryDark);
   --controlSelectedOutlineBorderColor: var(--primary);
-  --controlSelectedOutlineBackgroundColor: none;
+  --controlHoverOutlineBackgroundColor: var(--backgroundColor);
+  --controlSelectedOutlineBackgroundColor: var(--backgroundColor);
   /* 
     
     Progress Bar Colors 
@@ -760,11 +764,16 @@ li.light-theme {
   --controlTextColor: var(--colorSecondary500);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
-  --controlBorderColor: var(--colorSecondary700);
+  --controlOutlineBackgroundColor: var(--backgroundColor);
+  --controlBorderColor: var(--colorSecondaryDarken2);
+  --controlAccentColor: var(--primary);
   --controlSelectedTextColor: var(--defaultText);
-  --controlSelectedBackgroundColor: var(--colorTertiary800);
-  --controlHoverBorderColor: var(--colorSecondary300);
-  --controlSelectedOutlineBorderColor: var(--colorSecondary700);
+  --controlSelectedBackgroundColor: var(--primaryDark);
+  --controlSelectedBorderColor: var(--colorSecondaryDarken2);
+  --controlHoverBorderColor: var(--primaryLight);
+  --controlSelectedOutlineBorderColor: var(--primary);
+  --controlHoverOutlineBackgroundColor: var(--backgroundColor);
+  --controlSelectedOutlineBackgroundColor: var(--backgroundColor);
   /* 
     
     Progress Colors 
@@ -1465,19 +1474,16 @@ label {
   width: var(--controlOptionSize);
   margin: 0 0.625rem 0 0;
   border: 1px solid var(--controlBorderColor);
+  background-color: var(--controlOutlineBackgroundColor);
   border-radius: 2px; }
 
 .rux-checkbox input[type="checkbox"] + label::before {
-  border-radius: 2px;
-  background-color: var(--controlSelectedBackgroundColor); }
+  border-radius: 2px; }
 
 .rux-checkbox input[type="checkbox"]:checked + label::before {
-  border-color: var(--controlSelectedOutlineBorderColor); }
+  border-color: var(--controlBorderColor); }
 
 .rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
-.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before {
-  border-color: var(--controlHoverBorderColor); }
-
 .rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before {
   border-color: var(--controlHoverBorderColor); }
 
@@ -1486,9 +1492,7 @@ label {
   position: absolute;
   top: 5px;
   display: flex;
-  content: ""; }
-
-.rux-checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
   height: 6px;
   width: 12px;
   left: 3px;
@@ -1832,11 +1836,11 @@ label {
   margin: 0 0 1rem 0;
   line-height: 1.2; }
 
-.rux-radio-button input[type="radio"] {
+.rux-radio-button input[type='radio'] {
   -webkit-appearance: none;
   display: none; }
 
-.rux-radio-button input[type="radio"] + label {
+.rux-radio-button input[type='radio'] + label {
   position: relative;
   display: flex;
   align-items: center;
@@ -1845,11 +1849,11 @@ label {
   letter-spacing: 0.5px;
   cursor: pointer; }
 
-.rux-radio-button input[type="radio"] + label::before {
+.rux-radio-button input[type='radio'] + label::before {
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
-  content: "";
+  content: '';
   align-self: start;
   height: 1.125rem;
   height: var(--controlOptionSize);
@@ -1858,28 +1862,32 @@ label {
   margin: 0 0.625rem 0 0;
   border: 1px solid var(--controlBorderColor); }
 
-.rux-radio-button input[type="radio"] + label::before {
+.rux-radio-button input[type='radio'] + label::before {
   border-radius: 100%;
-  background-color: transparent; }
+  background-color: var(--controlOutlineBackgroundColor); }
 
-.rux-radio-button input[type="radio"]:checked + label::before {
+.rux-radio-button input[type='radio']:checked + label::before {
   background-color: var(--controlSelectedOutlineBackgroundColor);
-  border-color: var(--controlSelectedOutlineBorderColor); }
+  border-color: var(--controlSelectedBorderColor); }
 
-.rux-radio-button input[type="radio"]:not(:disabled):hover + label:before,
-.rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:before {
+.rux-radio-button input[type='radio']:not(:disabled):hover + label:before,
+.rux-radio-button
+input[type='radio']:not(:disabled):checked:hover
++ label:before {
   border-color: var(--controlHoverBorderColor); }
 
-.rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:after {
-  background-color: var(--controlHoverBorderColor); }
+.rux-radio-button
+input[type='radio']:not(:disabled):checked:hover
++ label:after {
+  background-color: var(--controlBackgroundColor); }
 
-.rux-radio-button input[type="radio"]:checked + label::after {
+.rux-radio-button input[type='radio']:checked + label::after {
   position: absolute;
   top: 5px;
   display: flex;
-  content: ""; }
+  content: ''; }
 
-.rux-radio-button input[type="radio"]:checked + label::after {
+.rux-radio-button input[type='radio']:checked + label::after {
   left: 5px;
   height: 8px;
   width: 8px;
@@ -1887,7 +1895,7 @@ label {
   /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
   background-color: var(--primary); }
 
-.rux-radio-button input[type="radio"]:disabled + label {
+.rux-radio-button input[type='radio']:disabled + label {
   cursor: not-allowed;
   cursor: var(--disabledCursor);
   opacity: 0.4;
