@@ -11,7 +11,7 @@
     --secondaryText: var(--colorQuaternaryDarken3, #51555b);
     --globalAppHeader: var(--colorTertiaryDarken2, #172635);
     --surfaceElements: var(--colorWhite, #ffffff);
-    --primary: var(--colorPrimary, #005a8f);
+    --primary: var(--colorPrimary, #035d91);
     --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
     --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
     --primaryDark: var(--colorPrimaryDarken1, #004872);
@@ -351,7 +351,7 @@
     ==========================================================================
     
   */
-    --scrollBarThumbBackgroundColor: var(--primary, rgb(0, 90, 143));
+    --scrollBarThumbBackgroundColor: var(--primary, 0.7);
     --scrollBarThumbBackgroundHoverColor: var(--colorPrimaryLighten1);
     --scrollBarTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
     --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);

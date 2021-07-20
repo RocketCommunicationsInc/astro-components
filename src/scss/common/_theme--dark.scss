@@ -10,7 +10,7 @@
     --defaultText: var(--colorWhite, #ffffff);
     --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
     --globalAppHeader: var(--colorTertiaryDarken2, #172635);
-    --surfaceElements: #1b2d3e; /* TODO: this is an unofficial Astro color, but a required KM color */
+    --surfaceElements: var(--colorSnowflakesDarkSurface, #1b2d3e);
     --primary: var(--colorSecondary, #4dacff);
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
@@ -354,12 +354,12 @@
     ==========================================================================
     
   */
-    --scrollBarThumbBackgroundColor: rgb(43, 101, 155);
+    --scrollBarThumbBackgroundColor: var(--primaryDarker);
     --scrollBarThumbBackgroundHoverColor: var(
         --colorSecondaryDarken1,
         rgb(58, 129, 191)
     );
-    --scrollBarTrackBackgroundColor: rgb(27, 45, 62);
+    --scrollBarTrackBackgroundColor: var(--surfaceElements);
     --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
     --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
 
