@@ -29,7 +29,7 @@
 .rux-select option {
     background-color: var(--selectMenuBackgroundColor);
     border: 1px solid var(--selectMenuBorderColor);
-    border-radius: 3px;
+    border-radius: var(--selectMenuBorderRadius);
     box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
 }
 

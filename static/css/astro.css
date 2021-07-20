@@ -417,6 +417,7 @@
     ==========================================================================
     
   */
+  --selectMenuBorderRadius: 3px;
   --selectHoverOptBackgroundColor: rgb(28, 63, 94);
   --selectMenuBorderColor: rgb(100, 156, 189);
   --selectMenuCaretBackgroundColor: linear-gradient(
@@ -787,6 +788,7 @@ li.light-theme {
     ==========================================================================
     
   */
+  --selectMenuBorderRadius: 3px;
   --selectHoverOptBackgroundColor: rgb(28, 63, 94);
   --selectMenuBorderColor: rgb(43, 101, 155);
   --selectMenuCaretBackgroundColor: linear-gradient(
@@ -1896,7 +1898,7 @@ label {
 .rux-select option {
   background-color: var(--selectMenuBackgroundColor);
   border: 1px solid var(--selectMenuBorderColor);
-  border-radius: 3px;
+  border-radius: var(--selectMenuBorderRadius);
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5); }
 
 .rux-select .rux-select optgroup:hover,
