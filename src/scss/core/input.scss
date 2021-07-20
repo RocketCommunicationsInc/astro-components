@@ -115,11 +115,6 @@
 }
 
 /* FOCUS RULES */
-.rux-form-field input:focus,
-.rux-form-field input:invalid:focus {
-    /* outline: none; */
-}
-
 .rux-form-field input:not([type='search']):focus,
 .rux-form-field input:not([type='search']):invalid:focus {
     border: 1px solid var(--inputFocusBorderColor) !important;
