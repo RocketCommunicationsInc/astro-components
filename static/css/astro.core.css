@@ -1910,11 +1910,12 @@ label {
 
 .rux-select:disabled {
   opacity: 0.4;
-  cursor: not-allowed;
-  border-color: var(--inputBorderColorDisabled); }
+  cursor: not-allowed; }
 
 .rux-select:disabled:hover {
-  cursor: not-allowed; }
+  cursor: not-allowed;
+  opacity: 0.4;
+  border: 1px solid var(--selectMenuBorderColor); }
 
 .rux-select:focus {
   outline: none;
