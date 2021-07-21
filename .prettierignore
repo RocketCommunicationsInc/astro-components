@@ -1,5 +1,6 @@
 storybook-static
 node_modules
+static
 *.md
 *.css
 package.json
