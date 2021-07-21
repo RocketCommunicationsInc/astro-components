@@ -23,7 +23,7 @@
         "storybook": "lerna bootstrap && gulp build && start-storybook -p 9001 -c .storybook -s ./static ",
         "prepare": "husky install",
         "prettier": "prettier --write --loglevel warn .",
-        "pretty-quick": "pretty-quick"
+        "pretty-quick": "pretty-quick --staged"
     },
     "dependencies": {
         "ag-grid-community": "^24.0.0",

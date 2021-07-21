@@ -4,7 +4,7 @@ Tabs are used to divide major areas of content and to indicate work process.
 
 ## Guidelines
 
-- [Astro UXDS: Tabs](https://www.astrouxds.com/ui-components/tabs)
+-   [Astro UXDS: Tabs](https://www.astrouxds.com/ui-components/tabs)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxTabs } from "@astrouxds/rux-tabs/rux-tabs.js";
+import { RuxTabs } from '@astrouxds/rux-tabs/rux-tabs.js'
 ```
 
 ### 3. Render the Astro Tabs Web Component
@@ -102,14 +102,14 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 ##### **4.0**
 
-- Renamed `compact` property to `small`.
-- Removed/deprecated undocumented `interior` and `transparent` tab styles.
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Renamed `compact` property to `small`.
+-   Removed/deprecated undocumented `interior` and `transparent` tab styles.
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
 ##### **1.4**
 
-- Added `rux_` and BEM compatible classes to all `satcom_` NOTE: `satcom_` will be removed in a future version
-- Removed prefixed transitions
-- Removed prefixed gradients
-- Updated colors for WCAG compliance
-- Swapped condensed font for standard
+-   Added `rux_` and BEM compatible classes to all `satcom_` NOTE: `satcom_` will be removed in a future version
+-   Removed prefixed transitions
+-   Removed prefixed gradients
+-   Updated colors for WCAG compliance
+-   Swapped condensed font for standard

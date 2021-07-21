@@ -1,8 +1,5 @@
 {
-  "npmClient": "npm",
-  "packages": [
-    "src/components/**",
-    "src/modules/**"
-  ],
-  "version": "independent"
+    "npmClient": "npm",
+    "packages": ["src/components/**", "src/modules/**"],
+    "version": "independent"
 }

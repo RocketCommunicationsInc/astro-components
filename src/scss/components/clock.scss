@@ -1,57 +1,57 @@
 .rux-clock {
-  display: flex;
-  color: var(--clockTextColor);
-  font-size: 1.15rem;
+    display: flex;
+    color: var(--clockTextColor);
+    font-size: 1.15rem;
 }
 
 .rux-clock__segment {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .rux-clock__segment__value {
-  display: flex;
-  align-items: center;
-  font-family: var(--fontFamilyMono);
-  font-weight: 700;
+    display: flex;
+    align-items: center;
+    font-family: var(--fontFamilyMono);
+    font-weight: 700;
 
-  border: 1px solid var(--clockBorderColor);
+    border: 1px solid var(--clockBorderColor);
 
-  background-color: var(--clockBackgroundColor);
-  margin-bottom: 0.25rem;
+    background-color: var(--clockBackgroundColor);
+    margin-bottom: 0.25rem;
 
-  white-space: nowrap;
-  overflow-y: hidden;
-  text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
 }
 
 .rux-clock--small .rux-clock__segment__value {
-  height: 2.75rem;
-  padding: 0 0.75rem;
-  font-size: 1.15rem;
-  font-weight: 500;
+    height: 2.75rem;
+    padding: 0 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 500;
 }
 
 .rux-clock__day-of-the-year .rux-clock__segment__value {
-  border-right: none;
+    border-right: none;
 }
 
 .rux-clock:not(.rux-clock--small) .rux-clock__segment__value {
-  font-size: 1.75rem;
-  height: 2.75rem;
-  padding: 0 0.75rem;
+    font-size: 1.75rem;
+    height: 2.75rem;
+    padding: 0 0.75rem;
 }
 
 .rux-clock__segment__label {
-	font-size: 0.875rem;
-	color: var(--clockLabelColor);
+    font-size: 0.875rem;
+    color: var(--clockLabelColor);
 }
 
 .rux-clock__aos {
-  margin-left: 1em;
+    margin-left: 1em;
 }
 
 .rux-clock__los {
-  margin-left: 0.5em;
+    margin-left: 0.5em;
 }

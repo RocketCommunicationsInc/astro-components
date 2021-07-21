@@ -54,9 +54,8 @@
   --colorTag2: rgb(120, 112, 208);
   --colorTag3: rgb(160, 13, 190);
   --colorTag4: rgb(216, 83, 30);
-  --colorPrimaryLighten5: rgb(51, 123, 165);
   --colorPrimaryLighten1: rgb(51, 123, 165);
-  --colorPrimaryLighten2: rgb(102, 156, 188);
+  --colorPrimaryLighten2: rgb(100, 156, 189);
   --colorPrimaryLighten3: rgb(153, 189, 210);
   --colorPrimaryLighten4: rgb(204, 222, 233);
   --colorPrimaryDarken1: rgb(0, 72, 114);
@@ -68,7 +67,7 @@
   --colorSecondaryLighten3: rgb(184, 222, 255);
   --colorSecondaryLighten4: rgb(219, 238, 255);
   --colorSecondaryDarken1: rgb(62, 138, 204);
-  --colorSecondaryDarken2: rgb(46, 103, 153);
+  --colorSecondaryDarken2: rgb(43, 101, 155);
   --colorSecondaryDarken3: rgb(31, 69, 102);
   --colorSecondaryDarken4: rgb(15, 34, 51);
   --colorTertiaryLighten1: rgb(82, 102, 122);
@@ -76,9 +75,9 @@
   --colorTertiaryLighten3: rgb(169, 178, 188);
   --colorTertiaryLighten4: rgb(212, 217, 222);
   --colorTertiaryDarken1: rgb(31, 51, 71);
-  --colorTertiaryDarken2: rgb(24, 38, 53);
+  --colorTertiaryDarken2: rgb(23, 38, 53);
   --colorTertiaryDarken3: rgb(16, 25, 35);
-  --colorTertiaryDarken4: rgb(8, 13, 18);
+  --colorTertiaryDarken4: rgb(8, 12, 17);
   --colorQuaternaryLighten1: rgb(217, 222, 233);
   --colorQuaternaryLighten2: rgb(225, 230, 239);
   --colorQuaternaryLighten3: rgb(236, 239, 244);
@@ -86,7 +85,7 @@
   --colorQuaternaryDarken1: rgb(166, 171, 182);
   --colorQuaternaryDarken2: rgb(124, 128, 136);
   --colorQuaternaryDarken3: rgb(83, 86, 91);
-  --colorQuaternaryDarken4: rgb(41, 43, 45);
+  --colorQuaternaryDarken4: rgb(41, 42, 45);
   --colorCriticalLighten1: rgb(255, 96, 96);
   --colorCriticalLighten2: rgb(255, 136, 136);
   --colorCriticalLighten3: rgb(255, 175, 175);
@@ -275,7 +274,7 @@
   font-style: italic; }
 
 @font-face {
-  font-family: "Roboto Mono";
+  font-family: 'Roboto Mono';
   src: url("../fonts/roboto-mono-regular.woff2") format("woff2"), url("../fonts/roboto-mono-regular.woff") format("woff");
   font-weight: 400;
   font-style: normal; }
@@ -301,7 +300,7 @@
   /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
   --primaryElementText: var(--colorWhite, #ffffff);
   --inputBackground: var(--colorWhite, #ffffff);
-  --inputDark: #080c11;
+  --inputDark: var(--colorTertiaryDarken4);
   /* styles */
   --fontColor: var(--defaultText);
   --fontLowContrastColor: var(--secondaryText);
@@ -354,15 +353,16 @@
   --controlTextColor: var(--primaryElementText);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
-  --controlBorderColor: var(--primary);
+  --controlOutlineBackgroundColor: var(--backgroundColor);
+  --controlBorderColor: var(--colorPrimaryLighten2);
   --controlAccentColor: var(--primary);
   --controlSelectedTextColor: var(--defaultText);
-  --controlSelectedBackgroundColor: transparent;
-  --controlSelectedBorderColor: var(--primary);
-  --controlHoverOutlineBackgroundColor: none;
+  --controlSelectedBackgroundColor: var(--primary);
+  --controlSelectedBorderColor: var(--colorPrimaryLighten2);
   --controlHoverBorderColor: var(--primaryDark);
   --controlSelectedOutlineBorderColor: var(--primary);
-  --controlSelectedOutlineBackgroundColor: none;
+  --controlHoverOutlineBackgroundColor: var(--backgroundColor);
+  --controlSelectedOutlineBackgroundColor: var(--backgroundColor);
   /* 
     
     Progress Bar Colors 
@@ -379,14 +379,14 @@
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--inputBackground);
-  --popupMenuBorderColor: var(--primary);
-  --popupMenuTextColor: var(--defaultText);
-  --popupCaretBackgroundColor: var(--primary);
-  --popupMenuItemBackgroundColor: var(--inputBackground);
-  --popupMenuItemHoverBackgroundColor: var(--primaryDark);
-  --popupMenuItemHoverTextColor: var(--primaryElementText);
-  --popupMenuItemSeperatorBorderColor: var(--defaultText);
+  --popupMenuBackgroundColor: var(--backgroundColor);
+  --popupMenuBorderColor: var(--primaryLighter);
+  --popupMenuTextColor: var(--primary);
+  --popupCaretBackgroundColor: var(--primaryLighter);
+  --popupMenuItemBackgroundColor: var(--backgroundColor);
+  --popupMenuItemHoverBackgroundColor: rgba(206, 233, 252, 0.3);
+  --popupMenuItemHoverTextColor: var(--primaryDark);
+  --popupMenuItemSeparatorBorderColor: var(--primaryLighter);
   /* 
     
     Slider Colors 
@@ -409,16 +409,26 @@
     ==========================================================================
 
   */
-  --segmentedButtonBorderColor: var(--primary);
-  --segmentedButtonBackgroundColor: none;
+  /* Segmented Unselected */
+  --segmentedButtonBackgroundColor: var(--backgroundColor);
   --segmentedButtonTextColor: var(--primary);
+  --segmentedButtonBorderColor: var(--primary);
   /* Segmented Hover */
-  --segmentedButtonHoverBackgroundColor: var(--primaryDark);
-  --segmentedButtonHoverTextColor: var(--primaryElementText);
+  --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
+  --segmentedButtonHoverTextColor: var(--primary);
   --segmentedButtonHoverBorderColor: var(--primaryDark);
-  /* Segmented Select */
-  --segmentedButtonSelectedBackgroundColor: var(--primary);
-  --segmentedButtonSelectedTextColor: var(--primaryElementText);
+  /* Segmented Selected */
+  --segmentedButtonSelectedBackgroundColor: var(
+        --colorSnowflakesLightSelected
+    );
+  --segmentedButtonSelectedTextColor: var(--defaultText);
+  --segmentedButtonSelectedBorderColor: var(--primary);
+  /* Segmented Selected & Hover */
+  --segmentedButtonSelectedHoverBackgroundColor: var(
+        --colorSnowflakesLightSelected
+    );
+  --segmentedButtonSelectedHoverTextColor: var(--defaultText);
+  --segmentedButtonSelectedHoverBorderColor: var(--primary);
   /* 
     
     Drop Down/Select Colors 
@@ -448,12 +458,12 @@
     ==========================================================================
 
   */
-  --switchOffColor: var(--secondaryText);
+  --switchBackgroundColor: var(--backgroundColor);
+  --switchBorderColor: var(--colorPrimary);
+  --switchOffBorderColor: var(--primaryLighter);
   --switchOnColor: var(--primary);
-  --switchHoverOnColor: var(--primaryDark);
-  --switchHoverOffColor: var(--primaryDark);
-  --switchDisabledOnColor: var(--primary);
-  --switchDisabledOffColor: var(--secondaryText);
+  --switchHoverOnColor: var(--primary);
+  --switchButtonHoverOffColor: var(--primaryDark);
   /* 
     
     Push Button Colors 
@@ -563,16 +573,16 @@
     ==========================================================================
     
   */
-  --inputBackgroundColor: var(--inputBackground);
-  --inputBorderColor: var(--primaryLight);
-  --inputBorderColorAlt: var(--inputDark);
-  --inputBorderColorDisabled: #292a2d;
+  --inputBackgroundColor: var(--colorQuaternaryLighten3);
+  --inputBorderColor: var(--colorPrimaryLighten2);
+  --inputBorderColorAlt: var(--colorTertiaryDarken4);
   --inputTextColor: var(--defaultText);
-  --inputFocusBorderColor: var(--primary);
+  --inputFocusBorderColor: var(--colorPrimaryDarken1);
   --inputFocusTextColor: var(--defaultText);
   --inputInvalidBorderColor: var(--colorCritical);
-  --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%233a87cf' fill-rule='evenodd'/%3E%3C/svg%3E");
-  --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23004872' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+  --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a8f' fill-rule='evenodd'/%3E%3C/svg%3E");
+  --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23005a8f' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+  --inputSelectionBackgroundColor: var(--colorSecondaryLighten3);
   /* 
     
     Icon Default Colors 
@@ -678,9 +688,8 @@ li.light-theme {
   --defaultText: var(--colorWhite, #ffffff);
   --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
   --globalAppHeader: var(--colorTertiaryDarken2, #172635);
-  --surfaceElements: #1b2d3e;
-  /* TODO: this is an unofficial Astro color, but a required KM color */
   --darkSelected: var(--colorSnowflakesDarkSelected);
+  --surfaceElements: var(--colorSnowflakesDarkSurface, #1b2d3e);
   --primary: var(--colorSecondary, #4dacff);
   --primaryLight: var(--colorSecondaryLighten2, #92cbff);
   --primaryLightHover: #92cbff4d;
@@ -744,13 +753,16 @@ li.light-theme {
   --controlTextColor: var(--primaryElementText);
   --controlLabelColor: var(--defaultText);
   --controlBackgroundColor: var(--primary);
-  --controlBorderColor: var(--primary);
+  --controlOutlineBackgroundColor: var(--backgroundColor);
+  --controlBorderColor: var(--colorSecondaryDarken2);
   --controlAccentColor: var(--primary);
   --controlSelectedTextColor: var(--defaultText);
   --controlSelectedBackgroundColor: var(--primaryDark);
-  --controlSelectedBorderColor: var(--primary);
+  --controlSelectedBorderColor: var(--colorSecondaryDarken2);
   --controlHoverBorderColor: var(--primaryLight);
   --controlSelectedOutlineBorderColor: var(--primary);
+  --controlHoverOutlineBackgroundColor: var(--backgroundColor);
+  --controlSelectedOutlineBackgroundColor: var(--backgroundColor);
   /* 
     
     Progress Colors 
@@ -786,16 +798,26 @@ li.light-theme {
     ==========================================================================
 
   */
-  --segmentedButtonBorderColor: var(--primary);
-  --segmentedButtonBackgroundColor: none;
+  /* Segmented Unselected */
+  --segmentedButtonBackgroundColor: var(--backgroundColor);
   --segmentedButtonTextColor: var(--primary);
+  --segmentedButtonBorderColor: var(--primary);
   /* Segmented Hover */
-  --segmentedButtonHoverBackgroundColor: var(--primaryLight);
-  --segmentedButtonHoverTextColor: var(--primaryElementText);
+  --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
+  --segmentedButtonHoverTextColor: var(--primary);
   --segmentedButtonHoverBorderColor: var(--primaryLight);
-  /* Segmented Select */
-  --segmentedButtonSelectedBackgroundColor: var(--primary);
-  --segmentedButtonSelectedTextColor: var(--primaryElementText);
+  /* Segmented Selected */
+  --segmentedButtonSelectedBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
+  --segmentedButtonSelectedTextColor: var(--defaultText);
+  --segmentedButtonSelectedBorderColor: var(--primary);
+  /* Segmented Selected & Hover */
+  --segmentedButtonSelectedHoverBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
+  --segmentedButtonSelectedHoverTextColor: var(--defaultText);
+  --segmentedButtonSelectedHoverBorderColor: var(--primary);
   /* 
     
     Drop Down/Select Colors 
@@ -825,26 +847,27 @@ li.light-theme {
     ==========================================================================
 
   */
-  --switchOffColor: var(--secondaryText);
+  --switchBackgroundColor: var(--backgroundColor);
+  --switchOffBorderColor: var(--primaryDarker);
   --switchOnColor: var(--primary);
-  --switchHoverOnColor: var(--primaryLight);
-  --switchHoverOffColor: var(--primaryLight);
-  --switchDisabledOnColor: var(--primary);
-  --switchDisabledOffColor: var(--secondaryText);
+  --switchHoverOnColor: var(--primary);
+  --switchHoverOffColor: var(--primary);
+  --switchBorderColor: var(--primary);
+  --switchButtonHoverOffColor: var(--primaryLight);
   /* 
     
     Popup Menu Colors 
     ==========================================================================
 
   */
-  --popupMenuBackgroundColor: var(--inputBackground);
-  --popupMenuBorderColor: var(--primary);
-  --popupMenuTextColor: var(--primaryElementText);
-  --popupCaretBackgroundColor: var(--primary);
-  --popupMenuItemBackgroundColor: var(--primary);
-  --popupMenuItemHoverBackgroundColor: var(--primaryLight);
-  --popupMenuItemHoverTextColor: var(--primaryElementText);
-  --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
+  --popupMenuBackgroundColor: var(--backgroundColor);
+  --popupMenuBorderColor: var(--primaryDarker);
+  --popupMenuTextColor: var(--primary);
+  --popupCaretBackgroundColor: var(--primaryDarker);
+  --popupMenuItemBackgroundColor: var(--backgroundColor);
+  --popupMenuItemHoverBackgroundColor: rgba(28, 63, 94, 0.3);
+  --popupMenuItemHoverTextColor: var(--primaryLight);
+  --popupMenuItemSeparatorBorderColor: var(--primaryDarker);
   /* 
     
     Pushbutton Colors 
@@ -956,17 +979,17 @@ li.light-theme {
     ==========================================================================
     
   */
-  --inputBackgroundColor: var(--inputBackground);
-  --inputBorderColor: var(--surfaceElements);
-  --inputBorderColorAlt: var(--inputDark);
-  --inputBorderColorDisabled: #292a2d;
-  --inputTextColor: var(--primaryElementText);
+  --inputBackgroundColor: var(--colorTertiaryDarken3);
+  --inputBorderColor: var(--colorSecondaryDarken2);
+  --inputBorderColorAlt: var(--colorTertiaryDarken4);
+  --inputTextColor: var(--defaultText);
   /* Input Focus */
-  --inputFocusBorderColor: var(--primary);
-  --inputFocusTextColor: var(--primaryElementText);
+  --inputFocusBorderColor: var(--colorSecondaryLighten2);
+  --inputFocusTextColor: var(--defaultText);
   --inputInvalidBorderColor: var(--colorCritical);
-  --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a92' fill-rule='evenodd'/%3E%3C/svg%3E");
-  --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%233a87cf' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+  --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%234dacff' fill-rule='evenodd'/%3E%3C/svg%3E");
+  --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%234dacff' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+  --inputSelectionBackgroundColor: var(--colorSecondaryLighten3);
   /* 
     
     Icon Default Colors 
@@ -1126,7 +1149,7 @@ dd {
   font-stretch: condensed; }
 
 .monospace {
-  font-family: "Roboto Mono", sans-serif; }
+  font-family: 'Roboto Mono', sans-serif; }
 
 .invert,
 .inverted {
@@ -1440,11 +1463,11 @@ label {
   margin: 0 0 1rem 0;
   line-height: 1.2; }
 
-.rux-checkbox input[type="checkbox"] {
+.rux-checkbox input[type='checkbox'] {
   -webkit-appearance: none;
   display: none; }
 
-.rux-checkbox input[type="checkbox"] + label {
+.rux-checkbox input[type='checkbox'] + label {
   position: relative;
   display: flex;
   align-items: center;
@@ -1454,11 +1477,11 @@ label {
   cursor: pointer; }
 
 /* Box */
-.rux-checkbox input[type="checkbox"] + label::before {
+.rux-checkbox input[type='checkbox'] + label::before {
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
-  content: "";
+  content: '';
   align-self: start;
   height: 1.125rem;
   height: var(--controlOptionSize);
@@ -1468,28 +1491,32 @@ label {
   border: 1px solid var(--controlBorderColor);
   border-radius: 2px; }
 
-.rux-checkbox input[type="checkbox"] + label::before {
+.rux-checkbox input[type='checkbox'] + label::before {
   border-radius: 2px; }
 
-.rux-checkbox input[type="checkbox"]:checked + label::before {
+.rux-checkbox input[type='checkbox']:checked + label::before {
   background-color: var(--primary);
   border-color: var(--controlSelectedOutlineBorderColor); }
 
-.rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
-.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before {
+.rux-checkbox input[type='checkbox']:not(:disabled):hover + label:before,
+.rux-checkbox
+input[type='checkbox']:not(:disabled):checked:hover
++ label:before {
   border-color: var(--controlHoverBorderColor); }
 
-.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before {
+.rux-checkbox
+input[type='checkbox']:not(:disabled):checked:hover
++ label:before {
   background-color: var(--controlHoverBorderColor); }
 
 /* Checkmark */
-.rux-checkbox input[type="checkbox"]:checked + label::after {
+.rux-checkbox input[type='checkbox']:checked + label::after {
   position: absolute;
   top: 5px;
   display: flex;
-  content: ""; }
+  content: ''; }
 
-.rux-checkbox input[type="checkbox"]:checked + label::after {
+.rux-checkbox input[type='checkbox']:checked + label::after {
   height: 6px;
   width: 12px;
   left: 3px;
@@ -1497,7 +1524,7 @@ label {
   border-top: 2px solid var(--controlTextColor);
   transform: rotate(125deg); }
 
-.rux-checkbox--indeterminate input[type="checkbox"]:checked + label::after {
+.rux-checkbox--indeterminate input[type='checkbox']:checked + label::after {
   width: 10px;
   height: 5px;
   transform: rotate(0deg);
@@ -1506,7 +1533,7 @@ label {
   border-bottom: 2px solid var(--controlTextColor);
   left: 4px; }
 
-.rux-checkbox input[type="checkbox"]:disabled + label {
+.rux-checkbox input[type='checkbox']:disabled + label {
   cursor: not-allowed;
   cursor: var(--disabledCursor);
   opacity: 0.4;
@@ -1569,7 +1596,8 @@ label {
   font-family: var(--fontFamily);
   font-weight: bold; }
 
-.rux-form-field .rux-error-text, .rux-select + .rux-error-text {
+.rux-form-field .rux-error-text,
+.rux-select + .rux-error-text {
   padding-left: 1.625rem;
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
@@ -1616,18 +1644,19 @@ label {
   color: var(--fontColor); }
 
 .rux-form-field input:required + label::after {
-  content: "*";
+  content: '*';
   margin-left: 0.25rem;
   color: var(--inputTextColor); }
 
-.rux-form-field__label {
+.rux-form-field__label,
+.rux-form-field label {
   display: flex;
   order: 1;
-  margin: 0 0 0.15rem 0;
+  margin: 0 0 0.375rem 0;
   width: 100%;
   align-content: center;
   align-items: center;
-  color: var(--defaultText);
+  color: var(--inputTextColor);
   user-select: none; }
 
 .rux-form-field input {
@@ -1637,10 +1666,11 @@ label {
   width: 100%;
   padding: 0 0.625rem;
   border: 1px solid var(--inputBorderColor);
-  border-radius: 4px;
+  border-radius: 3px;
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
-  color: var(--inputTextColor); }
+  color: var(--inputTextColor);
+  background-color: var(--inputBackgroundColor); }
 
 .rux-form-field textarea {
   box-sizing: border-box;
@@ -1649,7 +1679,6 @@ label {
   min-height: 4.25rem;
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid transparent;
   border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -1657,25 +1686,23 @@ label {
   font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
-  color: black;
-  color: var(--inputTextColor); }
+  color: var(--inputTextColor);
+  background-color: var(--inputBackgroundColor); }
 
 /* input */
-.rux-form-field input::-webkit-input-placeholder,
-.rux-form-field input::-moz-placeholder,
-.rux-form-field input:-ms-input-placeholder,
-.rux-form-field textarea::-webkit-input-placeholder,
-.rux-form-field textarea::-moz-placeholder,
-.rux-form-field textarea:-ms-input-placeholder {
+.rux-form-field input::placeholder,
+.rux-form-field textarea::placeholder {
   font-size: 1rem;
   font-weight: normal;
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  font-family: var(--fontFamily); }
+  font-family: var(--fontFamily);
+  color: var(--defaultText);
+  opacity: 0.6; }
 
-.rux-form-field input[type="date"]::-webkit-inner-spin-button,
-.rux-form-field input[type="date"]::-webkit-outer-spin-button,
-.rux-form-field input[type="date"]::-webkit-calendar-picker-indicator {
+.rux-form-field input[type='date']::-webkit-inner-spin-button,
+.rux-form-field input[type='date']::-webkit-outer-spin-button,
+.rux-form-field input[type='date']::-webkit-calendar-picker-indicator {
   -webkit-appearance: none;
   display: none; }
 
@@ -1684,17 +1711,12 @@ label {
   border: 1px solid var(--inputInvalidBorderColor); }
 
 /* FOCUS RULES */
-.rux-form-field input:focus,
-.rux-form-field input:invalid:focus {
-  /* outline: none; */ }
-
-.rux-form-field input:not([type="search"]):focus,
-.rux-form-field input:not([type="search"]):invalid:focus {
+.rux-form-field input:not([type='search']):focus,
+.rux-form-field input:not([type='search']):invalid:focus {
   border: 1px solid var(--inputFocusBorderColor) !important; }
 
 .rux-form-field input::selection {
-  background-color: rgb(184, 222, 255);
-  background-color: var(--colorSecondaryLighten3); }
+  background-color: var(--inputSelectionBackgroundColor); }
 
 /* 
 .rux-form-field input:invalid + label::before {
@@ -1779,23 +1801,23 @@ label {
   outline: none;
   color: var(--inputFocusTextColor); }
 
-.rux-form-field input[type="search"]::-webkit-search-decoration {
+.rux-form-field input[type='search']::-webkit-search-decoration {
   -webkit-appearance: textfield; }
 
 /* SEARCH VARIANT */
-.rux-form-field input[type="search"] {
+.rux-form-field input[type='search'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   padding: 0.5rem 0.5rem 0.5rem 2rem;
   background: var(--inputBackgroundColor) var(--inputSearchIcon) 10px/0.975rem no-repeat; }
 
-.rux-form-field--large input[type="search"] {
+.rux-form-field--large input[type='search'] {
   padding: 0.5rem 0 0.5rem 2rem; }
 
-.rux-form-field--small input[type="search"] {
+.rux-form-field--small input[type='search'] {
   padding: 0.3rem 0 0.3rem 2rem; }
 
-.rux-form-field input[type="search"]::-webkit-search-cancel-button {
+.rux-form-field input[type='search']::-webkit-search-cancel-button {
   position: relative;
   -webkit-appearance: none;
   width: 20px;
@@ -1803,7 +1825,7 @@ label {
   background-image: var(--inputSearchCancel);
   background-repeat: no-repeat; }
 
-.rux-form-field input[type="search"]::-ms-clear {
+.rux-form-field input[type='search']::-ms-clear {
   position: relative;
   right: 0.25rem;
   width: 20px;
@@ -1833,11 +1855,11 @@ label {
   margin: 0 0 1rem 0;
   line-height: 1.2; }
 
-.rux-radio-button input[type="radio"] {
+.rux-radio-button input[type='radio'] {
   -webkit-appearance: none;
   display: none; }
 
-.rux-radio-button input[type="radio"] + label {
+.rux-radio-button input[type='radio'] + label {
   position: relative;
   display: flex;
   align-items: center;
@@ -1846,41 +1868,43 @@ label {
   letter-spacing: 0.5px;
   cursor: pointer; }
 
-.rux-radio-button input[type="radio"] + label::before {
+.rux-radio-button input[type='radio'] + label::before {
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
-  content: "";
+  content: '';
   align-self: start;
   height: 1.125rem;
   height: var(--controlOptionSize);
   width: 1.125rem;
   width: var(--controlOptionSize);
   margin: 0 0.625rem 0 0;
-  border: 1px solid var(--controlBorderColor); }
-
-.rux-radio-button input[type="radio"] + label::before {
+  border: 1px solid var(--controlBorderColor);
   border-radius: 100%;
-  background-color: transparent; }
+  background-color: var(--controlOutlineBackgroundColor); }
 
-.rux-radio-button input[type="radio"]:checked + label::before {
+.rux-radio-button input[type='radio']:checked + label::before {
   background-color: var(--controlSelectedOutlineBackgroundColor);
-  border-color: var(--controlSelectedOutlineBorderColor); }
+  border-color: var(--controlSelectedBorderColor); }
 
-.rux-radio-button input[type="radio"]:not(:disabled):hover + label:before,
-.rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:before {
+.rux-radio-button input[type='radio']:not(:disabled):hover + label:before,
+.rux-radio-button
+input[type='radio']:not(:disabled):checked:hover
++ label:before {
   border-color: var(--controlHoverBorderColor); }
 
-.rux-radio-button input[type="radio"]:not(:disabled):checked:hover + label:after {
-  background-color: var(--controlHoverBorderColor); }
+.rux-radio-button
+input[type='radio']:not(:disabled):checked:hover
++ label:after {
+  background-color: var(--controlBackgroundColor); }
 
-.rux-radio-button input[type="radio"]:checked + label::after {
+.rux-radio-button input[type='radio']:checked + label::after {
   position: absolute;
   top: 5px;
   display: flex;
-  content: ""; }
+  content: ''; }
 
-.rux-radio-button input[type="radio"]:checked + label::after {
+.rux-radio-button input[type='radio']:checked + label::after {
   left: 5px;
   height: 8px;
   width: 8px;
@@ -1888,7 +1912,7 @@ label {
   /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
   background-color: var(--primary); }
 
-.rux-radio-button input[type="radio"]:disabled + label {
+.rux-radio-button input[type='radio']:disabled + label {
   cursor: not-allowed;
   cursor: var(--disabledCursor);
   opacity: 0.4;
@@ -2037,17 +2061,21 @@ label {
 .rux-table .rux-checkbox {
   margin: 0; }
 
-.rux-table .rux-checkbox input[type="checkbox"]:checked + label::before,
-.rux-table .rux-radio-button input[type="radio"]:checked + label::before {
+.rux-table .rux-checkbox input[type='checkbox']:checked + label::before,
+.rux-table .rux-radio-button input[type='radio']:checked + label::before {
   background-color: var(--controlBackgroundColor);
   border-color: var(--controlBorderColor); }
 
-.rux-table .rux-checkbox input[type="checkbox"]:checked + label::after,
-.rux-table .rux-radio-button input[type="radio"]:checked + label::after {
+.rux-table .rux-checkbox input[type='checkbox']:checked + label::after,
+.rux-table .rux-radio-button input[type='radio']:checked + label::after {
   border-color: var(--inputBackground); }
 
-.rux-table tr:hover .rux-checkbox input[type="checkbox"]:not(:checked) + label::before,
-.rux-table tr:hover .rux-checkbox input[type="radio"] + label::before {
+.rux-table
+tr:hover
+.rux-checkbox
+input[type='checkbox']:not(:checked)
++ label::before,
+.rux-table tr:hover .rux-checkbox input[type='radio'] + label::before {
   border-color: var(--controlSelectedBorderColor); }
 
 .rux-advanced-status {
@@ -2088,7 +2116,7 @@ label {
   margin: 0 auto; }
 
 .rux-advanced-status__icon::before {
-  content: "";
+  content: '';
   display: block;
   position: relative;
   margin-bottom: -12px;
@@ -2383,7 +2411,7 @@ i.rux-icon {
 .rux-notification::after {
   position: relative;
   display: block;
-  content: "";
+  content: '';
   height: 60px; }
 
 .visible {
@@ -2421,7 +2449,7 @@ i.rux-icon {
   width: 66%;
   margin-left: -32%;
   margin-top: -1px;
-  content: "";
+  content: '';
   background-color: rgb(36, 163, 204);
   background-color: var(--colorStandbyDarken1); }
 
@@ -2508,10 +2536,8 @@ i.rux-icon {
   margin: 1em;
   min-width: 15em;
   position: relative;
-  border: 1px solid rgb(77, 172, 255);
-  border: 1px solid var(--colorSecondary);
-  background-color: rgb(77, 172, 255);
-  background-color: var(--colorSecondary);
+  border: 1px solid var(--popupMenuBorderColor);
+  background-color: var(--popupMenuBackgroundColor);
   border-radius: 3px; }
 
 .rux-pop-up ul {
@@ -2520,8 +2546,7 @@ i.rux-icon {
   padding: 0;
   margin: 0;
   background: none;
-  background-color: rgb(255, 255, 255);
-  background-color: var(--colorWhite);
+  background-color: var(--popupMenuBackgroundColor);
   border-radius: 2px;
   z-index: 2; }
 
@@ -2537,9 +2562,9 @@ i.rux-icon {
   min-width: 15em;
   max-width: 20em; }
 
-.rux-pop-up a:hover, .rux-pop-up li:hover {
-  background-color: rgb(184, 222, 255);
-  background-color: var(--colorSecondaryLighten3);
+.rux-pop-up a:hover,
+.rux-pop-up li:hover {
+  background-color: var(--popupMenuItemHoverBackgroundColor);
   color: var(--popupMenuItemHoverTextColor); }
 
 .rux-pop-up li:first-child a {
@@ -2552,75 +2577,61 @@ i.rux-icon {
   border-bottom-left-radius: 2px; }
 
 .rux-pop-up--top {
-  border-top: 3px solid rgb(77, 172, 255);
-  border-top: 3px solid var(--colorSecondary); }
+  border-top: 4px solid var(--popupMenuBorderColor); }
 
 .rux-pop-up--top::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: 1.1875rem;
   height: 1.1875rem;
-  background-color: rgb(77, 172, 255);
-  background-color: var(--colorSecondary);
+  background-color: var(--popupCaretBackgroundColor);
   z-index: 1;
   margin: -12px 0 0 16px;
   transform: rotate(45deg); }
 
 .rux-pop-up--bottom {
-  border-bottom: 3px solid rgb(77, 172, 255);
-  border-bottom: 3px solid var(--colorSecondary); }
+  border-bottom: 4px solid var(--popupMenuBorderColor); }
 
 .rux-pop-up--bottom::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
-  border-bottom: 1px solid rgb(77, 172, 255);
-  border-bottom: 1px solid var(--colorSecondary);
-  border-right: 1px solid rgb(77, 172, 255);
-  border-right: 1px solid var(--colorSecondary);
+  border-bottom: 1px solid var(--popupMenuBorderColor);
+  border-right: 1px solid var(--popupMenuBorderColor);
   width: 1.1875rem;
   height: 1.1875rem;
-  background-color: rgb(77, 172, 255);
-  background-color: var(--colorSecondary);
+  background-color: var(--popupCaretBackgroundColor);
   margin: -7px 0 0 16px;
   transform: rotate(45deg); }
 
 .rux-pop-up--left {
-  border-left: 3px solid rgb(77, 172, 255);
-  border-left: 3px solid var(--colorSecondary); }
+  border-left: 4px solid var(--popupMenuBorderColor); }
 
 .rux-pop-up--left::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
-  border-bottom: 1px solid rgb(77, 172, 255);
-  border-bottom: 1px solid var(--colorSecondary);
-  border-left: 1px solid rgb(77, 172, 255);
-  border-left: 1px solid var(--colorSecondary);
+  border-bottom: 1px solid var(--popupMenuBorderColor);
+  border-left: 1px solid var(--popupMenuBorderColor);
   width: 1.1875rem;
   height: 1.1875rem;
-  background-color: rgb(77, 172, 255);
-  background-color: var(--colorSecondary);
+  background-color: var(--popupCaretBackgroundColor);
   margin: 16px 0 0 -12px;
   transform: rotate(45deg); }
 
 .rux-pop-up--right {
-  border-right: 3px solid rgb(77, 172, 255);
-  border-right: 3px solid var(--colorSecondary); }
+  border-right: 4px solid var(--popupMenuBorderColor); }
 
 .rux-pop-up--right::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
-  border-top: 1px solid rgb(77, 172, 255);
-  border-top: 1px solid var(--colorSecondary);
-  border-right: 1px solid rgb(77, 172, 255);
-  border-right: 1px solid var(--colorSecondary);
+  border-top: 1px solid var(--popupMenuBorderColor);
+  border-right: 1px solid var(--popupMenuBorderColor);
   width: 1.1875rem;
   height: 1.1875rem;
-  background-color: rgb(77, 172, 255);
-  background-color: var(--colorSecondary);
+  background-color: var(--popupCaretBackgroundColor);
   right: 0;
   margin: 16px -12px 0 0;
   transform: rotate(45deg); }
@@ -2825,7 +2836,7 @@ i.rux-icon {
 */
 .rux-segmented-button {
   display: inline-flex;
-  height: 1.6875rem;
+  height: 1.625rem;
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -2834,11 +2845,8 @@ i.rux-icon {
   border-radius: var(--controlBorderRadius);
   border: 1px solid var(--segmentedButtonBorderColor); }
 
-.rux-segmented-button:hover {
-  border-color: var(--segmentedButtonHoverBorderColor); }
-
 .rux-segmented-button__segment {
-  height: 1.6875rem;
+  height: 1.625rem;
   width: auto;
   margin: 0;
   padding: 0; }
@@ -2851,7 +2859,6 @@ i.rux-icon {
   height: 1.5625rem;
   margin: 0;
   padding: 0 0.75rem;
-  border: none;
   border-right: 1px solid var(--segmentedButtonBorderColor);
   color: var(--segmentedButtonTextColor);
   background-color: var(--segmentedButtonBackgroundColor);
@@ -2872,17 +2879,23 @@ i.rux-icon {
 
 .rux-segmented-button__segment input:checked + label {
   background-color: var(--segmentedButtonSelectedBackgroundColor);
+  border-color: var(--segmentedButtonSelectedBorderColor);
   color: var(--segmentedButtonSelectedTextColor); }
 
-.rux-segmented-button:nth-child(2):not(:last-child) label {
+.rux-segmented-button__segment input:checked:hover + label {
+  background-color: var(--segmentedButtonSelectedHoverBackgroundColor);
+  color: var(--segmentedButtonSelectedHoverTextColor);
+  border-color: var(--segmentedButtonSelectedHoverBorderColor); }
+
+.rux-segmented-button__segment:nth-child(2):not(:last-child) label {
   border-right: none;
   border-left: none; }
 
-.rux-segmented-button:first-child label {
+.rux-segmented-button__segment:first-child label {
   border-radius: 3px 0 0 3px;
   border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius); }
 
-.rux-segmented-button:last-child label {
+.rux-segmented-button__segment:last-child label {
   border-radius: 0 3px 3px 0;
   border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0; }
 
@@ -2911,17 +2924,17 @@ i.rux-icon {
 :root {
   --thumbSize: var(--controlOptionSize);
   --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
-      0 1px 3px rgba(0, 0, 0, 0.2);
+        0 1px 3px rgba(0, 0, 0, 0.2);
   --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
-      0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+        0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
   --thumbShadowActive: inset 0 0 0 4px var(--primary),
-      0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
-      0 1px 1px rgba(0, 0, 0, 0.2);
+        0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
+        0 1px 1px rgba(0, 0, 0, 0.2);
   --trackHeight: 3px;
   --trackCursor: pointer;
-  --step:1;
-  --min:0;
-  --max:100;
+  --step: 1;
+  --min: 0;
+  --max: 100;
   --ticksThickness: 1px;
   --ticksHeight: 3px;
   --ticksColor: var(--primaryDark); }
@@ -3038,8 +3051,8 @@ input[type='range']:focus {
 .rux-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   position: relative;
-  margin-top: calc( 1.125rem / -2);
-  margin-top: calc( var(--thumbSize) / -2);
+  margin-top: calc(1.125rem / -2);
+  margin-top: calc(var(--thumbSize) / -2);
   transform: translateX(-35%);
   height: 1.125rem;
   height: var(--thumbSize);
@@ -3050,7 +3063,7 @@ input[type='range']:focus {
   background-color: var(--sliderThumbBackgroundColor);
   cursor: pointer;
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
-      0 1px 3px rgba(0, 0, 0, 0.2);
+        0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
   z-index: 6; }
 
@@ -3073,8 +3086,8 @@ input[type='range']:focus {
   background: radial-gradient(circle, white 40%, var(--primaryDark) 40%);
   -webkit-radial-gradient: radial-gradient(circle, white 40%, var(--primaryDark) 40%);
   box-shadow: inset 0 0 0 4px var(--primary),
-      0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
-      0 1px 1px rgba(0, 0, 0, 0.2);
+        0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
+        0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: var(--thumbShadowActive); }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
@@ -3085,23 +3098,23 @@ input[type='range']:focus {
   border-color: var(--sliderSelectedThumbBorderColor);
   background-color: var(--inputBackground);
   box-shadow: inset 0 0 0 4px var(--primary),
-      0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
-      0 1px 1px rgba(0, 0, 0, 0.2);
+        0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.12),
+        0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: var(--thumbShadowActive); }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
 .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
   background-color: var(--sliderHoverThumbBackgroundColor);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14),
-      0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+        0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
   box-shadow: var(--thumbShadowHover); }
 
 /* Thumb -> Moz */
 .rux-range::-moz-range-thumb {
   -moz-appearance: none;
   position: relative;
-  top: calc( 1.125rem / -2);
-  top: calc( var(--thumbSize) / -2);
+  top: calc(1.125rem / -2);
+  top: calc(var(--thumbSize) / -2);
   transform: translateX(-35%);
   height: 1.125rem;
   height: var(--thumbSize);
@@ -3112,7 +3125,7 @@ input[type='range']:focus {
   background-color: var(--sliderThumbBackgroundColor);
   cursor: pointer;
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12),
-      0 1px 3px rgba(0, 0, 0, 0.2);
+        0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow); }
 
 .rux-range:not(:disabled)::-moz-range-thumb:active {
@@ -3181,8 +3194,8 @@ input:-moz-focusring {
   height: var(--ticksHeight);
   background: linear-gradient(to right, var(--primaryDark) 1px, transparent 1px) repeat-x;
   background: linear-gradient(to right, var(--ticksColor) var(--ticksThickness), transparent 1px) repeat-x;
-  background-size: calc(100%/((100 - 0) / 1) - .18%) 3px;
-  background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .18%) var(--ticksHeight);
+  background-size: calc( 100% / ((100 - 0) / 1) - 0.18%) 3px;
+  background-size: calc( 100% / ((var(--max) - var(--min)) / var(--step)) - 0.18%) var(--ticksHeight);
   background-position: 0;
   z-index: 5; }
 
@@ -3474,7 +3487,7 @@ input[type='range']::-moz-focus-outer {
 
 .rux-toggle--legacy__button::before {
   position: absolute;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
   width: 100%;
@@ -3483,7 +3496,7 @@ input[type='range']::-moz-focus-outer {
   background: var(--toggleBaseBackgroundColor, black); }
 
 .rux-toggle--legacy__button::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   box-sizing: border-box;
@@ -3537,7 +3550,7 @@ input[type='range']::-moz-focus-outer {
 .rux-switch__button::before {
   position: relative;
   display: flex;
-  content: "";
+  content: '';
   border-radius: 5.5px;
   border: 1px solid;
   border-color: var(--switchOffColor);
@@ -3553,19 +3566,23 @@ input[type='range']::-moz-focus-outer {
   background-color: var(--switchOnColor); }
 
 /* Track Hover Unchecked */
-.rux-switch:hover .rux-switch__input:not(:disabled) + .rux-switch__button:before {
+.rux-switch:hover
+.rux-switch__input:not(:disabled)
++ .rux-switch__button:before {
   border-color: var(--switchHoverOffColor);
   background-color: var(--switchHoverOffColor); }
 
 /* Track Hover Checked */
-.rux-switch:hover .rux-switch__input:checked:not(:disabled) + .rux-switch__button:before {
+.rux-switch:hover
+.rux-switch__input:checked:not(:disabled)
++ .rux-switch__button:before {
   border-color: var(--switchHoverOnColor);
   background-color: var(--switchHoverOnColor); }
 
 /* Button */
 .rux-switch__button::after {
   position: absolute;
-  content: "";
+  content: '';
   top: 1px;
   left: 0;
   z-index: 3;
@@ -3583,11 +3600,15 @@ input[type='range']::-moz-focus-outer {
   background-color: var(--inputBackground); }
 
 /* Button Hover Unchecked */
-.rux-switch:hover .rux-switch__input:not(:disabled) + .rux-switch__button:after {
+.rux-switch:hover
+.rux-switch__input:not(:disabled)
++ .rux-switch__button:after {
   border-color: var(--switchHoverOffColor); }
 
 /* Button Hover Checked */
-.rux-switch:hover .rux-switch__input:checked:not(:disabled) + .rux-switch__button:after {
+.rux-switch:hover
+.rux-switch__input:checked:not(:disabled)
++ .rux-switch__button:after {
   border-color: var(--switchHoverOnColor); }
 
 /* Disabled */
@@ -3673,7 +3694,7 @@ input[type='range']::-moz-focus-outer {
   visibility: hidden; }
 
 .rux-tree__arrow::after {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   border-style: solid;
@@ -3703,7 +3724,8 @@ input[type='range']::-moz-focus-outer {
   display: block;
   height: auto; }
 
-[aria-expanded='true'][aria-level='1']:not([aria-selected="true"]) > .rux-tree__parent:after {
+[aria-expanded='true'][aria-level='1']:not([aria-selected='true'])
+> .rux-tree__parent:after {
   border-bottom: solid 1px var(--treeExpandedBorderColor); }
 
 .rux-tree .selected,
@@ -3720,12 +3742,22 @@ input[type='range']::-moz-focus-outer {
   border-top: 1px solid var(--treeSelectedBorderColor);
   border-bottom: 1px solid var(--treeSelectedBorderColor); }
 
-li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover:after {
+li[aria-selected='true']
+> .rux-tree__children
+li:not([aria-selected='undefined'])
+.rux-tree__parent:hover:after {
   box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor) !important;
   background-color: var(--treeHoverBackgroundColor) !important; }
 
-li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover {
+li[aria-selected='true']
+> .rux-tree__children
+li:not([aria-selected='undefined'])
+.rux-tree__parent:hover {
   color: var(--treeHoverTextColor); }
 
-li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover .rux-tree__arrow:after {
+li[aria-selected='true']
+> .rux-tree__children
+li:not([aria-selected='undefined'])
+.rux-tree__parent:hover
+.rux-tree__arrow:after {
   border-color: transparent transparent transparent var(--treeHoverTextColor); }
