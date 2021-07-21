@@ -471,8 +471,23 @@
     ==========================================================================
     
   */
-  --selectHoverOptBackgroundColor: var(--primaryDark);
-  --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --selectMenuBorderRadius: 3px;
+  --selectMenuOptHoverBackgroundColor: rgba(206, 233, 252, 0.3);
+  --selectMenuOptSelectedBackgroundColor: var(--lightSelected);
+  --selectMenuOptTextHoverColor: var(--primaryDark);
+  --selectMenuOptSelectedTextColor: var(--defaultText);
+  --selectMenuBorderColor: var(--primaryLighter);
+  --selectMenuCaretBackgroundColor: linear-gradient(
+        var(--lightSelected),
+        var(--lightSelected)
+    );
+  --selectMenuBackgroundColor: var(--backgroundColor);
+  --selectMenuTextColor: var(--primary);
+  --selectMenuBorderHoverColor: var(--primaryDark);
+  --selectMenuInvalidBorder: var(--statusDarkCritical);
+  --selectMenuTextHoverColor: var(--primary);
+  --selectMenuInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23005a8f%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --selectMenuActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23005a8f%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
   /* 
     
     Switch Colors 
@@ -840,7 +855,23 @@ li.light-theme {
     ==========================================================================
     
   */
-  --selectHoverOptBackgroundColor: var(--primaryLight);
+  --selectMenuBorderRadius: 3px;
+  --selectMenuOptHoverBackgroundColor: rgba(28, 63, 94, 0.3);
+  --selectMenuOptSelectedBackgroundColor: var(--darkSelected);
+  --selectMenuOptSelectedTextColor: var(--defaultText);
+  --selectMenuOptTextHoverColor: var(--primaryLight);
+  --selectMenuBorderColor: var(--primaryDarker);
+  --selectMenuCaretBackgroundColor: linear-gradient(
+        var(--darkSelected),
+        var(--darkSelected)
+    );
+  --selectMenuBackgroundColor: var(--backgroundColor);
+  --selectMenuTextColor: var(--primary);
+  --selectMenuBorderHoverColor: var(--primary);
+  --selectMenuInvalidBorder: var(--criticalBorder);
+  --selectMenuTextHoverColor: var(--primary);
+  --selectMenuInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --selectMenuActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
   /* 
     
     Switch Colors 
@@ -1907,36 +1938,43 @@ input[type='radio']:not(:disabled):checked:hover
 **	2.0.1 Notes
 */
 .rux-select {
-  --selectInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-  --selectActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
   position: relative;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: 1px solid var(--inputBorderColorAlt);
+  width: 100%;
+  border: 1px solid var(--selectMenuBorderColor);
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
-  color: var(--inputDark);
+  color: var(--selectMenuTextColor);
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   font-size: 1rem;
   padding: 0.438rem 3.125rem 0.438rem 0.5rem;
-  background-color: var(--inputBackground);
-  background-image: var(--selectInactiveCaret);
-  background-position: center right 0.625rem;
+  background-color: var(--selectMenuBackgroundColor);
+  background-image: var(--selectMenuInactiveCaret), var(--selectMenuCaretBackgroundColor);
+  background-position: center right 0.625rem, center left 9.105rem;
   background-repeat: no-repeat;
   user-select: none; }
 
 .rux-select .rux-select optgroup,
 .rux-select option {
-  color: var(--inputDark);
-  background-color: var(--inputBackground); }
+  background-color: var(--selectMenuBackgroundColor);
+  border: 1px solid var(--selectMenuBorderColor);
+  border-radius: var(--selectMenuBorderRadius);
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5); }
 
 .rux-select .rux-select optgroup:hover,
 .rux-select option:hover {
-  background-color: var(--selectHoverOptBackgroundColor); }
+  color: var(--selectMenuOptTextHoverColor);
+  background-color: var(--selectMenuOptHoverBackgroundColor); }
+
+.rux-select .rux-select optgroup:focus,
+.rux-select option:focus {
+  color: var(--selectMenuOptSelectedTextColor);
+  background-color: var(--selectMenuOptSelectedBackgroundColor); }
 
 .rux-select:disabled {
   opacity: 0.4;
@@ -1954,7 +1992,8 @@ input[type='radio']:not(:disabled):checked:hover
   background-image: var(--selectMenuActiveCaret); }
 
 .rux-select:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  border-color: var(--selectMenuBorderHoverColor); }
 
 .rux-select::-ms-expand {
   display: none; }
@@ -1963,7 +2002,7 @@ input[type='radio']:not(:disabled):checked:hover
   background: transparent; }
 
 .rux-select:invalid {
-  border: 1px solid var(--inputInvalidBorderColor); }
+  border: 1px solid var(--selectMenuInvalidBorder); }
 
 /*
 **
