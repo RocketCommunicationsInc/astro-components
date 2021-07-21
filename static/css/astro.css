@@ -1,201 +1,235 @@
 @charset "UTF-8";
 :root {
-    --disabledControlOpacity: 0.4;
-    --disabledControlCursor: not-allowed;
-    --disabledOpacity: 0.4;
-    --disabledCursor: not-allowed;
-    --buttonBorderRadius: 3px;
-    --defaultBorderRadius: 3px;
-    --controlOptionSize: 1.125rem;
-    /* 18px */
-    --controlBorderRadius: 3px;
-    --labelFontSize: 1rem;
-    --smallLabelFontSize: 0.875rem;
-    --largeLabelFontSize: 1.125rem;
-    /* Typography */
-    --fontFamily: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  --disabledControlOpacity: 0.4;
+  --disabledControlCursor: not-allowed;
+  --disabledOpacity: 0.4;
+  --disabledCursor: not-allowed;
+  --buttonBorderRadius: 3px;
+  --defaultBorderRadius: 3px;
+  --controlOptionSize: 1.125rem;
+  /* 18px */
+  --controlBorderRadius: 3px;
+  --labelFontSize: 1rem;
+  --smallLabelFontSize: 0.875rem;
+  --largeLabelFontSize: 1.125rem;
+  /* Typography */
+  --fontFamily: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    --fontSize: 1rem;
-    /* 16px */
-    --fontSizeXL: 1.125rem;
-    --fontSizeLG: 1rem;
-    --fontSizeMD: 0.875rem;
-    --fontSizeSM: 0.75rem;
-    --fontSizeXS: 0.65rem;
-    --fontFamilyLight: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  --fontSize: 1rem;
+  /* 16px */
+  --fontSizeXL: 1.125rem;
+  --fontSizeLG: 1rem;
+  --fontSizeMD: 0.875rem;
+  --fontSizeSM: 0.75rem;
+  --fontSizeXS: 0.65rem;
+  --fontFamilyLight: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    --fontFamilyMono: 'Roboto Mono', monospace;
-    --colorBlack: rgb(0, 0, 0);
-    --colorWhite: rgb(255, 255, 255);
-    --colorGray: rgb(204, 204, 204);
-    --colorPrimary: rgb(0, 90, 143);
-    --colorSecondary: rgb(77, 172, 255);
-    --colorTertiary: rgb(40, 63, 88);
-    --colorQuaternary: rgb(206, 214, 228);
-    --statusDarkCritical: rgb(255, 56, 56);
-    --statusDarkSerious: rgb(255, 179, 0);
-    --statusDarkCaution: rgb(252, 232, 58);
-    --statusDarkNormal: rgb(86, 240, 0);
-    --statusDarkStandby: rgb(45, 204, 255);
-    --statusDarkOff: rgb(158, 167, 173);
-    --statusLightCritical: rgb(255, 42, 4);
-    --statusLightSerious: rgb(255, 175, 61);
-    --statusLightCaution: rgb(250, 216, 0);
-    --statusLightNormal: rgb(0, 226, 0);
-    --statusLightStandby: rgb(100, 217, 255);
-    --statusLightOff: rgb(142, 154, 163);
-    --classificationTopSecretSCIBackgroundColor: rgba(252, 232, 58);
-    --classificationTopSecretBackgroundColor: rgba(255, 140, 0);
-    --classificationSecretBackgroundColor: rgba(200, 16, 46);
-    --classificationConfidentialBackgroundColor: rgba(0, 51, 160);
-    --classificationControlledBackgroundColor: rgba(80, 43, 133);
-    --classificationUnclassifiedBackgroundColor: rgba(0, 122, 51);
-    --colorTag1: rgb(25, 199, 202);
-    --colorTag2: rgb(120, 112, 208);
-    --colorTag3: rgb(160, 13, 190);
-    --colorTag4: rgb(216, 83, 30);
-    --colorPrimaryLighten5: rgb(51, 123, 165);
-    --colorPrimaryLighten1: rgb(51, 123, 165);
-    --colorPrimaryLighten2: rgb(102, 156, 188);
-    --colorPrimaryLighten3: rgb(153, 189, 210);
-    --colorPrimaryLighten4: rgb(204, 222, 233);
-    --colorPrimaryDarken1: rgb(0, 72, 114);
-    --colorPrimaryDarken2: rgb(0, 54, 86);
-    --colorPrimaryDarken3: rgb(0, 36, 57);
-    --colorPrimaryDarken4: rgb(0, 18, 29);
-    --colorSecondaryLighten1: rgb(113, 189, 255);
-    --colorSecondaryLighten2: rgb(146, 203, 255);
-    --colorSecondaryLighten3: rgb(184, 222, 255);
-    --colorSecondaryLighten4: rgb(219, 238, 255);
-    --colorSecondaryDarken1: rgb(62, 138, 204);
-    --colorSecondaryDarken2: rgb(46, 103, 153);
-    --colorSecondaryDarken3: rgb(31, 69, 102);
-    --colorSecondaryDarken4: rgb(15, 34, 51);
-    --colorTertiaryLighten1: rgb(82, 102, 122);
-    --colorTertiaryLighten2: rgb(126, 140, 155);
-    --colorTertiaryLighten3: rgb(169, 178, 188);
-    --colorTertiaryLighten4: rgb(212, 217, 222);
-    --colorTertiaryDarken1: rgb(31, 51, 71);
-    --colorTertiaryDarken2: rgb(23, 38, 53);
-    --colorTertiaryDarken3: rgb(16, 25, 35);
-    --colorTertiaryDarken4: rgb(8, 13, 18);
-    --colorQuaternaryLighten1: rgb(217, 222, 233);
-    --colorQuaternaryLighten2: rgb(225, 230, 239);
-    --colorQuaternaryLighten3: rgb(236, 239, 244);
-    --colorQuaternaryLighten4: rgb(245, 246, 249);
-    --colorQuaternaryDarken1: rgb(166, 171, 182);
-    --colorQuaternaryDarken2: rgb(124, 128, 136);
-    --colorQuaternaryDarken3: rgb(83, 86, 91);
-    --colorQuaternaryDarken4: rgb(41, 42, 45);
-    --colorCriticalLighten1: rgb(255, 96, 96);
-    --colorCriticalLighten2: rgb(255, 136, 136);
-    --colorCriticalLighten3: rgb(255, 175, 175);
-    --colorCriticalLighten4: rgb(255, 215, 215);
-    --colorCriticalDarken1: rgb(204, 45, 45);
-    --colorCriticalDarken2: rgb(153, 34, 34);
-    --colorCriticalDarken3: rgb(102, 22, 22);
-    --colorCriticalDarken4: rgb(51, 11, 11);
-    --colorSeriousLighten1: rgb(255, 194, 51);
-    --colorSeriousLighten2: rgb(255, 209, 102);
-    --colorSeriousLighten3: rgb(255, 225, 153);
-    --colorSeriousLighten4: rgb(255, 240, 204);
-    --colorSeriousDarken1: rgb(204, 143, 0);
-    --colorSeriousDarken2: rgb(153, 107, 0);
-    --colorSeriousDarken3: rgb(102, 72, 0);
-    --colorSeriousDarken4: rgb(51, 36, 0);
-    --colorCautionLighten1: rgb(253, 237, 97);
-    --colorCautionLighten2: rgb(253, 241, 137);
-    --colorCautionLighten3: rgb(254, 246, 176);
-    --colorCautionLighten4: rgb(254, 250, 216);
-    --colorCautionDarken1: rgb(202, 186, 46);
-    --colorCautionDarken2: rgb(151, 139, 35);
-    --colorCautionDarken3: rgb(101, 93, 23);
-    --colorCautionDarken4: rgb(50, 46, 12);
-    --colorNormalLighten1: rgb(120, 243, 51);
-    --colorNormalLighten2: rgb(154, 246, 102);
-    --colorNormalLighten3: rgb(187, 249, 153);
-    --colorNormalLighten4: rgb(221, 252, 204);
-    --colorNormalDarken1: rgb(69, 192, 0);
-    --colorNormalDarken2: rgb(52, 144, 0);
-    --colorNormalDarken3: rgb(34, 96, 0);
-    --colorNormalDarken4: rgb(17, 48, 0);
-    --colorStandbyLighten1: rgb(87, 214, 255);
-    --colorStandbyLighten2: rgb(129, 224, 255);
-    --colorStandbyLighten3: rgb(171, 235, 255);
-    --colorStandbyLighten4: rgb(213, 245, 255);
-    --colorStandbyDarken1: rgb(36, 163, 204);
-    --colorStandbyDarken2: rgb(27, 122, 153);
-    --colorStandbyDarken3: rgb(18, 82, 102);
-    --colorStandbyDarken4: rgb(9, 41, 51);
-    --colorOffLighten1: rgb(177, 185, 189);
-    --colorOffLighten2: rgb(197, 202, 206);
-    --colorOffLighten3: rgb(216, 220, 222);
-    --colorOffLighten4: rgb(236, 237, 239);
-    --colorOffDarken1: rgb(126, 134, 138);
-    --colorOffDarken2: rgb(95, 100, 104);
-    --colorOffDarken3: rgb(63, 67, 69);
-    --colorOffDarken4: rgb(32, 33, 35);
-    --colorTag1Lighten1: rgb(71, 210, 213);
-    --colorTag1Lighten2: rgb(117, 221, 223);
-    --colorTag1Lighten3: rgb(163, 233, 234);
-    --colorTag1Lighten4: rgb(209, 244, 244);
-    --colorTag1Darken1: rgb(20, 159, 162);
-    --colorTag1Darken2: rgb(15, 119, 121);
-    --colorTag1Darken3: rgb(10, 80, 81);
-    --colorTag1Darken4: rgb(5, 40, 40);
-    --colorTag2Lighten1: rgb(147, 141, 217);
-    --colorTag2Lighten2: rgb(174, 169, 227);
-    --colorTag2Lighten3: rgb(201, 198, 236);
-    --colorTag2Lighten4: rgb(228, 226, 246);
-    --colorTag2Darken1: rgb(96, 90, 166);
-    --colorTag2Darken2: rgb(72, 67, 125);
-    --colorTag2Darken3: rgb(48, 45, 83);
-    --colorTag2Darken4: rgb(24, 22, 42);
-    --colorTag3Lighten1: rgb(179, 61, 203);
-    --colorTag3Lighten2: rgb(198, 110, 216);
-    --colorTag3Lighten3: rgb(217, 158, 229);
-    --colorTag3Lighten4: rgb(236, 207, 242);
-    --colorTag3Darken1: rgb(128, 10, 152);
-    --colorTag3Darken2: rgb(96, 8, 114);
-    --colorTag3Darken3: rgb(64, 5, 76);
-    --colorTag3Darken4: rgb(32, 3, 38);
-    --colorTag4Lighten1: rgb(224, 117, 75);
-    --colorTag4Lighten2: rgb(232, 152, 120);
-    --colorTag4Lighten3: rgb(239, 186, 165);
-    --colorTag4Lighten4: rgb(247, 221, 210);
-    --colorTag4Darken1: rgb(173, 66, 24);
-    --colorTag4Darken2: rgb(130, 50, 18);
-    --colorTag4Darken3: rgb(86, 33, 12);
-    --colorTag4Darken4: rgb(43, 17, 6);
-    --colorWhiteLighten1: rgb(255, 255, 255);
-    --colorWhiteLighten2: rgb(255, 255, 255);
-    --colorWhiteLighten3: rgb(255, 255, 255);
-    --colorWhiteLighten4: rgb(255, 255, 255);
-    --colorWhiteDarken1: rgb(204, 204, 204);
-    --colorWhiteDarken2: rgb(153, 153, 153);
-    --colorWhiteDarken3: rgb(102, 102, 102);
-    --colorWhiteDarken4: rgb(51, 51, 51);
-    --colorBlackLighten1: rgb(51, 51, 51);
-    --colorBlackLighten2: rgb(102, 102, 102);
-    --colorBlackLighten3: rgb(153, 153, 153);
-    --colorBlackLighten4: rgb(204, 204, 204);
-    --colorBlackDarken1: rgb(0, 0, 0);
-    --colorBlackDarken2: rgb(0, 0, 0);
-    --colorBlackDarken3: rgb(0, 0, 0);
-    --colorBlackDarken4: rgb(0, 0, 0);
-    --colorGrayLighten1: rgb(214, 214, 214);
-    --colorGrayLighten2: rgb(224, 224, 224);
-    --colorGrayLighten3: rgb(235, 235, 235);
-    --colorGrayLighten4: rgb(245, 245, 245);
-    --colorGrayDarken1: rgb(163, 163, 163);
-    --colorGrayDarken2: rgb(122, 122, 122);
-    --colorGrayDarken3: rgb(82, 82, 82);
-    --colorGrayDarken4: rgb(41, 41, 41);
-    --colorSnowflakesDarkSurface: #1b2d3e;
-    --colorSnowflakesLightShadow: #828181;
-    --colorSnowflakesDarkSelected: #1c3f5e;
-    --colorSnowflakesLightSelected: #cee9fc;
-}
+  --fontFamilyMono: 'Roboto Mono', monospace;
+  --colorBlack: rgb(0, 0, 0);
+  --colorWhite: rgb(255, 255, 255);
+  --colorGray: rgb(204, 204, 204);
+  --colorPrimary: rgb(0, 90, 143);
+  --colorSecondary: rgb(77, 172, 255);
+  --colorTertiary: rgb(40, 63, 88);
+  --colorQuaternary: rgb(206, 214, 228);
+  --statusDarkCritical: rgb(255, 56, 56);
+  --statusDarkSerious: rgb(255, 179, 0);
+  --statusDarkCaution: rgb(252, 232, 58);
+  --statusDarkNormal: rgb(86, 240, 0);
+  --statusDarkStandby: rgb(45, 204, 255);
+  --statusDarkOff: rgb(158, 167, 173);
+  --statusLightCritical: rgb(255, 42, 4);
+  --statusLightSerious: rgb(255, 175, 61);
+  --statusLightCaution: rgb(250, 216, 0);
+  --statusLightNormal: rgb(0, 226, 0);
+  --statusLightStandby: rgb(100, 217, 255);
+  --statusLightOff: rgb(142, 154, 163);
+  --classificationTopSecretSCIBackgroundColor: rgba(252, 232, 58);
+  --classificationTopSecretBackgroundColor: rgba(255, 140, 0);
+  --classificationSecretBackgroundColor: rgba(200, 16, 46);
+  --classificationConfidentialBackgroundColor: rgba(0, 51, 160);
+  --classificationControlledBackgroundColor: rgba(80, 43, 133);
+  --classificationUnclassifiedBackgroundColor: rgba(0, 122, 51);
+  --colorTag1: rgb(25, 199, 202);
+  --colorTag2: rgb(120, 112, 208);
+  --colorTag3: rgb(160, 13, 190);
+  --colorTag4: rgb(216, 83, 30);
+  --colorPrimaryLighten1: rgb(51, 123, 165);
+  --colorPrimaryLighten2: rgb(100, 156, 189);
+  --colorPrimaryLighten3: rgb(153, 189, 210);
+  --colorPrimaryLighten4: rgb(204, 222, 233);
+  --colorPrimaryDarken1: rgb(0, 72, 114);
+  --colorPrimaryDarken2: rgb(0, 54, 86);
+  --colorPrimaryDarken3: rgb(0, 36, 57);
+  --colorPrimaryDarken4: rgb(0, 18, 29);
+  --colorSecondaryLighten1: rgb(113, 189, 255);
+  --colorSecondaryLighten2: rgb(146, 203, 255);
+  --colorSecondaryLighten3: rgb(184, 222, 255);
+  --colorSecondaryLighten4: rgb(219, 238, 255);
+  --colorSecondaryDarken1: rgb(62, 138, 204);
+  --colorSecondaryDarken2: rgb(43, 101, 155);
+  --colorSecondaryDarken3: rgb(31, 69, 102);
+  --colorSecondaryDarken4: rgb(15, 34, 51);
+  --colorTertiaryLighten1: rgb(82, 102, 122);
+  --colorTertiaryLighten2: rgb(126, 140, 155);
+  --colorTertiaryLighten3: rgb(169, 178, 188);
+  --colorTertiaryLighten4: rgb(212, 217, 222);
+  --colorTertiaryDarken1: rgb(31, 51, 71);
+  --colorTertiaryDarken2: rgb(23, 38, 53);
+  --colorTertiaryDarken3: rgb(16, 25, 35);
+  --colorTertiaryDarken4: rgb(8, 12, 17);
+  --colorQuaternaryLighten1: rgb(217, 222, 233);
+  --colorQuaternaryLighten2: rgb(225, 230, 239);
+  --colorQuaternaryLighten3: rgb(236, 239, 244);
+  --colorQuaternaryLighten4: rgb(245, 246, 249);
+  --colorQuaternaryDarken1: rgb(166, 171, 182);
+  --colorQuaternaryDarken2: rgb(124, 128, 136);
+  --colorQuaternaryDarken3: rgb(83, 86, 91);
+  --colorQuaternaryDarken4: rgb(41, 42, 45);
+  --colorCriticalLighten1: rgb(255, 96, 96);
+  --colorCriticalLighten2: rgb(255, 136, 136);
+  --colorCriticalLighten3: rgb(255, 175, 175);
+  --colorCriticalLighten4: rgb(255, 215, 215);
+  --colorCriticalDarken1: rgb(204, 45, 45);
+  --colorCriticalDarken2: rgb(153, 34, 34);
+  --colorCriticalDarken3: rgb(102, 22, 22);
+  --colorCriticalDarken4: rgb(51, 11, 11);
+  --colorSeriousLighten1: rgb(255, 194, 51);
+  --colorSeriousLighten2: rgb(255, 209, 102);
+  --colorSeriousLighten3: rgb(255, 225, 153);
+  --colorSeriousLighten4: rgb(255, 240, 204);
+  --colorSeriousDarken1: rgb(204, 143, 0);
+  --colorSeriousDarken2: rgb(153, 107, 0);
+  --colorSeriousDarken3: rgb(102, 72, 0);
+  --colorSeriousDarken4: rgb(51, 36, 0);
+  --colorCautionLighten1: rgb(253, 237, 97);
+  --colorCautionLighten2: rgb(253, 241, 137);
+  --colorCautionLighten3: rgb(254, 246, 176);
+  --colorCautionLighten4: rgb(254, 250, 216);
+  --colorCautionDarken1: rgb(202, 186, 46);
+  --colorCautionDarken2: rgb(151, 139, 35);
+  --colorCautionDarken3: rgb(101, 93, 23);
+  --colorCautionDarken4: rgb(50, 46, 12);
+  --colorNormalLighten1: rgb(120, 243, 51);
+  --colorNormalLighten2: rgb(154, 246, 102);
+  --colorNormalLighten3: rgb(187, 249, 153);
+  --colorNormalLighten4: rgb(221, 252, 204);
+  --colorNormalDarken1: rgb(69, 192, 0);
+  --colorNormalDarken2: rgb(52, 144, 0);
+  --colorNormalDarken3: rgb(34, 96, 0);
+  --colorNormalDarken4: rgb(17, 48, 0);
+  --colorStandbyLighten1: rgb(87, 214, 255);
+  --colorStandbyLighten2: rgb(129, 224, 255);
+  --colorStandbyLighten3: rgb(171, 235, 255);
+  --colorStandbyLighten4: rgb(213, 245, 255);
+  --colorStandbyDarken1: rgb(36, 163, 204);
+  --colorStandbyDarken2: rgb(27, 122, 153);
+  --colorStandbyDarken3: rgb(18, 82, 102);
+  --colorStandbyDarken4: rgb(9, 41, 51);
+  --colorOffLighten1: rgb(177, 185, 189);
+  --colorOffLighten2: rgb(197, 202, 206);
+  --colorOffLighten3: rgb(216, 220, 222);
+  --colorOffLighten4: rgb(236, 237, 239);
+  --colorOffDarken1: rgb(126, 134, 138);
+  --colorOffDarken2: rgb(95, 100, 104);
+  --colorOffDarken3: rgb(63, 67, 69);
+  --colorOffDarken4: rgb(32, 33, 35);
+  --colorTag1Lighten1: rgb(71, 210, 213);
+  --colorTag1Lighten2: rgb(117, 221, 223);
+  --colorTag1Lighten3: rgb(163, 233, 234);
+  --colorTag1Lighten4: rgb(209, 244, 244);
+  --colorTag1Darken1: rgb(20, 159, 162);
+  --colorTag1Darken2: rgb(15, 119, 121);
+  --colorTag1Darken3: rgb(10, 80, 81);
+  --colorTag1Darken4: rgb(5, 40, 40);
+  --colorTag2Lighten1: rgb(147, 141, 217);
+  --colorTag2Lighten2: rgb(174, 169, 227);
+  --colorTag2Lighten3: rgb(201, 198, 236);
+  --colorTag2Lighten4: rgb(228, 226, 246);
+  --colorTag2Darken1: rgb(96, 90, 166);
+  --colorTag2Darken2: rgb(72, 67, 125);
+  --colorTag2Darken3: rgb(48, 45, 83);
+  --colorTag2Darken4: rgb(24, 22, 42);
+  --colorTag3Lighten1: rgb(179, 61, 203);
+  --colorTag3Lighten2: rgb(198, 110, 216);
+  --colorTag3Lighten3: rgb(217, 158, 229);
+  --colorTag3Lighten4: rgb(236, 207, 242);
+  --colorTag3Darken1: rgb(128, 10, 152);
+  --colorTag3Darken2: rgb(96, 8, 114);
+  --colorTag3Darken3: rgb(64, 5, 76);
+  --colorTag3Darken4: rgb(32, 3, 38);
+  --colorTag4Lighten1: rgb(224, 117, 75);
+  --colorTag4Lighten2: rgb(232, 152, 120);
+  --colorTag4Lighten3: rgb(239, 186, 165);
+  --colorTag4Lighten4: rgb(247, 221, 210);
+  --colorTag4Darken1: rgb(173, 66, 24);
+  --colorTag4Darken2: rgb(130, 50, 18);
+  --colorTag4Darken3: rgb(86, 33, 12);
+  --colorTag4Darken4: rgb(43, 17, 6);
+  --colorWhiteLighten1: rgb(255, 255, 255);
+  --colorWhiteLighten2: rgb(255, 255, 255);
+  --colorWhiteLighten3: rgb(255, 255, 255);
+  --colorWhiteLighten4: rgb(255, 255, 255);
+  --colorWhiteDarken1: rgb(204, 204, 204);
+  --colorWhiteDarken2: rgb(153, 153, 153);
+  --colorWhiteDarken3: rgb(102, 102, 102);
+  --colorWhiteDarken4: rgb(51, 51, 51);
+  --colorBlackLighten1: rgb(51, 51, 51);
+  --colorBlackLighten2: rgb(102, 102, 102);
+  --colorBlackLighten3: rgb(153, 153, 153);
+  --colorBlackLighten4: rgb(204, 204, 204);
+  --colorBlackDarken1: rgb(0, 0, 0);
+  --colorBlackDarken2: rgb(0, 0, 0);
+  --colorBlackDarken3: rgb(0, 0, 0);
+  --colorBlackDarken4: rgb(0, 0, 0);
+  --colorGrayLighten1: rgb(214, 214, 214);
+  --colorGrayLighten2: rgb(224, 224, 224);
+  --colorGrayLighten3: rgb(235, 235, 235);
+  --colorGrayLighten4: rgb(245, 245, 245);
+  --colorGrayDarken1: rgb(163, 163, 163);
+  --colorGrayDarken2: rgb(122, 122, 122);
+  --colorGrayDarken3: rgb(82, 82, 82);
+  --colorGrayDarken4: rgb(41, 41, 41);
+  --colorSnowflakesDarkSurface: #1b2d3e;
+  --colorSnowflakesLightShadow: #828181;
+  --colorSnowflakesDarkSelected: #1c3f5e;
+  --colorSnowflakesLightSelected: #cee9fc;
+  --colorPrimary100: #CBDEE9;
+  --colorPrimary200: #98BDD3;
+  --colorPrimary300: #649CBD;
+  --colorPrimary400: #2F7AA7;
+  --colorPrimary500: #005A8F;
+  --colorPrimary600: #004872;
+  --colorPrimary700: #003655;
+  --colorPrimary800: #002439;
+  --colorPrimary900: #00121C;
+  --colorSecondary100: #DAEEFF;
+  --colorSecondary200: #B7DCFF;
+  --colorSecondary300: #92CBFF;
+  --colorSecondary400: #6EBAFF;
+  --colorSecondary500: #4DACFF;
+  --colorSecondary600: #3A87CF;
+  --colorSecondary700: #2B659B;
+  --colorSecondary800: #1D4367;
+  --colorSecondary900: #0E2234;
+  --colorTertiary100: #D4D8DD;
+  --colorTertiary200: #A9B2BC;
+  --colorTertiary300: #7E8C9B;
+  --colorTertiary400: #52667A;
+  --colorTertiary500: #274059;
+  --colorTertiary600: #1F3347;
+  --colorTertiary700: #172635;
+  --colorTertiary800: #101923;
+  --colorTertiary900: #080C11;
+  --colorQuaternary100: #F5F6F9;
+  --colorQuaternary200: #EAEEF4;
+  --colorQuaternary300: #E1E6EF;
+  --colorQuaternary400: #D7DEE9;
+  --colorQuaternary500: #CED6E4;
+  --colorQuaternary600: #A4ABB6;
+  --colorQuaternary700: #7B8089;
+  --colorQuaternary800: #51555B;
+  --colorQuaternary900: #292A2D; }
 
 /* Thin */
 @font-face {
@@ -312,37 +346,37 @@
     Global Colors 
     ==========================================================================
 	*/
-    /* Astro 5 Simplified Color Palette */
-    --backgroundColor: var(--colorQuaternaryLighten3, #eaeef4);
-    --defaultText: var(--colorQuaternaryDarken4, #292a2d);
-    --secondaryText: var(--colorQuaternaryDarken3, #51555b);
-    --globalAppHeader: var(--colorTertiaryDarken2, #172635);
-    --surfaceElements: var(--colorWhite, #ffffff);
-    --primary: var(--colorPrimary, #005a8f);
-    --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
-    --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
-    --primaryDark: var(--colorPrimaryDarken1, #004872);
-    --primaryDarkHover: #0048724d;
-    /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
-    --primaryElementText: var(--colorWhite, #ffffff);
-    --inputBackground: var(--colorWhite, #ffffff);
-    --inputDark: #080c11;
-    /* styles */
-    --fontColor: var(--defaultText);
-    --fontLowContrastColor: var(--secondaryText);
-    --fontInvertedColor: var(--primary);
-    --fontInvertedBackgroundColor: var(--backgroundColor);
-    --fontLinkColor: var(--primary);
-    --fontLinkHoverColor: var(--primaryDark);
-    --wcagCompliance: rgba(0, 0, 0, 0.5);
-    --criticalBorder: #7f1c1c;
-    --colorCritical: var(--statusLightCritical, rgb(255, 42, 4));
-    --colorSerious: var(--statusLightSerious, rgb(255, 175, 61));
-    --colorCaution: var(--statusLightCaution, rgb(250, 216, 0));
-    --colorNormal: var(--statusLightNormal, rgb(0, 226, 0));
-    --colorStandby: var(--statusLightStandby, rgb(100, 217, 255));
-    --colorOff: var(--statusLightOff, rgb(142, 154, 163));
-    /* 
+  /* Astro 5 Simplified Color Palette */
+  --backgroundColor: var(--colorQuaternaryLighten3, #eaeef4);
+  --defaultText: var(--colorQuaternaryDarken4, #292a2d);
+  --secondaryText: var(--colorQuaternaryDarken3, #51555b);
+  --globalAppHeader: var(--colorTertiaryDarken2, #172635);
+  --surfaceElements: var(--colorWhite, #ffffff);
+  --primary: var(--colorPrimary, #005a8f);
+  --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
+  --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
+  --primaryDark: var(--colorPrimaryDarken1, #004872);
+  --primaryDarkHover: #0048724d;
+  /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
+  --primaryElementText: var(--colorWhite, #ffffff);
+  --inputBackground: var(--colorWhite, #ffffff);
+  --inputDark: var(--colorTertiaryDarken4);
+  /* styles */
+  --fontColor: var(--defaultText);
+  --fontLowContrastColor: var(--secondaryText);
+  --fontInvertedColor: var(--primary);
+  --fontInvertedBackgroundColor: var(--backgroundColor);
+  --fontLinkColor: var(--primary);
+  --fontLinkHoverColor: var(--primaryDark);
+  --wcagCompliance: rgba(0, 0, 0, 0.5);
+  --criticalBorder: #7f1c1c;
+  --colorCritical: var(--statusLightCritical, rgb(255, 42, 4));
+  --colorSerious: var(--statusLightSerious, rgb(255, 175, 61));
+  --colorCaution: var(--statusLightCaution, rgb(250, 216, 0));
+  --colorNormal: var(--statusLightNormal, rgb(0, 226, 0));
+  --colorStandby: var(--statusLightStandby, rgb(100, 217, 255));
+  --colorOff: var(--statusLightOff, rgb(142, 154, 163));
+  /* 
     
     Button Colors 
     ==========================================================================
@@ -376,19 +410,20 @@
     For checkboxes, radio buttons etc …
 
   */
-    --controlTextColor: var(--primaryElementText);
-    --controlLabelColor: var(--defaultText);
-    --controlBackgroundColor: var(--primary);
-    --controlBorderColor: var(--primary);
-    --controlAccentColor: var(--primary);
-    --controlSelectedTextColor: var(--defaultText);
-    --controlSelectedBackgroundColor: transparent;
-    --controlSelectedBorderColor: var(--primary);
-    --controlHoverOutlineBackgroundColor: none;
-    --controlHoverBorderColor: var(--primaryDark);
-    --controlSelectedOutlineBorderColor: var(--primary);
-    --controlSelectedOutlineBackgroundColor: none;
-    /* 
+  --controlTextColor: var(--colorPrimary500);
+  --controlLabelColor: var(--defaultText);
+  --controlBackgroundColor: var(--primary);
+  --controlOutlineBackgroundColor: var(--backgroundColor);
+  --controlBorderColor: var(--colorPrimaryLighten2);
+  --controlAccentColor: var(--primary);
+  --controlSelectedTextColor: var(--defaultText);
+  --controlSelectedBackgroundColor: var(--primary);
+  --controlSelectedBorderColor: var(--colorPrimaryLighten2);
+  --controlHoverBorderColor: var(--primaryDark);
+  --controlSelectedOutlineBorderColor: var(--primary);
+  --controlHoverOutlineBackgroundColor: var(--backgroundColor);
+  --controlSelectedOutlineBackgroundColor: var(--backgroundColor);
+  /* 
     
     Progress Bar Colors 
     ==========================================================================
@@ -404,15 +439,15 @@
     ==========================================================================
 
   */
-    --popupMenuBackgroundColor: var(--inputBackground);
-    --popupMenuBorderColor: var(--primary);
-    --popupMenuTextColor: var(--defaultText);
-    --popupCaretBackgroundColor: var(--primary);
-    --popupMenuItemBackgroundColor: var(--inputBackground);
-    --popupMenuItemHoverBackgroundColor: var(--primaryDark);
-    --popupMenuItemHoverTextColor: var(--primaryElementText);
-    --popupMenuItemSeperatorBorderColor: var(--defaultText);
-    /* 
+  --popupMenuBackgroundColor: var(--backgroundColor);
+  --popupMenuBorderColor: var(--primaryLighter);
+  --popupMenuTextColor: var(--primary);
+  --popupCaretBackgroundColor: var(--primaryLighter);
+  --popupMenuItemBackgroundColor: var(--backgroundColor);
+  --popupMenuItemHoverBackgroundColor: rgba(206, 233, 252, 0.3);
+  --popupMenuItemHoverTextColor: var(--primaryDark);
+  --popupMenuItemSeparatorBorderColor: var(--primaryLighter);
+  /* 
     
     Slider Colors 
     ==========================================================================
@@ -434,27 +469,27 @@
     ==========================================================================
 
   */
-    /* Segmented Unselected */
-    --segmentedButtonBackgroundColor: var(--backgroundColor);
-    --segmentedButtonTextColor: var(--primary);
-    --segmentedButtonBorderColor: var(--primary);
-    /* Segmented Hover */
-    --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
-    --segmentedButtonHoverTextColor: var(--primary);
-    --segmentedButtonHoverBorderColor: var(--primaryDark);
-    /* Segmented Selected */
-    --segmentedButtonSelectedBackgroundColor: var(
+  /* Segmented Unselected */
+  --segmentedButtonBackgroundColor: var(--backgroundColor);
+  --segmentedButtonTextColor: var(--primary);
+  --segmentedButtonBorderColor: var(--primary);
+  /* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
+  --segmentedButtonHoverTextColor: var(--primary);
+  --segmentedButtonHoverBorderColor: var(--primaryDark);
+  /* Segmented Selected */
+  --segmentedButtonSelectedBackgroundColor: var(
         --colorSnowflakesLightSelected
     );
-    --segmentedButtonSelectedTextColor: var(--defaultText);
-    --segmentedButtonSelectedBorderColor: var(--primary);
-    /* Segmented Selected & Hover */
-    --segmentedButtonSelectedHoverBackgroundColor: var(
+  --segmentedButtonSelectedTextColor: var(--defaultText);
+  --segmentedButtonSelectedBorderColor: var(--primary);
+  /* Segmented Selected & Hover */
+  --segmentedButtonSelectedHoverBackgroundColor: var(
         --colorSnowflakesLightSelected
     );
-    --segmentedButtonSelectedHoverTextColor: var(--defaultText);
-    --segmentedButtonSelectedHoverBorderColor: var(--primary);
-    /* 
+  --segmentedButtonSelectedHoverTextColor: var(--defaultText);
+  --segmentedButtonSelectedHoverBorderColor: var(--primary);
+  /* 
     
     Drop Down/Select Colors 
     ==========================================================================
@@ -583,17 +618,17 @@
     ==========================================================================
     
   */
-    --inputBackgroundColor: var(--inputBackground);
-    --inputBorderColor: var(--primaryLight);
-    --inputBorderColorAlt: var(--inputDark);
-    --inputBorderColorDisabled: #292a2d;
-    --inputTextColor: var(--defaultText);
-    --inputFocusBorderColor: var(--primary);
-    --inputFocusTextColor: var(--defaultText);
-    --inputInvalidBorderColor: var(--colorCritical);
-    --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%233a87cf' fill-rule='evenodd'/%3E%3C/svg%3E");
-    --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23004872' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
-    /* 
+  --inputBackgroundColor: var(--colorQuaternaryLighten3);
+  --inputBorderColor: var(--colorPrimaryLighten2);
+  --inputBorderColorAlt: var(--colorTertiaryDarken4);
+  --inputTextColor: var(--defaultText);
+  --inputFocusBorderColor: var(--colorPrimaryDarken1);
+  --inputFocusTextColor: var(--defaultText);
+  --inputInvalidBorderColor: var(--colorCritical);
+  --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a8f' fill-rule='evenodd'/%3E%3C/svg%3E");
+  --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23005a8f' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+  --inputSelectionBackgroundColor: var(--colorSecondaryLighten3);
+  /* 
     
     Icon Default Colors 
     ==========================================================================
@@ -695,40 +730,39 @@ li.light-theme {
     Global Colors
     =========================================================================
 	*/
-    /* Astro 5 Simplified Colors */
-    --backgroundColor: var(--colorTertiaryDarken3, #101923);
-    --defaultText: var(--colorWhite, #ffffff);
-    --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
-    --globalAppHeader: var(--colorTertiaryDarken2, #172635);
-    --surfaceElements: #1b2d3e;
-    /* TODO: this is an unofficial Astro color, but a required KM color */
-    --primary: var(--colorSecondary, #4dacff);
-    --primaryLight: var(--colorSecondaryLighten2, #92cbff);
-    --primaryLightHover: #92cbff4d;
-    /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
-    --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
-    --primaryDarker: var(--colorSecondaryDarken2, #2e6799);
-    --primaryDarkHover: #6b8ca5;
-    --primaryElementText: var(--colorTertiaryDarken4, #080c11);
-    --inputBackground: var(--colorWhite, #ffffff);
-    --inputDark: var(--colorTertiaryDarken4, #080c11);
-    /* styles */
-    --fontColor: var(--defaultText);
-    --fontLowContrastColor: var(--secondaryText);
-    --fontInvertedColor: var(--primary);
-    --fontInvertedBackgroundColor: var(--backgroundColor);
-    --fontLinkColor: var(--primary);
-    --fontLinkHoverColor: var(--primaryLight);
-    /* Status Custom */
-    --wcagCompliance: rgba(255, 255, 255, 0);
-    --criticalBorder: var(--colorCritical, rgb(255, 56, 56));
-    --colorCritical: var(--statusDarkCritical, rgb(255, 42, 4));
-    --colorSerious: var(--statusDarkSerious, rgb(255, 175, 61));
-    --colorCaution: var(--statusDarkCaution, rgb(250, 216, 0));
-    --colorNormal: var(--statusDarkNormal, rgb(0, 226, 0));
-    --colorStandby: var(--statusDarkStandby, rgb(45, 204, 255));
-    --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
-    /* 
+  /* Astro 5 Simplified Colors */
+  --backgroundColor: var(--colorTertiaryDarken3, #101923);
+  --defaultText: var(--colorWhite, #ffffff);
+  --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
+  --globalAppHeader: var(--colorTertiaryDarken2, #172635);
+  --surfaceElements: var(--colorSnowflakesDarkSurface, #1b2d3e);
+  --primary: var(--colorSecondary, #4dacff);
+  --primaryLight: var(--colorSecondaryLighten2, #92cbff);
+  --primaryLightHover: #92cbff4d;
+  /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
+  --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
+  --primaryDarker: var(--colorSecondaryDarken2, #2b659b);
+  --primaryDarkHover: #6b8ca5;
+  --primaryElementText: var(--colorTertiaryDarken4, #080c11);
+  --inputBackground: var(--colorWhite, #ffffff);
+  --inputDark: var(--colorTertiaryDarken4, #080c11);
+  /* styles */
+  --fontColor: var(--defaultText);
+  --fontLowContrastColor: var(--secondaryText);
+  --fontInvertedColor: var(--primary);
+  --fontInvertedBackgroundColor: var(--backgroundColor);
+  --fontLinkColor: var(--primary);
+  --fontLinkHoverColor: var(--primaryLight);
+  /* Status Custom */
+  --wcagCompliance: rgba(255, 255, 255, 0);
+  --criticalBorder: var(--colorCritical, rgb(255, 56, 56));
+  --colorCritical: var(--statusDarkCritical, rgb(255, 42, 4));
+  --colorSerious: var(--statusDarkSerious, rgb(255, 175, 61));
+  --colorCaution: var(--statusDarkCaution, rgb(250, 216, 0));
+  --colorNormal: var(--statusDarkNormal, rgb(0, 226, 0));
+  --colorStandby: var(--statusDarkStandby, rgb(45, 204, 255));
+  --colorOff: var(--statusDarkOff, rgb(142, 154, 163));
+  /* 
     
     Button Colors 
     ==========================================================================
@@ -762,17 +796,20 @@ li.light-theme {
     For checkboxes, radio buttons etc …
 
   */
-    --controlTextColor: var(--primaryElementText);
-    --controlLabelColor: var(--defaultText);
-    --controlBackgroundColor: var(--primary);
-    --controlBorderColor: var(--primary);
-    --controlAccentColor: var(--primary);
-    --controlSelectedTextColor: var(--defaultText);
-    --controlSelectedBackgroundColor: var(--primaryDark);
-    --controlSelectedBorderColor: var(--primary);
-    --controlHoverBorderColor: var(--primaryLight);
-    --controlSelectedOutlineBorderColor: var(--primary);
-    /* 
+  --controlTextColor: var(--colorSecondary500);
+  --controlLabelColor: var(--defaultText);
+  --controlBackgroundColor: var(--primary);
+  --controlOutlineBackgroundColor: var(--backgroundColor);
+  --controlBorderColor: var(--colorSecondaryDarken2);
+  --controlAccentColor: var(--primary);
+  --controlSelectedTextColor: var(--defaultText);
+  --controlSelectedBackgroundColor: var(--primaryDark);
+  --controlSelectedBorderColor: var(--colorSecondaryDarken2);
+  --controlHoverBorderColor: var(--primaryLight);
+  --controlSelectedOutlineBorderColor: var(--primary);
+  --controlHoverOutlineBackgroundColor: var(--backgroundColor);
+  --controlSelectedOutlineBackgroundColor: var(--backgroundColor);
+  /* 
     
     Progress Colors 
     ==========================================================================
@@ -807,27 +844,27 @@ li.light-theme {
     ==========================================================================
 
   */
-    /* Segmented Unselected */
-    --segmentedButtonBackgroundColor: var(--backgroundColor);
-    --segmentedButtonTextColor: var(--primary);
-    --segmentedButtonBorderColor: var(--primary);
-    /* Segmented Hover */
-    --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
-    --segmentedButtonHoverTextColor: var(--primary);
-    --segmentedButtonHoverBorderColor: var(--primaryLight);
-    /* Segmented Selected */
-    --segmentedButtonSelectedBackgroundColor: var(
+  /* Segmented Unselected */
+  --segmentedButtonBackgroundColor: var(--backgroundColor);
+  --segmentedButtonTextColor: var(--primary);
+  --segmentedButtonBorderColor: var(--primary);
+  /* Segmented Hover */
+  --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
+  --segmentedButtonHoverTextColor: var(--primary);
+  --segmentedButtonHoverBorderColor: var(--primaryLight);
+  /* Segmented Selected */
+  --segmentedButtonSelectedBackgroundColor: var(
         --colorSnowflakesDarkSelected
     );
-    --segmentedButtonSelectedTextColor: var(--defaultText);
-    --segmentedButtonSelectedBorderColor: var(--primary);
-    /* Segmented Selected & Hover */
-    --segmentedButtonSelectedHoverBackgroundColor: var(
+  --segmentedButtonSelectedTextColor: var(--defaultText);
+  --segmentedButtonSelectedBorderColor: var(--primary);
+  /* Segmented Selected & Hover */
+  --segmentedButtonSelectedHoverBackgroundColor: var(
         --colorSnowflakesDarkSelected
     );
-    --segmentedButtonSelectedHoverTextColor: var(--defaultText);
-    --segmentedButtonSelectedHoverBorderColor: var(--primary);
-    /* 
+  --segmentedButtonSelectedHoverTextColor: var(--defaultText);
+  --segmentedButtonSelectedHoverBorderColor: var(--primary);
+  /* 
     
     Drop Down/Select Colors 
     ==========================================================================
@@ -853,15 +890,15 @@ li.light-theme {
     ==========================================================================
 
   */
-    --popupMenuBackgroundColor: var(--inputBackground);
-    --popupMenuBorderColor: var(--primary);
-    --popupMenuTextColor: var(--primaryElementText);
-    --popupCaretBackgroundColor: var(--primary);
-    --popupMenuItemBackgroundColor: var(--primary);
-    --popupMenuItemHoverBackgroundColor: var(--primaryLight);
-    --popupMenuItemHoverTextColor: var(--primaryElementText);
-    --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
-    /* 
+  --popupMenuBackgroundColor: var(--backgroundColor);
+  --popupMenuBorderColor: var(--primaryDarker);
+  --popupMenuTextColor: var(--primary);
+  --popupCaretBackgroundColor: var(--primaryDarker);
+  --popupMenuItemBackgroundColor: var(--backgroundColor);
+  --popupMenuItemHoverBackgroundColor: rgba(28, 63, 94, 0.3);
+  --popupMenuItemHoverTextColor: var(--primaryLight);
+  --popupMenuItemSeparatorBorderColor: var(--primaryDarker);
+  /* 
     
     Pushbutton Colors 
     ==========================================================================
@@ -972,18 +1009,18 @@ li.light-theme {
     ==========================================================================
     
   */
-    --inputBackgroundColor: var(--inputBackground);
-    --inputBorderColor: var(--surfaceElements);
-    --inputBorderColorAlt: var(--inputDark);
-    --inputBorderColorDisabled: #292a2d;
-    --inputTextColor: var(--primaryElementText);
-    /* Input Focus */
-    --inputFocusBorderColor: var(--primary);
-    --inputFocusTextColor: var(--primaryElementText);
-    --inputInvalidBorderColor: var(--colorCritical);
-    --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%23005a92' fill-rule='evenodd'/%3E%3C/svg%3E");
-    --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%233a87cf' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
-    /* 
+  --inputBackgroundColor: var(--colorTertiaryDarken3);
+  --inputBorderColor: var(--colorSecondaryDarken2);
+  --inputBorderColorAlt: var(--colorTertiaryDarken4);
+  --inputTextColor: var(--defaultText);
+  /* Input Focus */
+  --inputFocusBorderColor: var(--colorSecondaryLighten2);
+  --inputFocusTextColor: var(--defaultText);
+  --inputInvalidBorderColor: var(--colorCritical);
+  --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%234dacff' fill-rule='evenodd'/%3E%3C/svg%3E");
+  --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%234dacff' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+  --inputSelectionBackgroundColor: var(--colorSecondaryLighten3);
+  /* 
     
     Icon Default Colors 
     ==========================================================================
@@ -1087,13 +1124,12 @@ li.dark-theme {
 h1,
 h2,
 h3 {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-    font-weight: 400;
-    color: var(--defaultText);
-    margin: 0 0 0.5rem 0;
-}
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  font-weight: 400;
+  color: var(--defaultText);
+  margin: 0 0 0.5rem 0; }
 
 h1,
 .h1 {
@@ -1222,18 +1258,16 @@ html {
 **
 */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-    font-size: 1rem;
-    color: white;
-    color: var(--fontColor, white);
-    background-color: var(--backgroundColor);
-    scrollbar-color: var(--scrollBarThumbBackgroundColor)
-        var(--scrollBarTrackCornerBackgroundColor);
-}
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  font-size: 1rem;
+  color: white;
+  color: var(--fontColor, white);
+  background-color: var(--backgroundColor);
+  scrollbar-color: var(--scrollBarThumbBackgroundColor) var(--scrollBarTrackCornerBackgroundColor); }
 
 label {
     user-select: none;
@@ -1316,27 +1350,26 @@ label {
 
 /* Global Button Styles */
 .rux-button {
-    display: flex;
-    position: relative;
-    margin: 0;
-    padding: 0 1rem;
-    height: 2.125rem;
-    min-width: 2.25rem;
-    /* max-width: 10.125rem; */
-    border-radius: 3px;
-    border-radius: var(--buttonBorderRadius);
-    color: var(--buttonTextColor);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-    font-size: 1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-}
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0 1rem;
+  height: 2.125rem;
+  min-width: 2.25rem;
+  /* max-width: 10.125rem; */
+  border-radius: 3px;
+  border-radius: var(--buttonBorderRadius);
+  color: var(--buttonTextColor);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  justify-content: center;
+  align-items: center;
+  user-select: none; }
 
 /* 
   
@@ -1536,76 +1569,58 @@ label {
 }
 
 /* Box */
-.rux-checkbox input[type='checkbox'] + label::before {
-    display: flex;
-    flex-shrink: 0;
-    flex-grow: 0;
-    content: '';
-    align-self: start;
-    height: 1.125rem;
-    height: var(--controlOptionSize);
-    width: 1.125rem;
-    width: var(--controlOptionSize);
-    margin: 0 0.625rem 0 0;
-    border: 1px solid var(--controlBorderColor);
-    border-radius: 2px;
-}
+.rux-checkbox input[type="checkbox"] + label::before {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  content: "";
+  align-self: start;
+  height: 1.125rem;
+  height: var(--controlOptionSize);
+  width: 1.125rem;
+  width: var(--controlOptionSize);
+  margin: 0 0.625rem 0 0;
+  border: 1px solid var(--controlBorderColor);
+  background-color: var(--controlOutlineBackgroundColor);
+  border-radius: 2px; }
 
-.rux-checkbox input[type='checkbox'] + label::before {
-    border-radius: 2px;
-}
+.rux-checkbox input[type="checkbox"] + label::before {
+  border-radius: 2px; }
 
-.rux-checkbox input[type='checkbox']:checked + label::before {
-    background-color: var(--primary);
-    border-color: var(--controlSelectedOutlineBorderColor);
-}
+.rux-checkbox input[type="checkbox"]:checked + label::before {
+  border-color: var(--controlBorderColor); }
 
-.rux-checkbox input[type='checkbox']:not(:disabled):hover + label:before,
-.rux-checkbox
-    input[type='checkbox']:not(:disabled):checked:hover
-    + label:before {
-    border-color: var(--controlHoverBorderColor);
-}
-
-.rux-checkbox
-    input[type='checkbox']:not(:disabled):checked:hover
-    + label:before {
-    background-color: var(--controlHoverBorderColor);
-}
+.rux-checkbox input[type="checkbox"]:not(:disabled):hover + label:before,
+.rux-checkbox input[type="checkbox"]:not(:disabled):checked:hover + label:before {
+  border-color: var(--controlHoverBorderColor); }
 
 /* Checkmark */
-.rux-checkbox input[type='checkbox']:checked + label::after {
-    position: absolute;
-    top: 5px;
-    display: flex;
-    content: '';
-}
+.rux-checkbox input[type="checkbox"]:checked + label::after {
+  position: absolute;
+  top: 5px;
+  display: flex;
+  content: "";
+  height: 6px;
+  width: 12px;
+  left: 3px;
+  border-right: 2px solid var(--controlTextColor);
+  border-top: 2px solid var(--controlTextColor);
+  transform: rotate(125deg); }
 
-.rux-checkbox input[type='checkbox']:checked + label::after {
-    height: 6px;
-    width: 12px;
-    left: 3px;
-    border-right: 2px solid var(--controlTextColor);
-    border-top: 2px solid var(--controlTextColor);
-    transform: rotate(125deg);
-}
+.rux-checkbox--indeterminate input[type="checkbox"]:checked + label::after {
+  width: 10px;
+  height: 5px;
+  transform: rotate(0deg);
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid var(--controlTextColor);
+  left: 4px; }
 
-.rux-checkbox--indeterminate input[type='checkbox']:checked + label::after {
-    width: 10px;
-    height: 5px;
-    transform: rotate(0deg);
-    border-right: 0px;
-    border-top: 0px;
-    border-bottom: 2px solid var(--controlTextColor);
-    left: 4px;
-}
-
-.rux-checkbox input[type='checkbox']:disabled + label {
-    cursor: not-allowed;
-    cursor: var(--disabledCursor);
-    opacity: 0.4;
-    opacity: var(--disabledOpacity);
-}
+.rux-checkbox input[type="checkbox"]:disabled + label {
+  cursor: not-allowed;
+  cursor: var(--disabledCursor);
+  opacity: 0.4;
+  opacity: var(--disabledOpacity); }
 
 .rux-form-element {
     display: flex;
@@ -1625,35 +1640,33 @@ label {
 }
 
 .rux-form__invalid p {
-    line-height: 100%;
-    text-align: left;
-    vertical-align: middle;
-    color: var(--colorCritical);
-    font-size: 0.875rem;
-    font-size: var(--fontSizeMD);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-    font-weight: bold;
-    margin: 0;
-    padding-left: 1.625rem;
-    width: fit-content;
-    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-size: 1rem;
-    background-position: center left 0rem;
-}
+  line-height: 100%;
+  text-align: left;
+  vertical-align: middle;
+  color: var(--colorCritical);
+  font-size: 0.875rem;
+  font-size: var(--fontSizeMD);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  font-weight: bold;
+  margin: 0;
+  padding-left: 1.625rem;
+  width: fit-content;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: center left 0rem; }
 
 .rux-help-text {
-    color: var(--secondaryText);
-    font-size: 0.875rem;
-    font-size: var(--fontSizeMD);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-    font-weight: normal;
-    letter-spacing: 0.5px;
-}
+  color: var(--secondaryText);
+  font-size: 0.875rem;
+  font-size: var(--fontSizeMD);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  font-weight: normal;
+  letter-spacing: 0.5px; }
 
 .rux-form-field .rux-help-text {
     -webkit-order: 3;
@@ -1662,28 +1675,25 @@ label {
 }
 
 .rux-error-text {
-    color: var(--colorCritical);
-    font-size: 0.875rem;
-    font-size: var(--fontSizeMD);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-    font-weight: bold;
-}
+  color: var(--colorCritical);
+  font-size: 0.875rem;
+  font-size: var(--fontSizeMD);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  font-weight: bold; }
 
-.rux-form-field .rux-error-text,
-.rux-select + .rux-error-text {
-    padding-left: 1.625rem;
-    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-size: 1rem;
-    background-position: center left 0rem;
-    text-align: left;
-    width: fit-content;
-    -webkit-order: 3;
-    order: 3;
-    margin-top: 0.625rem;
-}
+.rux-form-field .rux-error-text, .rux-select + .rux-error-text {
+  padding-left: 1.625rem;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: center left 0rem;
+  text-align: left;
+  width: fit-content;
+  -webkit-order: 3;
+  order: 3;
+  margin-top: 0.625rem; }
 
 /*
 **
@@ -1709,87 +1719,79 @@ label {
 }
 
 .rux-form-field {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-    font-size: 1rem;
-    font-size: var(--fontSize);
-    color: var(--fontColor);
-}
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  font-size: 1rem;
+  font-size: var(--fontSize);
+  color: var(--fontColor); }
 
 .rux-form-field input:required + label::after {
-    content: '*';
-    margin-left: 0.25rem;
-    color: var(--inputTextColor);
-}
+  content: '*';
+  margin-left: 0.25rem;
+  color: var(--inputTextColor); }
 
-.rux-form-field__label {
-    display: flex;
-    order: 1;
-    margin: 0 0 0.15rem 0;
-    width: 100%;
-    align-content: center;
-    align-items: center;
-    color: var(--defaultText);
-    user-select: none;
-}
+.rux-form-field__label,
+.rux-form-field label {
+  display: flex;
+  order: 1;
+  margin: 0 0 0.375rem 0;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  color: var(--inputTextColor);
+  user-select: none; }
 
 .rux-form-field input {
-    box-sizing: border-box;
-    order: 2;
-    height: 2.125rem;
-    width: 100%;
-    padding: 0 0.625rem;
-    border: 1px solid var(--inputBorderColor);
-    border-radius: 4px;
-    font-size: 1rem;
-    font-size: var(--fontSize, 1rem);
-    color: var(--inputTextColor);
-}
+  box-sizing: border-box;
+  order: 2;
+  height: 2.125rem;
+  width: 100%;
+  padding: 0 0.625rem;
+  border: 1px solid var(--inputBorderColor);
+  border-radius: 3px;
+  font-size: 1rem;
+  font-size: var(--fontSize, 1rem);
+  color: var(--inputTextColor);
+  background-color: var(--inputBackgroundColor); }
 
 .rux-form-field textarea {
-    box-sizing: border-box;
-    -webkit-order: 2;
-    order: 2;
-    min-height: 4.25rem;
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid transparent;
-    border: 1px solid var(--inputBorderColor);
-    border-radius: 3px;
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-    font-size: 1rem;
-    font-size: var(--fontSize, 1rem);
-    color: black;
-    color: var(--inputTextColor);
-}
+  box-sizing: border-box;
+  -webkit-order: 2;
+  order: 2;
+  min-height: 4.25rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--inputBorderColor);
+  border-radius: 3px;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  font-size: 1rem;
+  font-size: var(--fontSize, 1rem);
+  color: var(--inputTextColor);
+  background-color: var(--inputBackgroundColor); }
 
 /* input */
-.rux-form-field input::-webkit-input-placeholder,
-.rux-form-field input::-moz-placeholder,
-.rux-form-field input:-ms-input-placeholder,
-.rux-form-field textarea::-webkit-input-placeholder,
-.rux-form-field textarea::-moz-placeholder,
-.rux-form-field textarea:-ms-input-placeholder {
-    font-size: 1rem;
-    font-weight: normal;
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-}
+.rux-form-field input::placeholder,
+.rux-form-field textarea::placeholder {
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  color: var(--defaultText);
+  opacity: 0.6; }
 
 .rux-form-field input[type='date']::-webkit-inner-spin-button,
 .rux-form-field input[type='date']::-webkit-outer-spin-button,
 .rux-form-field input[type='date']::-webkit-calendar-picker-indicator {
-    -webkit-appearance: none;
-    display: none;
-}
+  -webkit-appearance: none;
+  display: none; }
 
 /* VALIDATION */
 .rux-form-field input:invalid {
@@ -1797,20 +1799,12 @@ label {
 }
 
 /* FOCUS RULES */
-.rux-form-field input:focus,
-.rux-form-field input:invalid:focus {
-    /* outline: none; */
-}
-
 .rux-form-field input:not([type='search']):focus,
 .rux-form-field input:not([type='search']):invalid:focus {
-    border: 1px solid var(--inputFocusBorderColor) !important;
-}
+  border: 1px solid var(--inputFocusBorderColor) !important; }
 
 .rux-form-field input::selection {
-    background-color: rgb(184, 222, 255);
-    background-color: var(--colorSecondaryLighten3);
-}
+  background-color: var(--inputSelectionBackgroundColor); }
 
 /* 
 .rux-form-field input:invalid + label::before {
@@ -1907,42 +1901,35 @@ label {
 }
 
 .rux-form-field input[type='search']::-webkit-search-decoration {
-    -webkit-appearance: textfield;
-}
+  -webkit-appearance: textfield; }
 
 /* SEARCH VARIANT */
 .rux-form-field input[type='search'] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    padding: 0.5rem 0.5rem 0.5rem 2rem;
-    background: var(--inputBackgroundColor) var(--inputSearchIcon) 10px/0.975rem
-        no-repeat;
-}
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  background: var(--inputBackgroundColor) var(--inputSearchIcon) 10px/0.975rem no-repeat; }
 
 .rux-form-field--large input[type='search'] {
-    padding: 0.5rem 0 0.5rem 2rem;
-}
+  padding: 0.5rem 0 0.5rem 2rem; }
 
 .rux-form-field--small input[type='search'] {
-    padding: 0.3rem 0 0.3rem 2rem;
-}
+  padding: 0.3rem 0 0.3rem 2rem; }
 
 .rux-form-field input[type='search']::-webkit-search-cancel-button {
-    position: relative;
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    background-image: var(--inputSearchCancel);
-    background-repeat: no-repeat;
-}
+  position: relative;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: var(--inputSearchCancel);
+  background-repeat: no-repeat; }
 
 .rux-form-field input[type='search']::-ms-clear {
-    position: relative;
-    right: 0.25rem;
-    width: 20px;
-    height: 20px;
-    background-color: var(--inputInvalidBorderColor);
-}
+  position: relative;
+  right: 0.25rem;
+  width: 20px;
+  height: 20px;
+  background-color: var(--inputInvalidBorderColor); }
 
 /*
 **
@@ -1962,86 +1949,75 @@ label {
 **  - Removed user-select and placed it in astro.css to apply to all input types
 */
 .rux-radio-button {
-    display: flex;
-    position: relative;
-    margin: 0 0 1rem 0;
-    line-height: 1.2;
-}
+  display: flex;
+  position: relative;
+  margin: 0 0 1rem 0;
+  line-height: 1.2; }
 
 .rux-radio-button input[type='radio'] {
-    -webkit-appearance: none;
-    display: none;
-}
+  -webkit-appearance: none;
+  display: none; }
 
 .rux-radio-button input[type='radio'] + label {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: var(--controlLabelColor);
-    letter-spacing: 0.5px;
-    cursor: pointer;
-}
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--controlLabelColor);
+  letter-spacing: 0.5px;
+  cursor: pointer; }
 
 .rux-radio-button input[type='radio'] + label::before {
-    display: flex;
-    flex-shrink: 0;
-    flex-grow: 0;
-    content: '';
-    align-self: start;
-    height: 1.125rem;
-    height: var(--controlOptionSize);
-    width: 1.125rem;
-    width: var(--controlOptionSize);
-    margin: 0 0.625rem 0 0;
-    border: 1px solid var(--controlBorderColor);
-}
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  content: '';
+  align-self: start;
+  height: 1.125rem;
+  height: var(--controlOptionSize);
+  width: 1.125rem;
+  width: var(--controlOptionSize);
+  margin: 0 0.625rem 0 0;
+  border: 1px solid var(--controlBorderColor); }
 
 .rux-radio-button input[type='radio'] + label::before {
-    border-radius: 100%;
-    background-color: transparent;
-}
+  border-radius: 100%;
+  background-color: var(--controlOutlineBackgroundColor); }
 
 .rux-radio-button input[type='radio']:checked + label::before {
-    background-color: var(--controlSelectedOutlineBackgroundColor);
-    border-color: var(--controlSelectedOutlineBorderColor);
-}
+  background-color: var(--controlSelectedOutlineBackgroundColor);
+  border-color: var(--controlSelectedBorderColor); }
 
 .rux-radio-button input[type='radio']:not(:disabled):hover + label:before,
 .rux-radio-button
-    input[type='radio']:not(:disabled):checked:hover
-    + label:before {
-    border-color: var(--controlHoverBorderColor);
-}
+input[type='radio']:not(:disabled):checked:hover
++ label:before {
+  border-color: var(--controlHoverBorderColor); }
 
 .rux-radio-button
-    input[type='radio']:not(:disabled):checked:hover
-    + label:after {
-    background-color: var(--controlHoverBorderColor);
-}
+input[type='radio']:not(:disabled):checked:hover
++ label:after {
+  background-color: var(--controlBackgroundColor); }
 
 .rux-radio-button input[type='radio']:checked + label::after {
-    position: absolute;
-    top: 5px;
-    display: flex;
-    content: '';
-}
+  position: absolute;
+  top: 5px;
+  display: flex;
+  content: ''; }
 
 .rux-radio-button input[type='radio']:checked + label::after {
-    left: 5px;
-    height: 8px;
-    width: 8px;
-    border-radius: 100%;
-    /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
-    background-color: var(--primary);
-}
+  left: 5px;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
+  background-color: var(--primary); }
 
 .rux-radio-button input[type='radio']:disabled + label {
-    cursor: not-allowed;
-    cursor: var(--disabledCursor);
-    opacity: 0.4;
-    opacity: var(--disabledOpacity);
-}
+  cursor: not-allowed;
+  cursor: var(--disabledCursor);
+  opacity: 0.4;
+  opacity: var(--disabledOpacity); }
 
 /*
 **
@@ -2050,28 +2026,27 @@ label {
 **	2.0.1 Notes
 */
 .rux-select {
-    --selectInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-    --selectActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
-    position: relative;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 1px solid var(--inputBorderColorAlt);
-    border-radius: 3px;
-    border-radius: var(--buttonBorderRadius);
-    color: var(--inputDark);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-    font-weight: normal;
-    font-size: 1rem;
-    padding: 0.438rem 3.125rem 0.438rem 0.5rem;
-    background-color: var(--inputBackground);
-    background-image: var(--selectInactiveCaret);
-    background-position: center right 0.625rem;
-    background-repeat: no-repeat;
-    user-select: none;
-}
+  --selectInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --selectActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid var(--inputBorderColorAlt);
+  border-radius: 3px;
+  border-radius: var(--buttonBorderRadius);
+  color: var(--inputDark);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily);
+  font-weight: normal;
+  font-size: 1rem;
+  padding: 0.438rem 3.125rem 0.438rem 0.5rem;
+  background-color: var(--inputBackground);
+  background-image: var(--selectInactiveCaret);
+  background-position: center right 0.625rem;
+  background-repeat: no-repeat;
+  user-select: none; }
 
 .rux-select .rux-select optgroup,
 .rux-select option {
@@ -2085,10 +2060,8 @@ label {
 }
 
 .rux-select:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    border-color: var(--inputBorderColorDisabled);
-}
+  opacity: 0.4;
+  cursor: not-allowed; }
 
 .rux-select:disabled:hover {
     cursor: not-allowed;
@@ -2198,28 +2171,20 @@ label {
 }
 
 .rux-table .rux-checkbox {
-    margin: 0;
-}
+  margin: 0; }
 
-.rux-table .rux-checkbox input[type='checkbox']:checked + label::before,
-.rux-table .rux-radio-button input[type='radio']:checked + label::before {
-    background-color: var(--controlBackgroundColor);
-    border-color: var(--controlBorderColor);
-}
+.rux-table .rux-checkbox input[type="checkbox"]:checked + label::before,
+.rux-table .rux-radio-button input[type="radio"]:checked + label::before {
+  background-color: var(--controlBackgroundColor);
+  border-color: var(--controlBorderColor); }
 
-.rux-table .rux-checkbox input[type='checkbox']:checked + label::after,
-.rux-table .rux-radio-button input[type='radio']:checked + label::after {
-    border-color: var(--inputBackground);
-}
+.rux-table .rux-checkbox input[type="checkbox"]:checked + label::after,
+.rux-table .rux-radio-button input[type="radio"]:checked + label::after {
+  border-color: var(--inputBackground); }
 
-.rux-table
-    tr:hover
-    .rux-checkbox
-    input[type='checkbox']:not(:checked)
-    + label::before,
-.rux-table tr:hover .rux-checkbox input[type='radio'] + label::before {
-    border-color: var(--controlSelectedBorderColor);
-}
+.rux-table tr:hover .rux-checkbox input[type="checkbox"]:not(:checked) + label::before,
+.rux-table tr:hover .rux-checkbox input[type="radio"] + label::before {
+  border-color: var(--primary); }
 
 .rux-advanced-status {
     position: relative;
@@ -2328,18 +2293,17 @@ label {
 }
 
 .rux-clock__segment__value {
-    display: flex;
-    align-items: center;
-    font-family: 'Roboto Mono', monospace;
-    font-family: var(--fontFamilyMono);
-    font-weight: 700;
-    border: 1px solid var(--clockBorderColor);
-    background-color: var(--clockBackgroundColor);
-    margin-bottom: 0.25rem;
-    white-space: nowrap;
-    overflow-y: hidden;
-    text-overflow: ellipsis;
-}
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+  font-family: var(--fontFamilyMono);
+  font-weight: 700;
+  border: 1px solid var(--clockBorderColor);
+  background-color: var(--clockBackgroundColor);
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow-y: hidden;
+  text-overflow: ellipsis; }
 
 .rux-clock--small .rux-clock__segment__value {
     height: 2.75rem;
@@ -2470,10 +2434,9 @@ i.rux-icon {
 }
 
 .rux-log__log-event .log-event__timestamp {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-}
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily); }
 
 .log-event__status {
     flex-grow: 0;
@@ -2745,49 +2708,41 @@ i.rux-icon {
 */
 /* 	REQUIRED CLASSES */
 .rux-pop-up {
-    font-size: 1rem;
-    display: inline-block;
-    margin: 1em;
-    min-width: 15em;
-    position: relative;
-    border: 1px solid rgb(77, 172, 255);
-    border: 1px solid var(--colorSecondary);
-    background-color: rgb(77, 172, 255);
-    background-color: var(--colorSecondary);
-    border-radius: 3px;
-}
+  font-size: 1rem;
+  display: inline-block;
+  margin: 1em;
+  min-width: 15em;
+  position: relative;
+  border: 1px solid var(--popupMenuBorderColor);
+  background-color: var(--popupMenuBackgroundColor);
+  border-radius: 3px; }
 
 .rux-pop-up ul {
-    position: relative;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: none;
-    background-color: rgb(255, 255, 255);
-    background-color: var(--colorWhite);
-    border-radius: 2px;
-    z-index: 2;
-}
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  background-color: var(--popupMenuBackgroundColor);
+  border-radius: 2px;
+  z-index: 2; }
 
 /* .rux-pop-up li,
 .satcom-pop-up li {
   border-bottom: 1px solid #f0f1f3;
 } */
 .rux-pop-up a {
-    display: block;
-    padding: 0.5em;
-    color: var(--popupMenuTextColor);
-    text-decoration: none;
-    min-width: 15em;
-    max-width: 20em;
-}
+  display: block;
+  padding: 0.5em;
+  color: var(--popupMenuTextColor);
+  text-decoration: none;
+  min-width: 15em;
+  max-width: 20em; }
 
 .rux-pop-up a:hover,
 .rux-pop-up li:hover {
-    background-color: rgb(184, 222, 255);
-    background-color: var(--colorSecondaryLighten3);
-    color: var(--popupMenuItemHoverTextColor);
-}
+  background-color: var(--popupMenuItemHoverBackgroundColor);
+  color: var(--popupMenuItemHoverTextColor); }
 
 .rux-pop-up li:first-child a {
     border-top-right-radius: 2px;
@@ -2801,86 +2756,64 @@ i.rux-icon {
 }
 
 .rux-pop-up--top {
-    border-top: 3px solid rgb(77, 172, 255);
-    border-top: 3px solid var(--colorSecondary);
-}
+  border-top: 4px solid var(--popupMenuBorderColor); }
 
 .rux-pop-up--top::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 1.1875rem;
-    height: 1.1875rem;
-    background-color: rgb(77, 172, 255);
-    background-color: var(--colorSecondary);
-    z-index: 1;
-    margin: -12px 0 0 16px;
-    transform: rotate(45deg);
-}
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1.1875rem;
+  height: 1.1875rem;
+  background-color: var(--popupCaretBackgroundColor);
+  z-index: 1;
+  margin: -12px 0 0 16px;
+  transform: rotate(45deg); }
 
 .rux-pop-up--bottom {
-    border-bottom: 3px solid rgb(77, 172, 255);
-    border-bottom: 3px solid var(--colorSecondary);
-}
+  border-bottom: 4px solid var(--popupMenuBorderColor); }
 
 .rux-pop-up--bottom::after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-bottom: 1px solid rgb(77, 172, 255);
-    border-bottom: 1px solid var(--colorSecondary);
-    border-right: 1px solid rgb(77, 172, 255);
-    border-right: 1px solid var(--colorSecondary);
-    width: 1.1875rem;
-    height: 1.1875rem;
-    background-color: rgb(77, 172, 255);
-    background-color: var(--colorSecondary);
-    margin: -7px 0 0 16px;
-    transform: rotate(45deg);
-}
+  content: '';
+  display: block;
+  position: absolute;
+  border-bottom: 1px solid var(--popupMenuBorderColor);
+  border-right: 1px solid var(--popupMenuBorderColor);
+  width: 1.1875rem;
+  height: 1.1875rem;
+  background-color: var(--popupCaretBackgroundColor);
+  margin: -7px 0 0 16px;
+  transform: rotate(45deg); }
 
 .rux-pop-up--left {
-    border-left: 3px solid rgb(77, 172, 255);
-    border-left: 3px solid var(--colorSecondary);
-}
+  border-left: 4px solid var(--popupMenuBorderColor); }
 
 .rux-pop-up--left::before {
-    content: '';
-    display: block;
-    position: absolute;
-    border-bottom: 1px solid rgb(77, 172, 255);
-    border-bottom: 1px solid var(--colorSecondary);
-    border-left: 1px solid rgb(77, 172, 255);
-    border-left: 1px solid var(--colorSecondary);
-    width: 1.1875rem;
-    height: 1.1875rem;
-    background-color: rgb(77, 172, 255);
-    background-color: var(--colorSecondary);
-    margin: 16px 0 0 -12px;
-    transform: rotate(45deg);
-}
+  content: '';
+  display: block;
+  position: absolute;
+  border-bottom: 1px solid var(--popupMenuBorderColor);
+  border-left: 1px solid var(--popupMenuBorderColor);
+  width: 1.1875rem;
+  height: 1.1875rem;
+  background-color: var(--popupCaretBackgroundColor);
+  margin: 16px 0 0 -12px;
+  transform: rotate(45deg); }
 
 .rux-pop-up--right {
-    border-right: 3px solid rgb(77, 172, 255);
-    border-right: 3px solid var(--colorSecondary);
-}
+  border-right: 4px solid var(--popupMenuBorderColor); }
 
 .rux-pop-up--right::before {
-    content: '';
-    display: block;
-    position: absolute;
-    border-top: 1px solid rgb(77, 172, 255);
-    border-top: 1px solid var(--colorSecondary);
-    border-right: 1px solid rgb(77, 172, 255);
-    border-right: 1px solid var(--colorSecondary);
-    width: 1.1875rem;
-    height: 1.1875rem;
-    background-color: rgb(77, 172, 255);
-    background-color: var(--colorSecondary);
-    right: 0;
-    margin: 16px -12px 0 0;
-    transform: rotate(45deg);
-}
+  content: '';
+  display: block;
+  position: absolute;
+  border-top: 1px solid var(--popupMenuBorderColor);
+  border-right: 1px solid var(--popupMenuBorderColor);
+  width: 1.1875rem;
+  height: 1.1875rem;
+  background-color: var(--popupCaretBackgroundColor);
+  right: 0;
+  margin: 16px -12px 0 0;
+  transform: rotate(45deg); }
 
 /*
 **
@@ -3109,23 +3042,21 @@ i.rux-icon {
 
 */
 .rux-segmented-button {
-    display: inline-flex;
-    height: 1.625rem;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    border-radius: 3px;
-    border-radius: var(--controlBorderRadius);
-    border: 1px solid var(--segmentedButtonBorderColor);
-}
+  display: inline-flex;
+  height: 1.625rem;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 3px;
+  border-radius: var(--controlBorderRadius);
+  border: 1px solid var(--segmentedButtonBorderColor); }
 
 .rux-segmented-button__segment {
-    height: 1.625rem;
-    width: auto;
-    margin: 0;
-    padding: 0;
-}
+  height: 1.625rem;
+  width: auto;
+  margin: 0;
+  padding: 0; }
 
 .rux-segmented-button__segment label {
     display: flex;
@@ -3158,10 +3089,9 @@ i.rux-icon {
 }
 
 .rux-segmented-button__segment input:checked + label {
-    background-color: var(--segmentedButtonSelectedBackgroundColor);
-    border-color: var(--segmentedButtonSelectedBorderColor);
-    color: var(--segmentedButtonSelectedTextColor);
-}
+  background-color: var(--segmentedButtonSelectedBackgroundColor);
+  border-color: var(--segmentedButtonSelectedBorderColor);
+  color: var(--segmentedButtonSelectedTextColor); }
 
 .rux-segmented-button__segment input:checked:hover + label {
     background-color: var(--segmentedButtonSelectedHoverBackgroundColor);
@@ -3490,18 +3420,17 @@ input:-moz-focusring {
 
 /* Labels */
 .rux-slider__control__labels {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-    color: var(--fontColor);
-    font-size: 0.875rem;
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
-}
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  color: var(--fontColor);
+  font-size: 0.875rem;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: var(--fontFamily); }
 
 .rux-range:disabled + .rux-slider__control__labels {
     opacity: 0.4;
