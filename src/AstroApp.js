@@ -85,7 +85,7 @@ export default class AstroApp extends LitElement {
             {
                 id: '3',
                 label: 'Item 4',
-                role: 'seperator',
+                role: 'separator',
             },
         ]
 

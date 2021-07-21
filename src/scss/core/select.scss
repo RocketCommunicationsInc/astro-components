@@ -42,7 +42,6 @@
 .rux-select:disabled {
     opacity: 0.4;
     cursor: not-allowed;
-    border-color: var(--inputBorderColorDisabled);
 }
 
 .rux-select:disabled:hover {

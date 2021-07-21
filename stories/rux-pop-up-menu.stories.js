@@ -36,7 +36,7 @@ export const PopUpMenu = () => {
             label: 'Item 2',
         },
         {
-            role: 'seperator',
+            role: 'separator',
         },
         {
             id: '3',
@@ -55,14 +55,14 @@ export const PopUpMenu = () => {
             label: 'Item 2',
         },
         {
-            role: 'seperator',
+            role: 'separator',
         },
         {
             id: 'b4',
             label: 'Item 3',
         },
         {
-            role: 'seperator',
+            role: 'separator',
         },
         {
             id: 'b5',

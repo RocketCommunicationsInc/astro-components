@@ -41,16 +41,17 @@
     color: var(--inputTextColor);
 }
 
-.rux-form-field__label {
+.rux-form-field__label,
+.rux-form-field label {
     display: flex;
     order: 1;
 
-    margin: 0 0 0.15rem 0;
+    margin: 0 0 0.375rem 0;
     width: 100%;
     align-content: center;
     align-items: center;
 
-    color: var(--defaultText);
+    color: var(--inputTextColor);
     user-select: none;
 }
 
@@ -63,10 +64,12 @@
     padding: 0 0.625rem;
 
     border: 1px solid var(--inputBorderColor);
-    border-radius: 4px;
+    border-radius: 3px;
 
     font-size: var(--fontSize, 1rem);
     color: var(--inputTextColor);
+
+    background-color: var(--inputBackgroundColor);
 }
 
 .rux-form-field textarea {
@@ -78,28 +81,25 @@
     width: 100%;
     padding: 0.5rem;
 
-    border: 1px solid transparent;
-
     border: 1px solid var(--inputBorderColor);
     border-radius: 3px;
 
     font-family: var(--fontFamily);
     font-size: var(--fontSize, 1rem);
-    color: rgb(0, 0, 0);
     color: var(--inputTextColor);
+
+    background-color: var(--inputBackgroundColor);
 }
 
 /* input */
-.rux-form-field input::-webkit-input-placeholder,
-.rux-form-field input::-moz-placeholder ,
-.rux-form-field input:-ms-input-placeholder,
+.rux-form-field input::placeholder,
 /* textarea */
-.rux-form-field textarea::-webkit-input-placeholder,
-.rux-form-field textarea::-moz-placeholder ,
-.rux-form-field textarea:-ms-input-placeholder {
+.rux-form-field textarea::placeholder {
     font-size: 1rem;
     font-weight: normal;
     font-family: var(--fontFamily);
+    color: var(--defaultText);
+    opacity: 0.6;
 }
 
 .rux-form-field input[type='date']::-webkit-inner-spin-button,
@@ -115,18 +115,13 @@
 }
 
 /* FOCUS RULES */
-.rux-form-field input:focus,
-.rux-form-field input:invalid:focus {
-    /* outline: none; */
-}
-
 .rux-form-field input:not([type='search']):focus,
 .rux-form-field input:not([type='search']):invalid:focus {
     border: 1px solid var(--inputFocusBorderColor) !important;
 }
 
 .rux-form-field input::selection {
-    background-color: var(--colorSecondaryLighten3);
+    background-color: var(--inputSelectionBackgroundColor);
 }
 /* 
 .rux-form-field input:invalid + label::before {
