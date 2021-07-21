@@ -181,18 +181,18 @@ export class RuxButton extends LitElement {
                 }
                 .rux-button--icon-only {
                     font-size: 0;
-                    width: 48px;
-                    height: 34px;
+                    width: 3rem;
+                    height: 2.125rem;
                 }
 
                 .rux-button--large.rux-button--icon-only {
-                    width: 48px;
-                    height: 46px;
+                    width: 3rem;
+                    height: 2.875rem;
                 }
 
                 .rux-button--small.rux-button--icon-only {
-                    width: 48px;
-                    height: 26px;
+                    width: 3rem;
+                    height: 1.625rem;
                 }
 
                 .rux-button--icon-only ::slotted(rux-icon),
