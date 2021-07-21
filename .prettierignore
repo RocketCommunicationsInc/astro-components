@@ -3,4 +3,5 @@ node_modules
 *.md
 *.css
 package.json
-package-lock.json 
+*.stories.js
+package-lock.json

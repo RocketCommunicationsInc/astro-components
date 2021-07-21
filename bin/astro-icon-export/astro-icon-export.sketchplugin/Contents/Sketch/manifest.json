@@ -1,24 +1,22 @@
 {
-  "author" : "Rocket Communications",
-  "commands" : [
-    {
-      "script" : "script.js",
-      "name" : "astro-icon-export",
-      "handlers" : {
-        "run" : "onRun"
-      },
-      "identifier" : "com.bohemiancoding.sketch.runscriptidentifier"
-    }
-  ],
-  "menu" : {
-    "title" : "astro-icon-export",
-    "items" : [
-      "com.bohemiancoding.sketch.runscriptidentifier"
-    ]
-  },
-  "identifier" : "com.example.sketch.39b943b7-516d-4d1a-b2b5-cb3bb21ee4c9",
-  "version" : "1.0",
-  "description" : "",
-  "authorEmail" : "",
-  "name" : "astro-icon-export"
+    "author": "Rocket Communications",
+    "commands": [
+        {
+            "script": "script.js",
+            "name": "astro-icon-export",
+            "handlers": {
+                "run": "onRun"
+            },
+            "identifier": "com.bohemiancoding.sketch.runscriptidentifier"
+        }
+    ],
+    "menu": {
+        "title": "astro-icon-export",
+        "items": ["com.bohemiancoding.sketch.runscriptidentifier"]
+    },
+    "identifier": "com.example.sketch.39b943b7-516d-4d1a-b2b5-cb3bb21ee4c9",
+    "version": "1.0",
+    "description": "",
+    "authorEmail": "",
+    "name": "astro-icon-export"
 }

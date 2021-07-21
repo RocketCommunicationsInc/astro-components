@@ -4,8 +4,8 @@ A Log is a tabular representation of application events and may include username
 
 ## Guidelines
 
-- [Astro UXDS: Log](http://www.astrouxds.com/ui-components/log)
-- [Astro UXDS: Notification System](https://www.astrouxds.com/design-guidelines/notifications)
+-   [Astro UXDS: Log](http://www.astrouxds.com/ui-components/log)
+-   [Astro UXDS: Notification System](https://www.astrouxds.com/design-guidelines/notifications)
 
 ## Web Components Usage
 
@@ -34,7 +34,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxLog } from "@astrouxds/rux-log/rux-log.js";
+import { RuxLog } from '@astrouxds/rux-log/rux-log.js'
 ```
 
 ### 3. Render the Astro Log Web Component
@@ -75,33 +75,33 @@ render() {
 ### Sample `data` Array
 
 ```js
-[
-  {
-    timestamp: new Date(1557503698781), // date from Unix Time Stamp number
-    status: "off",
-    message: "Antenna DGS 1 went offline.",
-  },
-  {
-    timestamp: new Date("2019-05-10T16:21:12.000Z"), // date from ISO 8601 string format
-    status: "serious",
-    message: "USA-177 experienced solar panel misalignment.",
-  },
-  {
-    timestamp: new Date(1557503698781),
-    status: "caution",
-    message: "USA-168 suffered power degradation.",
-  },
-  {
-    timestamp: new Date(1557503698781),
-    status: "standby",
-    message: "Antenna DGS 2 has weak signal.",
-  },
-  {
-    timestamp: new Date(1557503698781),
-    status: "off",
-    message: "Black FEP 121 is offline.",
-  },
-];
+;[
+    {
+        timestamp: new Date(1557503698781), // date from Unix Time Stamp number
+        status: 'off',
+        message: 'Antenna DGS 1 went offline.',
+    },
+    {
+        timestamp: new Date('2019-05-10T16:21:12.000Z'), // date from ISO 8601 string format
+        status: 'serious',
+        message: 'USA-177 experienced solar panel misalignment.',
+    },
+    {
+        timestamp: new Date(1557503698781),
+        status: 'caution',
+        message: 'USA-168 suffered power degradation.',
+    },
+    {
+        timestamp: new Date(1557503698781),
+        status: 'standby',
+        message: 'Antenna DGS 2 has weak signal.',
+    },
+    {
+        timestamp: new Date(1557503698781),
+        status: 'off',
+        message: 'Black FEP 121 is offline.',
+    },
+]
 ```
 
 ### `data` Array Item Properties
@@ -116,7 +116,7 @@ render() {
 
 ##### **4.0**
 
-- Removed `max-lines` property. Suggest using flexbox and overflow to control visible lines and scrollable areas of components.
-- Removed `locale` property. All time displays assume `us-EN` locale.
-- Renamed `entry` property to `message` for `data` array items.
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Removed `max-lines` property. Suggest using flexbox and overflow to control visible lines and scrollable areas of components.
+-   Removed `locale` property. All time displays assume `us-EN` locale.
+-   Renamed `entry` property to `message` for `data` array items.
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

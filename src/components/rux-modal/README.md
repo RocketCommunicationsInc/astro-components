@@ -4,7 +4,7 @@ A Dialog Box interrupts the app experience to prompt a user to confirm an action
 
 ## Guidelines
 
-- [Astro UXDS: Dialog Box](https://astrouxds.com/ui-components/dialog-box)
+-   [Astro UXDS: Dialog Box](https://astrouxds.com/ui-components/dialog-box)
 
 ## Web Components Usage
 
@@ -35,7 +35,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxModal } from "@astrouxds/rux-modal/rux-modal.js";
+import { RuxModal } from '@astrouxds/rux-modal/rux-modal.js'
 ```
 
 ### 3. Render the Astro Dialog Box Web Component
@@ -75,15 +75,15 @@ When closed, the Dialog Box Web Component will emit a message using the `'modalC
 
 ##### **5.0**
 
-- Added `--modalTitleColor` color variable for Modal Title Color
-- Removed CSS Fallback properties
+-   Added `--modalTitleColor` color variable for Modal Title Color
+-   Removed CSS Fallback properties
 
 ##### **4.1**
 
-- Removed mention of Icon component
+-   Removed mention of Icon component
 
 ##### **4.0**
 
-- Swapped kebab-cased `comfirm-text` and `deny-text` attributes for standard camelCase `confirmText` and `denyText`
-- Added `title` property
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Swapped kebab-cased `comfirm-text` and `deny-text` attributes for standard camelCase `confirmText` and `denyText`
+-   Added `title` property
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

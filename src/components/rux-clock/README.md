@@ -4,7 +4,7 @@ Clock shows the current date and time, and optional AOS and LOS timers. It will 
 
 ## Guidelines
 
-- [Astro UXDS: Clock](https://www.astrouxds.com/ui-components/clock)
+-   [Astro UXDS: Clock](https://www.astrouxds.com/ui-components/clock)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxClock } from "@astrouxds/rux-clock/rux-clock.js";
+import { RuxClock } from '@astrouxds/rux-clock/rux-clock.js'
 ```
 
 ### 3. Render the Astro Clock Web Component
@@ -65,13 +65,13 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 
 ##### **4.1**
 
-- Added moment.js for date/time calculations, fixing Day of Year count error at EOD
-- Added the 24 military timezone designations
+-   Added moment.js for date/time calculations, fixing Day of Year count error at EOD
+-   Added the 24 military timezone designations
 
 ##### **4.0**
 
-- Renamed `compact` property to `small`
-- Swapped kebab-cased `hide-timezone` and `hide-date` attributes for standard camelCase `hideTimezone` and `hideDate`
-- Fixed duplicated `aria-labelledby` value when using AOS and/or LOS.
-- Removed `locale` property. All time displays assume `us-EN` locale.
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Renamed `compact` property to `small`
+-   Swapped kebab-cased `hide-timezone` and `hide-date` attributes for standard camelCase `hideTimezone` and `hideDate`
+-   Fixed duplicated `aria-labelledby` value when using AOS and/or LOS.
+-   Removed `locale` property. All time displays assume `us-EN` locale.
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

@@ -4,7 +4,7 @@
 
 ## Guidelines
 
-- [Astro UXDS: Template](https://www.astrouxds.com/ui-components/template)
+-   [Astro UXDS: Template](https://www.astrouxds.com/ui-components/template)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download Astro UXDS Components as a .zip](https://github.com/RocketCommunic
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro UXDS Components directory in your project.
 
 ```javascript
-import { RuxTemplate } from "@astrouxds/rux-template/rux-template.js";
+import { RuxTemplate } from '@astrouxds/rux-template/rux-template.js'
 ```
 
 ### 3. Render the Astro Template Web Component
@@ -88,5 +88,5 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ##### **4.0**
 
-- [List any changes made here]
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   [List any changes made here]
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
