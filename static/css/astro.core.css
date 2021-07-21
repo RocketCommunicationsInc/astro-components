@@ -13,7 +13,8 @@
   --smallLabelFontSize: 0.875rem;
   --largeLabelFontSize: 1.125rem;
   /* Typography */
-  --fontFamily: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --fontFamily: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --fontSize: 1rem;
   /* 16px */
   --fontSizeXL: 1.125rem;
@@ -21,8 +22,9 @@
   --fontSizeMD: 0.875rem;
   --fontSizeSM: 0.75rem;
   --fontSizeXS: 0.65rem;
-  --fontFamilyLight: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  --fontFamilyMono: "Roboto Mono", monospace;
+  --fontFamilyLight: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --fontFamilyMono: 'Roboto Mono', monospace;
   --colorBlack: rgb(0, 0, 0);
   --colorWhite: rgb(255, 255, 255);
   --colorGray: rgb(204, 204, 204);
@@ -42,12 +44,12 @@
   --statusLightNormal: rgb(0, 226, 0);
   --statusLightStandby: rgb(100, 217, 255);
   --statusLightOff: rgb(142, 154, 163);
-  --classificationTopSecretSCIBackgroundColor: rgba(252,232,58);
-  --classificationTopSecretBackgroundColor: rgba(255,140,0);
-  --classificationSecretBackgroundColor: rgba(200,16,46);
-  --classificationConfidentialBackgroundColor: rgba(0,51,160);
-  --classificationControlledBackgroundColor: rgba(80,43,133);
-  --classificationUnclassifiedBackgroundColor: rgba(0,122,51);
+  --classificationTopSecretSCIBackgroundColor: rgba(252, 232, 58);
+  --classificationTopSecretBackgroundColor: rgba(255, 140, 0);
+  --classificationSecretBackgroundColor: rgba(200, 16, 46);
+  --classificationConfidentialBackgroundColor: rgba(0, 51, 160);
+  --classificationControlledBackgroundColor: rgba(80, 43, 133);
+  --classificationUnclassifiedBackgroundColor: rgba(0, 122, 51);
   --colorTag1: rgb(25, 199, 202);
   --colorTag2: rgb(120, 112, 208);
   --colorTag3: rgb(160, 13, 190);
@@ -62,7 +64,7 @@
   --colorPrimaryDarken3: rgb(0, 36, 57);
   --colorPrimaryDarken4: rgb(0, 18, 29);
   --colorSecondaryLighten1: rgb(113, 189, 255);
-  --colorSecondaryLighten2: rgb(146,203,255);
+  --colorSecondaryLighten2: rgb(146, 203, 255);
   --colorSecondaryLighten3: rgb(184, 222, 255);
   --colorSecondaryLighten4: rgb(219, 238, 255);
   --colorSecondaryDarken1: rgb(62, 138, 204);
@@ -188,7 +190,11 @@
   --colorGrayDarken1: rgb(163, 163, 163);
   --colorGrayDarken2: rgb(122, 122, 122);
   --colorGrayDarken3: rgb(82, 82, 82);
-  --colorGrayDarken4: rgb(41, 41, 41); }
+  --colorGrayDarken4: rgb(41, 41, 41);
+  --colorSnowflakesDarkSurface: #1b2d3e;
+  --colorSnowflakesLightShadow: #828181;
+  --colorSnowflakesDarkSelected: #1c3f5e;
+  --colorSnowflakesLightSelected: #cee9fc; }
 
 /* Thin */
 @font-face {
@@ -426,6 +432,7 @@
     );
   --selectMenuBackgroundColor: rgb(234, 238, 244);
   --selectMenuTextColor: var(--primary);
+  --selectMenuBorderHoverColor: var(--primary);
   --selectMenuOptTextHoverColor: var(--primary);
   --selectMenuInvalidBorder: var(--criticalBorder);
   --selectMenuTextHoverColor: rgb(0, 72, 114);
@@ -669,11 +676,14 @@ li.light-theme {
   --globalAppHeader: var(--colorTertiaryDarken2, #172635);
   --surfaceElements: #1b2d3e;
   /* TODO: this is an unofficial Astro color, but a required KM color */
+  --darkSelected: var(--colorSnowflakesDarkSelected);
+  --darkSelectedOpacity: rgba(28, 63, 94, 0.3);
   --primary: var(--colorSecondary, #4dacff);
   --primaryLight: var(--colorSecondaryLighten2, #92cbff);
   --primaryLightHover: #92cbff4d;
   /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
   --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
+  --primaryDarker: var(--colorSecondaryDarken2, #2b659b);
   --primaryDarkHover: #6b8ca5;
   --primaryElementText: var(--colorTertiaryDarken4, #080c11);
   --inputBackground: var(--colorWhite, #ffffff);
@@ -790,17 +800,19 @@ li.light-theme {
     
   */
   --selectMenuBorderRadius: 3px;
-  --selectMenuHoverOptBackgroundColor: rgb(28, 63, 94);
-  --selectMenuBorderColor: rgb(43, 101, 155);
+  --selectMenuHoverOptBackgroundColor: var(--darkSelectedOpacity);
+  --selectMenuOptSelectedBackgroundColor: var(--darkSelected);
+  --selectMenuBorderColor: var(--primaryDarker);
   --selectMenuCaretBackgroundColor: linear-gradient(
-        rgba(28, 63, 94, 1),
-        rgba(28, 63, 94, 1)
+        var(--darkSelected),
+        var(--darkSelected)
     );
   --selectMenuBackgroundColor: var(--backgroundColor);
   --selectMenuTextColor: var(--primary);
   --selectMenuOptTextHoverColor: var(--primary);
+  --selectMenuBorderHoverColor: var(--primary);
   --selectMenuInvalidBorder: var(--criticalBorder);
-  --selectMenuTextHoverColor: rgb(146, 203, 255);
+  --selectMenuTextHoverColor: var(--primaryLight);
   --selectMenuInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
   --selectMenuActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
   /* 
@@ -1053,7 +1065,8 @@ li.dark-theme {
 h1,
 h2,
 h3 {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: 400;
   color: var(--defaultText);
@@ -1164,7 +1177,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   color: white;
@@ -1252,7 +1266,8 @@ label {
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
   color: var(--buttonTextColor);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   white-space: nowrap;
@@ -1514,7 +1529,8 @@ label {
   color: var(--colorCritical);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: bold;
   margin: 0;
@@ -1529,7 +1545,8 @@ label {
   color: var(--secondaryText);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   letter-spacing: 0.5px; }
@@ -1543,7 +1560,8 @@ label {
   color: var(--colorCritical);
   font-size: 0.875rem;
   font-size: var(--fontSizeMD);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: bold; }
 
@@ -1586,7 +1604,8 @@ label {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize);
@@ -1629,7 +1648,8 @@ label {
   border: 1px solid transparent;
   border: 1px solid var(--inputBorderColor);
   border-radius: 3px;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-size: 1rem;
   font-size: var(--fontSize, 1rem);
@@ -1645,7 +1665,8 @@ label {
 .rux-form-field textarea:-ms-input-placeholder {
   font-size: 1rem;
   font-weight: normal;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily); }
 
 .rux-form-field input[type="date"]::-webkit-inner-spin-button,
@@ -1885,7 +1906,8 @@ label {
   border-radius: 3px;
   border-radius: var(--buttonBorderRadius);
   color: var(--selectMenuTextColor);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--fontFamily);
   font-weight: normal;
   font-size: 1rem;
@@ -1908,24 +1930,28 @@ label {
   color: var(--selectMenuOptTextHoverColor);
   background-color: var(--selectMenuHoverOptBackgroundColor); }
 
+.rux-select .rux-select optgroup:focus,
+.rux-select option:focus {
+  background-color: var(--selectMenuOptSelectedBackgroundColor); }
+
 .rux-select:disabled {
   opacity: 0.4;
   cursor: not-allowed; }
 
 .rux-select:disabled:hover {
   cursor: not-allowed;
-  border: 1px solid var(--selectMenuBorderColor); }
+  border-color: var(--selectMenuBorderColor); }
 
 .rux-select:focus {
   outline: none;
-  border: 1px solid var(--primaryLight); }
+  border-color: var(--primaryLight); }
 
 .rux-select:active:not(:disabled) {
   background-image: var(--selectMenuActiveCaret); }
 
 .rux-select:hover {
   cursor: pointer;
-  border: 1px solid var(--selectMenuTextHoverColor); }
+  border-color: var(--selectMenuBorderHoverColor); }
 
 .rux-select::-ms-expand {
   display: none; }

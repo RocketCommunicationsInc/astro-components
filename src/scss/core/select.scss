@@ -39,6 +39,11 @@
     background-color: var(--selectMenuHoverOptBackgroundColor);
 }
 
+.rux-select .rux-select optgroup:focus,
+.rux-select option:focus {
+    background-color: var(--selectMenuOptSelectedBackgroundColor);
+}
+
 .rux-select:disabled {
     opacity: 0.4;
     cursor: not-allowed;
@@ -46,12 +51,12 @@
 
 .rux-select:disabled:hover {
     cursor: not-allowed;
-    border: 1px solid var(--selectMenuBorderColor);
+    border-color: var(--selectMenuBorderColor);
 }
 
 .rux-select:focus {
     outline: none;
-    border: 1px solid var(--primaryLight);
+    border-color: var(--primaryLight);
 }
 
 .rux-select:active:not(:disabled) {
@@ -60,7 +65,7 @@
 
 .rux-select:hover {
     cursor: pointer;
-    border: 1px solid var(--selectMenuTextHoverColor);
+    border-color: var(--selectMenuBorderHoverColor);
 }
 
 .rux-select::-ms-expand {
