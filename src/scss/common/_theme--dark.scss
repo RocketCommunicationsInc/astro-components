@@ -172,7 +172,7 @@
   */
     --selectMenuBorderRadius: 3px;
     //darkSelected w/ opacity of 0.3
-    --selectMenuHoverOptBackgroundColor: rgba(28, 63, 94, 0.3);
+    --selectMenuOptHoverBackgroundColor: rgba(28, 63, 94, 0.3);
     --selectMenuOptSelectedBackgroundColor: var(--darkSelected);
     --selectMenuOptSelectedTextColor: var(--defaultText);
     --selectMenuBorderColor: var(--primaryDarker);
@@ -182,7 +182,7 @@
     );
     --selectMenuBackgroundColor: var(--backgroundColor);
     --selectMenuTextColor: var(--primary);
-    --selectMenuOptTextHoverColor: var(--primary);
+    --selectMenuOptTextHoverColor: var(--primaryLight);
     --selectMenuBorderHoverColor: var(--primary);
     --selectMenuInvalidBorder: var(--criticalBorder);
     --selectMenuTextHoverColor: var(--primaryLight);

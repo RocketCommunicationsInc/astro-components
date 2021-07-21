@@ -185,7 +185,7 @@
   */
     --selectMenuBorderRadius: 3px;
     //snowflakesLightSelected at 0.3 opacity
-    --selectMenuHoverOptBackgroundColor: rgba(206, 233, 252, 0.3);
+    --selectMenuOptHoverBackgroundColor: rgba(206, 233, 252, 0.3);
     --selectMenuOptSelectedBackgroundColor: var(--lightSelected);
     --selectMenuOptSelectedTextColor: var(--defaultText);
     --selectMenuBorderColor: var(--primaryLighter);
@@ -196,7 +196,7 @@
     --selectMenuBackgroundColor: var(--backgroundColor);
     --selectMenuTextColor: var(--primary);
     --selectMenuBorderHoverColor: var(--primary);
-    --selectMenuOptTextHoverColor: var(--primary);
+    --selectMenuOptTextHoverColor: var(--primaryDark);
     --selectMenuInvalidBorder: var(--criticalBorder);
     --selectMenuTextHoverColor: var(--primaryLight);
     --selectMenuInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23005a8f%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
