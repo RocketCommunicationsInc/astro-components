@@ -83,7 +83,7 @@
     --colorQuaternaryDarken1: rgb(166, 171, 182);
     --colorQuaternaryDarken2: rgb(124, 128, 136);
     --colorQuaternaryDarken3: rgb(83, 86, 91);
-    --colorQuaternaryDarken4: rgb(41, 43, 45);
+    --colorQuaternaryDarken4: rgb(41, 42, 45);
     --colorCriticalLighten1: rgb(255, 96, 96);
     --colorCriticalLighten2: rgb(255, 136, 136);
     --colorCriticalLighten3: rgb(255, 175, 175);
@@ -188,6 +188,10 @@
     --colorGrayDarken2: rgb(122, 122, 122);
     --colorGrayDarken3: rgb(82, 82, 82);
     --colorGrayDarken4: rgb(41, 41, 41);
+    --colorSnowflakesDarkSurface: #1b2d3e;
+    --colorSnowflakesLightShadow: #828181;
+    --colorSnowflakesDarkSelected: #1c3f5e;
+    --colorSnowflakesLightSelected: #cee9fc;
 }
 @font-face {
     font-family: 'Roboto';
@@ -313,12 +317,15 @@
     --sliderSelectedThumbBorderColor: var(--primaryLight);
     --sliderSelectedTrackBackgroundColor: var(--primary);
     --sliderThumbBorderSize: 1px;
-    --segmentedButtonBorderColor: var(--primary);
-    --segmentedButtonBackgroundColor: none;
+    --segmentedButtonBackgroundColor: var(--backgroundColor);
     --segmentedButtonTextColor: var(--primary);
-    --segmentedButtonHoverTextColor: var(--primaryElementText);
-    --segmentedButtonSelectedBackgroundColor: var(--primary);
-    --segmentedButtonSelectedTextColor: var(--primaryElementText);
+    --segmentedButtonBorderColor: var(--primary);
+    --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
+    --segmentedButtonHoverTextColor: var(--primary);
+    --segmentedButtonSelectedTextColor: var(--defaultText);
+    --segmentedButtonSelectedBorderColor: var(--primary);
+    --segmentedButtonSelectedHoverTextColor: var(--defaultText);
+    --segmentedButtonSelectedHoverBorderColor: var(--primary);
     --switchBackgroundColor: var(--backgroundColor);
     --switchOnColor: var(--primary);
     --switchHoverOnColor: var(--primary);
@@ -437,8 +444,13 @@
     --sliderTrackBorderColor: var(--secondaryText);
     --sliderTrackBackgroundColor: var(--inputBackground);
     --sliderTrackBorderSize: 0.25px;
-    --segmentedButtonHoverBackgroundColor: var(--primaryDark);
     --segmentedButtonHoverBorderColor: var(--primaryDark);
+    --segmentedButtonSelectedBackgroundColor: var(
+        --colorSnowflakesLightSelected
+    );
+    --segmentedButtonSelectedHoverBackgroundColor: var(
+        --colorSnowflakesLightSelected
+    );
     --selectHoverOptBackgroundColor: var(--primaryDark);
     --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
     --switchBorderColor: var(--colorPrimary);
@@ -529,8 +541,13 @@ li.light-theme {
     --sliderTrackBorderColor: transparent;
     --sliderTrackBackgroundColor: var(--secondaryText);
     --sliderTrackBorderSize: 1px;
-    --segmentedButtonHoverBackgroundColor: var(--primaryLight);
     --segmentedButtonHoverBorderColor: var(--primaryLight);
+    --segmentedButtonSelectedBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
+    --segmentedButtonSelectedHoverBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
     --selectHoverOptBackgroundColor: var(--primaryLight);
     --switchOffBorderColor: var(--primaryDarker);
     --switchHoverOffColor: var(--primary);

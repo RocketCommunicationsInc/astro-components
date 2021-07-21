@@ -4,7 +4,7 @@ Display icons used in the Astro Design System
 
 ## Guidelines
 
-- [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
+-   [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
 
 ## Installation
 
@@ -37,7 +37,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxIcon } from "@astrouxds/rux-icon/rux-icon.js";
+import { RuxIcon } from '@astrouxds/rux-icon/rux-icon.js'
 ```
 
 ### 3. Render the Astro Icon Web Component
@@ -79,11 +79,11 @@ In the SVG icon library file:
 
 ##### **4.0**
 
-- Removed the `namespace:icon` pattern in favor of supporting multiple libraries, both default (Astro) and external, adding the `library` property (see [Astro 4 migration note](#astro-4-migration) below)
-- Replaced the DOM manipulation library for loading icons in favor of an HTML5 template TODO: add support for template outside of WebComponents when browser’s support shadowDOM piercing
-- Moved Astro Status Icons to their own package, `rux-status`
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
-- Extended icon set with Google Material Design icons. License: https://github.com/google/material-design-icons/blob/master/LICENSE
+-   Removed the `namespace:icon` pattern in favor of supporting multiple libraries, both default (Astro) and external, adding the `library` property (see [Astro 4 migration note](#astro-4-migration) below)
+-   Replaced the DOM manipulation library for loading icons in favor of an HTML5 template TODO: add support for template outside of WebComponents when browser’s support shadowDOM piercing
+-   Moved Astro Status Icons to their own package, `rux-status`
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Extended icon set with Google Material Design icons. License: https://github.com/google/material-design-icons/blob/master/LICENSE
 
 <a name="astro-4-migration">
 

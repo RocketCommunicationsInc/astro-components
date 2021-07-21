@@ -1,33 +1,33 @@
 {
-  "author": {
-    "name": "Rocket Communications",
-    "email": "uxsupport@rocketcom.com"
-  },
-  "dependencies": {
-    "@astrouxds/rux-button": "^5.0.2",
-    "@astrouxds/rux-icon": "^5.0.2",
-    "@webcomponents/webcomponentsjs": "^2.2.10",
-    "lit-element": "^2.1.0"
-  },
-  "homepage": "https://www.astrouxds.com",
-  "bugs": {
-    "email": "uxsupport@rocketcom.com",
-    "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
-  },
-  "description": "Astro Web Component for sign in",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "main": "rux-sign-in.js",
-  "module": "rux-sign-in.js",
-  "name": "@astrouxds/rux-sign-in",
-  "scripts": {
-    "test": "echo testing rux-sign-in, version: $npm_package_version"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "version": "5.0.1"
+    "author": {
+        "name": "Rocket Communications",
+        "email": "uxsupport@rocketcom.com"
+    },
+    "dependencies": {
+        "@astrouxds/rux-button": "^5.0.2",
+        "@astrouxds/rux-icon": "^5.0.2",
+        "@webcomponents/webcomponentsjs": "^2.2.10",
+        "lit-element": "^2.1.0"
+    },
+    "homepage": "https://www.astrouxds.com",
+    "bugs": {
+        "email": "uxsupport@rocketcom.com",
+        "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
+    },
+    "description": "Astro Web Component for sign in",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "main": "rux-sign-in.js",
+    "module": "rux-sign-in.js",
+    "name": "@astrouxds/rux-sign-in",
+    "scripts": {
+        "test": "echo testing rux-sign-in, version: $npm_package_version"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "version": "5.0.1"
 }

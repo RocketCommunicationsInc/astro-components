@@ -1,99 +1,99 @@
 .rux-log {
-  display: block;
-  font-size: 1rem;
-  background-color: var(--logBackgroundColor);
+    display: block;
+    font-size: 1rem;
+    background-color: var(--logBackgroundColor);
 }
 
 .rux-log-header {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
 
-  padding: 0.5rem;
-  background-color: var(--logHeaderBackgroundColor);
+    padding: 0.5rem;
+    background-color: var(--logHeaderBackgroundColor);
 }
 
 .rux-log-header-title {
-  margin: 0 0 1rem 0;
-  display: none;
+    margin: 0 0 1rem 0;
+    display: none;
 
-  font-size: 1.25rem;
-  font-weight: 300;
+    font-size: 1.25rem;
+    font-weight: 300;
 }
 
 .rux-log__header-labels {
-  display: flex;
-  width: 100%;
-  color: var(--logHeaderTextColor);
+    display: flex;
+    width: 100%;
+    color: var(--logHeaderTextColor);
 }
 
 .rux-log__header-labels,
 .rux-log__events {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .rux-log__header-labels,
 .rux-log__log-event {
-  display: flex;
-  align-content: flex-start;
+    display: flex;
+    align-content: flex-start;
 }
 
 .rux-log__events {
-  height: 100%;
-  overflow-y: scroll;
+    height: 100%;
+    overflow-y: scroll;
 }
 
 .log-event__timestamp {
-  flex-shrink: 0;
+    flex-shrink: 0;
 
-  text-align: left;
-  width: 5rem;
+    text-align: left;
+    width: 5rem;
 }
 
 .rux-log__log-event {
-  display: flex;
-  flex-shrink: 0;
-  align-items: flex-start;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--logBorderColor);
+    display: flex;
+    flex-shrink: 0;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--logBorderColor);
 }
 
 .rux-log__log-event:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .rux-log__header-labels li:not(:first-child),
 .rux-log__log-event > * {
-  margin: 0 0.5rem;
+    margin: 0 0.5rem;
 }
 
 .rux-log__header-labels li:first-child {
-  margin: 0 0.5rem 0 0;
+    margin: 0 0.5rem 0 0;
 }
 
 .rux-log__log-event .log-event__timestamp {
-  font-family: var(--fontFamily);
+    font-family: var(--fontFamily);
 }
 
 .log-event__status {
-  flex-grow: 0;
-  flex-shrink: 0;
-  text-align: center;
-  width: 1rem;
-  overflow: hidden;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    width: 1rem;
+    overflow: hidden;
 }
 
 .log-event__message {
-  flex-grow: 1;
-  text-align: left;
+    flex-grow: 1;
+    text-align: left;
 }
 
 .log-header__message {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* ol li:nth-child(even) {
@@ -101,17 +101,17 @@
 } */
 
 .rux-log__filter-enabled {
-  position: sticky;
-  top: 0;
-  left: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
 
-  align-content: center;
+    align-content: center;
 
-  color: var(--logFilterTextColor);
-  background-color: var(--logFilterBackgroundColor);
-  padding: 0.5rem;
+    color: var(--logFilterTextColor);
+    background-color: var(--logFilterBackgroundColor);
+    padding: 0.5rem;
 }
 
 .rux-log__filter-enabled .rux-icon {
-  margin-right: 0.5rem;
+    margin-right: 0.5rem;
 }

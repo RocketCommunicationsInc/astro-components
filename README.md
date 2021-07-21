@@ -2,15 +2,14 @@
 
 The Astro Web Component and CSS Library provides a starting point to begin developing Astro-compliant applications.
 
-
 > NOTE: The Astro Component Library is still new and tends to release breaking changes, but follows semver so you can control when you incorporate them. We typically follow a 6 month release schedule which includes two major release per year with breaking changes, and intermediate patch releases with bug fixes.
 
 #### New to Astro 4
 
-- All components have been updated to [LitElement](https://lit-element.polymer-project.org) from Polymer
-- Updated documentation
-- [Storybook Component Sandbox](https://astro-components.netlify.com)
-- Merged Astro Style Library in to Astro Components
+-   All components have been updated to [LitElement](https://lit-element.polymer-project.org) from Polymer
+-   Updated documentation
+-   [Storybook Component Sandbox](https://astro-components.netlify.com)
+-   Merged Astro Style Library in to Astro Components
 
 ## Download and Install for all Astro Web Components and Styles
 
@@ -114,16 +113,18 @@ The Astro Component Library is designed for use on modern browsers that support 
 | `Toggle`              | [@astrouxds/rux-toggle](https://www.npmjs.com/package/@astrouxds/rux-toggle)                       | [Docs](./src/components/rux-toggle/README.md)            | [Guidelines](https://astrouxds.com/ui-components/toggle)              |
 | `Tree`                | [@astrouxds/rux-tree](https://www.npmjs.com/package/@astrouxds/rux-tree)                           | [Docs](./src/components/rux-tree/README.md)              | [Guidelines](https://astrouxds.com/ui-components/tree)                |
 
-
 ## Contributing
-Follow the style defined in `/.eslintrc`, installing such tools as your IDE supports for revealing discrepencies before committing. 
+
+Follow the style defined in `/.eslintrc`, installing such tools as your IDE supports for revealing discrepencies before committing.
 
 ### Astro Web Components
-The folders in `/src/components/*` contain the Web Components, which are tested using matching Stories in  `/stories/*`. The Story files create instances of the components with various properties exposed via Storybook Knobs. All component variations should be demonstrated using Knobs before publishing or updating to ensure that the properties work as intended. There are heavily commented templates for Stories (`/stores/__rux-.stories.template.js`) and Components (`/src/components/__rux-template/`) to enable maintainers to quickly scaffold new Components. These component folders are what are ultimately published on NPM under the [AstroUXDS org](https://www.npmjs.com/org/astrouxds).
+
+The folders in `/src/components/*` contain the Web Components, which are tested using matching Stories in `/stories/*`. The Story files create instances of the components with various properties exposed via Storybook Knobs. All component variations should be demonstrated using Knobs before publishing or updating to ensure that the properties work as intended. There are heavily commented templates for Stories (`/stores/__rux-.stories.template.js`) and Components (`/src/components/__rux-template/`) to enable maintainers to quickly scaffold new Components. These component folders are what are ultimately published on NPM under the [AstroUXDS org](https://www.npmjs.com/org/astrouxds).
 
 [Further information on Contributing to Astro Web Components](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--contributing)
 
 ### Astro CSS
+
 The Astro CSS library is used to style native HTML Elements and to set theme styles that are inherited throughout the application, even when developers do not use the Web Components themselves. The CSS is divided into partials in `/src/css/*`, which is concatenated into the `/static/css/` files using [PostCSS](https://postcss.org/) when the project builds using [Gulp](https://gulpjs.com/). See `/gulpfile.js` for more details.
 
 **Note:** Changes to the Astro CSS should never be made directly to the `/static/css/*` files, as those are for distribution only.

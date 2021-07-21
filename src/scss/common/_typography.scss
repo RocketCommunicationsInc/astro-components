@@ -1,103 +1,103 @@
 h1,
 h2,
 h3 {
-	font-family: var(--fontFamily);
-  font-weight: 400;
-  color: var(--defaultText);
-  margin: 0 0 0.5rem 0;
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    color: var(--defaultText);
+    margin: 0 0 0.5rem 0;
 }
 
 h1,
 .h1 {
-  font-size: 2.125rem;
+    font-size: 2.125rem;
 }
 
 h2,
 .h2 {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 h3,
 .h3 {
-  font-size: 1.25rem;
-  font-weight: 500;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 p {
-  margin: 0 0 1rem 0;
-  color: var(--defaultText);
+    margin: 0 0 1rem 0;
+    color: var(--defaultText);
 }
 
 a {
-  color: var(--fontLinkColor);
-  text-decoration: none;
+    color: var(--fontLinkColor);
+    text-decoration: none;
 }
 
 a:hover {
-  color: var(--fontLinkHoverColor);
+    color: var(--fontLinkHoverColor);
 }
 
 dt {
-  font-weight: 600;
-  margin: 0;
+    font-weight: 600;
+    margin: 0;
 }
 dd {
-  margin: 0 0 0.5rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .light {
-  font-weight: 300;
+    font-weight: 300;
 }
 .regular {
-  font-weight: 500;
+    font-weight: 500;
 }
 .semi-bold {
-  font-weight: 600;
+    font-weight: 600;
 }
 .bold {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .italic {
-  font-style: italic;
+    font-style: italic;
 }
 
 .condensed {
-  font-stretch: condensed;
+    font-stretch: condensed;
 }
 
 .monospace {
-  font-family: "Roboto Mono", sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 .invert,
 .inverted {
-  background-color: var(--fontInvertedBackgroundColor);
-  color: var(--fontInvertedColor);
-  padding: 0 0.25rem;
+    background-color: var(--fontInvertedBackgroundColor);
+    color: var(--fontInvertedColor);
+    padding: 0 0.25rem;
 }
 
 .low-contrast {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
 /* Size Options */
 .xl {
-  font-size: var(--fontSizeXL);
+    font-size: var(--fontSizeXL);
 }
 
 .lg {
-  font-size: var(--fontSize);
+    font-size: var(--fontSize);
 }
 
 .md {
-  font-size: var(--fontSizeMD);
+    font-size: var(--fontSizeMD);
 }
 
 .sm {
-  font-size: var(--fontSizeSM);
+    font-size: var(--fontSizeSM);
 }
 
 .xs {
-  font-size: var(--fontSizeXS);
+    font-size: var(--fontSizeXS);
 }
