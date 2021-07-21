@@ -32,7 +32,6 @@
 
     --wcagCompliance: rgba(0, 0, 0, 0.5);
     --criticalBorder: #7f1c1c;
-
     --colorCritical: var(--statusLightCritical, rgb(255, 42, 4));
     --colorSerious: var(--statusLightSerious, rgb(255, 175, 61));
     --colorCaution: var(--statusLightCaution, rgb(250, 216, 0));
@@ -197,7 +196,7 @@
     --selectMenuBackgroundColor: var(--backgroundColor);
     --selectMenuTextColor: var(--primary);
     --selectMenuBorderHoverColor: var(--primaryDark);
-    --selectMenuInvalidBorder: var(--criticalBorder);
+    --selectMenuInvalidBorder: var(--statusDarkCritical);
     --selectMenuTextHoverColor: var(--primary);
     --selectMenuInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23005a8f%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
     --selectMenuActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23005a8f%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
