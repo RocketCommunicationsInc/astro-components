@@ -48,26 +48,24 @@ gulp.task('rux-core-dist', () => {
 })
 
 gulp.task('sass', () => {
-  return gulp.src('./src/scss/*.scss')
-      .pipe(sass().on('error', sass.logError))
-      .pipe(sourcemaps.init())
-      .pipe(cssimport())
-      .pipe(postcss([properties()]))
-      .pipe(gulp.dest('./static/css'))
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(csso())
-      .pipe(gulp.dest('./static/css'));
-});
+    return gulp
+        .src('./src/scss/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.init())
+        .pipe(cssimport())
+        .pipe(postcss([properties()]))
+        .pipe(gulp.dest('./static/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(csso())
+        .pipe(gulp.dest('./static/css'))
+})
 
 /*
  * * Handles watching for file changes and triggering a browser reload
  */
 function watch() {
-  // compile and minify css
-  gulp.watch(
-      './src/scss/**/*.scss',
-      gulp.series('sass')
-  );
+    // compile and minify css
+    gulp.watch('./src/scss/**/*.scss', gulp.series('sass'))
 }
 
 // only used during pre lerna publish
@@ -76,6 +74,6 @@ gulp.task(
     gulp.series('rux-core-static', 'rux-core-scss', 'rux-core-dist')
 )
 
-gulp.task('default', gulp.series('sass', watch));
+gulp.task('default', gulp.series('sass', watch))
 
-exports.build = gulp.series('sass');
+exports.build = gulp.series('sass')

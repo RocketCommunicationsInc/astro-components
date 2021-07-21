@@ -127,7 +127,8 @@ export const StartHere = () => {
                 >:
             </p>
             <code class="language-sh">
-              git clone https://github.com/RocketCommunicationsInc/astro-components.git
+                git clone
+                https://github.com/RocketCommunicationsInc/astro-components.git
             </code>
         </div>
     `
