@@ -52,16 +52,13 @@
     width: var(--controlOptionSize);
     margin: 0 0.625rem 0 0;
     border: 1px solid var(--controlBorderColor);
-}
-
-.rux-radio-button input[type='radio'] + label::before {
     border-radius: 100%;
-    background-color: transparent;
+    background-color: var(--controlOutlineBackgroundColor);
 }
 
 .rux-radio-button input[type='radio']:checked + label::before {
     background-color: var(--controlSelectedOutlineBackgroundColor);
-    border-color: var(--controlSelectedOutlineBorderColor);
+    border-color: var(--controlSelectedBorderColor);
 }
 
 .rux-radio-button input[type='radio']:not(:disabled):hover + label:before,
@@ -74,7 +71,7 @@
 .rux-radio-button
     input[type='radio']:not(:disabled):checked:hover
     + label:after {
-    background-color: var(--controlHoverBorderColor);
+    background-color: var(--controlBackgroundColor);
 }
 
 .rux-radio-button input[type='radio']:checked + label::after {
