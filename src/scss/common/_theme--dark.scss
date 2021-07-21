@@ -12,7 +12,6 @@
     --globalAppHeader: var(--colorTertiaryDarken2, #172635);
     --surfaceElements: #1b2d3e; /* TODO: this is an unofficial Astro color, but a required KM color */
     --darkSelected: var(--colorSnowflakesDarkSelected);
-    --darkSelectedOpacity: rgba(28, 63, 94, 0.3);
     --primary: var(--colorSecondary, #4dacff);
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
@@ -157,8 +156,10 @@
     
   */
     --selectMenuBorderRadius: 3px;
-    --selectMenuHoverOptBackgroundColor: var(--darkSelectedOpacity);
+    //darkSelected w/ opacity of 0.3
+    --selectMenuHoverOptBackgroundColor: rgba(28, 63, 94, 0.3);
     --selectMenuOptSelectedBackgroundColor: var(--darkSelected);
+    --selectMenuOptSelectedTextColor: var(--defaultText);
     --selectMenuBorderColor: var(--primaryDarker);
     --selectMenuCaretBackgroundColor: linear-gradient(
         var(--darkSelected),

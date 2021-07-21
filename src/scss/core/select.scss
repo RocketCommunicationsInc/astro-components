@@ -41,6 +41,7 @@
 
 .rux-select .rux-select optgroup:focus,
 .rux-select option:focus {
+    color: var(--selectMenuOptSelectedTextColor);
     background-color: var(--selectMenuOptSelectedBackgroundColor);
 }
 
