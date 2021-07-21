@@ -55,16 +55,17 @@
     margin: 0 0.625rem 0 0;
 
     border: 1px solid var(--controlBorderColor);
+    background-color: var(--controlOutlineBackgroundColor);
     border-radius: 2px;
 }
 
 .rux-checkbox input[type='checkbox'] + label::before {
     border-radius: 2px;
+    // background-color: var(--controlSelectedBackgroundColor);
 }
 
 .rux-checkbox input[type='checkbox']:checked + label::before {
-    background-color: var(--primary);
-    border-color: var(--controlSelectedOutlineBorderColor);
+    border-color: var(--controlBorderColor);
 }
 
 .rux-checkbox input[type='checkbox']:not(:disabled):hover + label:before,
@@ -74,21 +75,13 @@
     border-color: var(--controlHoverBorderColor);
 }
 
-.rux-checkbox
-    input[type='checkbox']:not(:disabled):checked:hover
-    + label:before {
-    background-color: var(--controlHoverBorderColor);
-}
-
 /* Checkmark */
 .rux-checkbox input[type='checkbox']:checked + label::after {
     position: absolute;
     top: 5px;
     display: flex;
     content: '';
-}
 
-.rux-checkbox input[type='checkbox']:checked + label::after {
     height: 6px;
     width: 12px;
     left: 3px;
