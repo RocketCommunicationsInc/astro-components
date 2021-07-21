@@ -4,7 +4,7 @@ The Global Status Bar is a full width view across the top of an application — 
 
 ## Guidelines
 
-- [Astro UXDS: Global Status Bar](https://astrouxds.com/ui-components/global-status-bar)
+-   [Astro UXDS: Global Status Bar](https://astrouxds.com/ui-components/global-status-bar)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxGlobalStatusBar } from "@astrouxds/rux-global-status-bar/rux-global-status-bar.js";
+import { RuxGlobalStatusBar } from '@astrouxds/rux-global-status-bar/rux-global-status-bar.js'
 ```
 
 ### 3. Render the Astro Global Status Bar Web Component
@@ -65,4 +65,4 @@ Status bar elements like the [Clock](https://www.astrouxds.com/ui-components/clo
 
 ##### **4.0**
 
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

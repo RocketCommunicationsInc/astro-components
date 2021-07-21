@@ -4,92 +4,92 @@
 ** 	==========================================================================
 */
 
-
-
 .rux-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0px;
-  color: var(--tableRowTextColor);
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--tableBorderColor);
-  background: var(--tableRowBackgroundColor);
-  text-align: left;
-  overflow: scroll;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px;
+    color: var(--tableRowTextColor);
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--tableBorderColor);
+    background: var(--tableRowBackgroundColor);
+    text-align: left;
+    overflow: scroll;
 }
 .rux-table__column-head th,
 .rux-table th {
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: var(--tableHeaderBorderColor);
-  background: var(--tableHeaderBackgroundColor);
-	color: var(--tableHeaderTextColor);
-	font-size: var(--fontSizeXL);
-  font-weight: 400;
-  height:  2.625rem;
-  padding: 0.625rem 1rem;
-  white-space: nowrap;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: var(--tableHeaderBorderColor);
+    background: var(--tableHeaderBackgroundColor);
+    color: var(--tableHeaderTextColor);
+    font-size: var(--fontSizeXL);
+    font-weight: 400;
+    height: 2.625rem;
+    padding: 0.625rem 1rem;
+    white-space: nowrap;
 }
 
 .rux-table__column-head {
-  box-shadow: var(--tableHeaderBoxShadow);
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: var(--tableHeaderBorderColor);
+    box-shadow: var(--tableHeaderBoxShadow);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: var(--tableHeaderBorderColor);
 }
 
 .rux-table tr[data-selected],
 .rux-table tr.selected {
-	background:var(--tableRowSelectedBackgroundColor);
+    background: var(--tableRowSelectedBackgroundColor);
 }
 
 .rux-table tr[data-selected] td,
 .rux-table tr.selected td {
-	border-color:var(--tableRowSelectedBorderColor);
+    border-color: var(--tableRowSelectedBorderColor);
 }
 .rux-table tr:hover:not([data-selected]),
 .rux-table tr.selected:hover:not([data-selected]) {
-	background: var(--tableRowHoverBackgroundColor);
-	color: var(--tableRowHoverTextColor);
+    background: var(--tableRowHoverBackgroundColor);
+    color: var(--tableRowHoverTextColor);
 }
 
 .rux-table td {
-	border-width: 1px 0;
-	border-style: solid;
-	border-color: var(--tableRowBorderColor);
-  padding: 0.625rem 1rem;
-  white-space: nowrap;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: var(--tableRowBorderColor);
+    padding: 0.625rem 1rem;
+    white-space: nowrap;
 }
 
 .rux-table__column-head th:first-child,
 .rux-table th:first-child,
 .rux-table td:first-child {
-  padding-left: 1.875rem;
-
+    padding-left: 1.875rem;
 }
 .rux-table__column-head th:last-child,
 .rux-table th:last-child,
 .rux-table td:last-child {
-  padding-right: 1.875rem;
-
+    padding-right: 1.875rem;
 }
 
 .rux-table .rux-checkbox {
-	margin:0;
+    margin: 0;
 }
 
-.rux-table .rux-checkbox input[type="checkbox"]:checked + label::before,
-.rux-table .rux-radio-button input[type="radio"]:checked + label::before {
-	background-color: var(--controlBackgroundColor);
-  border-color: var(--controlBorderColor);
+.rux-table .rux-checkbox input[type='checkbox']:checked + label::before,
+.rux-table .rux-radio-button input[type='radio']:checked + label::before {
+    background-color: var(--controlBackgroundColor);
+    border-color: var(--controlBorderColor);
 }
 
-.rux-table .rux-checkbox input[type="checkbox"]:checked + label::after,
-.rux-table .rux-radio-button input[type="radio"]:checked + label::after {
-  border-color: var(--inputBackground);
+.rux-table .rux-checkbox input[type='checkbox']:checked + label::after,
+.rux-table .rux-radio-button input[type='radio']:checked + label::after {
+    border-color: var(--inputBackground);
 }
-.rux-table tr:hover .rux-checkbox input[type="checkbox"]:not(:checked) + label::before,
-.rux-table tr:hover .rux-checkbox input[type="radio"] + label::before {
-	border-color: var(--controlSelectedBorderColor);
+.rux-table
+    tr:hover
+    .rux-checkbox
+    input[type='checkbox']:not(:checked)
+    + label::before,
+.rux-table tr:hover .rux-checkbox input[type='radio'] + label::before {
+    border-color: var(--controlSelectedBorderColor);
 }

@@ -4,4 +4,4 @@ static
 *.md
 *.css
 package.json
-package-lock.json
+package-lock.json 

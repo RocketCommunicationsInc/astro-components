@@ -4,7 +4,7 @@ The Status Symbol combines color and shape to create a standard and consistent w
 
 ## Guidelines
 
-- [Astro UXDS: Status Symbols](http://www.astrouxds.com/ui-components/status-symbol)
+-   [Astro UXDS: Status Symbols](http://www.astrouxds.com/ui-components/status-symbol)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxStatus } from "@astrouxds/rux-status/rux-status.js";
+import { RuxStatus } from '@astrouxds/rux-status/rux-status.js'
 ```
 
 ### 3. Render the Astro Status Web Component
@@ -80,30 +80,30 @@ Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming
 
 ##### **4.0**
 
-- Replaced SVG status elements with PNG sprite for improved performance
-- Moved Advanced Status to its own component, Astro UXDS Monitoring Icon (see [Astro 4 migration note](#astro-4-migration) below)
-- Removed `satcom_` prefix from HTML/CSS versions
-- Removed `::after` psuedo class in HTML/CSS version in favor of simpler background image
-- Removed undocumented small status variant
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Replaced SVG status elements with PNG sprite for improved performance
+-   Moved Advanced Status to its own component, Astro UXDS Monitoring Icon (see [Astro 4 migration note](#astro-4-migration) below)
+-   Removed `satcom_` prefix from HTML/CSS versions
+-   Removed `::after` psuedo class in HTML/CSS version in favor of simpler background image
+-   Removed undocumented small status variant
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
 ##### **3.0**
 
-- Removed Master Off Button Style
-- Replaced various properties with css custom properties to support
-- Removed `.satcom` class definition
-- Removed `narrow`/`short` definitions
+-   Removed Master Off Button Style
+-   Replaced various properties with css custom properties to support
+-   Removed `.satcom` class definition
+-   Removed `narrow`/`short` definitions
 
 ##### **1.4**
 
-- Added `rux_` prefixes and BEM-compatible classes to all `satcom_`-prefixed elements. NOTE: `satcom_` will be removed in a future version
-- Disabled user selection of text on all buttons
-- Removed redundant background hover from `disabled` state by using `:not()` on the `:hover` state
-- Removed redundant background hover from `master off` by using `:not()` on the `:hover` state // deprecate after 1.4
-- Fixed Firefox alignment issue where text was misaligned vertically
-- Renamed `half-height` to `short` and `half-width` to `narrow` (Note: `rux_` only, `satcom_` retains old syntax)
-- Removed `user-select` and placed it in astro.css to apply to all input types
-- Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
+-   Added `rux_` prefixes and BEM-compatible classes to all `satcom_`-prefixed elements. NOTE: `satcom_` will be removed in a future version
+-   Disabled user selection of text on all buttons
+-   Removed redundant background hover from `disabled` state by using `:not()` on the `:hover` state
+-   Removed redundant background hover from `master off` by using `:not()` on the `:hover` state // deprecate after 1.4
+-   Fixed Firefox alignment issue where text was misaligned vertically
+-   Renamed `half-height` to `short` and `half-width` to `narrow` (Note: `rux_` only, `satcom_` retains old syntax)
+-   Removed `user-select` and placed it in astro.css to apply to all input types
+-   Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
 
 <a name="astro-4-migration">
 

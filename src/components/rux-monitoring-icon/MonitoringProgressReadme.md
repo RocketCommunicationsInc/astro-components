@@ -4,7 +4,7 @@ The Monitoring Progress Icon is a unique instance of the Monitoring Icon for dis
 
 ## Guidelines
 
-- [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
+-   [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download Astro UXDS Components as a .zip](https://github.com/RocketCommunic
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project. Status is assigned via a range object.
 
 ```javascript
-import { RuxMonitoringProgressIcon } from "@astrouxds/rux-monitoring-icon/rux-monitoring-progress-icon.js";
+import { RuxMonitoringProgressIcon } from '@astrouxds/rux-monitoring-icon/rux-monitoring-progress-icon.js'
 ```
 
 ### 3. Render the Astro Monitoring Progress Icon Web Component
@@ -63,36 +63,36 @@ A sample of a `range` Array. This sample is also the default value for `range`. 
 
 ```json
 [
-  {
-    // for progress values from 0 to 16:
-    "threshold": 17,
-    "status": "off"
-  },
-  {
-    // for progress values from 17 to 32:
-    "threshold": 33,
-    "status": "standby"
-  },
-  {
-    // for progress values from 33 to 48:
-    "threshold": 49,
-    "status": "normal"
-  },
-  {
-    // for progress values from 49 to 64:
-    "threshold": 65,
-    "status": "caution"
-  },
-  {
-    // for progress values from 64 to 80:
-    "threshold": 81,
-    "status": "serious"
-  },
-  {
-    // for progress values from 81 to 99:
-    "threshold": 100,
-    "status": "critical"
-  }
+    {
+        // for progress values from 0 to 16:
+        "threshold": 17,
+        "status": "off"
+    },
+    {
+        // for progress values from 17 to 32:
+        "threshold": 33,
+        "status": "standby"
+    },
+    {
+        // for progress values from 33 to 48:
+        "threshold": 49,
+        "status": "normal"
+    },
+    {
+        // for progress values from 49 to 64:
+        "threshold": 65,
+        "status": "caution"
+    },
+    {
+        // for progress values from 64 to 80:
+        "threshold": 81,
+        "status": "serious"
+    },
+    {
+        // for progress values from 81 to 99:
+        "threshold": 100,
+        "status": "critical"
+    }
 ]
 ```
 
@@ -107,13 +107,13 @@ A sample of a `range` Array. This sample is also the default value for `range`. 
 
 ##### **4.1**
 
-- Added `library` property to the Monitoring Icon component, enabling the use of custom SVG icon libraries.
+-   Added `library` property to the Monitoring Icon component, enabling the use of custom SVG icon libraries.
 
 ##### **4.0**
 
-- Moved Advanced Status to its own component, Astro UXDS Monitoring Icon (see [Astro 4 migration note](#astro-4-migration) below)
-- Added the Monitoring Progress Icon variant
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Moved Advanced Status to its own component, Astro UXDS Monitoring Icon (see [Astro 4 migration note](#astro-4-migration) below)
+-   Added the Monitoring Progress Icon variant
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
 <a name="astro-4-migration">
 

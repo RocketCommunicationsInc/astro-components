@@ -4,7 +4,7 @@ These icons represent objects, equipment, and concepts that are being administer
 
 ## Guidelines
 
-- [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
+-   [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxMonitoringIcon } from "@astrouxds/rux-monitoring-icon/rux-monitoring-icon.js";
+import { RuxMonitoringIcon } from '@astrouxds/rux-monitoring-icon/rux-monitoring-icon.js'
 ```
 
 ### 3. Render the Astro Monitoring Icon Web Component
@@ -65,13 +65,13 @@ Pass properties as attributes of the Astro Monitoring Icon custom element:
 
 ##### **4.1**
 
-- Added `library` property to the Monitoring Icon component, enabling the use of custom SVG icon libraries.
+-   Added `library` property to the Monitoring Icon component, enabling the use of custom SVG icon libraries.
 
 ##### **4.0**
 
-- Moved Advanced Status to its own component, Astro UXDS Monitoring Icon (see [Astro 4 migration note](#astro-4-migration) below)
-- Added the Monitoring Progress Icon variant
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Moved Advanced Status to its own component, Astro UXDS Monitoring Icon (see [Astro 4 migration note](#astro-4-migration) below)
+-   Added the Monitoring Progress Icon variant
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
 <a name="astro-4-migration">
 
