@@ -61,36 +61,11 @@ gulp.task('sass', () => {
 })
 
 /*
- * * The color method handles the generation of the tint/shade
- * * color palettes using the CSS4 color-mod function (no longer)
- * * part of the spec. It takes a base color and increases the
- * * tint or shade by 20% increments
- */
-
-gulp.task('color', () => {
-    return gulp
-        .src('./src/scss/common/__variables.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(postcss([postcssColor()]))
-        .pipe(rename('_variables.scss'))
-        .pipe(gulp.dest('./src/scss/common'))
-})
-
-/*
  * * Handles watching for file changes and triggering a browser reload
  */
 function watch() {
-    // watch for color changes and generate palette
-    gulp.watch('./src/css/common/__variables.scss', gulp.series('color'))
-
     // compile and minify css
-    gulp.watch(
-        './src/scss/**/*.scss',
-        {
-            ignored: ['./src/scss/common/__variables.scss'],
-        },
-        gulp.series('sass')
-    )
+    gulp.watch('./src/scss/**/*.scss', gulp.series('sass'))
 }
 
 // only used during pre lerna publish
@@ -100,7 +75,5 @@ gulp.task(
 )
 
 gulp.task('default', gulp.series('sass', watch))
-gulp.task('css:colors', gulp.series('color', 'sass'))
 
-exports.watch = watch
-exports.build = gulp.series('color', 'sass')
+exports.build = gulp.series('sass')
