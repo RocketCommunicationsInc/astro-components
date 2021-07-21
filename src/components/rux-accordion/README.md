@@ -4,7 +4,7 @@ An Accordion is a device which presents a hierarchical set of items in which onl
 
 ## Guidelines
 
-- [Astro UXDS: Accordion](http://www.astrouxds.com/ui-components/accordion)
+-   [Astro UXDS: Accordion](http://www.astrouxds.com/ui-components/accordion)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxAccordion } from "@astrouxds/rux-accordion/rux-accordion.js";
+import { RuxAccordion } from '@astrouxds/rux-accordion/rux-accordion.js'
 ```
 
 ### 3. Render the Astro Accordion Web Component
@@ -105,5 +105,5 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ##### **4.0**
 
-- Introduced new Details/Summary pattern and flattened usage to support a simple parent/child relationship. Recursive child accordions not supported at this time, but may come in a future update.
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Introduced new Details/Summary pattern and flattened usage to support a simple parent/child relationship. Recursive child accordions not supported at this time, but may come in a future update.
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.

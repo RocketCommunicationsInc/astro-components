@@ -6,7 +6,7 @@ For the most up-to-date policies, see the [ISOO Training Aids](https://www.archi
 
 ## Guidelines
 
-- [Astro UXDS: Classification Markings](https://astrouxds.com/components/classification-markings/)
+-   [Astro UXDS: Classification Markings](https://astrouxds.com/components/classification-markings/)
 
 ## Web Components Usage
 
@@ -35,7 +35,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxClassification } from "@astrouxds/rux-classification-marking/rux-classification-marking.js";
+import { RuxClassification } from '@astrouxds/rux-classification-marking/rux-classification-marking.js'
 ```
 
 ### 3. Render the Classification Markings Component
@@ -44,8 +44,8 @@ Pass properties as attributes of the Astro Classification custom element:
 
 ```javascript
 <rux-classification-marking
-  classification="controlled"
-  label=""
+    classification="controlled"
+    label=""
 ></rux-classification-marking>
 ```
 
@@ -69,8 +69,8 @@ By default classification markings rendered in banner format. Applying the `tag`
 
 ```javascript
 <rux-classification-marking
-  classification="controlled"
-  tag
+    classification="controlled"
+    tag
 ></rux-classification-marking>
 ```
 
@@ -80,7 +80,7 @@ Applying the `label` property attribute to the classification custom element add
 
 ```javascript
 <rux-classification-marking
-  classification="controlled"
-  label="//custom/label"
+    classification="controlled"
+    label="//custom/label"
 ></rux-classification-marking>
 ```

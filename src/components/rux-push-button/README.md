@@ -4,7 +4,7 @@ Pushbuttons are a variant of the toggle button which incorporate label and actio
 
 ## Guidelines
 
-- [Astro UXDS: Toggle & Push Button](http://www.astrouxds.com/ui-components/toggle)
+-   [Astro UXDS: Toggle & Push Button](http://www.astrouxds.com/ui-components/toggle)
 
 ## Web Components Usage
 
@@ -33,7 +33,7 @@ Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketComm
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxPushButton } from "@astrouxds/rux-push-button/rux-push-button.js";
+import { RuxPushButton } from '@astrouxds/rux-push-button/rux-push-button.js'
 ```
 
 ### 3. Render the Astro Push Button Web Component
@@ -98,18 +98,18 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ##### **4.0**
 
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
 
 ##### **2.1**
 
-- Moved Pushbuttons to its own style sheet
+-   Moved Pushbuttons to its own style sheet
 
 ##### **1.4**
 
-- Added `rux_` prefixes and BEM-compatible classes to all `satcom_`-prefixed elements. NOTE: `satcom_` will be removed in a future version
-- Removed prefixed linear gradients
-- Removed prefixed transition
-- Fixed added colon to checked pseudo class (e.g., checked became :checked)
-- Alignment issue fixed on toggle button label
-- Updated to WCAG colors
-- Updated transition speed
+-   Added `rux_` prefixes and BEM-compatible classes to all `satcom_`-prefixed elements. NOTE: `satcom_` will be removed in a future version
+-   Removed prefixed linear gradients
+-   Removed prefixed transition
+-   Fixed added colon to checked pseudo class (e.g., checked became :checked)
+-   Alignment issue fixed on toggle button label
+-   Updated to WCAG colors
+-   Updated transition speed
