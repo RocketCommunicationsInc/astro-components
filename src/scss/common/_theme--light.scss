@@ -12,7 +12,6 @@
     --surfaceElements: var(--colorWhite, #ffffff);
     --primary: var(--colorPrimary, #005a8f);
     --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
-    --primaryWithOpacity: rgba(0, 90, 143, 0.7);
     --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
     --primaryDark: var(--colorPrimaryDarken1, #004872);
     --primaryDarkHover: #0048724d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
@@ -365,7 +364,8 @@
     ==========================================================================
     
   */
-    --scrollBarThumbBackgroundColor: var(--primaryWithOpacity);
+    // primary w/ opacity .7
+    --scrollBarThumbBackgroundColor: rgba(0, 90, 143, 0.7);
     --scrollBarThumbBackgroundHoverColor: var(--colorPrimaryLighten1);
     --scrollBarTrackBackgroundColor: var(--surfaceElements);
     --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(47, 72, 99, 0.5);
