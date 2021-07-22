@@ -4,8 +4,8 @@ Select Menus allow users to select a value from a list of values.
 
 ## Guidelines
 
-- [Astro UXDS: Select](https://www.astrouxds.com/ui-components/select)
-- [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+-   [Astro UXDS: Select](https://www.astrouxds.com/ui-components/select)
+-   [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
 ## Basic HTML Usage
 
@@ -19,7 +19,7 @@ Latest release is available in the [static css directory](https://github.com/Roc
 
 ### 2. Markup the component using HTML and the Astro CSS classes
 
-Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. 
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention.
 
 List select choices as Option elements within a Select menu with the `rux-select` class.
 
@@ -50,10 +50,12 @@ Add native HTML form attributes like `disabled` or `required` , or wrap options 
   </optgroup>
 </select>
 ```
+
 ### Attributes
-| Attribute | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
-| `required` | Boolean | `false` | No | Follows native form element `required` behavior, preventing submission of the form until a valid value has been entered. |
+
+| Attribute  | Type    | Default | Required | Description                                                                                                                                                                                 |
+| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
+| `required` | Boolean | `false` | No       | Follows native form element `required` behavior, preventing submission of the form until a valid value has been entered.                                                                    |
 
 For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://www.astrouxds.com/components/readme/#getting-started-with-html-%26-css)

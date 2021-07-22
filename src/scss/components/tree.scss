@@ -1,149 +1,157 @@
 .rux-tree {
-  display: inline-block;
-  box-sizing: border-box;
+    display: inline-block;
+    box-sizing: border-box;
 
-  width: 100%;
-  padding: 0;
-  margin: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 
-  font-size: 1rem;
+    font-size: 1rem;
 
-	color: var(--treeTextColor);
-	border:solid 1px var(--treeBorderColor);
-  background-color: var(--treeBackgroundColor);
+    color: var(--treeTextColor);
+    border: solid 1px var(--treeBorderColor);
+    background-color: var(--treeBackgroundColor);
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .rux-tree--compact {
-  font-size: 0.875rem;
+    font-size: 0.875rem;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 .rux-tree ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 .rux-tree li {
-	font-weight: bold;
+    font-weight: bold;
 }
-
 
 /* Parent Elements */
 .rux-tree__parent {
-  display: flex;
-	align-items: center;
-	padding: 0 0.5rem;
-	height: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    height: 2rem;
 }
 .rux-tree__parent:hover,
 :not([aria-selected='true']) > .rux-tree__parent:hover::after {
-	background: var(--treeHoverBackgroundColor);
-	color: var(--treeHoverTextColor);
+    background: var(--treeHoverBackgroundColor);
+    color: var(--treeHoverTextColor);
 }
 :not([aria-selected='true']) > .rux-tree__parent:hover .rux-tree__arrow::after {
-	border-color: transparent transparent transparent var(--treeHoverTextColor);
+    border-color: transparent transparent transparent var(--treeHoverTextColor);
 }
 
-
 .rux-tree__label {
-  flex-grow: 1;
-  padding: 0.5rem;
+    flex-grow: 1;
+    padding: 0.5rem;
 
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: calc(100% - 7px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: calc(100% - 7px);
 }
 
 .rux-tree--compact .rux-tree__label {
-  padding: 0.35rem;
+    padding: 0.35rem;
 }
 
 .rux-tree__arrow {
-  position: relative;
-  cursor: pointer;
-  width: 7px;
-  visibility: hidden;
+    position: relative;
+    cursor: pointer;
+    width: 7px;
+    visibility: hidden;
 }
 
 .rux-tree__arrow::after {
-  content: "";
+    content: '';
 
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 7px 0 7px 7px;
-  border-color: transparent transparent transparent
-    var(--treeAccentColor);
-  display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0 7px 7px;
+    border-color: transparent transparent transparent var(--treeAccentColor);
+    display: inline-block;
 }
 
 .has-children .rux-tree__arrow {
-  visibility: visible;
+    visibility: visible;
 }
 
 /* Child Elements */
 .rux-tree__children {
-  width: 100%;
-  display: none;
-  padding: 0;
-  margin: 0;
-  height: 0;
+    width: 100%;
+    display: none;
+    padding: 0;
+    margin: 0;
+    height: 0;
 }
 
 .rux-tree__child {
-  padding-left: 3rem;
+    padding-left: 3rem;
 }
 
 /* Expanded */
 .expanded .rux-tree__arrow::after {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .expanded .rux-tree__children {
-  display: block;
-  height: auto;
+    display: block;
+    height: auto;
 }
 
-[aria-expanded='true'][aria-level='1']:not([aria-selected="true"]) > .rux-tree__parent:after {
-	border-bottom:solid 1px var(--treeExpandedBorderColor);
+[aria-expanded='true'][aria-level='1']:not([aria-selected='true'])
+    > .rux-tree__parent:after {
+    border-bottom: solid 1px var(--treeExpandedBorderColor);
 }
 
 .rux-tree .selected,
 [aria-selected='true'] > .rux-tree__parent::after,
 [aria-selected='true'] > .rux-tree__parent:hover::after {
-  background-color: var(--treeSelectedBackgroundColor);
-  box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor);
-  color: var(--treeSelectedTextColor);
+    background-color: var(--treeSelectedBackgroundColor);
+    box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor);
+    color: var(--treeSelectedTextColor);
 }
 
 .rux-tree .selected .rux-tree__arrow::after {
-  border-color: transparent transparent transparent var(--treeSelectedAccentColor);
+    border-color: transparent transparent transparent
+        var(--treeSelectedAccentColor);
 }
 
 [aria-selected='true'] > .rux-tree__parent::after {
-	border-top: 1px solid var(--treeSelectedBorderColor);
-	border-bottom: 1px solid var(--treeSelectedBorderColor);
+    border-top: 1px solid var(--treeSelectedBorderColor);
+    border-bottom: 1px solid var(--treeSelectedBorderColor);
 }
 
-li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover:after {
-	box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor) !important;
-	background-color: var(--treeHoverBackgroundColor) !important;
-	
+li[aria-selected='true']
+    > .rux-tree__children
+    li:not([aria-selected='undefined'])
+    .rux-tree__parent:hover:after {
+    box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor) !important;
+    background-color: var(--treeHoverBackgroundColor) !important;
 }
-li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover {
-	color: var(--treeHoverTextColor);
+li[aria-selected='true']
+    > .rux-tree__children
+    li:not([aria-selected='undefined'])
+    .rux-tree__parent:hover {
+    color: var(--treeHoverTextColor);
 }
-li[aria-selected="true"] > .rux-tree__children li:not([aria-selected="undefined"]) .rux-tree__parent:hover .rux-tree__arrow:after {
-	border-color: transparent transparent transparent var(--treeHoverTextColor);
+li[aria-selected='true']
+    > .rux-tree__children
+    li:not([aria-selected='undefined'])
+    .rux-tree__parent:hover
+    .rux-tree__arrow:after {
+    border-color: transparent transparent transparent var(--treeHoverTextColor);
 }

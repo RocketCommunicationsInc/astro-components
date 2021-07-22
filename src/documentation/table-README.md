@@ -4,7 +4,7 @@ Tables display tabular data in two dimensions.
 
 ## Guidelines
 
-- [Astro UXDS: Table Pattern](https://www.astrouxds.com/patterns/table/)
+-   [Astro UXDS: Table Pattern](https://www.astrouxds.com/patterns/table/)
 
 ## Basic HTML Usage
 
@@ -18,7 +18,7 @@ Latest release is available in the [static css directory](https://github.com/Roc
 
 ### 2. Markup the component using HTML and the Astro CSS classes
 
-Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention. 
+Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention.
 
 List data within the `rux-table` class.
 
@@ -39,7 +39,7 @@ Add a data attribute to indicate selected rows, and define column header cells u
 
 ```xml
 <table class="rux-table">
-  <tr class="rux-table__column-head"> 
+  <tr class="rux-table__column-head">
     <th>Column a</th>
     <th>Column b</th>
   </tr>
@@ -53,10 +53,11 @@ Add a data attribute to indicate selected rows, and define column header cells u
   </tr>
 </table>
 ```
-### Attributes
-| Attribute | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `data-selected` | Boolean | `false` | No | Changes the background color of the row. Can be applied to multiple rows at once. |
 
+### Attributes
+
+| Attribute       | Type    | Default | Required | Description                                                                       |
+| --------------- | ------- | ------- | -------- | --------------------------------------------------------------------------------- |
+| `data-selected` | Boolean | `false` | No       | Changes the background color of the row. Can be applied to multiple rows at once. |
 
 For more information about AstroUXDS usage outside of a Web Component environment, please see [Astro UXDS Stylesheets](https://www.astrouxds.com/components/readme/#getting-started-with-html-%26-css)

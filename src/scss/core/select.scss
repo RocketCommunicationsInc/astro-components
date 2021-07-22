@@ -18,7 +18,7 @@
     font-size: 1rem;
     padding: 0.438rem 3.125rem 0.438rem 0.5rem;
     background-color: var(--selectMenuBackgroundColor);
-    background-image: var(--selectInactiveCaret),
+    background-image: var(--selectMenuInactiveCaret),
         var(--selectMenuCaretBackgroundColor);
     background-position: center right 0.625rem, center left 9.105rem;
     background-repeat: no-repeat;
@@ -29,39 +29,44 @@
 .rux-select option {
     background-color: var(--selectMenuBackgroundColor);
     border: 1px solid var(--selectMenuBorderColor);
-    border-radius: 3px;
+    border-radius: var(--selectMenuBorderRadius);
     box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
 }
 
 .rux-select .rux-select optgroup:hover,
 .rux-select option:hover {
-    color: var(--selectMenuTextHoverColor);
-    background-color: var(--selectHoverOptBackgroundColor);
+    color: var(--selectMenuOptTextHoverColor);
+    background-color: var(--selectMenuOptHoverBackgroundColor);
+}
+
+.rux-select .rux-select optgroup:focus,
+.rux-select option:focus {
+    color: var(--selectMenuOptSelectedTextColor);
+    background-color: var(--selectMenuOptSelectedBackgroundColor);
 }
 
 .rux-select:disabled {
     opacity: 0.4;
     cursor: not-allowed;
-    border-color: var(--inputBorderColorDisabled);
 }
 
 .rux-select:disabled:hover {
     cursor: not-allowed;
+    border-color: var(--selectMenuBorderColor);
 }
 
 .rux-select:focus {
     outline: none;
-    border: 1px solid var(--primary);
-    border-radius: var(--buttonBorderRadius);
+    border-color: var(--primaryLight);
 }
 
 .rux-select:active:not(:disabled) {
-    background-image: var(--selectActiveCaret);
+    background-image: var(--selectMenuActiveCaret);
 }
 
 .rux-select:hover {
     cursor: pointer;
-    border: 1px solid var(--selectMenuTextHoverColor);
+    border-color: var(--selectMenuBorderHoverColor);
 }
 
 .rux-select::-ms-expand {

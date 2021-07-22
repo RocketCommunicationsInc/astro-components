@@ -6,7 +6,7 @@ An item can be expanded to reveal subitems, if any exist, and collapsed to hide 
 
 ## Guidelines
 
-- [Astro UXDS: Tree](http://www.astrouxds.com/library/tree)
+-   [Astro UXDS: Tree](http://www.astrouxds.com/library/tree)
 
 ## Web Components Usage
 
@@ -35,7 +35,7 @@ Or, [download Astro Components as a .zip](https://github.com/RocketCommunication
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxTree } from "@astrouxds/rux-tree/rux-tree.js";
+import { RuxTree } from '@astrouxds/rux-tree/rux-tree.js'
 ```
 
 ### 3. Render the Astro Tree Web Component
@@ -94,13 +94,13 @@ Tree emits a `tree-updated` event whenever the selected tree item changes. Event
 #### Sample Tree event
 
 ```javascript
-window.addEventListener("tree-updated", (event) => {
-  // an array that reflects the current state of the tree
-  console.log("Tree data", event.detail.data);
+window.addEventListener('tree-updated', (event) => {
+    // an array that reflects the current state of the tree
+    console.log('Tree data', event.detail.data)
 
-  // an object representing the currently selected tree item
-  console.log("Selected tree item", event.detail.selected);
-});
+    // an object representing the currently selected tree item
+    console.log('Selected tree item', event.detail.selected)
+})
 ```
 
 #### `detail` Properties
@@ -114,18 +114,18 @@ window.addEventListener("tree-updated", (event) => {
 
 ##### **4.0**
 
-- Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
-- Tree supports multiple nested child tree element
-- Added keyboard support
-- Added support for assigning status to each tree item
+-   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
+-   Tree supports multiple nested child tree element
+-   Added keyboard support
+-   Added support for assigning status to each tree item
 
 ##### **3.0**
 
-- Added a light theme
+-   Added a light theme
 
 ##### **2.1**
 
-- Converted to Web Component
+-   Converted to Web Component
 
 ##### Notes
 
