@@ -85,9 +85,10 @@ export class RuxSlider extends LitElement {
                         0 1px 4px rgba(0, 0, 0, 0.12),
                         0 1px 1px rgba(0, 0, 0, 0.2);
 
-                    --trackHeight: 3px;
+                    --trackHeight: 1px;
                     --trackCursor: pointer;
                     --value: 50;
+                    --valuePercent: calc(1% * var(--value));
                     display: flex;
                     flex-grow: 1;
                     flex-flow: column;
@@ -134,6 +135,8 @@ export class RuxSlider extends LitElement {
 
                     background: none;
                     width: 100%;
+                    /*added*/
+                    height: 10px;
                     margin: 0px;
                     color: transparent;
                 }
@@ -151,23 +154,18 @@ export class RuxSlider extends LitElement {
                     max-width: 100%;
 
                     /* width: 100%; */
-                    height: var(--trackHeight, 2px);
                     cursor: var(--trackCursor, pointer);
-                    /* added */
                     border-radius: 2.5px;
-                    background-color: var(--sliderTrackBackgroundColor);
+                    max-height: 5px;
+                    height: 1px;
                     outline: var(--sliderTrackBorderSize) solid
                         var(--sliderTrackBorderColor, transparent);
-
-                    background-image: linear-gradient(
-                        to right,
-                        var(--sliderSelectedTrackBackgroundColor) 0%,
-                        var(--sliderSelectedTrackBackgroundColor)
-                            calc(1% * var(--value)),
-                        var(--sliderTrackBackgroundColor)
-                            calc(1% * var(--value)),
-                        var(--sliderTrackBackgroundColor) 100%
-                    );
+                    /* This will be changed back to correct colors - leaving it like this for development purpsoes for now */
+                    background-image: linear-gradient(green, blue);
+                    background-size: calc(1% * var(--value)) 5px;
+                    background-repeat: no-repeat;
+                    background-color: var(--sliderTrackBackgroundColor);
+                    /* if I can find the postion of the thumb, (calc), then can I target after that and alter height? */
                 }
 
                 .rux-range:disabled::-webkit-slider-runnable-track {
@@ -255,6 +253,16 @@ export class RuxSlider extends LitElement {
                         var(--thumbShadow);
                     z-index: 6;
                 }
+                /*added*/
+                .rux-range::-webkit-slider-thumb::after {
+                    background-color: pink;
+                    border: 2px solid pink;
+                }
+                /* .rux-range::-webkit-slider-thumb::-webkit-slider-runnable-track::after {
+                    background-color: pink;
+                    border: 1px solid pink;
+                    height: 1px;
+                } */
 
                 .rux-range::-webkit-slider-thumb:hover {
                     border-color: var(--sliderHoverThumbBorderColor);
