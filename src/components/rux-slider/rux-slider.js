@@ -137,8 +137,6 @@ export class RuxSlider extends LitElement {
 
                     background: none;
                     width: 100%;
-                    /*added*/
-                    /* height: 10px; */
                     margin: 0px;
                     color: transparent;
                 }
@@ -146,35 +144,31 @@ export class RuxSlider extends LitElement {
                 input[type='range']:focus {
                     outline: none;
                 }
-                input[type='range'] {
-                    overflow: visible;
-                }
 
                 /****** Track ******/
-
                 /* Track -> WebKit */
                 .rux-range::-webkit-slider-runnable-track {
                     display: flex;
                     align-items: center;
                     max-width: 100%;
-
                     /* width: 100%; */
                     cursor: var(--trackCursor, pointer);
                     border-radius: 2.5px;
-                    /* height: ${this.val > 49 ? '5px' : '1px'} */
-                    // height: fit-content;
-                    height: var(--trackHeight);
                     min-height: var(--trackHeight);
                     max-height: var(--trackAfterThumbHeight);
-                    overflow: visible;
                     outline: var(--sliderTrackBorderSize) solid
                         var(--sliderTrackBorderColor, transparent);
-                    background-image: linear-gradient(to right, green, blue);
-                    background-size: calc(1% * var(--value))
-                        var(--trackAfterThumbHeight);
-                    background-repeat: no-repeat;
-                    background-color: var(--sliderTrackBackgroundColor);
-                    /* background-position: right; */
+                    background-image: linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        ),
+                        linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        );
+                    background-size: var(--valuePercent) 5px, 100% 1px;
+                    background-repeat: no-repeat no-repeat;
+                    background-position: left, right;
                 }
                 .rux-range:disabled::-webkit-slider-runnable-track {
                     opacity: var(--disabledOpacity, 0.4);
@@ -223,7 +217,6 @@ export class RuxSlider extends LitElement {
                     color: transparent;
                     background-color: transparent;
                     border: none;
-                    background-color: yellow;
                     /* background-color: var(--sliderTrackBackgroundColor); */
                     outline: var(--sliderTrackBorderSize) solid transparent;
                 }
