@@ -86,9 +86,11 @@ export class RuxSlider extends LitElement {
                         0 1px 1px rgba(0, 0, 0, 0.2);
 
                     --trackHeight: 1px;
+                    --trackAfterThumbHeight: 5px;
                     --trackCursor: pointer;
                     --value: 50;
                     --valuePercent: calc(1% * var(--value));
+                    --valueBeforeThumb: calc(1% * var(--value) - 1%);
                     display: flex;
                     flex-grow: 1;
                     flex-flow: column;
@@ -136,13 +138,16 @@ export class RuxSlider extends LitElement {
                     background: none;
                     width: 100%;
                     /*added*/
-                    height: 10px;
+                    /* height: 10px; */
                     margin: 0px;
                     color: transparent;
                 }
 
                 input[type='range']:focus {
                     outline: none;
+                }
+                input[type='range'] {
+                    overflow: visible;
                 }
 
                 /****** Track ******/
@@ -156,18 +161,21 @@ export class RuxSlider extends LitElement {
                     /* width: 100%; */
                     cursor: var(--trackCursor, pointer);
                     border-radius: 2.5px;
-                    max-height: 5px;
-                    height: 1px;
+                    /* height: ${this.val > 49 ? '5px' : '1px'} */
+                    // height: fit-content;
+                    height: var(--trackHeight);
+                    min-height: var(--trackHeight);
+                    max-height: var(--trackAfterThumbHeight);
+                    overflow: visible;
                     outline: var(--sliderTrackBorderSize) solid
                         var(--sliderTrackBorderColor, transparent);
-                    /* This will be changed back to correct colors - leaving it like this for development purpsoes for now */
-                    background-image: linear-gradient(green, blue);
-                    background-size: calc(1% * var(--value)) 5px;
+                    background-image: linear-gradient(to right, green, blue);
+                    background-size: calc(1% * var(--value))
+                        var(--trackAfterThumbHeight);
                     background-repeat: no-repeat;
                     background-color: var(--sliderTrackBackgroundColor);
-                    /* if I can find the postion of the thumb, (calc), then can I target after that and alter height? */
+                    /* background-position: right; */
                 }
-
                 .rux-range:disabled::-webkit-slider-runnable-track {
                     opacity: var(--disabledOpacity, 0.4);
                     cursor: var(--disabledCursor);
@@ -215,6 +223,7 @@ export class RuxSlider extends LitElement {
                     color: transparent;
                     background-color: transparent;
                     border: none;
+                    background-color: yellow;
                     /* background-color: var(--sliderTrackBackgroundColor); */
                     outline: var(--sliderTrackBorderSize) solid transparent;
                 }
@@ -253,16 +262,6 @@ export class RuxSlider extends LitElement {
                         var(--thumbShadow);
                     z-index: 6;
                 }
-                /*added*/
-                .rux-range::-webkit-slider-thumb::after {
-                    background-color: pink;
-                    border: 2px solid pink;
-                }
-                /* .rux-range::-webkit-slider-thumb::-webkit-slider-runnable-track::after {
-                    background-color: pink;
-                    border: 1px solid pink;
-                    height: 1px;
-                } */
 
                 .rux-range::-webkit-slider-thumb:hover {
                     border-color: var(--sliderHoverThumbBorderColor);
@@ -413,13 +412,13 @@ export class RuxSlider extends LitElement {
                 }
 
                 /*
-        Fake tick marks, sort of works, but label using flex are imprecise
-        .rux-slider__control__labels li::before {
-          position: absolute;
-          content: "|";
-          font-size: 0.5rem;
-          top: -100%;
-        } */
+                Fake tick marks, sort of works, but label using flex are imprecise
+                .rux-slider__control__labels li::before {
+                  position: absolute;
+                  content: "|";
+                  font-size: 0.5rem;
+                  top: -100%;
+                } */
 
                 input[type='range']::-moz-focus-outer {
                     border: 0;
@@ -458,7 +457,6 @@ export class RuxSlider extends LitElement {
                         type="range"
                         @input="${this._updateValue}"
                         class="rux-range"
-                        type="range"
                         .min="${this.min.toString()}"
                         .max="${this.max.toString()}"
                         .step="${this.step.toString()}"
