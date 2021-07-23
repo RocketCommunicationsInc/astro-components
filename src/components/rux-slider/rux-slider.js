@@ -74,6 +74,7 @@ export class RuxSlider extends LitElement {
             <style>
                 :host {
                     --thumbSize: var(--controlOptionSize);
+                    /* --thumbSize: 19px; */
                     --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14),
                         0 1px 9px rgba(0, 0, 0, 0.12),
                         0 1px 3px rgba(0, 0, 0, 0.2);
@@ -240,7 +241,7 @@ export class RuxSlider extends LitElement {
                     position: relative;
                     top: ${this.browser === 'safari'
                         ? '0px'
-                        : 'calc( var(--thumbSize) / -2)'};
+                        : 'calc( var(--thumbSize) / -2.5)'};
 
                     height: var(--thumbSize);
                     width: var(--thumbSize);
