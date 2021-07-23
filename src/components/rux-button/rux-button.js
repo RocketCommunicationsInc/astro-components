@@ -213,8 +213,8 @@ export class RuxButton extends LitElement {
 
                 .rux-button--small ::slotted(rux-icon),
                 .rux-button--small rux-icon {
-                    height: 0.875rem;
-                    width: 0.875rem;
+                    height: 1rem;
+                    width: 1rem;
                 }
 
                 .rux-button--large ::slotted(rux-icon),
