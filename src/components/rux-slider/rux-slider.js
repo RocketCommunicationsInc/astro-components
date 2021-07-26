@@ -257,7 +257,7 @@ export class RuxSlider extends LitElement {
                     position: relative;
                     top: ${this.browser === 'safari'
                         ? '0px'
-                        : 'calc( var(--thumbSize) / -2.5)'};
+                        : 'calc( var(--thumbSize) / -2.7)'};
 
                     height: var(--thumbSize);
                     width: var(--thumbSize);
@@ -316,7 +316,7 @@ export class RuxSlider extends LitElement {
                     -moz-appearance: none;
 
                     position: relative;
-                    top: calc(var(--thumbSize) / -2);
+                    top: calc(var(--thumbSize) / -2.7);
 
                     height: var(--thumbSize);
                     width: var(--thumbSize);
@@ -337,7 +337,7 @@ export class RuxSlider extends LitElement {
                 }
 
                 .rux-range::-moz-range-thumb:hover {
-                    border-color: var(--sliderHoverThumbBorderColor);
+                    border-color: var(--sliderThumbBackgroundColor);
                 }
 
                 input:-moz-focusring {
@@ -352,8 +352,7 @@ export class RuxSlider extends LitElement {
                 /* Thumb -> Ms */
                 .rux-range::-ms-thumb {
                     position: relative;
-                    top: calc(var(--thumbSize) / -2);
-
+                    top: calc(var(--thumbSize) / -2.7);
                     height: var(--thumbSize);
                     width: var(--thumbSize);
 
@@ -364,9 +363,8 @@ export class RuxSlider extends LitElement {
 
                     cursor: pointer;
                     box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-                        0 3px 5px rgba(0, 0, 0, 0.14),
-                        0 1px 9px rgba(0, 0, 0, 0.12),
-                        0 1px 3px rgba(0, 0, 0, 0.2);
+                        var(--thumbShadow);
+                    z-index: 6;
                 }
 
                 .rux-range:disabled::-ms-thumb {
