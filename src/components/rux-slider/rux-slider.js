@@ -274,8 +274,8 @@ export class RuxSlider extends LitElement {
                 }
 
                 .rux-range::-webkit-slider-thumb:hover {
-                    border-color: var(--sliderSelectedThumbBorderColor);
-                    background-color: var(--sliderThumbBackgroundColor);
+                    border-color: var(--sliderHoverThumbBorderColor);
+                    background-color: var(--sliderHoverThumbBackgroundColor);
                 }
 
                 .rux-range:disabled::-webkit-slider-runnable-track {
@@ -297,7 +297,7 @@ export class RuxSlider extends LitElement {
 
                 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
                 .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-                    background-color: var(--sliderThumbBackgroundColor);
+                    background-color: var(--sliderHoverThumbBackgroundColor);
                 }
 
                 .rux-range:not(:disabled)::-webkit-slider-thumb:active {
@@ -307,7 +307,7 @@ export class RuxSlider extends LitElement {
 
                 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
                 .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-                    background-color: var(--sliderThumbBackgroundColor);
+                    background-color: var(--sliderHoverThumbBackgroundColor);
                     box-shadow: var(--thumbShadowHover);
                 }
 
@@ -337,7 +337,7 @@ export class RuxSlider extends LitElement {
                 }
 
                 .rux-range::-moz-range-thumb:hover {
-                    border-color: var(--sliderThumbBackgroundColor);
+                    border-color: var(--sliderHoverThumbBorderColor);
                 }
 
                 input:-moz-focusring {
