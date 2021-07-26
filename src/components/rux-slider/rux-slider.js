@@ -157,8 +157,7 @@ export class RuxSlider extends LitElement {
                     border-radius: 2.5px;
                     min-height: var(--trackHeight);
                     max-height: var(--trackAfterThumbHeight);
-                    outline: var(--sliderTrackBorderSize) solid
-                        var(--sliderTrackBorderColor, transparent);
+
                     background-image: linear-gradient(
                             var(--sliderTrackBackgroundColor),
                             var(--sliderTrackBackgroundColor)
