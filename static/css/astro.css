@@ -433,7 +433,6 @@
   --sliderThumbBorderColor: var(--primary);
   --sliderHoverThumbBackgroundColor: var(--primaryDark);
   --sliderHoverThumbBorderColor: var(--inputBackground);
-  --sliderTrackBorderColor: var(--secondaryText);
   --sliderTrackBackgroundColor: var(--primary);
   --sliderSelectedThumbBorderColor: var(--primaryLight);
   --sliderSelectedTrackBackgroundColor: var(--primary);
