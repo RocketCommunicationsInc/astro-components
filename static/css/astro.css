@@ -438,6 +438,7 @@
   --sliderSelectedThumbBorderColor: var(--primaryLight);
   --sliderSelectedTrackBackgroundColor: var(--primary);
   --sliderThumbBorderSize: 2px;
+  --sliderThumbSize: 19px;
   --sliderTrackBorderSize: 0.25px;
   /* 
     
@@ -817,11 +818,11 @@ li.light-theme {
   --sliderThumbBorderColor: var(--primary);
   --sliderHoverThumbBackgroundColor: var(--primaryDark);
   --sliderHoverThumbBorderColor: var(--inputBackground);
-  --sliderTrackBorderColor: transparent;
   --sliderTrackBackgroundColor: var(--primary);
   --sliderSelectedThumbBorderColor: var(--primaryLight);
   --sliderSelectedTrackBackgroundColor: var(--primary);
   --sliderThumbBorderSize: 2px;
+  --sliderThumbSize: 19px;
   --sliderTrackBorderSize: 1px;
   /* 
     

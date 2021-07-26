@@ -73,7 +73,7 @@ export class RuxSlider extends LitElement {
         return html`
             <style>
                 :host {
-                    --thumbSize: var(--controlOptionSize);
+                    --thumbSize: var(--sliderThumbSize);
                     /* --thumbSize: 19px; */
                     --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14),
                         0 1px 9px rgba(0, 0, 0, 0.12),
@@ -87,7 +87,7 @@ export class RuxSlider extends LitElement {
                         0 1px 1px rgba(0, 0, 0, 0.2);
 
                     --trackHeight: 1px;
-                    --trackAfterThumbHeight: 5px;
+                    --trackBeforeThumbHeight: 5px;
                     --trackCursor: pointer;
                     --value: 50;
                     --valuePercent: calc(1% * var(--value));
@@ -156,7 +156,7 @@ export class RuxSlider extends LitElement {
                     cursor: var(--trackCursor, pointer);
                     border-radius: 2.5px;
                     min-height: var(--trackHeight);
-                    max-height: var(--trackAfterThumbHeight);
+                    max-height: var(--trackBeforeThumbHeight);
 
                     background-image: linear-gradient(
                             var(--sliderTrackBackgroundColor),
@@ -179,14 +179,24 @@ export class RuxSlider extends LitElement {
                 .rux-range::-moz-range-track {
                     display: flex;
                     align-items: center;
-
+                    max-width: 100%;
                     /* width: 100%; */
-                    height: var(--trackHeight);
                     cursor: var(--trackCursor, pointer);
+                    border-radius: 2.5px;
+                    min-height: var(--trackHeight);
+                    max-height: 5px;
 
-                    background-color: var(--sliderTrackBackgroundColor);
-                    outline: var(--sliderTrackBorderSize) solid
-                        var(--sliderTrackBorderColor);
+                    background-image: linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        ),
+                        linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        );
+                    background-size: calc(1% * var(--value)) 5px, 100% 1px;
+                    background-repeat: no-repeat no-repeat;
+                    background-position: left, right;
                 }
 
                 .rux-range:disabled::-moz-range-track,
@@ -208,17 +218,24 @@ export class RuxSlider extends LitElement {
                 .rux-range::-ms-track {
                     display: flex;
                     align-items: center;
-
+                    max-width: 100%;
                     /* width: 100%; */
-                    height: var(--trackHeight);
-                    padding: 2px 0;
+                    cursor: var(--trackCursor, pointer);
+                    border-radius: 2.5px;
+                    min-height: var(--trackHeight);
+                    max-height: 5px;
 
-                    cursor: pointer;
-                    color: transparent;
-                    background-color: transparent;
-                    border: none;
-                    /* background-color: var(--sliderTrackBackgroundColor); */
-                    outline: var(--sliderTrackBorderSize) solid transparent;
+                    background-image: linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        ),
+                        linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        );
+                    background-size: calc(1% * var(--value)) 5px, 100% 1px;
+                    background-repeat: no-repeat no-repeat;
+                    background-position: left, right;
                 }
 
                 .rux-range::-ms-fill-lower {
@@ -257,7 +274,8 @@ export class RuxSlider extends LitElement {
                 }
 
                 .rux-range::-webkit-slider-thumb:hover {
-                    border-color: var(--sliderHoverThumbBorderColor);
+                    border-color: var(--sliderSelectedThumbBorderColor);
+                    background-color: var(--sliderThumbBackgroundColor);
                 }
 
                 .rux-range:disabled::-webkit-slider-runnable-track {
@@ -268,15 +286,8 @@ export class RuxSlider extends LitElement {
                 .rux-range:disabled::-webkit-slider-thumb {
                     cursor: var(--disabledCursor);
                 }
-
-                .rux-range:not(:disabled)::-webkit-slider-thumb:active {
-                    border-color: var(--sliderSelectedThumbBorderColor);
-                    background-color: var(--backgroundColor);
-                }
-
-                .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
-                .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-                    background-color: var(--sliderHoverThumbBackgroundColor);
+                .rux-range:disabled::-webkit-slider-thumb:hover {
+                    border-color: var(--sliderThumbBorderColor);
                 }
 
                 .rux-range:not(:disabled)::-webkit-slider-thumb:active {
@@ -286,7 +297,17 @@ export class RuxSlider extends LitElement {
 
                 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
                 .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-                    background-color: var(--sliderHoverThumbBackgroundColor);
+                    background-color: var(--sliderThumbBackgroundColor);
+                }
+
+                .rux-range:not(:disabled)::-webkit-slider-thumb:active {
+                    border-color: var(--sliderSelectedThumbBorderColor);
+                    background-color: var(--backgroundColor);
+                }
+
+                .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
+                .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
+                    background-color: var(--sliderThumbBackgroundColor);
                     box-shadow: var(--thumbShadowHover);
                 }
 
@@ -311,11 +332,8 @@ export class RuxSlider extends LitElement {
                 }
 
                 .rux-range:not(:disabled)::-moz-range-thumb:active {
-                    background: radial-gradient(
-                        circle,
-                        rgba(255, 255, 255, 1) 40%,
-                        var(--primaryDark) 40%
-                    );
+                    border-color: var(--sliderSelectedThumbBorderColor);
+                    background-color: var(--backgroundColor);
                 }
 
                 .rux-range::-moz-range-thumb:hover {
