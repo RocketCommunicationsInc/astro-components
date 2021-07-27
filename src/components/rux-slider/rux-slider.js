@@ -74,17 +74,6 @@ export class RuxSlider extends LitElement {
             <style>
                 :host {
                     --thumbSize: var(--sliderThumbSize);
-                    /* --thumbSize: 19px; */
-                    --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14),
-                        0 1px 9px rgba(0, 0, 0, 0.12),
-                        0 1px 3px rgba(0, 0, 0, 0.2);
-                    --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14),
-                        0 1px 18px rgba(0, 0, 0, 0.12),
-                        0 3px 5px rgba(0, 0, 0, 0.2);
-                    --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary),
-                        0 1px 3px rgba(0, 0, 0, 0.14),
-                        0 1px 4px rgba(0, 0, 0, 0.12),
-                        0 1px 1px rgba(0, 0, 0, 0.2);
 
                     --trackHeight: 1px;
                     --trackBeforeThumbHeight: 5px;
@@ -268,8 +257,6 @@ export class RuxSlider extends LitElement {
                     background-color: var(--sliderThumbBackgroundColor);
 
                     cursor: pointer;
-                    box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-                        var(--thumbShadow);
                     z-index: 6;
                 }
 
@@ -308,7 +295,6 @@ export class RuxSlider extends LitElement {
                 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
                 .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
                     background-color: var(--sliderHoverThumbBackgroundColor);
-                    box-shadow: var(--thumbShadowHover);
                 }
 
                 /* Thumb -> Moz */
@@ -327,8 +313,6 @@ export class RuxSlider extends LitElement {
                     background-color: var(--sliderThumbBackgroundColor);
 
                     cursor: pointer;
-                    box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-                        var(--thumbShadow);
                 }
 
                 .rux-range:not(:disabled)::-moz-range-thumb:active {
@@ -362,8 +346,7 @@ export class RuxSlider extends LitElement {
                     background-color: var(--sliderThumbBackgroundColor);
 
                     cursor: pointer;
-                    box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9),
-                        var(--thumbShadow);
+
                     z-index: 6;
                 }
 
