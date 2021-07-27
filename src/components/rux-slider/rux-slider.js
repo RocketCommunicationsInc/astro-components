@@ -73,7 +73,8 @@ export class RuxSlider extends LitElement {
         return html`
             <style>
                 :host {
-                    --thumbSize: var(--sliderThumbSize);
+                    --thumbSize: 19px;
+                    --sliderThumbBorderSize: 2px;
 
                     --trackHeight: 1px;
                     --trackBeforeThumbHeight: 5px;

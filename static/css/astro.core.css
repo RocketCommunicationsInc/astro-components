@@ -436,9 +436,6 @@
   --sliderTrackBackgroundColor: var(--primary);
   --sliderSelectedThumbBorderColor: var(--primaryLight);
   --sliderSelectedTrackBackgroundColor: var(--primary);
-  --sliderThumbBorderSize: 2px;
-  --sliderThumbSize: 19px;
-  --sliderTrackBorderSize: 0.25px;
   /* 
     
     Segmented Button Colors 
@@ -820,9 +817,6 @@ li.light-theme {
   --sliderTrackBackgroundColor: var(--primary);
   --sliderSelectedThumbBorderColor: var(--primaryLight);
   --sliderSelectedTrackBackgroundColor: var(--primary);
-  --sliderThumbBorderSize: 2px;
-  --sliderThumbSize: 19px;
-  --sliderTrackBorderSize: 1px;
   /* 
     
     Segmented Button Colors 
