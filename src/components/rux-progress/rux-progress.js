@@ -62,7 +62,6 @@ export class RuxProgress extends LitElement {
             }
 
             .rux-progress[value] {
-                align-self: center;
                 appearance: none;
 
                 background-color: var(
@@ -75,7 +74,6 @@ export class RuxProgress extends LitElement {
             }
 
             .rux-progress__value {
-                align-self: center;
                 margin-left: 0.5rem;
 
                 text-align: right;
