@@ -53,12 +53,12 @@ export class RuxProgress extends LitElement {
                 --progressHeight: 0.875rem;
                 --progressWidth: calc(100% - 4px);
 
-                height: 1.375rem;
                 display: flex;
                 position: relative;
 
                 justify-content: space-between;
                 align-items: center;
+                padding: 0.075rem 0px;
             }
 
             .rux-progress[value] {
