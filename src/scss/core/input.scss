@@ -213,6 +213,20 @@
     outline: none;
     color: var(--inputFocusTextColor);
 }
+.rux-form-field input:hover,
+.rux-form-field textarea:hover {
+    border-color: var(--inputFocusBorderColor);
+    outline: none;
+    color: var(--inputFocusTextColor);
+}
+.rux-form-field input:hover:invalid,
+.rux-form-field textarea:hover:invalid {
+    border: 1px solid var(--inputInvalidBorderColor);
+}
+.rux-form-field input:hover:disabled,
+.rux-form-field textarea:hover:disabled {
+    border: 1px solid var(--inputBorderColor);
+}
 
 .rux-form-field input[type='search']::-webkit-search-decoration {
     -webkit-appearance: textfield;
