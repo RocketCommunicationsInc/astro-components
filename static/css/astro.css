@@ -474,11 +474,11 @@
   --selectMenuOptTextHoverColor: var(--primaryDark);
   --selectMenuOptSelectedTextColor: var(--defaultText);
   --selectMenuBorderColor: var(--primaryLighter);
-  --selectMenuCaretBackgroundColor: linear-gradient(
-        var(--lightSelected),
-        var(--lightSelected)
+  --selectMenuBackgroundColor: linear-gradient(
+        to left,
+        var(--lightSelected) 2rem,
+        var(--backgroundColor) 2rem
     );
-  --selectMenuBackgroundColor: var(--backgroundColor);
   --selectMenuTextColor: var(--primary);
   --selectMenuBorderHoverColor: var(--primaryDark);
   --selectMenuInvalidBorder: var(--statusDarkCritical);
@@ -855,11 +855,11 @@ li.light-theme {
   --selectMenuOptSelectedTextColor: var(--defaultText);
   --selectMenuOptTextHoverColor: var(--primaryLight);
   --selectMenuBorderColor: var(--primaryDarker);
-  --selectMenuCaretBackgroundColor: linear-gradient(
-        var(--darkSelected),
-        var(--darkSelected)
+  --selectMenuBackgroundColor: linear-gradient(
+        to left,
+        var(--darkSelected) 2rem,
+        var(--backgroundColor) 2rem
     );
-  --selectMenuBackgroundColor: var(--backgroundColor);
   --selectMenuTextColor: var(--primary);
   --selectMenuBorderHoverColor: var(--primary);
   --selectMenuInvalidBorder: var(--criticalBorder);
@@ -1962,8 +1962,8 @@ input[type='radio']:not(:disabled):checked:hover
   font-size: 1rem;
   padding: 0.438rem 3.125rem 0.438rem 0.5rem;
   background-color: var(--selectMenuBackgroundColor);
-  background-image: var(--selectMenuInactiveCaret), var(--selectMenuCaretBackgroundColor);
-  background-position: center right 0.625rem, center left 9.105rem;
+  background-image: var(--selectMenuInactiveCaret), var(--selectMenuBackgroundColor);
+  background-position: center right 0.625rem, center left 0rem;
   background-repeat: no-repeat;
   user-select: none; }
 

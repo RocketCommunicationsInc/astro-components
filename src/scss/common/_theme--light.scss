@@ -183,11 +183,11 @@
     --selectMenuOptTextHoverColor: var(--primaryDark);
     --selectMenuOptSelectedTextColor: var(--defaultText);
     --selectMenuBorderColor: var(--primaryLighter);
-    --selectMenuCaretBackgroundColor: linear-gradient(
-        var(--lightSelected),
-        var(--lightSelected)
+    --selectMenuBackgroundColor: linear-gradient(
+        to left,
+        var(--lightSelected) 2rem,
+        var(--backgroundColor) 2rem
     );
-    --selectMenuBackgroundColor: var(--backgroundColor);
     --selectMenuTextColor: var(--primary);
     --selectMenuBorderHoverColor: var(--primaryDark);
     --selectMenuInvalidBorder: var(--statusDarkCritical);
