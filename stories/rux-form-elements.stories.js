@@ -201,7 +201,7 @@ export const InputFields = () => html`
                 <span class="rux-help-text">Help text</span>
             </li>
             <li class="rux-form-field">
-                <label for="input__required">Is Required</label>
+                <label for="input__required">Is required</label>
                 <input
                     id="input__required"
                     class="rux-input"
@@ -397,7 +397,7 @@ export const InputFields = () => html`
                 />
             </li>
             <li class="rux-form-field rux-form-field--small">
-                <label for="input__required-smaller">Smaller Is Required</label>
+                <label for="input__required-smaller">Smaller is required</label>
                 <input
                     id="input__required-smaller"
                     class="rux-input"
