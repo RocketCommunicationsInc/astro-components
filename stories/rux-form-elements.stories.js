@@ -176,7 +176,7 @@ export const InputFields = () => html`
                     id="input__number"
                     class="rux-input"
                     type="number"
-                    placeholder="Number Input"
+                    placeholder="Number input"
                 />
                 <label for="input__number">Number input</label>
             </li>
@@ -399,7 +399,7 @@ export const InputFields = () => html`
                     id="input__number-smaller"
                     class="rux-input"
                     type="number"
-                    placeholder="Number Input"
+                    placeholder="Number input"
                 />
                 <label for="input__number-smaller">Smaller number input</label>
             </li>
