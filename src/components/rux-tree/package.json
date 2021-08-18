@@ -4,6 +4,8 @@
         "email": "uxsupport@rocketcom.com"
     },
     "dependencies": {
+        "@astrouxds/rux-status": "^4.0.4",
+        "@astrouxds/rux-utils": "^4.0.4",
         "@webcomponents/webcomponentsjs": "^2.2.10",
         "lit-element": "^2.1.0"
     },

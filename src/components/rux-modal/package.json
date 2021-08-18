@@ -4,6 +4,7 @@
         "email": "uxsupport@rocketcom.com"
     },
     "dependencies": {
+        "@astrouxds/rux-button": "^5.0.2",
         "@webcomponents/webcomponentsjs": "^2.2.10",
         "lit-element": "^2.1.0"
     },
