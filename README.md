@@ -1,3 +1,11 @@
+# NOTE: The Astro team is hard at work on a much improved set of components in a new repo
+
+Check out the work here https://github.com/RocketCommunicationsInc/astro-components-stencil and have your voice heard before release. The updated components are quite mature and we would encourage new projects to seriously consider using the updated Stencil components moving forward.
+
+- If you find any bugs or issues, please file them here https://github.com/RocketCommunicationsInc/astro-components-stencil/issues
+- If you have any questions or requests please ask them here https://github.com/RocketCommunicationsInc/astro-components-stencil/discussions
+
+
 # Astro Web Component and CSS Library
 
 The Astro Web Component and CSS Library provides a starting point to begin developing Astro-compliant applications.
