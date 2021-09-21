@@ -7,5 +7,7 @@ addons.setConfig({
   enableShortcuts: false,
   sidebar: {
     showRoots: true
-  }
+  },
 });
+window.STORYBOOK_GA_ID = "UA-114182957-1"
+window.STORYBOOK_REACT_GA_OPTIONS = {}
