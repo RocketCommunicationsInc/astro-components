@@ -23,7 +23,6 @@
     "storybook": "lerna bootstrap && gulp build && start-storybook -p 9001 -c .storybook -s ./static "
   },
   "dependencies": {
-    "@storybook/addon-google-analytics": "^6.2.9",
     "ag-grid-community": "^24.0.0",
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1",
@@ -37,6 +36,7 @@
     "@storybook/addon-a11y": "6.2.1",
     "@storybook/addon-actions": "6.2.1",
     "@storybook/addon-console": "^1.2.3",
+    "@storybook/addon-google-analytics": "^6.2.9",
     "@storybook/addon-knobs": "6.2.1",
     "@storybook/addon-links": "6.2.1",
     "@storybook/addon-options": "5.3.21",
