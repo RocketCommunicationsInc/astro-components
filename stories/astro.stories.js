@@ -187,7 +187,7 @@ export const Contributing = () => {
         <li>Ensure a default value is set within the constructor for each property, even if none is provided by the user during component instantiation.</li>
         <li>If a property or attribute exists, it must be documented and demonstrated.</li>
         <ul>
-          <li>For Web Components with properties set via attributes, build dynamic demos using <a href="https://github.com/storybookjs/storybook/tree/master/addons/knobs#readme" target="_blank">Storybook Knobs</a> bound to the attributes (e.g., <a href="/?path=/story/components-buttons--standard-button">Astro Button demo</a>)</a>.</li>
+          <li>For Web Components with properties set via attributes, build dynamic demos using <a href="https://github.com/storybookjs/storybook/tree/master/addons/knobs#readme" target="_blank">Storybook Knobs</a> bound to the attributes (e.g., <a href="/?path=/story/components-button--primary-button">Astro Button demo</a>)</a>.</li>
           <li>For HTML patterns and in situations where Web Components with multiple properties, build static demos showing all possible combinations (e.g., <a href="/?path=/story/components-buttons--all-button-variants">all Astro Button Variants demo</a>). Do not add undocumented or undemonstrated properties or attributes with the intent to document later — demonstrate and document them at the time of authoring. Document the property's Type and default value.</li>
         </ul>
       </ol>
