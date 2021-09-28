@@ -76,7 +76,7 @@ AllPushButtonVariants.story = {
             html,
         },
         readme: {
-            sidebar: `_Readme content copied from [Rux-Buttons](/?path=/info/components-buttons--standard-button) below for your convenience._\n\n${Readme}`,
+            sidebar: `_Readme content copied from [Rux-Button](/?path=/story/components-button--primary-button) below for your convenience._\n\n${Readme}`,
         },
     },
 }

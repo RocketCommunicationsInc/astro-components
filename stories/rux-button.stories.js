@@ -5,14 +5,14 @@ import { RuxIcon } from '../src/components/rux-icon/rux-icon.js' // not finished
 import Readme from '../src/components/rux-button/README.md'
 
 export default {
-    title: 'Components/Buttons',
+    title: 'Components/Button',
     decorators: [withKnobs],
 }
 
-export const StandardButton = () => {
+export const PrimaryButton = () => {
     const sizeOptions = {
         Small: 'small',
-        Standard: '',
+        Medium: '',
         Large: 'large',
     }
 
@@ -35,7 +35,7 @@ export const StandardButton = () => {
     `
 }
 
-StandardButton.story = {
+PrimaryButton.story = {
     parameters: {
         exports: {
             render,
@@ -50,7 +50,7 @@ StandardButton.story = {
 export const slottedIconButton = () => {
     const sizeOptions = {
         Small: 'small',
-        Standard: '',
+        Medium: '',
         Large: 'large',
     }
 
@@ -131,7 +131,7 @@ GroupedButtons.story = {
         },
         readme: {
             sidebar:
-                '# Grouped Buttons\n\nCommon button groupings follow these conventions: \n\n- Cancel buttons are always presented to the left of actions such as “Submit.”\n\n- Always group together “Ok/Cancel” buttons. Do not justify them apart, but keep a reasonable margin between the buttons.\n\n- Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width. \n\nRead the [Rux-Buttons Readme](/?path=/info/components-buttons--standard-button) for more information.',
+                '# Grouped Buttons\n\nCommon button groupings follow these conventions: \n\n- Cancel buttons are always presented to the left of actions such as “Submit.”\n\n- Always group together “Ok/Cancel” buttons. Do not justify them apart, but keep a reasonable margin between the buttons.\n\n- Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width. \n\nRead the [Rux-Button Readme](/?path=/story/components-button--primary-button) for more information.',
         },
     },
 }
@@ -216,48 +216,46 @@ export const AllButtonVariants = () => html`
         <ul class="button-list">
             <li>
                 <rux-button iconOnly icon="settings"
-                    >Standard icon-only button</rux-button
+                    >Medium icon-only button</rux-button
                 >
-                <rux-button>Standard button</rux-button>
+                <rux-button>Medium button</rux-button>
             </li>
             <li>
-                <rux-button icon="settings"
-                    >Standard button with icon</rux-button
-                >
+                <rux-button icon="settings">Medium button with icon</rux-button>
             </li>
             <li>
                 <rux-button iconOnly disabled icon="settings"
-                    >Standard disabled icon-only button</rux-button
+                    >Medium disabled icon-only button</rux-button
                 >
-                <rux-button disabled>Standard disabled button</rux-button>
+                <rux-button disabled>Medium disabled button</rux-button>
             </li>
             <li>
                 <rux-button disabled icon="settings"
-                    >Standard disabled button with icon</rux-button
+                    >Medium disabled button with icon</rux-button
                 >
             </li>
             <li>
                 <rux-button iconOnly secondary icon="settings"
-                    >Standard secondary icon-only button</rux-button
+                    >Medium secondary icon-only button</rux-button
                 >
-                <rux-button secondary>Standard secondary button</rux-button>
+                <rux-button secondary>Medium secondary button</rux-button>
             </li>
             <li>
                 <rux-button secondary icon="settings"
-                    >Standard secondary button with icon</rux-button
+                    >Medium secondary button with icon</rux-button
                 >
             </li>
             <li>
                 <rux-button iconOnly disabled secondary icon="settings"
-                    >Standard disabled secondary icon-only button</rux-button
+                    >Medium disabled secondary icon-only button</rux-button
                 >
                 <rux-button secondary disabled
-                    >Standard disabled secondary button</rux-button
+                    >Medium disabled secondary button</rux-button
                 >
             </li>
             <li>
                 <rux-button secondary disabled icon="settings"
-                    >Standard disabled secondary button with icon</rux-button
+                    >Medium disabled secondary button with icon</rux-button
                 >
             </li>
         </ul>
