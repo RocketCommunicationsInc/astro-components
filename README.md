@@ -1,15 +1,18 @@
+# NOTE: The Astro Component using Lit Element are in maintenace mode
+
+Please see new improved Stencil based components available at https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/readme.md and have your voice heard before release. The updated components are quite mature and we would encourage new projects to seriously consider using the updated Stencil components moving forward.
+
+- If you find any bugs or issues, please file them here https://github.com/RocketCommunicationsInc/astro/issues
+- If you have any questions or requests please ask them here https://github.com/RocketCommunicationsInc/astro/discussions
+
+
 # Astro Web Component and CSS Library
 
 The Astro Web Component and CSS Library provides a starting point to begin developing Astro-compliant applications.
 
 > NOTE: The Astro Component Library is still new and tends to release breaking changes, but follows semver so you can control when you incorporate them. We typically follow a 6 month release schedule which includes two major release per year with breaking changes, and intermediate patch releases with bug fixes.
 
-#### New to Astro 4
 
--   All components have been updated to [LitElement](https://lit-element.polymer-project.org) from Polymer
--   Updated documentation
--   [Storybook Component Sandbox](https://astro-components.netlify.com)
--   Merged Astro Style Library in to Astro Components
 
 ## Download and Install for all Astro Web Components and Styles
 
