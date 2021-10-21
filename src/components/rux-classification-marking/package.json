@@ -21,7 +21,7 @@
     "main": "rux-classification-marking.js",
     "modules": "rux-classification-marking.js",
     "name": "@astrouxds/rux-classification-marking",
-    "version": "2.0.1",
+    "version": "5.3.0",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     }
