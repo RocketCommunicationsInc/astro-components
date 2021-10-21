@@ -1,29 +1,29 @@
 {
-  "name": "@astrouxds/rux-core",
-  "main": "rux-core.js",
-  "module": "rux-core.js",
-  "style": "dist/css/astro.min.css",
-  "author": {
-    "name": "Rocket Communications",
-    "email": "uxsupport@rocketcom.com"
-  },
-  "homepage": "https://www.astrouxds.com",
-  "bugs": {
-    "email": "uxsupport@rocketcom.com",
-    "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
-  },
-  "description": "Astro Web Module for global styles",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "scripts": {
-    "prepublish": "gulp build-rux-core",
-    "test": "echo testing rux-core, version: $npm_package_version"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "version": "1.0.1"
+    "name": "@astrouxds/rux-core",
+    "main": "rux-core.js",
+    "module": "rux-core.js",
+    "style": "dist/css/astro.min.css",
+    "author": {
+        "name": "Rocket Communications",
+        "email": "uxsupport@rocketcom.com"
+    },
+    "homepage": "https://www.astrouxds.com",
+    "bugs": {
+        "email": "uxsupport@rocketcom.com",
+        "url": "https://github.com/RocketCommunicationsInc/astro-components/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
+    },
+    "description": "Astro Web Module for global styles",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "scripts": {
+        "prepublish": "gulp build-rux-core",
+        "test": "echo testing rux-core, version: $npm_package_version"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "version": "5.3.0"
 }

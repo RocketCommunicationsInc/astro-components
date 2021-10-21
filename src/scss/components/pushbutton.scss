@@ -16,55 +16,55 @@
 **  - Updated transition speed
 */
 
-.rux-pushbutton{
-  display: inline-block;
+.rux-pushbutton {
+    display: inline-block;
 
-  height: 1.3125rem;
+    height: 1.3125rem;
 
-  /* width: auto; */
-  -webkit-font-smoothing: subpixel-antialiased;
+    /* width: auto; */
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.rux-pushbutton__input{
-  display: none;
+.rux-pushbutton__input {
+    display: none;
 }
 
 .rux-pushbutton__button {
-  display: flex;
+    display: flex;
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
-  height: 1.375rem;
-  font-size: 0.75rem !important;
-  font-weight: 600;
+    height: 1.375rem;
+    font-size: 0.75rem !important;
+    font-weight: 600;
 
-  margin: 0;
-  padding: 0 0.625rem;
+    margin: 0;
+    padding: 0 0.625rem;
 
-  color: var(--pushbuttonTextColor);
+    color: var(--pushbuttonTextColor);
 
-  background-color: var(--pushbuttonBackgroundColor);
-  border-radius: var(--defaultBorderRadius, 3px);
-  border: 1px solid var(--pushbuttonBorderColor);
+    background-color: var(--pushbuttonBackgroundColor);
+    border-radius: var(--defaultBorderRadius, 3px);
+    border: 1px solid var(--pushbuttonBorderColor);
 }
 
 .rux-pushbutton__button label {
-  color: var(--pushbuttonTextColor);
+    color: var(--pushbuttonTextColor);
 }
 
-.rux-pushbutton__input:checked + .rux-pushbutton__button{
-  display: flex;
-  color: var(--pushbuttonSelectedTextColor);
-  background-color: var(--pushbuttonSelectedBackgroundColor);
-  border-color: var(--pushbuttonSelectedBorderColor);
+.rux-pushbutton__input:checked + .rux-pushbutton__button {
+    display: flex;
+    color: var(--pushbuttonSelectedTextColor);
+    background-color: var(--pushbuttonSelectedBackgroundColor);
+    border-color: var(--pushbuttonSelectedBorderColor);
 }
 
 .rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on {
-  display: none;
+    display: none;
 }
 
-.rux-pushbutton__input:disabled + .rux-pushbutton__button{
-  opacity: var(--disabledOpacity);
-  cursor: var(--disabledCursor);
+.rux-pushbutton__input:disabled + .rux-pushbutton__button {
+    opacity: var(--disabledOpacity);
+    cursor: var(--disabledCursor);
 }

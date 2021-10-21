@@ -107,3 +107,6 @@ Thumbs.db
 !.eslintrc.js
 !.eslintrc
 !.storybook
+!.husky
+!.prettierrc
+!.prettierignore

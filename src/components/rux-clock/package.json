@@ -1,34 +1,34 @@
 {
-	"author": {
-		"name": "Rocket Communications",
-		"email": "uxsupport@rocketcom.com"
-	},
-	"dependencies": {
-		"@webcomponents/webcomponentsjs": "^2.2.10",
-		"date-fns": "^2.16.1",
-		"date-fns-tz": "^1.0.11",
-		"lit-element": "^2.1.0",
-		"military-timezones": "^1.0.0"
-	},
-	"homepage": "https://www.astrouxds.com",
-	"bugs": {
-		"email": "uxsupport@rocketcom.com"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
-	},
-	"description": "Astro Web Component for mission clock",
-	"license": "SEE LICENSE IN LICENSE.md",
-	"main": "rux-clock.js",
-	"module": "rux-clock.js",
-	"name": "@astrouxds/rux-clock",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"version": "5.0.3",
-	"gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
+    "author": {
+        "name": "Rocket Communications",
+        "email": "uxsupport@rocketcom.com"
+    },
+    "dependencies": {
+        "@webcomponents/webcomponentsjs": "^2.2.10",
+        "date-fns": "^2.16.1",
+        "date-fns-tz": "^1.0.11",
+        "lit-element": "^2.1.0",
+        "military-timezones": "^1.0.0"
+    },
+    "homepage": "https://www.astrouxds.com",
+    "bugs": {
+        "email": "uxsupport@rocketcom.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RocketCommunicationsInc/astro-components/src/master"
+    },
+    "description": "Astro Web Component for mission clock",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "main": "rux-clock.js",
+    "module": "rux-clock.js",
+    "name": "@astrouxds/rux-clock",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "version": "5.3.0",
+    "gitHead": "4bba0d8002ae689eae718e188328d4e564aa94b0"
 }

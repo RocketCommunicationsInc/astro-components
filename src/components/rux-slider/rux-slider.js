@@ -1,455 +1,477 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from 'lit-element'
 
 export class RuxSlider extends LitElement {
-  static get properties() {
-    return {
-      min: {
-        type: Number,
-      },
-      max: {
-        type: Number,
-      },
-      step: {
-        type: Number,
-      },
-      val: {
-        type: Number,
-        reflect: true,
-      },
-      label: {
-        type: String,
-      },
-      axisLabels: {
-        type: Array,
-      },
-      disabled: {
-        type: Boolean,
-      },
-      hideInput: {
-        type: Boolean,
-      },
-    };
-  }
-  constructor() {
-    super();
-    this.min = 0;
-    this.max = 100;
-    this.step = 1;
-    this.val = 0;
-    this.label = '';
-    (this.axisLabels = []), (this.disabled = false);
-    this.hideInput = false;
-    this.browser = this.getBrowser(navigator.userAgent.toLowerCase());
-    this.addEventListener('click', this.clickHandler);
-  }
-
-  clickHandler(e) {
-    if (this.disabled) {
-      e.stopImmediatePropagation();
+    static get properties() {
+        return {
+            min: {
+                type: Number,
+            },
+            max: {
+                type: Number,
+            },
+            step: {
+                type: Number,
+            },
+            val: {
+                type: Number,
+                reflect: true,
+            },
+            label: {
+                type: String,
+            },
+            axisLabels: {
+                type: Array,
+            },
+            disabled: {
+                type: Boolean,
+            },
+            hideInput: {
+                type: Boolean,
+            },
+        }
     }
-  }
-
-  firstUpdated() {
-    this._updateValue();
-  }
-
-  getBrowser(ua) {
-    if (ua.indexOf('chrome') > -1) {
-      return 'chrome';
-    } else if (ua.indexOf('safari') > -1) {
-      return 'safari';
-    } else if (ua.indexOf('firefox') > -1) {
-      return 'firefox';
+    constructor() {
+        super()
+        this.min = 0
+        this.max = 100
+        this.step = 1
+        this.val = 0
+        this.label = ''
+        ;(this.axisLabels = []), (this.disabled = false)
+        this.hideInput = false
+        this.browser = this.getBrowser(navigator.userAgent.toLowerCase())
+        this.addEventListener('click', this.clickHandler)
     }
-  }
 
-  _updateValue(e) {
-    this.val = e ? e.target.value : this.val;
-    const dif = ((this.val - this.min) / (this.max - this.min)) * 100;
-    this.style.setProperty('--value', dif);
-  }
-
-  render() {
-    return html`
-      <style>
-        :host {
-          --thumbSize: var(--controlOptionSize);
-          --thumbShadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 1px 9px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
-          --thumbShadowHover: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12),
-            0 3px 5px rgba(0, 0, 0, 0.2);
-          --thumbShadowActive: inset 0 0 0 4px var(--colorPrimary), 0 1px 3px rgba(0, 0, 0, 0.14),
-            0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.2);
-
-          --trackHeight: 3px;
-          --trackCursor: pointer;
-          --value: 50;
-          display: flex;
-          flex-grow: 1;
-          flex-flow: column;
-          --step:${this.step}; --min:${this.min}; --max:${this.max};
+    clickHandler(e) {
+        if (this.disabled) {
+            e.stopImmediatePropagation()
         }
+    }
 
-        *[hidden] {
-          display: none !important;
+    firstUpdated() {
+        this._updateValue()
+    }
+
+    getBrowser(ua) {
+        if (ua.indexOf('chrome') > -1) {
+            return 'chrome'
+        } else if (ua.indexOf('safari') > -1) {
+            return 'safari'
+        } else if (ua.indexOf('firefox') > -1) {
+            return 'firefox'
         }
+    }
 
-        .rux-slider {
-          display: flex;
-          flex-direction: column;
-        }
+    _updateValue(e) {
+        this.val = e ? e.target.value : this.val
+        const dif = ((this.val - this.min) / (this.max - this.min)) * 100
+        this.style.setProperty('--value', dif)
+    }
 
-        .rux-slider__label {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          font-size: 1.25rem;
-          margin-bottom: 9px;
-        }
+    render() {
+        return html`
+            <style>
+                :host {
+                    --thumbSize: 19px;
+                    --sliderThumbBorderSize: 2px;
 
-        .rux-slider__control {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          flex-grow: 1;
-          position: relative;
-        }
+                    --trackHeight: 1px;
+                    --trackBeforeThumbHeight: 5px;
+                    --trackCursor: pointer;
+                    --value: 50;
+                    --valuePercent: calc(1% * var(--value));
+                    --valueBeforeThumb: calc(1% * var(--value) - 1%);
+                    display: flex;
+                    flex-grow: 1;
+                    flex-flow: column;
+                    --step: ${this.step};
+                    --min: ${this.min};
+                    --max: ${this.max};
+                }
 
-        .rux-slider label input {
-          margin-left: auto;
-          margin-right: 0;
-        }
+                *[hidden] {
+                    display: none !important;
+                }
 
-        .rux-range {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          -ms-appearance: none;
-          appearance: none;
+                .rux-slider {
+                    display: flex;
+                    flex-direction: column;
+                }
 
-          background: none;
-          width: 100%;
-          margin: 0px;
-          color: transparent;
-        }
+                .rux-slider__label {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 1.25rem;
+                    margin-bottom: 9px;
+                }
 
-        input[type='range']:focus {
-          outline: none;
-        }
+                .rux-slider__control {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    flex-grow: 1;
+                    position: relative;
+                }
 
-        /****** Track ******/
+                .rux-slider label input {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
 
-        /* Track -> WebKit */
-        .rux-range::-webkit-slider-runnable-track {
-          display: flex;
-          align-items: center;
-          max-width: 100%;
+                .rux-range {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    -ms-appearance: none;
+                    appearance: none;
 
-          /* width: 100%; */
-          height: var(--trackHeight, 2px);
-          cursor: var(--trackCursor, pointer);
+                    background: none;
+                    width: 100%;
+                    margin: 0px;
+                    color: transparent;
+                }
 
-          background-color: var(--sliderTrackBackgroundColor);
-          outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor, transparent);
+                input[type='range']:focus {
+                    outline: none;
+                }
 
-          background-image: linear-gradient(
-            to right,
-            var(--sliderSelectedTrackBackgroundColor) 0%,
-            var(--sliderSelectedTrackBackgroundColor) calc(1% * var(--value)),
-            var(--sliderTrackBackgroundColor) calc(1% * var(--value)),
-            var(--sliderTrackBackgroundColor) 100%
-          );
-        }
+                /****** Track ******/
+                /* Track -> WebKit */
+                .rux-range::-webkit-slider-runnable-track {
+                    display: flex;
+                    align-items: center;
+                    max-width: 100%;
+                    /* width: 100%; */
+                    cursor: var(--trackCursor, pointer);
+                    border-radius: 2.5px;
+                    min-height: var(--trackHeight);
+                    max-height: var(--trackBeforeThumbHeight);
 
-        .rux-range:disabled::-webkit-slider-runnable-track {
-          opacity: var(--disabledOpacity, 0.4);
-          cursor: var(--disabledCursor);
-        }
+                    background-image: linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        ),
+                        linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        );
+                    background-size: var(--valuePercent) 5px, 100% 1px;
+                    background-repeat: no-repeat no-repeat;
+                    background-position: left, right;
+                }
+                .rux-range:disabled::-webkit-slider-runnable-track {
+                    opacity: var(--disabledOpacity, 0.4);
+                    cursor: var(--disabledCursor);
+                }
 
-        /* Track -> Moz */
-        .rux-range::-moz-range-track {
-          display: flex;
-          align-items: center;
+                /* Track -> Moz */
+                .rux-range::-moz-range-track {
+                    display: flex;
+                    align-items: center;
+                    max-width: 100%;
+                    /* width: 100%; */
+                    cursor: var(--trackCursor, pointer);
+                    border-radius: 2.5px;
+                    min-height: var(--trackHeight);
+                    max-height: 5px;
 
-          /* width: 100%; */
-          height: var(--trackHeight);
-          cursor: var(--trackCursor, pointer);
+                    background-image: linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        ),
+                        linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        );
+                    background-size: calc(1% * var(--value)) 5px, 100% 1px;
+                    background-repeat: no-repeat no-repeat;
+                    background-position: left, right;
+                }
 
-          background-color: var(--sliderTrackBackgroundColor);
-          outline: var(--sliderTrackBorderSize) solid var(--sliderTrackBorderColor);
-        }
+                .rux-range:disabled::-moz-range-track,
+                .rux-range:disabled::-moz-range-progress {
+                    opacity: var(--disabledOpacity, 0.4);
+                    cursor: var(--disabledCursor);
+                }
 
-        .rux-range:disabled::-moz-range-track, 
-        .rux-range:disabled::-moz-range-progress {
-          opacity: var(--disabledOpacity, 0.4);
-          cursor: var(--disabledCursor);
-        }
+                .rux-range::-moz-range-progress {
+                    background-color: var(--sliderSelectedTrackBackgroundColor);
+                }
 
-        .rux-range::-moz-range-progress {
-          background-color: var(--sliderSelectedTrackBackgroundColor);
-        }
+                .rux-input:disabled {
+                    opacity: var(--disabledOpacity, 0.4);
+                    cursor: var(--disabledCursor);
+                }
 
-        .rux-input:disabled {
-          opacity: var(--disabledOpacity, 0.4);
-          cursor: var(--disabledCursor);
-        }
+                /* Track -> Ms */
+                .rux-range::-ms-track {
+                    display: flex;
+                    align-items: center;
+                    max-width: 100%;
+                    /* width: 100%; */
+                    cursor: var(--trackCursor, pointer);
+                    border-radius: 2.5px;
+                    min-height: var(--trackHeight);
+                    max-height: 5px;
 
-        /* Track -> Ms */
-        .rux-range::-ms-track {
-          display: flex;
-          align-items: center;
+                    background-image: linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        ),
+                        linear-gradient(
+                            var(--sliderTrackBackgroundColor),
+                            var(--sliderTrackBackgroundColor)
+                        );
+                    background-size: calc(1% * var(--value)) 5px, 100% 1px;
+                    background-repeat: no-repeat no-repeat;
+                    background-position: left, right;
+                }
 
-          /* width: 100%; */
-          height: var(--trackHeight);
-          padding: 2px 0;
+                .rux-range::-ms-fill-lower {
+                    height: 2px;
+                    background-color: rgb(77, 172, 255);
+                }
 
-          cursor: pointer;
-          color: transparent;
-          background-color: transparent;
-          border: none;
-          /* background-color: var(--sliderTrackBackgroundColor); */
-          outline: var(--sliderTrackBorderSize) solid transparent;
-        }
+                .rux-range::-ms-fill-upper {
+                    height: 2px;
+                    background-color: var(--sliderTrackBackgroundColor);
+                }
 
-        .rux-range::-ms-fill-lower {
-          height: 2px;
-          background-color: rgb(77, 172, 255);
-        }
+                /*****  Thumb ******/
 
-        .rux-range::-ms-fill-upper {
-          height: 2px;
-          background-color: var(--sliderTrackBackgroundColor);
-        }
+                /* Thumb -> Webkit */
+                .rux-range::-webkit-slider-thumb {
+                    -webkit-appearance: none;
 
-        /*****  Thumb ******/
+                    position: relative;
+                    top: ${this.browser === 'safari'
+                        ? '0px'
+                        : 'calc( var(--thumbSize) / -2.7)'};
 
-        /* Thumb -> Webkit */
-        .rux-range::-webkit-slider-thumb {
-          -webkit-appearance: none;
+                    height: var(--thumbSize);
+                    width: var(--thumbSize);
 
-          position: relative;
-          top: ${ this.browser === 'safari' ? '0px' : 'calc( var(--thumbSize) / -2)' };
+                    border-radius: 100%;
+                    border: var(--sliderThumbBorderSize) solid
+                        var(--sliderThumbBorderColor);
+                    background-color: var(--sliderThumbBackgroundColor);
 
-          height: var(--thumbSize);
-          width: var(--thumbSize);
+                    cursor: pointer;
+                    z-index: 6;
+                }
 
-          border-radius: 100%;
-          border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
-          background-color: var(--sliderThumbBackgroundColor);
+                .rux-range::-webkit-slider-thumb:hover {
+                    border-color: var(--sliderHoverThumbBorderColor);
+                    background-color: var(--sliderHoverThumbBackgroundColor);
+                }
 
-          cursor: pointer;
-          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
-          z-index: 6;
-        }
+                .rux-range:disabled::-webkit-slider-runnable-track {
+                    opacity: var(--disabledOpacity);
+                    cursor: var(--disabledCursor);
+                }
 
-        .rux-range::-webkit-slider-thumb:hover{
-          border-color: var(--sliderHoverThumbBorderColor);
-        }
+                .rux-range:disabled::-webkit-slider-thumb {
+                    cursor: var(--disabledCursor);
+                }
+                .rux-range:disabled::-webkit-slider-thumb:hover {
+                    border-color: var(--sliderThumbBorderColor);
+                }
 
-        .rux-range:disabled::-webkit-slider-runnable-track {
-          opacity: var(--disabledOpacity);
-          cursor: var(--disabledCursor);
-        }
+                .rux-range:not(:disabled)::-webkit-slider-thumb:active {
+                    border-color: var(--sliderSelectedThumbBorderColor);
+                    background-color: var(--backgroundColor);
+                }
 
-        .rux-range:disabled::-webkit-slider-thumb {
-          cursor: var(--disabledCursor);
-        }
+                .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
+                .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
+                    background-color: var(--sliderHoverThumbBackgroundColor);
+                }
 
-        .rux-range:not(:disabled)::-webkit-slider-thumb:active {
-          border-color: var(--sliderSelectedThumbBorderColor);
-          background-color: var(--inputBackground);
-          background: radial-gradient(circle, 
-            rgba(255,255,255,1) 40%, 
-            var(--primaryDark) 40%);
-          -webkit-radial-gradient: radial-gradient(circle, 
-            rgba(255,255,255,1) 40%, 
-            var(--primaryDark) 40%);
-          box-shadow: var(--thumbShadowActive);
-        }
+                .rux-range:not(:disabled)::-webkit-slider-thumb:active {
+                    border-color: var(--sliderSelectedThumbBorderColor);
+                    background-color: var(--backgroundColor);
+                }
 
-        .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
-        .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-          background-color: var(--sliderHoverThumbBackgroundColor);
-        }
+                .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
+                .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
+                    background-color: var(--sliderHoverThumbBackgroundColor);
+                }
 
-        .rux-range:not(:disabled)::-webkit-slider-thumb:active {
-          border-color: var(--sliderSelectedThumbBorderColor);
-          background-color: var(--inputBackground);
-          box-shadow: var(--thumbShadowActive);
-        }
+                /* Thumb -> Moz */
+                .rux-range::-moz-range-thumb {
+                    -moz-appearance: none;
 
-        .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
-        .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-          background-color: var(--sliderHoverThumbBackgroundColor);
-          box-shadow: var(--thumbShadowHover);
-        }
+                    position: relative;
+                    top: calc(var(--thumbSize) / -2.7);
 
-        /* Thumb -> Moz */
-        .rux-range::-moz-range-thumb {
-          -moz-appearance: none;
+                    height: var(--thumbSize);
+                    width: var(--thumbSize);
 
-          position: relative;
-          top: calc( var(--thumbSize) / -2);
+                    border-radius: 100%;
+                    border: var(--sliderThumbBorderSize) solid
+                        var(--sliderThumbBorderColor);
+                    background-color: var(--sliderThumbBackgroundColor);
 
-          height: var(--thumbSize);
-          width: var(--thumbSize);
+                    cursor: pointer;
+                }
 
-          border-radius: 100%;
-          border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
-          background-color: var(--sliderThumbBackgroundColor);
+                .rux-range:not(:disabled)::-moz-range-thumb:active {
+                    border-color: var(--sliderSelectedThumbBorderColor);
+                    background-color: var(--backgroundColor);
+                }
 
-          cursor: pointer;
-          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), var(--thumbShadow);
-        }
+                .rux-range::-moz-range-thumb:hover {
+                    border-color: var(--sliderHoverThumbBorderColor);
+                }
 
-        .rux-range:not(:disabled)::-moz-range-thumb:active{
-          background: radial-gradient(circle, 
-            rgba(255,255,255,1) 40%, 
-            var(--primaryDark) 40%);
-        }
+                input:-moz-focusring {
+                    outline: none;
+                }
 
-        .rux-range::-moz-range-thumb:hover{
-          border-color:var(--sliderHoverThumbBorderColor);
-        }
+                .rux-range:disabled::-moz-range-thumb {
+                    opacity: var(--disabledOpacity, 0.4);
+                    cursor: var(--disabledCursor);
+                }
 
-        input:-moz-focusring {
-          outline: none;
-        }
+                /* Thumb -> Ms */
+                .rux-range::-ms-thumb {
+                    position: relative;
+                    top: calc(var(--thumbSize) / -2.7);
+                    height: var(--thumbSize);
+                    width: var(--thumbSize);
 
-        .rux-range:disabled::-moz-range-thumb {
-          opacity: var(--disabledOpacity, 0.4);
-          cursor: var(--disabledCursor);
-        }
+                    border-radius: 100%;
+                    border: var(--sliderThumbBorderSize) solid
+                        var(--sliderThumbBorderColor);
+                    background-color: var(--sliderThumbBackgroundColor);
 
-        /* Thumb -> Ms */
-        .rux-range::-ms-thumb {
-          position: relative;
-          top: calc( var(--thumbSize) / -2);
+                    cursor: pointer;
 
-          height: var(--thumbSize);
-          width: var(--thumbSize);
+                    z-index: 6;
+                }
 
-          border-radius: 100%;
-          border: var(--sliderThumbBorderSize) solid var(--sliderThumbBorderColor);
-          background-color: var(--sliderThumbBackgroundColor);
+                .rux-range:disabled::-ms-thumb {
+                    opacity: 0.4;
+                    cursor: not-allowed;
+                }
 
-          cursor: pointer;
-          box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 5px rgba(0, 0, 0, 0.14),
-            0 1px 9px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
+                /* Labels */
+                .rux-slider__control__labels {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
 
-        .rux-range:disabled::-ms-thumb {
-          opacity: 0.4;
-          cursor: not-allowed;
-        }
+                    list-style: none;
+                    padding: 0;
+                    margin: 10px 0 0 0;
 
-        /* Labels */
-        .rux-slider__control__labels {
-          position: relative;
-          display: flex;
-          justify-content: space-between;
+                    color: var(--fontColor);
+                    font-size: 0.875rem;
+                    font-family: var(--fontFamily);
+                }
 
-          list-style: none;
-          padding: 0;
-          margin: 10px 0 0 0;
+                .rux-range:disabled + .rux-slider__control__labels {
+                    opacity: var(--disabledOpacity, 0.4);
+                }
 
-          color: var(--fontColor);
-          font-size: 0.875rem;
-          font-family: var(--fontFamily);
-        }
+                .rux-slider__control__labels li {
+                    padding: 0px;
+                    text-align: left;
+                }
 
-        .rux-range:disabled + .rux-slider__control__labels{
-          opacity: var(--disabledOpacity, 0.4);
-        }
+                .rux-slider__control__labels li:first-child,
+                .rux-slider__control__labels li:last-child {
+                    margin: 0px;
+                }
 
-        .rux-slider__control__labels li{
-          padding: 0px;
-          text-align: left;
-        }
+                .disabled {
+                    opacity: var(--disabledOpacity, 0.4);
+                    cursor: var(--disabledCursor);
 
-        .rux-slider__control__labels li:first-child,
-        .rux-slider__control__labels li:last-child{
-          margin: 0px;
-        }
-
-        .disabled {
-          opacity: var(--disabledOpacity, 0.4);
-          cursor: var(--disabledCursor);
-
-          -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-              -moz-user-select: none;
-                -ms-user-select: none;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
                     user-select: none;
-        }
+                }
 
-        .rux-slider__input {
-          margin-right: 0;
-          margin-bottom: 0.75rem;
+                .rux-slider__input {
+                    margin-right: 0;
+                    margin-bottom: 0.75rem;
 
-          width: 4rem !important;
-        }
+                    width: 4rem !important;
+                }
 
-        /*
-        Fake tick marks, sort of works, but label using flex are imprecise
-        .rux-slider__control__labels li::before {
-          position: absolute;
-          content: "|";
-          font-size: 0.5rem;
-          top: -100%;
-        } */
+                /*
+                Fake tick marks, sort of works, but label using flex are imprecise
+                .rux-slider__control__labels li::before {
+                  position: absolute;
+                  content: "|";
+                  font-size: 0.5rem;
+                  top: -100%;
+                } */
 
-        input[type='range']::-moz-focus-outer {
-          border: 0;
-        }
-      </style>
+                input[type='range']::-moz-focus-outer {
+                    border: 0;
+                }
+            </style>
 
-      <div class="rux-slider">
-        <div class="rux-form-field rux-form-field--small rux-slider__label">
-          <label class="rux-label" id="ruxSlider" ?hidden="${!this.label}">${this.label}</label>
-          <input
-            class="rux-input rux-slider__input"
-            type="number"
-            @input="${this._updateValue}"
-            .min="${this.min.toString()}"
-            .max="${this.max.toString()}"
-            .step="${this.step.toString()}"
-            .value="${this.val.toString()}"
-            aria-labelledby="ruxSlider"
-            ?hidden="${this.hideInput}"
-            ?disabled="${this.disabled}"
-          />
-        </div>
-        <div class="rux-slider__control ${this.disabled ? 'disabled' : ''}">
-          
-          <input
-            type="range"
-            @input="${this._updateValue}"
-            class="rux-range"
-            type="range"
-            .min="${this.min.toString()}"
-            .max="${this.max.toString()}"
-            .step="${this.step.toString()}"
-            .value="${this.val.toString()}"
-            aria-labelledby="ruxSlider"
-            ?disabled="${this.disabled}"
-            list="steplist"
-          />
-          
-          <ol
-            class="rux-slider__control__labels"
-            data-count="${this.axisLabels.length}"
-            ?hidden="${!this.axisLabels.length}"
-            id="steplist"
-          >
-            ${this.axisLabels.map(
-      (item) => html`
-                <li>${item}</li>
-              `
-  )}
-          </ol>
-        </div>
-      </div>
-    `;
-  }
+            <div class="rux-slider">
+                <div
+                    class="rux-form-field rux-form-field--small rux-slider__label"
+                >
+                    <label
+                        class="rux-label"
+                        id="ruxSlider"
+                        ?hidden="${!this.label}"
+                        >${this.label}</label
+                    >
+                    <input
+                        class="rux-input rux-slider__input"
+                        type="number"
+                        @input="${this._updateValue}"
+                        .min="${this.min.toString()}"
+                        .max="${this.max.toString()}"
+                        .step="${this.step.toString()}"
+                        .value="${this.val.toString()}"
+                        aria-labelledby="ruxSlider"
+                        ?hidden="${this.hideInput}"
+                        ?disabled="${this.disabled}"
+                    />
+                </div>
+                <div
+                    class="rux-slider__control ${this.disabled
+                        ? 'disabled'
+                        : ''}"
+                >
+                    <input
+                        type="range"
+                        @input="${this._updateValue}"
+                        class="rux-range"
+                        .min="${this.min.toString()}"
+                        .max="${this.max.toString()}"
+                        .step="${this.step.toString()}"
+                        .value="${this.val.toString()}"
+                        aria-labelledby="ruxSlider"
+                        ?disabled="${this.disabled}"
+                        list="steplist"
+                    />
+
+                    <ol
+                        class="rux-slider__control__labels"
+                        data-count="${this.axisLabels.length}"
+                        ?hidden="${!this.axisLabels.length}"
+                        id="steplist"
+                    >
+                        ${this.axisLabels.map(
+                            (item) => html` <li>${item}</li> `
+                        )}
+                    </ol>
+                </div>
+            </div>
+        `
+    }
 }
-customElements.define('rux-slider', RuxSlider);
+customElements.define('rux-slider', RuxSlider)
