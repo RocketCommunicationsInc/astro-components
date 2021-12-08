@@ -85,7 +85,7 @@ export class RuxClock extends LitElement {
             { timeZone: this._timezone }
         )
         this.dayOfYear = getDayOfYear(
-            zonedTimeToUtc(new Date(), this._timezone)
+            utcToZonedTime(new Date(), this._timezone)
         )
     }
 
