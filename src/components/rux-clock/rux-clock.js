@@ -186,7 +186,7 @@ export class RuxClock extends LitElement {
                               class="rux-clock__segment__value"
                               aria-labelledby="rux-clock__day-of-year-label"
                           >
-                              ${this.dayOfYear}
+                              ${this.dayOfYear.toString().padStart(3, '0')}
                           </div>
                           <div
                               class="rux-clock__segment__label"
