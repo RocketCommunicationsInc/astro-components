@@ -40,6 +40,7 @@ export class RuxIcon extends LitElement {
         /* TODO: a non-presumptive way to assign a better default label if the user doesn’t provide one */
         this.label = 'icon'
         this.viewBox = '0 0 24 24'
+        this.color = 'var(--iconDefaultColor)'
     }
 
     firstUpdated() {
